@@ -13,7 +13,7 @@ WEAPON BUFFS
       Damage increased from 246 to 258
      
       The goal with these 2 buffs is to make the Repeater and Rattlesnake rifles able to kill Tasers and Tan units 
-      in one headshot, rather than be left at 30 health.
+      in one headshot, rather than being left at 30 health.
  
   Light Machine Guns:
   
