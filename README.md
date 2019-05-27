@@ -13,7 +13,7 @@ WEAPON BUFFS
       Damage increased from 246 to 258
      
       The goal with these 2 buffs is to make the Repeater and Rattlesnake rifles able to kill Tasers and Tan units 
-      actually die in one headshot, rather than be left at 30 health.
+      in one headshot, rather than be left at 30 health.
  
   Light Machine Guns:
   
@@ -43,12 +43,12 @@ WEAPON REWORKS
       Vulcan Minigun:
         Damage increased from 25 to 80
         Mag capacity increased from 750 to 984
-        Stability decreased from 25 to 0
+        Stability decreased from 24 to 0
         Maximum kick value increased
         Accuracy increased from 32 to 56
         Ammo pickup rate decreased signifigantly
         Can now shoot through enemies and shields
      
      The idea here was the make the minigun into more of a utility weapon rather than the underwhelming LMG it currently is.
-     With these changes, the weapon is an absolutely devestating force in use however it does require specialized skills if you want to
+     With these changes, the weapon is an absolutely devestating force in use, however it does require specialized skills if you want to
      sustain the carnage it can unleash.
