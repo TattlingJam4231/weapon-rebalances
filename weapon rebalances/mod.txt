@@ -1,0 +1,21 @@
+{
+"name" : "Weapon Rebalances",
+"description" : "Weapon rebalances.",
+"author" : "Oryo",
+"version" : "1.0",
+"blt_version" : 2,
+ 
+"hooks" : [
+{
+"hook_id" : "lib/tweak_data/weapontweakdata",
+"script_path" : "Weapons.lua"
+},
+
+{
+"hook_id" : "lib/tweak_data/weaponfactorytweakdata",
+"script_path" : "ShotgunAmmo.lua"
+}
+
+]
+ 
+}
