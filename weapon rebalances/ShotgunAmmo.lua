@@ -32,12 +32,7 @@ self.parts.wpn_fps_upg_a_custom.stats = {
 	total_ammo_mod = 2, 
 	damage = 15,
 }
-self.parts.wpn_fps_upg_a_custom.custom_stats = {
-	rays = 8,
-	can_shoot_through_wall = true,
-}
 self.parts.wpn_fps_upg_a_custom_free.stats = self.parts.wpn_fps_upg_a_custom.stats
-self.parts.wpn_fps_upg_a_custom_free.custom_stats = self.parts.wpn_fps_upg_a_custom.custom_stats
 
 -- High Explosive
 self.parts.wpn_fps_upg_a_explosive.stats = {
