@@ -38,7 +38,7 @@ WEAPON REWORKS
         Under barrel grenade launcher total ammo increased from 3 to 4
       
       Our main focus with this rework was to make the Little Friend actually usable, and a lot more versatile. It's
-      inline with the lower damage assault rifles rather than DMR style rifles now, and we hope these changes makes 
+      inline with the lower damage assault rifles rather than DMR style rifles now, and we hope these changes makes
       the rifle more viable.
         
       Vulcan Minigun:
@@ -50,6 +50,6 @@ WEAPON REWORKS
         Ammo pickup rate decreased signifigantly
         Can now shoot through enemies and shields
      
-     The idea here was to make the minigun into more of a utility weapon rather than the underwhelming LMG it 
+     The idea here was to make the minigun into more of a utility weapon rather than the underwhelming LMG it
      currently is. With these changes, the weapon is an absolutely devestating force in use, however it does require
      specialized skills if you want to sustain the carnage it can unleash.
