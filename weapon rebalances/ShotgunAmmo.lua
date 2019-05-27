@@ -22,7 +22,8 @@ self.parts.wpn_fps_upg_a_slug.custom_stats = {
 	armor_piercing_add = 1,
 	can_shoot_through_shield = true,
 	can_shoot_through_wall = true,
-	can_shoot_through_enemy = true
+	can_shoot_through_enemy = true,
+	rays = 1
 }
 
 -- 000 Buckshot
