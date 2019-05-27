@@ -85,7 +85,7 @@ self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 	damage_near_mul = 2, 
 	damage_far_mul = 1.8, 
 	armor_piercing_add = 1, 
-	rays = 20
+	rays = 20,
 	bullet_class = "PoisonBulletBase"
 }
 
