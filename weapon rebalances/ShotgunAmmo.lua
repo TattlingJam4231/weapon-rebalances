@@ -27,12 +27,28 @@ self.parts.wpn_fps_upg_a_slug.custom_stats = {
 }
 
 -- 000 Buckshot
-self.parts.wpn_fps_upg_a_custom.stats = {
-	value = 5, 
-	total_ammo_mod = 2, 
-	damage = 15,
+self.parts.wpn_fps_upg_a_custom = {
+		is_a_unlockable = true,
+		texture_bundle_folder = "gage_pack_shotgun",
+		a_obj = "a_body",
+		type = "ammo",
+		third_unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		internal_part = true,
+		sub_type = "ammo_custom",
+		dlc = "gage_pack_shotgun",
+		name_id = "bm_wp_upg_a_custom",
+		unit = "units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy",
+		pcs = {},
+		stats = {
+			value = 5,
+			total_ammo_mod = 2,
+			damage = 15
+		},
+		custom_stats = {rays = 8}
 }
-self.parts.wpn_fps_upg_a_custom_free.stats = self.parts.wpn_fps_upg_a_custom.stats
+self.parts.wpn_fps_upg_a_custom_free = self.parts.wpn_fps_upg_a_custom
+self.parts.wpn_fps_upg_a_custom_free.dlc = nil
+self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 
 -- High Explosive
 self.parts.wpn_fps_upg_a_explosive.stats = {
