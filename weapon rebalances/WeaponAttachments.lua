@@ -110,5 +110,11 @@ self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
 	}
 }
 
+-- Shark Teeth Nozzle
+self.parts.wpn_fps_upg_ns_shot_shark.stats.damage = 1
+
+-- Donald's Horizontal Leveller
+self.parts.wpn_fps_upg_ns_duck.stats.damage = 1
+
 end
 end
