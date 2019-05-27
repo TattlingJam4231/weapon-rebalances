@@ -13,7 +13,7 @@
 
 {
 "hook_id" : "lib/tweak_data/weaponfactorytweakdata",
-"script_path" : "ShotgunAmmo.lua"
+"script_path" : "WeaponAttachments.lua"
 }
 
 ]
