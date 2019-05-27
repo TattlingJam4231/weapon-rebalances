@@ -5,6 +5,7 @@ weapons and other bits of the game. Most of the changes we made are with another
 WEAPON BUFFS
   
   Sniper Rifles:
+  
     Rattlesnake Sniper Rifle:
       Damage increased from 246 to 258
 
