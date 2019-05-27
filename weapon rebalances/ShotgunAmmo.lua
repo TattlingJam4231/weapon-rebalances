@@ -49,7 +49,7 @@ self.parts.wpn_fps_upg_a_custom = {
 		can_shoot_through_wall = true
 	}
 }
-self.parts.wpn_fps_upg_a_custom_free = self.parts.wpn_fps_upg_a_custom
+self.parts.wpn_fps_upg_a_custom_free = deep_clone(self.parts.wpn_fps_upg_a_custom)
 self.parts.wpn_fps_upg_a_custom_free.dlc = nil
 self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 
