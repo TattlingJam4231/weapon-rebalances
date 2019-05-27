@@ -56,5 +56,80 @@ old_init(self, tweak_data)
 		-0.2,
 		0.35
 	}
+	--Breaker 12G tweak
+	self.boot.stats.damage = 78
+	self.boot.stats_modifiers = {damage = 2}
+	
+	--Joceline O/U 12G tweak
+	self.b682.stats.damage = 78
+	self.b682.stats_modifiers = {damage = 2}
+	
+	--Mosconi 12G tweak
+	self.huntsman.stats.damage = 78
+	self.huntsman.stats_modifiers = {damage = 2}
+	
+	--Raven tweak
+	self.ksg.stats.damage = 45
+	self.ksg.stats_modifiers = {damage = 2}
+	
+	--Reinfeld 880 tweak
+	self.r870.stats.damage = 45
+	self.r870.stats_modifiers = {damage = 2}
+	
+	--M1014 tweak
+	self.benelli.stats.damage = 28
+	self.benelli.stats_modifiers = {damage = 2}
+	
+	--Predator 12G tweak
+	self.spas12.stats.damage = 28
+	self.spas12.stats_modifiers = {damage = 2}
+	
+	--IZHMA 12G tweak
+	self.saiga.stats.damage = 21
+	self.saiga.stats_modifiers = {damage = 2}
+	
+	--Steakout 12G
+	self.aa12.stats.damage = 21
+	self.aa12.stats_modifiers = {damage = 2}
+	
+	--GSPS 12G tweak
+	self.m37.stats.damage = 78
+	self.m37.stats_modifiers = {damage = 2}
+	
+	--Claire 12G tweak
+	self.coach.stats.damage = 78
+	self.coach.stats_modifiers = {damage = 2}
+	
+	--Judge tweak
+	self.judge.stats.damage = 78
+	self.judge.stats_modifiers = {damage = 2}
+	
+	--Akimbo Judge tweak
+	self.x_judge.stats.damage = 78
+	self.x_judge.stats_modifiers = {damage = 2}
+	
+	--Locomotive 12G tweak
+	self.serbu.stats.damage = 45
+	self.serbu.stats_modifiers = {damage = 2}
+	
+	--Goliath 12G tweak
+	self.rota.stats.damage = 21
+	self.rota.stats_modifiers = {damage = 2}
+	
+	--Akimbo Goliath 12G tweak
+	self.x_rota.stats.damage = 21
+	self.x_rota.stats_modifiers = {damage = 2}
+	
+	--Street Sweeper tweak
+	self.striker.stats.damage = 21
+	self.striker.stats_modifiers = {damage = 2}
+	
+	--Grimm 12G tweak
+	self.basset.stats.damage = 9
+	self.basset.stats_modifiers = {damage = 2}
+	
+	--Akimbo Grimm 12G tweak
+	self.x_basset.stats.damage = 9
+	self.x_basset.stats_modifiers = {damage = 2}
 	
 end
