@@ -14,9 +14,7 @@ old_init(self, tweak_data)
 	self.contraband.AMMO_MAX = self.contraband.CLIP_AMMO_MAX * self.contraband.NR_CLIPS_MAX
 	self.contraband.AMMO_PICKUP = {6,11}
 	self.contraband.FIRE_MODE = "auto"
-	self.contraband.fire_mode_data = {fire_rate = 0.1}
 	self.contraband.CAN_TOGGLE_FIREMODE = true
-	self.contraband.auto = {fire_rate = 0.1}
 	self.contraband.stats.damage = 58
 	
 	self.contraband_m203.categories = {
