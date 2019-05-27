@@ -17,8 +17,8 @@ self.parts.wpn_fps_upg_a_slug.stats = {
 	moving_spread = 10
 }
 self.parts.wpn_fps_upg_a_slug.custom_stats = {
-	ammo_pickup_min_mul = 1,
-	ammo_pickup_max_mul = 1,
+	ammo_pickup_min_mul = 0.8,
+	ammo_pickup_max_mul = 1.25,
 	damage_near_mul = 2,
 	damage_far_mul = 1.5,
 	armor_piercing_add = 1,
@@ -97,7 +97,7 @@ self.parts.wpn_fps_upg_a_dragons_breath.stats = {
 	spread = -3
 }
 self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
-	ammo_pickup_min_mul = 1,
+	ammo_pickup_min_mul = 0.8,
 	ammo_pickup_max_mul = 1,
 	armor_piercing_add = 1, 
 	ignore_statistic = true,  
