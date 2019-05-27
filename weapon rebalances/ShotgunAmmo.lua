@@ -11,7 +11,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 -- Slugs
 self.parts.wpn_fps_upg_a_slug.stats = {
 	value = 5,
-	damage = 50,
+	damage = 25,
 	total_ammo_mod = 0,
 	spread = 10,
 	moving_spread = 10
@@ -42,7 +42,7 @@ self.parts.wpn_fps_upg_a_custom = {
 	stats = {
 		value = 5,
 		total_ammo_mod = 2,
-		damage = 15
+		damage = 8
 	},
 	custom_stats = {
 		rays = 8,
@@ -57,7 +57,7 @@ self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 self.parts.wpn_fps_upg_a_explosive.stats = {
 	value = 5, 
 	total_ammo_mod = -3,
-	damage = 100,
+	damage = 50,
 	spread = -1,
 	moving_spread = -1
 }
