@@ -44,7 +44,10 @@ self.parts.wpn_fps_upg_a_custom = {
 			total_ammo_mod = 2,
 			damage = 15
 		},
-		custom_stats = {rays = 8}
+		custom_stats = {
+			rays = 8,
+			can_shoot_through_wall = true
+		}
 }
 self.parts.wpn_fps_upg_a_custom_free = self.parts.wpn_fps_upg_a_custom
 self.parts.wpn_fps_upg_a_custom_free.dlc = nil
