@@ -47,8 +47,7 @@ self.parts.wpn_fps_upg_a_custom = {
 		damage = 8
 	},
 	custom_stats = {
-		rays = 8,
-		can_shoot_through_wall = true
+		rays = 8
 	}
 }
 self.parts.wpn_fps_upg_a_custom_free = deep_clone(self.parts.wpn_fps_upg_a_custom)
