@@ -2,6 +2,12 @@ local old_init = WeaponTweakData.init
 function WeaponTweakData:init(tweak_data)
 old_init(self, tweak_data)
 
+local SELECTION = {
+	SECONDARY = 1,
+	PRIMARY = 2,
+	UNDERBARREL = 3
+}
+
 	--Rattlesnake Damage Buff
 	self.msr.stats.damage = 129
 
@@ -56,6 +62,18 @@ old_init(self, tweak_data)
 		-0.2,
 		0.35
 	}
+	
+	--XL 5.56 Microgun Rework
+	self.shuno.use_data.selection_index = SELECTION.SECONDARY
+	self.shuno.CLIP_AMMO_MAX = 984
+	self.shuno.AMMO_MAX = 750
+	self.shuno.AMMO_PICKUP = {10, 20}
+	self.shuno.stats.damage = 32
+	self.shuno.stats.spread = 4
+	self.shuno.stats.spread_moving = 4
+	self.shuno.stats.recoil = 12
+	self.shuno.stats.concealment = 8
+	
 	--Breaker 12G tweak
 	self.boot.stats.damage = 78
 	self.boot.stats_modifiers = {damage = 2}
