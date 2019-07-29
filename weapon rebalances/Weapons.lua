@@ -14,6 +14,11 @@ local SELECTION = {
 	--Repeater Damage Buff
 	self.winchester1874.stats.damage = 129
 	
+	--Thanatos Rework
+	self.m95.stats_modifiers = {damage = 85}
+	self.m95.AMMO_PICKUP = {0,0.39}
+	self.m95.AMMO_MAX = 5
+	
 	--Little Friend Rifle Rework
 	self.contraband.CLIP_AMMO_MAX = 30
 	self.contraband.NR_CLIPS_MAX = 4
@@ -67,7 +72,7 @@ local SELECTION = {
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
 	self.shuno.CLIP_AMMO_MAX = 984
 	self.shuno.AMMO_MAX = 750
-	self.shuno.AMMO_PICKUP = {10, 20}
+	self.shuno.AMMO_PICKUP = {12, 24}
 	self.shuno.stats.damage = 32
 	self.shuno.stats.spread = 4
 	self.shuno.stats.spread_moving = 4
