@@ -2655,8 +2655,8 @@ ToxicBulletBase = ToxicBulletBase or class(DOTBulletBase)
 ToxicBulletBase.VARIANT = "poison"
 ToxicBulletBase.DOT_DATA = {
 	hurt_animation_chance = 0,
-	dot_damage = 0.5,
+	dot_damage = 1,
 	dot_length = 15,
-	dot_tick_period = 1
+	dot_tick_period = 0.5
 }
 
