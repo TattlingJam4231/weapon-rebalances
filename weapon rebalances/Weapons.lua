@@ -31,7 +31,7 @@ old_init(self, tweak_data)
 	--Vulcan Minigun Rework
 	self.m134.AMMO_MAX = 750
 	self.m134.CLIP_AMMO_MAX = 984
-	self.m134.AMMO_PICKUP = {1.1,1.5}
+	self.m134.AMMO_PICKUP = {0.5,1.5}
 	self.m134.can_shoot_through_enemy = true
 	self.m134.can_shoot_through_shield = true
 	self.m134.stats.damage = 80
