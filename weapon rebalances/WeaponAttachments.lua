@@ -44,7 +44,7 @@ self.parts.wpn_fps_upg_a_custom = {
 	stats = {
 		value = 5,
 		total_ammo_mod = 2,
-		damage = 8
+		damage = 10
 	},
 	custom_stats = {
 		rays = 8
