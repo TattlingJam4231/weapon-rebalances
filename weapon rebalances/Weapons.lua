@@ -49,24 +49,15 @@ local SELECTION = {
 	self.m134.stats.spread = 15
 	self.m134.stats.spread_moving = 15
 	self.m134.stats.recoil = 1
+	self.m134.stats.concealment = 0
 	self.m134.kick.standing = {
 		-0.05,
 		0.2,
 		-0.2,
 		0.35
 	}
-	self.m134.kick.crouching = {
-		-0.05,
-		0.2,
-		-0.2,
-		0.35
-	}
-	self.m134.kick.steelsight = {
-		-0.05,
-		0.2,
-		-0.2,
-		0.35
-	}
+	self.m134.kick.crouching = self.m134.kick.standing
+	self.m134.kick.steelsight = self.m134.kick.standing
 	
 	--XL 5.56 Microgun Rework
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
