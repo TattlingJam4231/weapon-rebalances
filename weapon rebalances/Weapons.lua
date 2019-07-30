@@ -68,7 +68,7 @@ local SELECTION = {
 	self.shuno.stats.spread = 4
 	self.shuno.stats.spread_moving = 4
 	self.shuno.stats.recoil = 12
-	self.shuno.stats.concealment = 8
+	self.shuno.stats.concealment = 7
 	
 	--Breaker 12G tweak
 	self.boot.stats.damage = 78
