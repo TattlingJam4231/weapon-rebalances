@@ -65,8 +65,8 @@ local SELECTION = {
 	self.shuno.AMMO_MAX = 750
 	self.shuno.AMMO_PICKUP = {15, 30}
 	self.shuno.stats.damage = 32
-	self.shuno.stats.spread = 12
-	self.shuno.stats.spread_moving = 12
+	self.shuno.stats.spread = 8
+	self.shuno.stats.spread_moving = 8
 	self.shuno.stats.recoil = 12
 	self.shuno.stats.concealment = 7
 	
