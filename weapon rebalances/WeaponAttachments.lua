@@ -58,9 +58,9 @@ self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 self.parts.wpn_fps_upg_a_explosive.stats = {
 	value = 5, 
 	total_ammo_mod = -3,
-	damage = 50,
-	spread = -1,
-	moving_spread = -1
+	damage = 40,
+	spread = -3,
+	moving_spread = -3
 }
 self.parts.wpn_fps_upg_a_explosive.custom_stats = {
 	ammo_pickup_min_mul = 0.8,
