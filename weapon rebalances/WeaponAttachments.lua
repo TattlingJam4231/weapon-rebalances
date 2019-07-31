@@ -57,13 +57,13 @@ self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 -- High Explosive
 self.parts.wpn_fps_upg_a_explosive.stats = {
 	value = 5, 
-	total_ammo_mod = -3,
-	damage = 40,
+	total_ammo_mod = -5,
+	damage = 35,
 	spread = -3,
 	moving_spread = -3
 }
 self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-	ammo_pickup_min_mul = 0.8,
+	ammo_pickup_min_mul = 0.5,
 	ammo_pickup_max_mul = 0.8,
 	ignore_statistic = true,
 	damage_far_mul = 2.5,
