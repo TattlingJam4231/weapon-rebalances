@@ -58,7 +58,7 @@ self.parts.wpn_fps_upg_a_custom_free.is_a_unlockable = nil
 self.parts.wpn_fps_upg_a_explosive.stats = {
 	value = 5, 
 	total_ammo_mod = -5,
-	damage = 35,
+	damage = 25,
 	spread = -3,
 	moving_spread = -3
 }
@@ -85,7 +85,18 @@ self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 	damage_far_mul = 1.15, 
 	armor_piercing_add = 1, 
 	rays = 18,
-	bullet_class = "ToxicBulletBase"
+	bullet_class = "PoisonBulletBase",
+	dot_data = {
+		type = "poison",
+		custom_data = {
+			hurt_animation_chance = 0,
+			dot_damage = 3,
+			dot_length = 2.1,
+			dot_tick_period = 0.4,
+			scale_length = 0.8,
+			scale_damage = 1.5
+		}
+	}
 }
 
 -- Dragon's Breath
