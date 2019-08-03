@@ -2480,13 +2480,3 @@ function ProjectilesPoisonBulletBase:on_collision(col_ray, weapon_unit, user_uni
 
 	return result
 end
-
-ToxicBulletBase = ToxicBulletBase or class(DOTBulletBase)
-ToxicBulletBase.VARIANT = "poison"
-ToxicBulletBase.DOT_DATA = {
-	hurt_animation_chance = 0,
-	dot_damage = 7.5,
-	dot_length = 2.1,
-	dot_tick_period = 0.5
-}
-
