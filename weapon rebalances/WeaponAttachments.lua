@@ -73,13 +73,8 @@ self.parts.wpn_fps_upg_a_explosive.custom_stats = {
 }
 
 -- Flechette
-self.parts.wpn_fps_upg_a_piercing.stats = {
-	value = 5, 
-	total_ammo_mod = 0, 
-	damage = 0, 
-	spread = 2, 
-	moving_spread = 2
-}
+self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
+
 self.parts.wpn_fps_upg_a_piercing.custom_stats = {
 	damage_near_mul = 2, 
 	damage_far_mul = 1.15, 
