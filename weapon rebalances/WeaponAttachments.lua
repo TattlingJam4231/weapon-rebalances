@@ -7,13 +7,35 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 	end
 		
 	function WeaponFactoryTweakData:stuff_general()
-	
+		
+--override removal
+self.wpn_fps_shot_serbu.override = {}
+
+self.wpn_fps_shot_huntsman.override ={}
+
 self.wpn_fps_pis_judge.override = {
 	wpn_fps_upg_ns_shot_shark = {parent = "slide"},
 	wpn_fps_upg_ns_shot_thick = {parent = "slide"},
 	wpn_fps_upg_shot_ns_king = {parent = "slide"},
 	wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
 	wpn_fps_upg_ns_duck = {parent = "slide"}
+	}
+	
+self.wpn_fps_sho_striker.override = {
+	wpn_upg_o_marksmansight_rear_vanilla = {a_obj = "a_o_r"},
+	wpn_upg_o_marksmansight_front = {a_obj = "a_o_f"}
+	}
+
+self.wpn_fps_shot_b682.override = {}
+
+self.wpn_fps_pis_x_judge.override = {
+	wpn_fps_upg_ns_shot_shark = {parent = "slide"},
+	wpn_fps_upg_ns_shot_thick = {parent = "slide"},
+	wpn_fps_upg_shot_ns_king = {parent = "slide"},
+	wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
+	wpn_fps_upg_ns_duck = {parent = "slide"},
+	wpn_fps_pis_judge_body_standard = {animations = {}},
+	wpn_fps_pis_judge_body_modern = {animations = {}}
 	}
 
 -- Slugs
