@@ -38,6 +38,8 @@ self.wpn_fps_pis_x_judge.override = {
 	wpn_fps_pis_judge_body_modern = {animations = {}}
 	}
 
+self.wpn_fps_sho_coach.override = {}
+	
 -- Slugs
 self.parts.wpn_fps_upg_a_slug.stats = {
 	value = 5,
@@ -47,8 +49,7 @@ self.parts.wpn_fps_upg_a_slug.stats = {
 	moving_spread = 10
 }
 self.parts.wpn_fps_upg_a_slug.custom_stats = {
-	ammo_pickup_min_mul = 0.8,
-	ammo_pickup_max_mul = 1.25,
+	ammo_pickup_min_mul = 0.7,
 	damage_near_mul = 2,
 	damage_far_mul = 1.5,
 	armor_piercing_add = 1,
@@ -93,8 +94,7 @@ self.parts.wpn_fps_upg_a_explosive.stats = {
 	moving_spread = -3
 }
 self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-	ammo_pickup_min_mul = 0.8,
-	ammo_pickup_max_mul = 0.8,
+	ammo_pickup_min_mul = 0.3,
 	ignore_statistic = true,
 	damage_far_mul = 2.5,
 	damage_near_mul = 2,
@@ -131,8 +131,7 @@ self.parts.wpn_fps_upg_a_dragons_breath.stats = {
 	spread = -3
 }
 self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
-	ammo_pickup_min_mul = 0.8,
-	ammo_pickup_max_mul = 1,
+	ammo_pickup_min_mul = 0.55,
 	armor_piercing_add = 1, 
 	ignore_statistic = true,  
 	muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
