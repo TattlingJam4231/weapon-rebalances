@@ -1146,7 +1146,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._90.min_pickup,
 					ammo_pickup_max_mul = flechette._90.max_pickup,
-					dot_data = flechette._90.dot_data
+					dot_data = flechette._90.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1164,7 +1164,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._90.min_pickup,
 					ammo_pickup_max_mul = db._90.max_pickup,
-					fire_dot_data = db._90.fire_dot_data
+					fire_dot_data = db._90.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1261,7 +1261,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._90.min_pickup,
 					ammo_pickup_max_mul = flechette._90.max_pickup,
-					dot_data = flechette._90.dot_data
+					dot_data = flechette._90.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1279,7 +1279,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._90.min_pickup,
 					ammo_pickup_max_mul = db._90.max_pickup,
-					fire_dot_data = db._90.fire_dot_data
+					fire_dot_data = db._90.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1376,7 +1376,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._90.min_pickup,
 					ammo_pickup_max_mul = flechette._90.max_pickup,
-					dot_data = flechette._90.dot_data
+					dot_data = flechette._90.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1394,7 +1394,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._90.min_pickup,
 					ammo_pickup_max_mul = db._90.max_pickup,
-					fire_dot_data = db._90.fire_dot_data
+					fire_dot_data = db._90.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1493,7 +1493,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._55.min_pickup,
 					ammo_pickup_max_mul = flechette._55.max_pickup,
-					dot_data = flechette._55.dot_data
+					dot_data = flechette._55.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1511,7 +1511,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._55.min_pickup,
 					ammo_pickup_max_mul = db._55.max_pickup,
-					fire_dot_data = db._55.fire_dot_data
+					fire_dot_data = db._55.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1608,7 +1608,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._55.min_pickup,
 					ammo_pickup_max_mul = flechette._55.max_pickup,
-					dot_data = flechette._55.dot_data
+					dot_data = flechette._55.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1626,7 +1626,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._55.min_pickup,
 					ammo_pickup_max_mul = db._55.max_pickup,
-					fire_dot_data = db._55.fire_dot_data
+					fire_dot_data = db._55.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1718,7 +1718,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._55.min_pickup,
 					ammo_pickup_max_mul = flechette._55.max_pickup,
-					dot_data = flechette._55.dot_data
+					dot_data = flechette._55.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1735,7 +1735,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._55.min_pickup,
 					ammo_pickup_max_mul = db._55.max_pickup,
-					fire_dot_data = db._55.fire_dot_data
+					fire_dot_data = db._55.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1827,7 +1827,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._55.min_pickup,
 					ammo_pickup_max_mul = flechette._55.max_pickup,
-					dot_data = flechette._55.dot_data
+					dot_data = flechette._55.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1844,7 +1844,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._55.min_pickup,
 					ammo_pickup_max_mul = db._55.max_pickup,
-					fire_dot_data = db._55.fire_dot_data
+					fire_dot_data = db._55.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1938,7 +1938,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._42.min_pickup,
 					ammo_pickup_max_mul = flechette._42.max_pickup,
-					dot_data = flechette._42.dot_data
+					dot_data = flechette._42.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1955,7 +1955,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._42.min_pickup,
 					ammo_pickup_max_mul = db._42.max_pickup,
-					fire_dot_data = db._42.fire_dot_data
+					fire_dot_data = db._42.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2047,7 +2047,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._42.min_pickup,
 					ammo_pickup_max_mul = flechette._42.max_pickup,
-					dot_data = flechette._42.dot_data
+					dot_data = flechette._42.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2064,7 +2064,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._42.min_pickup,
 					ammo_pickup_max_mul = db._42.max_pickup,
-					fire_dot_data = db._42.fire_dot_data
+					fire_dot_data = db._42.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2156,7 +2156,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._42.min_pickup,
 					ammo_pickup_max_mul = flechette._42.max_pickup,
-					dot_data = flechette._42.dot_data
+					dot_data = flechette._42.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2173,7 +2173,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._42.min_pickup,
 					ammo_pickup_max_mul = db._42.max_pickup,
-					fire_dot_data = db._42.fire_dot_data
+					fire_dot_data = db._42.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2267,7 +2267,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._18.min_pickup,
 					ammo_pickup_max_mul = flechette._18.max_pickup,
-					dot_data = flechette._18.dot_data
+					dot_data = flechette._18.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2284,7 +2284,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._18.min_pickup,
 					ammo_pickup_max_mul = db._18.max_pickup,
-					fire_dot_data = db._18.fire_dot_data
+					fire_dot_data = db._18.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2383,7 +2383,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = flechette._18.min_pickup,
 					ammo_pickup_max_mul = flechette._18.max_pickup,
-					dot_data = flechette._18.dot_data
+					dot_data = flechette._18.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2400,7 +2400,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				custom_stats = {
 					ammo_pickup_min_mul = db._18.min_pickup,
 					ammo_pickup_max_mul = db._18.max_pickup,
-					fire_dot_data = db._18.fire_dot_data
+					fire_dot_data = db._18.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2410,6 +2410,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 					rays = 24
 				}
 			}
+		}
 
 		--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------
 		
