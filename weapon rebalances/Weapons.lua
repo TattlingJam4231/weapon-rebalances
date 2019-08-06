@@ -2,11 +2,11 @@ local old_init = WeaponTweakData.init
 function WeaponTweakData:init(tweak_data)
 old_init(self, tweak_data)
 
-local SELECTION = {
-	SECONDARY = 1,
-	PRIMARY = 2,
-	UNDERBARREL = 3
-}
+	local SELECTION = {
+		SECONDARY = 1,
+		PRIMARY = 2,
+		UNDERBARREL = 3
+	}
 
 	self.stats.damage = {
 			0.1,
@@ -308,7 +308,107 @@ local SELECTION = {
 			29.7,
 			29.8,
 			29.9,
-			30
+			30,
+			30.1,
+			30.2,
+			30.3,
+			30.4,
+			30.5,
+			30.6,
+			30.7,
+			30.8,
+			30.9,
+			31,
+			31.1,
+			31.2,
+			31.3,
+			31.4,
+			31.5,
+			31.6,
+			31.7,
+			31.8,
+			31.9,
+			32,
+			32.1,
+			32.2,
+			32.3,
+			32.4,
+			32.5,
+			32.6,
+			32.7,
+			32.8,
+			32.9,
+			33,
+			33.1,
+			33.2,
+			33.3,
+			33.4,
+			33.5,
+			33.6,
+			33.7,
+			33.8,
+			33.9,
+			34,
+			34.1,
+			34.2,
+			34.3,
+			34.4,
+			34.5,
+			34.6,
+			34.7,
+			34.8,
+			34.9,
+			35,
+			35.1,
+			35.2,
+			35.3,
+			35.4,
+			35.5,
+			35.6,
+			35.7,
+			35.8,
+			35.9,
+			36,
+			36.1,
+			36.2,
+			36.3,
+			36.4,
+			36.5,
+			36.6,
+			36.7,
+			36.8,
+			36.9,
+			37,
+			37.1,
+			37.2,
+			37.3,
+			37.4,
+			37.5,
+			37.6,
+			37.7,
+			37.8,
+			37.9,
+			38,
+			38.1,
+			38.2,
+			38.3,
+			38.4,
+			38.5,
+			38.6,
+			38.7,
+			38.8,
+			38.9,
+			39,
+			39.1,
+			39.2,
+			39.3,
+			39.4,
+			39.5,
+			39.6,
+			39.7,
+			39.8,
+			39.9,
+			40
 		}
 
 	--Rattlesnake Damage Buff
@@ -372,4 +472,99 @@ local SELECTION = {
 	self.shuno.stats.spread_moving = 8
 	self.shuno.stats.recoil = 12
 	self.shuno.stats.concealment = 7
+	
+	--155 damage shotguns---------------------------------------------------------------
+
+	--mosconi
+	self.huntsman.AMMO_PICKUP = {0.3,1.11}
+	
+	--joceline
+	self.b682.AMMO_PICKUP = {0.3,1.11}
+	
+	--breaker
+	self.boot.AMMO_PICKUP = {0.3,1.11}
+	
+	--akimbo judge
+	self.x_judge.AMMO_PICKUP = {0.3,1.11}
+	
+	--judge
+	self.judge.AMMO_PICKUP = {0.3,1.11}
+	self.judge.fire_mode_data.fire_rate = 0.166
+	self.judge.single.fire_rate = 0.166
+	
+	--gsps
+	self.m37.AMMO_PICKUP = {0.3,1.11}
+	
+	--claire
+	self.coach.AMMO_PICKUP = {0.3,1.11}
+	
+	--55 damage shotguns----------------------------------------------------------------
+	
+	--predator
+	self.spas12.AMMO_PICKUP = {3.19,4.96}
+	
+	--m1014
+	self.benelli.AMMO_PICKUP = {3.19,4.96}
+	
+	--akimbo goliath
+	self.x_rota.has_magazine = false
+	self.x_rota.AMMO_PICKUP = {3.19,4.96}
+	self.x_rota.stats.damage = 55
+	
+	--goliath
+	self.rota.has_magazine = false
+	self.rota.AMMO_PICKUP = {3.19,4.96}
+	self.rota.stats.damage = 55
+	
+	--42 damage shotguns----------------------------------------------------------------
+	
+	--izhma
+	self.saiga.AMMO_PICKUP = {3.48,5.41}
+	
+	--steakout
+	self.aa12.AMMO_PICKUP = {3.48,5.41}
+	
+	--street sweeper
+	self.striker.AMMO_PICKUP = {3.48,5.41}
+	
+	--18 damage shotguns----------------------------------------------------------------
+	
+	--brothers grimm
+	self.x_basset.AMMO_PICKUP = {5.19,7.78}
+	
+	--grimm
+	self.basset.AMMO_PICKUP = {5.19,7.78}
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
