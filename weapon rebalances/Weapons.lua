@@ -473,98 +473,74 @@ old_init(self, tweak_data)
 	self.shuno.stats.recoil = 12
 	self.shuno.stats.concealment = 7
 	
+	--shotgun ammo pickup
+	local pickup = {
+		_155 = {0.3,1.11},
+		_90 = nil,
+		_55 = {3.19,4.96},
+		_42 = {3.48,5.41},
+		_18 = {5.19,7.78}
+	}
+	
 	--155 damage shotguns---------------------------------------------------------------
-
+	
 	--mosconi
-	self.huntsman.AMMO_PICKUP = {0.3,1.11}
+	self.huntsman.AMMO_PICKUP = pickup._155
 	
 	--joceline
-	self.b682.AMMO_PICKUP = {0.3,1.11}
+	self.b682.AMMO_PICKUP = pickup._155
 	
 	--breaker
-	self.boot.AMMO_PICKUP = {0.3,1.11}
+	self.boot.AMMO_PICKUP = pickup._155
 	
 	--akimbo judge
-	self.x_judge.AMMO_PICKUP = {0.3,1.11}
+	self.x_judge.AMMO_PICKUP = pickup._155
 	
 	--judge
-	self.judge.AMMO_PICKUP = {0.3,1.11}
+	self.judge.AMMO_PICKUP = pickup._155
 	self.judge.fire_mode_data.fire_rate = 0.166
 	self.judge.single.fire_rate = 0.166
 	
 	--gsps
-	self.m37.AMMO_PICKUP = {0.3,1.11}
+	self.m37.AMMO_PICKUP = pickup._155
 	
 	--claire
-	self.coach.AMMO_PICKUP = {0.3,1.11}
+	self.coach.AMMO_PICKUP = pickup._155
 	
 	--55 damage shotguns----------------------------------------------------------------
 	
 	--predator
-	self.spas12.AMMO_PICKUP = {3.19,4.96}
+	self.spas12.AMMO_PICKUP = pickup._55
 	
 	--m1014
-	self.benelli.AMMO_PICKUP = {3.19,4.96}
+	self.benelli.AMMO_PICKUP = pickup._55
 	
 	--akimbo goliath
 	self.x_rota.has_magazine = false
-	self.x_rota.AMMO_PICKUP = {3.19,4.96}
+	self.x_rota.AMMO_PICKUP = pickup._55
 	self.x_rota.stats.damage = 55
 	
 	--goliath
 	self.rota.has_magazine = false
-	self.rota.AMMO_PICKUP = {3.19,4.96}
+	self.rota.AMMO_PICKUP = pickup._55
 	self.rota.stats.damage = 55
 	
 	--42 damage shotguns----------------------------------------------------------------
 	
 	--izhma
-	self.saiga.AMMO_PICKUP = {3.48,5.41}
+	self.saiga.AMMO_PICKUP = pickup._42
 	
 	--steakout
-	self.aa12.AMMO_PICKUP = {3.48,5.41}
+	self.aa12.AMMO_PICKUP = pickup._42
 	
 	--street sweeper
-	self.striker.AMMO_PICKUP = {3.48,5.41}
+	self.striker.AMMO_PICKUP = pickup._42
 	
 	--18 damage shotguns----------------------------------------------------------------
 	
 	--brothers grimm
-	self.x_basset.AMMO_PICKUP = {5.19,7.78}
+	self.x_basset.AMMO_PICKUP = pickup._18
 	
 	--grimm
-	self.basset.AMMO_PICKUP = {5.19,7.78}
+	self.basset.AMMO_PICKUP = pickup._18
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
