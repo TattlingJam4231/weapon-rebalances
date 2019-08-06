@@ -12,46 +12,46 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 
 		local slug = {
 			_155 = {
-				dmg = 50,
+				dmg = 55,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_90 = {
-				dmg = 50,
+				dmg = 38,
 				acc = 10,
-				min_pickup = 0.7,
+				min_pickup = nil,
 				max_pickup = nil
 			},
 			_55 = {
-				dmg = 50,
+				dmg = 30,
 				acc = 10,
-				min_pickup = 0.7,
+				min_pickup = nil,
 				max_pickup = nil
 			},
 			_42 = {
-				dmg = 50,
+				dmg = 25,
 				acc = 10,
-				min_pickup = 0.7,
+				min_pickup = nil,
 				max_pickup = nil
 			},
 			_18 = {
-				dmg = 50,
+				dmg = 15,
 				acc = 10,
-				min_pickup = 0.7,
+				min_pickup = nil,
 				max_pickup = nil
 			}
 		}
 		
 		local buckshot = {
 			_155 = {
-				dmg = 20,
+				dmg = 35,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_90 = {
-				dmg = 20,
+				dmg = 25,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
@@ -63,13 +63,13 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				max_pickup = nil
 			},
 			_42 = {
-				dmg = 20,
+				dmg = 17,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_18 = {
-				dmg = 20,
+				dmg = 10,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
@@ -78,34 +78,34 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 		
 		local he = {
 			_155 = {
-				dmg = nil,
+				dmg = 9,
 				acc = -3,
-				min_pickup = 0.3,
-				max_pickup = nil
+				min_pickup = nil,
+				max_pickup = 0.63
 			},
 			_90 = {
 				dmg = nil,
 				acc = -3,
-				min_pickup = 0.3,
-				max_pickup = nil
+				min_pickup = 0.675,
+				max_pickup = 0.675
 			},
 			_55 = {
 				dmg = nil,
 				acc = -3,
-				min_pickup = 0.3,
-				max_pickup = nil
+				min_pickup = 0.675,
+				max_pickup = 0.675
 			},
 			_42 = {
 				dmg = nil,
 				acc = -3,
-				min_pickup = 0.3,
-				max_pickup = nil
+				min_pickup = 0.675,
+				max_pickup = 0.675
 			},
 			_18 = {
 				dmg = nil,
 				acc = -3,
-				min_pickup = 0.3,
-				max_pickup = nil
+				min_pickup = 0.675,
+				max_pickup = 0.675
 			}
 		}
 		
