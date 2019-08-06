@@ -8,7 +8,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 		
 	function WeaponFactoryTweakData:attachments()
 		
-		--OVERRRIDES---------------------------------------------------------------------------------------------------------------------
+		--OVERRIDES---------------------------------------------------------------------------------------------------------------------
 
 		local slug = {
 			_155 = {
