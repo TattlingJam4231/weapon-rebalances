@@ -14,7 +14,14 @@ function DOTManager:update(t, dt)
 
 		if t > dot_info.dot_damage_received_time + self._dot_grace_period and dot_info.dot_counter >= tickrate then
 			self:_damage_dot(dot_info)
-
+			
+			if dot_info.scale_damage then
+				dot_info.dot_damage = dot_info.dot_damage - (dot_info.scale_damage / 3)
+				if dot_info.dot_damage <= 0 then
+					dot_info.dot_length = 0
+				end
+			end
+			
 			dot_info.dot_counter = 0
 		end
 
