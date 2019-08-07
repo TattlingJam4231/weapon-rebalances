@@ -139,7 +139,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 						dot_damage = 6,
 						dot_length = 2.1,
 						dot_tick_period = 0.4,
-						scale_length = 0.8,
+						scale_length = 10,
 						scale_damage = 4.5
 					}
 				}
@@ -156,7 +156,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 						dot_damage = 3,
 						dot_length = 2.1,
 						dot_tick_period = 0.4,
-						scale_length = 0.8,
+						scale_length = 10,
 						scale_damage = 1.5
 					}
 				}
@@ -173,7 +173,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 						dot_damage = 3,
 						dot_length = 2.1,
 						dot_tick_period = 0.4,
-						scale_length = 0.8,
+						scale_length = 10,
 						scale_damage = 1.5
 					}
 				}
@@ -190,7 +190,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 						dot_damage = 3,
 						dot_length = 2.1,
 						dot_tick_period = 0.4,
-						scale_length = 0.8,
+						scale_length = 10,
 						scale_damage = 1.5
 					}
 				}
