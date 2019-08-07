@@ -51,7 +51,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				max_pickup = nil
 			},
 			_90 = {
-				dmg = 25,
+				dmg = 30,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
