@@ -111,8 +111,8 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 		
 		local flechette = {
 			_155 = {
-				dmg = nil,
-				acc = nil,
+				dmg = -103,
+				acc = -1,
 				min_pickup = nil,
 				max_pickup = nil,
 				dot_data = {
@@ -128,8 +128,8 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				}
 			},
 			_90 = {
-				dmg = nil,
-				acc = nil,
+				dmg = -60,
+				acc = -1,
 				min_pickup = nil,
 				max_pickup = nil,
 				dot_data = {
@@ -145,8 +145,8 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				}
 			},
 			_55 = {
-				dmg = nil,
-				acc = nil,
+				dmg = -37,
+				acc = -1,
 				min_pickup = nil,
 				max_pickup = nil,
 				dot_data = {
@@ -162,8 +162,8 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				}
 			},
 			_42 = {
-				dmg = nil,
-				acc = nil,
+				dmg = -28,
+				acc = -1,
 				min_pickup = nil,
 				max_pickup = nil,
 				dot_data = {
@@ -179,8 +179,8 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				}
 			},
 			_18 = {
-				dmg = nil,
-				acc = nil,
+				dmg = -12,
+				acc = -1,
 				min_pickup = nil,
 				max_pickup = nil,
 				dot_data = {
