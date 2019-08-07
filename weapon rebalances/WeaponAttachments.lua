@@ -12,31 +12,31 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 
 		local slug = {
 			_155 = {
-				dmg = 55,
+				dmg = 74,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_90 = {
-				dmg = 38,
+				dmg = 61,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_55 = {
-				dmg = 30,
+				dmg = 32,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_42 = {
-				dmg = 25,
+				dmg = 30,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
 			},
 			_18 = {
-				dmg = 15,
+				dmg = 20,
 				acc = 10,
 				min_pickup = nil,
 				max_pickup = nil
@@ -45,7 +45,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 		
 		local buckshot = {
 			_155 = {
-				dmg = 35,
+				dmg = 48,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
@@ -69,7 +69,7 @@ if RequiredScript == "lib/tweak_data/weaponfactorytweakdata" then
 				max_pickup = nil
 			},
 			_18 = {
-				dmg = 10,
+				dmg = 13,
 				acc = nil,
 				min_pickup = nil,
 				max_pickup = nil
