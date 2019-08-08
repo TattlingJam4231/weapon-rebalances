@@ -1,25 +1,31 @@
-DOTManager = DOTManager or class()
-local tmp_vec3 = Vector3()
-
-function DOTManager:init()
-	self._doted_enemies = {}
-	self._dot_grace_period = 0
-end
+-- 	dot variables
+--		hurt_animation_chance: chance for animation on proc
+--		dot_damage: damage delt per tick
+--		dot_length: duration of dot
+--		dot_tick_period: time between each damage tick
+--		scale_length: time added each hit on a doted enemy(overrides default dot length refresh)
+--		scale_damage: damage added each hit on a doted enemy
+--		dot_decay: damage lost per decay tick
+--		dot_decay_rate: number of damage ticks per decay tick
+--		dot_decay variables override both default dot lenght refresh and scale_length
 
 function DOTManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
 		
 		local tickrate = dot_info.dot_tick_period or 0.5
-
-		if t > dot_info.dot_damage_received_time + self._dot_grace_period and dot_info.dot_counter >= tickrate then
+		
+		dot_info.decay_counter = dot_info.decay_counter or 0
+		
+		if t > dot_info.dot_damage_received_time and dot_info.dot_counter >= tickrate then
 			self:_damage_dot(dot_info)
 			
-			if dot_info.scale_damage then
-				dot_info.dot_damage = dot_info.dot_damage - (dot_info.scale_damage / 3)
-				if dot_info.dot_damage <= 0 then
-					dot_info.dot_length = 0
-				end
+			dot_info.decay_counter = dot_info.decay_counter + 1
+			
+			if dot_info.dot_decay and dot_info.decay_counter == dot_info.dot_decay_rate then
+				dot_info.dot_damage = dot_info.dot_damage - dot_info.dot_decay
+				
+				dot_info.decay_counter = 0
 			end
 			
 			dot_info.dot_counter = 0
@@ -33,33 +39,35 @@ function DOTManager:update(t, dt)
 	end
 end
 
-function DOTManager:add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, hurt_animation, variant, weapon_id)
-	local dot_info = self:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, hurt_animation, variant, weapon_id)
+function DOTManager:add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, dot_decay, dot_decay_rate, hurt_animation, variant, weapon_id)
+	local dot_info = self:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, dot_decay, dot_decay_rate, hurt_animation, variant, weapon_id)
 end
 
-function DOTManager:sync_add_dot_damage(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage)
+function DOTManager:sync_add_dot_damage(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, dot_decay, dot_decay_rate)
 	if enemy_unit then
 		local t = TimerManager:game():time()
 
-		self:_add_doted_enemy(enemy_unit, t, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage)
+		self:_add_doted_enemy(enemy_unit, t, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, dot_decay, dot_decay_rate)
 	end
 end
 
-function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, hurt_animation, variant, weapon_id)
+function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapon_unit, dot_length, dot_damage, dot_tick_period, scale_length, scale_damage, dot_decay, dot_decay_rate, hurt_animation, variant, weapon_id)
 	local contains = false
 
 	if self._doted_enemies then
 		for _, dot_info in ipairs(self._doted_enemies) do
 			if dot_info.enemy_unit == enemy_unit then
-				if dot_info.scale_length then
+				if dot_info.scale_damage then
+					dot_info.dot_damage = dot_info.dot_damage + scale_damage
+				end
+				
+				if dot_info.dot_decay and dot_info.dot_decay_rate then
+					dot_info.dot_length = ((dot_info.dot_damage / dot_info.dot_decay) * dot_info.dot_decay_rate * dot_info.dot_tick_period) + 0.1
+				elseif dot_info.scale_length then
 					dot_info.dot_length = dot_info.dot_length + scale_length
 				elseif dot_info.dot_damage_received_time + dot_info.dot_length < dot_damage_received_time + dot_length then
 					dot_info.dot_damage_received_time = dot_damage_received_time
 					dot_info.dot_length = dot_length
-				end
-
-				if dot_info.scale_damage then
-					dot_info.dot_damage = dot_info.dot_damage + scale_damage
 				end
 				
 				dot_info.hurt_animation = dot_info.hurt_animation or hurt_animation
@@ -78,46 +86,18 @@ function DOTManager:_add_doted_enemy(enemy_unit, dot_damage_received_time, weapo
 				dot_tick_period = dot_tick_period,
 				scale_length = scale_length,
 				scale_damage = scale_damage,
+				dot_decay = dot_decay,
+				dot_decay_rate = dot_decay_rate,
 				hurt_animation = hurt_animation,
 				variant = variant,
 				weapon_id = weapon_id
 			}
+			if dot_info.dot_decay and dot_info.dot_decay_rate then
+					dot_info.dot_length = ((dot_info.dot_damage / dot_info.dot_decay) * dot_info.dot_decay_rate * dot_info.dot_tick_period) + 0.1
+			end
 
 			table.insert(self._doted_enemies, dot_info)
 			self:check_achievemnts(enemy_unit, dot_damage_received_time)
-		end
-	end
-end
-
-function DOTManager:check_achievemnts(unit, t)
-	if not unit and not alive(unit) then
-		return
-	end
-
-	if not unit:base() or not unit:base()._tweak_table then
-		return
-	end
-
-	if CopDamage.is_civilian(unit:base()._tweak_table) then
-		return
-	end
-
-	local dotted_enemies_by_variant = {}
-
-	for _, data in ipairs(self._doted_enemies) do
-		dotted_enemies_by_variant[data.variant] = dotted_enemies_by_variant[data.variant] or {}
-
-		table.insert(dotted_enemies_by_variant[data.variant], data)
-	end
-
-	local variant_count_pass, all_pass = nil
-
-	for achievement, achievement_data in pairs(tweak_data.achievement.dot_achievements) do
-		variant_count_pass = not achievement_data.count or achievement_data.variant and dotted_enemies_by_variant[achievement_data.variant] and achievement_data.count <= #dotted_enemies_by_variant[achievement_data.variant]
-		all_pass = variant_count_pass
-
-		if all_pass and not managers.achievment:award_data(achievement_data) then
-			Application:debug("[DOTManager] dot_achievements:", achievement)
 		end
 	end
 end
@@ -145,13 +125,11 @@ function DOTManager:create_dot_data(type, custom_data)
 		dot_data.dot_length = custom_data.dot_length or dot_data.dot_length
 		dot_data.hurt_animation_chance = custom_data.hurt_animation_chance or dot_data.hurt_animation_chance
 		dot_data.dot_tick_period = custom_data.dot_tick_period or dot_data.dot_tick_period
-		dot_data.scale_length = custom_data.scale_length or false
-		dot_data.scale_damage = custom_data.scale_damage or false
+		dot_data.scale_length = custom_data.scale_length or nil
+		dot_data.scale_damage = custom_data.scale_damage or nil
+		dot_data.dot_decay = custom_data.dot_decay or nil
+		dot_data.dot_decay_rate = custom_data.dot_decay_rate or nil
 	end
 
 	return dot_data
-end
-
-function DOTManager:on_simulation_ended()
-	self._doted_enemies = {}
 end

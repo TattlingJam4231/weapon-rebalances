@@ -1,6 +1,6 @@
-local old_init = WeaponTweakData.init
+local original_init = WeaponTweakData.init
 function WeaponTweakData:init(tweak_data)
-old_init(self, tweak_data)
+original_init(self, tweak_data)
 
 	local SELECTION = {
 		SECONDARY = 1,
@@ -475,11 +475,11 @@ old_init(self, tweak_data)
 	
 	--shotgun ammo pickup
 	local pickup = {
-		_155 = {0.3,1.11},
-		_90 = nil,
-		_55 = {3.19,4.96},
+		_155 = {0.296,1.11},
+		_90 = {0.37,1.48},
+		_55 = {3.185,4.96},
 		_42 = {3.48,5.41},
-		_18 = {5.19,7.78}
+		_18 = {5.185,7.78}
 	}
 	
 	--155 damage shotguns---------------------------------------------------------------
@@ -506,6 +506,17 @@ old_init(self, tweak_data)
 	
 	--claire
 	self.coach.AMMO_PICKUP = pickup._155
+	
+	--90 damage shotguns----------------------------------------------------------------
+	
+	--raven
+	self.ksg.AMMO_PICKUP = pickup._90
+	
+	--reinfeld
+	self.r870.AMMO_PICKUP = pickup._90
+	
+	--locomotive
+	self.serbu.AMMO_PICKUP = pickup._90
 	
 	--55 damage shotguns----------------------------------------------------------------
 	
