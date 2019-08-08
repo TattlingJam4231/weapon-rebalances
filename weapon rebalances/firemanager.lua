@@ -13,7 +13,7 @@ function FireManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
 
-		local tickrate = dot_info.dot_tick_period or 0.5
+		local tickrate = 0.5
 		
 		if t > dot_info.fire_damage_received_time and dot_info.fire_dot_counter >= tickrate then
 			self:_damage_fire_dot(dot_info)
