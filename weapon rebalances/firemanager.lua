@@ -15,18 +15,8 @@ function FireManager:update(t, dt)
 
 		local tickrate = dot_info.dot_tick_period or 0.5
 		
-		dot_info.decay_counter = dot_info.decay_counter or 0
-		
 		if t > dot_info.fire_damage_received_time and dot_info.fire_dot_counter >= tickrate then
 			self:_damage_fire_dot(dot_info)
-			
-			dot_info.decay_counter = dot_info.decay_counter + 1
-			
-			if dot_info.dot_decay and dot_info.decay_counter == dot_info.dot_decay_rate then
-				dot_info.dot_damage = dot_info.dot_damage - dot_info.dot_decay
-				
-				dot_info.decay_counter = 0
-			end
 
 			dot_info.fire_dot_counter = 0
 		end
@@ -57,18 +47,8 @@ function FireManager:_add_doted_enemy(enemy_unit, fire_damage_received_time, wea
 	if self._doted_enemies then
 		for _, dot_info in ipairs(self._doted_enemies) do
 			if dot_info.enemy_unit == enemy_unit then
-				if dot_info.scale_damage then
-					dot_info.dot_damage = dot_info.dot_damage + scale_damage
-				end
-				
-				if dot_info.dot_decay and dot_info.dot_decay_rate then
-					dot_info.dot_length = ((dot_info.dot_damage / dot_info.dot_decay) * dot_info.dot_decay_rate * dot_info.dot_tick_period) + 0.1
-				elseif dot_info.scale_length then
-					dot_info.dot_length = dot_info.dot_length + scale_length
-				elseif dot_info.fire_damage_received_time + dot_info.dot_length < fire_damage_received_time + dot_length then
-					dot_info.fire_damage_received_time = fire_damage_received_time
-					dot_info.dot_length = dot_length
-				end
+				dot_info.fire_damage_received_time = fire_damage_received_time
+				dot_info.dot_length = dot_length
 				
 				contains = true
 			end
