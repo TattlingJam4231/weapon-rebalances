@@ -199,10 +199,10 @@ function WeaponFactoryTweakData:init()
 			min_pickup = 0.55,
 			max_pickup = nil,
 			fire_dot_data = {
-				dot_trigger_chance = "100",
-				dot_damage = "7", 
-				dot_length = "3.1", 
-				dot_trigger_max_distance = "3000", 
+				dot_trigger_chance = 100,
+				dot_damage = 7, 
+				dot_length = 3.1, 
+				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
 		},
@@ -212,10 +212,10 @@ function WeaponFactoryTweakData:init()
 			min_pickup = 0.55,
 			max_pickup = nil,
 			fire_dot_data = {
-				dot_trigger_chance = "100",
-				dot_damage = "70", 
+				dot_trigger_chance = 100,
+				dot_damage = 7, 
 				dot_length = "2.6", 
-				dot_trigger_max_distance = "3000", 
+				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
 		},
@@ -225,10 +225,10 @@ function WeaponFactoryTweakData:init()
 			min_pickup = 0.55,
 			max_pickup = nil,
 			fire_dot_data = {
-				dot_trigger_chance = "100",
-				dot_damage = "7", 
-				dot_length = "2.1", 
-				dot_trigger_max_distance = "3000", 
+				dot_trigger_chance = 100,
+				dot_damage = 7, 
+				dot_length = 2.1, 
+				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
 		},
@@ -238,10 +238,10 @@ function WeaponFactoryTweakData:init()
 			min_pickup = 0.55,
 			max_pickup = nil,
 			fire_dot_data = {
-				dot_trigger_chance = "100",
-				dot_damage = "6", 
-				dot_length = "2.1", 
-				dot_trigger_max_distance = "3000", 
+				dot_trigger_chance = 100,
+				dot_damage = 6, 
+				dot_length = 2.1, 
+				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
 		},
