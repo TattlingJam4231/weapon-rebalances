@@ -180,7 +180,7 @@ function CopDamage:damage_fire(attack_data)
 		local start_dot_dance_antimation = false
 
 		if flammable and not attack_data.is_fire_dot_damage and distance < fire_dot_max_distance and start_dot_damage_roll <= fire_dot_trigger_chance then
-			managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), attack_data.weapon_unit, fire_dot_data.dot_length, fire_dot_data.dot_damage, fire_dot_data.dot_tick_period, attack_data.attacker_unit, attack_data.is_molotov)
+			managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), attack_data.weapon_unit, fire_dot_data.dot_length, fire_dot_data.dot_damage, fire_dot_data.dot_tick_period, fire_dot_data.scale_length, fire_dot_data.scale_damage, fire_dot_data.dot_decay, fire_dot_data.dot_decay_rate, attack_data.attacker_unit, attack_data.is_molotov)
 
 			start_dot_dance_antimation = true
 		end
