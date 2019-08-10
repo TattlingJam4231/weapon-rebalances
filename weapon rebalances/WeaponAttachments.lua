@@ -131,7 +131,7 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 6,
+					dot_damage = 60,
 					dot_tick_period = 0.4,
 					scale_damage = 4.5,
 					dot_decay = 0.5,
@@ -214,7 +214,7 @@ function WeaponFactoryTweakData:init()
 			fire_dot_data = {
 				dot_trigger_chance = 100,
 				dot_damage = 7, 
-				dot_length = "2.6", 
+				dot_length = 2.6, 
 				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
@@ -1633,15 +1633,16 @@ function WeaponFactoryTweakData:init()
 		}
 	}
 	
-	--akimbo goliath
-	self.wpn_fps_sho_x_rota.override = {
+	--street sweeper
+	self.wpn_fps_sho_striker.override = {
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 5,
 				total_ammo_mod = 0,
 				damage = slug._55.dmg,
 				spread = slug._55.acc,
-				moving_spread = slug._55.acc
+				moving_spread = slug._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = slug._55.min_pickup,
@@ -1652,7 +1653,7 @@ function WeaponFactoryTweakData:init()
 				can_shoot_through_shield = true,
 				can_shoot_through_wall = true,
 				can_shoot_through_enemy = true,
-				rays = 1
+				rays = 2
 			}
 		},
 		wpn_fps_upg_a_custom = {
@@ -1661,7 +1662,8 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = 2,
 				damage = buckshot._55.dmg,
 				spread = buckshot._55.acc,
-				moving_spread = buckshot._55.acc
+				moving_spread = buckshot._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = buckshot._55.min_pickup,
@@ -1676,7 +1678,8 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = 2,
 				damage = buckshot._55.dmg,
 				spread = buckshot._55.acc,
-				moving_spread = buckshot._55.acc
+				moving_spread = buckshot._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = buckshot._55.min_pickup,
@@ -1691,7 +1694,8 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = -5,
 				damage = he._55.dmg,
 				spread = he._55.acc,
-				moving_spread = he._55.acc
+				moving_spread = he._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = he._55.min_pickup,
@@ -1708,7 +1712,8 @@ function WeaponFactoryTweakData:init()
 				value = 5,
 				damage = flechette._55.dmg,
 				spread = flechette._55.acc,
-				moving_spread = flechette._55.acc
+				moving_spread = flechette._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = flechette._55.min_pickup,
@@ -1725,116 +1730,8 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = 0, 
 				damage = db._55.dmg,
 				spread = db._55.acc,
-				moving_spread = db._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = db._55.min_pickup,
-				ammo_pickup_max_mul = db._55.max_pickup,
-				fire_dot_data = db._55.fire_dot_data,
-				armor_piercing_add = 1, 
-				ignore_statistic = true,  
-				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-				damage_far_mul = 0.7,
-				can_shoot_through_shield = true, 
-				bullet_class = "FlameBulletBase",
-				rays = 24
-			}
-		}
-	}
-	
-	--goliath
-	self.wpn_fps_sho_rota.override = {
-		wpn_fps_upg_a_slug = {
-			stats = {
-				value = 5,
-				total_ammo_mod = 0,
-				damage = slug._55.dmg,
-				spread = slug._55.acc,
-				moving_spread = slug._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = slug._55.min_pickup,
-				ammo_pickup_max_mul = slug._55.max_pickup,
-				damage_near_mul = 2,
-				damage_far_mul = 1.5,
-				armor_piercing_add = 1,
-				can_shoot_through_shield = true,
-				can_shoot_through_wall = true,
-				can_shoot_through_enemy = true,
-				rays = 1
-			}
-		},
-		wpn_fps_upg_a_custom = {
-			stats = {
-				value = 5,
-				total_ammo_mod = 2,
-				damage = buckshot._55.dmg,
-				spread = buckshot._55.acc,
-				moving_spread = buckshot._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = buckshot._55.min_pickup,
-				ammo_pickup_max_mul = buckshot._55.max_pickup,
-				can_shoot_through_enemy = true,
-				rays = 9
-			}
-		},
-		wpn_fps_upg_a_custom_free = {
-			stats = {
-				value = 5,
-				total_ammo_mod = 2,
-				damage = buckshot._55.dmg,
-				spread = buckshot._55.acc,
-				moving_spread = buckshot._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = buckshot._55.min_pickup,
-				ammo_pickup_max_mul = buckshot._55.max_pickup,
-				can_shoot_through_enemy = true,
-				rays = 9
-			}
-		},
-		wpn_fps_upg_a_explosive = {
-			stats = {
-				value = 5, 
-				total_ammo_mod = -5,
-				damage = he._55.dmg,
-				spread = he._55.acc,
-				moving_spread = he._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = he._55.min_pickup,
-				ammo_pickup_max_mul = he._55.max_pickup,
-				ignore_statistic = true,
-				damage_far_mul = 2.5,
-				damage_near_mul = 2,
-				rays = 3, 
-				bullet_class = "InstantExplosiveBulletBase"
-			}
-		},
-		wpn_fps_upg_a_piercing = {
-			stats = {
-				value = 5,
-				damage = flechette._55.dmg,
-				spread = flechette._55.acc,
-				moving_spread = flechette._55.acc
-			},
-			custom_stats = {
-				ammo_pickup_min_mul = flechette._55.min_pickup,
-				ammo_pickup_max_mul = flechette._55.max_pickup,
-				dot_data = flechette._55.dot_data,
-				armor_piercing_add = 1, 
-				rays = 16,
-				bullet_class = "PoisonBulletBase"
-			}
-		},
-		wpn_fps_upg_a_dragons_breath = {
-			stats = {
-				value = 5, 
-				total_ammo_mod = 0, 
-				damage = db._55.dmg,
-				spread = db._55.acc,
-				moving_spread = db._55.acc
+				moving_spread = db._55.acc,
+				reload = 2
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = db._55.min_pickup,
@@ -2071,8 +1968,8 @@ function WeaponFactoryTweakData:init()
 		}
 	}
 	
-	--street sweeper
-	self.wpn_fps_sho_striker.override = {
+	--akimbo goliath
+	self.wpn_fps_sho_x_rota.override = {
 		wpn_fps_upg_a_slug = {
 			stats = {
 				value = 5,
@@ -2099,7 +1996,7 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = 2,
 				damage = buckshot._42.dmg,
 				spread = buckshot._42.acc,
-				moving_spread = buckshot._42.acc
+				moving_spread = buckshot._55.acc
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = buckshot._42.min_pickup,
@@ -2114,7 +2011,7 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = 2,
 				damage = buckshot._42.dmg,
 				spread = buckshot._42.acc,
-				moving_spread = buckshot._42.acc
+				moving_spread = buckshot._55.acc
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = buckshot._42.min_pickup,
@@ -2129,7 +2026,116 @@ function WeaponFactoryTweakData:init()
 				total_ammo_mod = -5,
 				damage = he._42.dmg,
 				spread = he._42.acc,
-				moving_spread = he._42.acc
+				moving_spread = he._55.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = he._42.min_pickup,
+				ammo_pickup_max_mul = he._42.max_pickup,
+				ignore_statistic = true,
+				damage_far_mul = 2.5,
+				damage_near_mul = 2,
+				rays = 3, 
+				bullet_class = "InstantExplosiveBulletBase"
+			}
+		},
+		wpn_fps_upg_a_piercing = {
+			stats = {
+				value = 5,
+				damage = flechette._42.dmg,
+				spread = flechette._42.acc,
+				moving_spread = flechette._42.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = flechette._42.min_pickup,
+				ammo_pickup_max_mul = flechette._42.max_pickup,
+				dot_data = flechette._42.dot_data,
+				armor_piercing_add = 1, 
+				rays = 16,
+				bullet_class = "PoisonBulletBase"
+			}
+		},
+		wpn_fps_upg_a_dragons_breath = {
+			stats = {
+				value = 5, 
+				total_ammo_mod = 0, 
+				damage = db._42.dmg,
+				spread = db._42.acc,
+				moving_spread = db._42.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = db._42.min_pickup,
+				ammo_pickup_max_mul = db._42.max_pickup,
+				fire_dot_data = db._42.fire_dot_data,
+				armor_piercing_add = 1, 
+				ignore_statistic = true,  
+				muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+				damage_far_mul = 0.7,
+				can_shoot_through_shield = true, 
+				bullet_class = "FlameBulletBase",
+				rays = 24
+			}
+		}
+	}
+	
+	--goliath
+	self.wpn_fps_sho_rota.override = {
+		wpn_fps_upg_a_slug = {
+			stats = {
+				value = 5,
+				total_ammo_mod = 0,
+				damage = slug._42.dmg,
+				spread = slug._42.acc,
+				moving_spread = slug._42.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = slug._42.min_pickup,
+				ammo_pickup_max_mul = slug._42.max_pickup,
+				damage_near_mul = 2,
+				damage_far_mul = 1.5,
+				armor_piercing_add = 1,
+				can_shoot_through_shield = true,
+				can_shoot_through_wall = true,
+				can_shoot_through_enemy = true,
+				rays = 1
+			}
+		},
+		wpn_fps_upg_a_custom = {
+			stats = {
+				value = 5,
+				total_ammo_mod = 2,
+				damage = buckshot._42.dmg,
+				spread = buckshot._42.acc,
+				moving_spread = buckshot._55.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = buckshot._42.min_pickup,
+				ammo_pickup_max_mul = buckshot._42.max_pickup,
+				can_shoot_through_enemy = true,
+				rays = 9
+			}
+		},
+		wpn_fps_upg_a_custom_free = {
+			stats = {
+				value = 5,
+				total_ammo_mod = 2,
+				damage = buckshot._42.dmg,
+				spread = buckshot._42.acc,
+				moving_spread = buckshot._55.acc
+			},
+			custom_stats = {
+				ammo_pickup_min_mul = buckshot._42.min_pickup,
+				ammo_pickup_max_mul = buckshot._42.max_pickup,
+				can_shoot_through_enemy = true,
+				rays = 9
+			}
+		},
+		wpn_fps_upg_a_explosive = {
+			stats = {
+				value = 5, 
+				total_ammo_mod = -5,
+				damage = he._42.dmg,
+				spread = he._42.acc,
+				moving_spread = he._55.acc
 			},
 			custom_stats = {
 				ammo_pickup_min_mul = he._42.min_pickup,

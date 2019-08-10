@@ -526,15 +526,9 @@ original_init(self, tweak_data)
 	--m1014
 	self.benelli.AMMO_PICKUP = pickup._55
 	
-	--akimbo goliath
-	self.x_rota.has_magazine = false
-	self.x_rota.AMMO_PICKUP = pickup._55
-	self.x_rota.stats.damage = 55
-	
-	--goliath
-	self.rota.has_magazine = false
-	self.rota.AMMO_PICKUP = pickup._55
-	self.rota.stats.damage = 55
+	--street sweeper
+	self.striker.AMMO_PICKUP = pickup._55
+	self.striker.stats.damage = 55
 	
 	--42 damage shotguns----------------------------------------------------------------
 	
@@ -544,8 +538,11 @@ original_init(self, tweak_data)
 	--steakout
 	self.aa12.AMMO_PICKUP = pickup._42
 	
-	--street sweeper
-	self.striker.AMMO_PICKUP = pickup._42
+	--akimbo goliath
+	self.x_rota.AMMO_PICKUP = pickup._42
+	
+	--goliath
+	self.rota.AMMO_PICKUP = pickup._42
 	
 	--18 damage shotguns----------------------------------------------------------------
 	
