@@ -2519,4 +2519,55 @@ function WeaponFactoryTweakData:init()
 
 	--king's crown
 	self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
+	
+	--dmr kits-----------------------------------------------------------------------------
+	
+		--CAR dmr kit
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.675
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.675
+		
+		--AK dmr kit
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.675
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.675
+		
+		--overrides------------------------------------------------------------------------
+			
+			--amr
+			self.wpn_fps_ass_m16.override = {
+				wpn_fps_upg_ass_m4_b_beowulf = {
+					stats = {
+						spread = 4,
+						total_ammo_mod = -4,
+						damage = 66,
+						concealment = -4,
+						value = 1,
+						recoil = -4
+					},
+					custom_stats = {
+						ammo_pickup_max_mul = 0.675,
+						ammo_pickup_min_mul = 0.675
+					}
+				}
+			}
+			
+			--car-4
+			self.wpn_fps_ass_m4.override = {
+				wpn_fps_upg_ass_m4_b_beowulf = {
+					custom_stats = {
+						ammo_pickup_min_mul = 0.3375,
+						ammo_pickup_max_mul = 0.45
+					}
+				}
+			}
+			
+			--ak
+			self.wpn_fps_ass_74.override = {
+				wpn_fps_upg_ass_ak_b_zastava = {
+					custom_stats = {
+						ammo_pickup_min_mul = 0.3375,
+						ammo_pickup_max_mul = 0.45
+					}
+				}
+			}
+			
 end
