@@ -71,7 +71,7 @@
 	
 	<WeaponMod id="wpn_upg_a_fmj_t4" name_id="FMJ" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
 		<stats
-			damage="-17"
+			damage="-14"
 			spread="3"
 			total_ammo_mod="0"
 		/>
