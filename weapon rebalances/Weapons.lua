@@ -191,6 +191,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--amr-16
 			self.m16.AMMO_PICKUP = pickup.assault.t2
+			
+			--ak17
+			self.flint.AMMO_PICKUP = pickup.assault.t2
 		
 		--t3 assault rifles---------------------------------------------------------
 		
