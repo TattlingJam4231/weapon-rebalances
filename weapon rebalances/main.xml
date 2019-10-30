@@ -1,0 +1,439 @@
+<mod name="AR ammo types" author="Oryo" min_lib_ver="3.38">
+	
+	<Localization directory="loc" default="english.txt">
+		<loc file="english.txt" language="english.txt"/>
+	</Localization>
+	
+	<WeaponMod id="wpn_upg_a_fmj_t1" name_id="FMJ" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="-55"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy="true"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_sub2000"/>
+			<value_node value="wpn_fps_ass_m14"/>
+			<value_node value="wpn_fps_ass_ching"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_fmj_t2" name_id="FMJ" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="-30"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy="true"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_akm"/>
+			<value_node value="wpn_fps_ass_akm_gold"/>
+			<value_node value="wpn_fps_ass_m16"/>
+			<value_node value="wpn_fps_ass_scar"/>
+			<value_node value="wpn_fps_ass_fal"/>
+			<value_node value="wpn_fps_ass_flint"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_fmj_t3" name_id="FMJ" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="-22"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy="true"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_contraband"/>
+			<value_node value="wpn_fps_ass_74"/>
+			<value_node value="wpn_fps_ass_corgi"/>
+			<value_node value="wpn_fps_ass_komodo"/>
+			<value_node value="wpn_fps_ass_aug"/>
+			<value_node value="wpn_fps_ass_g3"/>
+			<value_node value="wpn_fps_ass_vhs"/>
+			<value_node value="wpn_fps_ass_ak5"/>
+			<value_node value="wpn_fps_ass_l85a2"/>
+			<value_node value="wpn_fps_ass_m4"/>
+			<value_node value="wpn_fps_ass_galil"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_fmj_t4" name_id="FMJ" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="-17"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy="true"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_amcar"/>
+			<value_node value="wpn_fps_ass_tecci"/>
+			<value_node value="wpn_fps_ass_famas"/>
+			<value_node value="wpn_fps_ass_s552"/>
+			<value_node value="wpn_fps_ass_g36"/>
+			<value_node value="wpn_fps_ass_asval"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_ballistic_tip_t1" name_id="Ballistic Tip" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="67"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_sub2000"/>
+			<value_node value="wpn_fps_ass_m14"/>
+			<value_node value="wpn_fps_ass_ching"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_ballistic_tip_t2" name_id="Ballistic Tip" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="33"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_akm"/>
+			<value_node value="wpn_fps_ass_akm_gold"/>
+			<value_node value="wpn_fps_ass_m16"/>
+			<value_node value="wpn_fps_ass_scar"/>
+			<value_node value="wpn_fps_ass_fal"/>
+			<value_node value="wpn_fps_ass_flint"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_ballistic_tip_t3" name_id="Ballistic Tip" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="22"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_contraband"/>
+			<value_node value="wpn_fps_ass_74"/>
+			<value_node value="wpn_fps_ass_corgi"/>
+			<value_node value="wpn_fps_ass_komodo"/>
+			<value_node value="wpn_fps_ass_aug"/>
+			<value_node value="wpn_fps_ass_g3"/>
+			<value_node value="wpn_fps_ass_vhs"/>
+			<value_node value="wpn_fps_ass_ak5"/>
+			<value_node value="wpn_fps_ass_l85a2"/>
+			<value_node value="wpn_fps_ass_m4"/>
+			<value_node value="wpn_fps_ass_galil"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_ballistic_tip_t4" name_id="Ballistic Tip" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="17"
+			spread="3"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield = "false"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_amcar"/>
+			<value_node value="wpn_fps_ass_tecci"/>
+			<value_node value="wpn_fps_ass_famas"/>
+			<value_node value="wpn_fps_ass_s552"/>
+			<value_node value="wpn_fps_ass_g36"/>
+			<value_node value="wpn_fps_ass_asval"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_armor_piercing_t1" name_id="Armor Piercing" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="19"
+			spread="1"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield="true"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_sub2000"/>
+			<value_node value="wpn_fps_ass_m14"/>
+			<value_node value="wpn_fps_ass_ching"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_armor_piercing_t2" name_id="Armor Piercing" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="12"
+			spread="1"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield="true"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_akm"/>
+			<value_node value="wpn_fps_ass_akm_gold"/>
+			<value_node value="wpn_fps_ass_m16"/>
+			<value_node value="wpn_fps_ass_scar"/>
+			<value_node value="wpn_fps_ass_fal"/>
+			<value_node value="wpn_fps_ass_flint"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_armor_piercing_t3" name_id="Armor Piercing" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="7"
+			spread="1"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield="true"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_contraband"/>
+			<value_node value="wpn_fps_ass_74"/>
+			<value_node value="wpn_fps_ass_corgi"/>
+			<value_node value="wpn_fps_ass_komodo"/>
+			<value_node value="wpn_fps_ass_aug"/>
+			<value_node value="wpn_fps_ass_g3"/>
+			<value_node value="wpn_fps_ass_vhs"/>
+			<value_node value="wpn_fps_ass_ak5"/>
+			<value_node value="wpn_fps_ass_l85a2"/>
+			<value_node value="wpn_fps_ass_m4"/>
+			<value_node value="wpn_fps_ass_galil"/>
+		</weapons>
+	</WeaponMod>
+	
+	<WeaponMod id="wpn_upg_a_armor_piercing_t4" name_id="Armor Piercing" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2">
+		<stats
+			damage="5"
+			spread="1"
+			total_ammo_mod="0"
+		/>
+		<custom_stats
+			can_shoot_through_shield="true"
+			can_shoot_through_wall = "false"
+			can_shoot_through_enemy = "false"
+		/>
+		<weapons>
+			<value_node value="wpn_fps_ass_amcar"/>
+			<value_node value="wpn_fps_ass_tecci"/>
+			<value_node value="wpn_fps_ass_famas"/>
+			<value_node value="wpn_fps_ass_s552"/>
+			<value_node value="wpn_fps_ass_g36"/>
+			<value_node value="wpn_fps_ass_asval"/>
+		</weapons>
+	</WeaponMod>
+	
+	<!-- <WeaponMod id="wpn_upg_a_hollow_point_t1" name_id="Hollow Point" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats -->
+			<!-- damage="-25" -->
+			<!-- spread="-4" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <custom_stats -->
+			<!-- can_shoot_through_shield = "false" -->
+			<!-- can_shoot_through_wall = "false" -->
+			<!-- can_shoot_through_enemy = "false" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_sub2000"/> -->
+			<!-- <value_node value="wpn_fps_ass_m14"/> -->
+			<!-- <value_node value="wpn_fps_ass_ching"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_hollow_point_t2" name_id="Hollow Point" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats -->
+			<!-- damage="-25" -->
+			<!-- spread="-4" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <custom_stats -->
+			<!-- can_shoot_through_shield = "false" -->
+			<!-- can_shoot_through_wall = "false" -->
+			<!-- can_shoot_through_enemy = "false" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_akm"/> -->
+			<!-- <value_node value="wpn_fps_ass_akm_gold"/> -->
+			<!-- <value_node value="wpn_fps_ass_m16"/> -->
+			<!-- <value_node value="wpn_fps_ass_scar"/> -->
+			<!-- <value_node value="wpn_fps_ass_fal"/> -->
+			<!-- <value_node value="wpn_fps_ass_flint"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_hollow_point_t3" name_id="Hollow Point" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats -->
+			<!-- damage="-25" -->
+			<!-- spread="-4" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <custom_stats -->
+			<!-- can_shoot_through_shield = "false" -->
+			<!-- can_shoot_through_wall = "false" -->
+			<!-- can_shoot_through_enemy = "false" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_contraband"/> -->
+			<!-- <value_node value="wpn_fps_ass_74"/> -->
+			<!-- <value_node value="wpn_fps_ass_corgi"/> -->
+			<!-- <value_node value="wpn_fps_ass_komodo"/> -->
+			<!-- <value_node value="wpn_fps_ass_aug"/> -->
+			<!-- <value_node value="wpn_fps_ass_g3"/> -->
+			<!-- <value_node value="wpn_fps_ass_vhs"/> -->
+			<!-- <value_node value="wpn_fps_ass_ak5"/> -->
+			<!-- <value_node value="wpn_fps_ass_l85a2"/> -->
+			<!-- <value_node value="wpn_fps_ass_m4"/> -->
+			<!-- <value_node value="wpn_fps_ass_galil"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_hollow_point_t4" name_id="Hollow Point" based_on="wpn_fps_upg_a_slug" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats -->
+			<!-- damage="-25" -->
+			<!-- spread="-4" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <custom_stats -->
+			<!-- can_shoot_through_shield = "false" -->
+			<!-- can_shoot_through_wall = "false" -->
+			<!-- can_shoot_through_enemy = "false" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_amcar"/> -->
+			<!-- <value_node value="wpn_fps_ass_tecci"/> -->
+			<!-- <value_node value="wpn_fps_ass_famas"/> -->
+			<!-- <value_node value="wpn_fps_ass_s552"/> -->
+			<!-- <value_node value="wpn_fps_ass_g36"/> -->
+			<!-- <value_node value="wpn_fps_ass_asval"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_incendiary_t1" name_id="Incendiary" based_on="wpn_fps_upg_a_dragons_breath" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats  -->
+			<!-- damage="-25" -->
+			<!-- spread="0" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_sub2000"/> -->
+			<!-- <value_node value="wpn_fps_ass_m14"/> -->
+			<!-- <value_node value="wpn_fps_ass_ching"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_incendiary_t2" name_id="Incendiary" based_on="wpn_fps_upg_a_dragons_breath" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats  -->
+			<!-- damage="-25" -->
+			<!-- spread="0" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_akm"/> -->
+			<!-- <value_node value="wpn_fps_ass_akm_gold"/> -->
+			<!-- <value_node value="wpn_fps_ass_m16"/> -->
+			<!-- <value_node value="wpn_fps_ass_scar"/> -->
+			<!-- <value_node value="wpn_fps_ass_fal"/> -->
+			<!-- <value_node value="wpn_fps_ass_flint"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_incendiary_t3" name_id="Incendiary" based_on="wpn_fps_upg_a_dragons_breath" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats  -->
+			<!-- damage="-25" -->
+			<!-- spread="0" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_contraband"/> -->
+			<!-- <value_node value="wpn_fps_ass_74"/> -->
+			<!-- <value_node value="wpn_fps_ass_corgi"/> -->
+			<!-- <value_node value="wpn_fps_ass_komodo"/> -->
+			<!-- <value_node value="wpn_fps_ass_aug"/> -->
+			<!-- <value_node value="wpn_fps_ass_g3"/> -->
+			<!-- <value_node value="wpn_fps_ass_vhs"/> -->
+			<!-- <value_node value="wpn_fps_ass_ak5"/> -->
+			<!-- <value_node value="wpn_fps_ass_l85a2"/> -->
+			<!-- <value_node value="wpn_fps_ass_m4"/> -->
+			<!-- <value_node value="wpn_fps_ass_galil"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+	
+	<!-- <WeaponMod id="wpn_upg_a_incendiary_t4" name_id="Incendiary" based_on="wpn_fps_upg_a_dragons_breath" inherit_weapons="false" inherit_adds="false" inherit_override="false" inherit_parts_override="false" inherit_parts_forbids="false" type="ammo" ver="2"> -->
+		<!-- <stats  -->
+			<!-- damage="-25" -->
+			<!-- spread="0" -->
+			<!-- total_ammo_mod="0" -->
+		<!-- /> -->
+		<!-- <weapons> -->
+			<!-- <value_node value="wpn_fps_ass_amcar"/> -->
+			<!-- <value_node value="wpn_fps_ass_tecci"/> -->
+			<!-- <value_node value="wpn_fps_ass_famas"/> -->
+			<!-- <value_node value="wpn_fps_ass_s552"/> -->
+			<!-- <value_node value="wpn_fps_ass_g36"/> -->
+			<!-- <value_node value="wpn_fps_ass_asval"/> -->
+		<!-- </weapons> -->
+	<!-- </WeaponMod> -->
+
+	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_fmj_t1"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_fmj_t2"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_fmj_t3"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_fmj_t4"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t1"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t2"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t3"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t4"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_armor_piercing_t1"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_armor_piercing_t2"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_armor_piercing_t3"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_armor_piercing_t4"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_hollow_point_t1"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_hollow_point_t2"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_hollow_point_t3"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_hollow_point_t4"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_incendiary_t1"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_incendiary_t2"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_incendiary_t3"/>
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_incendiary_t4"/>
+	</AddFiles>
+</mod>
