@@ -191,6 +191,8 @@
 			total_ammo_mod="0"
 		/>
 		<custom_stats
+			ammo_pickup_max_mul = "0.675"
+			ammo_pickup_min_mul = "0.675"
 			armor_piercing_add = "0"
 			can_shoot_through_shield="true"
 			can_shoot_through_wall = "false"
@@ -210,6 +212,8 @@
 			total_ammo_mod="0"
 		/>
 		<custom_stats
+			ammo_pickup_max_mul = "0.675"
+			ammo_pickup_min_mul = "0.675"
 			armor_piercing_add = "0"
 			can_shoot_through_shield="true"
 			can_shoot_through_wall = "false"
@@ -232,6 +236,8 @@
 			total_ammo_mod="0"
 		/>
 		<custom_stats
+			ammo_pickup_max_mul = "0.675"
+			ammo_pickup_min_mul = "0.675"
 			armor_piercing_add = "0"
 			can_shoot_through_shield="true"
 			can_shoot_through_wall = "false"
@@ -259,6 +265,8 @@
 			total_ammo_mod="0"
 		/>
 		<custom_stats
+			ammo_pickup_max_mul = "0.675"
+			ammo_pickup_min_mul = "0.675"
 			armor_piercing_add = "0"
 			can_shoot_through_shield="true"
 			can_shoot_through_wall = "false"
