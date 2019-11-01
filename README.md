@@ -24,7 +24,6 @@ WEAPON REWORKS
         Ammo pickup rate increased
         Default fire mode changed from single fire to automatic
         Under barrel grenade launcher is now in the assault rifle catagory
-        Under barrel grenade launcher total ammo increased from 3 to 4
       
       Our main focus with this rework was to make the Little Friend actually usable, and a lot more versatile. It's
       inline with the lower damage assault rifles rather than DMR style rifles now, and we hope these changes makes
