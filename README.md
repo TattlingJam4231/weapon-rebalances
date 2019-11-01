@@ -4,17 +4,6 @@ weapons and other bits of the game. Most of the changes we made are with another
 
 WEAPON BUFFS
   
-  Sniper Rifles:
-  
-    Rattlesnake Sniper Rifle:
-      Damage increased from 246 to 258
-
-    Repeater 1874 Sniper Rifle:
-      Damage increased from 246 to 258
-     
-      The goal with these 2 buffs is to make the Repeater and Rattlesnake rifles able to kill Tasers and Tan units 
-      in one headshot, rather than being left at 30 health.
- 
   Light Machine Guns:
   
     KSP 58:
