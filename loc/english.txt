@@ -1,0 +1,9 @@
+{
+	"FMJ" : "FMJ Rounds"
+	"Ballistic Tip" : "Ballistic Tip Rounds"
+	"Armor Piercing" : "Armor Piercing Rounds"
+	"FMJ_desc" : "Accurate low impact rounds that penetrate enemies."
+	"Ballistic Tip_desc" : "Accurate high impact rounds."
+	"Armor Piercing_desc" : "Rounds designed to penetrate shields."
+	
+}
