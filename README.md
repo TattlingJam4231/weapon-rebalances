@@ -1,6 +1,6 @@
 # Payday-2-weapon-rebalances
 This is just a relatively minor rebalance of some weapons for Payday 2. We might expand our scope eventually and rebalance more
-weapons and other bits of the game. Most of the changes we made are with another mod, Crackdown, in mind.
+weapons and other bits of the game.
 
 WEAPON BUFFS
   
