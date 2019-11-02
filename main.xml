@@ -78,6 +78,7 @@
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
 				<value_node value="wpn_fps_ass_g3_b_sniper"/>
+				<value_node value="wpn_fps_ass_g3_b_short"/>
 			</forbids>
 			<weapons>
 				<value_node value="wpn_fps_ass_akm"/>
@@ -116,8 +117,10 @@
 			<forbids>
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
-				<value_node value="wpn_fps_ass_g3_b_sniper"/>
 			</forbids>
+			<weapons_override>
+				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_short"/>
+			</weapons_override>
 			<weapons>
 				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_74"/>
@@ -243,6 +246,7 @@
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
 				<value_node value="wpn_fps_ass_g3_b_sniper"/>
+				<value_node value="wpn_fps_ass_g3_b_short"/>
 			</forbids>
 			<weapons>
 				<value_node value="wpn_fps_ass_akm"/>
@@ -281,8 +285,10 @@
 			<forbids>
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
-				<value_node value="wpn_fps_ass_g3_b_sniper"/>
 			</forbids>
+			<weapons_override>
+				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_short"/>
+			</weapons_override>
 			<weapons>
 				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_74"/>
@@ -408,6 +414,7 @@
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
 				<value_node value="wpn_fps_ass_g3_b_sniper"/>
+				<value_node value="wpn_fps_ass_g3_b_short"/>
 			</forbids>
 			<weapons>
 				<value_node value="wpn_fps_ass_akm"/>
@@ -448,8 +455,10 @@
 			<forbids>
 				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
 				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
-				<value_node value="wpn_fps_ass_g3_b_sniper"/>
 			</forbids>
+			<weapons_override>
+				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_short"/>
+			</weapons_override>
 			<weapons>
 				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_74"/>
