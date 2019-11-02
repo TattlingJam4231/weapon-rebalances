@@ -2523,12 +2523,12 @@ function WeaponFactoryTweakData:init()
 	--dmr kits-----------------------------------------------------------------------------
 	
 		--CAR dmr kit
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.675
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.675
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.3375
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.45
 		
 		--AK dmr kit
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.675
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.675
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.5625
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.5625
 		
 		--overrides------------------------------------------------------------------------
 			
@@ -2544,29 +2544,61 @@ function WeaponFactoryTweakData:init()
 						recoil = -4
 					},
 					custom_stats = {
-						ammo_pickup_max_mul = 0.675,
-						ammo_pickup_min_mul = 0.675
+						ammo_pickup_max_mul = 0.5625,
+						ammo_pickup_min_mul = 0.5625
 					}
 				}
 			}
-			
-			--car-4
-			self.wpn_fps_ass_m4.override = {
-				wpn_fps_upg_ass_m4_b_beowulf = {
-					custom_stats = {
-						ammo_pickup_min_mul = 0.3375,
-						ammo_pickup_max_mul = 0.45
-					}
-				}
-			}
-			
 			--ak
 			self.wpn_fps_ass_74.override = {
 				wpn_fps_upg_ass_ak_b_zastava = {
+					stats = {
+						spread = 3,
+						total_ammo_mod = -12,
+						damage = 104,
+						concealment = -4,
+						value = 1,
+						recoil = -9
+					},
 					custom_stats = {
 						ammo_pickup_min_mul = 0.3375,
 						ammo_pickup_max_mul = 0.45
 					}
+				}
+			}
+			
+			--gewehr
+			self.wpn_fps_ass_g3.override = {
+				wpn_fps_ass_g3_b_sniper = {
+					stats = {
+						extra_ammo = -5,
+						total_ammo_mod = -6,
+						damage = 61,
+						value = 2,
+						concealment = -2,
+						recoil = -1,
+						spread = 2
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.5625,
+						ammo_pickup_max_mul = 0.5625
+					},
+					adds = {}
+				},
+				wpn_fps_ass_g3_b_short = {
+					stats = {
+						spread = -4,
+						total_ammo_mod = 15,
+						damage = -40,
+						value = 2,
+						concealment = 4,
+						recoil = 5
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 2.25,
+						ammo_pickup_max_mul = 1.6875
+					},
+					adds = {}
 				}
 			}
 			
