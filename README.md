@@ -7,7 +7,6 @@ WEAPON BUFFS
   Light Machine Guns:
   
     KSP 58:
-        Reload times decreased from 6.5 seconds to 5.62 seconds
         Stability increased from 28 to 36
       
       The goal here was just to make the KSP 58 a lot less clunky and annoying to use without making it too strong.
