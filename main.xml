@@ -189,20 +189,74 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.54"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.4"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
 				can_shoot_through_enemy = "false"
 			/>
 			<weapons_override>
-				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf"/>
-				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf"/>
-				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper"/>
+				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_m16>
+				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_m4>
+				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_akm>
+				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_akm_gold>
+				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_74>
+				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_g3>
 			</weapons_override>
 			<weapons>
 				<value_node value="wpn_fps_ass_sub2000"/>
@@ -235,8 +289,8 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.675"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.5"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -357,20 +411,74 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.675"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.5"
 				armor_piercing_add = "0"
 				can_shoot_through_shield="true"
 				can_shoot_through_wall = "false"
 				can_shoot_through_enemy = "false"
 			/>
 			<weapons_override>
-				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf"/>
-				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf"/>
-				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava"/>
-				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper"/>
+				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_m16>
+				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_m4>
+				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_akm>
+				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_akm_gold>
+				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_74>
+				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper">
+					<custom_stats
+						ammo_pickup_max_mul = "0.5"
+						ammo_pickup_min_mul = "0.4"
+						armor_piercing_add = "0"
+						can_shoot_through_shield = "false"
+						can_shoot_through_wall = "false"
+						can_shoot_through_enemy = "false"
+					/>
+				</wpn_fps_ass_g3>
 			</weapons_override>
 			<weapons>
 				<value_node value="wpn_fps_ass_sub2000"/>
@@ -403,8 +511,8 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.675"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.5"
 				armor_piercing_add = "0"
 				can_shoot_through_shield="true"
 				can_shoot_through_wall = "false"
@@ -445,8 +553,8 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.675"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.5"
 				armor_piercing_add = "0"
 				can_shoot_through_shield="true"
 				can_shoot_through_wall = "false"
@@ -492,8 +600,8 @@
 				total_ammo_mod="0"
 			/>
 			<custom_stats
-				ammo_pickup_max_mul = "0.675"
-				ammo_pickup_min_mul = "0.675"
+				ammo_pickup_max_mul = "0.5"
+				ammo_pickup_min_mul = "0.5"
 				armor_piercing_add = "0"
 				can_shoot_through_shield="true"
 				can_shoot_through_wall = "false"
