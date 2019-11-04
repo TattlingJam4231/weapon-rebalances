@@ -76,31 +76,31 @@ function WeaponFactoryTweakData:init()
 			dmg = 9,
 			acc = -3,
 			min_pickup = nil,
-			max_pickup = 0.54
+			max_pickup = 0.4
 		},
 		t2 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 1.08,
-			max_pickup = 0.54
+			min_pickup = 0.8,
+			max_pickup = 0.4
 		},
 		t3 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.408,
-			max_pickup = 0.504
+			min_pickup = 0.3022,
+			max_pickup = 0.3733
 		},
 		t4 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.632,
-			max_pickup = 0.481
+			min_pickup = 0.4681,
+			max_pickup = 0.3563
 		},
 		t5 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.675,
-			max_pickup = 0.739
+			min_pickup = 0.5,
+			max_pickup = 0.5474
 		}
 	}
 	
@@ -196,7 +196,7 @@ function WeaponFactoryTweakData:init()
 		t1 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.55,
+			min_pickup = 0.4,
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
@@ -209,7 +209,7 @@ function WeaponFactoryTweakData:init()
 		t2 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.55,
+			min_pickup = 0.4,
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
@@ -222,7 +222,7 @@ function WeaponFactoryTweakData:init()
 		t3 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.55,
+			min_pickup = 0.4,
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
@@ -235,7 +235,7 @@ function WeaponFactoryTweakData:init()
 		t4 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.55,
+			min_pickup = 0.4,
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
@@ -248,7 +248,7 @@ function WeaponFactoryTweakData:init()
 		t5 = {
 			dmg = nil,
 			acc = -3,
-			min_pickup = 0.55,
+			min_pickup = 0.4,
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
@@ -2415,107 +2415,107 @@ function WeaponFactoryTweakData:init()
 
 	--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------
 	
-		-- Slugs
-		self.parts.wpn_fps_upg_a_slug.stats = {
-			value = 5,
-			damage = 50,
-			total_ammo_mod = 0,
-			spread = 10,
-			moving_spread = 10
-		}
-		self.parts.wpn_fps_upg_a_slug.custom_stats = {
-			ammo_pickup_min_mul = 0.7,
-			damage_near_mul = 2,
-			damage_far_mul = 1.5,
-			armor_piercing_add = 1,
-			can_shoot_through_shield = true,
-			can_shoot_through_wall = true,
-			can_shoot_through_enemy = true,
-			rays = 1
-		}
+		-- -- Slugs
+		-- self.parts.wpn_fps_upg_a_slug.stats = {
+			-- value = 5,
+			-- damage = 50,
+			-- total_ammo_mod = 0,
+			-- spread = 10,
+			-- moving_spread = 10
+		-- }
+		-- self.parts.wpn_fps_upg_a_slug.custom_stats = {
+			-- ammo_pickup_min_mul = 0.7,
+			-- damage_near_mul = 2,
+			-- damage_far_mul = 1.5,
+			-- armor_piercing_add = 1,
+			-- can_shoot_through_shield = true,
+			-- can_shoot_through_wall = true,
+			-- can_shoot_through_enemy = true,
+			-- rays = 1
+		-- }
 
-		-- 000 Buckshot
-		self.parts.wpn_fps_upg_a_custom.stats = {
-				value = 5,
-				total_ammo_mod = 2,
-				damage = 20
-			}
-		self.parts.wpn_fps_upg_a_custom.custom_stats = {
-				can_shoot_through_enemy = true,
-				rays = 9
-			}
-		self.parts.wpn_fps_upg_a_custom_free.stats = {
-				value = 5,
-				total_ammo_mod = 2,
-				damage = 20
-			}
-		self.parts.wpn_fps_upg_a_custom_free.custom_stats = {
-				can_shoot_through_enemy = true,
-				rays = 9
-			}
+		-- -- 000 Buckshot
+		-- self.parts.wpn_fps_upg_a_custom.stats = {
+				-- value = 5,
+				-- total_ammo_mod = 2,
+				-- damage = 20
+			-- }
+		-- self.parts.wpn_fps_upg_a_custom.custom_stats = {
+				-- can_shoot_through_enemy = true,
+				-- rays = 9
+			-- }
+		-- self.parts.wpn_fps_upg_a_custom_free.stats = {
+				-- value = 5,
+				-- total_ammo_mod = 2,
+				-- damage = 20
+			-- }
+		-- self.parts.wpn_fps_upg_a_custom_free.custom_stats = {
+				-- can_shoot_through_enemy = true,
+				-- rays = 9
+			-- }
 
-		-- High Explosive
-		self.parts.wpn_fps_upg_a_explosive.stats = {
-			value = 5, 
-			total_ammo_mod = -5,
-			damage = 0,
-			spread = -3,
-			moving_spread = -3
-		}
-		self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-			ammo_pickup_min_mul = 0.3,
-			ignore_statistic = true,
-			damage_far_mul = 2.5,
-			damage_near_mul = 2,
-			rays = 3, 
-			bullet_class = "InstantExplosiveBulletBase"
-		}
+		-- -- High Explosive
+		-- self.parts.wpn_fps_upg_a_explosive.stats = {
+			-- value = 5, 
+			-- total_ammo_mod = -5,
+			-- damage = 0,
+			-- spread = -3,
+			-- moving_spread = -3
+		-- }
+		-- self.parts.wpn_fps_upg_a_explosive.custom_stats = {
+			-- ammo_pickup_min_mul = 0.3,
+			-- ignore_statistic = true,
+			-- damage_far_mul = 2.5,
+			-- damage_near_mul = 2,
+			-- rays = 3, 
+			-- bullet_class = "InstantExplosiveBulletBase"
+		-- }
 
-		-- Flechette
-		self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
+		-- -- Flechette
+		-- self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
 
-		self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-			armor_piercing_add = 1, 
-			rays = 16,
-			bullet_class = "PoisonBulletBase",
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 3,
-					dot_length = 2.1,
-					dot_tick_period = 0.4,
-					scale_length = 0.8,
-					scale_damage = 1.5
-				}
-			}
-		}
+		-- self.parts.wpn_fps_upg_a_piercing.custom_stats = {
+			-- armor_piercing_add = 1, 
+			-- rays = 16,
+			-- bullet_class = "PoisonBulletBase",
+			-- dot_data = {
+				-- type = "poison",
+				-- custom_data = {
+					-- hurt_animation_chance = 0,
+					-- dot_damage = 3,
+					-- dot_length = 2.1,
+					-- dot_tick_period = 0.4,
+					-- scale_length = 0.8,
+					-- scale_damage = 1.5
+				-- }
+			-- }
+		-- }
 
-		-- Dragon's Breath
-		self.parts.wpn_fps_upg_a_dragons_breath.stats = {
-			value = 5, 
-			total_ammo_mod = 0, 
-			damage = 0, 
-			moving_spread = -3,
-			spread = -3
-		}
-		self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
-			ammo_pickup_min_mul = 0.55,
-			armor_piercing_add = 1, 
-			ignore_statistic = true,  
-			muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-			damage_far_mul = 0.7,
-			can_shoot_through_shield = true, 
-			bullet_class = "FlameBulletBase",
-			rays = 24, 
-			fire_dot_data = {
-				dot_trigger_chance = "100",
-				dot_damage = "6", 
-				dot_length = "2.1", 
-				dot_trigger_max_distance = "3000", 
-				dot_tick_period = 0.1
-			}
-		}
+		-- -- Dragon's Breath
+		-- self.parts.wpn_fps_upg_a_dragons_breath.stats = {
+			-- value = 5, 
+			-- total_ammo_mod = 0, 
+			-- damage = 0, 
+			-- moving_spread = -3,
+			-- spread = -3
+		-- }
+		-- self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
+			-- ammo_pickup_min_mul = 0.55,
+			-- armor_piercing_add = 1, 
+			-- ignore_statistic = true,  
+			-- muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+			-- damage_far_mul = 0.7,
+			-- can_shoot_through_shield = true, 
+			-- bullet_class = "FlameBulletBase",
+			-- rays = 24, 
+			-- fire_dot_data = {
+				-- dot_trigger_chance = "100",
+				-- dot_damage = "6", 
+				-- dot_length = "2.1", 
+				-- dot_trigger_max_distance = "3000", 
+				-- dot_tick_period = 0.1
+			-- }
+		-- }
 
 		--king's crown
 		self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
@@ -2523,12 +2523,12 @@ function WeaponFactoryTweakData:init()
 	--dmr kits-----------------------------------------------------------------------------
 	
 		--CAR dmr kit
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.3375
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.45
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.25
+		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.3333
 		
 		--AK dmr kit
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.5625
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.5625
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.4167
+		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.4167
 		
 		--overrides------------------------------------------------------------------------
 			
@@ -2537,15 +2537,15 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_ass_m4_b_beowulf = {
 					stats = {
 						spread = 4,
-						total_ammo_mod = -4,
+						total_ammo_mod = -8,
 						damage = 66,
 						concealment = -4,
 						value = 1,
 						recoil = -4
 					},
 					custom_stats = {
-						ammo_pickup_max_mul = 0.5625,
-						ammo_pickup_min_mul = 0.5625
+						ammo_pickup_max_mul = 0.4167,
+						ammo_pickup_min_mul = 0.4167
 					}
 				}
 			}
@@ -2561,8 +2561,8 @@ function WeaponFactoryTweakData:init()
 						recoil = -9
 					},
 					custom_stats = {
-						ammo_pickup_min_mul = 0.3375,
-						ammo_pickup_max_mul = 0.45
+						ammo_pickup_min_mul = 0.25,
+						ammo_pickup_max_mul = 0.3333
 					}
 				}
 			}
@@ -2580,8 +2580,8 @@ function WeaponFactoryTweakData:init()
 						spread = 2
 					},
 					custom_stats = {
-						ammo_pickup_min_mul = 0.5625,
-						ammo_pickup_max_mul = 0.5625
+						ammo_pickup_min_mul = 0.4167,
+						ammo_pickup_max_mul = 0.4167
 					},
 					adds = {}
 				},
@@ -2595,8 +2595,8 @@ function WeaponFactoryTweakData:init()
 						recoil = 5
 					},
 					custom_stats = {
-						ammo_pickup_min_mul = 2.25,
-						ammo_pickup_max_mul = 1.6875
+						ammo_pickup_min_mul = 1.6667,
+						ammo_pickup_max_mul = 1.25
 					},
 					adds = {}
 				}
