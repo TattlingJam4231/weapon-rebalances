@@ -2415,191 +2415,254 @@ function WeaponFactoryTweakData:init()
 
 	--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------
 	
-		-- -- Slugs
-		-- self.parts.wpn_fps_upg_a_slug.stats = {
-			-- value = 5,
-			-- damage = 50,
-			-- total_ammo_mod = 0,
-			-- spread = 10,
-			-- moving_spread = 10
-		-- }
-		-- self.parts.wpn_fps_upg_a_slug.custom_stats = {
-			-- ammo_pickup_min_mul = 0.7,
-			-- damage_near_mul = 2,
-			-- damage_far_mul = 1.5,
-			-- armor_piercing_add = 1,
-			-- can_shoot_through_shield = true,
-			-- can_shoot_through_wall = true,
-			-- can_shoot_through_enemy = true,
-			-- rays = 1
-		-- }
-
-		-- -- 000 Buckshot
-		-- self.parts.wpn_fps_upg_a_custom.stats = {
+		--Ammo
+			-- -- Slugs
+			-- self.parts.wpn_fps_upg_a_slug.stats = {
 				-- value = 5,
-				-- total_ammo_mod = 2,
-				-- damage = 20
+				-- damage = 50,
+				-- total_ammo_mod = 0,
+				-- spread = 10,
+				-- moving_spread = 10
 			-- }
-		-- self.parts.wpn_fps_upg_a_custom.custom_stats = {
+			-- self.parts.wpn_fps_upg_a_slug.custom_stats = {
+				-- ammo_pickup_min_mul = 0.7,
+				-- damage_near_mul = 2,
+				-- damage_far_mul = 1.5,
+				-- armor_piercing_add = 1,
+				-- can_shoot_through_shield = true,
+				-- can_shoot_through_wall = true,
 				-- can_shoot_through_enemy = true,
-				-- rays = 9
-			-- }
-		-- self.parts.wpn_fps_upg_a_custom_free.stats = {
-				-- value = 5,
-				-- total_ammo_mod = 2,
-				-- damage = 20
-			-- }
-		-- self.parts.wpn_fps_upg_a_custom_free.custom_stats = {
-				-- can_shoot_through_enemy = true,
-				-- rays = 9
+				-- rays = 1
 			-- }
 
-		-- -- High Explosive
-		-- self.parts.wpn_fps_upg_a_explosive.stats = {
-			-- value = 5, 
-			-- total_ammo_mod = -5,
-			-- damage = 0,
-			-- spread = -3,
-			-- moving_spread = -3
-		-- }
-		-- self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-			-- ammo_pickup_min_mul = 0.3,
-			-- ignore_statistic = true,
-			-- damage_far_mul = 2.5,
-			-- damage_near_mul = 2,
-			-- rays = 3, 
-			-- bullet_class = "InstantExplosiveBulletBase"
-		-- }
+			-- -- 000 Buckshot
+			-- self.parts.wpn_fps_upg_a_custom.stats = {
+					-- value = 5,
+					-- total_ammo_mod = 2,
+					-- damage = 20
+				-- }
+			-- self.parts.wpn_fps_upg_a_custom.custom_stats = {
+					-- can_shoot_through_enemy = true,
+					-- rays = 9
+				-- }
+			-- self.parts.wpn_fps_upg_a_custom_free.stats = {
+					-- value = 5,
+					-- total_ammo_mod = 2,
+					-- damage = 20
+				-- }
+			-- self.parts.wpn_fps_upg_a_custom_free.custom_stats = {
+					-- can_shoot_through_enemy = true,
+					-- rays = 9
+				-- }
 
-		-- -- Flechette
-		-- self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
+			-- -- High Explosive
+			-- self.parts.wpn_fps_upg_a_explosive.stats = {
+				-- value = 5, 
+				-- total_ammo_mod = -5,
+				-- damage = 0,
+				-- spread = -3,
+				-- moving_spread = -3
+			-- }
+			-- self.parts.wpn_fps_upg_a_explosive.custom_stats = {
+				-- ammo_pickup_min_mul = 0.3,
+				-- ignore_statistic = true,
+				-- damage_far_mul = 2.5,
+				-- damage_near_mul = 2,
+				-- rays = 3, 
+				-- bullet_class = "InstantExplosiveBulletBase"
+			-- }
 
-		-- self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-			-- armor_piercing_add = 1, 
-			-- rays = 16,
-			-- bullet_class = "PoisonBulletBase",
-			-- dot_data = {
-				-- type = "poison",
-				-- custom_data = {
-					-- hurt_animation_chance = 0,
-					-- dot_damage = 3,
-					-- dot_length = 2.1,
-					-- dot_tick_period = 0.4,
-					-- scale_length = 0.8,
-					-- scale_damage = 1.5
+			-- -- Flechette
+			-- self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
+
+			-- self.parts.wpn_fps_upg_a_piercing.custom_stats = {
+				-- armor_piercing_add = 1, 
+				-- rays = 16,
+				-- bullet_class = "PoisonBulletBase",
+				-- dot_data = {
+					-- type = "poison",
+					-- custom_data = {
+						-- hurt_animation_chance = 0,
+						-- dot_damage = 3,
+						-- dot_length = 2.1,
+						-- dot_tick_period = 0.4,
+						-- scale_length = 0.8,
+						-- scale_damage = 1.5
+					-- }
 				-- }
 			-- }
-		-- }
 
-		-- -- Dragon's Breath
-		-- self.parts.wpn_fps_upg_a_dragons_breath.stats = {
-			-- value = 5, 
-			-- total_ammo_mod = 0, 
-			-- damage = 0, 
-			-- moving_spread = -3,
-			-- spread = -3
-		-- }
-		-- self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
-			-- ammo_pickup_min_mul = 0.55,
-			-- armor_piercing_add = 1, 
-			-- ignore_statistic = true,  
-			-- muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-			-- damage_far_mul = 0.7,
-			-- can_shoot_through_shield = true, 
-			-- bullet_class = "FlameBulletBase",
-			-- rays = 24, 
-			-- fire_dot_data = {
-				-- dot_trigger_chance = "100",
-				-- dot_damage = "6", 
-				-- dot_length = "2.1", 
-				-- dot_trigger_max_distance = "3000", 
-				-- dot_tick_period = 0.1
+			-- -- Dragon's Breath
+			-- self.parts.wpn_fps_upg_a_dragons_breath.stats = {
+				-- value = 5, 
+				-- total_ammo_mod = 0, 
+				-- damage = 0, 
+				-- moving_spread = -3,
+				-- spread = -3
 			-- }
-		-- }
-
-		--king's crown
-		self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
+			-- self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
+				-- ammo_pickup_min_mul = 0.55,
+				-- armor_piercing_add = 1, 
+				-- ignore_statistic = true,  
+				-- muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+				-- damage_far_mul = 0.7,
+				-- can_shoot_through_shield = true, 
+				-- bullet_class = "FlameBulletBase",
+				-- rays = 24, 
+				-- fire_dot_data = {
+					-- dot_trigger_chance = "100",
+					-- dot_damage = "6", 
+					-- dot_length = "2.1", 
+					-- dot_trigger_max_distance = "3000", 
+					-- dot_tick_period = 0.1
+				-- }
+			-- }
+		--Attachments
 		
-	--dmr kits-----------------------------------------------------------------------------
-	
-		--CAR dmr kit
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.25
-		self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.3333
-		
-		--AK dmr kit
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.4167
-		self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.4167
-		
-		--overrides------------------------------------------------------------------------
+			--king's crown
+			self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
 			
-			--amr
-			self.wpn_fps_ass_m16.override = {
-				wpn_fps_upg_ass_m4_b_beowulf = {
-					stats = {
-						spread = 4,
-						total_ammo_mod = -8,
-						damage = 66,
-						concealment = -4,
-						value = 1,
-						recoil = -4
-					},
-					custom_stats = {
-						ammo_pickup_max_mul = 0.4167,
-						ammo_pickup_min_mul = 0.4167
+			--gecko cqb foregrip
+			self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
+			
+			--queen's wrath diminutive barrel
+			self.parts.wpn_fps_ass_l85a2_b_short.stats.concealment = 2
+			
+			--ak5 cqb barrel
+			self.parts.wpn_fps_ass_ak5_b_short.stats.concealment = 0
+			
+			--car 4 short barrel
+			self.parts.wpn_fps_m4_uupg_b_short.stats.concealment = 0
+			
+			--car 4 stealth barrel
+			self.parts.wpn_fps_m4_uupg_b_sd.stats.concealment = 0
+			
+			--straight grip
+			self.parts.wpn_fps_upg_m4_g_mgrip.stats.concealment = 1
+			
+			--car folding stock
+			self.parts.wpn_fps_m4_uupg_s_fold.stats.concealment = 2
+			
+			--ak modern barrel
+			self.parts.wpn_fps_upg_ak_b_draco.stats.concealment = 0
+			
+			--ak modern barrel
+			self.parts.wpn_fps_upg_ak_b_ak105.stats.concealment = 0
+			
+			--ak battleproven handguard
+			self.parts.wpn_fps_upg_ak_fg_tapco.stats.concealment = 1
+			
+			--ak crabs rail
+			self.parts.wpn_fps_upg_ak_fg_krebs.stats.concealment = 1
+			
+			--ak rubber grip
+			self.parts.wpn_fps_upg_ak_g_hgrip.stats.concealment = 1
+			
+			--ak low drag mag
+			self.parts.wpn_fps_upg_ak_m_uspalm.stats.concealment = 0
+			
+			--ak speed pull mag
+			self.parts.wpn_fps_upg_ak_m_quick.stats.concealment = -1
+			
+			--ak skeletal stock
+			self.parts.wpn_upg_ak_s_skfoldable.stats.concealment = 1
+			
+			--eagle short barrel
+			self.parts.wpn_fps_ass_scar_b_short.stats.concealment = 2
+			
+			--gewehr plastic foregrip
+			self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats.concealment = 3
+			
+			--falcon cqb foregrip
+			self.parts.wpn_fps_ass_fal_fg_01.stats.concealment = 2
+			
+			--falcon tactical grip
+			self.parts.wpn_fps_ass_fal_g_01.stats.concealment = 0
+			
+			--falcon cqb foregrip
+			self.parts.wpn_fps_ass_fal_s_01.stats.concealment = 1
+			
+			
+			--conversion kits-----------------------------------------------------------------------------
+			
+				--CAR dmr kit
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.25
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.3333
+				
+				--AK dmr kit
+				self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.4167
+				self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.4167
+				
+				--overrides------------------------------------------------------------------------
+					
+					--amr
+					self.wpn_fps_ass_m16.override = {
+						wpn_fps_upg_ass_m4_b_beowulf = {
+							stats = {
+								spread = 4,
+								total_ammo_mod = -8,
+								damage = 66,
+								concealment = -4,
+								value = 1,
+								recoil = -4
+							},
+							custom_stats = {
+								ammo_pickup_max_mul = 0.4167,
+								ammo_pickup_min_mul = 0.4167
+							}
+						}
 					}
-				}
-			}
-			--ak
-			self.wpn_fps_ass_74.override = {
-				wpn_fps_upg_ass_ak_b_zastava = {
-					stats = {
-						spread = 3,
-						total_ammo_mod = -12,
-						damage = 104,
-						concealment = -4,
-						value = 1,
-						recoil = -9
-					},
-					custom_stats = {
-						ammo_pickup_min_mul = 0.25,
-						ammo_pickup_max_mul = 0.3333
+					--ak
+					self.wpn_fps_ass_74.override = {
+						wpn_fps_upg_ass_ak_b_zastava = {
+							stats = {
+								spread = 3,
+								total_ammo_mod = -12,
+								damage = 104,
+								concealment = -4,
+								value = 1,
+								recoil = -9
+							},
+							custom_stats = {
+								ammo_pickup_min_mul = 0.25,
+								ammo_pickup_max_mul = 0.3333
+							}
+						}
 					}
-				}
-			}
-			
-			--gewehr
-			self.wpn_fps_ass_g3.override = {
-				wpn_fps_ass_g3_b_sniper = {
-					stats = {
-						extra_ammo = -5,
-						total_ammo_mod = -6,
-						damage = 61,
-						value = 2,
-						concealment = -2,
-						recoil = -1,
-						spread = 2
-					},
-					custom_stats = {
-						ammo_pickup_min_mul = 0.4167,
-						ammo_pickup_max_mul = 0.4167
-					},
-					adds = {}
-				},
-				wpn_fps_ass_g3_b_short = {
-					stats = {
-						spread = -4,
-						total_ammo_mod = 15,
-						damage = -40,
-						value = 2,
-						concealment = 4,
-						recoil = 5
-					},
-					custom_stats = {
-						ammo_pickup_min_mul = 1.6667,
-						ammo_pickup_max_mul = 1.25
-					},
-					adds = {}
-				}
-			}
-			
+					
+					--gewehr
+					self.wpn_fps_ass_g3.override = {
+						wpn_fps_ass_g3_b_sniper = {
+							stats = {
+								extra_ammo = -5,
+								total_ammo_mod = -10,
+								damage = 61,
+								value = 2,
+								concealment = -2,
+								recoil = -1,
+								spread = 2
+							},
+							custom_stats = {
+								ammo_pickup_min_mul = 0.4167,
+								ammo_pickup_max_mul = 0.4167
+							},
+							adds = {}
+						},
+						wpn_fps_ass_g3_b_short = {
+							stats = {
+								spread = -4,
+								total_ammo_mod = 10,
+								damage = -40,
+								value = 2,
+								concealment = 1,
+								recoil = 5
+							},
+							custom_stats = {
+								ammo_pickup_min_mul = 1.6667,
+								ammo_pickup_max_mul = 1.25
+							},
+							adds = {}
+						}
+					}
+				
 end
