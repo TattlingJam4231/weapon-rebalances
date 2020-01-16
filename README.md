@@ -8,6 +8,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#snipers)
   5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#SMGs)
   6. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#pistols)
+  7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#specials)
   
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
@@ -221,6 +222,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - ammo pickup decreased from 18.23/33.41 to 10/15
 
 ### Snipers:
+
+   - Thanatos
+     - ammo pickup decreased from 0.07/0.88 to 0/0.53
+     - total ammo decreased from 15 to 5
+     - damage increased from 3500 to 8500
 
    - Nagant
      - ammo pickup changed from 0.95/1.35 to 0.94/1.35
@@ -508,13 +514,38 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Akimbo Crosskill Guard
      - ammo pickup increased from 2.3/8.03 to 4.05/8.1
 
-### Special:
+### Specials:
+
+   - GL40
+     - ammo pickup changed from 0.07/0.88 to 0/0.9
+   
+   - Piglet
+     - ammo pickup changed from 0.07/0.88 to 0/0.9
+   
+   - China Puff
+     - ammo pickup changed from 0.07/0.88 to 0/0.9
+   
+   - Compact 40
+     - ammo pickup changed from 0.07/0.88 to 0/0.9
+   
+   - Arbiter
+     - ammo pickup changed from 0.07/0.88 to 0/1.1
         
    - Vulcan Minigun
-     - Damage increased from 25 to 80
-     - Mag capacity increased from 750 to 984
-     - Stability decreased from 24 to 0
-     - Maximum kick value increased
-     - Accuracy increased from 32 to 56
-     - Ammo pickup rate decreased signifigantly
-     - Can now shoot through enemies and shields
+     - ammo pickup decreased from 10.13/35.44 to 0.68/2.03
+     - magazine capacity increased from 750 to 984
+     - concealment decreased from 5 to 1
+     - damage increased from 25 to 80
+     - stability decreased from 24 to 0
+     - maximum kick value increased
+     - accuracy increased from 32 to 56
+     - can now shoot through enemies and shields
+     
+   - XL 5.56 Microgun
+     - ammo pickup changed from 10.13/35.44 to 15/30
+     - magazine capacity increased from 750 to 984
+     - concealment increased from 5 to 7
+     - damage decreased from 35 to 32
+     - accuracy decreased from 32 to 28
+     - stability increased from 24 to 44
+     - changed from primary to secondary weapon
