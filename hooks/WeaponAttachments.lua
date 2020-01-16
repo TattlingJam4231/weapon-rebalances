@@ -117,8 +117,8 @@ function WeaponFactoryTweakData:init()
 					dot_damage = 10.5,
 					dot_tick_period = 0.4,
 					scale_damage = 10.5,
-					dot_decay = 1.5,
-					dot_decay_rate = 2
+					decay_damage = 1.5,
+					decay_rate = 2
 				}
 			}
 		},
@@ -134,8 +134,8 @@ function WeaponFactoryTweakData:init()
 					dot_damage = 60,
 					dot_tick_period = 0.4,
 					scale_damage = 4.5,
-					dot_decay = 0.5,
-					dot_decay_rate = 1
+					decay_damage = 0.5,
+					decay_rate = 1
 				}
 			}
 		},
@@ -151,8 +151,8 @@ function WeaponFactoryTweakData:init()
 					dot_damage = 6,
 					dot_tick_period = 0.4,
 					scale_damage = 3,
-					dot_decay = 0.5,
-					dot_decay_rate = 1
+					decay_damage = 0.5,
+					decay_rate = 1
 				}
 			}
 		},
@@ -168,8 +168,8 @@ function WeaponFactoryTweakData:init()
 					dot_damage = 6,
 					dot_tick_period = 0.4,
 					scale_damage = 2,
-					dot_decay = 0.5,
-					dot_decay_rate = 1
+					decay_damage = 0.5,
+					decay_rate = 1
 				}
 			}
 		},
@@ -185,8 +185,8 @@ function WeaponFactoryTweakData:init()
 					dot_damage = 3,
 					dot_tick_period = 0.4,
 					scale_damage = 1.5,
-					dot_decay = 1,
-					dot_decay_rate = 1
+					decay_damage = 1,
+					decay_rate = 1
 				}
 			}
 		}
