@@ -197,12 +197,45 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ###  LMGs:
 
+   - RPK
+     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+   
+   - Brenner
+     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+   
+   - KSP
+     - ammo pickup decreased from 16.2/29.7 to 10/15
+   
    - KSP 58
-     - Stability increased from 28 to 36
+     - ammo pickup decreased from 16.2/29.7 to 10/15
+     - stability increased from 28 to 36
+     
+   - Buzzsaw
+     - ammo pickup decreased from 18.23/33.41 to 10/15
 
 ### Snipers:
 
+   - Nagant
+     - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+   
+   - Desertfox
+     - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+   
+   - R93
+     - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+   
+   - Platypus
+     - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+   
+   - Rattlesnake
+     - ammo pickup decreased from 2.7/4.05 to 1.35/2.7
+   
+   - Repeater
+     - ammo pickup decreased from 3.04/4.56 to 1.35/2.7
+
 ### SMGs:
+
+### Pistols:
 
 ### Special:
         
