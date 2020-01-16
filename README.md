@@ -1,32 +1,30 @@
 # Payday-2-weapon-rebalances
-This is just a relatively minor rebalance of some weapons for Payday 2. We might expand our scope eventually and rebalance more
-weapons and other bits of the game.
+This is a rebalance of weapons for Payday 2 that is intended to make the different weapon categories more distinguished from each other and make all weapons equally viable. 
 
-WEAPON BUFFS
+## Weapon changes
   
-  Light Machine Guns:
-  
-    KSP 58:
-        Stability increased from 28 to 36
-      
-      The goal here was just to make the KSP 58 a lot less clunky and annoying to use without making it too strong.
-  
-    
-WEAPON REWORKS      
+#### Shotguns
 
-    Assault Rifles:
-      
-      Little Friend 7.62 Rifle:
-        Damage decreased from 160 to 58
-        Mag capacity increased from 20 to 30
-        Total ammo increased from 40 to 120
-        Ammo pickup rate increased
-        Default fire mode changed from single fire to automatic
-        Under barrel grenade launcher is now in the assault rifle catagory
-      
-      Our main focus with this rework was to make the Little Friend actually usable, and a lot more versatile. It's
-      inline with the lower damage assault rifles rather than DMR style rifles now, and we hope these changes makes
-      the rifle more viable.
+#### Assault Rifles
+
+    - Little Friend 7.62 Rifle:
+      - Damage decreased from 160 to 58
+      - Mag capacity increased from 20 to 30
+      - Total ammo increased from 40 to 120
+      - Ammo pickup rate increased
+      - Default fire mode changed from single fire to automatic
+      - Under barrel grenade launcher is now in the assault rifle catagory
+
+####  LMGs:
+
+    - KSP 58:
+      - Stability increased from 28 to 36
+
+#### Snipers
+
+#### SMGs
+
+#### Special
         
       Vulcan Minigun:
         Damage increased from 25 to 80
@@ -36,7 +34,3 @@ WEAPON REWORKS
         Accuracy increased from 32 to 56
         Ammo pickup rate decreased signifigantly
         Can now shoot through enemies and shields
-     
-     The idea here was to make the minigun into more of a utility weapon rather than the underwhelming LMG it
-     currently is. With these changes, the weapon is an absolutely devestating force in use, however it does require
-     specialized skills if you want to sustain the carnage it can unleash.
