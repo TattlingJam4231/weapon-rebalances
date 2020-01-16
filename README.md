@@ -376,6 +376,138 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### Pistols:
 
+   - Peacemaker
+     - ammo pickup changed from 0.73/2.55 to 0.68/2.7
+   
+   - Matever
+     - ammo pickup changed from 0.73/2.55 to 0.68/2.7
+   
+   - Castigo
+     - ammo pickup changed from 0.73/2.55 to 0.68/2.7
+   
+   - Bronco
+     - ammo pickup changed from 0.73/2.55 to 0.68/2.7
+   
+   - Parabellum
+     - ammo pickup changed from 0.76/2.65 to 0.68/2.7
+   
+   - Akimbo Matever
+     - ammo pickup decreased from 0.81/2.84 to 0.68/2.7
+   
+   - Akimbo Castigo
+     - ammo pickup decreased from 0.97/3.4 to 0.68/2.7
+   
+   - Akimbo Bronco
+     - ammo pickup decreased from 0.97/3.4 to 0.68/2.7
+   
+   - Akimbo Parabellum
+     - ammo pickup decreased from 0.86/3.02 to 0.68/2.7
+   
+   - White Streak
+     - ammo pickup increased from 0.81/2.84 to 1.35/4.05
+   
+   - Deagle
+     - ammo pickup increased from 0.68/2.36 to 1.35/4.05
+   
+   - Baby Deagle
+     - ammo pickup increased from 0.81/2.84 to 1.35/4.05
+   
+   - 5/7
+     - ammo pickup increased from 0.3/0.91 to 1.35/4.05
+   
+   - Akimbo White Streak
+     - ammo pickup increased from 0.97/3.4 to 1.35/4.05
+   
+   - Akimbo Deagle
+     - ammo pickup increased from 0.81/2.84 to 1.35/4.05
+   
+   - Akimbo Baby Deagle
+     - ammo pickup increased from 0.97/3.4 to 1.35/4.05
+   
+   - Chimano Custom
+     - ammo pickup increased from 1.3/4.54 to 2.7/6.75
+   
+   - Crosskill
+     - ammo pickup increased from 1.22/4.25 to 2.7/6.75
+   
+   - Broomstick
+     - ammo pickup increased from 1.22/4.25 to 2.7/6.75
+   
+   - Interceptor
+     - ammo pickup increased from 1.23/4.29 to 2.7/6.75
+   
+   - Signature .40
+     - ammo pickup increased from 1.13/3.97 to 2.7/6.75
+   
+   - LEO
+     - ammo pickup increased from 1.28/4.5 to 2.7/6.75
+   
+   - Contractor
+     - ammo pickup increased from 1.22/4.25 to 2.7/6.75
+   
+   - Akimbo Chimano Custom
+     - ammo pickup increased from 1.3/4.54 to 2.7/6.75
+   
+   - Akimbo Crosskill
+     - ammo pickup increased from 1.35/4.73 to 2.7/6.75
+   
+   - Akimbo Broomstick
+     - ammo pickup increased from 1.35/4.73 to 2.7/6.75
+   
+   - Akimbo Interceptor
+     - ammo pickup increased from 1.4/4.91 to 2.7/6.75
+   
+   - Akimbo Signature .40
+     - ammo pickup increased from 1.3/4.54 to 2.7/6.75
+   
+   - Akimbo LEO
+     - ammo pickup increased from 1.54/5.39 to 2.7/6.75
+   
+   - Akimbo Contractor
+     - ammo pickup increased from 1.22/4.25 to 2.7/6.75
+   
+   - Chimano 88
+     - ammo pickup increased from 2.07/7.24 to 4.05/8.1
+   
+   - Chimano Compact
+     - ammo pickup increased from 2.03/7.09 to 4.05/8.1
+   
+   - Bernetti
+     - ammo pickup increased from 2.08/7.28 to 4.05/8.1
+   
+   - Stryk
+     - ammo pickup increased from 2.16/7.56 to 4.05/8.1
+   
+   - Gruber Kurz
+     - ammo pickup increased from 2.08/7.28 to 4.05/8.1
+   
+   - M13
+     - ammo pickup increased from 2.11/7.37 to 4.05/8.1
+   
+   - Crosskill Guard
+     - ammo pickup increased from 2.07/7.24 to 4.05/8.1
+   
+   - Akimbo Chimano 88
+     - ammo pickup increased from 2.3/8.03 to 4.05/8.1
+   
+   - Akimbo Chimano Compact
+     - ammo pickup increased from 2.16/7.56 to 4.05/8.1
+   
+   - Akimbo Bernetti
+     - ammo pickup increased from 2.27/7.94 to 4.05/8.1
+   
+   - Akimbo Stryk
+     - ammo pickup increased from 2.7/9.45 to 4.05/8.1
+   
+   - Akimbo Gruber Kurz
+     - ammo pickup increased from 2.27/7.94 to 4.05/8.1
+   
+   - Akimbo M13
+     - ammo pickup increased from 2.11/7.37 to 4.05/8.1
+   
+   - Akimbo Crosskill Guard
+     - ammo pickup increased from 2.3/8.03 to 4.05/8.1
+
 ### Special:
         
    - Vulcan Minigun
