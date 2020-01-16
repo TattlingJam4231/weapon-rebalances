@@ -28,7 +28,7 @@ function WeaponTweakData:init(tweak_data)
 	self.m134.stats.spread = 15
 	self.m134.stats.spread_moving = 15
 	self.m134.stats.recoil = 1
-	self.m134.stats.concealment = 0
+	self.m134.stats.concealment = 1
 	self.m134.kick.standing = {
 		-0.05,
 		0.2,
@@ -218,7 +218,6 @@ function WeaponTweakData:init(tweak_data)
 		
 			--little friend
 			self.contraband.CLIP_AMMO_MAX = 30
-			self.contraband.NR_CLIPS_MAX = 4
 			self.contraband.AMMO_MAX = 120
 			self.contraband.AMMO_PICKUP = pickup.assault.t3
 			self.contraband.FIRE_MODE = "auto"
@@ -230,7 +229,6 @@ function WeaponTweakData:init(tweak_data)
 				"grenade_launcher",
 				"assault_rifle"
 				}
-			self.contraband_m203.AMMO_MAX = 3
 			
 			--gecko
 			self.galil.AMMO_PICKUP = pickup.assault.t3
@@ -466,7 +464,7 @@ function WeaponTweakData:init(tweak_data)
 			--uzi
 			self.uzi.AMMO_PICKUP = pickup.smg.t3
 			
-			--patchette
+			--patchett
 			self.sterling.AMMO_PICKUP = pickup.smg.t3
 			
 			--blaster
@@ -478,7 +476,7 @@ function WeaponTweakData:init(tweak_data)
 			--cobra
 			self.scorpion.AMMO_PICKUP = pickup.smg.t3
 			
-			--compact 5
+			--compact-5
 			self.new_mp5.AMMO_PICKUP = pickup.smg.t3
 			
 			--signature
@@ -490,7 +488,7 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo uzi
 			self.x_uzi.AMMO_PICKUP = pickup.smg.t3
 			
-			--akimbo patchette
+			--akimbo patchett
 			self.x_sterling.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo blaster
@@ -502,7 +500,7 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo cobra
 			self.x_scorpion.AMMO_PICKUP = pickup.smg.t3
 			
-			--akimbo compact 5
+			--akimbo compact-5
 			self.x_mp5.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo signature
@@ -576,7 +574,7 @@ function WeaponTweakData:init(tweak_data)
 			--interceptor
 			self.usp.AMMO_PICKUP = pickup.pistol.t3
 			
-			--signature
+			--signature .40
 			self.p226.AMMO_PICKUP = pickup.pistol.t3
 			
 			--leo
@@ -597,7 +595,7 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo interceptor
 			self.x_usp.AMMO_PICKUP = pickup.pistol.t3
 			
-			--akimbo signature
+			--akimbo signature .40
 			self.x_p226.AMMO_PICKUP = pickup.pistol.t3
 			
 			--akimbo leo
