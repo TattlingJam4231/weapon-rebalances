@@ -1,9 +1,9 @@
-# Payday-2-weapon-rebalances
+# Payday 2 Weapon Rebalances
 This is a rebalance of weapons for Payday 2 that is intended to make the different weapon types more distinguished from each other and make all weapons equally viable. 
 
 ## Weapon changes
   note: all ammo pickup values are with walk-in closet
-#### Shotguns:
+### Shotguns:
    
    - Mosconi
      - ammo pickup changed from 0.43/1.51 to 0.4/1.5
@@ -65,7 +65,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Grimm
      - ammo pickup changed from 7.02/10.53 to 7/10.5
      
-#### Assault Rifles:
+### Assault Rifles:
 
    - Little Friend 7.62 Rifle:
      - Damage decreased from 160 to 58
@@ -75,16 +75,16 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - Default fire mode changed from single fire to automatic
      - Under barrel grenade launcher is now in the assault rifle catagory
 
-####  LMGs:
+###  LMGs:
 
    - KSP 58:
      - Stability increased from 28 to 36
 
-#### Snipers:
+### Snipers:
 
-#### SMGs:
+### SMGs:
 
-#### Special:
+### Special:
         
    - Vulcan Minigun:
      - Damage increased from 25 to 80
