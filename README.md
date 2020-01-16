@@ -242,6 +242,138 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### SMGs:
 
+   - Tatonka
+     - ammo pickup increased from 1.73/6.05 to 2.5/7.5
+   
+   - Krinkov
+     - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+   
+   - Jackal
+     - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+   
+   - MP40
+     - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+   
+   - Swedish K
+     - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+   
+   - CR 805B
+     - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+   
+   - Akimbo Tatonka
+     - ammo pickup increased from 1.73/6.05 to 2.5/7.5
+   
+   - Akimbo Krinkov
+     - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+   
+   - Akimbo Jackal
+     - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+   
+   - Akimbo MP40
+     - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+   
+   - Akimbo Swedish K
+     - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+   
+   - Akimbo CR 805B
+     - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+   
+   - Kobus
+     - ammo pickup changed from 6.08/11.14 to 5/11.25
+   
+   - Para
+     - ammo pickup changed from 6.08/11.14 to 5/11.25
+   
+   - SpecOps
+     - ammo pickup decreased from 6.48/11.88 to 5/11.25
+   
+   - Heather
+     - ammo pickup decreased from 6.48/11.88 to 5/11.25
+   
+   - Kross Vertex
+     - ammo pickup changed from 6.08/11.14 to 5/11.25
+   
+   - Jacket's Piece
+     - ammo pickup decreased from 6.48/11.88 to 5/11.25
+   
+   - Mark 10
+     - ammo pickup decreased from 6.48	11.88 to 5/11.25
+   
+   - Typewriter
+     - ammo pickup changed from 6.08/11.14 to 5/11.25
+   
+   - Akimbo Kobus
+     - ammo pickup increased from 2.7/9.45 to 5/11.25
+   
+   - Akimbo Para
+     - ammo pickup increased from 2.7/9.45 to 5/11.25
+   
+   - Akimbo SpecOps
+     - ammo pickup increased from 2.7/9.45 to 5/11.25
+   
+   - Akimbo Heather
+     - ammo pickup increased from 2.59/9.07 to 5/11.25
+   
+   - Akimbo Kross Vertex
+     - ammo pickup increased from 2.43/8.51 to 5/11.25
+   
+   - Akimbo Jacket's Piece
+     - ammo pickup increased from 2.59/9.07 to 5/11.25
+   
+   - Akimbo Mark 10
+     - ammo pickup increased from 2.16/7.56 to 5/11.25
+   
+   - Akimbo Typewriter
+     - ammo pickup increased from 2.7/9.45 to 5/11.25
+   
+   - Micro Uzi
+     - ammo pickup increased from 9.07/16.63 to 7.5/22.5
+   
+   - Uzi
+     - ammo pickup increased from 8.1/14.85 to 7.5/22.5
+   
+   - Patchett
+     - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+   
+   - Blaster
+     - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+   
+   - CMP
+     - ammo pickup increased from 8.51/15.59 to 7.5/22.5
+   
+   - Cobra
+     - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+   
+   - Compact-5
+     - ammo pickup increased from 8.51/15.59 to 7.5/22.5
+   
+   - Signature
+     - ammo pickup increased from 2.7/9.45 to 7.5/22.5
+   
+   - Akimbo Micro Uzi
+     - ammo pickup increased from 3.46/12.1 to 7.5/22.5
+   
+   - Akimbo Uzi
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo Patchett
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo Blaster
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo CMP
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo Cobra
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo Compact-5
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+   
+   - Akimbo Signature
+     - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+
 ### Pistols:
 
 ### Special:
