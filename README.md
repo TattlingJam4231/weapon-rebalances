@@ -3,9 +3,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ## Weapon changes
   
-#### Shotguns
+#### Shotguns:
 
-#### Assault Rifles
+#### Assault Rifles:
 
    - Little Friend 7.62 Rifle:
      - Damage decreased from 160 to 58
@@ -20,11 +20,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - KSP 58:
      - Stability increased from 28 to 36
 
-#### Snipers
+#### Snipers:
 
-#### SMGs
+#### SMGs:
 
-#### Special
+#### Special:
         
    - Vulcan Minigun:
      - Damage increased from 25 to 80
