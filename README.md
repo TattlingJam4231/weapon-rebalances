@@ -1,6 +1,9 @@
 # Payday 2 Weapon Rebalances
 This is a rebalance of weapons for Payday 2 that is intended to make the different weapon types more distinguished from each other and make all weapons equally viable. 
 
+### Dependencies
+ - [Custom Poison Dots](https://github.com/TattlingJam4231/custom-poison-dots)
+
 ## Weapon changes
   1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#shotguns)
   2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#assault-rifles)
