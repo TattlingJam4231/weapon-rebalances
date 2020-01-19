@@ -18,40 +18,165 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 ### Shotguns:
    
 #### Ammo:
+   tier 5: used by 155 damage shotguns
+   
+   tier 4: used by 90 damage shotguns
+   
+   tier 3: used by 55 damage shotguns
+   
+   tier 2: used by 42 damage shotguns
+   
+   tier 1: used by 18 damage shotguns
+   
+   note: shotguns fire 12 pellets per shot by default
    - 000 Buckshot:
-     - 155 dmg
-     - 90 dmg
-     - 55 dmg
-     - 42 dmg
-     - 18 dmg
+     - tier 5
+       - +48 damage
+       - 9 pellets
+     - tier 4
+       - +30 damage
+       - 9 pellets
+     - tier 3
+       - +20 damage
+       - 9 pellets
+     - tier 2
+       - +17 damage
+       - 9 pellets
+     - tier 1
+       - +13 damage
+       - 9 pellets
    
    - Slugs
-     - 155 dmg
-     - 90 dmg
-     - 55 dmg
-     - 42 dmg
-     - 18 dmg
+     - tier 5
+       - +74 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 4
+       - +61 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 3
+       - +32 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 2
+       - +30 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 1
+       - +20 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
    
    - HE Rounds
-     - 155 dmg
-     - 90 dmg
-     - 55 dmg
-     - 42 dmg
-     - 18 dmg
+     - tier 5
+       - +9 damage
+       - -12 accuracy
+       - -60% max ammo pickup
+       - 3 pellets
+     - tier 4
+       - -12 accuracy
+       - -20% min ammo pickup
+       - -60% max ammo pickup
+       - 3 pellets
+     - tier 3
+       - -12 accuracy
+       - -70% min ammo pickup
+       - -63% max ammo pickup
+       - 3 pellets
+     - tier 2
+       - -12 accuracy
+       - -53% min ammo pickup
+       - -64% max ammo pickup
+       - 3 pellets
+     - tier 1
+       - -12 accuracy
+       - -50% min ammo pickup
+       - -45% max ammo pickup
+       - 3 pellets
+     
+     note: by not hitting an enemy directly with the he rounds, all three pellets can damage the same enemy
    
    - Dragon's Breath
-     - 155 dmg
-     - 90 dmg
-     - 55 dmg
-     - 42 dmg
-     - 18 dmg
+     - tier 5
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 80 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 4
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 70 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 3
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 60 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 2
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 50 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 1
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 40 damage every 0.5 seconds for three seconds
+       - 24 pellets
    
    - Flechette
-     - 155 dmg
-     - 90 dmg
-     - 55 dmg
-     - 42 dmg
-     - 18 dmg
+     - hit enemies are afflicted with a dot that decays over time, the dot lasts until the damage decays to 0
+     - damage of dot increased with consecutive hits 
+     - tier 5
+       - -103 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 105 intial damage
+         - -15 damage every 2 damage ticks
+         - +105 damage on consecutive hits
+     - tier 4
+       - -60 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +45 damage on consecutive hits
+     - tier 3
+       - -37 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +30 damage on consecutive hits
+     - tier 2
+       - -28 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +20 damage on consecutive hits
+     - tier 1
+       - -12 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 30 intial damage
+         - -10 damage every damage tick
+         - +15 damage on consecutive hits
      
 #### Weapons:
    
