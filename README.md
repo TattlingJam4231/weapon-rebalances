@@ -12,7 +12,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
-   test
+   
    - Mosconi
      - ammo pickup changed from 0.43/1.51 to 0.4/1.5
      
