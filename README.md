@@ -7,7 +7,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
  
 ## Weapon changes
   1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#shotguns)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons)
   2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#assault-rifles)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo-1)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons-1)
   3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#lmgs)
   4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#snipers)
   5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#SMGs)
