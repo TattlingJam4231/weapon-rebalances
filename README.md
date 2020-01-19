@@ -17,6 +17,44 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
    
+#### Ammo:
+   - 000 Buckshot:
+     - 155 dmg
+     - 90 dmg
+     - 55 dmg
+     - 42 dmg
+     - 18 dmg
+   
+   - Slugs
+     - 155 dmg
+     - 90 dmg
+     - 55 dmg
+     - 42 dmg
+     - 18 dmg
+   
+   - HE Rounds
+     - 155 dmg
+     - 90 dmg
+     - 55 dmg
+     - 42 dmg
+     - 18 dmg
+   
+   - Dragon's Breath
+     - 155 dmg
+     - 90 dmg
+     - 55 dmg
+     - 42 dmg
+     - 18 dmg
+   
+   - Flechette
+     - 155 dmg
+     - 90 dmg
+     - 55 dmg
+     - 42 dmg
+     - 18 dmg
+     
+#### Weapons:
+   
    - Mosconi
      - ammo pickup changed from 0.43/1.51 to 0.4/1.5
      
