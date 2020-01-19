@@ -106,7 +106,7 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo judge
 			self.x_judge.AMMO_PICKUP = pickup.shotgun.t5
 			self.x_judge.fire_mode_data.fire_rate = 0.166
-			self.X_judge.single.fire_rate = 0.166
+			self.x_judge.single.fire_rate = 0.166
 			
 			--judge
 			self.judge.AMMO_PICKUP = pickup.shotgun.t5
