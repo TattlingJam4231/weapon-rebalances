@@ -52,83 +52,83 @@ function WeaponTweakData:init(tweak_data)
 	--ammo pickup
 	local pickup = {
 		assault = {
-			t1 = {1.851,3.704},
-			t2 = {4.444,8.889},
-			t3 = {7.407,11.111},
-			t4 = {11.111,22.222}
+			t4 = {1.851,3.704},
+			t3 = {4.444,8.889},
+			t2 = {7.407,11.111},
+			t1 = {11.111,22.222}
 		},
 		shotgun = {
-			t1 = {0.296,1.11},
-			t2 = {0.37,1.48},
+			t5 = {0.296,1.11},
+			t4 = {0.37,1.48},
 			t3 = {3.185,4.96},
-			t4 = {3.48,5.41},
-			t5 = {5.185,7.78}
+			t2 = {3.48,5.41},
+			t1 = {5.185,7.78}
 		},
 		lmg = {
-			t1 = {1.851,7.407},
-			t2 = {7.407,11.111}
+			t2 = {1.851,7.407},
+			t1 = {7.407,11.111}
 		},
 		sniper = {
-			t1 = {0.7,1},
+			t3 = {0.7,1},
 			t2 = {1,2},
-			t3 = {2,3}
+			t1 = {2,3}
 		},
 		smg = {
-			t1 = {1.851,5.556},
+			t3 = {1.851,5.556},
 			t2 = {3.704,8.333},
-			t3 = {5.556,16.667}
+			t1 = {5.556,16.667}
 		},
 		pistol = {
-			t1 = {0.5,2},
-			t2 = {1,3},
-			t3 = {2,5},
-			t4 = {3,6}
+			t4 = {0.5,2},
+			t3 = {1,3},
+			t2 = {2,5},
+			t1 = {3,6}
 		},
 		gl = {
-			t1 = {0,0.667},
-			t2 = {0,0.815}
+			t2 = {0,0.667},
+			t1 = {0,0.815}
 		}
 	}
 	
 	--SHOTGUNS
 	
-		--t1 shotguns---------------------------------------------------------------
+		--t5 shotguns---------------------------------------------------------------
 		
 			--mosconi
-			self.huntsman.AMMO_PICKUP = pickup.shotgun.t1
+			self.huntsman.AMMO_PICKUP = pickup.shotgun.t5
 			
 			--joceline
-			self.b682.AMMO_PICKUP = pickup.shotgun.t1
+			self.b682.AMMO_PICKUP = pickup.shotgun.t5
 			
 			--breaker
-			self.boot.AMMO_PICKUP = pickup.shotgun.t1
+			self.boot.AMMO_PICKUP = pickup.shotgun.t5
 			
 			--akimbo judge
-			self.x_judge.AMMO_PICKUP = pickup.shotgun.t1
+			self.x_judge.AMMO_PICKUP = pickup.shotgun.t5
 			self.x_judge.fire_mode_data.fire_rate = 0.166
 			self.X_judge.single.fire_rate = 0.166
 			
 			--judge
-			self.judge.AMMO_PICKUP = pickup.shotgun.t1
+			self.judge.AMMO_PICKUP = pickup.shotgun.t5
 			self.judge.fire_mode_data.fire_rate = 0.166
 			self.judge.single.fire_rate = 0.166
 			
 			--gsps
-			self.m37.AMMO_PICKUP = pickup.shotgun.t1
+			self.m37.AMMO_PICKUP = pickup.shotgun.t5
 			
 			--claire
-			self.coach.AMMO_PICKUP = pickup.shotgun.t1
+			self.coach.AMMO_PICKUP = pickup.shotgun.t5
 		
-		--t2 shotguns----------------------------------------------------------------
+		--t4 shotguns----------------------------------------------------------------
 		
 			--raven
-			self.ksg.AMMO_PICKUP = pickup.shotgun.t2
+			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
 			
 			--reinfeld
-			self.r870.AMMO_PICKUP = pickup.shotgun.t2
+			self.r870.AMMO_PICKUP = pickup.shotgun.t4
 			
 			--locomotive
-			self.serbu.AMMO_PICKUP = pickup.shotgun.t2
+			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
 		
 		--t3 shotguns----------------------------------------------------------------
 		
@@ -142,84 +142,84 @@ function WeaponTweakData:init(tweak_data)
 			self.striker.AMMO_PICKUP = pickup.shotgun.t3
 			self.striker.stats.damage = 55
 		
-		--t4 shotguns----------------------------------------------------------------
+		--t2 shotguns----------------------------------------------------------------
 		
 			--izhma
-			self.saiga.AMMO_PICKUP = pickup.shotgun.t4
+			self.saiga.AMMO_PICKUP = pickup.shotgun.t2
 			
 			--steakout
-			self.aa12.AMMO_PICKUP = pickup.shotgun.t4
+			self.aa12.AMMO_PICKUP = pickup.shotgun.t2
 			
 			--akimbo goliath
-			self.x_rota.AMMO_PICKUP = pickup.shotgun.t4
+			self.x_rota.AMMO_PICKUP = pickup.shotgun.t2
 			
 			--goliath
-			self.rota.AMMO_PICKUP = pickup.shotgun.t4
+			self.rota.AMMO_PICKUP = pickup.shotgun.t2
 		
-		--t5 shotguns----------------------------------------------------------------
+		--t1 shotguns----------------------------------------------------------------
 		
 			--brothers grimm
-			self.x_basset.AMMO_PICKUP = pickup.shotgun.t5
+			self.x_basset.AMMO_PICKUP = pickup.shotgun.t1
 			
 			--grimm
-			self.basset.AMMO_PICKUP = pickup.shotgun.t5
+			self.basset.AMMO_PICKUP = pickup.shotgun.t1
 	
 	--ASSAULT RIFLES
 	
-		--t1 assault rifles---------------------------------------------------------
+		--t4 assault rifles---------------------------------------------------------
 		
 			--cavity
-			self.sub2000.AMMO_PICKUP = pickup.assault.t1
+			self.sub2000.AMMO_PICKUP = pickup.assault.t4
 			
 			--m308
-			self.new_m14.AMMO_PICKUP = pickup.assault.t1
+			self.new_m14.AMMO_PICKUP = pickup.assault.t4
 			
 			--galant
-			self.ching.AMMO_PICKUP = pickup.assault.t1
+			self.ching.AMMO_PICKUP = pickup.assault.t4
 		
-		--t2 assault rifles---------------------------------------------------------
+		--t3 assault rifles---------------------------------------------------------
 		
 			--eagle
-			self.scar.AMMO_PICKUP = pickup.assault.t2
+			self.scar.AMMO_PICKUP = pickup.assault.t3
 			self.scar.AMMO_MAX = 160
 			self.scar.stats.concealment = 1
 			
 			--falcon
-			self.fal.AMMO_PICKUP = pickup.assault.t2
+			self.fal.AMMO_PICKUP = pickup.assault.t3
 			self.fal.AMMO_MAX = 160
 			self.fal.stats.concealment = 1 -10
 			
 			--ak.762
-			self.akm.AMMO_PICKUP = pickup.assault.t2
+			self.akm.AMMO_PICKUP = pickup.assault.t3
 			self.akm.AMMO_MAX = 150
 			self.akm.stats.concealment = 1
 			
 			--golden ak.762
-			self.akm_gold.AMMO_PICKUP = pickup.assault.t2
+			self.akm_gold.AMMO_PICKUP = pickup.assault.t3
 			self.akm_gold.AMMO_MAX = 150
 			self.akm_gold.stats.concealment = 1
 			
 			--amr-16
-			self.m16.AMMO_PICKUP = pickup.assault.t2
+			self.m16.AMMO_PICKUP = pickup.assault.t3
 			self.m16.AMMO_MAX = 150
 			self.m16.stats.concealment = 2
 			
 			--ak17
-			self.flint.AMMO_PICKUP = pickup.assault.t2
+			self.flint.AMMO_PICKUP = pickup.assault.t3
 			self.flint.AMMO_MAX = 175
 			self.flint.stats.concealment = 1
 			
 			--gewehr
-			self.g3.AMMO_PICKUP = pickup.assault.t2
+			self.g3.AMMO_PICKUP = pickup.assault.t3
 			self.g3.AMMO_MAX = 160
 			self.g3.stats.concealment = 1
 		
-		--t3 assault rifles---------------------------------------------------------
+		-t2 assault rifles---------------------------------------------------------
 		
 			--little friend
 			self.contraband.CLIP_AMMO_MAX = 30
 			self.contraband.AMMO_MAX = 120
-			self.contraband.AMMO_PICKUP = pickup.assault.t3
+			self.contraband.AMMO_PICKUP = pickup.assault.t2
 			self.contraband.FIRE_MODE = "auto"
 			self.contraband.CAN_TOGGLE_FIREMODE = true
 			self.contraband.stats.damage = 58
@@ -231,121 +231,121 @@ function WeaponTweakData:init(tweak_data)
 				}
 			
 			--gecko
-			self.galil.AMMO_PICKUP = pickup.assault.t3
+			self.galil.AMMO_PICKUP = pickup.assault.t2
 			self.galil.AMMO_MAX = 240
 			self.galil.stats.concealment = 1
 			
 			--car-4
-			self.new_m4.AMMO_PICKUP = pickup.assault.t3
+			self.new_m4.AMMO_PICKUP = pickup.assault.t2
 			self.new_m4.AMMO_MAX = 240
 			self.new_m4.stats.concealment = -1
 			
 			--queen's wrath
-			self.l85a2.AMMO_PICKUP = pickup.assault.t3
+			self.l85a2.AMMO_PICKUP = pickup.assault.t2
 			self.l85a2.AMMO_MAX = 240
 			self.l85a2.stats.concealment = 1
 			
 			--ak5
-			self.ak5.AMMO_PICKUP = pickup.assault.t3
+			self.ak5.AMMO_PICKUP = pickup.assault.t2
 			self.ak5.AMMO_MAX = 240
 			self.ak5.stats.concealment = 1
 			
 			--lion's roar
-			self.vhs.AMMO_PICKUP = pickup.assault.t3
+			self.vhs.AMMO_PICKUP = pickup.assault.t2
 			self.vhs.AMMO_MAX = 240
 			self.vhs.stats.concealment = 2
 			
 			--ak
-			self.ak74.AMMO_PICKUP = pickup.assault.t3
+			self.ak74.AMMO_PICKUP = pickup.assault.t2
 			self.ak74.AMMO_MAX = 240
 			self.ak74.stats.concealment = 2
 			
 			--uar
-			self.aug.AMMO_PICKUP = pickup.assault.t3
+			self.aug.AMMO_PICKUP = pickup.assault.t2
 			self.aug.AMMO_MAX = 240
 			self.aug.stats.concealment = 3
 			
 			--tempest
-			self.komodo.AMMO_PICKUP = pickup.assault.t3
+			self.komodo.AMMO_PICKUP = pickup.assault.t2
 			self.komodo.AMMO_MAX = 240
 			self.komodo.stats.concealment = 4
 			
 			--union
-			self.corgi.AMMO_PICKUP = pickup.assault.t3
+			self.corgi.AMMO_PICKUP = pickup.assault.t2
 			self.corgi.AMMO_MAX = 240
 			self.corgi.stats.concealment = 1
 		
-		--t4 assault rifles---------------------------------------------------------
+		--t1 assault rifles---------------------------------------------------------
 		
 			--amcar
-			self.amcar.AMMO_PICKUP = pickup.assault.t4
+			self.amcar.AMMO_PICKUP = pickup.assault.t1
 			self.amcar.AMMO_MAX = 360
 			self.amcar.stats.concealment = 6
 			
 			--commando
-			self.s552.AMMO_PICKUP = pickup.assault.t4
+			self.s552.AMMO_PICKUP = pickup.assault.t1
 			self.s552.AMMO_MAX = 360
 			self.s552.stats.concealment = 3
 			
 			--jp36
-			self.g36.AMMO_PICKUP = pickup.assault.t4
+			self.g36.AMMO_PICKUP = pickup.assault.t1
 			self.g36.AMMO_MAX = 360
 			self.g36.stats.concealment = 4
 			
 			--clarion
-			self.famas.AMMO_PICKUP = pickup.assault.t4
+			self.famas.AMMO_PICKUP = pickup.assault.t1
 			self.famas.AMMO_MAX = 360
 			self.famas.stats.concealment = 3
 			
 			--valkyria
-			self.asval.AMMO_PICKUP = pickup.assault.t4
+			self.asval.AMMO_PICKUP = pickup.assault.t1
 			self.asval.AMMO_MAX = 360
 			self.asval.stats.concealment = 3
 			
 			--bootleg
-			self.tecci.AMMO_PICKUP = pickup.assault.t4
+			self.tecci.AMMO_PICKUP = pickup.assault.t1
 			self.tecci.AMMO_MAX = 300
 			self.tecci.stats.concealment = 4
 	
 	--LMGs
 	
-		--t1 lmgs-------------------------------------------------------------------
-		
-			--rpk
-			self.rpk.AMMO_PICKUP = pickup.lmg.t1
-			
-			--brenner
-			self.hk21.AMMO_PICKUP = pickup.lmg.t1
-		
 		--t2 lmgs-------------------------------------------------------------------
 		
+			--rpk
+			self.rpk.AMMO_PICKUP = pickup.lmg.t2
+			
+			--brenner
+			self.hk21.AMMO_PICKUP = pickup.lmg.t2
+		
+		--t1 lmgs-------------------------------------------------------------------
+		
 			--ksp
-			self.m249.AMMO_PICKUP = pickup.lmg.t2
+			self.m249.AMMO_PICKUP = pickup.lmg.t1
 			
 			--ksp 58
 			-- self.par.timers.reload_not_empty = 5.62
 			-- self.par.timers.reload_empty = 5.62
 			self.par.stats.recoil = 10
-			self.par.AMMO_PICKUP = pickup.lmg.t2
+			self.par.AMMO_PICKUP = pickup.lmg.t1
 			
 			--buzzsaw
-			self.mg42.AMMO_PICKUP = pickup.lmg.t2
+			self.mg42.AMMO_PICKUP = pickup.lmg.t1
 	
 	--SNIPERS
 		
-		--t1 snipers----------------------------------------------------------------
+		--t3 snipers----------------------------------------------------------------
 		
 			--nagant
-			self.mosin.AMMO_PICKUP = pickup.sniper.t1
+			self.mosin.AMMO_PICKUP = pickup.sniper.t3
 			
 			--desertfox
-			self.desertfox.AMMO_PICKUP = pickup.sniper.t1
+			self.desertfox.AMMO_PICKUP = pickup.sniper.t3
 			
 			--r93
-			self.r93.AMMO_PICKUP = pickup.sniper.t1
+			self.r93.AMMO_PICKUP = pickup.sniper.t3
 			
 			--platypus
-			self.model70.AMMO_PICKUP = pickup.sniper.t1
+			self.model70.AMMO_PICKUP = pickup.sniper.t3
 		
 		--t2 snipers----------------------------------------------------------------
 		
@@ -355,56 +355,56 @@ function WeaponTweakData:init(tweak_data)
 			--repeater
 			self.winchester1874.AMMO_PICKUP = pickup.sniper.t2
 		
-		--t3 snipers----------------------------------------------------------------
+		--t1 snipers----------------------------------------------------------------
 		
 			--lebensauger
-			self.wa2000.AMMO_PICKUP = pickup.sniper.t3
+			self.wa2000.AMMO_PICKUP = pickup.sniper.t1
 			
 			--contractor
-			self.tti.AMMO_PICKUP = pickup.sniper.t3
+			self.tti.AMMO_PICKUP = pickup.sniper.t1
 			
 			--grom
-			self.siltstone.AMMO_PICKUP = pickup.sniper.t3
+			self.siltstone.AMMO_PICKUP = pickup.sniper.t1
 		
 	--SMGs
 		
-		--t1 smgs-------------------------------------------------------------------
+		--t3 smgs-------------------------------------------------------------------
 			
 			--tatonka
-			self.coal.AMMO_PICKUP = pickup.smg.t1
+			self.coal.AMMO_PICKUP = pickup.smg.t3
 			
 			--krinkov
-			self.akmsu.AMMO_PICKUP = pickup.smg.t1
+			self.akmsu.AMMO_PICKUP = pickup.smg.t3
 			
 			--jackal
-			self.schakal.AMMO_PICKUP = pickup.smg.t1
+			self.schakal.AMMO_PICKUP = pickup.smg.t3
 			
 			--mp40
-			self.erma.AMMO_PICKUP = pickup.smg.t1
+			self.erma.AMMO_PICKUP = pickup.smg.t3
 			
 			--swedish k
-			self.m45.AMMO_PICKUP = pickup.smg.t1
+			self.m45.AMMO_PICKUP = pickup.smg.t3
 			
 			--cr 805b
-			self.hajk.AMMO_PICKUP = pickup.smg.t1
+			self.hajk.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo tatonka
-			self.x_coal.AMMO_PICKUP = pickup.smg.t1
+			self.x_coal.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo krinkov
-			self.x_akmsu.AMMO_PICKUP = pickup.smg.t1
+			self.x_akmsu.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo jackal
-			self.x_schakal.AMMO_PICKUP = pickup.smg.t1
+			self.x_schakal.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo mp40
-			self.x_erma.AMMO_PICKUP = pickup.smg.t1
+			self.x_erma.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo swedish k
-			self.x_m45.AMMO_PICKUP = pickup.smg.t1
+			self.x_m45.AMMO_PICKUP = pickup.smg.t3
 			
 			--akimbo cr 805b
-			self.x_hajk.AMMO_PICKUP = pickup.smg.t1
+			self.x_hajk.AMMO_PICKUP = pickup.smg.t3
 			
 		--t2 smgs-------------------------------------------------------------------
 			
@@ -456,218 +456,218 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo typewriter
 			self.x_m1928.AMMO_PICKUP = pickup.smg.t2
 			
-		--t3 smgs-------------------------------------------------------------------
+		--t1 smgs-------------------------------------------------------------------
 			
 			--micro uzi
-			self.baka.AMMO_PICKUP = pickup.smg.t3
+			self.baka.AMMO_PICKUP = pickup.smg.t1
 			
 			--uzi
-			self.uzi.AMMO_PICKUP = pickup.smg.t3
+			self.uzi.AMMO_PICKUP = pickup.smg.t1
 			
 			--patchett
-			self.sterling.AMMO_PICKUP = pickup.smg.t3
+			self.sterling.AMMO_PICKUP = pickup.smg.t1
 			
 			--blaster
-			self.tec9.AMMO_PICKUP = pickup.smg.t3
+			self.tec9.AMMO_PICKUP = pickup.smg.t1
 			
 			--cmp
-			self.mp9.AMMO_PICKUP = pickup.smg.t3
+			self.mp9.AMMO_PICKUP = pickup.smg.t1
 			
 			--cobra
-			self.scorpion.AMMO_PICKUP = pickup.smg.t3
+			self.scorpion.AMMO_PICKUP = pickup.smg.t1
 			
 			--compact-5
-			self.new_mp5.AMMO_PICKUP = pickup.smg.t3
+			self.new_mp5.AMMO_PICKUP = pickup.smg.t1
 			
 			--signature
-			self.shepheard.AMMO_PICKUP = pickup.smg.t3
+			self.shepheard.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo micro uzi
-			self.x_baka.AMMO_PICKUP = pickup.smg.t3
+			self.x_baka.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo uzi
-			self.x_uzi.AMMO_PICKUP = pickup.smg.t3
+			self.x_uzi.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo patchett
-			self.x_sterling.AMMO_PICKUP = pickup.smg.t3
+			self.x_sterling.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo blaster
-			self.x_tec9.AMMO_PICKUP = pickup.smg.t3
+			self.x_tec9.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo cmp
-			self.x_mp9.AMMO_PICKUP = pickup.smg.t3
+			self.x_mp9.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo cobra
-			self.x_scorpion.AMMO_PICKUP = pickup.smg.t3
+			self.x_scorpion.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo compact-5
-			self.x_mp5.AMMO_PICKUP = pickup.smg.t3
+			self.x_mp5.AMMO_PICKUP = pickup.smg.t1
 			
 			--akimbo signature
-			self.x_shepheard.AMMO_PICKUP = pickup.smg.t3
+			self.x_shepheard.AMMO_PICKUP = pickup.smg.t1
 			
 	--PISTOLS
 		
-		--t1 pistols----------------------------------------------------------------
+		--t4 pistols----------------------------------------------------------------
 			
 			--peacemaker
-			self.peacemaker.AMMO_PICKUP = pickup.pistol.t1
+			self.peacemaker.AMMO_PICKUP = pickup.pistol.t4
 			
 			--matever
-			self.mateba.AMMO_PICKUP = pickup.pistol.t1
+			self.mateba.AMMO_PICKUP = pickup.pistol.t4
 			
 			--castigo
-			self.chinchilla.AMMO_PICKUP = pickup.pistol.t1
+			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			
 			--bronco
-			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t1
+			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
 			
 			--parabellum
-			self.breech.AMMO_PICKUP = pickup.pistol.t1
+			self.breech.AMMO_PICKUP = pickup.pistol.t4
 			
 			--akimbo matever
-			self.x_2006m.AMMO_PICKUP = pickup.pistol.t1
+			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
 			
 			--akimbo castigo
-			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t1
+			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			
 			--akimbo bronco
-			self.x_rage.AMMO_PICKUP = pickup.pistol.t1
+			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
 			
 			--akimbo parabellum
-			self.x_breech.AMMO_PICKUP = pickup.pistol.t1
-			
-		--t2 pistols----------------------------------------------------------------
-			
-			--white streak
-			self.pl14.AMMO_PICKUP = pickup.pistol.t2
-			
-			--deagle
-			self.deagle.AMMO_PICKUP = pickup.pistol.t2
-			
-			--baby deagle
-			self.sparrow.AMMO_PICKUP = pickup.pistol.t2
-			
-			--5/7
-			self.lemming.AMMO_PICKUP = pickup.pistol.t2
-			
-			--akimbo white streak
-			self.x_pl14.AMMO_PICKUP = pickup.pistol.t2
-			
-			--akimbo deagle
-			self.x_deagle.AMMO_PICKUP = pickup.pistol.t2
-			
-			--akimbo baby deagle
-			self.x_sparrow.AMMO_PICKUP = pickup.pistol.t2
+			self.x_breech.AMMO_PICKUP = pickup.pistol.t4
 			
 		--t3 pistols----------------------------------------------------------------
 			
+			--white streak
+			self.pl14.AMMO_PICKUP = pickup.pistol.t3
+			
+			--deagle
+			self.deagle.AMMO_PICKUP = pickup.pistol.t3
+			
+			--baby deagle
+			self.sparrow.AMMO_PICKUP = pickup.pistol.t3
+			
+			--5/7
+			self.lemming.AMMO_PICKUP = pickup.pistol.t3
+			
+			--akimbo white streak
+			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3
+			
+			--akimbo deagle
+			self.x_deagle.AMMO_PICKUP = pickup.pistol.t3
+			
+			--akimbo baby deagle
+			self.x_sparrow.AMMO_PICKUP = pickup.pistol.t3
+			
+		--t2 pistols----------------------------------------------------------------
+			
 			--chimano custom
-			self.g22c.AMMO_PICKUP = pickup.pistol.t3
+			self.g22c.AMMO_PICKUP = pickup.pistol.t2
 			
 			--crosskill
-			self.colt_1911.AMMO_PICKUP = pickup.pistol.t3
+			self.colt_1911.AMMO_PICKUP = pickup.pistol.t2
 			
 			--broomstick
-			self.c96.AMMO_PICKUP = pickup.pistol.t3
+			self.c96.AMMO_PICKUP = pickup.pistol.t2
 			
 			--interceptor
-			self.usp.AMMO_PICKUP = pickup.pistol.t3
+			self.usp.AMMO_PICKUP = pickup.pistol.t2
 			
 			--signature .40
-			self.p226.AMMO_PICKUP = pickup.pistol.t3
+			self.p226.AMMO_PICKUP = pickup.pistol.t2
 			
 			--leo
-			self.hs2000.AMMO_PICKUP = pickup.pistol.t3
+			self.hs2000.AMMO_PICKUP = pickup.pistol.t2
 			
 			--contractor
-			self.packrat.AMMO_PICKUP = pickup.pistol.t3
+			self.packrat.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo chimano custom
-			self.x_g22c.AMMO_PICKUP = pickup.pistol.t3
+			self.x_g22c.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo crosskill
-			self.x_1911.AMMO_PICKUP = pickup.pistol.t3
+			self.x_1911.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo broomstick
-			self.x_c96.AMMO_PICKUP = pickup.pistol.t3
+			self.x_c96.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo interceptor
-			self.x_usp.AMMO_PICKUP = pickup.pistol.t3
+			self.x_usp.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo signature .40
-			self.x_p226.AMMO_PICKUP = pickup.pistol.t3
+			self.x_p226.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo leo
-			self.x_hs2000.AMMO_PICKUP = pickup.pistol.t3
+			self.x_hs2000.AMMO_PICKUP = pickup.pistol.t2
 			
 			--akimbo contractor
-			self.x_packrat.AMMO_PICKUP = pickup.pistol.t3
+			self.x_packrat.AMMO_PICKUP = pickup.pistol.t2
 			
-		--t4 pistols----------------------------------------------------------------
+		--t1 pistols----------------------------------------------------------------
 			
 			--chimano 88
-			self.glock_17.AMMO_PICKUP = pickup.pistol.t4
+			self.glock_17.AMMO_PICKUP = pickup.pistol.t1
 			
 			--chimano compact
-			self.g26.AMMO_PICKUP = pickup.pistol.t4
+			self.g26.AMMO_PICKUP = pickup.pistol.t1
 			
 			--bernetti
-			self.b92fs.AMMO_PICKUP = pickup.pistol.t4
+			self.b92fs.AMMO_PICKUP = pickup.pistol.t1
 			
 			--stryk
-			self.glock_18c.AMMO_PICKUP = pickup.pistol.t4
+			self.glock_18c.AMMO_PICKUP = pickup.pistol.t1
 			
 			--gruber kurz
-			self.ppk.AMMO_PICKUP = pickup.pistol.t4
+			self.ppk.AMMO_PICKUP = pickup.pistol.t1
 			
 			--m13
-			self.legacy.AMMO_PICKUP = pickup.pistol.t4
+			self.legacy.AMMO_PICKUP = pickup.pistol.t1
 			
 			--crosskill guard
-			self.shrew.AMMO_PICKUP = pickup.pistol.t4
+			self.shrew.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo chimano 88
-			self.x_g17.AMMO_PICKUP = pickup.pistol.t4
+			self.x_g17.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo chimano compact
-			self.jowi.AMMO_PICKUP = pickup.pistol.t4
+			self.jowi.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo bernetti
-			self.x_b92fs.AMMO_PICKUP = pickup.pistol.t4
+			self.x_b92fs.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo stryk
-			self.x_g18c.AMMO_PICKUP = pickup.pistol.t4
+			self.x_g18c.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo gruber kurz
-			self.x_ppk.AMMO_PICKUP = pickup.pistol.t4
+			self.x_ppk.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo m13
-			self.x_legacy.AMMO_PICKUP = pickup.pistol.t4
+			self.x_legacy.AMMO_PICKUP = pickup.pistol.t1
 			
 			--akimbo crosskill guard
-			self.x_shrew.AMMO_PICKUP = pickup.pistol.t4
+			self.x_shrew.AMMO_PICKUP = pickup.pistol.t1
 			
 	--GLs
 		
-		--t1 gls--------------------------------------------------------------------
-			
-			--gl40
-			self.gre_m79.AMMO_PICKUP = pickup.gl.t1
-			
-			--piglet
-			self.m32.AMMO_PICKUP = pickup.gl.t1
-			
-			--china puff
-			self.china.AMMO_PICKUP = pickup.gl.t1
-			
-			--compact 40
-			self.slap.AMMO_PICKUP = pickup.gl.t1
-			
 		--t2 gls--------------------------------------------------------------------
 			
+			--gl40
+			self.gre_m79.AMMO_PICKUP = pickup.gl.t2
+			
+			--piglet
+			self.m32.AMMO_PICKUP = pickup.gl.t2
+			
+			--china puff
+			self.china.AMMO_PICKUP = pickup.gl.t2
+			
+			--compact 40
+			self.slap.AMMO_PICKUP = pickup.gl.t2
+			
+		--t1 gls--------------------------------------------------------------------
+			
 			--arbiter
-			self.arbiter.AMMO_PICKUP = pickup.gl.t2
+			self.arbiter.AMMO_PICKUP = pickup.gl.t1
 			self.arbiter.stats.damage = 50
 			
 end
