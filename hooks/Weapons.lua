@@ -214,7 +214,7 @@ function WeaponTweakData:init(tweak_data)
 			self.g3.AMMO_MAX = 160
 			self.g3.stats.concealment = 1
 		
-		-t2 assault rifles---------------------------------------------------------
+		--t2 assault rifles---------------------------------------------------------
 		
 			--little friend
 			self.contraband.CLIP_AMMO_MAX = 30
