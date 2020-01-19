@@ -6,9 +6,9 @@
 
 	<!-- FMJ rounds -->
 		
-		<!-- FMJ t1 -->
+		<!-- FMJ t4 -->
 		<WeaponMod
-			id="wpn_upg_a_fmj_t1"
+			id="wpn_upg_a_fmj_t4"
 			name_id="FMJ"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -51,9 +51,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- FMJ t2 -->
+		<!-- FMJ t3 -->
 		<WeaponMod
-			id="wpn_upg_a_fmj_t2"
+			id="wpn_upg_a_fmj_t3"
 			name_id="FMJ"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -91,9 +91,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- FMJ t3 -->
+		<!-- FMJ t2 -->
 		<WeaponMod
-			id="wpn_upg_a_fmj_t3"
+			id="wpn_upg_a_fmj_t2"
 			name_id="FMJ"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -136,9 +136,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- FMJ t4 -->
+		<!-- FMJ t1 -->
 		<WeaponMod
-			id="wpn_upg_a_fmj_t4"
+			id="wpn_upg_a_fmj_t1"
 			name_id="FMJ"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -171,9 +171,9 @@
 	
 	<!-- Ballistic Tip rounds -->
 		
-		<!-- Ballistic Tip t1 -->
+		<!-- Ballistic Tip t4 -->
 		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t1"
+			id="wpn_upg_a_ballistic_tip_t4"
 			name_id="Ballistic Tip"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -271,9 +271,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Ballistic Tip t2 -->
+		<!-- Ballistic Tip t3 -->
 		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t2"
+			id="wpn_upg_a_ballistic_tip_t3"
 			name_id="Ballistic Tip"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -313,9 +313,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Ballistic Tip t3 -->
+		<!-- Ballistic Tip t2 -->
 		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t3"
+			id="wpn_upg_a_ballistic_tip_t2"
 			name_id="Ballistic Tip"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -358,9 +358,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Ballistic Tip t4 -->
+		<!-- Ballistic Tip t1 -->
 		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t4"
+			id="wpn_upg_a_ballistic_tip_t1"
 			name_id="Ballistic Tip"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -393,9 +393,9 @@
 		
 	<!-- Armor Piercing rounds -->
 		
-		<!-- Armor Piercing t1 -->
+		<!-- Armor Piercing t4 -->
 		<WeaponMod
-			id="wpn_upg_a_armor_piercing_t1"
+			id="wpn_upg_a_armor_piercing_t4"
 			name_id="Armor Piercing"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -422,7 +422,7 @@
 				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -432,7 +432,7 @@
 				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -442,7 +442,7 @@
 				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -452,7 +452,7 @@
 				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -462,7 +462,7 @@
 				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -472,7 +472,7 @@
 				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper">
 					<custom_stats
 						ammo_pickup_max_mul = "0.5"
-						ammo_pickup_min_mul = "0.4"
+						ammo_pickup_min_mul = "0.5"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -493,9 +493,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Armor Piercing t2 -->
+		<!-- Armor Piercing t3 -->
 		<WeaponMod
-			id="wpn_upg_a_armor_piercing_t2"
+			id="wpn_upg_a_armor_piercing_t3"
 			name_id="Armor Piercing"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -535,9 +535,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Armor Piercing t3 -->
+		<!-- Armor Piercing t2 -->
 		<WeaponMod
-			id="wpn_upg_a_armor_piercing_t3"
+			id="wpn_upg_a_armor_piercing_t2"
 			name_id="Armor Piercing"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
@@ -582,9 +582,9 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Armor Piercing t4 -->
+		<!-- Armor Piercing t1 -->
 		<WeaponMod
-			id="wpn_upg_a_armor_piercing_t4"
+			id="wpn_upg_a_armor_piercing_t1"
 			name_id="Armor Piercing"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
