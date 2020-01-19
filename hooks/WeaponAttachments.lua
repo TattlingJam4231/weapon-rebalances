@@ -6,13 +6,13 @@ function WeaponFactoryTweakData:init()
 	--OVERRIDES---------------------------------------------------------------------------------------------------------------------
 
 	local slug = {
-		t1 = {
+		t5 = {
 			dmg = 74,
 			acc = 10,
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t2 = {
+		t4 = {
 			dmg = 61,
 			acc = 10,
 			min_pickup = nil,
@@ -24,13 +24,13 @@ function WeaponFactoryTweakData:init()
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t4 = {
+		t2 = {
 			dmg = 30,
 			acc = 10,
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t5 = {
+		t1 = {
 			dmg = 20,
 			acc = 10,
 			min_pickup = nil,
@@ -39,13 +39,13 @@ function WeaponFactoryTweakData:init()
 	}
 	
 	local buckshot = {
-		t1 = {
+		t5 = {
 			dmg = 48,
 			acc = nil,
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t2 = {
+		t4 = {
 			dmg = 30,
 			acc = nil,
 			min_pickup = nil,
@@ -57,13 +57,13 @@ function WeaponFactoryTweakData:init()
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t4 = {
+		t2 = {
 			dmg = 17,
 			acc = nil,
 			min_pickup = nil,
 			max_pickup = nil
 		},
-		t5 = {
+		t1 = {
 			dmg = 13,
 			acc = nil,
 			min_pickup = nil,
@@ -72,13 +72,13 @@ function WeaponFactoryTweakData:init()
 	}
 	
 	local he = {
-		t1 = {
+		t5 = {
 			dmg = 9,
 			acc = -3,
 			min_pickup = nil,
 			max_pickup = 0.4
 		},
-		t2 = {
+		t4 = {
 			dmg = nil,
 			acc = -3,
 			min_pickup = 0.8,
@@ -90,13 +90,13 @@ function WeaponFactoryTweakData:init()
 			min_pickup = 0.3022,
 			max_pickup = 0.3733
 		},
-		t4 = {
+		t2 = {
 			dmg = nil,
 			acc = -3,
 			min_pickup = 0.4681,
 			max_pickup = 0.3563
 		},
-		t5 = {
+		t1 = {
 			dmg = nil,
 			acc = -3,
 			min_pickup = 0.5,
@@ -105,7 +105,7 @@ function WeaponFactoryTweakData:init()
 	}
 	
 	local flechette = {
-		t1 = {
+		t5 = {
 			dmg = -103,
 			acc = -1,
 			min_pickup = nil,
@@ -122,7 +122,7 @@ function WeaponFactoryTweakData:init()
 				}
 			}
 		},
-		t2 = {
+		t4 = {
 			dmg = -60,
 			acc = -1,
 			min_pickup = nil,
@@ -131,7 +131,7 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 60,
+					dot_damage = 6,
 					dot_tick_period = 0.4,
 					scale_damage = 4.5,
 					decay_damage = 0.5,
@@ -156,7 +156,7 @@ function WeaponFactoryTweakData:init()
 				}
 			}
 		},
-		t4 = {
+		t2 = {
 			dmg = -28,
 			acc = -1,
 			min_pickup = nil,
@@ -173,7 +173,7 @@ function WeaponFactoryTweakData:init()
 				}
 			}
 		},
-		t5 = {
+		t1 = {
 			dmg = -12,
 			acc = -1,
 			min_pickup = nil,
@@ -193,7 +193,20 @@ function WeaponFactoryTweakData:init()
 	}
 	
 	local db = {
-		t1 = {
+		t5 = {
+			dmg = nil,
+			acc = -3,
+			min_pickup = 0.4,
+			max_pickup = nil,
+			fire_dot_data = {
+				dot_trigger_chance = 100,
+				dot_damage = 8, 
+				dot_length = 3.1, 
+				dot_trigger_max_distance = 3000, 
+				dot_tick_period = 0.5
+			}
+		},
+		t4 = {
 			dmg = nil,
 			acc = -3,
 			min_pickup = 0.4,
@@ -206,19 +219,6 @@ function WeaponFactoryTweakData:init()
 				dot_tick_period = 0.5
 			}
 		},
-		t2 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 7, 
-				dot_length = 2.6, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
 		t3 = {
 			dmg = nil,
 			acc = -3,
@@ -226,26 +226,13 @@ function WeaponFactoryTweakData:init()
 			max_pickup = nil,
 			fire_dot_data = {
 				dot_trigger_chance = 100,
-				dot_damage = 7, 
-				dot_length = 2.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
-		t4 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
 				dot_damage = 6, 
-				dot_length = 2.1, 
+				dot_length = 3.1, 
 				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
 		},
-		t5 = {
+		t2 = {
 			dmg = nil,
 			acc = -3,
 			min_pickup = 0.4,
@@ -253,7 +240,20 @@ function WeaponFactoryTweakData:init()
 			fire_dot_data = {
 				dot_trigger_chance = 100,
 				dot_damage = 5, 
-				dot_length = 2.1, 
+				dot_length = 3.1, 
+				dot_trigger_max_distance = 3000, 
+				dot_tick_period = 0.5
+			}
+		},
+		t1 = {
+			dmg = nil,
+			acc = -3,
+			min_pickup = 0.4,
+			max_pickup = nil,
+			fire_dot_data = {
+				dot_trigger_chance = 100,
+				dot_damage = 4, 
+				dot_length = 3.1, 
 				dot_trigger_max_distance = 3000, 
 				dot_tick_period = 0.5
 			}
@@ -267,14 +267,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc,
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -288,14 +288,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -304,14 +304,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -320,14 +320,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc,
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -338,15 +338,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc,
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -356,15 +356,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc,
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -381,14 +381,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc,
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -402,14 +402,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -418,14 +418,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -434,14 +434,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc,
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -452,15 +452,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc,
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -470,15 +470,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc,
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc,
 					reload = 3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -495,13 +495,13 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -515,13 +515,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -530,13 +530,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -545,13 +545,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -562,14 +562,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -579,14 +579,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -603,13 +603,13 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -623,13 +623,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -638,13 +638,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -653,13 +653,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -670,14 +670,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -687,14 +687,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -718,13 +718,13 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -738,13 +738,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -753,13 +753,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -768,13 +768,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -785,14 +785,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -802,14 +802,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
@@ -831,14 +831,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc,
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -852,14 +852,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -868,14 +868,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -884,14 +884,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc,
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -902,15 +902,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc,
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -920,15 +920,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc,
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -945,14 +945,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_slug = {
 				stats = {
 					value = 5,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc,
+					damage = slug.t5.dmg,
+					spread = slug.t5.acc,
+					moving_spread = slug.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
+					ammo_pickup_min_mul = slug.t5.min_pickup,
+					ammo_pickup_max_mul = slug.t5.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -966,14 +966,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -982,14 +982,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc,
+					damage = buckshot.t5.dmg,
+					spread = buckshot.t5.acc,
+					moving_spread = buckshot.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
+					ammo_pickup_min_mul = buckshot.t5.min_pickup,
+					ammo_pickup_max_mul = buckshot.t5.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -998,14 +998,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc,
+					damage = he.t5.dmg,
+					spread = he.t5.acc,
+					moving_spread = he.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
+					ammo_pickup_min_mul = he.t5.min_pickup,
+					ammo_pickup_max_mul = he.t5.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1016,15 +1016,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc,
+					damage = flechette.t5.dmg,
+					spread = flechette.t5.acc,
+					moving_spread = flechette.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
+					ammo_pickup_min_mul = flechette.t5.min_pickup,
+					ammo_pickup_max_mul = flechette.t5.max_pickup,
+					dot_data = flechette.t5.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1034,15 +1034,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc,
+					damage = db.t5.dmg,
+					spread = db.t5.acc,
+					moving_spread = db.t5.acc,
 					reload = 2
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
+					ammo_pickup_min_mul = db.t5.min_pickup,
+					ammo_pickup_max_mul = db.t5.max_pickup,
+					fire_dot_data = db.t5.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1062,14 +1062,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc,
+					damage = slug.t4.dmg,
+					spread = slug.t4.acc,
+					moving_spread = slug.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
+					ammo_pickup_min_mul = slug.t4.min_pickup,
+					ammo_pickup_max_mul = slug.t4.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1083,14 +1083,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1099,14 +1099,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1115,14 +1115,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t2.acc,
+					damage = he.t4.dmg,
+					spread = he.t4.acc,
+					moving_spread = he.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
+					ammo_pickup_min_mul = he.t4.min_pickup,
+					ammo_pickup_max_mul = he.t4.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1133,15 +1133,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc,
+					damage = flechette.t4.dmg,
+					spread = flechette.t4.acc,
+					moving_spread = flechette.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
+					ammo_pickup_min_mul = flechette.t4.min_pickup,
+					ammo_pickup_max_mul = flechette.t4.max_pickup,
+					dot_data = flechette.t4.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1151,15 +1151,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc,
+					damage = db.t4.dmg,
+					spread = db.t4.acc,
+					moving_spread = db.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
+					ammo_pickup_min_mul = db.t4.min_pickup,
+					ammo_pickup_max_mul = db.t4.max_pickup,
+					fire_dot_data = db.t4.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1177,14 +1177,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc,
+					damage = slug.t4.dmg,
+					spread = slug.t4.acc,
+					moving_spread = slug.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
+					ammo_pickup_min_mul = slug.t4.min_pickup,
+					ammo_pickup_max_mul = slug.t4.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1198,14 +1198,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1214,14 +1214,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1230,14 +1230,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t2.acc,
+					damage = he.t4.dmg,
+					spread = he.t4.acc,
+					moving_spread = he.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
+					ammo_pickup_min_mul = he.t4.min_pickup,
+					ammo_pickup_max_mul = he.t4.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1248,15 +1248,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc,
+					damage = flechette.t4.dmg,
+					spread = flechette.t4.acc,
+					moving_spread = flechette.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
+					ammo_pickup_min_mul = flechette.t4.min_pickup,
+					ammo_pickup_max_mul = flechette.t4.max_pickup,
+					dot_data = flechette.t4.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1266,15 +1266,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc,
+					damage = db.t4.dmg,
+					spread = db.t4.acc,
+					moving_spread = db.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
+					ammo_pickup_min_mul = db.t4.min_pickup,
+					ammo_pickup_max_mul = db.t4.max_pickup,
+					fire_dot_data = db.t4.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1292,14 +1292,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc,
+					damage = slug.t4.dmg,
+					spread = slug.t4.acc,
+					moving_spread = slug.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
+					ammo_pickup_min_mul = slug.t4.min_pickup,
+					ammo_pickup_max_mul = slug.t4.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1313,14 +1313,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1329,14 +1329,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc,
+					damage = buckshot.t4.dmg,
+					spread = buckshot.t4.acc,
+					moving_spread = buckshot.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
+					ammo_pickup_min_mul = buckshot.t4.min_pickup,
+					ammo_pickup_max_mul = buckshot.t4.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1345,14 +1345,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t2.acc,
+					damage = he.t4.dmg,
+					spread = he.t4.acc,
+					moving_spread = he.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
+					ammo_pickup_min_mul = he.t4.min_pickup,
+					ammo_pickup_max_mul = he.t4.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1363,15 +1363,15 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc,
+					damage = flechette.t4.dmg,
+					spread = flechette.t4.acc,
+					moving_spread = flechette.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
+					ammo_pickup_min_mul = flechette.t4.min_pickup,
+					ammo_pickup_max_mul = flechette.t4.max_pickup,
+					dot_data = flechette.t4.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1381,15 +1381,15 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc,
+					damage = db.t4.dmg,
+					spread = db.t4.acc,
+					moving_spread = db.t4.acc,
 					reload = 4
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
+					ammo_pickup_min_mul = db.t4.min_pickup,
+					ammo_pickup_max_mul = db.t4.max_pickup,
+					fire_dot_data = db.t4.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1756,13 +1756,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc
+					damage = slug.t2.dmg,
+					spread = slug.t2.acc,
+					moving_spread = slug.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
+					ammo_pickup_min_mul = slug.t2.min_pickup,
+					ammo_pickup_max_mul = slug.t2.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1776,13 +1776,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
+					moving_spread = buckshot.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1791,13 +1791,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
+					moving_spread = buckshot.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1806,13 +1806,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
-					moving_spread = he.t4.acc
+					damage = he.t2.dmg,
+					spread = he.t2.acc,
+					moving_spread = he.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
+					ammo_pickup_min_mul = he.t2.min_pickup,
+					ammo_pickup_max_mul = he.t2.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1823,14 +1823,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc
+					damage = flechette.t2.dmg,
+					spread = flechette.t2.acc,
+					moving_spread = flechette.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
+					ammo_pickup_min_mul = flechette.t2.min_pickup,
+					ammo_pickup_max_mul = flechette.t2.max_pickup,
+					dot_data = flechette.t2.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1840,14 +1840,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc
+					damage = db.t2.dmg,
+					spread = db.t2.acc,
+					moving_spread = db.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
+					ammo_pickup_min_mul = db.t2.min_pickup,
+					ammo_pickup_max_mul = db.t2.max_pickup,
+					fire_dot_data = db.t2.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1865,13 +1865,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc
+					damage = slug.t2.dmg,
+					spread = slug.t2.acc,
+					moving_spread = slug.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
+					ammo_pickup_min_mul = slug.t2.min_pickup,
+					ammo_pickup_max_mul = slug.t2.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1885,13 +1885,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
+					moving_spread = buckshot.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1900,13 +1900,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
+					moving_spread = buckshot.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -1915,13 +1915,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
-					moving_spread = he.t4.acc
+					damage = he.t2.dmg,
+					spread = he.t2.acc,
+					moving_spread = he.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
+					ammo_pickup_min_mul = he.t2.min_pickup,
+					ammo_pickup_max_mul = he.t2.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -1932,14 +1932,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc
+					damage = flechette.t2.dmg,
+					spread = flechette.t2.acc,
+					moving_spread = flechette.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
+					ammo_pickup_min_mul = flechette.t2.min_pickup,
+					ammo_pickup_max_mul = flechette.t2.max_pickup,
+					dot_data = flechette.t2.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -1949,14 +1949,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc
+					damage = db.t2.dmg,
+					spread = db.t2.acc,
+					moving_spread = db.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
+					ammo_pickup_min_mul = db.t2.min_pickup,
+					ammo_pickup_max_mul = db.t2.max_pickup,
+					fire_dot_data = db.t2.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -1974,13 +1974,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc
+					damage = slug.t2.dmg,
+					spread = slug.t2.acc,
+					moving_spread = slug.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
+					ammo_pickup_min_mul = slug.t2.min_pickup,
+					ammo_pickup_max_mul = slug.t2.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -1994,13 +1994,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
 					moving_spread = buckshot.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2009,13 +2009,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
 					moving_spread = buckshot.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2024,13 +2024,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
+					damage = he.t2.dmg,
+					spread = he.t2.acc,
 					moving_spread = he.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
+					ammo_pickup_min_mul = he.t2.min_pickup,
+					ammo_pickup_max_mul = he.t2.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -2041,14 +2041,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc
+					damage = flechette.t2.dmg,
+					spread = flechette.t2.acc,
+					moving_spread = flechette.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
+					ammo_pickup_min_mul = flechette.t2.min_pickup,
+					ammo_pickup_max_mul = flechette.t2.max_pickup,
+					dot_data = flechette.t2.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2058,14 +2058,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc
+					damage = db.t2.dmg,
+					spread = db.t2.acc,
+					moving_spread = db.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
+					ammo_pickup_min_mul = db.t2.min_pickup,
+					ammo_pickup_max_mul = db.t2.max_pickup,
+					fire_dot_data = db.t2.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2083,13 +2083,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc
+					damage = slug.t2.dmg,
+					spread = slug.t2.acc,
+					moving_spread = slug.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
+					ammo_pickup_min_mul = slug.t2.min_pickup,
+					ammo_pickup_max_mul = slug.t2.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -2103,13 +2103,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
 					moving_spread = buckshot.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2118,13 +2118,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
+					damage = buckshot.t2.dmg,
+					spread = buckshot.t2.acc,
 					moving_spread = buckshot.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
+					ammo_pickup_min_mul = buckshot.t2.min_pickup,
+					ammo_pickup_max_mul = buckshot.t2.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2133,13 +2133,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
+					damage = he.t2.dmg,
+					spread = he.t2.acc,
 					moving_spread = he.t3.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
+					ammo_pickup_min_mul = he.t2.min_pickup,
+					ammo_pickup_max_mul = he.t2.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -2150,14 +2150,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc
+					damage = flechette.t2.dmg,
+					spread = flechette.t2.acc,
+					moving_spread = flechette.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
+					ammo_pickup_min_mul = flechette.t2.min_pickup,
+					ammo_pickup_max_mul = flechette.t2.max_pickup,
+					dot_data = flechette.t2.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2167,14 +2167,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc
+					damage = db.t2.dmg,
+					spread = db.t2.acc,
+					moving_spread = db.t2.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
+					ammo_pickup_min_mul = db.t2.min_pickup,
+					ammo_pickup_max_mul = db.t2.max_pickup,
+					fire_dot_data = db.t2.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2194,13 +2194,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc
+					damage = slug.t1.dmg,
+					spread = slug.t1.acc,
+					moving_spread = slug.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
+					ammo_pickup_min_mul = slug.t1.min_pickup,
+					ammo_pickup_max_mul = slug.t1.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -2214,13 +2214,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
+					damage = buckshot.t1.dmg,
+					spread = buckshot.t1.acc,
+					moving_spread = buckshot.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = buckshot.t1.min_pickup,
+					ammo_pickup_max_mul = buckshot.t1.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2229,13 +2229,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
+					damage = buckshot.t1.dmg,
+					spread = buckshot.t1.acc,
+					moving_spread = buckshot.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = buckshot.t1.min_pickup,
+					ammo_pickup_max_mul = buckshot.t1.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2244,13 +2244,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc
+					damage = he.t1.dmg,
+					spread = he.t1.acc,
+					moving_spread = he.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
+					ammo_pickup_min_mul = he.t1.min_pickup,
+					ammo_pickup_max_mul = he.t1.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -2261,14 +2261,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc
+					damage = flechette.t1.dmg,
+					spread = flechette.t1.acc,
+					moving_spread = flechette.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
+					ammo_pickup_min_mul = flechette.t1.min_pickup,
+					ammo_pickup_max_mul = flechette.t1.max_pickup,
+					dot_data = flechette.t1.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2278,14 +2278,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc
+					damage = db.t1.dmg,
+					spread = db.t1.acc,
+					moving_spread = db.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
+					ammo_pickup_min_mul = db.t1.min_pickup,
+					ammo_pickup_max_mul = db.t1.max_pickup,
+					fire_dot_data = db.t1.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
@@ -2310,13 +2310,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 0,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc
+					damage = slug.t1.dmg,
+					spread = slug.t1.acc,
+					moving_spread = slug.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
+					ammo_pickup_min_mul = slug.t1.min_pickup,
+					ammo_pickup_max_mul = slug.t1.max_pickup,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -2330,13 +2330,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
+					damage = buckshot.t1.dmg,
+					spread = buckshot.t1.acc,
+					moving_spread = buckshot.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = buckshot.t1.min_pickup,
+					ammo_pickup_max_mul = buckshot.t1.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2345,13 +2345,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
+					damage = buckshot.t1.dmg,
+					spread = buckshot.t1.acc,
+					moving_spread = buckshot.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = buckshot.t1.min_pickup,
+					ammo_pickup_max_mul = buckshot.t1.max_pickup,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
@@ -2360,13 +2360,13 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc
+					damage = he.t1.dmg,
+					spread = he.t1.acc,
+					moving_spread = he.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
+					ammo_pickup_min_mul = he.t1.min_pickup,
+					ammo_pickup_max_mul = he.t1.max_pickup,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -2377,14 +2377,14 @@ function WeaponFactoryTweakData:init()
 			wpn_fps_upg_a_piercing = {
 				stats = {
 					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc
+					damage = flechette.t1.dmg,
+					spread = flechette.t1.acc,
+					moving_spread = flechette.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
+					ammo_pickup_min_mul = flechette.t1.min_pickup,
+					ammo_pickup_max_mul = flechette.t1.max_pickup,
+					dot_data = flechette.t1.dot_data,
 					armor_piercing_add = 1, 
 					rays = 16,
 					bullet_class = "PoisonBulletBase"
@@ -2394,14 +2394,14 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc
+					damage = db.t1.dmg,
+					spread = db.t1.acc,
+					moving_spread = db.t1.acc
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
+					ammo_pickup_min_mul = db.t1.min_pickup,
+					ammo_pickup_max_mul = db.t1.max_pickup,
+					fire_dot_data = db.t1.fire_dot_data,
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 

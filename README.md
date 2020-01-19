@@ -7,7 +7,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
  
 ## Weapon changes
   1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#shotguns)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons)
   2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#assault-rifles)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo-1)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons-1)
   3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#lmgs)
   4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#snipers)
   5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#SMGs)
@@ -16,6 +20,169 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
+   
+#### Ammo:
+   tier 5: used by 155 damage shotguns
+   
+   tier 4: used by 90 damage shotguns
+   
+   tier 3: used by 55 damage shotguns
+   
+   tier 2: used by 42 damage shotguns
+   
+   tier 1: used by 18 damage shotguns
+   
+   note: shotguns fire 12 pellets per shot by default
+   - 000 Buckshot:
+     - tier 5
+       - +48 damage
+       - 9 pellets
+     - tier 4
+       - +30 damage
+       - 9 pellets
+     - tier 3
+       - +20 damage
+       - 9 pellets
+     - tier 2
+       - +17 damage
+       - 9 pellets
+     - tier 1
+       - +13 damage
+       - 9 pellets
+   
+   - Slugs
+     - tier 5
+       - +74 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 4
+       - +61 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 3
+       - +32 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 2
+       - +30 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+     - tier 1
+       - +20 damage
+       - +40 accuracy
+       - 1 pellet
+       - pierces walls, shields, enemies, and armor
+   
+   - HE Rounds
+     - tier 5
+       - +9 damage
+       - -12 accuracy
+       - -60% max ammo pickup
+       - 3 pellets
+     - tier 4
+       - -12 accuracy
+       - -20% min ammo pickup
+       - -60% max ammo pickup
+       - 3 pellets
+     - tier 3
+       - -12 accuracy
+       - -70% min ammo pickup
+       - -63% max ammo pickup
+       - 3 pellets
+     - tier 2
+       - -12 accuracy
+       - -53% min ammo pickup
+       - -64% max ammo pickup
+       - 3 pellets
+     - tier 1
+       - -12 accuracy
+       - -50% min ammo pickup
+       - -45% max ammo pickup
+       - 3 pellets
+     
+     note: by not hitting an enemy directly with the he rounds, all three pellets can damage the same enemy
+   
+   - Dragon's Breath
+     - tier 5
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 80 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 4
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 70 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 3
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 60 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 2
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 50 damage every 0.5 seconds for three seconds
+       - 24 pellets
+     - tier 1
+       - -12 accuracy
+       - -60% min ammo pickup
+       - deals 40 damage every 0.5 seconds for three seconds
+       - 24 pellets
+   
+   - Flechette
+     - hit enemies are afflicted with a dot that decays over time, the dot lasts until the damage decays to 0
+     - damage of dot increased with consecutive hits 
+     - tier 5
+       - -103 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 105 intial damage
+         - -15 damage every 2 damage ticks
+         - +105 damage on consecutive hits
+     - tier 4
+       - -60 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +45 damage on consecutive hits
+     - tier 3
+       - -37 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +30 damage on consecutive hits
+     - tier 2
+       - -28 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 60 intial damage
+         - -5 damage every damage tick
+         - +20 damage on consecutive hits
+     - tier 1
+       - -12 damage
+       - -4 accuracy
+       - 16 pellets
+       - dot stats:
+         - 0.4 second damage tick rate
+         - 30 intial damage
+         - -10 damage every damage tick
+         - +15 damage on consecutive hits
+     
+#### Weapons:
    
    - Mosconi
      - ammo pickup changed from 0.43/1.51 to 0.4/1.5
@@ -78,7 +245,70 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - ammo pickup changed from 7.02/10.53 to 7/10.5
      
 ### Assault Rifles:
-  
+
+#### Ammo:
+   tier 4: used by 160 damage assault rifles
+   
+   tier 3: used by 97 damage assault rifles
+   
+   tier 2: used by 55 damage assault rifles
+   
+   tier 1: used by 41 damage assault rifles
+   
+   - FMJ
+     - tier 4
+       - -55 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 3
+       - -30 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 2
+       - -22 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 1
+       - -14 damage
+       - +8 accuracy
+       - pierces enemies
+   - Ballistic Tip Rounds
+     - tier 4
+       - +80 damage
+       - +8 accuracy
+       - -60% min ammo pickup
+       - -50% max ammo pickup
+     - tier 3
+       - +33 damage
+       - +8 accuracy
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 2
+       - +22 damage
+       - +8 accuracy
+     - tier 1
+       - +17 damage
+       - +8 accuracy
+   - Armor Piercing Rounds
+     - tier 4
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 3
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 2
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 1
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+       
+#### Weapons:
+
    - Cavity
      - ammo pickup increased from 0.45/1.34 to 2.5/5
    
