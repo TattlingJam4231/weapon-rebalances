@@ -241,7 +241,70 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - ammo pickup changed from 7.02/10.53 to 7/10.5
      
 ### Assault Rifles:
-  
+
+#### Ammo:
+   tier 4: used by 160 damage assault rifles
+   
+   tier 3: used by 97 damage assault rifles
+   
+   tier 2: used by 55 damage assault rifles
+   
+   tier 1: used by 41 damage assault rifles
+   
+   - FMJ
+     - tier 4
+       - -55 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 3
+       - -30 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 2
+       - -22 damage
+       - +8 accuracy
+       - pierces enemies
+     - tier 1
+       - -14 damage
+       - +8 accuracy
+       - pierces enemies
+   - Ballistic Tip Rounds
+     - tier 4
+       - +80 damage
+       - +8 accuracy
+       - -60% min ammo pickup
+       - -50% max ammo pickup
+     - tier 3
+       - +33 damage
+       - +8 accuracy
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 2
+       - +22 damage
+       - +8 accuracy
+     - tier 1
+       - +17 damage
+       - +8 accuracy
+   - Armor Piercing Rounds
+     - tier 4
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 3
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 2
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+     - tier 1
+       - pierces shields
+       - -50% min ammo pickup
+       - -50% max ammo pickup
+       
+#### Weapons:
+
    - Cavity
      - ammo pickup increased from 0.45/1.34 to 2.5/5
    
