@@ -286,9 +286,13 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - tier 2
        - +20 damage
        - +8 accuracy
+       - -25% min ammo pickup
+       - -17% max ammo pickup
      - tier 1
        - +17 damage
        - +8 accuracy
+       - -17% min ammo pickup
+       - -17% max ammo pickup
    - Armor Piercing Rounds
      - tier 4
        - pierces shields
