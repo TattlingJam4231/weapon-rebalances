@@ -135,7 +135,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Flechette
      - hit enemies are afflicted with a dot that decays over time, the dot lasts until the damage decays to 0
-     - damage of dot increased with consecutive hits 
+     - damage of dot increases with consecutive hits 
      - tier 5
        - -103 damage
        - -4 accuracy
