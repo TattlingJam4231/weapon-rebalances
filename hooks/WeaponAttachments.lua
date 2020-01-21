@@ -2525,6 +2525,12 @@ function WeaponFactoryTweakData:init()
 			--gecko cqb foregrip
 			self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
 			
+			--gecko sniper foregrip
+			self.parts.wpn_fps_ass_galil_fg_sniper.stats.damage = 1
+			
+			--gecko fabulous foregrip
+			self.parts.wpn_fps_ass_galil_fg_fab.stats.damage = 1
+			
 			--queen's wrath diminutive barrel
 			self.parts.wpn_fps_ass_l85a2_b_short.stats.concealment = 2
 			
@@ -2664,5 +2670,85 @@ function WeaponFactoryTweakData:init()
 							adds = {}
 						}
 					}
+			--LMG attachment overrides--------------------------------------------------------------------
 				
+				self.wpn_fps_lmg_hk21.override = {
+						wpn_fps_upg_ns_ass_smg_large = {
+							stats = {
+								alert_size = 12,
+								spread_moving = 2,
+								damage = -1,
+								suppression = 0,
+								value = 5,
+								recoil = 1,
+								spread = 2,
+								concealment = -3
+							}
+							
+					}
+				}
+				
+				self.wpn_fps_lmg_mg42.override = {
+						wpn_fps_upg_ns_ass_smg_large = {
+							stats = {
+								alert_size = 12,
+								spread_moving = 2,
+								damage = -1,
+								suppression = 0,
+								value = 5,
+								recoil = 1,
+								spread = 2,
+								concealment = -3
+							}
+							
+					}
+				}
+				
+				self.wpn_fps_lmg_m249.override = {
+						wpn_fps_upg_ns_ass_smg_large = {
+							stats = {
+								alert_size = 12,
+								spread_moving = 2,
+								damage = -1,
+								suppression = 0,
+								value = 5,
+								recoil = 1,
+								spread = 2,
+								concealment = -3
+							}
+							
+					}
+				}
+				
+				self.wpn_fps_lmg_par.override = {
+						wpn_fps_upg_ns_ass_smg_large = {
+							stats = {
+								alert_size = 12,
+								spread_moving = 2,
+								damage = -1,
+								suppression = 0,
+								value = 5,
+								recoil = 1,
+								spread = 2,
+								concealment = -3
+							}
+							
+					}
+				}
+				
+				self.wpn_fps_lmg_rpk.override = {
+						wpn_fps_upg_ns_ass_smg_large = {
+							stats = {
+								alert_size = 12,
+								spread_moving = 2,
+								damage = -1,
+								suppression = 0,
+								value = 5,
+								recoil = 1,
+								spread = 2,
+								concealment = -3
+							}
+							
+					}
+				}
 end
