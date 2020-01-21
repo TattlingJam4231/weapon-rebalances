@@ -14,7 +14,7 @@ function WeaponTweakData:init(tweak_data)
 	end
 	
 	--Thanatos Rework
-	self.m95.stats_modifiers = {damage = 85}
+	self.m95.stats_modifiers = {damage = 155}
 	self.m95.AMMO_PICKUP = {0,0.39}
 	self.m95.AMMO_MAX = 5
 	
@@ -176,6 +176,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--galant
 			self.ching.AMMO_PICKUP = pickup.assault.t4
+			self.ching.stats.recoil = 12
 		
 		--t3 assault rifles---------------------------------------------------------
 		
@@ -248,6 +249,7 @@ function WeaponTweakData:init(tweak_data)
 			--ak5
 			self.ak5.AMMO_PICKUP = pickup.assault.t2
 			self.ak5.AMMO_MAX = 240
+			self.ak5.stats.damage = 55
 			self.ak5.stats.concealment = 1
 			
 			--lion's roar
@@ -263,6 +265,7 @@ function WeaponTweakData:init(tweak_data)
 			--uar
 			self.aug.AMMO_PICKUP = pickup.assault.t2
 			self.aug.AMMO_MAX = 240
+			self.aug.stats.damage = 54
 			self.aug.stats.concealment = 3
 			
 			--tempest
@@ -285,26 +288,31 @@ function WeaponTweakData:init(tweak_data)
 			--commando
 			self.s552.AMMO_PICKUP = pickup.assault.t1
 			self.s552.AMMO_MAX = 360
+			self.s552.stats.damage = 40
 			self.s552.stats.concealment = 3
 			
 			--jp36
 			self.g36.AMMO_PICKUP = pickup.assault.t1
 			self.g36.AMMO_MAX = 360
+			self.g36.stats.damage = 42
 			self.g36.stats.concealment = 4
 			
 			--clarion
 			self.famas.AMMO_PICKUP = pickup.assault.t1
 			self.famas.AMMO_MAX = 360
+			self.famas.stats.damage = 39
 			self.famas.stats.concealment = 3
 			
 			--valkyria
 			self.asval.AMMO_PICKUP = pickup.assault.t1
 			self.asval.AMMO_MAX = 360
+			self.asval.stats.damage = 44
 			self.asval.stats.concealment = 3
 			
 			--bootleg
 			self.tecci.AMMO_PICKUP = pickup.assault.t1
 			self.tecci.AMMO_MAX = 300
+			self.tecci.stats.damage = 42
 			self.tecci.stats.concealment = 4
 	
 	--LMGs
@@ -313,23 +321,32 @@ function WeaponTweakData:init(tweak_data)
 		
 			--rpk
 			self.rpk.AMMO_PICKUP = pickup.lmg.t2
+			self.rpk.panic_suppression_chance = 1
+			self.rpk.stats.suppression = 1
 			
 			--brenner
 			self.hk21.AMMO_PICKUP = pickup.lmg.t2
-		
+			self.hk21.panic_suppression_chance = 1
+			self.hk21.stats.suppression = 1
 		--t1 lmgs-------------------------------------------------------------------
 		
 			--ksp
 			self.m249.AMMO_PICKUP = pickup.lmg.t1
+			self.m249.panic_suppression_chance = 1
+			self.m249.stats.suppression = 1
 			
 			--ksp 58
 			-- self.par.timers.reload_not_empty = 5.62
 			-- self.par.timers.reload_empty = 5.62
 			self.par.stats.recoil = 10
 			self.par.AMMO_PICKUP = pickup.lmg.t1
+			self.par.panic_suppression_chance = 1
+			self.par.stats.suppression = 1
 			
 			--buzzsaw
 			self.mg42.AMMO_PICKUP = pickup.lmg.t1
+			self.mg42.panic_suppression_chance = 1
+			self.mg42.stats.suppression = 1
 	
 	--SNIPERS
 		

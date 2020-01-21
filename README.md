@@ -249,11 +249,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    tier 4: used by 160 damage assault rifles
    
-   tier 3: used by 97 damage assault rifles
+   tier 3: used by 99 damage assault rifles
    
-   tier 2: used by 55 damage assault rifles
+   tier 2: used by 58 damage assault rifles
    
-   tier 1: used by 41 damage assault rifles
+   tier 1: used by 44 damage assault rifles
    
    - FMJ
      - tier 4
@@ -265,7 +265,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - +8 accuracy
        - pierces enemies
      - tier 2
-       - -22 damage
+       - -12 damage
        - +8 accuracy
        - pierces enemies
      - tier 1
@@ -284,11 +284,15 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -50% min ammo pickup
        - -50% max ammo pickup
      - tier 2
-       - +22 damage
+       - +20 damage
        - +8 accuracy
+       - -25% min ammo pickup
+       - -17% max ammo pickup
      - tier 1
        - +17 damage
        - +8 accuracy
+       - -17% min ammo pickup
+       - -17% max ammo pickup
    - Armor Piercing Rounds
      - tier 4
        - pierces shields
@@ -317,6 +321,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Galant
      - ammo pickup increased from 0.49/1.46 to 2.5/5
+     - stability increased from 36 to 44
      
    - Eagle
      - ammo pickup increased from 1/3.5 to 6/12
@@ -380,6 +385,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - AK5
      - ammo pickup increased from 6.08/11.14 to 10/15
      - total ammo increased from 150 to 240
+     - damage decreased from 56 to 55
      - concealment decreased from 18 to 1
    
    - Lion's Roar
@@ -395,6 +401,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - UAR
      - ammo pickup increased from 6.08/11.14 to 10/15
      - total ammo increased from 150 to 240
+     - damage decreased from 55 to 54
      - concealment decreased from 15 to 3
    
    - Tempest
@@ -415,26 +422,31 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Commando
      - ammo pickup increased from 9.72/17.82 to 15/30
      - total ammo increased from 240 to 360
+     - damage decreased from 42 to 40
      - concealment decreased from 22 to 3
    
    - JP36
      - ammo pickup increased from 9.72/17.82 to 15/30
      - total ammo increased from 240 to 360
+     - damage decreased from 44 to 42
      - concealment decreased from 19 to 4
    
    - Clarion
      - ammo pickup increased from 9.72/17.82 to 15/30
      - total ammo increased from 240 to 360
+     - damage decreased from 41 to 39
      - concealment decreased from 24 to 3
    
    - Valkyria
      - ammo pickup increased from 8.91/16.34 to 15/30
      - total ammo increased from 220 to 360
+     - damage increased from 41 to 44
      - concealment decreased from 26 to 3
    
    - Bootleg
      - ammo pickup increased from 8.1/14.85 to 15/30
      - total ammo increased from 200 to 300
+     - damage increased from 40 to 42
      - concealment decreased from 20 to 4
 
 ###  LMGs:
