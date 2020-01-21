@@ -249,9 +249,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    tier 4: used by 160 damage assault rifles
    
-   tier 3: used by 97 damage assault rifles
+   tier 3: used by 99 damage assault rifles
    
-   tier 2: used by 55 damage assault rifles
+   tier 2: used by 58 damage assault rifles
    
    tier 1: used by 41 damage assault rifles
    
@@ -265,7 +265,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - +8 accuracy
        - pierces enemies
      - tier 2
-       - -22 damage
+       - -12 damage
        - +8 accuracy
        - pierces enemies
      - tier 1
@@ -284,7 +284,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -50% min ammo pickup
        - -50% max ammo pickup
      - tier 2
-       - +22 damage
+       - +20 damage
        - +8 accuracy
      - tier 1
        - +17 damage
