@@ -6,17 +6,17 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
  - [Custom Poison Dots](https://github.com/TattlingJam4231/custom-poison-dots)
  
 ## Weapon changes
-  1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#shotguns)
-     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo)
-     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons)
-  2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#assault-rifles)
-     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#ammo-1)
-     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#weapons-1)
-  3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#lmgs)
-  4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#snipers)
-  5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#SMGs)
-  6. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#pistols)
-  7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/blob/developer/README.md#specials)
+  1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#shotguns)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#ammo)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#weapons)
+  2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#assault-rifles)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#ammo-1)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#weapons-1)
+  3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#lmgs)
+  4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#snipers)
+  5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#SMGs)
+  6. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#pistols)
+  7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/tree/developer#specials)
   
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
