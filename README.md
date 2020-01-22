@@ -10,8 +10,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo)
      2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons)
   2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#assault-rifles)
-     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-1)
-     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-1)
+     1. [Skills](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#skills)
+     2. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-1)
+     3. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-1)
   3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#lmgs)
   4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#snipers)
   5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#SMGs)
@@ -245,6 +246,19 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - ammo pickup changed from 7.02/10.53 to 7/10.5
      
 ### Assault Rifles:
+
+#### Skills:
+   Graze now affects assault rifles fired in single shot mode. Graze now reads as follows in game:
+   - Basic
+     - Snipers that hit their target deal 20% of the damage dealt in a 1m radius around the bullet trajectory. 
+     
+       When fired in single shot mode, Assault Rifles that hit their target deal 20% of the damage dealt in a 2.75m radius around the            bullet impact.
+       
+   - Aced 
+     - If a bullet would headshot-kill someone, the graze skill will deal 100% of the damage dealt instead of 20%."
+   
+   note: snipers have a cylindrical aoe around the path of the bullet, assault rifles have a spherical aoe around the impact point of the bullet
+   
 
 #### Ammo:
    tier 4: used by 160 damage assault rifles
