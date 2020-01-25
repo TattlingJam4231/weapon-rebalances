@@ -2522,8 +2522,8 @@ function WeaponFactoryTweakData:init()
 			--king's crown
 			self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
 			
-			--gecko cqb foregrip
-			self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
+			-- --gecko cqb foregrip
+			-- self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
 			
 			--gecko sniper foregrip
 			self.parts.wpn_fps_ass_galil_fg_sniper.stats.damage = 1
@@ -2531,62 +2531,62 @@ function WeaponFactoryTweakData:init()
 			--gecko fabulous foregrip
 			self.parts.wpn_fps_ass_galil_fg_fab.stats.damage = 1
 			
-			--queen's wrath diminutive barrel
-			self.parts.wpn_fps_ass_l85a2_b_short.stats.concealment = 2
+			-- -- queen's wrath diminutive barrel
+			-- self.parts.wpn_fps_ass_l85a2_b_short.stats.concealment = 2
 			
-			--ak5 cqb barrel
-			self.parts.wpn_fps_ass_ak5_b_short.stats.concealment = 0
+			-- --ak5 cqb barrel
+			-- self.parts.wpn_fps_ass_ak5_b_short.stats.concealment = 0
 			
-			--car 4 short barrel
-			self.parts.wpn_fps_m4_uupg_b_short.stats.concealment = 0
+			-- --car 4 short barrel
+			-- self.parts.wpn_fps_m4_uupg_b_short.stats.concealment = 0
 			
-			--car 4 stealth barrel
-			self.parts.wpn_fps_m4_uupg_b_sd.stats.concealment = 0
+			-- --car 4 stealth barrel
+			-- self.parts.wpn_fps_m4_uupg_b_sd.stats.concealment = 0
 			
-			--straight grip
-			self.parts.wpn_fps_upg_m4_g_mgrip.stats.concealment = 1
+			-- --straight grip
+			-- self.parts.wpn_fps_upg_m4_g_mgrip.stats.concealment = 1
 			
-			--car folding stock
-			self.parts.wpn_fps_m4_uupg_s_fold.stats.concealment = 2
+			-- --car folding stock
+			-- self.parts.wpn_fps_m4_uupg_s_fold.stats.concealment = 2
 			
-			--ak modern barrel
-			self.parts.wpn_fps_upg_ak_b_draco.stats.concealment = 0
+			-- --ak modern barrel
+			-- self.parts.wpn_fps_upg_ak_b_draco.stats.concealment = 0
 			
-			--ak modern barrel
-			self.parts.wpn_fps_upg_ak_b_ak105.stats.concealment = 0
+			-- --ak modern barrel
+			-- self.parts.wpn_fps_upg_ak_b_ak105.stats.concealment = 0
 			
-			--ak battleproven handguard
-			self.parts.wpn_fps_upg_ak_fg_tapco.stats.concealment = 1
+			-- --ak battleproven handguard
+			-- self.parts.wpn_fps_upg_ak_fg_tapco.stats.concealment = 1
 			
-			--ak crabs rail
-			self.parts.wpn_fps_upg_ak_fg_krebs.stats.concealment = 1
+			-- --ak crabs rail
+			-- self.parts.wpn_fps_upg_ak_fg_krebs.stats.concealment = 1
 			
-			--ak rubber grip
-			self.parts.wpn_fps_upg_ak_g_hgrip.stats.concealment = 1
+			-- --ak rubber grip
+			-- self.parts.wpn_fps_upg_ak_g_hgrip.stats.concealment = 1
 			
-			--ak low drag mag
-			self.parts.wpn_fps_upg_ak_m_uspalm.stats.concealment = 0
+			-- --ak low drag mag
+			-- self.parts.wpn_fps_upg_ak_m_uspalm.stats.concealment = 0
 			
-			--ak speed pull mag
-			self.parts.wpn_fps_upg_ak_m_quick.stats.concealment = -1
+			-- --ak speed pull mag
+			-- self.parts.wpn_fps_upg_ak_m_quick.stats.concealment = -1
 			
-			--ak skeletal stock
-			self.parts.wpn_upg_ak_s_skfoldable.stats.concealment = 1
+			-- --ak skeletal stock
+			-- self.parts.wpn_upg_ak_s_skfoldable.stats.concealment = 1
 			
-			--eagle short barrel
-			self.parts.wpn_fps_ass_scar_b_short.stats.concealment = 2
+			-- --eagle short barrel
+			-- self.parts.wpn_fps_ass_scar_b_short.stats.concealment = 2
 			
-			--gewehr plastic foregrip
-			self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats.concealment = 3
+			-- --gewehr plastic foregrip
+			-- self.parts.wpn_fps_ass_g3_fg_retro_plastic.stats.concealment = 3
 			
-			--falcon cqb foregrip
-			self.parts.wpn_fps_ass_fal_fg_01.stats.concealment = 2
+			-- --falcon cqb foregrip
+			-- self.parts.wpn_fps_ass_fal_fg_01.stats.concealment = 2
 			
-			--falcon tactical grip
-			self.parts.wpn_fps_ass_fal_g_01.stats.concealment = 0
+			-- --falcon tactical grip
+			-- self.parts.wpn_fps_ass_fal_g_01.stats.concealment = 0
 			
-			--falcon cqb foregrip
-			self.parts.wpn_fps_ass_fal_s_01.stats.concealment = 1
+			-- --falcon cqb foregrip
+			-- self.parts.wpn_fps_ass_fal_s_01.stats.concealment = 1
 			
 			
 			--conversion kits-----------------------------------------------------------------------------
