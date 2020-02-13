@@ -438,20 +438,44 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 ###  LMGs:
 
    - RPK
-     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+     - ammo pickup increased from 4.05/14.18 to 10/25
+     - total ammo increased from 300 to 400
+     - accuracy decreased from 28 to 0
+     - stability increased from 8 to 36
+     - damage decreased from 120 to 80
+     - threat increased from 22 to 43
    
    - Brenner
-     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+     - ammo pickup increased from 4.05/14.18 to 10/25
+     - total ammo increased from 300 to 450
+     - accuracy decreased from 36 to 4
+     - stability increased from 8 to 44
+     - damage decreased from 120 to 80
+     - threat increased from 37 to 43
    
    - KSP
-     - ammo pickup decreased from 16.2/29.7 to 10/15
+     - ammo pickup increased from 16.2/29.7 to 15/35
+     - total ammo increased from 400 to 600
+     - accuracy decreased from 48 to 8
+     - stability increased from 28 to 48
+     - damage decreased from 80 to 55
+     - threat increased from 31 to 43
    
    - KSP 58
-     - ammo pickup decreased from 16.2/29.7 to 10/15
+     - ammo pickup increased from 400 to 600
      - stability increased from 28 to 36
+     - accuracy decreased from 52 to 8
+     - stability increased from 28 to 56
+     - damage decreased from 80 to 56
+     - threat increased from 31 to 43
      
    - Buzzsaw
-     - ammo pickup decreased from 18.23/33.41 to 10/15
+     - ammo pickup changed from 18.23/33.41 to 15/35
+     - total ammo increased from 400 to 600
+     - accuracy decreased from 48 to 0
+     - stability increased from 28 to 36
+     - damage decreased from 80 to 57
+     - threat increased from 31 to 43
 
 ### Snipers:
 
