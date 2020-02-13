@@ -123,9 +123,13 @@ function WeaponTweakData:init(tweak_data)
 		
 			--raven
 			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
+			self.ksg.fire_mode_data.fire_rate = 0.375
+			self.ksg.single.fire_rate = 0.375
 			
 			--reinfeld
 			self.r870.AMMO_PICKUP = pickup.shotgun.t4
+			self.r870.fire_mode_data.fire_rate = 0.375
+			self.r870.single.fire_rate = 0.375
 			
 			--locomotive
 			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
