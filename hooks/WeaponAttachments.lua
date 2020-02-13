@@ -2673,66 +2673,150 @@ function WeaponFactoryTweakData:init()
 			--LMG attachment overrides--------------------------------------------------------------------
 				
 				self.wpn_fps_lmg_hk21.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 0,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_mg42.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 0,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_m249.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 0,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_par.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 0,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}	
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
@@ -2748,7 +2832,28 @@ function WeaponFactoryTweakData:init()
 								spread = 0,
 								concealment = -3
 							}
-							
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 end
