@@ -19,12 +19,12 @@ function WeaponTweakData:init(tweak_data)
 	self.m95.AMMO_MAX = 5
 	
 	--Vulcan Minigun Rework
-	self.m134.AMMO_MAX = 750
-	self.m134.CLIP_AMMO_MAX = 984
+	self.m134.AMMO_MAX = 1300/1.3125
+	self.m134.CLIP_AMMO_MAX = 1300
 	self.m134.AMMO_PICKUP = {0.5,1.5}
 	self.m134.can_shoot_through_enemy = true
 	self.m134.can_shoot_through_shield = true
-	self.m134.stats.damage = 80
+	self.m134.stats.damage = 57
 	self.m134.stats.spread = 15
 	self.m134.stats.spread_moving = 15
 	self.m134.stats.recoil = 1
@@ -40,8 +40,8 @@ function WeaponTweakData:init(tweak_data)
 	
 	--XL 5.56 Microgun Rework
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
-	self.shuno.CLIP_AMMO_MAX = 984
-	self.shuno.AMMO_MAX = 750
+	self.shuno.CLIP_AMMO_MAX = 1300/1.3125
+	self.shuno.AMMO_MAX = 1300
 	self.shuno.AMMO_PICKUP = {15, 30}
 	self.shuno.stats.damage = 32
 	self.shuno.stats.spread = 8
@@ -65,8 +65,8 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {5.185,7.78}
 		},
 		lmg = {
-			t2 = {1.851,7.407},
-			t1 = {7.407,11.111}
+			t2 = {7.407,18.519},
+			t1 = {11.111,25.926}
 		},
 		sniper = {
 			t3 = {0.7,1},
