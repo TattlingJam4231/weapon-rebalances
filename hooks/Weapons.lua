@@ -320,32 +320,53 @@ function WeaponTweakData:init(tweak_data)
 		
 			--rpk
 			self.rpk.AMMO_PICKUP = pickup.lmg.t2
+			self.rpk.AMMO_MAX = 400
+			self.rpk.stats.spread = 1
+			self.rpk.stats.recoil = 10
 			self.rpk.panic_suppression_chance = 1
 			self.rpk.stats.suppression = 1
+			self.rpk.stats.damage = 80
 			
 			--brenner
 			self.hk21.AMMO_PICKUP = pickup.lmg.t2
+			self.hk21.AMMO_MAX = 450
+			self.hk21.stats.spread = 2
+			self.hk21.stats.recoil = 12
 			self.hk21.panic_suppression_chance = 1
 			self.hk21.stats.suppression = 1
+			self.hk21.stats.damage = 82
+			
 		--t1 lmgs-------------------------------------------------------------------
 		
 			--ksp
 			self.m249.AMMO_PICKUP = pickup.lmg.t1
+			self.m249.AMMO_MAX = 600
+			self.m249.stats.spread = 3
+			self.m249.stats.recoil = 13
 			self.m249.panic_suppression_chance = 1
 			self.m249.stats.suppression = 1
+			self.m249.stats.damage = 55
 			
 			--ksp 58
 			-- self.par.timers.reload_not_empty = 5.62
 			-- self.par.timers.reload_empty = 5.62
-			self.par.stats.recoil = 10
 			self.par.AMMO_PICKUP = pickup.lmg.t1
+			self.par.AMMO_MAX = 600
+			self.par.stats.spread = 3
+			self.par.stats.recoil = 15
 			self.par.panic_suppression_chance = 1
 			self.par.stats.suppression = 1
+			self.par.stats.damage = 56
 			
 			--buzzsaw
 			self.mg42.AMMO_PICKUP = pickup.lmg.t1
+			self.mg42.CLIP_AMMO_MAX = 200
+			self.mg42.AMMO_MAX = 600
+			self.mg42.stats.spread = 1
+			self.mg42.stats.recoil = 10
 			self.mg42.panic_suppression_chance = 1
 			self.mg42.stats.suppression = 1
+			self.mg42.stats.damage = 57
 	
 	--SNIPERS
 		
