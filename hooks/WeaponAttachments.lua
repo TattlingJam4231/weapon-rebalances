@@ -2681,7 +2681,7 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
 							
@@ -2697,7 +2697,7 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
 							
@@ -2713,7 +2713,7 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
 							
@@ -2729,7 +2729,7 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
 							
@@ -2745,7 +2745,7 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
 							
