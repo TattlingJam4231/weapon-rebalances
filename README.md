@@ -789,9 +789,10 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
         
    - Vulcan Minigun
      - ammo pickup decreased from 10.13/35.44 to 0.68/2.03
-     - magazine capacity increased from 750 to 984
+     - total ammo increased from 750 to 990
+     - magazine capacity increased from 750 to 1300
      - concealment decreased from 5 to 1
-     - damage increased from 25 to 80
+     - damage increased from 25 to 57
      - stability decreased from 24 to 0
      - maximum kick value increased
      - accuracy increased from 32 to 56
@@ -799,7 +800,8 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      
    - XL 5.56 Microgun
      - ammo pickup changed from 10.13/35.44 to 15/30
-     - magazine capacity increased from 750 to 984
+     - total ammo increased from 750 to 990
+     - magazine capacity increased from 750 to 1300
      - concealment increased from 5 to 7
      - damage decreased from 35 to 32
      - accuracy decreased from 32 to 28
