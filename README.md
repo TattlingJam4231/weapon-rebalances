@@ -210,9 +210,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Raven
      - ammo pickup changed from 0.57/1.98 to 0.5/2
+     - fire rate increased from 104 to 160
    
    - Reinfeld
      - ammo pickup changed from 0.57/1.98 to 0.5/2
+     - fire rate increased from 104 to 160
      
    - Locomotive
      - ammo pickup changed from 0.57/1.98 to 0.5/2
