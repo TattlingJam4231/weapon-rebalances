@@ -114,10 +114,10 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 10.5,
+					damage = 105,
 					dot_tick_period = 0.4,
-					scale_damage = 10.5,
-					decay_damage = 1.5,
+					scale_damage = 105,
+					decay_damage = 15,
 					decay_rate = 2
 				}
 			}
@@ -131,10 +131,10 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 6,
+					damage = 60,
 					dot_tick_period = 0.4,
-					scale_damage = 4.5,
-					decay_damage = 0.5,
+					scale_damage = 45,
+					decay_damage = 5,
 					decay_rate = 1
 				}
 			}
@@ -148,10 +148,10 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 6,
+					damage = 60,
 					dot_tick_period = 0.4,
-					scale_damage = 3,
-					decay_damage = 0.5,
+					scale_damage = 30,
+					decay_damage = 5,
 					decay_rate = 1
 				}
 			}
@@ -165,10 +165,10 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 6,
+					damage = 60,
 					dot_tick_period = 0.4,
-					scale_damage = 2,
-					decay_damage = 0.5,
+					scale_damage = 20,
+					decay_damage = 5,
 					decay_rate = 1
 				}
 			}
@@ -182,10 +182,10 @@ function WeaponFactoryTweakData:init()
 				type = "poison",
 				custom_data = {
 					hurt_animation_chance = 0,
-					dot_damage = 3,
+					damage = 30,
 					dot_tick_period = 0.4,
-					scale_damage = 1.5,
-					decay_damage = 1,
+					scale_damage = 15,
+					decay_damage = 10,
 					decay_rate = 1
 				}
 			}
