@@ -19,12 +19,12 @@ function WeaponTweakData:init(tweak_data)
 	self.m95.AMMO_MAX = 5
 	
 	--Vulcan Minigun Rework
-	self.m134.AMMO_MAX = 750
-	self.m134.CLIP_AMMO_MAX = 984
+	self.m134.AMMO_MAX = 1300/1.3125
+	self.m134.CLIP_AMMO_MAX = 1300
 	self.m134.AMMO_PICKUP = {0.5,1.5}
 	self.m134.can_shoot_through_enemy = true
 	self.m134.can_shoot_through_shield = true
-	self.m134.stats.damage = 80
+	self.m134.stats.damage = 57
 	self.m134.stats.spread = 15
 	self.m134.stats.spread_moving = 15
 	self.m134.stats.recoil = 1
@@ -40,8 +40,8 @@ function WeaponTweakData:init(tweak_data)
 	
 	--XL 5.56 Microgun Rework
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
-	self.shuno.CLIP_AMMO_MAX = 984
-	self.shuno.AMMO_MAX = 750
+	self.shuno.CLIP_AMMO_MAX = 1300/1.3125
+	self.shuno.AMMO_MAX = 1300
 	self.shuno.AMMO_PICKUP = {15, 30}
 	self.shuno.stats.damage = 32
 	self.shuno.stats.spread = 8
@@ -65,8 +65,8 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {5.185,7.78}
 		},
 		lmg = {
-			t2 = {1.851,7.407},
-			t1 = {7.407,11.111}
+			t2 = {7.407,18.519},
+			t1 = {11.111,25.926}
 		},
 		sniper = {
 			t3 = {0.7,1},
@@ -123,9 +123,13 @@ function WeaponTweakData:init(tweak_data)
 		
 			--raven
 			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
+			self.ksg.fire_mode_data.fire_rate = 0.375
+			self.ksg.single.fire_rate = 0.375
 			
 			--reinfeld
 			self.r870.AMMO_PICKUP = pickup.shotgun.t4
+			self.r870.fire_mode_data.fire_rate = 0.375
+			self.r870.single.fire_rate = 0.375
 			
 			--locomotive
 			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
@@ -320,32 +324,53 @@ function WeaponTweakData:init(tweak_data)
 		
 			--rpk
 			self.rpk.AMMO_PICKUP = pickup.lmg.t2
+			self.rpk.AMMO_MAX = 400
+			self.rpk.stats.spread = 1
+			self.rpk.stats.recoil = 10
 			self.rpk.panic_suppression_chance = 1
 			self.rpk.stats.suppression = 1
+			self.rpk.stats.damage = 80
 			
 			--brenner
 			self.hk21.AMMO_PICKUP = pickup.lmg.t2
+			self.hk21.AMMO_MAX = 450
+			self.hk21.stats.spread = 2
+			self.hk21.stats.recoil = 12
 			self.hk21.panic_suppression_chance = 1
 			self.hk21.stats.suppression = 1
+			self.hk21.stats.damage = 82
+			
 		--t1 lmgs-------------------------------------------------------------------
 		
 			--ksp
 			self.m249.AMMO_PICKUP = pickup.lmg.t1
+			self.m249.AMMO_MAX = 600
+			self.m249.stats.spread = 3
+			self.m249.stats.recoil = 13
 			self.m249.panic_suppression_chance = 1
 			self.m249.stats.suppression = 1
+			self.m249.stats.damage = 55
 			
 			--ksp 58
 			-- self.par.timers.reload_not_empty = 5.62
 			-- self.par.timers.reload_empty = 5.62
-			self.par.stats.recoil = 10
 			self.par.AMMO_PICKUP = pickup.lmg.t1
+			self.par.AMMO_MAX = 600
+			self.par.stats.spread = 3
+			self.par.stats.recoil = 15
 			self.par.panic_suppression_chance = 1
 			self.par.stats.suppression = 1
+			self.par.stats.damage = 56
 			
 			--buzzsaw
 			self.mg42.AMMO_PICKUP = pickup.lmg.t1
+			self.mg42.CLIP_AMMO_MAX = 200
+			self.mg42.AMMO_MAX = 600
+			self.mg42.stats.spread = 1
+			self.mg42.stats.recoil = 10
 			self.mg42.panic_suppression_chance = 1
 			self.mg42.stats.suppression = 1
+			self.mg42.stats.damage = 57
 	
 	--SNIPERS
 		
