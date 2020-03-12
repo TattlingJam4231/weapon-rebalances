@@ -3,278 +3,19 @@ local original_init = WeaponFactoryTweakData.init
 function WeaponFactoryTweakData:init()
 	original_init(self)
 	
-	--OVERRIDES---------------------------------------------------------------------------------------------------------------------
+	--SHOTGUN OVERRIDES--------------------------------------------------------------------------------------------------------------
 
-	local slug = {
-		t5 = {
-			dmg = 74,
-			acc = 10,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t4 = {
-			dmg = 61,
-			acc = 10,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t3 = {
-			dmg = 32,
-			acc = 10,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t2 = {
-			dmg = 30,
-			acc = 10,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t1 = {
-			dmg = 20,
-			acc = 10,
-			min_pickup = nil,
-			max_pickup = nil
-		}
-	}
-	
-	local buckshot = {
-		t5 = {
-			dmg = 48,
-			acc = nil,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t4 = {
-			dmg = 30,
-			acc = nil,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t3 = {
-			dmg = 20,
-			acc = nil,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t2 = {
-			dmg = 17,
-			acc = nil,
-			min_pickup = nil,
-			max_pickup = nil
-		},
-		t1 = {
-			dmg = 13,
-			acc = nil,
-			min_pickup = nil,
-			max_pickup = nil
-		}
-	}
-	
-	local he = {
-		t5 = {
-			dmg = 9,
-			acc = -3,
-			min_pickup = nil,
-			max_pickup = 0.4
-		},
-		t4 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.8,
-			max_pickup = 0.4
-		},
-		t3 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.3022,
-			max_pickup = 0.3733
-		},
-		t2 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4681,
-			max_pickup = 0.3563
-		},
-		t1 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.5,
-			max_pickup = 0.5474
-		}
-	}
-	
-	local flechette = {
-		t5 = {
-			dmg = -103,
-			acc = -1,
-			min_pickup = nil,
-			max_pickup = nil,
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 10.5,
-					dot_tick_period = 0.4,
-					scale_damage = 10.5,
-					decay_damage = 1.5,
-					decay_rate = 2
-				}
-			}
-		},
-		t4 = {
-			dmg = -60,
-			acc = -1,
-			min_pickup = nil,
-			max_pickup = nil,
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 6,
-					dot_tick_period = 0.4,
-					scale_damage = 4.5,
-					decay_damage = 0.5,
-					decay_rate = 1
-				}
-			}
-		},
-		t3 = {
-			dmg = -37,
-			acc = -1,
-			min_pickup = nil,
-			max_pickup = nil,
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 6,
-					dot_tick_period = 0.4,
-					scale_damage = 3,
-					decay_damage = 0.5,
-					decay_rate = 1
-				}
-			}
-		},
-		t2 = {
-			dmg = -28,
-			acc = -1,
-			min_pickup = nil,
-			max_pickup = nil,
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 6,
-					dot_tick_period = 0.4,
-					scale_damage = 2,
-					decay_damage = 0.5,
-					decay_rate = 1
-				}
-			}
-		},
-		t1 = {
-			dmg = -12,
-			acc = -1,
-			min_pickup = nil,
-			max_pickup = nil,
-			dot_data = {
-				type = "poison",
-				custom_data = {
-					hurt_animation_chance = 0,
-					dot_damage = 3,
-					dot_tick_period = 0.4,
-					scale_damage = 1.5,
-					decay_damage = 1,
-					decay_rate = 1
-				}
-			}
-		}
-	}
-	
-	local db = {
-		t5 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 8, 
-				dot_length = 3.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
-		t4 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 7, 
-				dot_length = 3.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
-		t3 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 6, 
-				dot_length = 3.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
-		t2 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 5, 
-				dot_length = 3.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		},
-		t1 = {
-			dmg = nil,
-			acc = -3,
-			min_pickup = 0.4,
-			max_pickup = nil,
-			fire_dot_data = {
-				dot_trigger_chance = 100,
-				dot_damage = 4, 
-				dot_length = 3.1, 
-				dot_trigger_max_distance = 3000, 
-				dot_tick_period = 0.5
-			}
-		}
-	}
-	
-	--155 damage shotguns-----------------------------------------------------------
-	
-		--mosconi
-		self.wpn_fps_shot_huntsman.override ={
-			wpn_fps_upg_a_slug = {
+		local slug = {
+			t5 = {
 				stats = {
 					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc,
-					reload = 3
+					damage = 74,
+					spread = 10,
+					moving_spread = 10
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
@@ -284,50 +25,174 @@ function WeaponFactoryTweakData:init()
 					rays = 1
 				}
 			},
-			wpn_fps_upg_a_custom = {
+			t4 = {
+				stats = {
+					value = 5,
+					damage = 61,
+					spread = 10,
+					moving_spread = 10
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					damage_near_mul = 2,
+					damage_far_mul = 1.5,
+					armor_piercing_add = 1,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					can_shoot_through_enemy = true,
+					rays = 1
+				}
+			},
+			t3 = {
+				stats = {
+					value = 5,
+					damage = 32,
+					spread = 10,
+					moving_spread = 10
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					damage_near_mul = 2,
+					damage_far_mul = 1.5,
+					armor_piercing_add = 1,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					can_shoot_through_enemy = true,
+					rays = 1
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5,
+					damage = 30,
+					spread = 10,
+					moving_spread = 10
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					damage_near_mul = 2,
+					damage_far_mul = 1.5,
+					armor_piercing_add = 1,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					can_shoot_through_enemy = true,
+					rays = 1
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5,
+					damage = 20,
+					spread = 10,
+					moving_spread = 10
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					damage_near_mul = 2,
+					damage_far_mul = 1.5,
+					armor_piercing_add = 1,
+					can_shoot_through_shield = true,
+					can_shoot_through_wall = true,
+					can_shoot_through_enemy = true,
+					rays = 1
+				}
+			}
+		}
+		
+		local buckshot = {
+			t5 = {
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 3
+					damage = 48,
+					spread = nil,
+					moving_spread = nil
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
 			},
-			wpn_fps_upg_a_custom_free = {
+			t4 = {
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 3
+					damage = 30,
+					spread = nil,
+					moving_spread = nil
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
 					rays = 9
 				}
 			},
-			wpn_fps_upg_a_explosive = {
+			t3 = {
+				stats = {
+					value = 5,
+					total_ammo_mod = 2,
+					damage = 20,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5,
+					total_ammo_mod = 2,
+					damage = 17,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5,
+					total_ammo_mod = 2,
+					damage = 13,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			}
+		}
+		
+		local he = {
+			t5 = {
 				stats = {
 					value = 5, 
 					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc,
-					reload = 3
+					damage = 9,
+					spread = -3,
+					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
@@ -335,2188 +200,655 @@ function WeaponFactoryTweakData:init()
 					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
-			wpn_fps_upg_a_piercing = {
+			t4 = {
 				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc,
-					reload = 3
+					value = 5, 
+					total_ammo_mod = -5,
+					damage = nil,
+					spread = -3,
+					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.4,
+					ignore_statistic = true,
+					damage_far_mul = 2.5,
+					damage_near_mul = 2,
+					rays = 3, 
+					bullet_class = "InstantExplosiveBulletBase"
 				}
 			},
-			wpn_fps_upg_a_dragons_breath = {
+			t3 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = -5,
+					damage = nil,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.3022,
+					ammo_pickup_max_mul = 0.3733,
+					ignore_statistic = true,
+					damage_far_mul = 2.5,
+					damage_near_mul = 2,
+					rays = 3, 
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = -5,
+					damage = nil,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.4681,
+					ammo_pickup_max_mul = 0.3563,
+					ignore_statistic = true,
+					damage_far_mul = 2.5,
+					damage_near_mul = 2,
+					rays = 3, 
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = -5,
+					damage = nil,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.5,
+					ammo_pickup_max_mul = 0.5474,
+					ignore_statistic = true,
+					damage_far_mul = 2.5,
+					damage_near_mul = 2,
+					rays = 3, 
+					bullet_class = "InstantExplosiveBulletBase"
+				}
+			}
+		}
+		
+		local flechette = {
+			t5 = {
+				stats = {
+					value = 5,
+					damage = -103,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 105,
+							dot_tick_period = 0.4,
+							scale_damage = 105,
+							decay_damage = 15,
+							decay_rate = 2
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 16,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t4 = {
+				stats = {
+					value = 5,
+					damage = -60,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 60,
+							dot_tick_period = 0.4,
+							scale_damage = 45,
+							decay_damage = 5,
+							decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 16,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t3 = {
+				stats = {
+					value = 5,
+					damage = -37,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 60,
+							dot_tick_period = 0.4,
+							scale_damage = 30,
+							decay_damage = 5,
+							decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 16,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5,
+					damage = -28,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 60,
+							dot_tick_period = 0.4,
+							scale_damage = 20,
+							decay_damage = 5,
+							decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 16,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5,
+					damage = -12,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 30,
+							dot_tick_period = 0.4,
+							scale_damage = 15,
+							decay_damage = 5,
+							decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 16,
+					bullet_class = "DOTBulletBase"
+				}
+			}
+		}
+		
+		local db = {
+			t5 = {
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc,
-					reload = 3
+					damage = -60,
+					spread = -3,
+					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
+					ammo_pickup_min_mul = 0.4,
+					ammo_pickup_max_mul = nil,
+					disallow_headshot_damage = 1,
+					dot_data = {
+						type = "fire",
+						custom_data = {
+							damage = 25,
+							dot_length = 5.1,
+							dot_trigger_max_distance = 3000,
+							dot_tick_period = 0.5,
+							scale_length = 3.75,
+							diminish_scale_length = 0.95,
+							dot_can_crit = true
+							
+						}
+					},
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
+					bullet_class = "FireBulletBase",
 					rays = 24
 				}
-			}
-		}
-	
-		--joceline
-		self.wpn_fps_shot_b682.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc,
-					reload = 3
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
 			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 3
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 3
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc,
-					reload = 3
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc,
-					reload = 3
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
+			t4 = {
 				stats = {
 					value = 5, 
 					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc,
-					reload = 3
+					damage = -30,
+					spread = -3,
+					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
+					ammo_pickup_min_mul = 0.4,
+					ammo_pickup_max_mul = nil,
+					disallow_headshot_damage = 1,
+					dot_data = {
+						type = "fire",
+						custom_data = {
+							damage = 25,
+							dot_length = 5.1,
+							dot_trigger_max_distance = 3000,
+							dot_tick_period = 0.5,
+							scale_length = 3,
+							diminish_scale_length = 0.9,
+							dot_can_crit = true
+							
+						}
+					},
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
+					bullet_class = "FireBulletBase",
+					rays = 24
+				}
+			},
+			t3 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = 0, 
+					damage = -20,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.4,
+					ammo_pickup_max_mul = nil,
+					disallow_headshot_damage = 1,
+					dot_data = {
+						type = "fire",
+						custom_data = {
+							damage = 20,
+							dot_length = 4.1,
+							dot_trigger_max_distance = 3000,
+							dot_tick_period = 0.5,
+							scale_length = 3,
+							diminish_scale_length = 0.9,
+							dot_can_crit = true
+							
+						}
+					},
+					armor_piercing_add = 1, 
+					ignore_statistic = true,  
+					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+					damage_far_mul = 0.7,
+					can_shoot_through_shield = true, 
+					bullet_class = "FireBulletBase",
+					rays = 24
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = 0, 
+					damage = -15,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.4,
+					ammo_pickup_max_mul = nil,
+					disallow_headshot_damage = 1,
+					dot_data = {
+						type = "fire",
+						custom_data = {
+							damage = 20, 
+							dot_length = 4.1,
+							dot_trigger_max_distance = 3000,
+							dot_tick_period = 0.5,
+							scale_length = 2.25,
+							diminish_scale_length = 0.9,
+							dot_can_crit = true
+							
+						}
+					},
+					armor_piercing_add = 1, 
+					ignore_statistic = true,  
+					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+					damage_far_mul = 0.7,
+					can_shoot_through_shield = true, 
+					bullet_class = "FireBulletBase",
+					rays = 24
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5, 
+					total_ammo_mod = 0, 
+					damage = -6,
+					spread = -3,
+					moving_spread = -3
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.4,
+					ammo_pickup_max_mul = nil,
+					disallow_headshot_damage = 1,
+					dot_data = {
+						type = "fire",
+						custom_data = {
+							damage = 15,
+							dot_length = 3.1,
+							dot_trigger_max_distance = 3000,
+							dot_tick_period = 0.5,
+							scale_length = 2,
+							diminish_scale_length = 0.9,
+							dot_can_crit = true
+							
+						}
+					},
+					armor_piercing_add = 1, 
+					ignore_statistic = true,  
+					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+					damage_far_mul = 0.7,
+					can_shoot_through_shield = true, 
+					bullet_class = "FireBulletBase",
 					rays = 24
 				}
 			}
 		}
 		
-		--breaker
-		self.wpn_fps_sho_boot.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			}
-		}
+		--155 damage shotguns-----------------------------------------------------------
 		
-		--akimbo judge
-		self.wpn_fps_pis_x_judge.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			},
-			wpn_fps_upg_ns_shot_shark = {parent = "slide"},
-			wpn_fps_upg_ns_shot_thick = {parent = "slide"},
-			wpn_fps_upg_shot_ns_king = {parent = "slide"},
-			wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
-			wpn_fps_upg_ns_duck = {parent = "slide"},
-			wpn_fps_pis_judge_body_standard = {animations = {}},
-			wpn_fps_pis_judge_body_modern = {animations = {}}
-		}
-		
-		--judge
-		self.wpn_fps_pis_judge.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath",
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			},
-			wpn_fps_upg_ns_shot_shark = {parent = "slide"},
-			wpn_fps_upg_ns_shot_thick = {parent = "slide"},
-			wpn_fps_upg_shot_ns_king = {parent = "slide"},
-			wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
-			wpn_fps_upg_ns_duck = {parent = "slide"}
-		}
-		
-		--gsps
-		self.wpn_fps_shot_m37.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--mosconi
+			self.wpn_fps_shot_huntsman.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-		}
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = 3
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom.stats.reload = 3
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom_free.stats.reload = 3
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_explosive.stats.reload = 3
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_piercing.stats.reload = 3
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
 		
-		--claire
-		self.wpn_fps_sho_coach.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					damage = slug.t5.dmg,
-					spread = slug.t5.acc,
-					moving_spread = slug.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t5.min_pickup,
-					ammo_pickup_max_mul = slug.t5.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t5.dmg,
-					spread = buckshot.t5.acc,
-					moving_spread = buckshot.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t5.min_pickup,
-					ammo_pickup_max_mul = buckshot.t5.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t5.dmg,
-					spread = he.t5.acc,
-					moving_spread = he.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t5.min_pickup,
-					ammo_pickup_max_mul = he.t5.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t5.dmg,
-					spread = flechette.t5.acc,
-					moving_spread = flechette.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t5.min_pickup,
-					ammo_pickup_max_mul = flechette.t5.max_pickup,
-					dot_data = flechette.t5.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t5.dmg,
-					spread = db.t5.acc,
-					moving_spread = db.t5.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t5.min_pickup,
-					ammo_pickup_max_mul = db.t5.max_pickup,
-					fire_dot_data = db.t5.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--joceline
+			self.wpn_fps_shot_b682.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-		}
-	
-	--90 damage shotguns------------------------------------------------------------
-	
-		--raven
-		self.wpn_fps_sho_ksg.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
-					moving_spread = he.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = 3
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom.stats.reload = 3
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom_free.stats.reload = 3
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_explosive.stats.reload = 3
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_piercing.stats.reload = 3
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
+			
+			--breaker
+			self.wpn_fps_sho_boot.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-		}
+			
+			--akimbo judge
+			self.wpn_fps_pis_x_judge.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
+				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
+				wpn_fps_upg_shot_ns_king = {parent = "slide"},
+				wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
+				wpn_fps_upg_ns_duck = {parent = "slide"},
+				wpn_fps_pis_judge_body_standard = {animations = {}},
+				wpn_fps_pis_judge_body_modern = {animations = {}}
+			}
+			
+			--judge
+			self.wpn_fps_pis_judge.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
+				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
+				wpn_fps_upg_shot_ns_king = {parent = "slide"},
+				wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
+				wpn_fps_upg_ns_duck = {parent = "slide"}
+			}
+			
+			--gsps
+			self.wpn_fps_shot_m37.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+			}
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			
+			--claire
+			self.wpn_fps_sho_coach.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+			}
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = 2
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom.stats.reload = 2
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom_free.stats.reload = 2
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_explosive.stats.reload = 2
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_piercing.stats.reload = 2
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
+		
+		--90 damage shotguns------------------------------------------------------------
+		
+			--raven
+			self.wpn_fps_sho_ksg.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_explosive = deep_clone(he.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+			}
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
 
-		--reinfeld
-		self.wpn_fps_shot_r870.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
-					moving_spread = he.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--reinfeld
+			self.wpn_fps_shot_r870.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_explosive = deep_clone(he.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-		}
-		
-		--locomotive
-		self.wpn_fps_shot_serbu.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t4.dmg,
-					spread = slug.t4.acc,
-					moving_spread = slug.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t4.min_pickup,
-					ammo_pickup_max_mul = slug.t4.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t4.dmg,
-					spread = buckshot.t4.acc,
-					moving_spread = buckshot.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t4.min_pickup,
-					ammo_pickup_max_mul = buckshot.t4.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t4.dmg,
-					spread = he.t4.acc,
-					moving_spread = he.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t4.min_pickup,
-					ammo_pickup_max_mul = he.t4.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t4.dmg,
-					spread = flechette.t4.acc,
-					moving_spread = flechette.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t4.min_pickup,
-					ammo_pickup_max_mul = flechette.t4.max_pickup,
-					dot_data = flechette.t4.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t4.dmg,
-					spread = db.t4.acc,
-					moving_spread = db.t4.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t4.min_pickup,
-					ammo_pickup_max_mul = db.t4.max_pickup,
-					fire_dot_data = db.t4.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			
+			--locomotive
+			self.wpn_fps_shot_serbu.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_explosive = deep_clone(he.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-		}
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
 
-	--55 damage shotguns-----------------------------------------------------------
-	
-		--predator
-		self.wpn_fps_sho_spas12.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t3.dmg,
-					spread = slug.t3.acc,
-					moving_spread = slug.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t3.min_pickup,
-					ammo_pickup_max_mul = slug.t3.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t3.dmg,
-					spread = he.t3.acc,
-					moving_spread = he.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t3.min_pickup,
-					ammo_pickup_max_mul = he.t3.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t3.dmg,
-					spread = flechette.t3.acc,
-					moving_spread = flechette.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t3.min_pickup,
-					ammo_pickup_max_mul = flechette.t3.max_pickup,
-					dot_data = flechette.t3.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t3.dmg,
-					spread = db.t3.acc,
-					moving_spread = db.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t3.min_pickup,
-					ammo_pickup_max_mul = db.t3.max_pickup,
-					fire_dot_data = db.t3.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			}
-		}
+		--55 damage shotguns-----------------------------------------------------------
 		
-		--m1014
-		self.wpn_fps_sho_ben.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t3.dmg,
-					spread = slug.t3.acc,
-					moving_spread = slug.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t3.min_pickup,
-					ammo_pickup_max_mul = slug.t3.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t3.dmg,
-					spread = he.t3.acc,
-					moving_spread = he.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t3.min_pickup,
-					ammo_pickup_max_mul = he.t3.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t3.dmg,
-					spread = flechette.t3.acc,
-					moving_spread = flechette.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t3.min_pickup,
-					ammo_pickup_max_mul = flechette.t3.max_pickup,
-					dot_data = flechette.t3.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t3.dmg,
-					spread = db.t3.acc,
-					moving_spread = db.t3.acc,
-					reload = 4
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t3.min_pickup,
-					ammo_pickup_max_mul = db.t3.max_pickup,
-					fire_dot_data = db.t3.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--predator
+			self.wpn_fps_sho_spas12.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_explosive = deep_clone(he.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-		}
-		
-		--street sweeper
-		self.wpn_fps_sho_striker.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t3.dmg,
-					spread = slug.t3.acc,
-					moving_spread = slug.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t3.min_pickup,
-					ammo_pickup_max_mul = slug.t3.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 2
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t3.dmg,
-					spread = buckshot.t3.acc,
-					moving_spread = buckshot.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t3.min_pickup,
-					ammo_pickup_max_mul = buckshot.t3.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t3.dmg,
-					spread = he.t3.acc,
-					moving_spread = he.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t3.min_pickup,
-					ammo_pickup_max_mul = he.t3.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t3.dmg,
-					spread = flechette.t3.acc,
-					moving_spread = flechette.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t3.min_pickup,
-					ammo_pickup_max_mul = flechette.t3.max_pickup,
-					dot_data = flechette.t3.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t3.dmg,
-					spread = db.t3.acc,
-					moving_spread = db.t3.acc,
-					reload = 2
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t3.min_pickup,
-					ammo_pickup_max_mul = db.t3.max_pickup,
-					fire_dot_data = db.t3.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			
+			--m1014
+			self.wpn_fps_sho_ben.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_explosive = deep_clone(he.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-		}
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = 4
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom.stats.reload = 4
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom_free.stats.reload = 4
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_explosive.stats.reload = 4
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_piercing.stats.reload = 4
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			
+			--street sweeper
+			self.wpn_fps_sho_striker.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_explosive = deep_clone(he.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
+			}
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = 2
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom.stats.reload = 2
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom_free.stats.reload = 2
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_explosive.stats.reload = 2
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_piercing.stats.reload = 2
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
 
-	--42 damage shotguns-----------------------------------------------------------
+		--42 damage shotguns-----------------------------------------------------------
 
-		--izhma
-		self.wpn_fps_shot_saiga.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--izhma
+			self.wpn_fps_shot_saiga.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_explosive = deep_clone(he.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
 			}
-		}
+			
+			--steakout
+			self.wpn_fps_sho_aa12.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_explosive = deep_clone(he.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+			}
+			
+			--akimbo goliath
+			self.wpn_fps_sho_x_rota.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_explosive = deep_clone(he.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+			}
+			
+			--goliath
+			self.wpn_fps_sho_rota.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_explosive = deep_clone(he.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+			}
 		
-		--steakout
-		self.wpn_fps_sho_aa12.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			}
-		}
+		--18 damage shotguns-----------------------------------------------------------
 		
-		--akimbo goliath
-		self.wpn_fps_sho_x_rota.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			--brothers grimm
+			self.wpn_fps_sho_x_basset.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t1),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_explosive = deep_clone(he.t1),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t1),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1)
 			}
-		}
-		
-		--goliath
-		self.wpn_fps_sho_rota.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t2.dmg,
-					spread = slug.t2.acc,
-					moving_spread = slug.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t2.min_pickup,
-					ammo_pickup_max_mul = slug.t2.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t2.dmg,
-					spread = buckshot.t2.acc,
-					moving_spread = buckshot.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t2.min_pickup,
-					ammo_pickup_max_mul = buckshot.t2.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t2.dmg,
-					spread = he.t2.acc,
-					moving_spread = he.t3.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t2.min_pickup,
-					ammo_pickup_max_mul = he.t2.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t2.dmg,
-					spread = flechette.t2.acc,
-					moving_spread = flechette.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t2.min_pickup,
-					ammo_pickup_max_mul = flechette.t2.max_pickup,
-					dot_data = flechette.t2.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t2.dmg,
-					spread = db.t2.acc,
-					moving_spread = db.t2.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t2.min_pickup,
-					ammo_pickup_max_mul = db.t2.max_pickup,
-					fire_dot_data = db.t2.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
+			
+			--grimm
+			self.wpn_fps_sho_basset.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t1),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_explosive = deep_clone(he.t1),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t1),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1)
 			}
-		}
-	
-	--18 damage shotguns-----------------------------------------------------------
-	
-		--brothers grimm
-		self.wpn_fps_sho_x_basset.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			},
-			wpn_fps_sho_basset_m_extended = {
-				stats = {
-					extra_ammo = 4,
-					value = 1,
-					concealment = -2
-				}
-			}
-		}
-		
-		--grimm
-		self.wpn_fps_sho_basset.override = {
-			wpn_fps_upg_a_slug = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 0,
-					damage = slug.t1.dmg,
-					spread = slug.t1.acc,
-					moving_spread = slug.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = slug.t1.min_pickup,
-					ammo_pickup_max_mul = slug.t1.max_pickup,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
-					armor_piercing_add = 1,
-					can_shoot_through_shield = true,
-					can_shoot_through_wall = true,
-					can_shoot_through_enemy = true,
-					rays = 1
-				}
-			},
-			wpn_fps_upg_a_custom = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_custom_free = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = buckshot.t1.dmg,
-					spread = buckshot.t1.acc,
-					moving_spread = buckshot.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = buckshot.t1.min_pickup,
-					ammo_pickup_max_mul = buckshot.t1.max_pickup,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			wpn_fps_upg_a_explosive = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = -5,
-					damage = he.t1.dmg,
-					spread = he.t1.acc,
-					moving_spread = he.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = he.t1.min_pickup,
-					ammo_pickup_max_mul = he.t1.max_pickup,
-					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
-					rays = 3, 
-					bullet_class = "InstantExplosiveBulletBase"
-				}
-			},
-			wpn_fps_upg_a_piercing = {
-				stats = {
-					value = 5,
-					damage = flechette.t1.dmg,
-					spread = flechette.t1.acc,
-					moving_spread = flechette.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = flechette.t1.min_pickup,
-					ammo_pickup_max_mul = flechette.t1.max_pickup,
-					dot_data = flechette.t1.dot_data,
-					armor_piercing_add = 1, 
-					rays = 16,
-					bullet_class = "PoisonBulletBase"
-				}
-			},
-			wpn_fps_upg_a_dragons_breath = {
-				stats = {
-					value = 5, 
-					total_ammo_mod = 0, 
-					damage = db.t1.dmg,
-					spread = db.t1.acc,
-					moving_spread = db.t1.acc
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = db.t1.min_pickup,
-					ammo_pickup_max_mul = db.t1.max_pickup,
-					fire_dot_data = db.t1.fire_dot_data,
-					armor_piercing_add = 1, 
-					ignore_statistic = true,  
-					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
-					can_shoot_through_shield = true, 
-					bullet_class = "FlameBulletBase",
-					rays = 24
-				}
-			}
-		}
 
 	--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------
-	
-		--Ammo
-			-- -- Slugs
-			-- self.parts.wpn_fps_upg_a_slug.stats = {
-				-- value = 5,
-				-- damage = 50,
-				-- total_ammo_mod = 0,
-				-- spread = 10,
-				-- moving_spread = 10
-			-- }
-			-- self.parts.wpn_fps_upg_a_slug.custom_stats = {
-				-- ammo_pickup_min_mul = 0.7,
-				-- damage_near_mul = 2,
-				-- damage_far_mul = 1.5,
-				-- armor_piercing_add = 1,
-				-- can_shoot_through_shield = true,
-				-- can_shoot_through_wall = true,
-				-- can_shoot_through_enemy = true,
-				-- rays = 1
-			-- }
 
-			-- -- 000 Buckshot
-			-- self.parts.wpn_fps_upg_a_custom.stats = {
-					-- value = 5,
-					-- total_ammo_mod = 2,
-					-- damage = 20
-				-- }
-			-- self.parts.wpn_fps_upg_a_custom.custom_stats = {
-					-- can_shoot_through_enemy = true,
-					-- rays = 9
-				-- }
-			-- self.parts.wpn_fps_upg_a_custom_free.stats = {
-					-- value = 5,
-					-- total_ammo_mod = 2,
-					-- damage = 20
-				-- }
-			-- self.parts.wpn_fps_upg_a_custom_free.custom_stats = {
-					-- can_shoot_through_enemy = true,
-					-- rays = 9
-				-- }
-
-			-- -- High Explosive
-			-- self.parts.wpn_fps_upg_a_explosive.stats = {
-				-- value = 5, 
-				-- total_ammo_mod = -5,
-				-- damage = 0,
-				-- spread = -3,
-				-- moving_spread = -3
-			-- }
-			-- self.parts.wpn_fps_upg_a_explosive.custom_stats = {
-				-- ammo_pickup_min_mul = 0.3,
-				-- ignore_statistic = true,
-				-- damage_far_mul = 2.5,
-				-- damage_near_mul = 2,
-				-- rays = 3, 
-				-- bullet_class = "InstantExplosiveBulletBase"
-			-- }
-
-			-- -- Flechette
-			-- self.parts.wpn_fps_upg_a_piercing.stats = {value = 5}
-
-			-- self.parts.wpn_fps_upg_a_piercing.custom_stats = {
-				-- armor_piercing_add = 1, 
-				-- rays = 16,
-				-- bullet_class = "PoisonBulletBase",
-				-- dot_data = {
-					-- type = "poison",
-					-- custom_data = {
-						-- hurt_animation_chance = 0,
-						-- dot_damage = 3,
-						-- dot_length = 2.1,
-						-- dot_tick_period = 0.4,
-						-- scale_length = 0.8,
-						-- scale_damage = 1.5
-					-- }
-				-- }
-			-- }
-
-			-- -- Dragon's Breath
-			-- self.parts.wpn_fps_upg_a_dragons_breath.stats = {
-				-- value = 5, 
-				-- total_ammo_mod = 0, 
-				-- damage = 0, 
-				-- moving_spread = -3,
-				-- spread = -3
-			-- }
-			-- self.parts.wpn_fps_upg_a_dragons_breath.custom_stats = {
-				-- ammo_pickup_min_mul = 0.55,
-				-- armor_piercing_add = 1, 
-				-- ignore_statistic = true,  
-				-- muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-				-- damage_far_mul = 0.7,
-				-- can_shoot_through_shield = true, 
-				-- bullet_class = "FlameBulletBase",
-				-- rays = 24, 
-				-- fire_dot_data = {
-					-- dot_trigger_chance = "100",
-					-- dot_damage = "6", 
-					-- dot_length = "2.1", 
-					-- dot_trigger_max_distance = "3000", 
-					-- dot_tick_period = 0.1
-				-- }
-			-- }
 		--Attachments
 		
 			--king's crown
@@ -2673,66 +1005,150 @@ function WeaponFactoryTweakData:init()
 			--LMG attachment overrides--------------------------------------------------------------------
 				
 				self.wpn_fps_lmg_hk21.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 2,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_mg42.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 2,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_m249.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 2,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
 				self.wpn_fps_lmg_par.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 2,
-								concealment = -3
-							}
-							
+					wpn_fps_upg_ns_ass_smg_large = {
+						stats = {
+							alert_size = 12,
+							spread_moving = 2,
+							damage = -1,
+							suppression = 0,
+							value = 5,
+							recoil = 1,
+							spread = 0,
+							concealment = -3
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}	
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 				
@@ -2745,10 +1161,31 @@ function WeaponFactoryTweakData:init()
 								suppression = 0,
 								value = 5,
 								recoil = 1,
-								spread = 2,
+								spread = 0,
 								concealment = -3
 							}
-							
+					},
+					wpn_fps_upg_ns_ass_smg_medium = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -2,
+							damage = -3,
+							suppression = 0,
+							value = 2,
+							recoil = 1,
+							concealment = -2
+						}
+					},
+					wpn_fps_upg_ns_ass_smg_small = {
+						stats = {
+							alert_size = 12,
+							spread_moving = -1,
+							damage = -5,
+							suppression = 0,
+							value = 3,
+							recoil = 0,
+							concealment = 0
+						}
 					}
 				}
 end
