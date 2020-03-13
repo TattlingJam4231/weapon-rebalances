@@ -136,7 +136,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Flechette
      - hit enemies are afflicted with a dot that decays over time, the dot lasts until the damage decays to 0
-     - damage of dot increased with consecutive hits 
+     - damage of dot increases with consecutive hits 
      - tier 5
        - -103 damage
        - -4 accuracy
@@ -210,9 +210,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Raven
      - ammo pickup changed from 0.57/1.98 to 0.5/2
+     - fire rate increased from 104 to 160
    
    - Reinfeld
      - ammo pickup changed from 0.57/1.98 to 0.5/2
+     - fire rate increased from 104 to 160
      
    - Locomotive
      - ammo pickup changed from 0.57/1.98 to 0.5/2
@@ -438,20 +440,44 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 ###  LMGs:
 
    - RPK
-     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+     - ammo pickup increased from 4.05/14.18 to 10/25
+     - total ammo increased from 300 to 400
+     - accuracy decreased from 28 to 0
+     - stability increased from 8 to 36
+     - damage decreased from 120 to 80
+     - threat increased from 22 to 43
    
    - Brenner
-     - ammo pickup decreased from 4.05/14.18 to 2.5/10
+     - ammo pickup increased from 4.05/14.18 to 10/25
+     - total ammo increased from 300 to 450
+     - accuracy decreased from 36 to 4
+     - stability increased from 8 to 44
+     - damage decreased from 120 to 80
+     - threat increased from 37 to 43
    
    - KSP
-     - ammo pickup decreased from 16.2/29.7 to 10/15
+     - ammo pickup increased from 16.2/29.7 to 15/35
+     - total ammo increased from 400 to 600
+     - accuracy decreased from 48 to 8
+     - stability increased from 28 to 48
+     - damage decreased from 80 to 55
+     - threat increased from 31 to 43
    
    - KSP 58
-     - ammo pickup decreased from 16.2/29.7 to 10/15
+     - ammo pickup increased from 400 to 600
      - stability increased from 28 to 36
+     - accuracy decreased from 52 to 8
+     - stability increased from 28 to 56
+     - damage decreased from 80 to 56
+     - threat increased from 31 to 43
      
    - Buzzsaw
-     - ammo pickup decreased from 18.23/33.41 to 10/15
+     - ammo pickup changed from 18.23/33.41 to 15/35
+     - total ammo increased from 400 to 600
+     - accuracy decreased from 48 to 0
+     - stability increased from 28 to 36
+     - damage decreased from 80 to 57
+     - threat increased from 31 to 43
 
 ### Snipers:
 
@@ -765,9 +791,10 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
         
    - Vulcan Minigun
      - ammo pickup decreased from 10.13/35.44 to 0.68/2.03
-     - magazine capacity increased from 750 to 984
+     - total ammo increased from 750 to 990
+     - magazine capacity increased from 750 to 1300
      - concealment decreased from 5 to 1
-     - damage increased from 25 to 80
+     - damage increased from 25 to 57
      - stability decreased from 24 to 0
      - maximum kick value increased
      - accuracy increased from 32 to 56
@@ -775,7 +802,8 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      
    - XL 5.56 Microgun
      - ammo pickup changed from 10.13/35.44 to 15/30
-     - magazine capacity increased from 750 to 984
+     - total ammo increased from 750 to 990
+     - magazine capacity increased from 750 to 1300
      - concealment increased from 5 to 7
      - damage decreased from 35 to 32
      - accuracy decreased from 32 to 28
