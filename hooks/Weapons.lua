@@ -50,62 +50,34 @@ function WeaponTweakData:init(tweak_data)
 	self.shuno.stats.concealment = 7
 	
 	--Flamethrower
+	self.flamethrower_mk2.AMMO_PICKUP = {20, 30}
 	self.flamethrower_mk2.dot_data = {
 		type = "fire",
 		custom_data = {
-			damage = 10,
-			dot_length = 3.1,
+			damage = 18,
+			dot_length = 3.6,
 			dot_trigger_max_distance = 3000,
 			dot_tick_period = 0.5,
-			scale_damage = 2,
-			damage_cap = 100,
+			scale_tick_period = 0.015,
 			dot_can_crit = true
 		}
 	}
 	self.flamethrower_mk2.disallow_headshot_damage = 1
-	self.flamethrower_mk2.stats = {
-		zoom = 3,
-		total_ammo_mod = 21,
-		damage = 7,
-		alert_size = 1,
-		spread = 1,
-		spread_moving = 6,
-		recoil = 0,
-		value = 1,
-		extra_ammo = 51,
-		reload = 11,
-		suppression = 2,
-		concealment = 7
-	}
 	
 	--MA-17 Flamethrower
+	self.system.AMMO_PICKUP = {15, 25}
 	self.system.dot_data = {
 		type = "fire",
 		custom_data = {
-			damage = 10,
-			dot_length = 3.1,
+			damage = 18,
+			dot_length = 3.6,
 			dot_trigger_max_distance = 3000,
 			dot_tick_period = 0.5,
-			scale_damage = 2,
-			damage_cap = 100,
+			scale_tick_period = 0.01,
 			dot_can_crit = true
 		}
 	}
 	self.system.disallow_headshot_damage = 1
-	self.system.stats = {
-		zoom = 1,
-		total_ammo_mod = 21,
-		damage = 7,
-		alert_size = 1,
-		spread = 1,
-		spread_moving = 6,
-		recoil = 0,
-		value = 1,
-		extra_ammo = 51,
-		reload = 11,
-		suppression = 2,
-		concealment = 15
-	}
 	
 	--ammo pickup
 	local pickup = {
