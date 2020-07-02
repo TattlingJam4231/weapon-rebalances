@@ -588,24 +588,28 @@ function WeaponTweakData:init(tweak_data)
 			self.peacemaker.can_shoot_through_enemy = true
 			self.peacemaker.can_shoot_through_shield = true
 			self.peacemaker.can_shoot_through_wall = true
+			self.peacemaker.armor_piercing_chance = 1
 			
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
 			self.mateba.can_shoot_through_enemy = true
 			self.mateba.can_shoot_through_shield = true
 			self.mateba.can_shoot_through_wall = true
+			self.mateba.armor_piercing_chance = 1
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.chinchilla.can_shoot_through_enemy = true
 			self.chinchilla.can_shoot_through_shield = true
 			self.chinchilla.can_shoot_through_wall = true
+			self.chinchilla.armor_piercing_chance = 1
 			
 			--bronco
 			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
 			self.new_raging_bull.can_shoot_through_enemy = true
 			self.new_raging_bull.can_shoot_through_shield = true
 			self.new_raging_bull.can_shoot_through_wall = true
+			self.new_raging_bull.armor_piercing_chance = 1
 			
 			--deagle
 			self.deagle.AMMO_PICKUP = pickup.pistol.t4
@@ -616,24 +620,28 @@ function WeaponTweakData:init(tweak_data)
 			self.deagle.can_shoot_through_enemy = true
 			self.deagle.can_shoot_through_shield = true
 			self.deagle.can_shoot_through_wall = true
+			self.deagle.armor_piercing_chance = 1
 			
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
 			self.x_2006m.can_shoot_through_enemy = true
 			self.x_2006m.can_shoot_through_shield = true
 			self.x_2006m.can_shoot_through_wall = true
+			self.x_2006m.armor_piercing_chance = 1
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.x_chinchilla.can_shoot_through_enemy = true
 			self.x_chinchilla.can_shoot_through_shield = true
 			self.x_chinchilla.can_shoot_through_wall = true
+			self.x_chinchilla.armor_piercing_chance = 1
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
 			self.x_rage.can_shoot_through_enemy = true
 			self.x_rage.can_shoot_through_shield = true
 			self.x_rage.can_shoot_through_wall = true
+			self.x_rage.armor_piercing_chance = 1
 			
 			--akimbo deagle
 			self.x_deagle.AMMO_PICKUP = pickup.pistol.t4
@@ -644,6 +652,7 @@ function WeaponTweakData:init(tweak_data)
 			self.x_deagle.can_shoot_through_enemy = true
 			self.x_deagle.can_shoot_through_shield = true
 			self.x_deagle.can_shoot_through_wall = true
+			self.x_deagle.armor_piercing_chance = 1
 			
 		--t3 pistols----------------------------------------------------------------
 			
