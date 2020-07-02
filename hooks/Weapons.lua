@@ -109,10 +109,10 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {5.556,16.667}
 		},
 		pistol = {
-			t4 = {0.5,2},
-			t3 = {1,3},
-			t2 = {2,5},
-			t1 = {3,6}
+			t4 = {1.112,2.963},
+			t3 = {1.852,5.556},
+			t2 = {4.445,8.148},
+			t1 = {7.407,11.111}
 		},
 		gl = {
 			t2 = {0,0.667},
@@ -583,38 +583,78 @@ function WeaponTweakData:init(tweak_data)
 			
 			--peacemaker
 			self.peacemaker.AMMO_PICKUP = pickup.pistol.t4
+			self.peacemaker.fire_mode_data.fire_rate = 0.166
+			self.peacemaker.single.fire_rate = 0.166
+			self.peacemaker.can_shoot_through_enemy = true
+			self.peacemaker.can_shoot_through_shield = true
+			self.peacemaker.can_shoot_through_wall = true
 			
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
+			self.mateba.can_shoot_through_enemy = true
+			self.mateba.can_shoot_through_shield = true
+			self.mateba.can_shoot_through_wall = true
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.chinchilla.can_shoot_through_enemy = true
+			self.chinchilla.can_shoot_through_shield = true
+			self.chinchilla.can_shoot_through_wall = true
 			
 			--bronco
 			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
+			self.new_raging_bull.can_shoot_through_enemy = true
+			self.new_raging_bull.can_shoot_through_shield = true
+			self.new_raging_bull.can_shoot_through_wall = true
 			
-			--parabellum
-			self.breech.AMMO_PICKUP = pickup.pistol.t4
+			--deagle
+			self.deagle.AMMO_PICKUP = pickup.pistol.t4
+			self.deagle.AMMO_MAX = 40
+			self.deagle.stats.damage = 176
+			self.deagle.stats.spread = 18
+			self.deagle.stats.recoil = 1
+			self.deagle.can_shoot_through_enemy = true
+			self.deagle.can_shoot_through_shield = true
+			self.deagle.can_shoot_through_wall = true
 			
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
+			self.x_2006m.can_shoot_through_enemy = true
+			self.x_2006m.can_shoot_through_shield = true
+			self.x_2006m.can_shoot_through_wall = true
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.x_chinchilla.can_shoot_through_enemy = true
+			self.x_chinchilla.can_shoot_through_shield = true
+			self.x_chinchilla.can_shoot_through_wall = true
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
+			self.x_rage.can_shoot_through_enemy = true
+			self.x_rage.can_shoot_through_shield = true
+			self.x_rage.can_shoot_through_wall = true
 			
-			--akimbo parabellum
-			self.x_breech.AMMO_PICKUP = pickup.pistol.t4
+			--akimbo deagle
+			self.x_deagle.AMMO_PICKUP = pickup.pistol.t4
+			self.x_deagle.AMMO_MAX = 40
+			self.x_deagle.stats.damage = 176
+			self.x_deagle.stats.spread = 18
+			self.x_deagle.stats.recoil = 1
+			self.x_deagle.can_shoot_through_enemy = true
+			self.x_deagle.can_shoot_through_shield = true
+			self.x_deagle.can_shoot_through_wall = true
 			
 		--t3 pistols----------------------------------------------------------------
 			
 			--white streak
 			self.pl14.AMMO_PICKUP = pickup.pistol.t3
 			
-			--deagle
-			self.deagle.AMMO_PICKUP = pickup.pistol.t3
+			--parabellum
+			self.breech.AMMO_PICKUP = pickup.pistol.t3
+			self.breech.stats.damage = 121
+			self.breech.fire_mode_data.fire_rate = 0.25
+			self.breech.single.fire_rate = 0.25
 			
 			--baby deagle
 			self.sparrow.AMMO_PICKUP = pickup.pistol.t3
@@ -625,8 +665,11 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3
 			
-			--akimbo deagle
-			self.x_deagle.AMMO_PICKUP = pickup.pistol.t3
+			--akimbo parabellum
+			self.x_breech.AMMO_PICKUP = pickup.pistol.t3
+			self.x_breech.stats.damage = 121
+			self.x_breech.fire_mode_data.fire_rate = 0.25
+			self.x_breech.single.fire_rate = 0.25
 			
 			--akimbo baby deagle
 			self.x_sparrow.AMMO_PICKUP = pickup.pistol.t3
