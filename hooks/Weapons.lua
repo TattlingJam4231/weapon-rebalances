@@ -79,6 +79,9 @@ function WeaponTweakData:init(tweak_data)
 	}
 	self.system.disallow_headshot_damage = 1
 	
+	--sentry
+	self.sentry_gun.DAMAGE = 4
+	
 	--ammo pickup
 	local pickup = {
 		assault = {
