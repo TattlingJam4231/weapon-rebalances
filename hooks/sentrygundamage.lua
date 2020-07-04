@@ -22,7 +22,7 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 	end
 	--
 	
-	self._health = 0.1
+	self._health = 0
 	self._dead = true
 
 	self._unit:weapon():remove_fire_mode_interaction()
