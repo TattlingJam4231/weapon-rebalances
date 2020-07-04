@@ -16,12 +16,12 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 	end
 	
 	--
-	if attacker_unit == managers.player:player_unit() then
+	if self._owner_id then
 		self._unit:contour():add("deployable_disabled", true)
 		self._unit:weapon():set_ammo(0)
 	end
 	--
-
+	
 	self._health = 0.1
 	self._dead = true
 
@@ -34,11 +34,6 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 	self._unit:base():on_death()
 	self._unit:sound_source():post_event(self._breakdown_snd_event)
 	
-	
-	self._unit:contour():add("deployable_disabled", true)
-	self._unit:weapon():set_ammo(0)
-	
-
 	self._shield_smoke_level = 0
 
 	if self._unit:base():has_shield() and sequence_shield_death then
