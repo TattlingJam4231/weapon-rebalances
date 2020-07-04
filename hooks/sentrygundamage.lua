@@ -14,6 +14,13 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 
 		managers.statistics:killed(data)
 	end
+	
+	--
+	if attacker_unit == managers.player:player_unit() then
+		self._unit:contour():add("deployable_disabled", true)
+		self._unit:weapon():set_ammo(0)
+	end
+	--
 
 	self._health = 0.1
 	self._dead = true
