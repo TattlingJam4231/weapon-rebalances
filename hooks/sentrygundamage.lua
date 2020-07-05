@@ -16,10 +16,8 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 	end
 	
 	--
-	if self._owner_id then
-		self._unit:contour():add("deployable_disabled", true)
-		self._unit:weapon():set_ammo(0)
-	end
+	local weapon = self._unit:weapon()
+	weapon._ammo_total = 0
 	--
 	
 	self._health = 0

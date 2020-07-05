@@ -79,8 +79,10 @@ function WeaponTweakData:init(tweak_data)
 	}
 	self.system.disallow_headshot_damage = 1
 	
+	
 	--sentry
 	self.sentry_gun.DAMAGE = 4
+	
 	
 	--ammo pickup
 	local pickup = {
@@ -112,10 +114,10 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {5.556,16.667}
 		},
 		pistol = {
-			t4 = {1.112,2.963},
-			t3 = {1.852,5.556},
-			t2 = {4.445,8.148},
-			t1 = {7.407,11.111}
+			t4 = {1.112,2.222},
+			t3 = {1.852,3.704},
+			t2 = {2.963,6.667},--2,5
+			t1 = {5.926,9.63} --3,6
 		},
 		gl = {
 			t2 = {0,0.667},
@@ -586,6 +588,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--peacemaker
 			self.peacemaker.AMMO_PICKUP = pickup.pistol.t4
+			self.peacemaker.AMMO_MAX = 36
+			self.peacemaker.stats.damage = 230
+			self.peacemaker.stats.recoil = 1
 			self.peacemaker.fire_mode_data.fire_rate = 0.166
 			self.peacemaker.single.fire_rate = 0.166
 			self.peacemaker.can_shoot_through_enemy = true
@@ -595,6 +600,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
+			self.mateba.AMMO_MAX = 48
 			self.mateba.can_shoot_through_enemy = true
 			self.mateba.can_shoot_through_shield = true
 			self.mateba.can_shoot_through_wall = true
@@ -602,6 +608,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.chinchilla.AMMO_MAX = 48
 			self.chinchilla.can_shoot_through_enemy = true
 			self.chinchilla.can_shoot_through_shield = true
 			self.chinchilla.can_shoot_through_wall = true
@@ -609,6 +616,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--bronco
 			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
+			self.new_raging_bull.AMMO_MAX = 48
 			self.new_raging_bull.can_shoot_through_enemy = true
 			self.new_raging_bull.can_shoot_through_shield = true
 			self.new_raging_bull.can_shoot_through_wall = true
@@ -616,7 +624,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--deagle
 			self.deagle.AMMO_PICKUP = pickup.pistol.t4
-			self.deagle.AMMO_MAX = 40
+			self.deagle.AMMO_MAX = 30
 			self.deagle.stats.damage = 176
 			self.deagle.stats.spread = 18
 			self.deagle.stats.recoil = 1
@@ -627,6 +635,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
+			self.x_2006m.AMMO_MAX = 48
+			self.x_2006m.fire_mode_data.fire_rate = self.mateba.fire_mode_data.fire_rate
+			self.x_2006m.single.fire_rate = self.mateba.single.fire_rate
 			self.x_2006m.can_shoot_through_enemy = true
 			self.x_2006m.can_shoot_through_shield = true
 			self.x_2006m.can_shoot_through_wall = true
@@ -634,6 +645,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.x_chinchilla.AMMO_MAX = 48
+			self.x_chinchilla.fire_mode_data.fire_rate = self.chinchilla.fire_mode_data.fire_rate
+			self.x_chinchilla.single.fire_rate = self.chinchilla.single.fire_rate
 			self.x_chinchilla.can_shoot_through_enemy = true
 			self.x_chinchilla.can_shoot_through_shield = true
 			self.x_chinchilla.can_shoot_through_wall = true
@@ -641,6 +655,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
+			self.x_rage.AMMO_MAX = 48
+			self.x_rage.fire_mode_data.fire_rate = self.new_raging_bull.fire_mode_data.fire_rate
+			self.x_rage.single.fire_rate = self.new_raging_bull.single.fire_rate
 			self.x_rage.can_shoot_through_enemy = true
 			self.x_rage.can_shoot_through_shield = true
 			self.x_rage.can_shoot_through_wall = true
@@ -648,7 +665,7 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo deagle
 			self.x_deagle.AMMO_PICKUP = pickup.pistol.t4
-			self.x_deagle.AMMO_MAX = 40
+			self.x_deagle.AMMO_MAX = 30
 			self.x_deagle.stats.damage = 176
 			self.x_deagle.stats.spread = 18
 			self.x_deagle.stats.recoil = 1
@@ -676,103 +693,196 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3
-			
-			--akimbo parabellum
-			self.x_breech.AMMO_PICKUP = pickup.pistol.t3
-			self.x_breech.stats.damage = 121
-			self.x_breech.fire_mode_data.fire_rate = 0.25
-			self.x_breech.single.fire_rate = 0.25
+			self.x_pl14.AMMO_MAX = 60
+			self.x_pl14.fire_mode_data.fire_rate = self.pl14.fire_mode_data.fire_rate
+			self.x_pl14.single.fire_rate = self.pl14.single.fire_rate
 			
 			--akimbo baby deagle
 			self.x_sparrow.AMMO_PICKUP = pickup.pistol.t3
+			self.x_sparrow.AMMO_MAX = 60
+			self.x_sparrow.fire_mode_data.fire_rate = self.sparrow.fire_mode_data.fire_rate
+			self.x_sparrow.single.fire_rate = self.sparrow.single.fire_rate
+			
+			--akimbo parabellum
+			self.x_breech.AMMO_PICKUP = pickup.pistol.t3
+			self.x_breech.AMMO_MAX = 56
+			self.x_breech.stats.damage = 121
+			self.x_breech.fire_mode_data.fire_rate = 0.25
+			self.x_breech.single.fire_rate = 0.25
 			
 		--t2 pistols----------------------------------------------------------------
 			
 			--chimano custom
 			self.g22c.AMMO_PICKUP = pickup.pistol.t2
+			self.g22c.AMMO_MAX = 80
 			
 			--crosskill
 			self.colt_1911.AMMO_PICKUP = pickup.pistol.t2
+			self.colt_1911.AMMO_MAX = 80
 			
 			--broomstick
 			self.c96.AMMO_PICKUP = pickup.pistol.t2
+			self.c96.AMMO_MAX = 80
 			
 			--interceptor
 			self.usp.AMMO_PICKUP = pickup.pistol.t2
+			self.usp.AMMO_MAX = 78
 			
 			--signature .40
 			self.p226.AMMO_PICKUP = pickup.pistol.t2
+			self.p226.AMMO_MAX = 72
 			
 			--leo
 			self.hs2000.AMMO_PICKUP = pickup.pistol.t2
+			self.hs2000.AMMO_MAX = 76
 			
 			--contractor
 			self.packrat.AMMO_PICKUP = pickup.pistol.t2
+			self.packrat.AMMO_MAX = 75
+			
+			--igor automatik pistol
+			self.stech.AMMO_PICKUP = pickup.pistol.t2
+			self.stech.AMMO_MAX = 80
 			
 			--akimbo chimano custom
 			self.x_g22c.AMMO_PICKUP = pickup.pistol.t2
+			self.x_g22c.AMMO_MAX = self.g22c.AMMO_MAX
+			self.x_g22c.fire_mode_data.fire_rate = self.g22c.fire_mode_data.fire_rate
+			self.x_g22c.single.fire_rate = self.g22c.single.fire_rate
 			
 			--akimbo crosskill
 			self.x_1911.AMMO_PICKUP = pickup.pistol.t2
+			self.x_1911.AMMO_MAX = self.colt_1911.AMMO_MAX
+			self.x_1911.fire_mode_data.fire_rate = self.colt_1911.fire_mode_data.fire_rate
+			self.x_1911.single.fire_rate = self.colt_1911.single.fire_rate
 			
 			--akimbo broomstick
 			self.x_c96.AMMO_PICKUP = pickup.pistol.t2
+			self.x_c96.AMMO_MAX = self.c96.AMMO_MAX
+			self.x_c96.fire_mode_data.fire_rate = self.c96.fire_mode_data.fire_rate
+			self.x_c96.single.fire_rate = self.c96.single.fire_rate
 			
 			--akimbo interceptor
 			self.x_usp.AMMO_PICKUP = pickup.pistol.t2
+			self.x_usp.AMMO_MAX = self.usp.AMMO_MAX
+			self.x_usp.fire_mode_data.fire_rate = self.usp.fire_mode_data.fire_rate
+			self.x_usp.single.fire_rate = self.usp.single.fire_rate
 			
 			--akimbo signature .40
 			self.x_p226.AMMO_PICKUP = pickup.pistol.t2
+			self.x_p226.AMMO_MAX = self.p226.AMMO_MAX
+			self.x_p226.fire_mode_data.fire_rate = self.p226.fire_mode_data.fire_rate
+			self.x_p226.single.fire_rate = self.p226.single.fire_rate
 			
 			--akimbo leo
 			self.x_hs2000.AMMO_PICKUP = pickup.pistol.t2
+			self.x_hs2000.AMMO_MAX = self.hs2000.AMMO_MAX
+			self.x_hs2000.fire_mode_data.fire_rate = self.hs2000.fire_mode_data.fire_rate
+			self.x_hs2000.single.fire_rate = self.hs2000.single.fire_rate
 			
 			--akimbo contractor
 			self.x_packrat.AMMO_PICKUP = pickup.pistol.t2
+			self.x_hs2000.AMMO_MAX = self.packrat.AMMO_MAX
+			self.x_packrat.fire_mode_data.fire_rate = self.packrat.fire_mode_data.fire_rate
+			self.x_packrat.single.fire_rate = self.packrat.single.fire_rate
+			
+			--akimbo igor automatik pistol
+			self.x_stech.AMMO_PICKUP = pickup.pistol.t2
+			self.x_stech.AMMO_MAX = self.stech.AMMO_MAX
+			self.x_stech.fire_mode_data.fire_rate = self.stech.fire_mode_data.fire_rate
+			self.x_stech.single.fire_rate = self.stech.auto.fire_rate
 			
 		--t1 pistols----------------------------------------------------------------
 			
 			--chimano 88
 			self.glock_17.AMMO_PICKUP = pickup.pistol.t1
+			self.glock_17.AMMO_MAX = 119
 			
 			--chimano compact
 			self.g26.AMMO_PICKUP = pickup.pistol.t1
+			self.g26.AMMO_MAX = 120
 			
 			--bernetti
 			self.b92fs.AMMO_PICKUP = pickup.pistol.t1
+			self.b92fs.AMMO_MAX = 112
 			
 			--stryk
 			self.glock_18c.AMMO_PICKUP = pickup.pistol.t1
+			self.glock_18c.AMMO_MAX = 120
 			
 			--gruber kurz
 			self.ppk.AMMO_PICKUP = pickup.pistol.t1
+			self.ppk.AMMO_MAX = 112
 			
 			--m13
 			self.legacy.AMMO_PICKUP = pickup.pistol.t1
+			self.legacy.AMMO_MAX = 117
 			
 			--crosskill guard
 			self.shrew.AMMO_PICKUP = pickup.pistol.t1
+			self.shrew.AMMO_MAX = 119
+			
+			--czech 92 pistol
+			self.czech.AMMO_PICKUP = pickup.pistol.t1
+			self.czech.AMMO_MAX = 120
+			
+			--bernetti auto pistol
+			self.beer.AMMO_PICKUP = pickup.pistol.t1
+			self.beer.AMMO_MAX = 120
 			
 			--akimbo chimano 88
 			self.x_g17.AMMO_PICKUP = pickup.pistol.t1
+			self.x_g17.AMMO_MAX = self.glock_17.AMMO_MAX
+			self.x_g17.fire_mode_data.fire_rate = self.glock_17.fire_mode_data.fire_rate
+			self.x_g17.single.fire_rate = self.glock_17.single.fire_rate
 			
 			--akimbo chimano compact
 			self.jowi.AMMO_PICKUP = pickup.pistol.t1
+			self.jowi.AMMO_MAX = self.g26.AMMO_MAX
+			self.jowi.fire_mode_data.fire_rate = self.g26.fire_mode_data.fire_rate
+			self.jowi.single.fire_rate = self.g26.single.fire_rate
 			
 			--akimbo bernetti
 			self.x_b92fs.AMMO_PICKUP = pickup.pistol.t1
+			self.x_b92fs.AMMO_MAX = self.b92fs.AMMO_MAX
+			self.x_b92fs.fire_mode_data.fire_rate = self.b92fs.fire_mode_data.fire_rate
+			self.x_b92fs.single.fire_rate = self.b92fs.single.fire_rate
 			
 			--akimbo stryk
 			self.x_g18c.AMMO_PICKUP = pickup.pistol.t1
+			self.x_g18c.AMMO_MAX = self.glock_18c.AMMO_MAX
+			self.x_g18c.fire_mode_data.fire_rate = self.glock_18c.fire_mode_data.fire_rate
+			self.x_g18c.single.fire_rate = self.glock_18c.auto.fire_rate
 			
 			--akimbo gruber kurz
 			self.x_ppk.AMMO_PICKUP = pickup.pistol.t1
+			self.x_ppk.AMMO_MAX = self.ppk.AMMO_MAX
+			self.x_ppk.fire_mode_data.fire_rate = self.ppk.fire_mode_data.fire_rate
+			self.x_ppk.single.fire_rate = self.ppk.single.fire_rate
 			
 			--akimbo m13
 			self.x_legacy.AMMO_PICKUP = pickup.pistol.t1
+			self.x_legacy.AMMO_MAX = self.legacy.AMMO_MAX
+			self.x_legacy.fire_mode_data.fire_rate = self.legacy.fire_mode_data.fire_rate
+			self.x_legacy.single.fire_rate = self.legacy.single.fire_rate
 			
 			--akimbo crosskill guard
 			self.x_shrew.AMMO_PICKUP = pickup.pistol.t1
+			self.x_shrew.AMMO_MAX = self.shrew.AMMO_MAX
+			self.x_shrew.fire_mode_data.fire_rate = self.shrew.fire_mode_data.fire_rate
+			self.x_shrew.single.fire_rate = self.shrew.single.fire_rate
+			
+			--akimbo czech 92 pistol
+			self.x_czech.AMMO_PICKUP = pickup.pistol.t1
+			self.x_czech.AMMO_MAX = self.czech.AMMO_MAX
+			self.x_czech.fire_mode_data.fire_rate = self.czech.fire_mode_data.fire_rate
+			self.x_czech.single.fire_rate = self.czech.auto.fire_rate
+			
+			--akimbo bernetti auto pistol
+			self.x_beer.AMMO_PICKUP = pickup.pistol.t1
+			self.x_beer.AMMO_MAX = self.beer.AMMO_MAX
+			self.x_beer.fire_mode_data.fire_rate = self.beer.fire_mode_data.fire_rate
+			self.x_beer.single.fire_rate = self.beer.auto.fire_rate
 			
 	--GLs
 		
