@@ -184,7 +184,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
          - +15 damage on consecutive hits
      
 #### Weapons:
-  -Tier 5
+  - Tier 5
    - Mosconi
      - ammo pickup changed from 0.43/1.51 to 0.4/1.5
      
