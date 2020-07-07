@@ -184,71 +184,82 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
          - +15 damage on consecutive hits
      
 #### Weapons:
-  - Tier 5
-   - Mosconi
-     - ammo pickup changed from 0.43/1.51 to 0.4/1.5
+   - Tier 5
+     - Mosconi
+       - ammo pickup changed from 0.43/1.51 to 0.4/1.5
      
-   - Joceline
-     - ammo pickup increased from 0.38/1.32 to 0.4/1.5
+     - Joceline
+       - ammo pickup increased from 0.38/1.32 to 0.4/1.5
      
-   - Breaker
-     - ammo pickup increased from 0.27/0.99 to 0.4/1.5
+     - Breaker
+       - ammo pickup increased from 0.27/0.99 to 0.4/1.5
+
+     - Akimbo Judge
+       - ammo pickup increased from 0.27/0.81 to 0.4/1.5
+       - fire rate decreased from 500 to 361
+
+     - Judge
+       - ammo pickup increased from 0.24/0.72 to 0.4/1.5
+       - fire rate decreased from 500 to 361
+
+     - Gsps
+       - ammo pickup increased from 0.38/1.32 to 0.4/1.5
+
+     - Claire
+       - ammo pickup increased from 0.3/0.89 to 0.4/1.5
+   
+   - Tier 4
+     - Raven
+       - ammo pickup changed from 0.57/1.98 to 0.5/2
+       - fire rate increased from 104 to 160
+
+     - Reinfeld
+       - ammo pickup changed from 0.57/1.98 to 0.5/2
+       - fire rate increased from 104 to 160
+
+     - Locomotive
+       - ammo pickup changed from 0.57/1.98 to 0.5/2
      
-   - Akimbo Judge
-     - ammo pickup increased from 0.27/0.81 to 0.4/1.5
-     - fire rate decreased from 500 to 361
-     
-   - Judge
-     - ammo pickup increased from 0.24/0.72 to 0.4/1.5
-     - fire rate decreased from 500 to 361
-     
-   - Gsps
-     - ammo pickup increased from 0.38/1.32 to 0.4/1.5
+   - Tier 3
+     - Predator
+       - ammo pickup changed from 4.46/6.68 to 4.3/6.7
+
+     - M1014
+       - ammo pickup changed from 4.32/6.48 to 4.3/6.7
+
+     - Street Sweeper
+       - ammo pickup decreased from 4.86/7.29 to 4.3/6.7
+       - damage increased from 42 to 55
    
-   - Claire
-     - ammo pickup increased from 0.3/0.89 to 0.4/1.5
-   
-   - Raven
-     - ammo pickup changed from 0.57/1.98 to 0.5/2
-     - fire rate increased from 104 to 160
-   
-   - Reinfeld
-     - ammo pickup changed from 0.57/1.98 to 0.5/2
-     - fire rate increased from 104 to 160
-     
-   - Locomotive
-     - ammo pickup changed from 0.57/1.98 to 0.5/2
-     
-   - Predator
-     - ammo pickup changed from 4.46/6.68 to 4.3/6.7
-   
-   - M1014
-     - ammo pickup changed from 4.32/6.48 to 4.3/6.7
-   
-   - Street Sweeper
-     - ammo pickup decreased from 4.86/7.29 to 4.3/6.7
-     - damage increased from 42 to 55
-     
-   - Izhma
-     - ammo pickup changed from 4.73/7.09 to 4.7/7.3
-   
-   - Steakout
-     - ammo pickup changed from 4.86/7.29 to 4.7/7.3
-   
-   - Akimbo Goliath
-     - ammo pickup changed from 4.86/7.29 to 4.7/7.3
-   
-   - Goliath
-     - ammo pickup increased from 3.65/5.47 to 4.7/7.3
-   
-   - Brothers Grimm
-     - ammo pickup increased from 6.48/9.72 to 7/10.5
-   
-   - Grimm
-     - ammo pickup changed from 7.02/10.53 to 7/10.5
+   - Tier 2
+     - Izhma
+       - ammo pickup changed from 4.73/7.09 to 4.7/7.3
+
+     - Steakout
+       - ammo pickup changed from 4.86/7.29 to 4.7/7.3
+
+     - Akimbo Goliath
+       - ammo pickup changed from 4.86/7.29 to 4.7/7.3
+
+     - Goliath
+       - ammo pickup increased from 3.65/5.47 to 4.7/7.3
+       
+   - Tier 1
+     - Brothers Grimm
+       - ammo pickup increased from 6.48/9.72 to 7/10.5
+
+     - Grimm
+       - ammo pickup changed from 7.02/10.53 to 7/10.5
      
 ### Assault Rifles:
-
+   tier 4: 160 damage
+   
+   tier 3: 99 damage
+   
+   tier 2: 58 damage
+   
+   tier 1: 44 damage
+   
 #### Skills:
    Graze now affects assault rifles fired in single shot mode. Graze now reads as follows in game:
    - Basic
