@@ -21,7 +21,15 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
+   note: tier 5: 155 damage
    
+   tier 4: 90 damage
+   
+   tier 3: 55 damage
+   
+   tier 2: 42 damage
+   
+   tier 1: 18 damage
 #### Ammo:
    tier 5: used by 155 damage shotguns
    
