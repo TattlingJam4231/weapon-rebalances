@@ -16,7 +16,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#lmgs)
   4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#snipers)
   5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#SMGs)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-2)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-2)
   6. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#pistols)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-3)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-3)
   7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#specials)
   
   Weapon categories have been divided into different tiers based on their base damage. These damage tiers serve only to determine what the the ammo pickup should be and, if the weapon has different ammo types, which version of those ammo types are available.
@@ -481,9 +485,15 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Tier 2
      - Rattlesnake
        - ammo pickup decreased from 2.7/4.05 to 1.35/2.7
+       - rate of fire increased from 60 to 80
 
      - Repeater
        - ammo pickup decreased from 3.04/4.56 to 1.35/2.7
+       - rate of fire increased from 86 to 106
+       
+     - R700
+       - ammo pickup decreased from 2.7/4.05 to 1.35/2.7
+       - rate of fire increased from 75 to 95
 
 ### SMGs:
    Tier 3: 100
@@ -763,6 +773,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - Contractor
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
        - total ammo decreased from 90 to 75
+       
+     - Igor Automatik
+       - ammo pickup increased from 1.08/3.78 to 4.0/9.0
 
      - Akimbo Chimano Custom
        - ammo pickup increased from 1.3/4.54 to 4.0/9.0
@@ -791,6 +804,10 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - Akimbo Contractor
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
        - total ammo decreased from 90 to 75
+       
+     - Akimbo Igor Automatik
+       - ammo pickup increased from 1.62/5.67 to 4.0/9.0
+       - total ammo decreased from 120 to 80
    
    - Tier 1
      - Chimano 88
@@ -816,6 +833,14 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - M13
        - ammo pickup increased from 2.11/7.37 to 8.0/13.0
        - total ammo decreased from 156 to 117
+       
+     - Bernetti Auto
+       - ammo pickup increased from 2.63/9.21 to 8.0/13.0
+       - total ammo decreased from 195 to 120
+       
+     - Czech 92
+       - ammo pickup increased from 2.03/7.09 to 8.0/13.0
+       - total ammo decreased from 180 to 120
 
      - Crosskill Guard
        - ammo pickup increased from 2.07/7.24 to 8.0/13.0
@@ -851,6 +876,14 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - ammo pickup increased from 2.3/8.03 to 8.0/13.0
        - total ammo decreased from 170 to 119
        - rate of fire decreased from 667 to 480
+       
+     - Akimbo Bernetti Auto
+       - ammo pickup increased from 2.84/9.92 to 8.0/13.0
+       - total ammo decreased from 210 to 120
+       
+     - Akimbo Czech 92
+       - ammo pickup increased from 2.43/8.51 to 8.0/13.0
+       - total ammo decreased from 180 to 120
 
 ### Specials:
 
