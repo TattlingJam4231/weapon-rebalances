@@ -291,8 +291,8 @@ function WeaponFactoryTweakData:init()
 							damage = 105,
 							dot_tick_period = 0.4,
 							scale_damage = 105,
-							decay_damage = 15,
-							decay_rate = 2
+							damage_decay = 15,
+							damage_decay_rate = 2
 						}
 					},
 					armor_piercing_add = 1, 
@@ -316,8 +316,8 @@ function WeaponFactoryTweakData:init()
 							damage = 60,
 							dot_tick_period = 0.4,
 							scale_damage = 45,
-							decay_damage = 5,
-							decay_rate = 1
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
@@ -341,8 +341,8 @@ function WeaponFactoryTweakData:init()
 							damage = 60,
 							dot_tick_period = 0.4,
 							scale_damage = 30,
-							decay_damage = 5,
-							decay_rate = 1
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
@@ -366,8 +366,8 @@ function WeaponFactoryTweakData:init()
 							damage = 60,
 							dot_tick_period = 0.4,
 							scale_damage = 20,
-							decay_damage = 5,
-							decay_rate = 1
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
@@ -391,8 +391,8 @@ function WeaponFactoryTweakData:init()
 							damage = 30,
 							dot_tick_period = 0.4,
 							scale_damage = 15,
-							decay_damage = 5,
-							decay_rate = 1
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
