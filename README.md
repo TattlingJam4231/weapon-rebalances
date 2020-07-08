@@ -28,9 +28,13 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   note: all ammo pickup values are with walk-in closet
 ### Shotguns:
    tier 5: 155 damage
+   
    tier 4: 90 damage
+   
    tier 3: 55 damage
+   
    tier 2: 42 damage
+   
    tier 1: 18 damage
    
 #### Ammo:
@@ -255,9 +259,13 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      
 ### Assault Rifles:
    tier 4: 160 damage
+   
    tier 3: 99 damage
+   
    tier 2: 58 damage
+   
    tier 1: 44 damage
+   
    
 #### Skills:
    Graze now affects assault rifles fired in single shot mode. Graze now reads as follows in game:
@@ -415,6 +423,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ###  LMGs:
    Tier 2: 80 Damage
+   
    Tier 1: 55 damage
    
    - Tier 2
@@ -461,7 +470,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### Snipers:
    Tier 3: 480
+   
    Tier 2: 246
+   
    Tier 1: 160
    
    - Thanatos
@@ -497,7 +508,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### SMGs:
    Tier 3: 100
+   
    Tier 2: 55
+   
    Tier 1: 44
    
 #### Ammo:
@@ -647,8 +660,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### Pistols:
    Tier 4: 180
+   
    Tier 3: 120
+   
    Tier 2: 65
+   
    Tier 1: 35
    
 #### Ammo:
