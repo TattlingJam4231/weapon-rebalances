@@ -79,6 +79,14 @@ function WeaponTweakData:init(tweak_data)
 	}
 	self.system.disallow_headshot_damage = 1
 	
+	--Commander 101
+	self.ray.AMMO_PICKUP = {0, 0.39}
+	self.ray.stats.damage = 21
+	
+	--HRL-7
+	self.rpg7.AMMO_PICKUP = {0, 0.381}
+	self.rpg7.stats.damage = 62
+	
 	
 	--sentry
 	self.sentry_gun.DAMAGE = 4
@@ -875,6 +883,6 @@ function WeaponTweakData:init(tweak_data)
 			
 			--arbiter
 			self.arbiter.AMMO_PICKUP = pickup.gl.t1
-			self.arbiter.stats.damage = 50
+			self.arbiter.stats.damage = 54
 			
 end
