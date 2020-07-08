@@ -654,138 +654,203 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Tier 4
      - Peacemaker
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
+       - total ammo decreased from 54 to 36
+       - rate of fire increased from 240 to 361
+       - damage increased from 180 to 230
+       - stability decreased from 12 to 0
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Matever
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
+       - total ammo decreased from 54 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Castigo
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
+       - total ammo decreased from 54 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Bronco
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
+       - total ammo decreased from 54 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
-     - Parabellum
-       - ammo pickup changed from 0.76/2.65 to 1.5/3.0
+     - Deagle
+       - ammo pickup increased from 0.68/2.36 to 1.5/3.0
+       - total ammo decreased from 50 to 30
+       - damage increased from 120 to 176
+       - accuracy decreased from 76 to 68
+       - stability decreased from 28 to 0
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Akimbo Matever
        - ammo pickup decreased from 0.81/2.84 to 1.5/3.0
+       - total ammo decreased from 60 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Akimbo Castigo
        - ammo pickup decreased from 0.97/3.4 to 1.5/3.0
+       - total ammo decreased from 72 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Akimbo Bronco
        - ammo pickup decreased from 0.97/3.4 to 1.5/3.0
+       - total ammo decreased from 72 to 48
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
-     - Akimbo Parabellum
-       - ammo pickup decreased from 0.86/3.02 to 1.5/3.0
+     - Akimbo Deagle
+       - ammo pickup increased from 0.81/2.84 to 1.5/3.0
+       - total ammo decreased from 60 to 40
+       - damage increased from 120 to 176
+       - accuracy decreased from 76 to 68
+       - stability decreased from 28 to 0
+       - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
    
    - Tier 3
      - White Streak
        - ammo pickup increased from 0.81/2.84 to 2.5/5.0
 
-     - Deagle
-       - ammo pickup increased from 0.68/2.36 to 2.5/5.0
-
      - Baby Deagle
        - ammo pickup increased from 0.81/2.84 to 2.5/5.0
+
+     - Parabellum
+       - ammo pickup changed from 0.76/2.65 to 2.5/5.0
+       - rate of fire decreased from 361 to 240
+       - damage decreased from 180 to 121
 
      - 5/7
        - ammo pickup increased from 0.3/0.91 to 2.5/5.0
 
      - Akimbo White Streak
        - ammo pickup increased from 0.97/3.4 to 2.5/5.0
-
-     - Akimbo Deagle
-       - ammo pickup increased from 0.81/2.84 to 2.5/5.0
+       - total ammo decreased from 72 to 60
 
      - Akimbo Baby Deagle
        - ammo pickup increased from 0.97/3.4 to 2.5/5.0
+       - total ammo decreased from 72 to 60
+
+     - Akimbo Parabellum
+       - ammo pickup decreased from 0.86/3.02 to 2.5/5.0
+       - total ammo decreased from 64 to 56
+       - rate of fire decreased from 361 to 240
+       - damage decreased from 180 to 121
    
    - Tier 2
      - Chimano Custom
        - ammo pickup increased from 1.3/4.54 to 4.0/9.0
+       - total ammo decreased from 96 to 80
 
      - Crosskill
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
+       - total ammo decreased from 90 to 80
 
      - Broomstick
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
+       - total ammo decreased from 90 to 80
 
      - Interceptor
        - ammo pickup increased from 1.23/4.29 to 4.0/9.0
+       - total ammo decreased from 91 to 78
 
      - Signature .40
        - ammo pickup increased from 1.13/3.97 to 4.0/9.0
+       - total ammo decreased from 84 to 72
 
      - LEO
        - ammo pickup increased from 1.28/4.5 to 4.0/9.0
+       - total ammo decreased from 95 to 76
 
      - Contractor
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
+       - total ammo decreased from 90 to 75
 
      - Akimbo Chimano Custom
        - ammo pickup increased from 1.3/4.54 to 4.0/9.0
+       - total ammo decreased from 96 to 80
 
      - Akimbo Crosskill
        - ammo pickup increased from 1.35/4.73 to 4.0/9.0
+       - total ammo decreased from 100 to 80
 
      - Akimbo Broomstick
        - ammo pickup increased from 1.35/4.73 to 4.0/9.0
+       - total ammo decreased from 100 to 80
 
      - Akimbo Interceptor
        - ammo pickup increased from 1.4/4.91 to 4.0/9.0
+       - total ammo decreased from 104 to 78
 
      - Akimbo Signature .40
        - ammo pickup increased from 1.3/4.54 to 4.0/9.0
+       - total ammo decreased from 96 to 72
 
      - Akimbo LEO
        - ammo pickup increased from 1.54/5.39 to 4.0/9.0
+       - total ammo decreased from 114 to 76
 
      - Akimbo Contractor
        - ammo pickup increased from 1.22/4.25 to 4.0/9.0
+       - total ammo decreased from 90 to 75
    
    - Tier 1
      - Chimano 88
        - ammo pickup increased from 2.07/7.24 to 8.0/13.0
+       - total ammo decreased from 153 to 119
 
      - Chimano Compact
        - ammo pickup increased from 2.03/7.09 to 8.0/13.0
+       - total ammo decreased from 150 to 120
 
      - Bernetti
        - ammo pickup increased from 2.08/7.28 to 8.0/13.0
+       - total ammo decreased from 154 to 112
 
      - Stryk
        - ammo pickup increased from 2.16/7.56 to 8.0/13.0
+       - total ammo decreased from 160 to 120
 
      - Gruber Kurz
        - ammo pickup increased from 2.08/7.28 to 8.0/13.0
+       - total ammo decreased from 154 to 112
 
      - M13
        - ammo pickup increased from 2.11/7.37 to 8.0/13.0
+       - total ammo decreased from 156 to 117
 
      - Crosskill Guard
        - ammo pickup increased from 2.07/7.24 to 8.0/13.0
+       - total ammo decreased from 153 to 119
 
      - Akimbo Chimano 88
        - ammo pickup increased from 2.3/8.03 to 8.0/13.0
+       - total ammo decreased from 179 to 119
 
      - Akimbo Chimano Compact
        - ammo pickup increased from 2.16/7.56 to 8.0/13.0
+       - total ammo decreased from 160 to 120
+       - rate of fire decreased from 667 to 480
 
      - Akimbo Bernetti
        - ammo pickup increased from 2.27/7.94 to 8.0/13.0
+       - total ammo decreased from 168 to 112
+       - rate of fire decreased from 667 to 480
 
      - Akimbo Stryk
        - ammo pickup increased from 2.7/9.45 to 8.0/13.0
+       - total ammo decreased from 200 to 120
 
      - Akimbo Gruber Kurz
        - ammo pickup increased from 2.27/7.94 to 8.0/13.0
+       - total ammo decreased from 168 to 112
 
      - Akimbo M13
        - ammo pickup increased from 2.11/7.37 to 8.0/13.0
+       - total ammo decreased from 156 to 117
 
      - Akimbo Crosskill Guard
        - ammo pickup increased from 2.3/8.03 to 8.0/13.0
+       - total ammo decreased from 170 to 119
+       - rate of fire decreased from 667 to 480
 
 ### Specials:
 
