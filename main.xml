@@ -160,6 +160,7 @@
 				</wpn_fps_ass_g3>
 			</weapons_override>
 			<weapons>
+				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_sub2000"/>
 				<value_node value="wpn_fps_ass_m14"/>
 				<value_node value="wpn_fps_ass_ching"/>
@@ -247,7 +248,6 @@
 				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_short"/>
 			</weapons_override>
 			<weapons>
-				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_74"/>
 				<value_node value="wpn_fps_ass_corgi"/>
 				<value_node value="wpn_fps_ass_komodo"/>
