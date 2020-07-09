@@ -22,6 +22,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-3)
      2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-3)
   7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#specials)
+  8. [Sentry Guns](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#sentry-guns)
   
   Weapon categories have been divided into different tiers based on their base damage. These damage tiers serve only to determine what the the ammo pickup should be and, if the weapon has different ammo types, which version of those ammo types are available.
   
@@ -911,12 +912,40 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - China Puff
      - ammo pickup changed from 0.07/0.88 to 0/0.9
+     - removed damage falloff from explosion
+     - reduced radius of explosion
    
    - Compact 40
      - ammo pickup changed from 0.07/0.88 to 0/0.9
    
    - Arbiter
      - ammo pickup changed from 0.07/0.88 to 0/1.1
+     - increased damage from 480 to 540
+     - increased damage falloff on explosion
+     
+   - HRL-7
+     - ammo pickup increased from 0/0 to 0/0.51
+     - damage reduced from 12500 to 6200
+     - increased radius of explosion
+     
+   - Commando 101
+     - ammo pickup increased from 0/0 to 0/0.53
+     - damage reduced from 4200 to 2100
+     - increased radius of explosion
+     
+   - Flamethrower Mk.1
+     - ammo pickup increased from 6.08/18.23 to 27/40.5
+     - dot trigger chance increased from 75% to 100%
+     - dot damage decreased from 300 to 18
+     - dot length increased from 1.6 to 3.6
+     - consecutive hits increases rate of damage ticks (time between damage ticks is decreased from 0.5 seconds to a minimum of 0.1 seconds)
+     
+   - Flamethrower Mk.1
+     - ammo pickup increased from 6.08/18.23 to 20.25/33.75
+     - dot trigger chance increased from 75% to 100%
+     - dot damage decreased from 300 to 18
+     - dot length increased from 1.6 to 3.6
+     - consecutive hits increases rate of damage ticks (time between damage ticks is decreased from 0.5 seconds to a minimum of 0.1 seconds)
         
    - Vulcan Minigun
      - ammo pickup decreased from 10.13/35.44 to 0.68/2.03
@@ -938,3 +967,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - accuracy decreased from 32 to 28
      - stability increased from 24 to 44
      - changed from primary to secondary weapon
+     
+### Sentry Guns:
+   - Sentry guns can now be picked up when destroyed. 
+   - When a sentry gun is destroyed it loses all ammo stored in it.
+   - Sentry guns have had their ammo stores increased from 100 to 600.
+   - Base damage of sentry guns increased from 30 to 40
+   - Sentry guns set to fire AP rounds now consume 4 rounds per shot instead of 1.
+   
