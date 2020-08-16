@@ -289,14 +289,14 @@ function WeaponFactoryTweakData:init()
 						type = "poison",
 						custom_data = {
 							damage = 105,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 105,
 							damage_decay = 15,
 							damage_decay_rate = 2
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -308,20 +308,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 45,
 							damage_decay = 5,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -333,20 +333,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 30,
 							damage_decay = 5,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -358,20 +358,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 20,
-							damage_decay = 5,
-							damage_decay_rate = 1
+							damage_decay = 15,
+							damage_decay_rate = 2
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -383,20 +383,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 30,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 15,
-							damage_decay = 5,
+							damage_decay = 10,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			}
@@ -413,14 +413,14 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
 							damage = 25,
 							dot_length = 5.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 3.75,
 							diminish_scale_length = 0.95,
@@ -434,7 +434,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t4 = {
@@ -447,14 +447,15 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
 							damage = 25,
 							dot_length = 5.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
+							-- dot_trigger_chance = 90,
 							dot_tick_period = 0.5,
 							scale_length = 3,
 							diminish_scale_length = 0.9,
@@ -468,7 +469,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t3 = {
@@ -481,14 +482,15 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
 							damage = 20,
 							dot_length = 4.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
+							-- dot_trigger_chance = 80,
 							dot_tick_period = 0.5,
 							scale_length = 3,
 							diminish_scale_length = 0.9,
@@ -502,7 +504,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t2 = {
@@ -515,14 +517,15 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
 							damage = 20, 
 							dot_length = 4.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
+							-- dot_trigger_chance = 75,
 							dot_tick_period = 0.5,
 							scale_length = 2.25,
 							diminish_scale_length = 0.9,
@@ -536,7 +539,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t1 = {
@@ -549,14 +552,15 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
 							damage = 15,
 							dot_length = 3.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
+							-- dot_trigger_chance = 70,
 							dot_tick_period = 0.5,
 							scale_length = 2,
 							diminish_scale_length = 0.9,
@@ -570,7 +574,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			}
 		}
