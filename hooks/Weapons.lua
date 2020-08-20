@@ -94,7 +94,7 @@ function WeaponTweakData:init(tweak_data)
 		},
 		shotgun = {
 			t5 = {0.296,1.11},
-			t4 = {0.37,1.48},
+			t4 = {0.741,1.852},
 			t3 = {3.185,4.96},
 			t2 = {3.48,5.41},
 			t1 = {5.185,7.78}
