@@ -1,9 +1,17 @@
 {
 "name" : "Weapon Rebalances",
 "description" : "Weapon rebalances.",
-"author" : "Oryo",
+"author" : "TattlingJam",
 "version" : "1.0",
 "blt_version" : 2,
+"updates" : [
+	{
+		"identifier" : "TattlingJam4231WeaponRebalances",
+		"host" : {
+			"meta" : "https://github.com/TattlingJam4231/weapon-rebalances/raw/master/Weapon%20Rebalances/meta.json"
+		}
+	}
+],
  
 "hooks" : [
 {
