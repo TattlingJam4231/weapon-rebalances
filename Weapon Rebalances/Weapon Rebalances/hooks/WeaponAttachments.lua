@@ -1,7 +1,7 @@
 local original_init = WeaponFactoryTweakData.init
 
-function WeaponFactoryTweakData:init()
-	original_init(self)
+function WeaponFactoryTweakData:init(...)
+	original_init(self, ...)
 	
 	--SHOTGUN OVERRIDES--------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = 30,
+					damage = 26,
 					spread = nil,
 					moving_spread = nil
 				},
@@ -191,7 +191,7 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
+					ammo_pickup_min_mul = 0.5,
 					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
@@ -418,12 +418,13 @@ function WeaponFactoryTweakData:init()
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 25,
+							damage = 28,
 							dot_length = 5.1,
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
-							scale_length = 3.75,
-							diminish_scale_length = 0.95,
+							scale_length = 5,
+							length_cap = 10.1,
+							diminish_scale_length = 0.9,
 							dot_can_crit = true
 							
 						}
@@ -455,7 +456,6 @@ function WeaponFactoryTweakData:init()
 							damage = 25,
 							dot_length = 5.1,
 							dot_trigger_max_distance = 2000,
-							-- dot_trigger_chance = 90,
 							dot_tick_period = 0.5,
 							scale_length = 3,
 							diminish_scale_length = 0.9,
@@ -490,7 +490,6 @@ function WeaponFactoryTweakData:init()
 							damage = 20,
 							dot_length = 4.1,
 							dot_trigger_max_distance = 2000,
-							-- dot_trigger_chance = 80,
 							dot_tick_period = 0.5,
 							scale_length = 3,
 							diminish_scale_length = 0.9,
@@ -525,7 +524,6 @@ function WeaponFactoryTweakData:init()
 							damage = 20, 
 							dot_length = 4.1,
 							dot_trigger_max_distance = 2000,
-							-- dot_trigger_chance = 75,
 							dot_tick_period = 0.5,
 							scale_length = 2.25,
 							diminish_scale_length = 0.9,
@@ -560,7 +558,6 @@ function WeaponFactoryTweakData:init()
 							damage = 15,
 							dot_length = 3.1,
 							dot_trigger_max_distance = 2000,
-							-- dot_trigger_chance = 70,
 							dot_tick_period = 0.5,
 							scale_length = 2,
 							diminish_scale_length = 0.9,

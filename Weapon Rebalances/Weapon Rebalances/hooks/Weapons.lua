@@ -1,4 +1,5 @@
 local original_init = WeaponTweakData.init
+
 function WeaponTweakData:init(tweak_data)
 	original_init(self, tweak_data)
 
@@ -87,7 +88,6 @@ function WeaponTweakData:init(tweak_data)
 	self.rpg7.AMMO_PICKUP = {0, 0.381}
 	self.rpg7.stats.damage = 62
 	
-	
 	--sentry
 	self.sentry_gun.DAMAGE = 4
 	
@@ -102,7 +102,7 @@ function WeaponTweakData:init(tweak_data)
 		},
 		shotgun = {
 			t5 = {0.296,1.11},
-			t4 = {0.37,1.48},
+			t4 = {0.741,1.852},
 			t3 = {3.185,4.96},
 			t2 = {3.48,5.41},
 			t1 = {5.185,7.78}
@@ -124,8 +124,8 @@ function WeaponTweakData:init(tweak_data)
 		pistol = {
 			t4 = {1.112,2.222},
 			t3 = {1.852,3.704},
-			t2 = {2.963,6.667},--2,5
-			t1 = {5.926,9.63} --3,6
+			t2 = {2.963,6.667},
+			t1 = {5.926,9.63}
 		},
 		gl = {
 			t2 = {0,0.667},
