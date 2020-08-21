@@ -123,7 +123,7 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = 30,
+					damage = 28,
 					spread = nil,
 					moving_spread = nil
 				},
