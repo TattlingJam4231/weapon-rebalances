@@ -8,7 +8,7 @@
 	{
 		"identifier" : "TattlingJam4231WeaponRebalances",
 		"host" : {
-			"meta" : "https://github.com/TattlingJam4231/weapon-rebalances/raw/master/Weapon%20Rebalances/meta.json"
+			"meta" : "https://github.com/TattlingJam4231/weapon-rebalances/raw/master/Weapon_Rebalances/meta.json"
 		}
 	}
 ],
