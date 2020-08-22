@@ -1,5 +1,5 @@
 {
-"name" : "Weapon Rebalances",
+"name" : "Weapon Rebalances Developer",
 "description" : "",
 "author" : "Oryo",
 "image" : "oryo.png",
