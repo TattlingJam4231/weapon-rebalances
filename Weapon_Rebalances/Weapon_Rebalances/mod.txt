@@ -2,6 +2,8 @@
 "name" : "Weapon Rebalances",
 "description" : "Weapon rebalances.",
 "author" : "TattlingJam",
+"image" : "oryo.png",
+"color" : "0.86 0.40 0.92",
 "version" : "1.0",
 "blt_version" : 2,
 "updates" : [

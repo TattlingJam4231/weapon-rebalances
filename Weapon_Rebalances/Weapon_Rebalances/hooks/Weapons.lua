@@ -96,8 +96,8 @@ function WeaponTweakData:init(tweak_data)
 	local pickup = {
 		assault = {
 			t4 = {1.851,3.704},
-			t3 = {4.444,8.889},
-			t2 = {7.407,11.111},
+			t3 = {2.963,5.926},
+			t2 = {5.926,8.889}, --{7.407,11.111}
 			t1 = {11.111,22.222}
 		},
 		shotgun = {
@@ -108,6 +108,7 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {5.185,7.78}
 		},
 		lmg = {
+			t3 = {3.704,7.407},
 			t2 = {7.407,18.519},
 			t1 = {11.111,25.926}
 		},
@@ -242,127 +243,162 @@ function WeaponTweakData:init(tweak_data)
 		
 			--eagle
 			self.scar.AMMO_PICKUP = pickup.assault.t3
-			self.scar.AMMO_MAX = 160
+			self.scar.AMMO_MAX = 140
+			self.scar.stats.suppression = 9
 			--self.scar.stats.concealment = 1
 			
 			--falcon
 			self.fal.AMMO_PICKUP = pickup.assault.t3
-			self.fal.AMMO_MAX = 160
+			self.fal.AMMO_MAX = 140
+			self.fal.stats.suppression = 9
 			--self.fal.stats.concealment = 1 -10
 			
 			--ak.762
 			self.akm.AMMO_PICKUP = pickup.assault.t3
 			self.akm.AMMO_MAX = 150
+			self.akm.stats.suppression = 9
 			--self.akm.stats.concealment = 1
 			
 			--golden ak.762
 			self.akm_gold.AMMO_PICKUP = pickup.assault.t3
 			self.akm_gold.AMMO_MAX = 150
+			self.akm_gold.stats.suppression = 9
 			--self.akm_gold.stats.concealment = 1
 			
 			--amr-16
 			self.m16.AMMO_PICKUP = pickup.assault.t3
 			self.m16.AMMO_MAX = 150
+			self.m16.stats.suppression = 9
 			--self.m16.stats.concealment = 2
 			
 			--ak17
 			self.flint.AMMO_PICKUP = pickup.assault.t3
-			self.flint.AMMO_MAX = 175
+			self.flint.AMMO_MAX = 140
+			self.flint.stats.suppression = 9
 			--self.flint.stats.concealment = 1
 			
 			--gewehr
 			self.g3.AMMO_PICKUP = pickup.assault.t3
-			self.g3.AMMO_MAX = 160
+			self.g3.AMMO_MAX = 140
+			self.g3.stats.suppression = 9
 			--self.g3.stats.concealment = 1
 		
 		--t2 assault rifles---------------------------------------------------------
 			
 			--gecko
 			self.galil.AMMO_PICKUP = pickup.assault.t2
-			self.galil.AMMO_MAX = 240
+			self.galil.AMMO_MAX = 210
+			self.galil.stats.suppression = 15
 			--self.galil.stats.concealment = 1
 			
 			--car-4
 			self.new_m4.AMMO_PICKUP = pickup.assault.t2
-			self.new_m4.AMMO_MAX = 240
+			self.new_m4.AMMO_MAX = 210
+			self.new_m4.stats.suppression = 15
 			--self.new_m4.stats.concealment = -1
 			
 			--queen's wrath
 			self.l85a2.AMMO_PICKUP = pickup.assault.t2
-			self.l85a2.AMMO_MAX = 240
+			self.l85a2.AMMO_MAX = 210
+			self.l85a2.stats.suppression = 15
 			--self.l85a2.stats.concealment = 1
 			
 			--ak5
 			self.ak5.AMMO_PICKUP = pickup.assault.t2
-			self.ak5.AMMO_MAX = 240
+			self.ak5.AMMO_MAX = 210
 			self.ak5.stats.damage = 55
+			self.ak5.stats.suppression = 15
 			--self.ak5.stats.concealment = 1
 			
 			--lion's roar
 			self.vhs.AMMO_PICKUP = pickup.assault.t2
-			self.vhs.AMMO_MAX = 240
+			self.vhs.AMMO_MAX = 210
+			self.vhs.stats.suppression = 15
 			--self.vhs.stats.concealment = 2
 			
 			--ak
 			self.ak74.AMMO_PICKUP = pickup.assault.t2
-			self.ak74.AMMO_MAX = 240
+			self.ak74.AMMO_MAX = 210
+			self.ak74.stats.suppression = 15
 			--self.ak74.stats.concealment = 2
 			
 			--uar
 			self.aug.AMMO_PICKUP = pickup.assault.t2
-			self.aug.AMMO_MAX = 240
+			self.aug.AMMO_MAX = 210
 			self.aug.stats.damage = 54
+			self.aug.stats.suppression = 15
 			--self.aug.stats.concealment = 3
 			
 			--tempest
 			self.komodo.AMMO_PICKUP = pickup.assault.t2
-			self.komodo.AMMO_MAX = 240
+			self.komodo.AMMO_MAX = 210
+			self.komodo.stats.suppression = 15
 			--self.komodo.stats.concealment = 4
 			
 			--union
 			self.corgi.AMMO_PICKUP = pickup.assault.t2
-			self.corgi.AMMO_MAX = 240
+			self.corgi.AMMO_MAX = 210
+			self.corgi.stats.suppression = 15
 			--self.corgi.stats.concealment = 1
 		
 		--t1 assault rifles---------------------------------------------------------
 		
 			--amcar
 			self.amcar.AMMO_PICKUP = pickup.assault.t1
-			self.amcar.AMMO_MAX = 360
+			self.amcar.AMMO_MAX = 300
+			self.amcar.stats.suppression = 15
 			--self.amcar.stats.concealment = 6
 			
 			--commando
 			self.s552.AMMO_PICKUP = pickup.assault.t1
-			self.s552.AMMO_MAX = 360
+			self.s552.AMMO_MAX = 300
 			self.s552.stats.damage = 40
+			self.s552.stats.suppression = 15
 			--self.s552.stats.concealment = 3
 			
 			--jp36
 			self.g36.AMMO_PICKUP = pickup.assault.t1
-			self.g36.AMMO_MAX = 360
+			self.g36.AMMO_MAX = 300
 			self.g36.stats.damage = 42
+			self.g36.stats.suppression = 15
 			--self.g36.stats.concealment = 4
 			
 			--clarion
 			self.famas.AMMO_PICKUP = pickup.assault.t1
-			self.famas.AMMO_MAX = 360
+			self.famas.AMMO_MAX = 300
 			self.famas.stats.damage = 39
+			self.famas.stats.suppression = 15
 			--self.famas.stats.concealment = 3
 			
 			--valkyria
 			self.asval.AMMO_PICKUP = pickup.assault.t1
-			self.asval.AMMO_MAX = 360
+			self.asval.AMMO_MAX = 300
 			self.asval.stats.damage = 44
+			self.asval.stats.suppression = 19
 			--self.asval.stats.concealment = 3
 			
 			--bootleg
 			self.tecci.AMMO_PICKUP = pickup.assault.t1
 			self.tecci.AMMO_MAX = 300
 			self.tecci.stats.damage = 42
+			self.tecci.stats.suppression = 15
 			--self.tecci.stats.concealment = 4
 	
 	--LMGs
 	
+		--t3 lmgs-------------------------------------------------------------------
+		
+			--m60
+			self.m60.AMMO_PICKUP = pickup.lmg.t3
+			self.m60.CLIP_AMMO_MAX = 100
+			self.m60.AMMO_MAX = 200
+			self.m60.can_shoot_through_wall = true
+			self.m60.stats.spread = 12
+			self.m60.stats.recoil = 4
+			self.m60.panic_suppression_chance = 1
+			self.m60.stats.suppression = 6
+			self.m60.stats.damage = 121
+			
 		--t2 lmgs-------------------------------------------------------------------
 		
 			--rpk
