@@ -591,12 +591,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom_free.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_explosive.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_piercing.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
+			local wpn_fps_shot_huntsman = {reload_modifier = 3}
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_huntsman.reload_modifier
 		
 			--joceline
 			self.wpn_fps_shot_b682.override = {
@@ -607,12 +608,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom_free.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_explosive.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_piercing.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
+			local wpn_fps_shot_b682 = {reload_modifier = 3}
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_b682.reload_modifier
 			
 			--breaker
 			self.wpn_fps_sho_boot.override = {
@@ -665,12 +667,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_m37 = {reload_modifier = 4}
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_m37.reload_modifier
 			
 			--claire
 			self.wpn_fps_sho_coach.override = {
@@ -681,14 +684,15 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom_free.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_explosive.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_piercing.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
+			local wpn_fps_sho_coach = {reload_modifier = 2}
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_coach.reload_modifier
 		
-		--90 damage shotguns------------------------------------------------------------
+		--110 damage shotguns------------------------------------------------------------
 		
 			--raven
 			self.wpn_fps_sho_ksg.override = {
@@ -699,14 +703,15 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_ksg = {reload_modifier = 3}
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_ksg.reload_modifier
 
-			--reinfeld
+			--reinfeld 880
 			self.wpn_fps_shot_r870.override = {
 				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
@@ -715,12 +720,30 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_r870 = {reload_modifier = 3}
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_r870.reload_modifier
+			
+			--reinfeld 88
+			self.wpn_fps_shot_m1897.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_explosive = deep_clone(he.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+			}
+			local wpn_fps_shot_m1897 = {reload_modifier = 3}
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_m1897.reload_modifier
 			
 			--locomotive
 			self.wpn_fps_shot_serbu.override = {
@@ -731,12 +754,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_serbu = {reload_modifier = 3}
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_serbu.reload_modifier
 
 		--55 damage shotguns-----------------------------------------------------------
 		
@@ -749,12 +773,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_spas12 = {reload_modifier = 4}
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_spas12.reload_modifier
 			
 			--m1014
 			self.wpn_fps_sho_ben.override = {
@@ -765,12 +790,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_ben = {reload_modifier = 4}
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_ben.reload_modifier
 			
 			--street sweeper
 			self.wpn_fps_sho_striker.override = {
@@ -781,12 +807,13 @@ function WeaponFactoryTweakData:init(...)
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom_free.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_explosive.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_piercing.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
+			local wpn_fps_sho_striker = {reload_modifier = 2}
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_striker.reload_modifier
 
 		--42 damage shotguns-----------------------------------------------------------
 

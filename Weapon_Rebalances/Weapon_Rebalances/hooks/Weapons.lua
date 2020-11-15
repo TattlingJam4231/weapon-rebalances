@@ -15,9 +15,9 @@ function WeaponTweakData:init(tweak_data)
 	end
 	
 	--Thanatos Rework
-	self.m95.stats_modifiers = {damage = 155}
+	self.m95.stats_modifiers = {damage = 60}
 	self.m95.AMMO_PICKUP = {0,0.39}
-	self.m95.AMMO_MAX = 5
+	self.m95.AMMO_MAX = 10
 	
 	--Vulcan Minigun Rework
 	self.m134.AMMO_MAX = 1300/1.3125
@@ -97,12 +97,12 @@ function WeaponTweakData:init(tweak_data)
 		assault = {
 			t4 = {1.851,3.704},
 			t3 = {2.963,5.926},
-			t2 = {5.926,8.889}, --{7.407,11.111}
+			t2 = {5.926,8.889},
 			t1 = {11.111,22.222}
 		},
 		shotgun = {
 			t5 = {0.296,1.11},
-			t4 = {0.741,1.852},
+			t4 = {0.741,1.481},
 			t3 = {3.185,4.96},
 			t2 = {3.48,5.41},
 			t1 = {5.185,7.78}
@@ -167,16 +167,23 @@ function WeaponTweakData:init(tweak_data)
 		
 			--raven
 			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
-			self.ksg.fire_mode_data.fire_rate = 0.375
-			self.ksg.single.fire_rate = 0.375
+			self.ksg.fire_mode_data.fire_rate = 0.55
+			self.ksg.single.fire_rate = 0.55
+			self.ksg.stats.damage = 110
 			
-			--reinfeld
+			--reinfeld 880
 			self.r870.AMMO_PICKUP = pickup.shotgun.t4
-			self.r870.fire_mode_data.fire_rate = 0.375
-			self.r870.single.fire_rate = 0.375
+			self.r870.fire_mode_data.fire_rate = 0.55
+			self.r870.single.fire_rate = 0.55
+			self.r870.stats.damage = 110
+			
+			--reinfeld 88
+			self.m1897.AMMO_PICKUP = pickup.shotgun.t4
+			self.m1897.stats.damage = 110
 			
 			--locomotive
 			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
+			self.serbu.stats.damage = 110
 		
 		--t3 shotguns----------------------------------------------------------------
 		
@@ -488,12 +495,21 @@ function WeaponTweakData:init(tweak_data)
 		
 			--lebensauger
 			self.wa2000.AMMO_PICKUP = pickup.sniper.t1
+			self.wa2000.stats.damage = 198
 			
 			--contractor
 			self.tti.AMMO_PICKUP = pickup.sniper.t1
+			self.tti.stats.damage = 198
 			
 			--grom
 			self.siltstone.AMMO_PICKUP = pickup.sniper.t1
+			self.siltstone.stats.damage = 198
+			
+			--bernetti rangehitter
+			self.sbl.AMMO_PICKUP = pickup.sniper.t1
+			self.sbl.AMMO_MAX = 40
+			self.sbl.stats.damage = 198
+			self.sbl.stats_modifiers = {damage = 1}
 		
 	--SMGs
 		
