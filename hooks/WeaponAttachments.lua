@@ -1,7 +1,7 @@
 local original_init = WeaponFactoryTweakData.init
 
-function WeaponFactoryTweakData:init()
-	original_init(self)
+function WeaponFactoryTweakData:init(...)
+	original_init(self, ...)
 	
 	--SHOTGUN OVERRIDES--------------------------------------------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ function WeaponFactoryTweakData:init()
 				stats = {
 					value = 5,
 					total_ammo_mod = 2,
-					damage = 28,
+					damage = 26,
 					spread = nil,
 					moving_spread = nil
 				},
@@ -191,7 +191,7 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -3
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
+					ammo_pickup_min_mul = 0.5,
 					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
 					damage_far_mul = 2.5,
@@ -289,14 +289,14 @@ function WeaponFactoryTweakData:init()
 						type = "poison",
 						custom_data = {
 							damage = 105,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 105,
 							damage_decay = 15,
 							damage_decay_rate = 2
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -308,20 +308,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 45,
 							damage_decay = 5,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -333,20 +333,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 30,
 							damage_decay = 5,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -358,20 +358,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 20,
-							damage_decay = 5,
-							damage_decay_rate = 1
+							damage_decay = 15,
+							damage_decay_rate = 2
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			},
@@ -383,20 +383,20 @@ function WeaponFactoryTweakData:init()
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 30,
-							dot_tick_period = 0.4,
+							dot_tick_period = 0.5,
 							scale_damage = 15,
-							damage_decay = 5,
+							damage_decay = 10,
 							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
-					rays = 16,
+					rays = 12,
 					bullet_class = "DOTBulletBase"
 				}
 			}
@@ -413,17 +413,18 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 25,
+							damage = 28,
 							dot_length = 5.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
-							scale_length = 3.75,
-							diminish_scale_length = 0.95,
+							scale_length = 5,
+							length_cap = 10.1,
+							diminish_scale_length = 0.92,
 							dot_can_crit = true
 							
 						}
@@ -434,7 +435,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t4 = {
@@ -447,17 +448,18 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 25,
-							dot_length = 5.1,
-							dot_trigger_max_distance = 3000,
+							damage = 24,
+							dot_length = 4.1,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
-							scale_length = 3,
-							diminish_scale_length = 0.9,
+							scale_length = 4,
+							length_cap = 8.1,
+							diminish_scale_length = 0.93,
 							dot_can_crit = true
 							
 						}
@@ -468,7 +470,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t3 = {
@@ -481,17 +483,18 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 20,
+							damage = 18,
 							dot_length = 4.1,
-							dot_trigger_max_distance = 3000,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 3,
-							diminish_scale_length = 0.9,
+							length_cap = 10.1,
+							diminish_scale_length = 0.95,
 							dot_can_crit = true
 							
 						}
@@ -502,7 +505,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t2 = {
@@ -515,17 +518,18 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 20, 
-							dot_length = 4.1,
-							dot_trigger_max_distance = 3000,
+							damage = 18, 
+							dot_length = 3.1,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
-							scale_length = 2.25,
-							diminish_scale_length = 0.9,
+							scale_length = 3,
+							length_cap = 9.1,
+							diminish_scale_length = 0.93,
 							dot_can_crit = true
 							
 						}
@@ -536,7 +540,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			},
 			t1 = {
@@ -549,17 +553,18 @@ function WeaponFactoryTweakData:init()
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.5,
 					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
-							damage = 15,
-							dot_length = 3.1,
-							dot_trigger_max_distance = 3000,
+							damage = 14,
+							dot_length = 2.1,
+							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 2,
-							diminish_scale_length = 0.9,
+							length_cap = 12.1,
+							diminish_scale_length = 0.93,
 							dot_can_crit = true
 							
 						}
@@ -570,7 +575,7 @@ function WeaponFactoryTweakData:init()
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
-					rays = 24
+					rays = 12
 				}
 			}
 		}
@@ -586,12 +591,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom_free.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_explosive.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_piercing.stats.reload = 3
-			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
+			local wpn_fps_shot_huntsman = {reload_modifier = 3}
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_huntsman.reload_modifier
+			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_huntsman.reload_modifier
 		
 			--joceline
 			self.wpn_fps_shot_b682.override = {
@@ -602,12 +608,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom_free.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_explosive.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_piercing.stats.reload = 3
-			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_dragons_breath.stats.reload = 3
+			local wpn_fps_shot_b682 = {reload_modifier = 3}
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_b682.reload_modifier
+			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_b682.reload_modifier
 			
 			--breaker
 			self.wpn_fps_sho_boot.override = {
@@ -660,12 +667,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_m37 = {reload_modifier = 4}
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_m37.reload_modifier
+			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_m37.reload_modifier
 			
 			--claire
 			self.wpn_fps_sho_coach.override = {
@@ -676,14 +684,15 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
 			}
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom_free.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_explosive.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_piercing.stats.reload = 2
-			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
+			local wpn_fps_sho_coach = {reload_modifier = 2}
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_coach.reload_modifier
+			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_coach.reload_modifier
 		
-		--90 damage shotguns------------------------------------------------------------
+		--110 damage shotguns------------------------------------------------------------
 		
 			--raven
 			self.wpn_fps_sho_ksg.override = {
@@ -694,14 +703,15 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_ksg = {reload_modifier = 3}
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_ksg.reload_modifier
+			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_ksg.reload_modifier
 
-			--reinfeld
+			--reinfeld 880
 			self.wpn_fps_shot_r870.override = {
 				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
@@ -710,12 +720,30 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_r870 = {reload_modifier = 3}
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_r870.reload_modifier
+			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_r870.reload_modifier
+			
+			--reinfeld 88
+			self.wpn_fps_shot_m1897.override = {
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_explosive = deep_clone(he.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+			}
+			local wpn_fps_shot_m1897 = {reload_modifier = 3}
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_m1897.reload_modifier
+			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_m1897.reload_modifier
 			
 			--locomotive
 			self.wpn_fps_shot_serbu.override = {
@@ -726,12 +754,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
 			}
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_shot_serbu = {reload_modifier = 3}
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_shot_serbu.reload_modifier
+			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_shot_serbu.reload_modifier
 
 		--55 damage shotguns-----------------------------------------------------------
 		
@@ -744,12 +773,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_spas12 = {reload_modifier = 4}
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_spas12.reload_modifier
+			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_spas12.reload_modifier
 			
 			--m1014
 			self.wpn_fps_sho_ben.override = {
@@ -760,12 +790,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom_free.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_explosive.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_piercing.stats.reload = 4
-			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_dragons_breath.stats.reload = 4
+			local wpn_fps_sho_ben = {reload_modifier = 4}
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_ben.reload_modifier
+			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_ben.reload_modifier
 			
 			--street sweeper
 			self.wpn_fps_sho_striker.override = {
@@ -776,12 +807,13 @@ function WeaponFactoryTweakData:init()
 				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
 			}
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom_free.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_explosive.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_piercing.stats.reload = 2
-			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_dragons_breath.stats.reload = 2
+			local wpn_fps_sho_striker = {reload_modifier = 2}
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_custom_free.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_explosive.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_piercing.stats.reload = wpn_fps_sho_striker.reload_modifier
+			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_dragons_breath.stats.reload = wpn_fps_sho_striker.reload_modifier
 
 		--42 damage shotguns-----------------------------------------------------------
 
@@ -1002,190 +1034,4 @@ function WeaponFactoryTweakData:init()
 							adds = {}
 						}
 					}
-			--LMG attachment overrides--------------------------------------------------------------------
-				
-				self.wpn_fps_lmg_hk21.override = {
-					wpn_fps_upg_ns_ass_smg_large = {
-						stats = {
-							alert_size = 12,
-							spread_moving = 2,
-							damage = -1,
-							suppression = 0,
-							value = 5,
-							recoil = 1,
-							spread = 0,
-							concealment = -3
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_medium = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -2,
-							damage = -3,
-							suppression = 0,
-							value = 2,
-							recoil = 1,
-							concealment = -2
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_small = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -1,
-							damage = -5,
-							suppression = 0,
-							value = 3,
-							recoil = 0,
-							concealment = 0
-						}
-					}
-				}
-				
-				self.wpn_fps_lmg_mg42.override = {
-					wpn_fps_upg_ns_ass_smg_large = {
-						stats = {
-							alert_size = 12,
-							spread_moving = 2,
-							damage = -1,
-							suppression = 0,
-							value = 5,
-							recoil = 1,
-							spread = 0,
-							concealment = -3
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_medium = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -2,
-							damage = -3,
-							suppression = 0,
-							value = 2,
-							recoil = 1,
-							concealment = -2
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_small = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -1,
-							damage = -5,
-							suppression = 0,
-							value = 3,
-							recoil = 0,
-							concealment = 0
-						}
-					}
-				}
-				
-				self.wpn_fps_lmg_m249.override = {
-					wpn_fps_upg_ns_ass_smg_large = {
-						stats = {
-							alert_size = 12,
-							spread_moving = 2,
-							damage = -1,
-							suppression = 0,
-							value = 5,
-							recoil = 1,
-							spread = 0,
-							concealment = -3
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_medium = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -2,
-							damage = -3,
-							suppression = 0,
-							value = 2,
-							recoil = 1,
-							concealment = -2
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_small = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -1,
-							damage = -5,
-							suppression = 0,
-							value = 3,
-							recoil = 0,
-							concealment = 0
-						}
-					}
-				}
-				
-				self.wpn_fps_lmg_par.override = {
-					wpn_fps_upg_ns_ass_smg_large = {
-						stats = {
-							alert_size = 12,
-							spread_moving = 2,
-							damage = -1,
-							suppression = 0,
-							value = 5,
-							recoil = 1,
-							spread = 0,
-							concealment = -3
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_medium = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -2,
-							damage = -3,
-							suppression = 0,
-							value = 2,
-							recoil = 1,
-							concealment = -2
-						}	
-					},
-					wpn_fps_upg_ns_ass_smg_small = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -1,
-							damage = -5,
-							suppression = 0,
-							value = 3,
-							recoil = 0,
-							concealment = 0
-						}
-					}
-				}
-				
-				self.wpn_fps_lmg_rpk.override = {
-						wpn_fps_upg_ns_ass_smg_large = {
-							stats = {
-								alert_size = 12,
-								spread_moving = 2,
-								damage = -1,
-								suppression = 0,
-								value = 5,
-								recoil = 1,
-								spread = 0,
-								concealment = -3
-							}
-					},
-					wpn_fps_upg_ns_ass_smg_medium = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -2,
-							damage = -3,
-							suppression = 0,
-							value = 2,
-							recoil = 1,
-							concealment = -2
-						}
-					},
-					wpn_fps_upg_ns_ass_smg_small = {
-						stats = {
-							alert_size = 12,
-							spread_moving = -1,
-							damage = -5,
-							suppression = 0,
-							value = 3,
-							recoil = 0,
-							concealment = 0
-						}
-					}
-				}
 end

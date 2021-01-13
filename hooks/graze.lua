@@ -1,11 +1,3 @@
-Hooks:Add("LocalizationManagerPostInit", "LocalizationManagerPostInit", function(loc)
-
-  loc:add_localized_strings({
-    menu_sniper_graze_damage_desc = "BASIC: ##4 points##\nSnipers that hit their target deal ##20%## of the damage dealt in a ##1m## radius around the bullet trajectory. \n\nWhen fired in single shot mode, Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.75m## radius around the bullet impact.\n\nACE: ##8 points##\nIf a bullet would headshot-kill someone, the graze skill will deal ##100%## of the damage dealt instead of ##20%##."
-  })
-
-end)
-
 if RequiredScript == "lib/managers/player/snipergrazedamage" then
 
 	SniperGrazeDamage = SniperGrazeDamage or {}
