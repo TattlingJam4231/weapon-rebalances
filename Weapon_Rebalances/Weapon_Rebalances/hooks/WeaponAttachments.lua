@@ -284,15 +284,15 @@ function WeaponFactoryTweakData:init(...)
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
+					ammo_pickup_max_mul = 0.667,
 					dot_data = {
 						type = "poison",
 						custom_data = {
-							damage = 105,
+							damage = 95,
 							dot_tick_period = 0.5,
-							scale_damage = 105,
-							damage_decay = 15,
-							damage_decay_rate = 2
+							scale_damage = 240,
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
@@ -303,19 +303,19 @@ function WeaponFactoryTweakData:init(...)
 			t4 = {
 				stats = {
 					value = 5,
-					damage = -60,
+					damage = -90,
 					spread = -1,
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = 0.8,
+					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = 0.8,
 					dot_data = {
 						type = "poison",
 						custom_data = {
-							damage = 60,
+							damage = 95,
 							dot_tick_period = 0.5,
-							scale_damage = 45,
+							scale_damage = 65,
 							damage_decay = 5,
 							damage_decay_rate = 1
 						}
@@ -333,15 +333,15 @@ function WeaponFactoryTweakData:init(...)
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = 0.8,
-					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = 0.667,
+					ammo_pickup_max_mul = 0.667,
 					dot_data = {
 						type = "poison",
 						custom_data = {
-							damage = 60,
+							damage = 90,
 							dot_tick_period = 0.5,
-							scale_damage = 30,
-							damage_decay = 5,
+							scale_damage = 60,
+							damage_decay = 10,
 							damage_decay_rate = 1
 						}
 					},
@@ -358,16 +358,16 @@ function WeaponFactoryTweakData:init(...)
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = 0.8,
-					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = 0.667,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 60,
 							dot_tick_period = 0.5,
-							scale_damage = 20,
-							damage_decay = 15,
-							damage_decay_rate = 2
+							scale_damage = 40,
+							damage_decay = 5,
+							damage_decay_rate = 1
 						}
 					},
 					armor_piercing_add = 1, 
@@ -383,14 +383,14 @@ function WeaponFactoryTweakData:init(...)
 					moving_spread = -1
 				},
 				custom_stats = {
-					ammo_pickup_min_mul = 0.8,
-					ammo_pickup_max_mul = 0.8,
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
 					dot_data = {
 						type = "poison",
 						custom_data = {
 							damage = 30,
 							dot_tick_period = 0.5,
-							scale_damage = 15,
+							scale_damage = 30,
 							damage_decay = 10,
 							damage_decay_rate = 1
 						}
