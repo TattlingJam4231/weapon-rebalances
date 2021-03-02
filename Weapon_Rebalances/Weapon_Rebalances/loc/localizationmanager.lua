@@ -1,7 +1,9 @@
 Hooks:Add("LocalizationManagerPostInit", "Weapon Rebalances Localization", function(loc)
 	LocalizationManager:add_localized_strings({
-		["menu_dance_instructor_desc"] = "BASIC: ##2 points##\nYour pistol magazine sizes are increased by ##5## bullets.\n\nACE: ##4 points##\nYou realod all pistols ##50%## faster.",
+		["menu_dance_instructor_desc"] = "BASIC: ##2 points##\nYour pistol magazine sizes are increased by ##5## bullets.\n\nACE: ##4 points##\nYou reload all pistols ##50%## faster.",
 		["menu_expert_handling_desc"] = "BASIC: ##3 points##\nEach successful pistol hit gives you a 10% increased accuracy bonus for ##10## seconds and can stack ##4## times.\n\nACE: ##6 points##\nYou gain a ##50%## increased rate of fire with pistols.",
-		["menu_sniper_graze_damage_desc"] = "BASIC: ##4 points##\nSnipers that hit their target deal ##20%## of the damage dealt in a ##1m## radius around the bullet trajectory. \n\nWhen fired in single shot mode, Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.75m## radius around the bullet impact.\n\nACE: ##8 points##\nIf a bullet would headshot someone, the graze skill will deal ##100%## of the damage dealt instead of ##20%##."
+		["menu_sniper_graze_damage_desc"] = "BASIC: ##4 points##\nSnipers that hit their target deal ##20%## of the damage dealt in a ##1m## radius around the bullet trajectory. \n\nWhen fired in single shot mode, Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.75m## radius around the bullet impact.\n\nACE: ##8 points##\nIf a bullet would headshot someone, the graze skill will deal ##100%## of the damage dealt instead of ##20%##.",
+		["menu_speedy_reload_beta_desc"] = "BASIC: ##3 points##\nIncreases your reload speed with SMGs, Assault Rifles and Sniper Rifles by ##35%##\n\nACE: ##6 points##\nAny killing headshot will increase your reload speed by ##100%## for ##4## seconds. Can only be triggerd by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.",
+		["menu_shotgun_cqb_beta_desc"] = "BASIC: ##2 points##\nYou reload Shotguns ##15%## faster.\n\nACE: ##4 points##\nYou reload Shotguns an additional ##35%## faster. You gain a ##125%## increased steel sight zoom speed when using Shotguns."
 	})
 end)

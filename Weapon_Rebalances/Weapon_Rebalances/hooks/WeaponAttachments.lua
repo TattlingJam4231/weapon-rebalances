@@ -989,10 +989,112 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.suppression = 12
 					
 					
+					--Futomaki Suppressor(Micro Uzi)
+					self.parts.wpn_fps_smg_baka_b_longsupp.stats.damage = 0
+					self.parts.wpn_fps_smg_baka_b_longsupp.stats.spread = 3
+					self.parts.wpn_fps_smg_baka_b_longsupp.stats.recoil = 1
+					self.parts.wpn_fps_smg_baka_b_longsupp.stats.concealment = -4
+					self.parts.wpn_fps_smg_baka_b_longsupp.stats.suppression = 12
+					
+					
+					--Maki Suppressor(Micro Uzi)
+					self.parts.wpn_fps_smg_baka_b_midsupp.stats.damage = -2
+					self.parts.wpn_fps_smg_baka_b_midsupp.stats.spread = 0
+					self.parts.wpn_fps_smg_baka_b_midsupp.stats.recoil = 2
+					self.parts.wpn_fps_smg_baka_b_midsupp.stats.concealment = -2
+					self.parts.wpn_fps_smg_baka_b_midsupp.stats.suppression = 12
+					
+					
+					--Suppressed Barrel(SpecOps)
+					self.parts.wpn_fps_smg_mp7_b_suppressed.stats.damage = -1
+					self.parts.wpn_fps_smg_mp7_b_suppressed.stats.spread = 2
+					self.parts.wpn_fps_smg_mp7_b_suppressed.stats.recoil = 2
+					self.parts.wpn_fps_smg_mp7_b_suppressed.stats.concealment = -2
+					self.parts.wpn_fps_smg_mp7_b_suppressed.stats.suppression = 12
+					
+					
+					--Silent Death(Uzi)
+					self.parts.wpn_fps_smg_uzi_b_suppressed.stats.damage = 0
+					self.parts.wpn_fps_smg_uzi_b_suppressed.stats.spread = -1
+					self.parts.wpn_fps_smg_uzi_b_suppressed.stats.recoil = 1
+					self.parts.wpn_fps_smg_uzi_b_suppressed.stats.concealment = -2
+					self.parts.wpn_fps_smg_uzi_b_suppressed.stats.suppression = 12
+					
+					
+					--Suppressor(Cobra)
+					self.parts.wpn_fps_smg_scorpion_b_suppressed.stats.damage = 0
+					self.parts.wpn_fps_smg_scorpion_b_suppressed.stats.spread = -1
+					self.parts.wpn_fps_smg_scorpion_b_suppressed.stats.recoil = 1
+					self.parts.wpn_fps_smg_scorpion_b_suppressed.stats.concealment = -2
+					self.parts.wpn_fps_smg_scorpion_b_suppressed.stats.suppression = 12
+					
+					
+					--Tishina Suppressor(Heather)
+					self.parts.wpn_fps_smg_sr2_ns_silencer.stats.damage = -2
+					self.parts.wpn_fps_smg_sr2_ns_silencer.stats.spread = 0
+					self.parts.wpn_fps_smg_sr2_ns_silencer.stats.recoil = 2
+					self.parts.wpn_fps_smg_sr2_ns_silencer.stats.concealment = -2
+					self.parts.wpn_fps_smg_sr2_ns_silencer.stats.suppression = 12
+					
+					
+					--Slotted Barrel Extension(Jacket's Piece/Mark 10)
+					self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats.damage = 0
+					self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats.spread = 3
+					self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats.recoil = 2
+					self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats.concealment = -2
+					self.parts.wpn_fps_smg_cobray_ns_barrelextension.stats.suppression = 0
+					
+					
+					--Werbell's Suppressor(Jacket's Piece/Mark 10)
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats.damage = -3
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats.spread = 0
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats.recoil = 1
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats.concealment = -1
+					self.parts.wpn_fps_smg_cobray_ns_silencer.stats.suppression = 12
+					
+					
+					--PBS Suppressor(AKs)
+					self.parts.wpn_fps_upg_ns_ass_pbs1.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_ass_pbs1.stats.spread = 0
+					self.parts.wpn_fps_upg_ns_ass_pbs1.stats.recoil = 1
+					self.parts.wpn_fps_upg_ns_ass_pbs1.stats.concealment = -4
+					self.parts.wpn_fps_upg_ns_ass_pbs1.stats.suppression = 12
+					
+					
+					--Silentgear Silencer(Jackal)
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats.damage = -3
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats.spread = 0
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats.recoil = 1
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats.concealment = -1
+					self.parts.wpn_fps_smg_schakal_ns_silencer.stats.suppression = 12
+					
+					
+					--Bootstrap Compensator(Bootleg/Little Friend)
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.damage = 0
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.spread = 2
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.recoil = 3
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.concealment = -2
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.suppression = 1
+					
+					
 					
 				--Shotgun
 					--king's crown
 					self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
+			
+			
+			--Magazines
+				
+				--Speed Pull Magazines
+					local speed_pull = 2
+					self.parts.wpn_fps_ass_tecci_ns_special.stats.reload = speed_pull
+					self.parts.wpn_fps_ass_aug_m_quick.stats.reload = speed_pull
+					self.parts.wpn_fps_ass_g36_m_quick.stats.reload = speed_pull
+					self.parts.wpn_fps_m4_upg_m_quick.stats.reload = speed_pull
+					self.parts.wpn_fps_smg_p90_m_strap.stats.reload = speed_pull
+					self.parts.wpn_fps_upg_ak_m_quick.stats.reload = speed_pull
+					self.parts.wpn_fps_smg_sr2_m_quick.stats.reload = speed_pull
+					
 			
 			-- --gecko cqb foregrip
 			-- self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
@@ -1079,7 +1181,7 @@ function WeaponFactoryTweakData:init(...)
 							stats = {
 								spread = 4,
 								total_ammo_mod = -8,
-								damage = 66,
+								damage = 65,
 								concealment = -4,
 								value = 1,
 								recoil = -4
@@ -1096,7 +1198,7 @@ function WeaponFactoryTweakData:init(...)
 							stats = {
 								spread = 3,
 								total_ammo_mod = -12,
-								damage = 104,
+								damage = 106,
 								concealment = -4,
 								value = 1,
 								recoil = -9
@@ -1114,7 +1216,7 @@ function WeaponFactoryTweakData:init(...)
 							stats = {
 								extra_ammo = -5,
 								total_ammo_mod = -10,
-								damage = 61,
+								damage = 62,
 								value = 2,
 								concealment = -2,
 								recoil = -1,
@@ -1130,7 +1232,7 @@ function WeaponFactoryTweakData:init(...)
 							stats = {
 								spread = -4,
 								total_ammo_mod = 10,
-								damage = -40,
+								damage = -42,
 								value = 2,
 								concealment = 1,
 								recoil = 5

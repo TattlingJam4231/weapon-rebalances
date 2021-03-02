@@ -417,7 +417,7 @@ function WeaponTweakData:init(tweak_data)
 			self.m60.stats.recoil = 4
 			self.m60.panic_suppression_chance = 1
 			self.m60.stats.suppression = 6
-			self.m60.stats.damage = 122
+			self.m60.stats.damage = 110
 			
 		--t2 lmgs-------------------------------------------------------------------
 		
