@@ -98,7 +98,7 @@ function WeaponTweakData:init(tweak_data)
 			t4 = {2.5 /1.35, 4 	 /1.35},
 			t3 = {4   /1.35, 6 	 /1.35},
 			t2 = {6   /1.35, 10  /1.35},
-			t1 = {15  /1.35, 30  /1.35}
+			t1 = {12  /1.35, 24  /1.35}
 		},
 		shotgun = {
 			t5 = {0.4 /1.35, 1.5 /1.35},
@@ -118,9 +118,9 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {2   /1.35, 3   /1.35}
 		},
 		smg = {
-			t3 = {2.5 /1.35, 7.5 /1.35},
+			t3 = {3   /1.35, 7   /1.35},
 			t2 = {5   /1.35, 11  /1.35},
-			t1 = {8   /1.35, 23  /1.35}
+			t1 = {8   /1.35, 16  /1.35}
 		},
 		pistol = {
 			t4 = {1.5 /1.35, 3   /1.35},
@@ -225,21 +225,20 @@ function WeaponTweakData:init(tweak_data)
 		
 			--cavity
 			self.sub2000.AMMO_PICKUP = pickup.assault.t4
+			self.sub2000.stats.damage = 164
 			
 			--m308
 			self.new_m14.AMMO_PICKUP = pickup.assault.t4
+			self.new_m14.stats.damage = 164
 			
 			--galant
 			self.ching.AMMO_PICKUP = pickup.assault.t4
+			self.ching.stats.damage = 164
 			
 			--little friend
-			--self.contraband.CLIP_AMMO_MAX = 30
-			--self.contraband.AMMO_MAX = 120
 			self.contraband.AMMO_PICKUP = pickup.assault.t4
-			--self.contraband.FIRE_MODE = "auto"
 			self.contraband.CAN_TOGGLE_FIREMODE = true
-			--self.contraband.stats.damage = 58
-			--self.contraband.stats.concealment = 1
+			self.contraband.stats.damage = 164
 			
 			self.contraband_m203.categories = {
 				"grenade_launcher",
@@ -252,42 +251,49 @@ function WeaponTweakData:init(tweak_data)
 			self.scar.AMMO_PICKUP = pickup.assault.t3
 			self.scar.AMMO_MAX = 140
 			self.scar.stats.suppression = 9
+			self.scar.stats.damage = 100
 			--self.scar.stats.concealment = 1
 			
 			--falcon
 			self.fal.AMMO_PICKUP = pickup.assault.t3
 			self.fal.AMMO_MAX = 140
 			self.fal.stats.suppression = 9
+			self.fal.stats.damage = 100
 			--self.fal.stats.concealment = 1 -10
 			
 			--ak.762
 			self.akm.AMMO_PICKUP = pickup.assault.t3
 			self.akm.AMMO_MAX = 150
 			self.akm.stats.suppression = 9
+			self.akm.stats.damage = 99
 			--self.akm.stats.concealment = 1
 			
 			--golden ak.762
 			self.akm_gold.AMMO_PICKUP = pickup.assault.t3
 			self.akm_gold.AMMO_MAX = 150
 			self.akm_gold.stats.suppression = 9
+			self.akm_gold.stats.damage = 99
 			--self.akm_gold.stats.concealment = 1
 			
 			--amr-16
 			self.m16.AMMO_PICKUP = pickup.assault.t3
 			self.m16.AMMO_MAX = 150
 			self.m16.stats.suppression = 9
+			self.m16.stats.damage = 96
 			--self.m16.stats.concealment = 2
 			
 			--ak17
 			self.flint.AMMO_PICKUP = pickup.assault.t3
 			self.flint.AMMO_MAX = 140
 			self.flint.stats.suppression = 9
+			self.flint.stats.damage = 101
 			--self.flint.stats.concealment = 1
 			
 			--gewehr
 			self.g3.AMMO_PICKUP = pickup.assault.t3
 			self.g3.AMMO_MAX = 140
 			self.g3.stats.suppression = 9
+			self.g3.stats.damage = 101
 			--self.g3.stats.concealment = 1
 		
 		--t2 assault rifles---------------------------------------------------------
@@ -296,56 +302,63 @@ function WeaponTweakData:init(tweak_data)
 			self.galil.AMMO_PICKUP = pickup.assault.t2
 			self.galil.AMMO_MAX = 210
 			self.galil.stats.suppression = 15
+			self.galil.stats.damage = 58
 			--self.galil.stats.concealment = 1
 			
 			--car-4
 			self.new_m4.AMMO_PICKUP = pickup.assault.t2
 			self.new_m4.AMMO_MAX = 210
 			self.new_m4.stats.suppression = 15
+			self.new_m4.stats.damage = 53
 			--self.new_m4.stats.concealment = -1
 			
 			--queen's wrath
 			self.l85a2.AMMO_PICKUP = pickup.assault.t2
 			self.l85a2.AMMO_MAX = 210
 			self.l85a2.stats.suppression = 15
+			self.l85a2.stats.damage = 59
 			--self.l85a2.stats.concealment = 1
 			
 			--ak5
 			self.ak5.AMMO_PICKUP = pickup.assault.t2
 			self.ak5.AMMO_MAX = 210
-			self.ak5.stats.damage = 55
 			self.ak5.stats.suppression = 15
+			self.ak5.stats.damage = 56
 			--self.ak5.stats.concealment = 1
 			
 			--lion's roar
 			self.vhs.AMMO_PICKUP = pickup.assault.t2
 			self.vhs.AMMO_MAX = 210
 			self.vhs.stats.suppression = 15
+			self.vhs.stats.damage = 59
 			--self.vhs.stats.concealment = 2
 			
 			--ak
 			self.ak74.AMMO_PICKUP = pickup.assault.t2
 			self.ak74.AMMO_MAX = 210
 			self.ak74.stats.suppression = 15
+			self.ak74.stats.damage = 57
 			--self.ak74.stats.concealment = 2
 			
 			--uar
 			self.aug.AMMO_PICKUP = pickup.assault.t2
 			self.aug.AMMO_MAX = 210
-			self.aug.stats.damage = 54
 			self.aug.stats.suppression = 15
+			self.aug.stats.damage = 55
 			--self.aug.stats.concealment = 3
 			
 			--tempest
 			self.komodo.AMMO_PICKUP = pickup.assault.t2
 			self.komodo.AMMO_MAX = 210
 			self.komodo.stats.suppression = 15
+			self.komodo.stats.damage = 59
 			--self.komodo.stats.concealment = 4
 			
 			--union
 			self.corgi.AMMO_PICKUP = pickup.assault.t2
 			self.corgi.AMMO_MAX = 210
 			self.corgi.stats.suppression = 15
+			self.corgi.stats.damage = 59
 			--self.corgi.stats.concealment = 1
 		
 		--t1 assault rifles---------------------------------------------------------
@@ -404,7 +417,7 @@ function WeaponTweakData:init(tweak_data)
 			self.m60.stats.recoil = 4
 			self.m60.panic_suppression_chance = 1
 			self.m60.stats.suppression = 6
-			self.m60.stats.damage = 121
+			self.m60.stats.damage = 122
 			
 		--t2 lmgs-------------------------------------------------------------------
 		
@@ -415,7 +428,7 @@ function WeaponTweakData:init(tweak_data)
 			self.rpk.stats.recoil = 10
 			self.rpk.panic_suppression_chance = 1
 			self.rpk.stats.suppression = 1
-			self.rpk.stats.damage = 80
+			self.rpk.stats.damage = 81
 			
 			--brenner
 			self.hk21.AMMO_PICKUP = pickup.lmg.t2
@@ -424,7 +437,7 @@ function WeaponTweakData:init(tweak_data)
 			self.hk21.stats.recoil = 12
 			self.hk21.panic_suppression_chance = 1
 			self.hk21.stats.suppression = 1
-			self.hk21.stats.damage = 82
+			self.hk21.stats.damage = 83
 			
 		--t1 lmgs-------------------------------------------------------------------
 		

@@ -882,9 +882,117 @@ function WeaponFactoryTweakData:init(...)
 	--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------
 
 		--Attachments
-		
-			--king's crown
-			self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
+			
+			--Barrel Extensions
+				
+				--AR/MG
+					--Medium Suppressor
+					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.damage = -3
+					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.spread = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.recoil = 1
+					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.concealment = -2
+					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.suppression = 12
+					
+					--Low Profile Suppressor
+					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.damage = -5
+					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.spread = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.recoil = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.concealment = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.suppression = 12
+					
+					
+					--Stubby Compensator
+					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.spread = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.recoil = 3
+					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.concealment = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.suppression = -1
+					
+					
+					--The Tank Compensator
+					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.spread = 3
+					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.recoil = 1
+					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.concealment = -1
+					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.suppression = -2
+					
+					
+					--Fire Breather Nozzle
+					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.spread = -1
+					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.recoil = 4
+					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.concealment = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.suppression = -5
+					
+					
+					--The Bigger the Better Suppressor
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.damage = -1
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.spread = 2
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.recoil = 1
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.concealment = -3
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.suppression = 12
+					
+					
+					--Competitior's Compensator
+					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.damage = 0
+					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.spread = 1
+					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.recoil = 3
+					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.concealment = -1
+					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.suppression = -1
+					
+					
+					--Funnel of Fun Nozzle
+					self.parts.wpn_fps_upg_ass_ns_linear.stats.damage = 0
+					self.parts.wpn_fps_upg_ass_ns_linear.stats.spread = -2
+					self.parts.wpn_fps_upg_ass_ns_linear.stats.recoil = 5
+					self.parts.wpn_fps_upg_ass_ns_linear.stats.concealment = -1
+					self.parts.wpn_fps_upg_ass_ns_linear.stats.suppression = -5
+					
+					
+					--Tactical Compensator
+					self.parts.wpn_fps_upg_ass_ns_surefire.stats.damage = 0
+					self.parts.wpn_fps_upg_ass_ns_surefire.stats.spread = 5
+					self.parts.wpn_fps_upg_ass_ns_surefire.stats.recoil = -2
+					self.parts.wpn_fps_upg_ass_ns_surefire.stats.concealment = -1
+					self.parts.wpn_fps_upg_ass_ns_surefire.stats.suppression = 0
+					
+					
+					--Ported Compensator
+					self.parts.wpn_fps_upg_ass_ns_battle.stats.damage = 0
+					self.parts.wpn_fps_upg_ass_ns_battle.stats.spread = 1
+					self.parts.wpn_fps_upg_ass_ns_battle.stats.recoil = 2
+					self.parts.wpn_fps_upg_ass_ns_battle.stats.concealment = 0
+					self.parts.wpn_fps_upg_ass_ns_battle.stats.suppression = 0
+					
+					
+					--Marmon Compensator
+					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.spread = 2
+					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.recoil = 2
+					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.concealment = -1
+					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.suppression = -3
+					
+					
+					--Precision Barrel(Kross Vertex)
+					self.parts.wpn_fps_smg_polymer_barrel_precision.stats.damage = 0
+					self.parts.wpn_fps_smg_polymer_barrel_precision.stats.spread = 4
+					self.parts.wpn_fps_smg_polymer_barrel_precision.stats.recoil = 2
+					self.parts.wpn_fps_smg_polymer_barrel_precision.stats.concealment = -4
+					self.parts.wpn_fps_smg_polymer_barrel_precision.stats.suppression = 0
+					
+					
+					--HPS Suppressor(Kross Vertex)
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.damage = -3
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.spread = 0
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.recoil = 1
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.concealment = -1
+					self.parts.wpn_fps_smg_polymer_ns_silencer.stats.suppression = 12
+					
+					
+					
+				--Shotgun
+					--king's crown
+					self.parts.wpn_fps_upg_shot_ns_king.stats.damage = 2
 			
 			-- --gecko cqb foregrip
 			-- self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1
