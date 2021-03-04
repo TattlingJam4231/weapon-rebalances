@@ -30,7 +30,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 ### Shotguns:
    tier 5: 155 damage
    
-   tier 4: 90 damage
+   tier 4: 110 damage
    
    tier 3: 55 damage
    
@@ -89,25 +89,31 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - tier 5
        - +9 damage
        - -12 accuracy
+       - -25% total ammo
+       - -50% min ammo pickup
        - -60% max ammo pickup
        - 3 pellets
      - tier 4
        - -12 accuracy
+       - -25% total ammo
        - -20% min ammo pickup
        - -60% max ammo pickup
        - 3 pellets
      - tier 3
        - -12 accuracy
+       - -25% total ammo
        - -70% min ammo pickup
        - -63% max ammo pickup
        - 3 pellets
      - tier 2
        - -12 accuracy
+       - -25% total ammo
        - -53% min ammo pickup
        - -64% max ammo pickup
        - 3 pellets
      - tier 1
        - -12 accuracy
+       - -25% total ammo
        - -50% min ammo pickup
        - -45% max ammo pickup
        - 3 pellets
@@ -116,30 +122,55 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Dragon's Breath
      - tier 5
+       - -60 damage
        - -12 accuracy
        - -60% min ammo pickup
-       - deals 80 damage every 0.5 seconds for three seconds
-       - 24 pellets
+       - -50% max ammo pickup
+       - 12 pellets
+       - dot stats:
+         - 28 damage
+         - 0.5 second tick rate
+         - 5 second duration
      - tier 4
+       - -30 damage
        - -12 accuracy
        - -60% min ammo pickup
-       - deals 70 damage every 0.5 seconds for three seconds
-       - 24 pellets
+       - -50% max ammo pickup
+       - 12 pellets
+       - dot stats:
+         - 24 damage
+         - 0.5 second tick rate
+         - 4 second duration
      - tier 3
+       - -20 damage
        - -12 accuracy
        - -60% min ammo pickup
-       - deals 60 damage every 0.5 seconds for three seconds
-       - 24 pellets
+       - -50% max ammo pickup
+       - 12 pellets
+       - dot stats:
+         - 18 damage
+         - 0.5 second tick rate
+         - 4 second duration
      - tier 2
+       - -15 damage
        - -12 accuracy
        - -60% min ammo pickup
-       - deals 50 damage every 0.5 seconds for three seconds
-       - 24 pellets
+       - -50% max ammo pickup
+       - 12 pellets
+       - dot stats:
+         - 18 damage
+         - 0.5 second tick rate
+         - 3 second duration
      - tier 1
+       - -6 damage
        - -12 accuracy
        - -60% min ammo pickup
-       - deals 40 damage every 0.5 seconds for three seconds
-       - 24 pellets
+       - -50% max ammo pickup
+       - 12 pellets
+       - dot stats:
+         - 14 damage
+         - 0.5 second tick rate
+         - 2 second duration
    
    - Flechette
      - hit enemies are afflicted with a dot that decays over time, the dot lasts until the damage decays to 0
@@ -147,48 +178,53 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - tier 5
        - -103 damage
        - -4 accuracy
-       - 16 pellets
+       - 12 pellets
+       - -33% max ammo pickup
        - dot stats:
-         - 0.4 second damage tick rate
-         - 105 intial damage
-         - -15 damage every 2 damage ticks
-         - +105 damage on consecutive hits
+         - 95 damage
+         - 0.5 second tick rate
+         - -5 damage per tick
+         - +240 damage on consecutive hits
      - tier 4
-       - -60 damage
+       - -90 damage
        - -4 accuracy
-       - 16 pellets
+       - 12 pellets
+       - -20% max ammo pickup
        - dot stats:
-         - 0.4 second damage tick rate
-         - 60 intial damage
-         - -5 damage every damage tick
-         - +45 damage on consecutive hits
+         - 95 damage
+         - 0.5 second tick rate
+         - -5 damage per tick
+         - +65 damage on consecutive hits
      - tier 3
        - -37 damage
        - -4 accuracy
-       - 16 pellets
+       - 12 pellets
+       - -33% min ammo pickup
+       - -33% max ammo pickup
        - dot stats:
-         - 0.4 second damage tick rate
-         - 60 intial damage
-         - -5 damage every damage tick
-         - +30 damage on consecutive hits
+         - 90 damage
+         - 0.5 second tick rate
+         - -10 damage per tick
+         - +60 damage on consecutive hits
      - tier 2
        - -28 damage
        - -4 accuracy
-       - 16 pellets
+       - 12 pellets
+       - -33% max ammo pickup
        - dot stats:
-         - 0.4 second damage tick rate
-         - 60 intial damage
-         - -5 damage every damage tick
-         - +20 damage on consecutive hits
+         - 60 damage
+         - 0.5 second tick rate
+         - -5 damage per tick
+         - +40 damage on consecutive hits
      - tier 1
        - -12 damage
        - -4 accuracy
-       - 16 pellets
+       - 12 pellets
        - dot stats:
-         - 0.4 second damage tick rate
-         - 30 intial damage
-         - -10 damage every damage tick
-         - +15 damage on consecutive hits
+         - 30 damage
+         - 0.5 second tick rate
+         - -10 damage per tick
+         - +30 damage on consecutive hits
      
 #### Weapons:
    - Tier 5
@@ -217,46 +253,51 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Tier 4
      - Raven
-       - ammo pickup changed from 0.57/1.98 to 0.5/2
-       - fire rate increased from 104 to 160
+       - ammo pickup changed from 0.57/1.98 to 1/2
+       - damage increased from 90 to 110
 
-     - Reinfeld
-       - ammo pickup changed from 0.57/1.98 to 0.5/2
-       - fire rate increased from 104 to 160
+     - Reinfeld 880
+       - ammo pickup changed from 0.57/1.98 to 1/2
+       - damage increased from 90 to 110
+
+     - Reinfeld 88
+       - ammo pickup changed from 1.42/1.89 to 1/2
+       - damage decreased from 120 to 110
 
      - Locomotive
-       - ammo pickup changed from 0.57/1.98 to 0.5/2
+       - ammo pickup changed from 0.57/1.98 to 1/2
+       - damage increased from 90 to 110
      
    - Tier 3
      - Predator
-       - ammo pickup changed from 4.46/6.68 to 4.3/6.7
+       - ammo pickup decreased from 4.46/6.68 to 1.5/3
 
      - M1014
-       - ammo pickup changed from 4.32/6.48 to 4.3/6.7
+       - ammo pickup decreased from 4.32/6.48 to 1.5/3
 
      - Street Sweeper
-       - ammo pickup decreased from 4.86/7.29 to 4.3/6.7
+       - ammo pickup decreased from 4.86/7.29 to 1.5/3
        - damage increased from 42 to 55
    
    - Tier 2
      - Izhma
-       - ammo pickup changed from 4.73/7.09 to 4.7/7.3
+       - ammo pickup decreased from 4.73/7.09 to 2/3
 
      - Steakout
-       - ammo pickup changed from 4.86/7.29 to 4.7/7.3
+       - ammo pickup decreased from 4.86/7.29 to 2/3
 
      - Akimbo Goliath
-       - ammo pickup changed from 4.86/7.29 to 4.7/7.3
+       - ammo pickup decreased from 4.86/7.29 to 2/3
 
      - Goliath
-       - ammo pickup increased from 3.65/5.47 to 4.7/7.3
+       - ammo pickup decreased from 3.65/5.47 to 2/3
        
    - Tier 1
      - Brothers Grimm
-       - ammo pickup increased from 6.48/9.72 to 7/10.5
+       - ammo pickup decreased from 6.48/9.72 to 4/6
 
      - Grimm
-       - ammo pickup changed from 7.02/10.53 to 7/10.5
+       - ammo pickup decreased from 7.02/10.53 to 4/6
      
 ### Assault Rifles:
    tier 4: 160 damage
@@ -269,164 +310,186 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    
 #### Skills:
-   Graze now affects assault rifles fired in single shot mode. Graze now reads as follows in game:
+   Graze now affects assault rifles fired in single shot mode and no longer requires headshot kills. Graze now reads as follows in game:
    - Basic
      - Snipers that hit their target deal 20% of the damage dealt in a 1m radius around the bullet trajectory. 
      
        When fired in single shot mode, Assault Rifles that hit their target deal 20% of the damage dealt in a 2.75m radius around the bullet impact.
        
    - Aced 
-     - If a bullet would headshot-kill someone, the graze skill will deal 100% of the damage dealt instead of 20%."
+     - If a bullet would headshot someone, the graze skill will deal 100% of the damage dealt instead of 20%."
    
    note: snipers have a cylindrical aoe around the path of the bullet, assault rifles have a spherical aoe around the impact point of the bullet
    
+   Aggressive Reload Bassic now increases reload speed by 35% up from 15%.
 
 #### Ammo:
    
    - FMJ
-     - +8 accuracy
      - pierces enemies
    - Ballistic Tip Rounds
      - tier 4
        - +80 damage
-       - +8 accuracy
        - -60% min ammo pickup
        - -50% max ammo pickup
      - tier 3
        - +33 damage
-       - +8 accuracy
-       - -50% min ammo pickup
-       - -50% max ammo pickup
      - tier 2
-       - +20 damage
-       - +8 accuracy
-       - -25% min ammo pickup
-       - -17% max ammo pickup
+       - +16 damage
      - tier 1
-       - +17 damage
-       - +8 accuracy
-       - -17% min ammo pickup
-       - -17% max ammo pickup
+       - +8 damage
        
 #### Weapons:
 
    - Tier 4
      - Cavity
-       - ammo pickup increased from 0.45/1.34 to 2.5/5
+       - ammo pickup increased from 0.45/1.34 to 2.5/4
+       - damage increased from 160 to 164
 
      - M308
-       - ammo pickup increased from 0.47/1.42 to 2.5/5
+       - ammo pickup increased from 0.47/1.42 to 2.5/4
+       - damage increased from 160 to 164
 
      - Galant
-       - ammo pickup increased from 0.49/1.46 to 2.5/5
+       - ammo pickup increased from 0.49/1.46 to 2.5/4
+       - damage increased from 160 to 164
 
      - Little Friend
-       - ammo pickup increased from 0.27/0.81 to 2.5/5
+       - ammo pickup increased from 0.27/0.81 to 2.5/4
+       - damage increased from 160 to 164
        - under barrel grenade launcher is now in the assault rifle catagory (benefits from aggressive reload basic)
        
    - Tier 3
      - Eagle
-       - ammo pickup increased from 1/3.5 to 6/12
-       - total ammo increased from 100 to 160
+       - ammo pickup increased from 1/3.5 to 4/6
+       - total ammo increased from 100 to 140
+       - damage increased from 98 to 100
 
      - Falcon
-       - ammo pickup increased from 1.35/4.73 to 6/12
-       - total ammo increased from 100 to 160
+       - ammo pickup increased from 1.35/4.73 to 4/6
+       - total ammo increased from 100 to 140
+       - damage increased from 98 to 100
 
      - AK.762
-       - ammo pickup increased from 1.22/4.25 to 6/12
+       - ammo pickup increased from 1.22/4.25 to 4/6
        - total ammo increased from 90 to 150
+       - damage increased from 97 to 99
 
      - Golden AK.762
-       - ammo pickup increased from 1.22/4.25 to 6/12
+       - ammo pickup increased from 1.22/4.25 to 4/6
        - total ammo increased from 90 to 150
+       - damage increased from 97 to 99
 
      - AMR-16
-       - ammo pickup increased from 1.21/4.25 to 6/12
+       - ammo pickup increased from 1.21/4.25 to 4/6
        - total ammo increased from 90 to 150
+       - damage increased from 94 to 96
 
      - AK17
-       - ammo pickup increased from 1.42/4.95 to 6/12
-       - total ammo increased from 105 to 175
+       - ammo pickup increased from 1.42/4.95 to 4/6
+       - total ammo increased from 105 to 140
+       - damage increased from 99 to 101
 
      - Gewehr
-       - ammo pickup increased from 1.35/4.73 to 6/12
-       - total ammo increased from 100 to 160
+       - ammo pickup increased from 1.35/4.73 to 4/6
+       - total ammo increased from 100 to 140
+       - damage increased from 99 to 101
    
    - Tier 2
      - Gecko
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 57 to 58
 
      - CAR-4
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 52 to 53
 
      - Queen's Wrath
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 58 to 59
 
      - AK5
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
-       - damage decreased from 56 to 55
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
 
      - Lion's Roar
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 58 to 59
 
      - AK
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 56 to 57
 
      - UAR
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
-       - damage decreased from 55 to 54
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
 
      - Tempest
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 to 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 to 210
+       - damage increased from 58 to 59
 
      - Union
-       - ammo pickup increased from 6.08/11.14 to 10/15
-       - total ammo increased from 150 240
+       - ammo pickup changed from 6.08/11.14 to 6/11
+       - total ammo increased from 150 210
+       - damage increased from 58 to 59
    
    - Tier 1
      - AMCAR
-       - ammo pickup increased from 8.91/16.34 to 15/30
-       - total ammo increased from 220 to 360
+       - ammo pickup increased from 8.91/16.34 to 12/24
+       - total ammo increased from 220 to 300
 
      - Commando
-       - ammo pickup increased from 9.72/17.82 to 15/30
-       - total ammo increased from 240 to 360
+       - ammo pickup increased from 9.72/17.82 to 12/24
+       - total ammo increased from 240 to 300
        - damage decreased from 42 to 40
 
      - JP36
-       - ammo pickup increased from 9.72/17.82 to 15/30
-       - total ammo increased from 240 to 360
+       - ammo pickup increased from 9.72/17.82 to 12/24
+       - total ammo increased from 240 to 300
        - damage decreased from 44 to 42
 
      - Clarion
-       - ammo pickup increased from 9.72/17.82 to 15/30
-       - total ammo increased from 240 to 360
+       - ammo pickup increased from 9.72/17.82 to 12/24
+       - total ammo increased from 240 to 300
        - damage decreased from 41 to 39
 
      - Valkyria
-       - ammo pickup increased from 8.91/16.34 to 15/30
-       - total ammo increased from 220 to 360
+       - ammo pickup increased from 8.91/16.34 to 12/24
+       - total ammo increased from 220 to 300
        - damage increased from 41 to 44
 
      - Bootleg
-       - ammo pickup increased from 8.1/14.85 to 15/30
+       - ammo pickup increased from 8.1/14.85 to 12/24
        - total ammo increased from 200 to 300
        - damage increased from 40 to 42
 
-###  LMGs:
-   Tier 2: 80 Damage
+### LMGs:
+
+#### Attachments:
+
+   - bipod deployment is far more forgiving
+ 
+#### Weapons:
+   Tier 2: 80 damage
    
    Tier 1: 55 damage
    
+   - M60
+     - ammo pickup decreased from 5.4/18.9 to 5/10
+     - total ammo decreased from 400 to 200
+     - magazine capacity decreased from 200 to 100
+     - accuracy decreased from 56 to 44
+     - stability decreased from 20 to 12
+     - damage decreased from 120 to 110
+     - threat decreased from 34 to 26
+     - can now shoot through walls
+
    - Tier 2
      - RPK
        - ammo pickup increased from 4.05/14.18 to 10/25
@@ -478,33 +541,33 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Thanatos
      - ammo pickup decreased from 0.07/0.88 to 0/0.53
-     - total ammo decreased from 15 to 5
-     - damage increased from 3500 to 8500
+     - total ammo decreased from 15 to 10
+     - damage increased from 3500 to 6000
      
    - Tier 3
      - Nagant
-       - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+       - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
 
      - Desertfox
-       - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+       - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
 
      - R93
-       - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+       - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
 
      - Platypus
-       - ammo pickup changed from 0.95/1.35 to 0.94/1.35
+       - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
        
    - Tier 2
      - Rattlesnake
-       - ammo pickup decreased from 2.7/4.05 to 1.35/2.7
+       - ammo pickup decreased from 2.7/4.05 to 1/2
        - rate of fire increased from 60 to 80
 
      - Repeater
-       - ammo pickup decreased from 3.04/4.56 to 1.35/2.7
+       - ammo pickup decreased from 3.04/4.56 to 1/2
        - rate of fire increased from 86 to 106
        
      - R700
-       - ammo pickup decreased from 2.7/4.05 to 1.35/2.7
+       - ammo pickup decreased from 2.7/4.05 to 1/2
        - rate of fire increased from 75 to 95
 
 ### SMGs:
