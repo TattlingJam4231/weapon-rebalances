@@ -79,82 +79,29 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
          - concealment increased from -3 to -1
        
        - Precision Barrel(Kross Vertex)
-         - damage decreased from - to 0
-         - accuracy increased from - to 16
-         - stability decreased from - to 8
-         - concealment increased from - to -4
-       
-       - HPS Suppressor(Kross Vertex)
-         - damage decreased from - to -3
-         - accuracy increased from - to 0
-         - stability decreased from - to 4
-         - concealment increased from - to -1
+         - damage decreased from 2 to 0
+         - accuracy increased from 8 to 16
+         - stability increased from -12 to 8
        
        - Futomaki Suppressor(Micro Uzi)
-         - damage decreased from - to 0
-         - accuracy increased from - to 12
-         - stability decreased from - to 4
-         - concealment increased from - to -4
-       
-       - Maki Suppressor(Micro Uzi)
-         - damage decreased from - to -2
-         - accuracy increased from - to 0
-         - stability decreased from - to 8
-         - concealment increased from - to -2
+         - accuracy increased from 0 to 12
+         - stability decreased from 20 to 4
        
        - Suppressed Barrel(SpecOps)
-         - damage decreased from - to -1
-         - accuracy increased from - to 8
-         - stability decreased from - to 8
-         - concealment increased from - to -2
-       
-       - Silent Death(Uzi)
-         - damage decreased from - to 0
-         - accuracy increased from - to -4
-         - stability decreased from - to 4
-         - concealment increased from - to -2
-       
-       - Suppressor(Cobra)
-         - damage decreased from - to 0
-         - accuracy increased from - to -4
-         - stability decreased from - to 4
-         - concealment increased from - to -2
-       
-       - Tishina Suppressor(Heather)
-         - damage decreased from - to -2
-         - accuracy increased from - to 0
-         - stability decreased from - to 8
-         - concealment increased from - to -2
+         - accuracy increased from 4 to 8
+         - stability decreased from 12 to 8
        
        - Slotted Barrel Extension(Jacket's Piece/Mark 10)
-         - damage decreased from - to 0
-         - accuracy increased from - to 12
-         - stability decreased from - to 8
-         - concealment increased from - to -2
-       
-       - Werbell's Suppressor(Jacket's Piece/Mark 10)
-         - damage decreased from - to -3
-         - accuracy increased from - to 0
-         - stability decreased from - to 4
-         - concealment increased from - to -1
+         - damage decreased from 2 to 0
+         - accuracy increased from 8 to 12
+         - stability increased from -8 to 8
        
        - PBS Suppressor(AKs)
-         - damage decreased from - to 0
-         - accuracy increased from - to 0
-         - stability decreased from - to 4
-         - concealment increased from - to -4
-       
-       - Silentgear Silencer(Jackal)
-         - damage decreased from - to -3
-         - accuracy increased from - to 0
-         - stability decreased from - to 4
-         - concealment increased from - to -1
+         - concealment increased from -5 to -4
        
        - Bootstrap Compensator(Bootleg/Little Friend)
-         - damage decreased from - to 0
-         - accuracy increased from - to 8
-         - stability decreased from - to 12
-         - concealment increased from - to -2
+         - damage decreased from 2 to 0
+         - accuracy increased from 4 to 8
        
 ### Shotguns:
    tier 5: 155 damage
