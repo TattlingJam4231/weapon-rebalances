@@ -6,23 +6,27 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
  - [Custom Poison Dots](https://github.com/TattlingJam4231/custom-poison-dots)
  
 ## Weapon changes
-  1. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#shotguns)
+  1. [Misc. Attachments](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#misc-attachments)
+  2. [Shotguns](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#shotguns)
      1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo)
      2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons)
-  2. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#assault-rifles)
+  3. [Assault Rifles](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#assault-rifles)
      1. [Skills](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#skills)
      2. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-1)
      3. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-1)
-  3. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#lmgs)
-  4. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#snipers)
-  5. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#SMGs)
-     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-2)
+  4. [LMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#lmgs)
+     1. [Attachments](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#attachments)
      2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-2)
-  6. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#pistols)
-     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-3)
+  5. [Snipers](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#snipers)
+  6. [SMGs](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#SMGs)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-2)
      2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-3)
+  7. [Pistols](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#pistols)
+     1. [Ammo](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#ammo-3)
+     2. [Weapons](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#weapons-4)
   7. [Specials](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#specials)
-  8. [Sentry Guns](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#sentry-guns)
+  9. [Sentry Guns](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#sentry-guns)
+  10. [Threat](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#threat)
   
   Weapon categories have been divided into different tiers based on their base damage. These damage tiers serve only to determine what the the ammo pickup should be and, if the weapon has different ammo types, which version of those ammo types are available.
   
@@ -1182,6 +1186,6 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - damage increased from 30 to 40
    - AP rounds now consume 4 rounds per shot instead of 1.
 
-###Threat
+### Threat:
    - aim delay modifier changed from a 1.5 multiplier to a 0.1 addend
    
