@@ -27,6 +27,131 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
   Weapon categories have been divided into different tiers based on their base damage. These damage tiers serve only to determine what the the ammo pickup should be and, if the weapon has different ammo types, which version of those ammo types are available.
   
   note: all ammo pickup values are with walk-in closet
+
+### Misc. Attachments
+   
+   - Speed Pull Mags
+     - reload speed bonus decreased from 100% to 20%
+   
+   - Barrel Extensions
+     - ARs/MGs
+       - Stubby Compensator
+         - damage decreased from 1 to 0
+       
+       - The Tank Compensator
+         - damage decreased from 2 to 0
+         - accuracy increased from 0 to 12
+         - stability decreased from 8 to 4
+       
+       - Fire Breather Nozzle
+         - damage decreased from 3 to 0
+         - accuracy decreased from 0 to -4
+         - stability increased from 4 to 16
+         - concealment increased from -2 to 0
+       
+       - Competitior's Compensator
+         - damage decreased from 2 to 0
+         - concealment increased from -2 to -1
+       
+       - Funnel of Fun Nozzle
+         - damage decreased from 4 to 0
+         - stability increased from 0 to 20
+         - concealment increased from -2 to -1
+       
+       - Tactical Compensator
+         - damage decreased from 1 to 0
+         - accuracy increased from 12 to 20
+         - stability decreased from -4 to -8
+         - concealment increased from -2 to -1
+       
+       - Ported Compensator
+         - damage decreased from 2 to 0
+         - stability increased from -8 to 8
+         - concealment increased from -1 to 0
+       
+       - Marmon Compensator
+         - damage decreased from 1 to 0
+         - stability increased from 4 to 8
+         - concealment increased from -3 to -1
+       
+       - Precision Barrel(Kross Vertex)
+         - damage decreased from - to 0
+         - accuracy increased from - to 16
+         - stability decreased from - to 8
+         - concealment increased from - to -4
+       
+       - HPS Suppressor(Kross Vertex)
+         - damage decreased from - to -3
+         - accuracy increased from - to 0
+         - stability decreased from - to 4
+         - concealment increased from - to -1
+       
+       - Futomaki Suppressor(Micro Uzi)
+         - damage decreased from - to 0
+         - accuracy increased from - to 12
+         - stability decreased from - to 4
+         - concealment increased from - to -4
+       
+       - Maki Suppressor(Micro Uzi)
+         - damage decreased from - to -2
+         - accuracy increased from - to 0
+         - stability decreased from - to 8
+         - concealment increased from - to -2
+       
+       - Suppressed Barrel(SpecOps)
+         - damage decreased from - to -1
+         - accuracy increased from - to 8
+         - stability decreased from - to 8
+         - concealment increased from - to -2
+       
+       - Silent Death(Uzi)
+         - damage decreased from - to 0
+         - accuracy increased from - to -4
+         - stability decreased from - to 4
+         - concealment increased from - to -2
+       
+       - Suppressor(Cobra)
+         - damage decreased from - to 0
+         - accuracy increased from - to -4
+         - stability decreased from - to 4
+         - concealment increased from - to -2
+       
+       - Tishina Suppressor(Heather)
+         - damage decreased from - to -2
+         - accuracy increased from - to 0
+         - stability decreased from - to 8
+         - concealment increased from - to -2
+       
+       - Slotted Barrel Extension(Jacket's Piece/Mark 10)
+         - damage decreased from - to 0
+         - accuracy increased from - to 12
+         - stability decreased from - to 8
+         - concealment increased from - to -2
+       
+       - Werbell's Suppressor(Jacket's Piece/Mark 10)
+         - damage decreased from - to -3
+         - accuracy increased from - to 0
+         - stability decreased from - to 4
+         - concealment increased from - to -1
+       
+       - PBS Suppressor(AKs)
+         - damage decreased from - to 0
+         - accuracy increased from - to 0
+         - stability decreased from - to 4
+         - concealment increased from - to -4
+       
+       - Silentgear Silencer(Jackal)
+         - damage decreased from - to -3
+         - accuracy increased from - to 0
+         - stability decreased from - to 4
+         - concealment increased from - to -1
+       
+       - Bootstrap Compensator(Bootleg/Little Friend)
+         - damage decreased from - to 0
+         - accuracy increased from - to 8
+         - stability decreased from - to 12
+         - concealment increased from - to -2
+       
 ### Shotguns:
    tier 5: 155 damage
    
@@ -381,7 +506,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - damage increased from 97 to 99
 
      - AMR-16
-       - ammo pickup increased from 1.21/4.25 to 4/6
+       - ammo pickup changed from 3.65/6.68 to 4/6
        - total ammo increased from 90 to 150
        - damage increased from 94 to 96
 
@@ -569,6 +694,23 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - R700
        - ammo pickup decreased from 2.7/4.05 to 1/2
        - rate of fire increased from 75 to 95
+     
+   - Tier 1
+     - Lebensauger
+       - ammo pickup decreased from 2.7/4.05 to 2/3
+       - damage increased from 160 to 198
+
+     - Contractor .308
+       - ammo pickup decreased from 3.04/4.56 to 2/3
+       - damage decreased from 200 to 198
+       
+     - Grom
+       - ammo pickup decreased from 2.7/4.05 to 2/3
+       - damage increased from 160 to 198
+       
+     - Bernetti Rangehitter
+       - ammo pickup decreased from 2.7/4.05 to 2/3
+       - damage increased from 196 to 198
 
 ### SMGs:
    Tier 3: 100
@@ -589,138 +731,137 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - Tier 3
      - Tatonka
-       - ammo pickup increased from 1.73/6.05 to 2.5/7.5
+       - ammo pickup increased from 1.73/6.05 to 3/7
 
      - Krinkov
-       - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+       - ammo pickup increased from 1.22/4.25 to 3/7
 
      - Jackal
-       - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+       - ammo pickup increased from 1.22/4.25 to 3/7
 
      - MP40
-       - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+       - ammo pickup increased from 1.08/3.78 to 3/7
 
      - Swedish K
-       - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+       - ammo pickup increased from 1.08/3.78 to 3/7
 
      - CR 805B
-       - ammo pickup increased from 1.22/4.25 to 2.5/7.5
+       - ammo pickup increased from 1.22/4.25 to 3/7
 
      - Akimbo Tatonka
-       - ammo pickup increased from 1.73/6.05 to 2.5/7.5
+       - ammo pickup increased from 1.73/6.05 to 3/7
 
      - Akimbo Krinkov
-       - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+       - ammo pickup increased from 1.62/5.67 to 3/7
 
      - Akimbo Jackal
-       - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+       - ammo pickup increased from 1.62/5.67 to 3/7
 
      - Akimbo MP40
-       - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+       - ammo pickup changed from 2.16/7.56 to 3/7
 
      - Akimbo Swedish K
-       - ammo pickup increased from 1.08/3.78 to 2.5/7.5
+       - ammo pickup increased from 1.08/3.78 to 3/7
 
      - Akimbo CR 805B
-       - ammo pickup increased from 1.62/5.67 to 2.5/7.5
+       - ammo pickup increased from 1.62/5.67 to 3/7
    
    - Tier 2
      - Kobus
-       - ammo pickup changed from 6.08/11.14 to 5/11.25
+       - ammo pickup changed from 6.08/11.14 to 6/11
 
      - Para
-       - ammo pickup changed from 6.08/11.14 to 5/11.25
+       - ammo pickup changed from 6.08/11.14 to 6/11
 
      - SpecOps
-       - ammo pickup decreased from 6.48/11.88 to 5/11.25
+       - ammo pickup decreased from 6.48/11.88 to 6/11
 
      - Heather
-       - ammo pickup decreased from 6.48/11.88 to 5/11.25
+       - ammo pickup decreased from 6.48/11.88 to 6/11
 
      - Kross Vertex
-       - ammo pickup changed from 6.08/11.14 to 5/11.25
+       - ammo pickup changed from 6.08/11.14 to 6/11
 
      - Jacket's Piece
-       - ammo pickup decreased from 6.48/11.88 to 5/11.25
+       - ammo pickup decreased from 6.48/11.88 to 6/11
 
      - Mark 10
-       - ammo pickup decreased from 6.48	11.88 to 5/11.25
+       - ammo pickup decreased from 6.48	11.88 to 6/11
 
      - Typewriter
-       - ammo pickup changed from 6.08/11.14 to 5/11.25
+       - ammo pickup changed from 6.08/11.14 to 6/11
 
      - Akimbo Kobus
-       - ammo pickup increased from 2.7/9.45 to 5/11.25
+       - ammo pickup increased from 2.7/9.45 to 6/11
 
      - Akimbo Para
-       - ammo pickup increased from 2.7/9.45 to 5/11.25
+       - ammo pickup increased from 2.7/9.45 to 6/11
 
      - Akimbo SpecOps
-       - ammo pickup increased from 2.7/9.45 to 5/11.25
+       - ammo pickup increased from 2.7/9.45 to 6/11
 
      - Akimbo Heather
-       - ammo pickup increased from 2.59/9.07 to 5/11.25
+       - ammo pickup increased from 2.59/9.07 to 6/11
 
      - Akimbo Kross Vertex
-       - ammo pickup increased from 2.43/8.51 to 5/11.25
+       - ammo pickup increased from 2.43/8.51 to 6/11
 
      - Akimbo Jacket's Piece
-       - ammo pickup increased from 2.59/9.07 to 5/11.25
+       - ammo pickup increased from 2.59/9.07 to 6/11
 
      - Akimbo Mark 10
-       - ammo pickup increased from 2.16/7.56 to 5/11.25
+       - ammo pickup increased from 2.16/7.56 to 6/11
 
      - Akimbo Typewriter
-       - ammo pickup increased from 2.7/9.45 to 5/11.25
+       - ammo pickup increased from 2.7/9.45 to 6/11
    
    - Tier 1
      - Micro Uzi
-       - ammo pickup increased from 9.07/16.63 to 7.5/22.5
+       - ammo pickup changed from 9.07/16.63 to 8/16
 
      - Uzi
-       - ammo pickup increased from 8.1/14.85 to 7.5/22.5
+       - ammo pickup changed from 8.1/14.85 to 8/16
 
      - Patchett
-       - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+       - ammo pickup changed from 8.91/16.34 to 8/16
 
      - Blaster
-       - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+       - ammo pickup changed from 8.91/16.34 to 8/16
 
      - CMP
-       - ammo pickup increased from 8.51/15.59 to 7.5/22.5
+       - ammo pickup changed from 8.51/15.59 to 8/16
 
      - Cobra
-       - ammo pickup increased from 8.91/16.34 to 7.5/22.5
+       - ammo pickup changed from 8.91/16.34 to 8/16
 
      - Compact-5
-       - ammo pickup increased from 8.51/15.59 to 7.5/22.5
+       - ammo pickup changed from 8.51/15.59 to 8/16
 
      - Signature
-       - ammo pickup increased from 2.7/9.45 to 7.5/22.5
+       - ammo pickup increased from 2.7/9.45 to 8/16
 
      - Akimbo Micro Uzi
-       - ammo pickup increased from 3.46/12.1 to 7.5/22.5
+       - ammo pickup increased from 3.46/12.1 to 8/16
 
      - Akimbo Uzi
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
      - Akimbo Patchett
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
      - Akimbo Blaster
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
      - Akimbo CMP
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
      - Akimbo Cobra
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
      - Akimbo Compact-5
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
-
+       - ammo pickup increased from 3.24/11.34 to 8/16
      - Akimbo Signature
-       - ammo pickup increased from 3.24/11.34 to 7.5/22.5
+       - ammo pickup increased from 3.24/11.34 to 8/16
 
 ### Pistols:
    Tier 4: 180
@@ -734,10 +875,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    
    - FMJ Rounds
-     - +4 accuracy
      - pierces enemies
    - Hollow Point Rounds
-     - + 5% critical hit chance
+     - +5% critical hit chance
     
 #### Weapons:
 
@@ -763,6 +903,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - Bronco
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
        - total ammo decreased from 54 to 48
+       - rate of fire decreased from 480 to 361
        - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
 
      - Deagle
@@ -1003,7 +1144,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - dot length increased from 1.6 to 3.6
      - consecutive hits increases rate of damage ticks (time between damage ticks is decreased from 0.5 seconds to a minimum of 0.1 seconds)
      
-   - Flamethrower Mk.1
+   - MA-17 Flamethrower
      - ammo pickup increased from 6.08/18.23 to 20.25/33.75
      - dot trigger chance increased from 75% to 100%
      - dot damage decreased from 300 to 18
@@ -1032,9 +1173,15 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - changed from primary to secondary weapon
      
 ### Sentry Guns:
-   - Sentry guns can now be picked up when destroyed. 
-   - When a sentry gun is destroyed it loses all ammo stored in it.
-   - Sentry guns have had their ammo stores increased from 100 to 600.
-   - Base damage of sentry guns increased from 30 to 40
-   - Sentry guns set to fire AP rounds now consume 4 rounds per shot instead of 1.
+   - can now be picked up when destroyed
+   - when a sentry gun is destroyed it loses all ammo stored in it
+   - reduced base deployment cost from 30% to 25%
+   - deployment cost is now calculated based on max ammo instead of current ammo
+   - deploying a sentry gun now only uses ammo from your currrently equipped weapon
+   - ammo increased from 100 to 600.
+   - damage increased from 30 to 40
+   - AP rounds now consume 4 rounds per shot instead of 1.
+
+###Threat
+   - aim delay modifier changed from a 1.5 multiplier to a 0.1 addend
    
