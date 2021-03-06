@@ -5,6 +5,79 @@ function WeaponFactoryTweakData:init(...)
 	
 	--SHOTGUN OVERRIDES--------------------------------------------------------------------------------------------------------------
 
+		local buckshot = {
+			t5 = {
+				stats = {
+					value = 5,
+					damage = 48,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t4 = {
+				stats = {
+					value = 5,
+					damage = 26,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t3 = {
+				stats = {
+					value = 5,
+					damage = 20,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5,
+					damage = 17,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5,
+					damage = 13,
+					spread = nil,
+					moving_spread = nil
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					can_shoot_through_enemy = true,
+					rays = 9
+				}
+			}
+		}
+		
 		local slug = {
 			t5 = {
 				stats = {
@@ -103,84 +176,6 @@ function WeaponFactoryTweakData:init(...)
 			}
 		}
 		
-		local buckshot = {
-			t5 = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = 48,
-					spread = nil,
-					moving_spread = nil
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			t4 = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = 26,
-					spread = nil,
-					moving_spread = nil
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			t3 = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = 20,
-					spread = nil,
-					moving_spread = nil
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			t2 = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = 17,
-					spread = nil,
-					moving_spread = nil
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			},
-			t1 = {
-				stats = {
-					value = 5,
-					total_ammo_mod = 2,
-					damage = 13,
-					spread = nil,
-					moving_spread = nil
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					can_shoot_through_enemy = true,
-					rays = 9
-				}
-			}
-		}
-		
 		local he = {
 			t5 = {
 				stats = {
@@ -270,134 +265,6 @@ function WeaponFactoryTweakData:init(...)
 					damage_near_mul = 2,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
-				}
-			}
-		}
-		
-		local flechette = {
-			t5 = {
-				stats = {
-					value = 5,
-					damage = -103,
-					spread = -1,
-					moving_spread = -1
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = 0.667,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							damage = 95,
-							dot_tick_period = 0.5,
-							scale_damage = 240,
-							damage_decay = 5,
-							damage_decay_rate = 1
-						}
-					},
-					armor_piercing_add = 1, 
-					rays = 12,
-					bullet_class = "DOTBulletBase"
-				}
-			},
-			t4 = {
-				stats = {
-					value = 5,
-					damage = -90,
-					spread = -1,
-					moving_spread = -1
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = 0.8,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							damage = 95,
-							dot_tick_period = 0.5,
-							scale_damage = 65,
-							damage_decay = 5,
-							damage_decay_rate = 1
-						}
-					},
-					armor_piercing_add = 1, 
-					rays = 12,
-					bullet_class = "DOTBulletBase"
-				}
-			},
-			t3 = {
-				stats = {
-					value = 5,
-					damage = -37,
-					spread = -1,
-					moving_spread = -1
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = 0.667,
-					ammo_pickup_max_mul = 0.667,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							damage = 90,
-							dot_tick_period = 0.5,
-							scale_damage = 60,
-							damage_decay = 10,
-							damage_decay_rate = 1
-						}
-					},
-					armor_piercing_add = 1, 
-					rays = 12,
-					bullet_class = "DOTBulletBase"
-				}
-			},
-			t2 = {
-				stats = {
-					value = 5,
-					damage = -28,
-					spread = -1,
-					moving_spread = -1
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = 0.667,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							damage = 60,
-							dot_tick_period = 0.5,
-							scale_damage = 40,
-							damage_decay = 5,
-							damage_decay_rate = 1
-						}
-					},
-					armor_piercing_add = 1, 
-					rays = 12,
-					bullet_class = "DOTBulletBase"
-				}
-			},
-			t1 = {
-				stats = {
-					value = 5,
-					damage = -12,
-					spread = -1,
-					moving_spread = -1
-				},
-				custom_stats = {
-					ammo_pickup_min_mul = nil,
-					ammo_pickup_max_mul = nil,
-					dot_data = {
-						type = "poison",
-						custom_data = {
-							damage = 30,
-							dot_tick_period = 0.5,
-							scale_damage = 30,
-							damage_decay = 10,
-							damage_decay_rate = 1
-						}
-					},
-					armor_piercing_add = 1, 
-					rays = 12,
-					bullet_class = "DOTBulletBase"
 				}
 			}
 		}
@@ -576,6 +443,134 @@ function WeaponFactoryTweakData:init(...)
 					can_shoot_through_shield = true, 
 					bullet_class = "FireBulletBase",
 					rays = 12
+				}
+			}
+		}
+		
+		local flechette = {
+			t5 = {
+				stats = {
+					value = 5,
+					damage = -103,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = 0.667,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 95,
+							dot_tick_period = 0.5,
+							scale_damage = 240,
+							damage_decay = 5,
+							damage_decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 12,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t4 = {
+				stats = {
+					value = 5,
+					damage = -90,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = 0.8,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 95,
+							dot_tick_period = 0.5,
+							scale_damage = 65,
+							damage_decay = 5,
+							damage_decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 12,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t3 = {
+				stats = {
+					value = 5,
+					damage = -37,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = 0.667,
+					ammo_pickup_max_mul = 0.667,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 90,
+							dot_tick_period = 0.5,
+							scale_damage = 60,
+							damage_decay = 10,
+							damage_decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 12,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t2 = {
+				stats = {
+					value = 5,
+					damage = -28,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = 0.667,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 60,
+							dot_tick_period = 0.5,
+							scale_damage = 40,
+							damage_decay = 5,
+							damage_decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 12,
+					bullet_class = "DOTBulletBase"
+				}
+			},
+			t1 = {
+				stats = {
+					value = 5,
+					damage = -12,
+					spread = -1,
+					moving_spread = -1
+				},
+				custom_stats = {
+					ammo_pickup_min_mul = nil,
+					ammo_pickup_max_mul = nil,
+					dot_data = {
+						type = "poison",
+						custom_data = {
+							damage = 30,
+							dot_tick_period = 0.5,
+							scale_damage = 30,
+							damage_decay = 10,
+							damage_decay_rate = 1
+						}
+					},
+					armor_piercing_add = 1, 
+					rays = 12,
+					bullet_class = "DOTBulletBase"
 				}
 			}
 		}
@@ -886,14 +881,14 @@ function WeaponFactoryTweakData:init(...)
 			--Barrel Extensions
 				
 				--AR/MG
-					--Medium Suppressor
+					-- Medium Suppressor
 					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.damage = -3
 					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.spread = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.recoil = 1
 					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.concealment = -2
 					self.parts.wpn_fps_upg_ns_ass_smg_medium.stats.suppression = 12
 					
-					--Low Profile Suppressor
+					-- Low Profile Suppressor
 					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.damage = -5
 					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.spread = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.recoil = 0
@@ -901,7 +896,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ns_ass_smg_small.stats.suppression = 12
 					
 					
-					--Stubby Compensator
+					-- Stubby Compensator
 					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.damage = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.spread = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.recoil = 3
@@ -909,7 +904,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ns_ass_smg_stubby.stats.suppression = -1
 					
 					
-					--The Tank Compensator
+					-- The Tank Compensator
 					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.damage = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.spread = 3
 					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.recoil = 1
@@ -917,7 +912,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ns_ass_smg_tank.stats.suppression = -2
 					
 					
-					--Fire Breather Nozzle
+					-- Fire Breather Nozzle
 					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.damage = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.spread = -1
 					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.recoil = 4
@@ -925,7 +920,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ns_ass_smg_firepig.stats.suppression = -5
 					
 					
-					--The Bigger the Better Suppressor
+					-- The Bigger the Better Suppressor
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.damage = -1
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.spread = 2
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.recoil = 1
@@ -933,7 +928,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.suppression = 12
 					
 					
-					--Competitior's Compensator
+					-- Competitior's Compensator
 					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.damage = 0
 					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.spread = 1
 					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.recoil = 3
@@ -941,7 +936,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ass_ns_jprifles.stats.suppression = -1
 					
 					
-					--Funnel of Fun Nozzle
+					-- Funnel of Fun Nozzle
 					self.parts.wpn_fps_upg_ass_ns_linear.stats.damage = 0
 					self.parts.wpn_fps_upg_ass_ns_linear.stats.spread = -2
 					self.parts.wpn_fps_upg_ass_ns_linear.stats.recoil = 5
@@ -949,7 +944,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ass_ns_linear.stats.suppression = -5
 					
 					
-					--Tactical Compensator
+					-- Tactical Compensator
 					self.parts.wpn_fps_upg_ass_ns_surefire.stats.damage = 0
 					self.parts.wpn_fps_upg_ass_ns_surefire.stats.spread = 5
 					self.parts.wpn_fps_upg_ass_ns_surefire.stats.recoil = -2
@@ -957,7 +952,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ass_ns_surefire.stats.suppression = 0
 					
 					
-					--Ported Compensator
+					-- Ported Compensator
 					self.parts.wpn_fps_upg_ass_ns_battle.stats.damage = 0
 					self.parts.wpn_fps_upg_ass_ns_battle.stats.spread = 1
 					self.parts.wpn_fps_upg_ass_ns_battle.stats.recoil = 2
@@ -965,7 +960,7 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ass_ns_battle.stats.suppression = 0
 					
 					
-					--Marmon Compensator
+					-- Marmon Compensator
 					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.damage = 0
 					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.spread = 2
 					self.parts.wpn_fps_upg_ns_ass_smg_v6.stats.recoil = 2
@@ -1095,6 +1090,19 @@ function WeaponFactoryTweakData:init(...)
 					self.parts.wpn_fps_upg_ak_m_quick.stats.reload = speed_pull
 					self.parts.wpn_fps_smg_sr2_m_quick.stats.reload = speed_pull
 					
+					
+			--Barrels
+				
+				--Thanatos
+					--Tank Buster Barrel
+					self.parts.wpn_fps_snp_m95_barrel_long.stats.damage = 500
+					
+					--CQB Barrel
+					self.parts.wpn_fps_snp_m95_barrel_short.stats.damage = -500
+					
+					--Suppressed Barrel
+					self.parts.wpn_fps_snp_m95_barrel_suppressed.stats.damage = 0
+					self.parts.wpn_fps_snp_m95_barrel_suppressed.stats.recoil = -3
 			
 			-- --gecko cqb foregrip
 			-- self.parts.wpn_fps_ass_galil_fg_mar.stats.concealment = 1

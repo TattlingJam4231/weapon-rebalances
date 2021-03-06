@@ -1,3 +1,71 @@
+function RaycastWeaponBase:_collect_hits(from, to)
+	local can_shoot_through = self._can_shoot_through_wall or self._can_shoot_through_shield or self._can_shoot_through_enemy
+	local ray_hits = nil
+	local hit_enemy = false
+	local enemy_mask = managers.slot:get_mask("enemies")
+	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
+	local shield_mask = managers.slot:get_mask("enemy_shield_check")
+	local ai_vision_ids = Idstring("ai_vision")
+	local bulletproof_ids = Idstring("bulletproof")
+	
+	local units_hit = {}
+	local unique_hits = {}
+	
+	
+	if self._ammo_data.can_shoot_through_armor_plating then
+
+		if self._can_shoot_through_wall then
+			ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
+		else
+			ray_hits = World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
+		end
+		
+		
+		for i, hit in ipairs(ray_hits) do
+			if not units_hit[hit.unit:key()] then
+				if hit.body:name() == Idstring("body_shields") then
+					hit.unit:damage():run_sequence_simple("int_seq_shield_detach")
+					hit.unit:character_damage():set_shield_health(0)
+				elseif hit.body:name() == Idstring("head") then
+					units_hit[hit.unit:key()] = true
+					unique_hits[#unique_hits + 1] = hit
+					hit.hit_position = hit.position
+				end
+			end
+		end
+	end
+
+
+	if self._can_shoot_through_wall then
+		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
+	else
+		ray_hits = World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
+	end
+	
+	for i, hit in ipairs(ray_hits) do
+		if not units_hit[hit.unit:key()] then
+			units_hit[hit.unit:key()] = true
+			unique_hits[#unique_hits + 1] = hit
+			hit.hit_position = hit.position
+			hit_enemy = hit_enemy or hit.unit:in_slot(enemy_mask)
+			local weak_body = hit.body:has_ray_type(ai_vision_ids)
+			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
+			
+			if self._ammo_data.can_shoot_through_armor_plating then
+				--nothing
+			elseif not self._can_shoot_through_enemy and hit_enemy then
+				break
+			elseif not self._can_shoot_through_wall and hit.unit:in_slot(wall_mask) and weak_body then
+				break
+			elseif not self._can_shoot_through_shield and hit.unit:in_slot(shield_mask) then
+				break
+			end
+		end
+	end
+
+	return unique_hits, hit_enemy
+end
+
 function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 
 	local function _add_ammo(ammo_base, ratio, add_amount_override)
