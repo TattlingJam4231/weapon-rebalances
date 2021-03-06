@@ -43,8 +43,8 @@ function WeaponTweakData:init(tweak_data)
 	
 	--XL 5.56 Microgun Rework
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
-	self.shuno.CLIP_AMMO_MAX = 1300/1.3125
-	self.shuno.AMMO_MAX = 1300
+	self.shuno.AMMO_MAX = 1300/1.3125
+	self.shuno.CLIP_AMMO_MAX = 1300
 	self.shuno.AMMO_PICKUP = {15, 30}
 	self.shuno.stats.damage = 32
 	self.shuno.stats.spread = 8
