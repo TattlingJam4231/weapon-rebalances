@@ -618,7 +618,14 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    - Thanatos
      - ammo pickup decreased from 0.07/0.88 to 0/0.53
      - total ammo decreased from 15 to 10
-     - damage increased from 3500 to 6000
+     - attachments
+       - Tank Buster Barrel
+         - damage increased from 0 to 500
+       - CQB Barrel
+         - damage decreased from 0 to -500
+       - Suppressed Barrel
+         - damage increased from -80 to 0
+         - stability decreased from 8 to -12
      
    - Tier 3
      - Nagant
@@ -827,8 +834,12 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - FMJ Rounds
      - pierces enemies
+     - not available for tier 4
    - Hollow Point Rounds
      - +5% critical hit chance
+   - AP Rounds
+     - pierces body armor, enemies, shields and walls
+     - only available for tier 4
     
 #### Weapons:
 
