@@ -121,45 +121,55 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - tier 5
        - +48 damage
        - 9 pellets
+       - penetrates 1 enemy
+       - penetrates 1 wall within 5 meters
      - tier 4
        - +30 damage
        - 9 pellets
+       - penetrates 1 enemy
+       - penetrates 1 wall within 5 meters
      - tier 3
        - +20 damage
        - 9 pellets
+       - penetrates 1 enemy
+       - penetrates 1 wall within 5 meters
      - tier 2
        - +17 damage
        - 9 pellets
+       - penetrates 1 enemy
+       - penetrates 1 wall within 5 meters
      - tier 1
        - +13 damage
        - 9 pellets
+       - penetrates 1 enemy
+       - penetrates 1 wall within 5 meters
    
    - Slugs
      - tier 5
        - +74 damage
        - +40 accuracy
        - 1 pellet
-       - pierces walls, shields, enemies, and armor
+       - penetrates walls, shields, enemies, and body armor
      - tier 4
        - +61 damage
        - +40 accuracy
        - 1 pellet
-       - pierces walls, shields, enemies, and armor
+       - penetrates walls, shields, enemies, and body armor
      - tier 3
        - +32 damage
        - +40 accuracy
        - 1 pellet
-       - pierces walls, shields, enemies, and armor
+       - penetrates walls, shields, enemies, and body armor
      - tier 2
        - +30 damage
        - +40 accuracy
        - 1 pellet
-       - pierces walls, shields, enemies, and armor
+       - penetrates walls, shields, enemies, and body armor
      - tier 1
        - +20 damage
        - +40 accuracy
        - 1 pellet
-       - pierces walls, shields, enemies, and armor
+       - penetrates walls, shields, enemies, and body armor
    
    - HE Rounds
      - tier 5
@@ -203,6 +213,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -60% min ammo pickup
        - -50% max ammo pickup
        - 12 pellets
+       - penetrates shields and body armor
        - dot stats:
          - 28 damage
          - 0.5 second tick rate
@@ -213,6 +224,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -60% min ammo pickup
        - -50% max ammo pickup
        - 12 pellets
+       - penetrates shields and body armor
        - dot stats:
          - 24 damage
          - 0.5 second tick rate
@@ -223,6 +235,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -60% min ammo pickup
        - -50% max ammo pickup
        - 12 pellets
+       - penetrates shields and body armor
        - dot stats:
          - 18 damage
          - 0.5 second tick rate
@@ -233,6 +246,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -60% min ammo pickup
        - -50% max ammo pickup
        - 12 pellets
+       - penetrates shields and body armor
        - dot stats:
          - 18 damage
          - 0.5 second tick rate
@@ -243,6 +257,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -60% min ammo pickup
        - -50% max ammo pickup
        - 12 pellets
+       - penetrates shields and body armor
        - dot stats:
          - 14 damage
          - 0.5 second tick rate
@@ -256,6 +271,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -4 accuracy
        - 12 pellets
        - -33% max ammo pickup
+       - penetrates body armor
        - dot stats:
          - 95 damage
          - 0.5 second tick rate
@@ -266,6 +282,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -4 accuracy
        - 12 pellets
        - -20% max ammo pickup
+       - penetrates body armor
        - dot stats:
          - 95 damage
          - 0.5 second tick rate
@@ -277,6 +294,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - 12 pellets
        - -33% min ammo pickup
        - -33% max ammo pickup
+       - penetrates body armor
        - dot stats:
          - 90 damage
          - 0.5 second tick rate
@@ -287,6 +305,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -4 accuracy
        - 12 pellets
        - -33% max ammo pickup
+       - penetrates body armor
        - dot stats:
          - 60 damage
          - 0.5 second tick rate
@@ -296,6 +315,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - -12 damage
        - -4 accuracy
        - 12 pellets
+       - penetrates body armor
        - dot stats:
          - 30 damage
          - 0.5 second tick rate
@@ -402,16 +422,16 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    
    - FMJ
-     - pierces enemies
+     - 50% chance to penetrate enemies, max of 4 penetrations
    - Ballistic Tip Rounds
      - tier 4
        - +80 damage
        - -60% min ammo pickup
        - -50% max ammo pickup
      - tier 3
-       - +33 damage
+       - +20 damage
      - tier 2
-       - +16 damage
+       - +12 damage
      - tier 1
        - +8 damage
        
@@ -419,19 +439,19 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
    - Tier 4
      - Cavity
-       - ammo pickup increased from 0.45/1.34 to 2.5/4
+       - ammo pickup increased from 0.45/1.34 to 2/3
        - damage increased from 160 to 164
 
      - M308
-       - ammo pickup increased from 0.47/1.42 to 2.5/4
+       - ammo pickup increased from 0.47/1.42 to 2/3
        - damage increased from 160 to 164
 
      - Galant
-       - ammo pickup increased from 0.49/1.46 to 2.5/4
+       - ammo pickup increased from 0.49/1.46 to 2/3
        - damage increased from 160 to 164
 
      - Little Friend
-       - ammo pickup increased from 0.27/0.81 to 2.5/4
+       - ammo pickup increased from 0.27/0.81 to 2/3
        - damage increased from 160 to 164
        - under barrel grenade launcher is now in the assault rifle catagory (benefits from aggressive reload basic)
        
@@ -680,10 +700,9 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    
    - FMJ Rounds
-     - +4 accuracy
-     - pierces enemies
+     - 50% chance to penetrate enemies, penetrates up to 4 times
    - Hollow Point Rounds
-     - + 5% critical hit chance
+     - +5% critical hit chance
     
 #### Weapons:
    
@@ -833,13 +852,12 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Ammo:
    
    - FMJ Rounds
-     - pierces enemies
-     - not available for tier 4
+     - 50% chance to penetrate enemies, penetrates up to 4 times
    - Hollow Point Rounds
      - +5% critical hit chance
    - AP Rounds
-     - pierces body armor, enemies, shields and walls
-     - only available for tier 4
+     - penetrates walls, shields, enemies and body armor
+     - replaces FMJ Rounds for tier 4
     
 #### Weapons:
 
