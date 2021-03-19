@@ -20,7 +20,6 @@ function WeaponFactoryTweakData:init(...)
 					max_enemy_penetrations = 1,
 					can_shoot_through_wall = true,
 					max_wall_penetration_distance = 550,
-					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -38,7 +37,6 @@ function WeaponFactoryTweakData:init(...)
 					max_enemy_penetrations = 1,
 					can_shoot_through_wall = true,
 					max_wall_penetration_distance = 550,
-					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -56,7 +54,6 @@ function WeaponFactoryTweakData:init(...)
 					max_enemy_penetrations = 1,
 					can_shoot_through_wall = true,
 					max_wall_penetration_distance = 550,
-					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -74,7 +71,6 @@ function WeaponFactoryTweakData:init(...)
 					max_enemy_penetrations = 1,
 					can_shoot_through_wall = true,
 					max_wall_penetration_distance = 550,
-					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -92,7 +88,6 @@ function WeaponFactoryTweakData:init(...)
 					max_enemy_penetrations = 1,
 					can_shoot_through_wall = true,
 					max_wall_penetration_distance = 550,
-					max_wall_penetrations = 1,
 					rays = 9
 				}
 			}
