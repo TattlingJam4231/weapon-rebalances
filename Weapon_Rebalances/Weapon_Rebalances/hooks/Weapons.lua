@@ -65,7 +65,6 @@ function WeaponTweakData:init(tweak_data)
 			dot_can_crit = true
 		}
 	}
-	self.flamethrower_mk2.disallow_headshot_damage = 1
 	
 	--MA-17 Flamethrower
 	self.system.AMMO_PICKUP = {15, 25}
@@ -80,7 +79,6 @@ function WeaponTweakData:init(tweak_data)
 			dot_can_crit = true
 		}
 	}
-	self.system.disallow_headshot_damage = 1
 	
 	--Commander 101
 	self.ray.AMMO_PICKUP = {0.02  /1.35, 0.52  /1.35}
@@ -97,7 +95,7 @@ function WeaponTweakData:init(tweak_data)
 	--ammo pickup
 	local pickup = {
 		assault = {
-			t4 = {2.5 /1.35, 4 	 /1.35},
+			t4 = {2 /1.35, 3 	 /1.35},
 			t3 = {4   /1.35, 6 	 /1.35},
 			t2 = {6   /1.35, 11  /1.35},
 			t1 = {12  /1.35, 24  /1.35}
@@ -739,6 +737,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--5/7
 			self.lemming.AMMO_PICKUP = pickup.pistol.t3
+			self.lemming.can_shoot_through_enemy = nil
+			self.lemming.can_shoot_through_shield = nil
+			self.lemming.can_shoot_through_wall = nil
 			
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3

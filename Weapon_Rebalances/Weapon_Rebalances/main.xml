@@ -24,10 +24,13 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "true"
+				can_shoot_through_enemy = "0.5"
+				max_enemy_penetrations = "4"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_ass_sub2000"/>
@@ -90,8 +93,10 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
-				ammo_pickup_min_mul = "0.4"
-				ammo_pickup_max_mul = "0.5"
+				damage_far_mul = "1"
+				damage_near_mul = "1"
+				ammo_pickup_min_mul = "0.5"
+				ammo_pickup_max_mul = "0.667"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -100,8 +105,10 @@
 			<weapons_override>
 				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -110,8 +117,10 @@
 				</wpn_fps_ass_m16>
 				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -120,8 +129,10 @@
 				</wpn_fps_ass_m4>
 				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -130,8 +141,10 @@
 				</wpn_fps_ass_akm>
 				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -140,8 +153,10 @@
 				</wpn_fps_ass_akm_gold>
 				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -150,8 +165,10 @@
 				</wpn_fps_ass_74>
 				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper">
 					<custom_stats
-						ammo_pickup_min_mul = "0.4"
-						ammo_pickup_max_mul = "0.5"
+						damage_far_mul = "1"
+						damage_near_mul = "1"
+						ammo_pickup_min_mul = "0.5"
+						ammo_pickup_max_mul = "0.667"
 						armor_piercing_add = "0"
 						can_shoot_through_shield = "false"
 						can_shoot_through_wall = "false"
@@ -186,11 +203,13 @@
 			type="ammo"
 			ver="2">
 			<stats
-				damage = "33"
+				damage = "20"
 				spread = "0"
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -226,11 +245,13 @@
 			type="ammo"
 			ver="2">
 			<stats
-				damage = "16"
+				damage = "12"
 				spread = "0"
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -275,6 +296,8 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -309,6 +332,8 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
@@ -431,10 +456,13 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "true"
+				can_shoot_through_enemy = "0.5"
+				max_enemy_penetrations = "4"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_x_b92fs"/>
@@ -542,12 +570,15 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				ammo_pickup_min_mul = "0.4"
 				ammo_pickup_max_mul = "0.534"
 				armor_piercing_add = "1"
 				can_shoot_through_shield = "true"
 				can_shoot_through_wall = "true"
 				can_shoot_through_enemy = "true"
+				max_penetrations = "8"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_lemming"/>
@@ -582,9 +613,14 @@
 				total_ammo_mod = "-13"
 			/>
 			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
 				ammo_pickup_min_mul = "0"
 				ammo_pickup_max_mul = "0"
 				armor_piercing_add = "1"
+				can_shoot_through_shield = "true"
+				can_shoot_through_wall = "true"
+				can_shoot_through_enemy = "true"
 				can_shoot_through_armor_plating = "true"
 			/>
 			<weapons>

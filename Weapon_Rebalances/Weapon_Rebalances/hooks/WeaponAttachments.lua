@@ -17,6 +17,10 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
+					max_enemy_penetrations = 1,
+					can_shoot_through_wall = true,
+					max_wall_penetration_distance = 550,
+					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -31,6 +35,10 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
+					max_enemy_penetrations = 1,
+					can_shoot_through_wall = true,
+					max_wall_penetration_distance = 550,
+					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -45,6 +53,10 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
+					max_enemy_penetrations = 1,
+					can_shoot_through_wall = true,
+					max_wall_penetration_distance = 550,
+					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -59,6 +71,10 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
+					max_enemy_penetrations = 1,
+					can_shoot_through_wall = true,
+					max_wall_penetration_distance = 550,
+					max_wall_penetrations = 1,
 					rays = 9
 				}
 			},
@@ -73,6 +89,10 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
 					can_shoot_through_enemy = true,
+					max_enemy_penetrations = 1,
+					can_shoot_through_wall = true,
+					max_wall_penetration_distance = 550,
+					max_wall_penetrations = 1,
 					rays = 9
 				}
 			}
@@ -89,12 +109,21 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
+					--[[ falloff_override = {
+						optimal_distance = 0,
+						optimal_range = 4000,
+						near_falloff = 0,
+						far_falloff = 4500,
+						near_mul = 1,
+						far_mul = 0
+					}, ]]
 					damage_near_mul = 2,
 					damage_far_mul = 1.5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
+					max_penetrations = 8,
 					rays = 1
 				}
 			},
@@ -114,6 +143,7 @@ function WeaponFactoryTweakData:init(...)
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
+					max_penetrations = 8,
 					rays = 1
 				}
 			},
@@ -133,6 +163,7 @@ function WeaponFactoryTweakData:init(...)
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
+					max_penetrations = 8,
 					rays = 1
 				}
 			},
@@ -152,6 +183,7 @@ function WeaponFactoryTweakData:init(...)
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
+					max_penetrations = 8,
 					rays = 1
 				}
 			},
@@ -171,6 +203,7 @@ function WeaponFactoryTweakData:init(...)
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
+					max_penetrations = 8,
 					rays = 1
 				}
 			}
@@ -189,6 +222,14 @@ function WeaponFactoryTweakData:init(...)
 					ammo_pickup_min_mul = 0.5,
 					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
+					--[[ falloff_override = {
+						optimal_distance = 0,
+						optimal_range = 4000,
+						near_falloff = 0,
+						far_falloff = 11500,
+						near_mul = 1,
+						far_mul = 0
+					}, ]]
 					damage_far_mul = 2.5,
 					damage_near_mul = 2,
 					rays = 3, 
@@ -281,7 +322,6 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
 					ammo_pickup_max_mul = 0.5,
-					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
@@ -299,9 +339,17 @@ function WeaponFactoryTweakData:init(...)
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+					--[[ falloff_override = {
+						optimal_distance = 0,
+						optimal_range = 2000,
+						near_falloff = 0,
+						far_falloff = 2100,
+						near_mul = 1,
+						far_mul = 0
+					}, ]]
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FireBulletBase",
+					bullet_class = "FlameBulletBase",
 					rays = 12
 				}
 			},
@@ -316,7 +364,6 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
 					ammo_pickup_max_mul = 0.5,
-					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
@@ -336,7 +383,7 @@ function WeaponFactoryTweakData:init(...)
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FireBulletBase",
+					bullet_class = "FlameBulletBase",
 					rays = 12
 				}
 			},
@@ -351,7 +398,6 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
 					ammo_pickup_max_mul = 0.5,
-					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
@@ -371,7 +417,7 @@ function WeaponFactoryTweakData:init(...)
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FireBulletBase",
+					bullet_class = "FlameBulletBase",
 					rays = 12
 				}
 			},
@@ -386,7 +432,6 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
 					ammo_pickup_max_mul = 0.5,
-					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
@@ -406,7 +451,7 @@ function WeaponFactoryTweakData:init(...)
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FireBulletBase",
+					bullet_class = "FlameBulletBase",
 					rays = 12
 				}
 			},
@@ -421,7 +466,6 @@ function WeaponFactoryTweakData:init(...)
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4,
 					ammo_pickup_max_mul = 0.5,
-					disallow_headshot_damage = 1,
 					dot_data = {
 						type = "fire",
 						custom_data = {
@@ -441,7 +485,8 @@ function WeaponFactoryTweakData:init(...)
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
-					bullet_class = "FireBulletBase",
+					bullet_class = "FlameBulletBase",
+					flame_max_range = 3000,
 					rays = 12
 				}
 			}
@@ -465,7 +510,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_tick_period = 0.5,
 							scale_damage = 240,
 							damage_decay = 5,
-							damage_decay_rate = 1
+							decay_period = 0.5
 						}
 					},
 					armor_piercing_add = 1, 
@@ -490,7 +535,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_tick_period = 0.5,
 							scale_damage = 65,
 							damage_decay = 5,
-							damage_decay_rate = 1
+							decay_period = 0.5
 						}
 					},
 					armor_piercing_add = 1, 
@@ -515,7 +560,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_tick_period = 0.5,
 							scale_damage = 60,
 							damage_decay = 10,
-							damage_decay_rate = 1
+							decay_period = 0.5
 						}
 					},
 					armor_piercing_add = 1, 
@@ -540,7 +585,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_tick_period = 0.5,
 							scale_damage = 40,
 							damage_decay = 5,
-							damage_decay_rate = 1
+							decay_period = 0.5
 						}
 					},
 					armor_piercing_add = 1, 
@@ -565,7 +610,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_tick_period = 0.5,
 							scale_damage = 30,
 							damage_decay = 10,
-							damage_decay_rate = 1
+							decay_period = 0.5
 						}
 					},
 					armor_piercing_add = 1, 
@@ -579,12 +624,12 @@ function WeaponFactoryTweakData:init(...)
 		
 			--mosconi
 			self.wpn_fps_shot_huntsman.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			local wpn_fps_shot_huntsman = {reload_modifier = 3}
 			self.wpn_fps_shot_huntsman.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_huntsman.reload_modifier
@@ -596,12 +641,12 @@ function WeaponFactoryTweakData:init(...)
 		
 			--joceline
 			self.wpn_fps_shot_b682.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			local wpn_fps_shot_b682 = {reload_modifier = 3}
 			self.wpn_fps_shot_b682.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_b682.reload_modifier
@@ -613,22 +658,22 @@ function WeaponFactoryTweakData:init(...)
 			
 			--breaker
 			self.wpn_fps_sho_boot.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			
 			--akimbo judge
 			self.wpn_fps_pis_x_judge.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
 				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
 				wpn_fps_upg_shot_ns_king = {parent = "slide"},
@@ -640,12 +685,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--judge
 			self.wpn_fps_pis_judge.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
 				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
 				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
 				wpn_fps_upg_shot_ns_king = {parent = "slide"},
@@ -655,12 +700,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--gsps
 			self.wpn_fps_shot_m37.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			local wpn_fps_shot_m37 = {reload_modifier = 4}
 			self.wpn_fps_shot_m37.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m37.reload_modifier
@@ -672,12 +717,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--claire
 			self.wpn_fps_sho_coach.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
 				wpn_fps_upg_a_explosive = deep_clone(he.t5),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t5),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			local wpn_fps_sho_coach = {reload_modifier = 2}
 			self.wpn_fps_sho_coach.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_coach.reload_modifier
@@ -691,12 +736,12 @@ function WeaponFactoryTweakData:init(...)
 		
 			--raven
 			self.wpn_fps_sho_ksg.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
-				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+				wpn_fps_upg_a_custom = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t5),
+				wpn_fps_upg_a_slug = deep_clone(slug.t5),
+				wpn_fps_upg_a_explosive = deep_clone(he.t5),
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t5),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t5)
 			}
 			local wpn_fps_sho_ksg = {reload_modifier = 3}
 			self.wpn_fps_sho_ksg.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ksg.reload_modifier
@@ -708,12 +753,12 @@ function WeaponFactoryTweakData:init(...)
 
 			--reinfeld 880
 			self.wpn_fps_shot_r870.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4)
 			}
 			local wpn_fps_shot_r870 = {reload_modifier = 3}
 			self.wpn_fps_shot_r870.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_r870.reload_modifier
@@ -725,12 +770,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--reinfeld 88
 			self.wpn_fps_shot_m1897.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4)
 			}
 			local wpn_fps_shot_m1897 = {reload_modifier = 3}
 			self.wpn_fps_shot_m1897.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_m1897.reload_modifier
@@ -742,12 +787,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--locomotive
 			self.wpn_fps_shot_serbu.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
+				wpn_fps_upg_a_slug = deep_clone(slug.t4),
 				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t4)
 			}
 			local wpn_fps_shot_serbu = {reload_modifier = 3}
 			self.wpn_fps_shot_serbu.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_shot_serbu.reload_modifier
@@ -761,12 +806,12 @@ function WeaponFactoryTweakData:init(...)
 		
 			--predator
 			self.wpn_fps_sho_spas12.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_explosive = deep_clone(he.t3),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3)
 			}
 			local wpn_fps_sho_spas12 = {reload_modifier = 4}
 			self.wpn_fps_sho_spas12.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_spas12.reload_modifier
@@ -778,12 +823,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--m1014
 			self.wpn_fps_sho_ben.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_explosive = deep_clone(he.t3),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3)
 			}
 			local wpn_fps_sho_ben = {reload_modifier = 4}
 			self.wpn_fps_sho_ben.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_ben.reload_modifier
@@ -795,12 +840,12 @@ function WeaponFactoryTweakData:init(...)
 			
 			--street sweeper
 			self.wpn_fps_sho_striker.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t3),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t3),
+				wpn_fps_upg_a_slug = deep_clone(slug.t3),
 				wpn_fps_upg_a_explosive = deep_clone(he.t3),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t3),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t3),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t3)
 			}
 			local wpn_fps_sho_striker = {reload_modifier = 2}
 			self.wpn_fps_sho_striker.override.wpn_fps_upg_a_slug.stats.reload = wpn_fps_sho_striker.reload_modifier
@@ -814,64 +859,64 @@ function WeaponFactoryTweakData:init(...)
 
 			--izhma
 			self.wpn_fps_shot_saiga.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_explosive = deep_clone(he.t2),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2)
 			}
 			
 			--steakout
 			self.wpn_fps_sho_aa12.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_explosive = deep_clone(he.t2),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2)
 			}
 			
 			--akimbo goliath
 			self.wpn_fps_sho_x_rota.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_explosive = deep_clone(he.t2),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2)
 			}
 			
 			--goliath
 			self.wpn_fps_sho_rota.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t2),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t2),
+				wpn_fps_upg_a_slug = deep_clone(slug.t2),
 				wpn_fps_upg_a_explosive = deep_clone(he.t2),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t2),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t2),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t2)
 			}
 		
 		--18 damage shotguns-----------------------------------------------------------
 		
 			--brothers grimm
 			self.wpn_fps_sho_x_basset.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t1),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t1),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_slug = deep_clone(slug.t1),
 				wpn_fps_upg_a_explosive = deep_clone(he.t1),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t1),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t1)
 			}
 			
 			--grimm
 			self.wpn_fps_sho_basset.override = {
-				wpn_fps_upg_a_slug = deep_clone(slug.t1),
 				wpn_fps_upg_a_custom = deep_clone(buckshot.t1),
 				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t1),
+				wpn_fps_upg_a_slug = deep_clone(slug.t1),
 				wpn_fps_upg_a_explosive = deep_clone(he.t1),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t1),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1)
+				wpn_fps_upg_a_dragons_breath = deep_clone(db.t1),
+				wpn_fps_upg_a_piercing = deep_clone(flechette.t1)
 			}
 
 	--ATTACHMENTS/AMMO---------------------------------------------------------------------------------------------------------------

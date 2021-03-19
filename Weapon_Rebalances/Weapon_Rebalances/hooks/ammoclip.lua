@@ -5,7 +5,6 @@ AmmoClip.EVENT_IDS.register_grenade = 16
 local CABLE_TIE_GET_CHANCE = 0.2
 local CABLE_TIE_GET_AMOUNT = 1
 
--- Lines: 11 to 22
 function AmmoClip:init(unit)
 	AmmoClip.super.init(self, unit)
 
@@ -17,7 +16,6 @@ function AmmoClip:init(unit)
 	end
 end
 
--- Lines: 25 to 33
 function AmmoClip:reload_contour()
 	if self._ammo_box and self._unit:contour() then
 		if managers.user:get_setting("ammo_contour") then
@@ -28,7 +26,6 @@ function AmmoClip:reload_contour()
 	end
 end
 
--- Lines: 36 to 139
 function AmmoClip:_pickup(unit)
 	if self._picked_up then
 		return
@@ -151,7 +148,6 @@ function AmmoClip:_pickup(unit)
 	return false
 end
 
--- Lines: 142 to 182
 function AmmoClip:sync_net_event(event, peer)
 	local player = managers.player:local_player()
 

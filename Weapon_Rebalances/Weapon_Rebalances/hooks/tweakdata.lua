@@ -6,7 +6,7 @@ tweak_data.projectiles.launcher_rocket = {
 	launch_speed = 2500,
 	curve_pow = 0.1,
 	player_damage = 40,
-	range = 600,
+	range = 800,
 	init_timer = 2.5,
 	mass_look_up_modifier = 1,
 	sound_event = "rpg_explode",
@@ -22,7 +22,10 @@ tweak_data.projectiles.rocket_ray_frag = {
 	init_timer = 2.5,
 	mass_look_up_modifier = 1,
 	sound_event = "rpg_explode",
-	name_id = "bm_launcher_rocket"
+	name_id = "bm_launcher_rocket",
+	projectile_trail = true,
+	adjust_z = 0,
+	push_at_body_index = 0
 }
 
 tweak_data.projectiles.launcher_frag_china = {
