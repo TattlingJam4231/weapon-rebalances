@@ -14,10 +14,12 @@ function WeaponTweakData:init(tweak_data)
 		self.stats.damage[i] = i / 10
 	end
 	
+	self.swat_van_turret_module.BODY_DAMAGE_CLAMP = 40000
+	
 	--Thanatos Rework
-	self.m95.stats_modifiers = {damage = 60}
-	self.m95.AMMO_PICKUP = {0,0.39}
-	self.m95.AMMO_MAX = 10
+	self.m95.stats_modifiers = {damage = 1}
+	self.m95.stats.damage = 3500
+	self.m95.AMMO_PICKUP = {0.05  /1.35, 0.55  /1.35}
 	
 	--Vulcan Minigun Rework
 	self.m134.AMMO_MAX = 1300/1.3125
@@ -41,8 +43,8 @@ function WeaponTweakData:init(tweak_data)
 	
 	--XL 5.56 Microgun Rework
 	self.shuno.use_data.selection_index = SELECTION.SECONDARY
-	self.shuno.CLIP_AMMO_MAX = 1300/1.3125
-	self.shuno.AMMO_MAX = 1300
+	self.shuno.AMMO_MAX = 1300/1.3125
+	self.shuno.CLIP_AMMO_MAX = 1300
 	self.shuno.AMMO_PICKUP = {15, 30}
 	self.shuno.stats.damage = 32
 	self.shuno.stats.spread = 8
@@ -63,7 +65,6 @@ function WeaponTweakData:init(tweak_data)
 			dot_can_crit = true
 		}
 	}
-	self.flamethrower_mk2.disallow_headshot_damage = 1
 	
 	--MA-17 Flamethrower
 	self.system.AMMO_PICKUP = {15, 25}
@@ -78,14 +79,13 @@ function WeaponTweakData:init(tweak_data)
 			dot_can_crit = true
 		}
 	}
-	self.system.disallow_headshot_damage = 1
 	
 	--Commander 101
-	self.ray.AMMO_PICKUP = {0, 0.39}
+	self.ray.AMMO_PICKUP = {0.02  /1.35, 0.52  /1.35}
 	self.ray.stats.damage = 21
 	
 	--HRL-7
-	self.rpg7.AMMO_PICKUP = {0, 0.381}
+	self.rpg7.AMMO_PICKUP = {0.01  /1.35, 0.51  /1.35}
 	self.rpg7.stats.damage = 62
 	
 	--sentry
@@ -95,9 +95,9 @@ function WeaponTweakData:init(tweak_data)
 	--ammo pickup
 	local pickup = {
 		assault = {
-			t4 = {2.5 /1.35, 4 	 /1.35},
+			t4 = {2 /1.35, 3 	 /1.35},
 			t3 = {4   /1.35, 6 	 /1.35},
-			t2 = {6   /1.35, 10  /1.35},
+			t2 = {6   /1.35, 11  /1.35},
 			t1 = {12  /1.35, 24  /1.35}
 		},
 		shotgun = {
@@ -119,7 +119,7 @@ function WeaponTweakData:init(tweak_data)
 		},
 		smg = {
 			t3 = {3   /1.35, 7   /1.35},
-			t2 = {5   /1.35, 11  /1.35},
+			t2 = {6   /1.35, 11  /1.35},
 			t1 = {8   /1.35, 16  /1.35}
 		},
 		pistol = {
@@ -167,14 +167,10 @@ function WeaponTweakData:init(tweak_data)
 		
 			--raven
 			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
-			self.ksg.fire_mode_data.fire_rate = 0.55
-			self.ksg.single.fire_rate = 0.55
 			self.ksg.stats.damage = 110
 			
 			--reinfeld 880
 			self.r870.AMMO_PICKUP = pickup.shotgun.t4
-			self.r870.fire_mode_data.fire_rate = 0.55
-			self.r870.single.fire_rate = 0.55
 			self.r870.stats.damage = 110
 			
 			--reinfeld 88
@@ -250,50 +246,50 @@ function WeaponTweakData:init(tweak_data)
 			--eagle
 			self.scar.AMMO_PICKUP = pickup.assault.t3
 			self.scar.AMMO_MAX = 140
-			self.scar.stats.suppression = 9
 			self.scar.stats.damage = 100
+			-- self.scar.stats.suppression = 9
 			--self.scar.stats.concealment = 1
 			
 			--falcon
 			self.fal.AMMO_PICKUP = pickup.assault.t3
 			self.fal.AMMO_MAX = 140
-			self.fal.stats.suppression = 9
 			self.fal.stats.damage = 100
+			-- self.fal.stats.suppression = 9
 			--self.fal.stats.concealment = 1 -10
 			
 			--ak.762
 			self.akm.AMMO_PICKUP = pickup.assault.t3
 			self.akm.AMMO_MAX = 150
-			self.akm.stats.suppression = 9
 			self.akm.stats.damage = 99
+			-- self.akm.stats.suppression = 9
 			--self.akm.stats.concealment = 1
 			
 			--golden ak.762
 			self.akm_gold.AMMO_PICKUP = pickup.assault.t3
 			self.akm_gold.AMMO_MAX = 150
-			self.akm_gold.stats.suppression = 9
 			self.akm_gold.stats.damage = 99
+			-- self.akm_gold.stats.suppression = 9
 			--self.akm_gold.stats.concealment = 1
 			
 			--amr-16
 			self.m16.AMMO_PICKUP = pickup.assault.t3
 			self.m16.AMMO_MAX = 150
-			self.m16.stats.suppression = 9
 			self.m16.stats.damage = 96
+			-- self.m16.stats.suppression = 9
 			--self.m16.stats.concealment = 2
 			
 			--ak17
 			self.flint.AMMO_PICKUP = pickup.assault.t3
 			self.flint.AMMO_MAX = 140
-			self.flint.stats.suppression = 9
 			self.flint.stats.damage = 101
+			-- self.flint.stats.suppression = 9
 			--self.flint.stats.concealment = 1
 			
 			--gewehr
 			self.g3.AMMO_PICKUP = pickup.assault.t3
 			self.g3.AMMO_MAX = 140
-			self.g3.stats.suppression = 9
 			self.g3.stats.damage = 101
+			-- self.g3.stats.suppression = 9
 			--self.g3.stats.concealment = 1
 		
 		--t2 assault rifles---------------------------------------------------------
@@ -301,64 +297,64 @@ function WeaponTweakData:init(tweak_data)
 			--gecko
 			self.galil.AMMO_PICKUP = pickup.assault.t2
 			self.galil.AMMO_MAX = 210
-			self.galil.stats.suppression = 15
 			self.galil.stats.damage = 58
+			-- self.galil.stats.suppression = 15
 			--self.galil.stats.concealment = 1
 			
 			--car-4
 			self.new_m4.AMMO_PICKUP = pickup.assault.t2
 			self.new_m4.AMMO_MAX = 210
-			self.new_m4.stats.suppression = 15
 			self.new_m4.stats.damage = 53
+			-- self.new_m4.stats.suppression = 15
 			--self.new_m4.stats.concealment = -1
 			
 			--queen's wrath
 			self.l85a2.AMMO_PICKUP = pickup.assault.t2
 			self.l85a2.AMMO_MAX = 210
-			self.l85a2.stats.suppression = 15
 			self.l85a2.stats.damage = 59
+			-- self.l85a2.stats.suppression = 15
 			--self.l85a2.stats.concealment = 1
 			
 			--ak5
 			self.ak5.AMMO_PICKUP = pickup.assault.t2
 			self.ak5.AMMO_MAX = 210
-			self.ak5.stats.suppression = 15
-			self.ak5.stats.damage = 56
+			-- self.ak5.stats.damage = 56
+			-- self.ak5.stats.suppression = 15
 			--self.ak5.stats.concealment = 1
 			
 			--lion's roar
 			self.vhs.AMMO_PICKUP = pickup.assault.t2
 			self.vhs.AMMO_MAX = 210
-			self.vhs.stats.suppression = 15
 			self.vhs.stats.damage = 59
+			-- self.vhs.stats.suppression = 15
 			--self.vhs.stats.concealment = 2
 			
 			--ak
 			self.ak74.AMMO_PICKUP = pickup.assault.t2
 			self.ak74.AMMO_MAX = 210
-			self.ak74.stats.suppression = 15
 			self.ak74.stats.damage = 57
+			-- self.ak74.stats.suppression = 15
 			--self.ak74.stats.concealment = 2
 			
 			--uar
 			self.aug.AMMO_PICKUP = pickup.assault.t2
 			self.aug.AMMO_MAX = 210
-			self.aug.stats.suppression = 15
-			self.aug.stats.damage = 55
+			-- self.aug.stats.damage = 55
+			-- self.aug.stats.suppression = 15
 			--self.aug.stats.concealment = 3
 			
 			--tempest
 			self.komodo.AMMO_PICKUP = pickup.assault.t2
 			self.komodo.AMMO_MAX = 210
-			self.komodo.stats.suppression = 15
 			self.komodo.stats.damage = 59
+			-- self.komodo.stats.suppression = 15
 			--self.komodo.stats.concealment = 4
 			
 			--union
 			self.corgi.AMMO_PICKUP = pickup.assault.t2
 			self.corgi.AMMO_MAX = 210
-			self.corgi.stats.suppression = 15
 			self.corgi.stats.damage = 59
+			-- self.corgi.stats.suppression = 15
 			--self.corgi.stats.concealment = 1
 		
 		--t1 assault rifles---------------------------------------------------------
@@ -366,42 +362,42 @@ function WeaponTweakData:init(tweak_data)
 			--amcar
 			self.amcar.AMMO_PICKUP = pickup.assault.t1
 			self.amcar.AMMO_MAX = 300
-			self.amcar.stats.suppression = 15
+			-- self.amcar.stats.suppression = 15
 			--self.amcar.stats.concealment = 6
 			
 			--commando
 			self.s552.AMMO_PICKUP = pickup.assault.t1
 			self.s552.AMMO_MAX = 300
 			self.s552.stats.damage = 40
-			self.s552.stats.suppression = 15
+			-- self.s552.stats.suppression = 15
 			--self.s552.stats.concealment = 3
 			
 			--jp36
 			self.g36.AMMO_PICKUP = pickup.assault.t1
 			self.g36.AMMO_MAX = 300
 			self.g36.stats.damage = 42
-			self.g36.stats.suppression = 15
+			-- self.g36.stats.suppression = 15
 			--self.g36.stats.concealment = 4
 			
 			--clarion
 			self.famas.AMMO_PICKUP = pickup.assault.t1
 			self.famas.AMMO_MAX = 300
 			self.famas.stats.damage = 39
-			self.famas.stats.suppression = 15
+			-- self.famas.stats.suppression = 15
 			--self.famas.stats.concealment = 3
 			
 			--valkyria
 			self.asval.AMMO_PICKUP = pickup.assault.t1
 			self.asval.AMMO_MAX = 300
 			self.asval.stats.damage = 44
-			self.asval.stats.suppression = 19
+			-- self.asval.stats.suppression = 19
 			--self.asval.stats.concealment = 3
 			
 			--bootleg
 			self.tecci.AMMO_PICKUP = pickup.assault.t1
 			self.tecci.AMMO_MAX = 300
 			self.tecci.stats.damage = 42
-			self.tecci.stats.suppression = 15
+			-- self.tecci.stats.suppression = 15
 			--self.tecci.stats.concealment = 4
 	
 	--LMGs
@@ -410,14 +406,14 @@ function WeaponTweakData:init(tweak_data)
 		
 			--m60
 			self.m60.AMMO_PICKUP = pickup.lmg.t3
-			self.m60.CLIP_AMMO_MAX = 100
 			self.m60.AMMO_MAX = 200
+			self.m60.CLIP_AMMO_MAX = 100
 			self.m60.can_shoot_through_wall = true
 			self.m60.stats.spread = 12
 			self.m60.stats.recoil = 4
 			self.m60.panic_suppression_chance = 1
 			self.m60.stats.suppression = 6
-			self.m60.stats.damage = 122
+			self.m60.stats.damage = 110
 			
 		--t2 lmgs-------------------------------------------------------------------
 		
@@ -675,33 +671,23 @@ function WeaponTweakData:init(tweak_data)
 			self.peacemaker.stats.recoil = 1
 			self.peacemaker.fire_mode_data.fire_rate = 0.166
 			self.peacemaker.single.fire_rate = 0.166
-			self.peacemaker.can_shoot_through_enemy = true
-			self.peacemaker.can_shoot_through_shield = true
-			self.peacemaker.can_shoot_through_wall = true
 			self.peacemaker.armor_piercing_chance = 1
 			
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
 			self.mateba.AMMO_MAX = 48
-			self.mateba.can_shoot_through_enemy = true
-			self.mateba.can_shoot_through_shield = true
-			self.mateba.can_shoot_through_wall = true
 			self.mateba.armor_piercing_chance = 1
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.chinchilla.AMMO_MAX = 48
-			self.chinchilla.can_shoot_through_enemy = true
-			self.chinchilla.can_shoot_through_shield = true
-			self.chinchilla.can_shoot_through_wall = true
 			self.chinchilla.armor_piercing_chance = 1
 			
 			--bronco
 			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
 			self.new_raging_bull.AMMO_MAX = 48
-			self.new_raging_bull.can_shoot_through_enemy = true
-			self.new_raging_bull.can_shoot_through_shield = true
-			self.new_raging_bull.can_shoot_through_wall = true
+			self.new_raging_bull.fire_mode_data.fire_rate = 0.166
+			self.new_raging_bull.single.fire_rate = 0.166
 			self.new_raging_bull.armor_piercing_chance = 1
 			
 			--deagle
@@ -710,33 +696,21 @@ function WeaponTweakData:init(tweak_data)
 			self.deagle.stats.damage = 176
 			self.deagle.stats.spread = 18
 			self.deagle.stats.recoil = 1
-			self.deagle.can_shoot_through_enemy = true
-			self.deagle.can_shoot_through_shield = true
-			self.deagle.can_shoot_through_wall = true
 			self.deagle.armor_piercing_chance = 1
 			
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
 			self.x_2006m.AMMO_MAX = 48
-			self.x_2006m.can_shoot_through_enemy = true
-			self.x_2006m.can_shoot_through_shield = true
-			self.x_2006m.can_shoot_through_wall = true
 			self.x_2006m.armor_piercing_chance = 1
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.x_chinchilla.AMMO_MAX = 48
-			self.x_chinchilla.can_shoot_through_enemy = true
-			self.x_chinchilla.can_shoot_through_shield = true
-			self.x_chinchilla.can_shoot_through_wall = true
 			self.x_chinchilla.armor_piercing_chance = 1
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
 			self.x_rage.AMMO_MAX = 48
-			self.x_rage.can_shoot_through_enemy = true
-			self.x_rage.can_shoot_through_shield = true
-			self.x_rage.can_shoot_through_wall = true
 			self.x_rage.armor_piercing_chance = 1
 			
 			--akimbo deagle
@@ -745,9 +719,6 @@ function WeaponTweakData:init(tweak_data)
 			self.x_deagle.stats.damage = 176
 			self.x_deagle.stats.spread = 18
 			self.x_deagle.stats.recoil = 1
-			self.x_deagle.can_shoot_through_enemy = true
-			self.x_deagle.can_shoot_through_shield = true
-			self.x_deagle.can_shoot_through_wall = true
 			self.x_deagle.armor_piercing_chance = 1
 			
 		--t3 pistols----------------------------------------------------------------
@@ -766,6 +737,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--5/7
 			self.lemming.AMMO_PICKUP = pickup.pistol.t3
+			self.lemming.can_shoot_through_enemy = nil
+			self.lemming.can_shoot_through_shield = nil
+			self.lemming.can_shoot_through_wall = nil
 			
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3

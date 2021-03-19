@@ -1,7 +1,13 @@
-local original_init = UpgradesTweakData.init
-function UpgradesTweakData:init(...)
-	original_init(self, ...)
+local original_player_definitions = UpgradesTweakData._player_definitions
+
+function UpgradesTweakData:_player_definitions(...)
+	original_player_definitions(self, ...)
 	
 	self.sentry_gun_base_ammo = 600
+
+	local reload_multiplier = 1.35
+	self.values.assault_rifle.reload_speed_multiplier = {reload_multiplier}
+	self.values.smg.reload_speed_multiplier = {reload_multiplier}
+	self.values.snp.reload_speed_multiplier = {reload_multiplier}
 	
 end

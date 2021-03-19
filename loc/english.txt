@@ -1,11 +1,12 @@
 {
 	"FMJ" : "FMJ Rounds"
-	"Ballistic Tip" : "Ballistic Tip Rounds"
-	"Armor Piercing" : "Armor Piercing Rounds"
-	"Hollow Point" : "Hollow Point Rounds"
 	"FMJ_desc" : "Rounds that penetrate enemies."
-	"Ballistic Tip_desc" : "Accurate, high impact rounds."
-	"Armor Piercing_desc" : "Rounds designed to penetrate shields."
+	"Ballistic Tip" : "Ballistic Tip Rounds"
+	"Ballistic Tip_desc" : "High impact rounds."
+	"Hollow Point" : "Hollow Point Rounds"
 	"Hollow Point_desc" : "Rounds with a chance to deal massive damage. Adds 5% critical hit chance."
+	"AP" : "AP Rounds"
+	"AP_desc" : "Rounds that penetrate body armor, enemies, shields and walls."
+	"SLAP" : "Saboted Light Armor Penetrator Rounds"
 	
 }
