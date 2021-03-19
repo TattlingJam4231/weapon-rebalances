@@ -447,30 +447,13 @@ function CopDamage:damage_bullet(attack_data)
 		end
 	end
 	
-	
-	--modded
---[[ 	local weapon_name_id = attack_data.weapon_unit:base()._name_id
-	local disallow_headshot_damage = 0
-	if attack_data.weapon_unit:base()._ammo_data then
-		disallow_headshot_damage = attack_data.weapon_unit:base()._ammo_data.disallow_headshot_damage
-		if not disallow_headshot_damage then
-			disallow_headshot_damage = tweak_data.weapon[weapon_name_id].disallow_headshot_damage
-		end
-	elseif  tweak_data.weapon[weapon_name_id] then
-		disallow_headshot_damage = tweak_data.weapon[weapon_name_id].disallow_headshot_damage
-	end
-
 	if not self._char_tweak.ignore_headshot and not self._damage_reduction_multiplier and head then
-		if disallow_headshot_damage then
-			--Nothing
-		elseif self._char_tweak.headshot_dmg_mul then
+		if self._char_tweak.headshot_dmg_mul then
 			damage = damage * self._char_tweak.headshot_dmg_mul * headshot_multiplier
 		else
 			damage = self._health * 10
 		end
-	end ]]
-	--modded
-	
+	end
 
 	if attack_data.weapon_unit:base().get_add_head_shot_mul then
 		local add_head_shot_mul = attack_data.weapon_unit:base():get_add_head_shot_mul()
