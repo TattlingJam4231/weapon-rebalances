@@ -25,15 +25,15 @@ Hooks:Add("LocalizationManagerPostInit", "Weapon Rebalances Localization", funct
 		["menu_shotgun_cqb_beta_desc"] = 		"BASIC: ##2 points##\n" ..
 												"You reload Shotguns ##15%## faster.\n\n" ..
 												"ACE: ##4 points##\n" ..
-												"You reload Shotguns an additional ##35%## faster. You gain a ##125%## increased steel sight zoom speed when using Shotguns."
+												"You reload Shotguns an additional ##35%## faster. You gain a ##125%## increased steel sight zoom speed when using Shotguns.",
 
-		["bm_wp_upg_a_custom_desc"] =			"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range."
+		["bm_wp_upg_a_custom_desc"] =			"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 
-		["bm_wp_upg_a_explosive_desc"] =		"Fires three explosive charges. This ammo type is harder to find."
+		["bm_wp_upg_a_explosive_desc"] =		"Fires three explosive charges. This ammo type is harder to find.",
 
-		["bm_wp_upg_a_piercing_desc"] =			"Fires poison tipped darts. Penetrates body armor."
+		["bm_wp_upg_a_piercing_desc"] =			"Fires poison tipped darts. Penetrates body armor.",
 
-		["bm_wp_upg_a_slug_desc"] =				"Fires a single lead slug that penetrates body armor, enemies, shields and walls up to eight times."
+		["bm_wp_upg_a_slug_desc"] =				"Fires a single lead slug that penetrates body armor, enemies, shields and walls up to eight times.",
 
 		["bm_wp_upg_a_dragons_breath_desc"] = 	"Fires pellets that go up in sparks and flames. Burns through shields and body armor. This ammo type is harder to find."
 	})
