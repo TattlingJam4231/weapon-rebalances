@@ -37,8 +37,4 @@ Hooks:Add("LocalizationManagerPostInit", "Weapon Rebalances Localization", funct
 
 		["bm_wp_upg_a_dragons_breath_desc"] = 	"Fires pellets that go up in sparks and flames. Burns through shields and body armor. This ammo type is harder to find."
 	})
-	})
-	})
-	})
-	})
 end)
