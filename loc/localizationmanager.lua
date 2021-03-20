@@ -28,16 +28,16 @@ Hooks:Add("LocalizationManagerPostInit", "Weapon Rebalances Developer Localizati
 														"You reload Shotguns an additional ##35%## faster. You gain a ##125%## increased steel sight zoom speed when using Shotguns.",
 
 		["menu_triathlete_beta_desc"] =					"BASIC: ##1 points##\n" ..
-														"Increases your supply of canle ties by ##4##. You can cable tie hostages ##75%## faster.\n\n" ..
+														"Increases your supply of cable ties by ##4##. You can cable tie hostages ##75%## faster.\n\n" ..
 														"ACE: ##3 points##\n" ..
 														"You and your crew gain ##1## damage absorption for each hostage you have. This effect stacks with up to a maximum of ##4## hostages.\n\n" ..
 														"Note: This effect does not stack with other players Forced Friendship skill.",
 
 		["menu_single_shot_ammo_return_beta_desc"] =	"BASIC: ##3 points##\n" ..
-														"Getting a headshot within ##3## seconds of your previous headshot will refund ##1## bullet to your used weapon. " ..
-														"Can only be trigger by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\n\n" ..
+														"Getting a headshot within ##2## seconds of your previous headshot will refund ##1## bullet to your used weapon. " ..
+														"Can only be triggered by SMGs, Assault Rifles and Sniper Rifles fired in single shot fire mode.\n\n" ..
 														"ACE: ##6 points##\n" ..
-														"The time window is increased to ##6## seconds.",
+														"The time window is increased to ##4## seconds.",
 
 		["bm_wp_upg_a_custom_desc"] =					"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 

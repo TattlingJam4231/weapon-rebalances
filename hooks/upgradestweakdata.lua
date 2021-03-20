@@ -21,12 +21,12 @@ function UpgradesTweakData:_player_definitions(...)
 		{
 			headshots = 2,
 			ammo = 1,
-			time = 3
+			time = 2
 		},
 		{
 			headshots = 2,
 			ammo = 1,
-			time = 6
+			time = 4
 		}
 	}
 end
