@@ -341,70 +341,31 @@
 				crit_chance = "0.05"
 			/>
 			<weapons>
-				<value_node value="wpn_fps_x_b92fs"/>
-				<value_node value="wpn_fps_pis_x_chinchilla"/>
-				<value_node value="wpn_fps_pis_x_g17"/>
-				<value_node value="wpn_fps_jowi"/>
-				<value_node value="wpn_fps_pis_x_g22c"/>
-				<value_node value="wpn_fps_smg_x_mp5"/>
-				<value_node value="wpn_fps_x_packrat"/>
-				<value_node value="wpn_fps_x_1911"/>
-				<value_node value="wpn_fps_pis_x_shrew"/>
-				<value_node value="wpn_fps_x_deagle"/>
-				<value_node value="wpn_fps_smg_x_sr2"/>
-				<value_node value="wpn_fps_pis_x_usp"/>
-				<value_node value="wpn_fps_smg_x_akmsu"/>
-				<value_node value="wpn_fps_pis_x_sparrow"/>
-				<value_node value="wpn_fps_pis_x_rage"/>
-				<value_node value="wpn_fps_pis_x_c96"/>
-				<value_node value="wpn_fps_pis_x_ppk"/>
-				<value_node value="wpn_fps_pis_x_2006m"/>
-				<value_node value="wpn_fps_pis_x_breech"/>
-				<value_node value="wpn_fps_pis_x_p226"/>
-				<value_node value="wpn_fps_pis_x_g18c"/>
-				<value_node value="wpn_fps_pis_x_pl14"/>
-				<value_node value="wpn_fps_pis_x_legacy"/>
-				<value_node value="wpn_fps_smg_x_tec9"/>
-				<value_node value="wpn_fps_smg_x_m1928"/>
-				<value_node value="wpn_fps_smg_x_mp9"/>
-				<value_node value="wpn_fps_smg_x_scorpion"/>
-				<value_node value="wpn_fps_smg_x_hajk"/>
-				<value_node value="wpn_fps_smg_x_schakal"/>
-				<value_node value="wpn_fps_smg_x_cobray"/>
-				<value_node value="wpn_fps_smg_x_p90"/>
-				<value_node value="wpn_fps_smg_x_polymer"/>
-				<value_node value="wpn_fps_smg_x_mac10"/>
-				<value_node value="wpn_fps_smg_x_baka"/>
-				<value_node value="wpn_fps_smg_x_erma"/>
-				<value_node value="wpn_fps_smg_x_olympic"/>
-				<value_node value="wpn_fps_smg_x_sterling"/>
-				<value_node value="wpn_fps_smg_x_shepheard"/>
-				<value_node value="wpn_fps_smg_x_mp7"/>
-				<value_node value="wpn_fps_smg_x_m45"/>
-				<value_node value="wpn_fps_smg_x_coal"/>
-				<value_node value="wpn_fps_smg_x_uzi"/>
-				<value_node value="wpn_fps_pis_x_beer"/>
-				<value_node value="wpn_fps_pis_x_czech"/>
-				<value_node value="wpn_fps_pis_x_stech"/>
 				<value_node value="wpn_fps_pis_lemming"/>
+				<value_node value="wpn_fps_pis_chinchilla"/>
+				<value_node value="wpn_fps_pis_deagle"/>
+				<value_node value="wpn_fps_pis_rage"/>
+				<value_node value="wpn_fps_pis_2006m"/>
+				<value_node value="wpn_fps_pis_peacemaker"/>
+
+				<value_node value="wpn_fps_pis_x_chinchilla"/>
+				<value_node value="wpn_fps_x_deagle"/>
+				<value_node value="wpn_fps_pis_x_rage"/>
+				<value_node value="wpn_fps_pis_x_2006m"/>
+
 				<value_node value="wpn_fps_pis_sparrow"/>
 				<value_node value="wpn_fps_pis_beretta"/>
-				<value_node value="wpn_fps_pis_rage"/>
 				<value_node value="wpn_fps_pis_c96"/>
-				<value_node value="wpn_fps_pis_chinchilla"/>
 				<value_node value="wpn_fps_pis_g17"/>
 				<value_node value="wpn_fps_pis_g26"/>
 				<value_node value="wpn_fps_pis_g22c"/>
 				<value_node value="wpn_fps_pis_packrat"/>
 				<value_node value="wpn_fps_pis_1911"/>
 				<value_node value="wpn_fps_pis_shrew"/>
-				<value_node value="wpn_fps_pis_deagle"/>
 				<value_node value="wpn_fps_pis_ppk"/>
 				<value_node value="wpn_fps_pis_usp"/>
 				<value_node value="wpn_fps_pis_hs2000"/>
-				<value_node value="wpn_fps_pis_2006m"/>
 				<value_node value="wpn_fps_pis_breech"/>
-				<value_node value="wpn_fps_pis_peacemaker"/>
 				<value_node value="wpn_fps_pis_p226"/>
 				<value_node value="wpn_fps_pis_g18c"/>
 				<value_node value="wpn_fps_pis_pl14"/>
@@ -412,6 +373,34 @@
 				<value_node value="wpn_fps_pis_beer"/>
 				<value_node value="wpn_fps_pis_czech"/>
 				<value_node value="wpn_fps_pis_stech"/>
+				<value_node value="wpn_fps_pis_model3"/>
+				<value_node value="wpn_fps_pis_holt"/>
+				<value_node value="wpn_fps_pis_m1911"/>
+
+				<value_node value="wpn_fps_pis_x_sparrow"/>
+				<value_node value="wpn_fps_x_b92fs"/>
+				<value_node value="wpn_fps_pis_x_c96"/>
+				<value_node value="wpn_fps_pis_x_g17"/>
+				<value_node value="wpn_fps_jowi"/>
+				<value_node value="wpn_fps_pis_x_g22c"/>
+				<value_node value="wpn_fps_x_packrat"/>
+				<value_node value="wpn_fps_x_1911"/>
+				<value_node value="wpn_fps_pis_x_shrew"/>
+				<value_node value="wpn_fps_pis_x_ppk"/>
+				<value_node value="wpn_fps_pis_x_usp"/>
+				<value_node value="wpn_fps_pis_x_hs2000"/>
+				<value_node value="wpn_fps_pis_x_breech"/>
+				<value_node value="wpn_fps_pis_x_p226"/>
+				<value_node value="wpn_fps_pis_x_g18c"/>
+				<value_node value="wpn_fps_pis_x_pl14"/>
+				<value_node value="wpn_fps_pis_x_legacy"/>
+				<value_node value="wpn_fps_pis_x_beer"/>
+				<value_node value="wpn_fps_pis_x_czech"/>
+				<value_node value="wpn_fps_pis_x_stech"/>
+				<value_node value="wpn_fps_pis_x_model3"/>
+				<value_node value="wpn_fps_pis_x_holt"/>
+				<value_node value="wpn_fps_pis_x_m1911"/>
+
 				<value_node value="wpn_fps_smg_tec9"/>
 				<value_node value="wpn_fps_smg_thompson"/>
 				<value_node value="wpn_fps_smg_mp9"/>
@@ -434,6 +423,31 @@
 				<value_node value="wpn_fps_smg_coal"/>
 				<value_node value="wpn_fps_smg_uzi"/>
 				<value_node value="wpn_fps_smg_shepheard"/>
+				<value_node value="wpn_fps_smg_vityaz"/>
+				
+				<value_node value="wpn_fps_smg_x_tec9"/>
+				<value_node value="wpn_fps_smg_x_m1928"/>
+				<value_node value="wpn_fps_smg_x_mp9"/>
+				<value_node value="wpn_fps_smg_x_scorpion"/>
+				<value_node value="wpn_fps_smg_x_mp5"/>
+				<value_node value="wpn_fps_smg_x_hajk"/>
+				<value_node value="wpn_fps_smg_x_sr2"/>
+				<value_node value="wpn_fps_smg_x_schakal"/>
+				<value_node value="wpn_fps_smg_x_cobray"/>
+				<value_node value="wpn_fps_smg_x_p90"/>
+				<value_node value="wpn_fps_smg_x_akmsu"/>
+				<value_node value="wpn_fps_smg_x_polymer"/>
+				<value_node value="wpn_fps_smg_x_mac10"/>
+				<value_node value="wpn_fps_smg_x_baka"/>
+				<value_node value="wpn_fps_smg_x_erma"/>
+				<value_node value="wpn_fps_smg_x_olympic"/>
+				<value_node value="wpn_fps_smg_x_sterling"/>
+				<value_node value="wpn_fps_smg_x_mp7"/>
+				<value_node value="wpn_fps_smg_x_m45"/>
+				<value_node value="wpn_fps_smg_x_coal"/>
+				<value_node value="wpn_fps_smg_x_uzi"/>
+				<value_node value="wpn_fps_smg_x_shepheard"/>
+				<value_node value="wpn_fps_smg_x_vityaz"/>
 			</weapons>
 		</WeaponMod>
 	
@@ -465,47 +479,6 @@
 				max_enemy_penetrations = "4"
 			/>
 			<weapons>
-				<value_node value="wpn_fps_x_b92fs"/>
-				<value_node value="wpn_fps_pis_x_g17"/>
-				<value_node value="wpn_fps_jowi"/>
-				<value_node value="wpn_fps_pis_x_g22c"/>
-				<value_node value="wpn_fps_smg_x_mp5"/>
-				<value_node value="wpn_fps_x_packrat"/>
-				<value_node value="wpn_fps_x_1911"/>
-				<value_node value="wpn_fps_pis_x_shrew"/>
-				<value_node value="wpn_fps_smg_x_sr2"/>
-				<value_node value="wpn_fps_pis_x_usp"/>
-				<value_node value="wpn_fps_smg_x_akmsu"/>
-				<value_node value="wpn_fps_pis_x_sparrow"/>
-				<value_node value="wpn_fps_pis_x_c96"/>
-				<value_node value="wpn_fps_pis_x_ppk"/>
-				<value_node value="wpn_fps_pis_x_breech"/>
-				<value_node value="wpn_fps_pis_x_p226"/>
-				<value_node value="wpn_fps_pis_x_g18c"/>
-				<value_node value="wpn_fps_pis_x_pl14"/>
-				<value_node value="wpn_fps_pis_x_legacy"/>
-				<value_node value="wpn_fps_smg_x_tec9"/>
-				<value_node value="wpn_fps_smg_x_m1928"/>
-				<value_node value="wpn_fps_smg_x_mp9"/>
-				<value_node value="wpn_fps_smg_x_scorpion"/>
-				<value_node value="wpn_fps_smg_x_hajk"/>
-				<value_node value="wpn_fps_smg_x_schakal"/>
-				<value_node value="wpn_fps_smg_x_cobray"/>
-				<value_node value="wpn_fps_smg_x_p90"/>
-				<value_node value="wpn_fps_smg_x_polymer"/>
-				<value_node value="wpn_fps_smg_x_mac10"/>
-				<value_node value="wpn_fps_smg_x_baka"/>
-				<value_node value="wpn_fps_smg_x_erma"/>
-				<value_node value="wpn_fps_smg_x_olympic"/>
-				<value_node value="wpn_fps_smg_x_sterling"/>
-				<value_node value="wpn_fps_smg_x_shepheard"/>
-				<value_node value="wpn_fps_smg_x_mp7"/>
-				<value_node value="wpn_fps_smg_x_m45"/>
-				<value_node value="wpn_fps_smg_x_coal"/>
-				<value_node value="wpn_fps_smg_x_uzi"/>
-				<value_node value="wpn_fps_pis_x_beer"/>
-				<value_node value="wpn_fps_pis_x_czech"/>
-				<value_node value="wpn_fps_pis_x_stech"/>
 				<value_node value="wpn_fps_pis_sparrow"/>
 				<value_node value="wpn_fps_pis_beretta"/>
 				<value_node value="wpn_fps_pis_c96"/>
@@ -526,6 +499,34 @@
 				<value_node value="wpn_fps_pis_beer"/>
 				<value_node value="wpn_fps_pis_czech"/>
 				<value_node value="wpn_fps_pis_stech"/>
+				<value_node value="wpn_fps_pis_model3"/>
+				<value_node value="wpn_fps_pis_holt"/>
+				<value_node value="wpn_fps_pis_m1911"/>
+
+				<value_node value="wpn_fps_pis_x_sparrow"/>
+				<value_node value="wpn_fps_x_b92fs"/>
+				<value_node value="wpn_fps_pis_x_c96"/>
+				<value_node value="wpn_fps_pis_x_g17"/>
+				<value_node value="wpn_fps_jowi"/>
+				<value_node value="wpn_fps_pis_x_g22c"/>
+				<value_node value="wpn_fps_x_packrat"/>
+				<value_node value="wpn_fps_x_1911"/>
+				<value_node value="wpn_fps_pis_x_shrew"/>
+				<value_node value="wpn_fps_pis_x_ppk"/>
+				<value_node value="wpn_fps_pis_x_usp"/>
+				<value_node value="wpn_fps_pis_x_hs2000"/>
+				<value_node value="wpn_fps_pis_x_breech"/>
+				<value_node value="wpn_fps_pis_x_p226"/>
+				<value_node value="wpn_fps_pis_x_g18c"/>
+				<value_node value="wpn_fps_pis_x_pl14"/>
+				<value_node value="wpn_fps_pis_x_legacy"/>
+				<value_node value="wpn_fps_pis_x_beer"/>
+				<value_node value="wpn_fps_pis_x_czech"/>
+				<value_node value="wpn_fps_pis_x_stech"/>
+				<value_node value="wpn_fps_pis_x_model3"/>
+				<value_node value="wpn_fps_pis_x_holt"/>
+				<value_node value="wpn_fps_pis_x_m1911"/>
+
 				<value_node value="wpn_fps_smg_tec9"/>
 				<value_node value="wpn_fps_smg_thompson"/>
 				<value_node value="wpn_fps_smg_mp9"/>
@@ -548,6 +549,31 @@
 				<value_node value="wpn_fps_smg_coal"/>
 				<value_node value="wpn_fps_smg_uzi"/>
 				<value_node value="wpn_fps_smg_shepheard"/>
+				<value_node value="wpn_fps_smg_vityaz"/>
+				
+				<value_node value="wpn_fps_smg_x_tec9"/>
+				<value_node value="wpn_fps_smg_x_m1928"/>
+				<value_node value="wpn_fps_smg_x_mp9"/>
+				<value_node value="wpn_fps_smg_x_scorpion"/>
+				<value_node value="wpn_fps_smg_x_mp5"/>
+				<value_node value="wpn_fps_smg_x_hajk"/>
+				<value_node value="wpn_fps_smg_x_sr2"/>
+				<value_node value="wpn_fps_smg_x_schakal"/>
+				<value_node value="wpn_fps_smg_x_cobray"/>
+				<value_node value="wpn_fps_smg_x_p90"/>
+				<value_node value="wpn_fps_smg_x_akmsu"/>
+				<value_node value="wpn_fps_smg_x_polymer"/>
+				<value_node value="wpn_fps_smg_x_mac10"/>
+				<value_node value="wpn_fps_smg_x_baka"/>
+				<value_node value="wpn_fps_smg_x_erma"/>
+				<value_node value="wpn_fps_smg_x_olympic"/>
+				<value_node value="wpn_fps_smg_x_sterling"/>
+				<value_node value="wpn_fps_smg_x_mp7"/>
+				<value_node value="wpn_fps_smg_x_m45"/>
+				<value_node value="wpn_fps_smg_x_coal"/>
+				<value_node value="wpn_fps_smg_x_uzi"/>
+				<value_node value="wpn_fps_smg_x_shepheard"/>
+				<value_node value="wpn_fps_smg_x_vityaz"/>
 			</weapons>
 		</WeaponMod>
 	
@@ -582,15 +608,16 @@
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_lemming"/>
-				<value_node value="wpn_fps_pis_x_chinchilla"/>
-				<value_node value="wpn_fps_x_deagle"/>
-				<value_node value="wpn_fps_pis_x_rage"/>
-				<value_node value="wpn_fps_pis_x_2006m"/>
 				<value_node value="wpn_fps_pis_chinchilla"/>
 				<value_node value="wpn_fps_pis_deagle"/>
 				<value_node value="wpn_fps_pis_rage"/>
 				<value_node value="wpn_fps_pis_2006m"/>
 				<value_node value="wpn_fps_pis_peacemaker"/>
+
+				<value_node value="wpn_fps_pis_x_chinchilla"/>
+				<value_node value="wpn_fps_x_deagle"/>
+				<value_node value="wpn_fps_pis_x_rage"/>
+				<value_node value="wpn_fps_pis_x_2006m"/>
 			</weapons>
 		</WeaponMod>
 		

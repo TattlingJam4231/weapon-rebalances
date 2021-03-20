@@ -17,15 +17,15 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 
 	local ray_hits = {}
 	local hit_enemy = false
+	local enemy_mask = managers.slot:get_mask("enemies")
+	local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
+	local shield_mask = managers.slot:get_mask("enemy_shield_check")
+	local ai_vision_ids = Idstring("ai_vision")
+	local bulletproof_ids = Idstring("bulletproof")
 
 	local function collect_hits(from, to)
 		local hits = nil
 		hit_enemy = false
-		local enemy_mask = managers.slot:get_mask("enemies")
-		local wall_mask = managers.slot:get_mask("world_geometry", "vehicles")
-		local shield_mask = managers.slot:get_mask("enemy_shield_check")
-		local ai_vision_ids = Idstring("ai_vision")
-		local bulletproof_ids = Idstring("bulletproof")
 		
 		local units_hit = {}
 		local unique_hits = {}
