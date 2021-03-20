@@ -95,46 +95,46 @@ function WeaponTweakData:init(tweak_data)
 	--ammo pickup
 	local pickup = {
 		assault = {
-			t4 = {2 /1.35, 3 	 /1.35},
-			t3 = {4   /1.35, 6 	 /1.35},
-			t2 = {6   /1.35, 11  /1.35},
-			t1 = {12  /1.35, 24  /1.35}
+			t4 = {2		/1.35, 3	/1.35},
+			t3 = {4		/1.35, 6	/1.35},
+			t2 = {6		/1.35, 11	/1.35},
+			t1 = {12	/1.35, 24	/1.35}
 		},
 		shotgun = {
-			t5 = {0.4 /1.35, 1.5 /1.35},
-			t4 = {1   /1.35, 2   /1.35},
-			t3 = {1.5 /1.35, 3   /1.35},
-			t2 = {2   /1.35, 3   /1.35},
-			t1 = {4   /1.35, 6   /1.35}
+			t5 = {0.4	/1.35, 1.5	/1.35},
+			t4 = {1		/1.35, 2	/1.35},
+			t3 = {1.5	/1.35, 3	/1.35},
+			t2 = {2		/1.35, 3	/1.35},
+			t1 = {4		/1.35, 6	/1.35}
 		},
 		lmg = {
-			t3 = {5   /1.35, 10  /1.35},
-			t2 = {10  /1.35, 25  /1.35},
-			t1 = {15  /1.35, 35  /1.35}
+			t3 = {5		/1.35, 10	/1.35},
+			t2 = {10	/1.35, 25	/1.35},
+			t1 = {15	/1.35, 35	/1.35}
 		},
 		sniper = {
-			t3 = {0.4 /1.35, 1.5 /1.35},
-			t2 = {1   /1.35, 2   /1.35},
-			t1 = {2   /1.35, 3   /1.35}
+			t3 = {0.1		 , 1	/1.35},
+			t2 = {1		/1.35, 1	/1.35},
+			t1 = {1		/1.35, 1.75	/1.35}
 		},
 		smg = {
-			t3 = {3   /1.35, 7   /1.35},
-			t2 = {6   /1.35, 11  /1.35},
-			t1 = {8   /1.35, 16  /1.35}
+			t3 = {3		/1.35, 7	/1.35},
+			t2 = {6		/1.35, 11	/1.35},
+			t1 = {8		/1.35, 16	/1.35}
 		},
 		pistol = {
-			t4 = {1.5 /1.35, 3   /1.35},
-			t3 = {2.5 /1.35, 5   /1.35},
-			t2 = {4   /1.35, 9   /1.35},
-			t1 = {8   /1.35, 13  /1.35}
+			t4 = {1.5	/1.35, 3	/1.35},
+			t3 = {2.5	/1.35, 5	/1.35},
+			t2 = {4		/1.35, 9	/1.35},
+			t1 = {8		/1.35, 13	/1.35}
 		},
 		gl = {
-			t2 = {0        , 0.9 /1.35},
-			t1 = {0        , 1.1 /1.35}
+			t2 = {0			 , 0.9	/1.35},
+			t1 = {0			 , 1.1	/1.35}
 		}
 	}
 	
-	--SHOTGUNS
+	--SHOTGUNS------------------------------------------------------------------------------------------------------------------------------------------------
 	
 		--t5 shotguns---------------------------------------------------------------
 		
@@ -177,6 +177,10 @@ function WeaponTweakData:init(tweak_data)
 			self.m1897.AMMO_PICKUP = pickup.shotgun.t4
 			self.m1897.stats.damage = 110
 			
+			--mosconi tactical
+			self.m590.AMMO_PICKUP = pickup.shotgun.t4
+			self.m590.stats.damage = 110
+			
 			--locomotive
 			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
 			self.serbu.stats.damage = 110
@@ -215,7 +219,7 @@ function WeaponTweakData:init(tweak_data)
 			--grimm
 			self.basset.AMMO_PICKUP = pickup.shotgun.t1
 	
-	--ASSAULT RIFLES
+	--ASSAULT RIFLES------------------------------------------------------------------------------------------------------------------------------------------
 	
 		--t4 assault rifles---------------------------------------------------------
 		
@@ -400,7 +404,7 @@ function WeaponTweakData:init(tweak_data)
 			-- self.tecci.stats.suppression = 15
 			--self.tecci.stats.concealment = 4
 	
-	--LMGs
+	--LMGs----------------------------------------------------------------------------------------------------------------------------------------------------
 	
 		--t3 lmgs-------------------------------------------------------------------
 		
@@ -467,7 +471,7 @@ function WeaponTweakData:init(tweak_data)
 			self.mg42.stats.suppression = 1
 			self.mg42.stats.damage = 57
 	
-	--SNIPERS
+	--SNIPERS-------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		--t3 snipers----------------------------------------------------------------
 		
@@ -520,7 +524,7 @@ function WeaponTweakData:init(tweak_data)
 			self.sbl.stats.damage = 198
 			self.sbl.stats_modifiers = {damage = 1}
 		
-	--SMGs
+	--SMGs----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		--t3 smgs-------------------------------------------------------------------
 			
@@ -586,6 +590,9 @@ function WeaponTweakData:init(tweak_data)
 			--typewriter
 			self.m1928.AMMO_PICKUP = pickup.smg.t2
 			
+			--ak gen 21
+			self.vityaz.AMMO_PICKUP = pickup.smg.t2
+			
 			--akimbo kobus
 			self.x_p90.AMMO_PICKUP = pickup.smg.t2
 			
@@ -609,6 +616,9 @@ function WeaponTweakData:init(tweak_data)
 			
 			--akimbo typewriter
 			self.x_m1928.AMMO_PICKUP = pickup.smg.t2
+			
+			--akimbo ak gen 21
+			self.x_vityaz.AMMO_PICKUP = pickup.smg.t2
 			
 		--t1 smgs-------------------------------------------------------------------
 			
@@ -660,7 +670,7 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo signature
 			self.x_shepheard.AMMO_PICKUP = pickup.smg.t1
 			
-	--PISTOLS
+	--PISTOLS-------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		--t4 pistols----------------------------------------------------------------
 			
@@ -676,11 +686,15 @@ function WeaponTweakData:init(tweak_data)
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
 			self.mateba.AMMO_MAX = 48
+			self.mateba.fire_mode_data.fire_rate = 0.166
+			self.mateba.single.fire_rate = 0.166
 			self.mateba.armor_piercing_chance = 1
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.chinchilla.AMMO_MAX = 48
+			self.chinchilla.fire_mode_data.fire_rate = 0.166
+			self.chinchilla.single.fire_rate = 0.166
 			self.chinchilla.armor_piercing_chance = 1
 			
 			--bronco
@@ -693,6 +707,8 @@ function WeaponTweakData:init(tweak_data)
 			--deagle
 			self.deagle.AMMO_PICKUP = pickup.pistol.t4
 			self.deagle.AMMO_MAX = 30
+			self.deagle.fire_mode_data.fire_rate = 0.2
+			self.deagle.single.fire_rate = 0.2
 			self.deagle.stats.damage = 176
 			self.deagle.stats.spread = 18
 			self.deagle.stats.recoil = 1
@@ -701,21 +717,29 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
 			self.x_2006m.AMMO_MAX = 48
+			self.x_2006m.fire_mode_data.fire_rate = 0.166
+			self.x_2006m.single.fire_rate = 0.166
 			self.x_2006m.armor_piercing_chance = 1
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
 			self.x_chinchilla.AMMO_MAX = 48
+			self.x_chinchilla.fire_mode_data.fire_rate = 0.166
+			self.x_chinchilla.single.fire_rate = 0.166
 			self.x_chinchilla.armor_piercing_chance = 1
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
 			self.x_rage.AMMO_MAX = 48
+			self.x_rage.fire_mode_data.fire_rate = 0.166
+			self.x_rage.single.fire_rate = 0.166
 			self.x_rage.armor_piercing_chance = 1
 			
 			--akimbo deagle
 			self.x_deagle.AMMO_PICKUP = pickup.pistol.t4
 			self.x_deagle.AMMO_MAX = 30
+			self.x_deagle.fire_mode_data.fire_rate = 0.2
+			self.x_deagle.single.fire_rate = 0.2
 			self.x_deagle.stats.damage = 176
 			self.x_deagle.stats.spread = 18
 			self.x_deagle.stats.recoil = 1
@@ -741,6 +765,14 @@ function WeaponTweakData:init(tweak_data)
 			self.lemming.can_shoot_through_shield = nil
 			self.lemming.can_shoot_through_wall = nil
 			
+			--frenchman model 87
+			self.model3.AMMO_PICKUP = pickup.pistol.t3
+			self.model3.stats.damage = 135
+			
+			--crosskill chunky
+			self.m1911.AMMO_PICKUP = pickup.pistol.t3
+			-- self.m1911.stats.damage = 120
+			
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3
 			self.x_pl14.AMMO_MAX = 60
@@ -755,6 +787,16 @@ function WeaponTweakData:init(tweak_data)
 			self.x_breech.stats.damage = 121
 			self.x_breech.fire_mode_data.fire_rate = 0.25
 			self.x_breech.single.fire_rate = 0.25
+			
+			--akimbo frenchman model 87
+			self.x_model3.AMMO_PICKUP = pickup.pistol.t3
+			self.x_model3.AMMO_MAX = self.model3.AMMO_MAX
+			self.x_model3.stats.damage = 135
+			
+			--crosskill chunky
+			self.x_m1911.AMMO_PICKUP = pickup.pistol.t3
+			self.x_m1911.AMMO_MAX = self.x_m1911.AMMO_MAX
+			-- self.x_m1911.stats.damage = 120
 			
 		--t2 pistols----------------------------------------------------------------
 			
@@ -790,6 +832,10 @@ function WeaponTweakData:init(tweak_data)
 			self.stech.AMMO_PICKUP = pickup.pistol.t2
 			self.stech.AMMO_MAX = 80
 			
+			--holt 9mm
+			self.holt.AMMO_PICKUP = pickup.pistol.t2
+			self.holt.AMMO_MAX = 75
+			
 			--akimbo chimano custom
 			self.x_g22c.AMMO_PICKUP = pickup.pistol.t2
 			self.x_g22c.AMMO_MAX = self.g22c.AMMO_MAX
@@ -821,6 +867,10 @@ function WeaponTweakData:init(tweak_data)
 			--akimbo igor automatik pistol
 			self.x_stech.AMMO_PICKUP = pickup.pistol.t2
 			self.x_stech.AMMO_MAX = self.stech.AMMO_MAX
+			
+			--holt 9mm
+			self.x_holt.AMMO_PICKUP = pickup.pistol.t2
+			self.x_holt.AMMO_MAX = self.holt.AMMO_MAX
 			
 		--t1 pistols----------------------------------------------------------------
 			
