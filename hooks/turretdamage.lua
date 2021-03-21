@@ -1,3 +1,0 @@
-function SentryGunDamage:set_shield_health(shield_health_amount)
-	self._shield_health = shield_health_amount
-end

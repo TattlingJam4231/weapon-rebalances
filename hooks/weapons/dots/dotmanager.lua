@@ -73,10 +73,10 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 					dot_info.dot_damage_received_time = dot_damage_received_time
 					
 					if dot_info.diminish_scale_length then
-						if dot_info.length_cap then
-							dot_info.dot_length = math.max(math.min(dot_info.dot_length + dot_data.scale_length, dot_info.length_cap), dot_info.dot_length + (dot_data.scale_length * (dot_info.diminish_scale_length ^ dot_info.dot_length)))
+						if dot_info.diminish_scale_length and dot_info.diminish_scale_length <= dot_info.dot_length then
+							dot_info.dot_length = dot_info.dot_length + (dot_data.scale_length * (dot_info.diminish_scale_length / (dot_info.dot_length + dot_data.scale_length)))
 						else
-							dot_info.dot_length = dot_info.dot_length + (dot_data.scale_length * (dot_info.diminish_scale_length ^ dot_info.dot_length))
+							dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
 						end
 						
 					elseif dot_info.length_cap then
@@ -85,7 +85,7 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 						dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
 					end
 				end
-				
+
 				--update dot_tick_period
 				if dot_info.scale_tick_period and dot_data.scale_tick_period then
 					dot_info.dot_tick_period = math.max(dot_info.dot_tick_period - dot_data.scale_tick_period, dot_info.min_tick_period)
@@ -180,9 +180,7 @@ function DOTManager:create_dot_data(dot_info)
 		end
 		dot_data.scale_length = custom_data.scale_length
 		dot_data.length_cap = custom_data.length_cap
-		if custom_data.diminish_scale_length and 0 <= custom_data.diminish_scale_length and custom_data.diminish_scale_length<= 1 then
-			dot_data.diminish_scale_length = custom_data.diminish_scale_length
-		end
+		dot_data.diminish_scale_length = custom_data.diminish_scale_length
 		
 		--Tick Period variables
 		dot_data.dot_tick_period = custom_data.dot_tick_period or dot_data.dot_tick_period
