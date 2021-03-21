@@ -16,11 +16,6 @@ function WeaponTweakData:init(tweak_data)
 	
 	self.swat_van_turret_module.BODY_DAMAGE_CLAMP = 40000
 	
-	--Thanatos Rework
-	self.m95.stats_modifiers = {damage = 1}
-	self.m95.stats.damage = 3500
-	self.m95.AMMO_PICKUP = {0.05  /1.35, 0.55  /1.35}
-	
 	--Vulcan Minigun Rework
 	self.m134.AMMO_MAX = 1300/1.3125
 	self.m134.CLIP_AMMO_MAX = 1300
@@ -113,7 +108,8 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {15	/1.35, 35	/1.35}
 		},
 		sniper = {
-			t3 = {0.1		 , 1	/1.35},
+			t4 = {0.1	/1.35, 0.55	/1.35},
+			t3 = {0.1	/1.35, 1	/1.35},
 			t2 = {1		/1.35, 1	/1.35},
 			t1 = {1		/1.35, 1.75	/1.35}
 		},
@@ -129,8 +125,8 @@ function WeaponTweakData:init(tweak_data)
 			t1 = {8		/1.35, 13	/1.35}
 		},
 		gl = {
-			t2 = {0			 , 0.9	/1.35},
-			t1 = {0			 , 1.1	/1.35}
+			t2 = {0		/1.35, 0.9	/1.35},
+			t1 = {0		/1.35, 1.1	/1.35}
 		}
 	}
 	
@@ -451,8 +447,6 @@ function WeaponTweakData:init(tweak_data)
 			self.m249.stats.damage = 55
 			
 			--ksp 58
-			-- self.par.timers.reload_not_empty = 5.62
-			-- self.par.timers.reload_empty = 5.62
 			self.par.AMMO_PICKUP = pickup.lmg.t1
 			self.par.AMMO_MAX = 600
 			self.par.stats.spread = 3
@@ -473,6 +467,13 @@ function WeaponTweakData:init(tweak_data)
 	
 	--SNIPERS-------------------------------------------------------------------------------------------------------------------------------------------------
 		
+		--t4 snipers----------------------------------------------------------------
+			
+			--thanatos
+			self.m95.stats_modifiers = {damage = 1}
+			self.m95.stats.damage = 3500
+			self.m95.AMMO_PICKUP = pickup.sniper.t4
+
 		--t3 snipers----------------------------------------------------------------
 		
 			--nagant

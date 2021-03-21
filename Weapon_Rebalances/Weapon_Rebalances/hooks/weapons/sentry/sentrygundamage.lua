@@ -58,3 +58,7 @@ function SentryGunDamage:die(attacker_unit, variant, options)
 		self._turret_destroyed_snd = self._unit:sound_source():post_event("wp_sentrygun_broken_loop")
 	end
 end
+
+function SentryGunDamage:set_shield_health(shield_health_amount)
+	self._shield_health = shield_health_amount
+end

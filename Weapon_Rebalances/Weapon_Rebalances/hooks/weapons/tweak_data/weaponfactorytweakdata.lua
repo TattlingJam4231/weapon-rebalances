@@ -330,8 +330,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 5,
-							length_cap = 10.1,
-							diminish_scale_length = 0.92,
+							diminish_scale_length = 15,
 							dot_can_crit = true
 							
 						}
@@ -372,8 +371,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 4,
-							length_cap = 8.1,
-							diminish_scale_length = 0.93,
+							diminish_scale_length = 10,
 							dot_can_crit = true
 							
 						}
@@ -406,8 +404,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 3,
-							length_cap = 10.1,
-							diminish_scale_length = 0.95,
+							diminish_scale_length = 8,
 							dot_can_crit = true
 							
 						}
@@ -439,9 +436,8 @@ function WeaponFactoryTweakData:init(...)
 							dot_length = 3.1,
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
-							scale_length = 3,
-							length_cap = 9.1,
-							diminish_scale_length = 0.93,
+							scale_length = 2.5,
+							diminish_scale_length = 8,
 							dot_can_crit = true
 							
 						}
@@ -474,8 +470,7 @@ function WeaponFactoryTweakData:init(...)
 							dot_trigger_max_distance = 2000,
 							dot_tick_period = 0.5,
 							scale_length = 2,
-							length_cap = 12.1,
-							diminish_scale_length = 0.93,
+							diminish_scale_length = 8,
 							dot_can_crit = true
 							
 						}
@@ -486,7 +481,6 @@ function WeaponFactoryTweakData:init(...)
 					damage_far_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
-					flame_max_range = 3000,
 					rays = 12
 				}
 			}
