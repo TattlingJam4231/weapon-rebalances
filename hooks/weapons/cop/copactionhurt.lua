@@ -86,8 +86,7 @@ function CopActionHurt:init(action_desc, common_data)
 
 					self._unit:character_damage():set_last_time_unit_got_fire_damage(t)
 				end
-				--modd
-				ed----------------------------------------------------------------------
+				--modded----------------------------------------------------------------------
 
 			end
 		end

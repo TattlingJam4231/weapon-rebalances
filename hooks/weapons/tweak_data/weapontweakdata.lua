@@ -1,7 +1,4 @@
-local original_init = WeaponTweakData.init
-
-function WeaponTweakData:init(tweak_data)
-	original_init(self, tweak_data)
+Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self)
 
 	local SELECTION = {
 		SECONDARY = 1,
@@ -975,4 +972,4 @@ function WeaponTweakData:init(tweak_data)
 			self.arbiter.AMMO_PICKUP = pickup.gl.t1
 			self.arbiter.stats.damage = 54
 			
-end
+end)

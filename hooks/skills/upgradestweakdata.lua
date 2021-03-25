@@ -1,6 +1,5 @@
-local original_player_definitions = UpgradesTweakData._player_definitions
+Hooks:PostHook(UpgradesTweakData, "init", "WR UpgradesTweakData init", function(self)
 
-function UpgradesTweakData:_player_definitions(...)
 	original_player_definitions(self, ...)
 	
 	local reload_multiplier = 1.35
@@ -27,4 +26,4 @@ function UpgradesTweakData:_player_definitions(...)
 			time = 4
 		}
 	}
-end
+end)

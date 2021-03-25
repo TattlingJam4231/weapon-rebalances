@@ -1,7 +1,7 @@
 {
 "name" : "Weapon Rebalances Developer",
 "description" : "",
-"author" : "Oryo",
+"author" : "TattlingJam4231",
 "image" : "oryo.png",
 "color" : "0 1 0.95",
 "version" : "1.0",
