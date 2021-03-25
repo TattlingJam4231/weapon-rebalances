@@ -4,12 +4,6 @@ function CopDamage:add_crit_chance(attack_data)
 	if attack_data.weapon_unit and attack_data.weapon_unit:base()._ammo_data and attack_data.weapon_unit:base()._ammo_data.crit_chance then
 		add_crit = add_crit + attack_data.weapon_unit:base()._ammo_data.crit_chance
 	end
-	
-	if managers.player.get_gambler_crit_bonus then
-		if managers.player:has_category_upgrade("temporary", "loose_ammo_crit_bonus") then
-			add_crit = add_crit + managers.player:get_gambler_crit_bonus()
-		end
-	end
 
 	return add_crit
 end

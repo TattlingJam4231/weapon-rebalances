@@ -1,8 +1,5 @@
-local original_init = SkillTreeTweakData.init
+Hooks:PostHook(SkillTreeTweakData, "init", "WR SkillTreeTweakData init", function(self)
 
-function SkillTreeTweakData:init()
-	original_init(self)
-	
 	self.skills.dance_instructor = {
 		{
 			upgrades = {
@@ -43,4 +40,4 @@ function SkillTreeTweakData:init()
 			1
 		}
 	}
-end
+end)

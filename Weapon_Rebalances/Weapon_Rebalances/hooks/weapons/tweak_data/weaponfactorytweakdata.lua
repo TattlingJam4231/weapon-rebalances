@@ -1,8 +1,5 @@
-local original_init = WeaponFactoryTweakData.init
+Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init", function(self)
 
-function WeaponFactoryTweakData:init(...)
-	original_init(self, ...)
-	
 	--SHOTGUN OVERRIDES--------------------------------------------------------------------------------------------------------------
 
 		local buckshot = {
@@ -1301,4 +1298,4 @@ function WeaponFactoryTweakData:init(...)
 							adds = {}
 						}
 					}
-end
+end)
