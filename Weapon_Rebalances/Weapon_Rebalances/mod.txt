@@ -1,5 +1,5 @@
 {
-"name" : "Weapon Rebalances Developer",
+"name" : "Weapon Rebalances",
 "description" : "",
 "author" : "TattlingJam4231",
 "version" : "1.0",
