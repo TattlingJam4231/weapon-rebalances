@@ -1,4 +1,4 @@
-if not tweakstats then
+if not wr_tweakstats then
 	if not tweak_data then return end
 
 	tweak_data.projectiles.launcher_rocket = {
@@ -52,5 +52,5 @@ if not tweakstats then
 		name_id = "bm_launcher_frag"
 	}
 
-	tweakstats = true
+	wr_tweakstats = true
 end

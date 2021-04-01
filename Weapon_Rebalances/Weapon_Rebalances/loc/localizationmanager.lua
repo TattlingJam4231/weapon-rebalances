@@ -1,4 +1,4 @@
-Hooks:Add("LocalizationManagerPostInit", "Weapon Rebalances Localization", function(loc)
+Hooks:Add("LocalizationManagerPostInit", "WR Localization", function(loc)
 	LocalizationManager:add_localized_strings({
 		["menu_dance_instructor_desc"] = 				"BASIC: ##2 points##\n" ..
 														"Your pistol magazine sizes are increased by ##5## bullets.\n\n" ..
