@@ -3,7 +3,6 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 
 ### Dependencies
  - [BeardLib](https://modworkshop.net/mod/14924)
- - [Custom Poison Dots](https://github.com/TattlingJam4231/custom-poison-dots)
  
 ## Weapon changes
   1. [Misc. Attachments](https://github.com/TattlingJam4231/weapon-rebalances/tree/master#misc-attachments)
