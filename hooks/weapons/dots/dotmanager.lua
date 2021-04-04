@@ -1,8 +1,9 @@
 function DOTManager:update(t, dt)
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
+		local tick_period = dot_info.dot_tick_period or 0.5
 		
-		if dot_info.dot_counter >= dot_info.dot_tick_period then
+		if dot_info.dot_counter >= tick_period then
 			self:_damage_dot(dot_info)
 			dot_info.dot_counter = 0
 		end
