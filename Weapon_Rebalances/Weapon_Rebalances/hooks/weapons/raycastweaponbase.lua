@@ -18,11 +18,7 @@ function RaycastWeaponBase:_collect_hits(from, to)
 	
 	if self._ammo_data.can_shoot_through_armor_plating then
 
-		if self._can_shoot_through_wall then
-			ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
-		else
-			ray_hits = World:raycast_all("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units)
-		end
+		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
 		
 		for i, hit in ipairs(ray_hits) do
 			if not units_hit[hit.unit:key()] then
@@ -36,6 +32,9 @@ function RaycastWeaponBase:_collect_hits(from, to)
 				end
 			end
 		end
+
+		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
+
 	elseif self._can_shoot_through_wall then
 		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
 	else
