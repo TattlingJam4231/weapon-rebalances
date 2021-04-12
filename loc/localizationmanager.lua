@@ -45,7 +45,7 @@ Hooks:Add("LocalizationManagerPostInit", "WRd Localization", function(loc)
 
 		["bm_wp_upg_a_piercing_desc"] =					"Fires poison tipped darts. Penetrates body armor.",
 
-		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that penetrates body armor, enemies, shields and walls up to eight times.",
+		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that penetrates body armor, enemies, shields and walls up to six times.",
 
 		["bm_wp_upg_a_dragons_breath_desc"] = 			"Fires pellets that go up in sparks and flames. Burns through shields and body armor. This ammo type is harder to find."
 	})

@@ -126,6 +126,204 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			t1 = {0		/1.35, 1.1	/1.35}
 		}
 	}
+
+	local falloff = {
+		shotgun = {
+			double_barrel = {
+				optimal_distance = 400,
+				optimal_range = 1200,
+				near_falloff = 200,
+				far_falloff = 2200,
+				near_multiplier = 1.35,
+				far_multiplier = 0.09
+			},
+			t5 = {
+				optimal_distance = 0,
+				optimal_range = 1400,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1,
+				far_multiplier = 0.09
+			},
+			t4 = {
+				optimal_distance = 0,
+				optimal_range = 1200,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1,
+				far_multiplier = 0.07},
+			t3 = {
+				optimal_distance = 0,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 2100,
+				near_multiplier = 1,
+				far_multiplier = 0.05
+			},
+			t2 = {
+				optimal_distance = 0,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 1900,
+				near_multiplier = 1,
+				far_multiplier = 0.05
+			},
+			t1 = {
+				optimal_distance = 0,
+				optimal_range = 800,
+				near_falloff = 0,
+				far_falloff = 1900,
+				near_multiplier = 1,
+				far_multiplier = 0.05
+			}
+		},
+		lmg = {
+			t3 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.8
+			},
+			t2 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			t1 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.6
+			}
+		},
+		sniper = {
+			t4 = {
+				optimal_distance = 3000,
+				optimal_range = 3000,
+				near_falloff = 3000,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 1
+			},
+			t3 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.8
+			},
+			t2 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.5
+			},
+			t1 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.35
+			}
+		},
+		smg = {
+			t3 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1,
+				far_multiplier = 0.6
+			},
+			t2 = {
+				optimal_distance = 0,
+				optimal_range = 1400,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1,
+				far_multiplier = 0.5
+			},
+			t1 = {
+				optimal_distance = 0,
+				optimal_range = 1200,
+				near_falloff = 0,
+				far_falloff = 2400,
+				near_multiplier = 1,
+				far_multiplier = 0.4
+			}
+		},
+		aki_smg = {
+			t3 = {
+				optimal_distance = 300,
+				optimal_range = 1300,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1.3,
+				far_multiplier = 0.6
+			},
+			t2 = {
+				optimal_distance = 400,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1.3,
+				far_multiplier = 0.5
+			},
+			t1 = {
+				optimal_distance = 500,
+				optimal_range = 700,
+				near_falloff = 0,
+				far_falloff = 2400,
+				near_multiplier = 1.2,
+				far_multiplier = 0.4
+			}
+		},
+		pistol = {
+			t4 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.8
+			},
+			t3 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			t2 = {
+				optimal_distance = 0,
+				optimal_range = 1400,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			t1 = {
+				optimal_distance = 0,
+				optimal_range = 1200,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			}
+		}
+	}
 	
 	--SHOTGUNS------------------------------------------------------------------------------------------------------------------------------------------------
 	
@@ -133,84 +331,121 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--mosconi
 			self.huntsman.AMMO_PICKUP = pickup.shotgun.t5
+			self.huntsman.damage_falloff = falloff.shotgun.double_barrel
 			
 			--joceline
 			self.b682.AMMO_PICKUP = pickup.shotgun.t5
+			self.b682.damage_falloff = falloff.shotgun.double_barrel
 			
 			--breaker
 			self.boot.AMMO_PICKUP = pickup.shotgun.t5
+			self.boot.damage_falloff = falloff.shotgun.t5
 			
 			--akimbo judge
 			self.x_judge.AMMO_PICKUP = pickup.shotgun.t5
+			self.x_judge.damage_falloff = {
+				optimal_distance = 0,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 2600,
+				near_multiplier = 1,
+				far_multiplier = 0.08
+			}
 			self.x_judge.fire_mode_data.fire_rate = 0.166
 			self.x_judge.single.fire_rate = 0.166
+			self.x_judge.rays = 9
 			
 			--judge
 			self.judge.AMMO_PICKUP = pickup.shotgun.t5
+			self.judge.damage_falloff = {
+				optimal_distance = 0,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 2600,
+				near_multiplier = 1,
+				far_multiplier = 0.08
+			}
 			self.judge.fire_mode_data.fire_rate = 0.166
 			self.judge.single.fire_rate = 0.166
+			self.judge.rays = 9
 			
 			--gsps
 			self.m37.AMMO_PICKUP = pickup.shotgun.t5
+			self.m37.damage_falloff = falloff.shotgun.t5
 			
 			--claire
 			self.coach.AMMO_PICKUP = pickup.shotgun.t5
+			self.coach.damage_falloff = falloff.shotgun.double_barrel
 		
 		--t4 shotguns----------------------------------------------------------------
 		
 			--raven
 			self.ksg.AMMO_PICKUP = pickup.shotgun.t4
+			self.ksg.damage_falloff = falloff.shotgun.t4
 			self.ksg.stats.damage = 110
 			
 			--reinfeld 880
 			self.r870.AMMO_PICKUP = pickup.shotgun.t4
+			self.r870.damage_falloff = falloff.shotgun.t4
 			self.r870.stats.damage = 110
 			
 			--reinfeld 88
 			self.m1897.AMMO_PICKUP = pickup.shotgun.t4
+			self.m1897.damage_falloff = falloff.shotgun.t4
 			self.m1897.stats.damage = 110
 			
 			--mosconi tactical
 			self.m590.AMMO_PICKUP = pickup.shotgun.t4
+			self.m590.damage_falloff = falloff.shotgun.t4
 			self.m590.stats.damage = 110
 			
 			--locomotive
 			self.serbu.AMMO_PICKUP = pickup.shotgun.t4
+			self.serbu.damage_falloff = falloff.shotgun.t4
 			self.serbu.stats.damage = 110
 		
 		--t3 shotguns----------------------------------------------------------------
 		
 			--predator
 			self.spas12.AMMO_PICKUP = pickup.shotgun.t3
+			self.spas12.damage_falloff = falloff.shotgun.t3
 			
 			--m1014
 			self.benelli.AMMO_PICKUP = pickup.shotgun.t3
+			self.benelli.damage_falloff = falloff.shotgun.t3
 			
 			--street sweeper
 			self.striker.AMMO_PICKUP = pickup.shotgun.t3
+			self.striker.damage_falloff = falloff.shotgun.t3
 			self.striker.stats.damage = 55
 		
 		--t2 shotguns----------------------------------------------------------------
 		
 			--izhma
 			self.saiga.AMMO_PICKUP = pickup.shotgun.t2
+			self.saiga.damage_falloff = falloff.shotgun.t2
 			
 			--steakout
 			self.aa12.AMMO_PICKUP = pickup.shotgun.t2
+			self.aa12.damage_falloff = falloff.shotgun.t2
 			
 			--akimbo goliath
 			self.x_rota.AMMO_PICKUP = pickup.shotgun.t2
+			self.x_rota.damage_falloff = falloff.shotgun.t2
 			
 			--goliath
 			self.rota.AMMO_PICKUP = pickup.shotgun.t2
+			self.rota.damage_falloff = falloff.shotgun.t2
 		
 		--t1 shotguns----------------------------------------------------------------
 		
 			--brothers grimm
 			self.x_basset.AMMO_PICKUP = pickup.shotgun.t1
+			self.x_basset.damage_falloff = falloff.shotgun.t1
 			
 			--grimm
 			self.basset.AMMO_PICKUP = pickup.shotgun.t1
+			self.basset.damage_falloff = falloff.shotgun.t1
 	
 	--ASSAULT RIFLES------------------------------------------------------------------------------------------------------------------------------------------
 	
@@ -403,6 +638,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--m60
 			self.m60.AMMO_PICKUP = pickup.lmg.t3
+			self.m60.damage_falloff = falloff.lmg.t3
 			self.m60.AMMO_MAX = 200
 			self.m60.CLIP_AMMO_MAX = 100
 			self.m60.can_shoot_through_wall = true
@@ -416,6 +652,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--rpk
 			self.rpk.AMMO_PICKUP = pickup.lmg.t2
+			self.rpk.damage_falloff = falloff.lmg.t2
 			self.rpk.AMMO_MAX = 400
 			self.rpk.stats.spread = 1
 			self.rpk.stats.recoil = 10
@@ -425,6 +662,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--brenner
 			self.hk21.AMMO_PICKUP = pickup.lmg.t2
+			self.hk21.damage_falloff = falloff.lmg.t2
 			self.hk21.AMMO_MAX = 450
 			self.hk21.stats.spread = 2
 			self.hk21.stats.recoil = 12
@@ -436,6 +674,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--ksp
 			self.m249.AMMO_PICKUP = pickup.lmg.t1
+			self.m249.damage_falloff = falloff.lmg.t1
 			self.m249.AMMO_MAX = 600
 			self.m249.stats.spread = 3
 			self.m249.stats.recoil = 13
@@ -445,6 +684,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--ksp 58
 			self.par.AMMO_PICKUP = pickup.lmg.t1
+			self.par.damage_falloff = falloff.lmg.t1
 			self.par.AMMO_MAX = 600
 			self.par.stats.spread = 3
 			self.par.stats.recoil = 15
@@ -454,6 +694,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--buzzsaw
 			self.mg42.AMMO_PICKUP = pickup.lmg.t1
+			self.mg42.damage_falloff = falloff.lmg.t1
 			self.mg42.CLIP_AMMO_MAX = 200
 			self.mg42.AMMO_MAX = 600
 			self.mg42.stats.spread = 1
@@ -470,35 +711,43 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.m95.stats_modifiers = {damage = 1}
 			self.m95.stats.damage = 3500
 			self.m95.AMMO_PICKUP = pickup.sniper.t4
+			self.m95.damage_falloff = falloff.sniper.t4
 
 		--t3 snipers----------------------------------------------------------------
 		
 			--nagant
 			self.mosin.AMMO_PICKUP = pickup.sniper.t3
+			self.mosin.damage_falloff = falloff.sniper.t3
 			
 			--desertfox
 			self.desertfox.AMMO_PICKUP = pickup.sniper.t3
+			self.desertfox.damage_falloff = falloff.sniper.t3
 			
 			--r93
 			self.r93.AMMO_PICKUP = pickup.sniper.t3
+			self.r93.damage_falloff = falloff.sniper.t3
 			
 			--platypus
 			self.model70.AMMO_PICKUP = pickup.sniper.t3
+			self.model70.damage_falloff = falloff.sniper.t3
 		
 		--t2 snipers----------------------------------------------------------------
 		
 			--rattlesnake
 			self.msr.AMMO_PICKUP = pickup.sniper.t2
+			self.msr.damage_falloff = falloff.sniper.t2
 			self.msr.fire_mode_data.fire_rate = 0.75
 			self.msr.single.fire_rate = 0.75
 			
 			--repeater
 			self.winchester1874.AMMO_PICKUP = pickup.sniper.t2
+			self.winchester1874.damage_falloff = falloff.sniper.t2
 			self.winchester1874.fire_mode_data.fire_rate = 0.566
 			self.winchester1874.single.fire_rate = 0.566
 			
 			--r700
 			self.r700.AMMO_PICKUP = pickup.sniper.t2
+			self.r700.damage_falloff = falloff.sniper.t2
 			self.r700.fire_mode_data.fire_rate = 0.632
 			self.r700.single.fire_rate = 0.632
 		
@@ -506,18 +755,22 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--lebensauger
 			self.wa2000.AMMO_PICKUP = pickup.sniper.t1
+			self.wa2000.damage_falloff = falloff.sniper.t1
 			self.wa2000.stats.damage = 198
 			
 			--contractor
 			self.tti.AMMO_PICKUP = pickup.sniper.t1
+			self.tti.damage_falloff = falloff.sniper.t1
 			self.tti.stats.damage = 198
 			
 			--grom
 			self.siltstone.AMMO_PICKUP = pickup.sniper.t1
+			self.siltstone.damage_falloff = falloff.sniper.t1
 			self.siltstone.stats.damage = 198
 			
 			--bernetti rangehitter
 			self.sbl.AMMO_PICKUP = pickup.sniper.t1
+			self.sbl.damage_falloff = falloff.sniper.t1
 			self.sbl.AMMO_MAX = 40
 			self.sbl.stats.damage = 198
 			self.sbl.stats_modifiers = {damage = 1}
@@ -528,145 +781,191 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--tatonka
 			self.coal.AMMO_PICKUP = pickup.smg.t3
+			self.coal.damage_falloff = falloff.smg.t3
 			
 			--krinkov
 			self.akmsu.AMMO_PICKUP = pickup.smg.t3
+			self.akmsu.damage_falloff = falloff.smg.t3
 			
 			--jackal
 			self.schakal.AMMO_PICKUP = pickup.smg.t3
+			self.schakal.damage_falloff = falloff.smg.t3
 			
 			--mp40
 			self.erma.AMMO_PICKUP = pickup.smg.t3
+			self.erma.damage_falloff = falloff.smg.t3
 			
 			--swedish k
 			self.m45.AMMO_PICKUP = pickup.smg.t3
+			self.m45.damage_falloff = falloff.smg.t3
 			
 			--cr 805b
 			self.hajk.AMMO_PICKUP = pickup.smg.t3
+			self.hajk.damage_falloff = falloff.smg.t3
 			
 			--akimbo tatonka
 			self.x_coal.AMMO_PICKUP = pickup.smg.t3
+			self.x_coal.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo krinkov
 			self.x_akmsu.AMMO_PICKUP = pickup.smg.t3
+			self.x_akmsu.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo jackal
 			self.x_schakal.AMMO_PICKUP = pickup.smg.t3
+			self.x_schakal.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo mp40
 			self.x_erma.AMMO_PICKUP = pickup.smg.t3
+			self.x_erma.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo swedish k
 			self.x_m45.AMMO_PICKUP = pickup.smg.t3
+			self.x_m45.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo cr 805b
 			self.x_hajk.AMMO_PICKUP = pickup.smg.t3
+			self.x_hajk.damage_falloff = falloff.aki_smg.t3
 			
 		--t2 smgs-------------------------------------------------------------------
 			
 			--kobus
 			self.p90.AMMO_PICKUP = pickup.smg.t2
+			self.p90.damage_falloff = falloff.smg.t2
 			
 			--para
 			self.olympic.AMMO_PICKUP = pickup.smg.t2
+			self.olympic.damage_falloff = falloff.smg.t2
 			
 			--specops
 			self.mp7.AMMO_PICKUP = pickup.smg.t2
+			self.mp7.damage_falloff = falloff.smg.t2
 			
 			--heather
 			self.sr2.AMMO_PICKUP = pickup.smg.t2
+			self.sr2.damage_falloff = falloff.smg.t2
 			
 			--kross vertex
 			self.polymer.AMMO_PICKUP = pickup.smg.t2
+			self.polymer.damage_falloff = falloff.smg.t2
 			
 			--jacket's piece
 			self.cobray.AMMO_PICKUP = pickup.smg.t2
+			self.cobray.damage_falloff = falloff.smg.t2
 			
 			--mark 10
 			self.mac10.AMMO_PICKUP = pickup.smg.t2
+			self.mac10.damage_falloff = falloff.smg.t2
 			
 			--typewriter
 			self.m1928.AMMO_PICKUP = pickup.smg.t2
+			self.m1928.damage_falloff = falloff.smg.t2
 			
 			--ak gen 21
 			self.vityaz.AMMO_PICKUP = pickup.smg.t2
+			self.vityaz.damage_falloff = falloff.smg.t2
 			
 			--akimbo kobus
 			self.x_p90.AMMO_PICKUP = pickup.smg.t2
+			self.x_p90.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo para
 			self.x_olympic.AMMO_PICKUP = pickup.smg.t2
+			self.x_olympic.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo specops
 			self.x_mp7.AMMO_PICKUP = pickup.smg.t2
+			self.x_mp7.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo heather
 			self.x_sr2.AMMO_PICKUP = pickup.smg.t2
+			self.x_sr2.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo kross vertex
 			self.x_polymer.AMMO_PICKUP = pickup.smg.t2
+			self.x_polymer.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo jacket's piece
 			self.x_cobray.AMMO_PICKUP = pickup.smg.t2
+			self.x_cobray.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo mark 10
 			self.x_mac10.AMMO_PICKUP = pickup.smg.t2
+			self.x_mac10.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo typewriter
 			self.x_m1928.AMMO_PICKUP = pickup.smg.t2
+			self.x_m1928.damage_falloff = falloff.aki_smg.t2
 			
 			--akimbo ak gen 21
 			self.x_vityaz.AMMO_PICKUP = pickup.smg.t2
+			self.x_vityaz.damage_falloff = falloff.aki_smg.t2
 			
 		--t1 smgs-------------------------------------------------------------------
 			
 			--micro uzi
 			self.baka.AMMO_PICKUP = pickup.smg.t1
+			self.baka.damage_falloff = falloff.smg.t1
 			
 			--uzi
 			self.uzi.AMMO_PICKUP = pickup.smg.t1
+			self.uzi.damage_falloff = falloff.smg.t1
 			
 			--patchett
 			self.sterling.AMMO_PICKUP = pickup.smg.t1
+			self.sterling.damage_falloff = falloff.smg.t1
 			
 			--blaster
 			self.tec9.AMMO_PICKUP = pickup.smg.t1
+			self.tec9.damage_falloff = falloff.smg.t1
 			
 			--cmp
 			self.mp9.AMMO_PICKUP = pickup.smg.t1
+			self.mp9.damage_falloff = falloff.smg.t1
 			
 			--cobra
 			self.scorpion.AMMO_PICKUP = pickup.smg.t1
+			self.scorpion.damage_falloff = falloff.smg.t1
 			
 			--compact-5
 			self.new_mp5.AMMO_PICKUP = pickup.smg.t1
+			self.new_mp5.damage_falloff = falloff.smg.t1
 			
 			--signature
 			self.shepheard.AMMO_PICKUP = pickup.smg.t1
+			self.shepheard.damage_falloff = falloff.smg.t1
 			
 			--akimbo micro uzi
 			self.x_baka.AMMO_PICKUP = pickup.smg.t1
+			self.x_baka.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo uzi
 			self.x_uzi.AMMO_PICKUP = pickup.smg.t1
+			self.x_uzi.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo patchett
 			self.x_sterling.AMMO_PICKUP = pickup.smg.t1
+			self.x_sterling.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo blaster
 			self.x_tec9.AMMO_PICKUP = pickup.smg.t1
+			self.x_tec9.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo cmp
 			self.x_mp9.AMMO_PICKUP = pickup.smg.t1
+			self.x_mp9.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo cobra
 			self.x_scorpion.AMMO_PICKUP = pickup.smg.t1
+			self.x_scorpion.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo compact-5
 			self.x_mp5.AMMO_PICKUP = pickup.smg.t1
+			self.x_mp5.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo signature
 			self.x_shepheard.AMMO_PICKUP = pickup.smg.t1
+			self.x_shepheard.damage_falloff = falloff.aki_smg.t1
 			
 	--PISTOLS-------------------------------------------------------------------------------------------------------------------------------------------------
 		
@@ -674,6 +973,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--peacemaker
 			self.peacemaker.AMMO_PICKUP = pickup.pistol.t4
+			self.peacemaker.damage_falloff = falloff.pistol.t4
 			self.peacemaker.AMMO_MAX = 36
 			self.peacemaker.stats.damage = 230
 			self.peacemaker.stats.recoil = 1
@@ -683,6 +983,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--matever
 			self.mateba.AMMO_PICKUP = pickup.pistol.t4
+			self.mateba.damage_falloff = falloff.pistol.t4
 			self.mateba.AMMO_MAX = 48
 			self.mateba.fire_mode_data.fire_rate = 0.166
 			self.mateba.single.fire_rate = 0.166
@@ -690,6 +991,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--castigo
 			self.chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.chinchilla.damage_falloff = falloff.pistol.t4
 			self.chinchilla.AMMO_MAX = 48
 			self.chinchilla.fire_mode_data.fire_rate = 0.166
 			self.chinchilla.single.fire_rate = 0.166
@@ -697,6 +999,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--bronco
 			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.t4
+			self.new_raging_bull.damage_falloff = falloff.pistol.t4
 			self.new_raging_bull.AMMO_MAX = 48
 			self.new_raging_bull.fire_mode_data.fire_rate = 0.166
 			self.new_raging_bull.single.fire_rate = 0.166
@@ -704,6 +1007,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--deagle
 			self.deagle.AMMO_PICKUP = pickup.pistol.t4
+			self.deagle.damage_falloff = falloff.pistol.t4
 			self.deagle.AMMO_MAX = 30
 			self.deagle.fire_mode_data.fire_rate = 0.2
 			self.deagle.single.fire_rate = 0.2
@@ -714,6 +1018,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--akimbo matever
 			self.x_2006m.AMMO_PICKUP = pickup.pistol.t4
+			self.x_2006m.damage_falloff = falloff.pistol.t4
 			self.x_2006m.AMMO_MAX = 48
 			self.x_2006m.fire_mode_data.fire_rate = 0.166
 			self.x_2006m.single.fire_rate = 0.166
@@ -721,6 +1026,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--akimbo castigo
 			self.x_chinchilla.AMMO_PICKUP = pickup.pistol.t4
+			self.x_chinchilla.damage_falloff = falloff.pistol.t4
 			self.x_chinchilla.AMMO_MAX = 48
 			self.x_chinchilla.fire_mode_data.fire_rate = 0.166
 			self.x_chinchilla.single.fire_rate = 0.166
@@ -728,6 +1034,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--akimbo bronco
 			self.x_rage.AMMO_PICKUP = pickup.pistol.t4
+			self.x_rage.damage_falloff = falloff.pistol.t4
 			self.x_rage.AMMO_MAX = 48
 			self.x_rage.fire_mode_data.fire_rate = 0.166
 			self.x_rage.single.fire_rate = 0.166
@@ -735,6 +1042,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--akimbo deagle
 			self.x_deagle.AMMO_PICKUP = pickup.pistol.t4
+			self.x_deagle.damage_falloff = falloff.pistol.t4
 			self.x_deagle.AMMO_MAX = 30
 			self.x_deagle.fire_mode_data.fire_rate = 0.2
 			self.x_deagle.single.fire_rate = 0.2
@@ -747,40 +1055,49 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--white streak
 			self.pl14.AMMO_PICKUP = pickup.pistol.t3
+			self.pl14.damage_falloff = falloff.pistol.t3
 			
 			--parabellum
 			self.breech.AMMO_PICKUP = pickup.pistol.t3
+			self.breech.damage_falloff = falloff.pistol.t3
 			self.breech.stats.damage = 121
 			self.breech.fire_mode_data.fire_rate = 0.25
 			self.breech.single.fire_rate = 0.25
 			
 			--baby deagle
 			self.sparrow.AMMO_PICKUP = pickup.pistol.t3
+			self.sparrow.damage_falloff = falloff.pistol.t3
 			
 			--5/7
 			self.lemming.AMMO_PICKUP = pickup.pistol.t3
+			self.lemming.damage_falloff = falloff.pistol.t3
 			self.lemming.can_shoot_through_enemy = nil
 			self.lemming.can_shoot_through_shield = nil
 			self.lemming.can_shoot_through_wall = nil
 			
 			--frenchman model 87
 			self.model3.AMMO_PICKUP = pickup.pistol.t3
+			self.model3.damage_falloff = falloff.pistol.t3
 			self.model3.stats.damage = 135
 			
 			--crosskill chunky
 			self.m1911.AMMO_PICKUP = pickup.pistol.t3
+			self.m1911.damage_falloff = falloff.pistol.t3
 			-- self.m1911.stats.damage = 120
 			
 			--akimbo white streak
 			self.x_pl14.AMMO_PICKUP = pickup.pistol.t3
+			self.x_pl14.damage_falloff = falloff.pistol.t3
 			self.x_pl14.AMMO_MAX = 60
 			
 			--akimbo baby deagle
 			self.x_sparrow.AMMO_PICKUP = pickup.pistol.t3
+			self.x_sparrow.damage_falloff = falloff.pistol.t3
 			self.x_sparrow.AMMO_MAX = 60
 			
 			--akimbo parabellum
 			self.x_breech.AMMO_PICKUP = pickup.pistol.t3
+			self.x_breech.damage_falloff = falloff.pistol.t3
 			self.x_breech.AMMO_MAX = 56
 			self.x_breech.stats.damage = 121
 			self.x_breech.fire_mode_data.fire_rate = 0.25
@@ -788,11 +1105,13 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--akimbo frenchman model 87
 			self.x_model3.AMMO_PICKUP = pickup.pistol.t3
+			self.x_model3.damage_falloff = falloff.pistol.t3
 			self.x_model3.AMMO_MAX = self.model3.AMMO_MAX
 			self.x_model3.stats.damage = 135
 			
-			--crosskill chunky
+			--akimbo crosskill chunky
 			self.x_m1911.AMMO_PICKUP = pickup.pistol.t3
+			self.x_m1911.damage_falloff = falloff.pistol.t3
 			self.x_m1911.AMMO_MAX = self.x_m1911.AMMO_MAX
 			-- self.x_m1911.stats.damage = 120
 			
@@ -800,154 +1119,190 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--chimano custom
 			self.g22c.AMMO_PICKUP = pickup.pistol.t2
+			self.g22c.damage_falloff = falloff.pistol.t2
 			self.g22c.AMMO_MAX = 80
 			
 			--crosskill
 			self.colt_1911.AMMO_PICKUP = pickup.pistol.t2
+			self.colt_1911.damage_falloff = falloff.pistol.t2
 			self.colt_1911.AMMO_MAX = 80
 			
 			--broomstick
 			self.c96.AMMO_PICKUP = pickup.pistol.t2
+			self.c96.damage_falloff = falloff.pistol.t2
 			self.c96.AMMO_MAX = 80
 			
 			--interceptor
 			self.usp.AMMO_PICKUP = pickup.pistol.t2
+			self.usp.damage_falloff = falloff.pistol.t2
 			self.usp.AMMO_MAX = 78
 			
 			--signature .40
 			self.p226.AMMO_PICKUP = pickup.pistol.t2
+			self.p226.damage_falloff = falloff.pistol.t2
 			self.p226.AMMO_MAX = 72
 			
 			--leo
 			self.hs2000.AMMO_PICKUP = pickup.pistol.t2
+			self.hs2000.damage_falloff = falloff.pistol.t2
 			self.hs2000.AMMO_MAX = 76
 			
 			--contractor
 			self.packrat.AMMO_PICKUP = pickup.pistol.t2
+			self.packrat.damage_falloff = falloff.pistol.t2
 			self.packrat.AMMO_MAX = 75
 			
 			--igor automatik pistol
 			self.stech.AMMO_PICKUP = pickup.pistol.t2
+			self.stech.damage_falloff = falloff.pistol.t2
 			self.stech.AMMO_MAX = 80
 			
 			--holt 9mm
 			self.holt.AMMO_PICKUP = pickup.pistol.t2
+			self.holt.damage_falloff = falloff.pistol.t2
 			self.holt.AMMO_MAX = 75
 			
 			--akimbo chimano custom
 			self.x_g22c.AMMO_PICKUP = pickup.pistol.t2
+			self.x_g22c.damage_falloff = falloff.pistol.t2
 			self.x_g22c.AMMO_MAX = self.g22c.AMMO_MAX
 			
 			--akimbo crosskill
 			self.x_1911.AMMO_PICKUP = pickup.pistol.t2
+			self.x_1911.damage_falloff = falloff.pistol.t2
 			self.x_1911.AMMO_MAX = self.colt_1911.AMMO_MAX
 			
 			--akimbo broomstick
 			self.x_c96.AMMO_PICKUP = pickup.pistol.t2
+			self.x_c96.damage_falloff = falloff.pistol.t2
 			self.x_c96.AMMO_MAX = self.c96.AMMO_MAX
 			
 			--akimbo interceptor
 			self.x_usp.AMMO_PICKUP = pickup.pistol.t2
+			self.x_usp.damage_falloff = falloff.pistol.t2
 			self.x_usp.AMMO_MAX = self.usp.AMMO_MAX
 			
 			--akimbo signature .40
 			self.x_p226.AMMO_PICKUP = pickup.pistol.t2
+			self.x_p226.damage_falloff = falloff.pistol.t2
 			self.x_p226.AMMO_MAX = self.p226.AMMO_MAX
 			
 			--akimbo leo
 			self.x_hs2000.AMMO_PICKUP = pickup.pistol.t2
+			self.x_hs2000.damage_falloff = falloff.pistol.t2
 			self.x_hs2000.AMMO_MAX = self.hs2000.AMMO_MAX
 			
 			--akimbo contractor
 			self.x_packrat.AMMO_PICKUP = pickup.pistol.t2
+			self.x_packrat.damage_falloff = falloff.pistol.t2
 			self.x_hs2000.AMMO_MAX = self.packrat.AMMO_MAX
 			
 			--akimbo igor automatik pistol
 			self.x_stech.AMMO_PICKUP = pickup.pistol.t2
+			self.x_stech.damage_falloff = falloff.pistol.t2
 			self.x_stech.AMMO_MAX = self.stech.AMMO_MAX
 			
 			--holt 9mm
 			self.x_holt.AMMO_PICKUP = pickup.pistol.t2
+			self.x_holt.damage_falloff = falloff.pistol.t2
 			self.x_holt.AMMO_MAX = self.holt.AMMO_MAX
 			
 		--t1 pistols----------------------------------------------------------------
 			
 			--chimano 88
 			self.glock_17.AMMO_PICKUP = pickup.pistol.t1
+			self.glock_17.damage_falloff = falloff.pistol.t1
 			self.glock_17.AMMO_MAX = 119
 			
 			--chimano compact
 			self.g26.AMMO_PICKUP = pickup.pistol.t1
+			self.g26.damage_falloff = falloff.pistol.t1
 			self.g26.AMMO_MAX = 120
 			
 			--bernetti
 			self.b92fs.AMMO_PICKUP = pickup.pistol.t1
+			self.b92fs.damage_falloff = falloff.pistol.t1
 			self.b92fs.AMMO_MAX = 112
 			
 			--stryk
 			self.glock_18c.AMMO_PICKUP = pickup.pistol.t1
+			self.glock_18c.damage_falloff = falloff.pistol.t1
 			self.glock_18c.AMMO_MAX = 120
 			
 			--gruber kurz
 			self.ppk.AMMO_PICKUP = pickup.pistol.t1
+			self.ppk.damage_falloff = falloff.pistol.t1
 			self.ppk.AMMO_MAX = 112
 			
 			--m13
 			self.legacy.AMMO_PICKUP = pickup.pistol.t1
+			self.legacy.damage_falloff = falloff.pistol.t1
 			self.legacy.AMMO_MAX = 117
 			
 			--crosskill guard
 			self.shrew.AMMO_PICKUP = pickup.pistol.t1
+			self.shrew.damage_falloff = falloff.pistol.t1
 			self.shrew.AMMO_MAX = 119
 			
 			--czech 92 pistol
 			self.czech.AMMO_PICKUP = pickup.pistol.t1
+			self.czech.damage_falloff = falloff.pistol.t1
 			self.czech.AMMO_MAX = 120
 			
 			--bernetti auto pistol
 			self.beer.AMMO_PICKUP = pickup.pistol.t1
+			self.beer.damage_falloff = falloff.pistol.t1
 			self.beer.AMMO_MAX = 120
 			
 			--akimbo chimano 88
 			self.x_g17.AMMO_PICKUP = pickup.pistol.t1
+			self.x_g17.damage_falloff = falloff.pistol.t1
 			self.x_g17.AMMO_MAX = self.glock_17.AMMO_MAX
 			
 			--akimbo chimano compact
 			self.jowi.AMMO_PICKUP = pickup.pistol.t1
+			self.jowi.damage_falloff = falloff.pistol.t1
 			self.jowi.AMMO_MAX = self.g26.AMMO_MAX
 			self.jowi.fire_mode_data.fire_rate = self.g26.fire_mode_data.fire_rate
 			self.jowi.single.fire_rate = self.g26.single.fire_rate
 			
 			--akimbo bernetti
 			self.x_b92fs.AMMO_PICKUP = pickup.pistol.t1
+			self.x_b92fs.damage_falloff = falloff.pistol.t1
 			self.x_b92fs.AMMO_MAX = self.b92fs.AMMO_MAX
 			self.x_b92fs.fire_mode_data.fire_rate = self.b92fs.fire_mode_data.fire_rate
 			self.x_b92fs.single.fire_rate = self.b92fs.single.fire_rate
 			
 			--akimbo stryk
 			self.x_g18c.AMMO_PICKUP = pickup.pistol.t1
+			self.x_g18c.damage_falloff = falloff.pistol.t1
 			self.x_g18c.AMMO_MAX = self.glock_18c.AMMO_MAX
 			
 			--akimbo gruber kurz
 			self.x_ppk.AMMO_PICKUP = pickup.pistol.t1
+			self.x_ppk.damage_falloff = falloff.pistol.t1
 			self.x_ppk.AMMO_MAX = self.ppk.AMMO_MAX
 			
 			--akimbo m13
 			self.x_legacy.AMMO_PICKUP = pickup.pistol.t1
+			self.x_legacy.damage_falloff = falloff.pistol.t1
 			self.x_legacy.AMMO_MAX = self.legacy.AMMO_MAX
 			
 			--akimbo crosskill guard
 			self.x_shrew.AMMO_PICKUP = pickup.pistol.t1
+			self.x_shrew.damage_falloff = falloff.pistol.t1
 			self.x_shrew.AMMO_MAX = self.shrew.AMMO_MAX
 			self.x_shrew.fire_mode_data.fire_rate = self.shrew.fire_mode_data.fire_rate
 			self.x_shrew.single.fire_rate = self.shrew.single.fire_rate
 			
 			--akimbo czech 92 pistol
 			self.x_czech.AMMO_PICKUP = pickup.pistol.t1
+			self.x_czech.damage_falloff = falloff.pistol.t1
 			self.x_czech.AMMO_MAX = self.czech.AMMO_MAX
 			
 			--akimbo bernetti auto pistols
 			self.x_beer.AMMO_PICKUP = pickup.pistol.t1
+			self.x_beer.damage_falloff = falloff.pistol.t1
 			self.x_beer.AMMO_MAX = self.beer.AMMO_MAX
 			
 	--GLs
