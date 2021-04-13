@@ -131,7 +131,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		shotgun = {
 			double_barrel = {
 				optimal_distance = 400,
-				optimal_range = 1200,
+				optimal_range = 1000,
 				near_falloff = 200,
 				far_falloff = 2200,
 				near_multiplier = 1.35,

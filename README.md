@@ -148,56 +148,56 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - +74 damage
        - +40 accuracy
        - 1 pellet
-       - penetrates walls, shields, enemies, and body armor
+       - penetrates walls, shields, enemies, and body armor up to 6 times
      - tier 4
        - +61 damage
        - +40 accuracy
        - 1 pellet
-       - penetrates walls, shields, enemies, and body armor
+       - penetrates walls, shields, enemies, and body armor up to 6 times
      - tier 3
        - +32 damage
        - +40 accuracy
        - 1 pellet
-       - penetrates walls, shields, enemies, and body armor
+       - penetrates walls, shields, enemies, and body armor up to 6 times
      - tier 2
        - +30 damage
        - +40 accuracy
        - 1 pellet
-       - penetrates walls, shields, enemies, and body armor
+       - penetrates walls, shields, enemies, and body armor up to 6 times
      - tier 1
        - +20 damage
        - +40 accuracy
        - 1 pellet
-       - penetrates walls, shields, enemies, and body armor
+       - penetrates walls, shields, enemies, and body armor up to 6 times
    
    - HE Rounds
      - tier 5
        - +9 damage
-       - -12 accuracy
+       - -20 accuracy
        - -25% total ammo
        - -50% min ammo pickup
        - -60% max ammo pickup
        - 3 pellets
      - tier 4
-       - -12 accuracy
+       - -20 accuracy
        - -25% total ammo
        - -20% min ammo pickup
        - -60% max ammo pickup
        - 3 pellets
      - tier 3
-       - -12 accuracy
+       - -20 accuracy
        - -25% total ammo
        - -70% min ammo pickup
        - -63% max ammo pickup
        - 3 pellets
      - tier 2
-       - -12 accuracy
+       - -20 accuracy
        - -25% total ammo
        - -53% min ammo pickup
        - -64% max ammo pickup
        - 3 pellets
      - tier 1
-       - -12 accuracy
+       - -20 accuracy
        - -25% total ammo
        - -50% min ammo pickup
        - -45% max ammo pickup
@@ -320,33 +320,48 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
          - 0.5 second tick rate
          - -10 damage per tick
          - +30 damage on consecutive hits
+  
+  note: the judge and akimbo judge fire 7 pellets with 000 Buckshot and 9 pellets with Dragon's Breath and Flechettes
      
 #### Weapons:
    - Tier 5
+     - damage falloff
+       - starts at 14 meters
+       - ends at 36 meters
+       - at maximum falloff damage is reduced to 9%
+       - double barrel shotguns get a 35% damage increase within 2 meters that drops off to 0% at 4 meters
+
      - Mosconi
        - ammo pickup changed from 0.43/1.51 to 0.4/1.5
-     
+
      - Joceline
        - ammo pickup increased from 0.38/1.32 to 0.4/1.5
-     
+
      - Breaker
        - ammo pickup increased from 0.27/0.99 to 0.4/1.5
 
      - Akimbo Judge
        - ammo pickup increased from 0.27/0.81 to 0.4/1.5
        - fire rate decreased from 500 to 361
+       - pellet count decreased from 12 to 9
 
      - Judge
        - ammo pickup increased from 0.24/0.72 to 0.4/1.5
        - fire rate decreased from 500 to 361
+       - pellet count decreased from 12 to 9
 
      - Gsps
        - ammo pickup increased from 0.38/1.32 to 0.4/1.5
 
      - Claire
        - ammo pickup increased from 0.3/0.89 to 0.4/1.5
-   
+
    - Tier 4
+     - damage falloff
+       - starts at 12 meters
+       - ends at 34 meters
+       - at maximum falloff damage is reduced to 7%
+
      - Raven
        - ammo pickup changed from 0.57/1.98 to 1/2
        - damage increased from 90 to 110
@@ -364,6 +379,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - damage increased from 90 to 110
      
    - Tier 3
+     - damage falloff
+       - starts at 10 meters
+       - ends at 31 meters
+       - at maximum falloff damage is reduced to 5%
+
      - Predator
        - ammo pickup decreased from 4.46/6.68 to 1.5/3
 
@@ -375,6 +395,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - damage increased from 42 to 55
    
    - Tier 2
+     - damage falloff
+       - starts at 10 meters
+       - ends at 29 meters
+       - at maximum falloff damage is reduced to 5%
+
      - Izhma
        - ammo pickup decreased from 4.73/7.09 to 2/3
 
@@ -388,6 +413,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - ammo pickup decreased from 3.65/5.47 to 2/3
        
    - Tier 1
+     - damage falloff
+       - starts at 8 meters
+       - ends at 27 meters
+       - at maximum falloff damage is reduced to 5%
+
      - Brothers Grimm
        - ammo pickup decreased from 6.48/9.72 to 4/6
 
@@ -576,6 +606,10 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    Tier 1: 55 damage
    
    - M60
+     - damage falloff
+       - starts at 15 meters
+       - ends at 45 meters
+       - at maximum falloff damage is reduced to 80%
      - ammo pickup decreased from 5.4/18.9 to 5/10
      - total ammo decreased from 400 to 200
      - magazine capacity decreased from 200 to 100
@@ -586,6 +620,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
      - can now shoot through walls
 
    - Tier 2
+     - damage falloff
+       - starts at 15 meters
+       - ends at 45 meters
+       - at maximum falloff damage is reduced to 70%
+
      - RPK
        - ammo pickup increased from 4.05/14.18 to 10/25
        - total ammo increased from 300 to 400
@@ -603,6 +642,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - threat increased from 37 to 43
    
    - Tier 1
+     - damage falloff
+       - starts at 15 meters
+       - ends at 45 meters
+       - at maximum falloff damage is reduced to 60%
+
      - KSP
        - ammo pickup increased from 16.2/29.7 to 15/35
        - total ammo increased from 400 to 600
@@ -635,6 +679,8 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    Tier 1: 160
    
    - Thanatos
+     - damage falloff
+       - none
      - ammo pickup decreased from 0.07/0.88 to 0/0.53
      - total ammo decreased from 15 to 10
      - attachments
@@ -647,6 +693,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
          - stability decreased from 8 to -12
      
    - Tier 3
+     - damage falloff
+       - starts at 20 meters
+       - ends at 25 meters
+       - at maximum falloff damage is increased to 180%
+
      - Nagant
        - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
 
@@ -660,6 +711,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - ammo pickup decreased from 0.95/1.35 to 0.4/1.5
        
    - Tier 2
+     - damage falloff
+       - starts at 20 meters
+       - ends at 25 meters
+       - at maximum falloff damage is increased to 150%
+
      - Rattlesnake
        - ammo pickup decreased from 2.7/4.05 to 1/2
        - rate of fire increased from 60 to 80
@@ -673,6 +729,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - rate of fire increased from 75 to 95
      
    - Tier 1
+     - damage falloff
+       - starts at 20 meters
+       - ends at 25 meters
+       - at maximum falloff damage is increased to 135%
+
      - Lebensauger
        - ammo pickup decreased from 2.7/4.05 to 2/3
        - damage increased from 160 to 198
@@ -700,12 +761,19 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - FMJ Rounds
      - 50% chance to penetrate enemies, penetrates up to 4 times
+     - increases effective range by 50%
    - Hollow Point Rounds
      - +5% critical hit chance
     
 #### Weapons:
    
    - Tier 3
+     - damage falloff
+       - starts at 16 meters
+       - ends at 36 meters
+       - at maximum falloff damage is reduced to 60%
+       - akimbo smgs get a 30% damage increase within 3 meters
+
      - Tatonka
        - ammo pickup increased from 1.73/6.05 to 3/7
 
@@ -743,6 +811,12 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - ammo pickup increased from 1.62/5.67 to 3/7
    
    - Tier 2
+     - damage falloff
+       - starts at 14 meters
+       - ends at 36 meters
+       - at maximum falloff damage is reduced to 50%
+       - akimbo smgs get a 20% damage increase within 4 meters
+
      - Kobus
        - ammo pickup changed from 6.08/11.14 to 6/11
 
@@ -792,6 +866,12 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - ammo pickup increased from 2.7/9.45 to 6/11
    
    - Tier 1
+     - damage falloff
+       - starts at 12 meters
+       - ends at 36 meters
+       - at maximum falloff damage is reduced to 40%
+       - akimbo smgs get a 20% damage increase within 5 meters
+
      - Micro Uzi
        - ammo pickup changed from 9.07/16.63 to 8/16
 
@@ -852,6 +932,7 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
    
    - FMJ Rounds
      - 50% chance to penetrate enemies, penetrates up to 4 times
+     - increases effective range by 50%
    - Hollow Point Rounds
      - +5% critical hit chance
    - AP Rounds
@@ -861,6 +942,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
 #### Weapons:
 
    - Tier 4
+     - damage falloff
+       - starts at 16 meters
+       - ends at 28 meters
+       - at maximum falloff damage is reduced to 80%
+
      - Peacemaker
        - ammo pickup changed from 0.73/2.55 to 1.5/3.0
        - total ammo decreased from 54 to 36
@@ -917,6 +1003,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - default ammunition is now AP rounds(can pierce walls, enemies, and shields)
    
    - Tier 3
+     - damage falloff
+       - starts at 16 meters
+       - ends at 28 meters
+       - at maximum falloff damage is reduced to 70%
+
      - White Streak
        - ammo pickup increased from 0.81/2.84 to 2.5/5.0
 
@@ -946,6 +1037,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - damage decreased from 180 to 121
    
    - Tier 2
+     - damage falloff
+       - starts at 14 meters
+       - ends at 26 meters
+       - at maximum falloff damage is reduced to 70%
+
      - Chimano Custom
        - ammo pickup increased from 1.3/4.54 to 4.0/9.0
        - total ammo decreased from 96 to 80
@@ -1010,6 +1106,11 @@ This is a rebalance of weapons for Payday 2 that is intended to make the differe
        - total ammo decreased from 120 to 80
    
    - Tier 1
+     - damage falloff
+       - starts at 12 meters
+       - ends at 24 meters
+       - at maximum falloff damage is reduced to 70%
+
      - Chimano 88
        - ammo pickup increased from 2.07/7.24 to 8.0/13.0
        - total ammo decreased from 153 to 119
