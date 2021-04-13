@@ -453,7 +453,7 @@
 	<!-- FMJ pistol/smg -->
 		<WeaponMod
 			id="wpn_upg_a_pis_fmj"
-			name_id="FMJ"
+			name_id="FMJ Pistol"
 			based_on="wpn_fps_upg_a_slug"
 			inherit_weapons="false"
 			inherit_adds="false"
@@ -469,6 +469,7 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				falloff_mul = "1.5"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				armor_piercing_add = "0"
@@ -595,6 +596,7 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
+				falloff_mul = "1.5"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				ammo_pickup_min_mul = "0.4"
@@ -603,7 +605,7 @@
 				can_shoot_through_shield = "true"
 				can_shoot_through_wall = "true"
 				can_shoot_through_enemy = "true"
-				max_penetrations = "8"
+				max_penetrations = "6"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_lemming"/>

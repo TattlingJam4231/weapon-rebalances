@@ -106,21 +106,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
-					--[[ falloff_override = {
-						optimal_distance = 0,
-						optimal_range = 4000,
-						near_falloff = 0,
-						far_falloff = 4500,
-						near_mul = 1,
-						far_mul = 0
-					}, ]]
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
+					optimal_range_mul = 2,
+					far_damage_mul = 5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
-					max_penetrations = 8,
+					max_penetrations = 6,
 					rays = 1
 				}
 			},
@@ -134,13 +126,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
+					optimal_range_mul = 2,
+					far_damage_mul = 5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
-					max_penetrations = 8,
+					max_penetrations = 6,
 					rays = 1
 				}
 			},
@@ -154,13 +146,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
+					optimal_range_mul = 2,
+					far_damage_mul = 5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
-					max_penetrations = 8,
+					max_penetrations = 6,
 					rays = 1
 				}
 			},
@@ -174,13 +166,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
+					optimal_range_mul = 2,
+					far_damage_mul = 5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
-					max_penetrations = 8,
+					max_penetrations = 6,
 					rays = 1
 				}
 			},
@@ -194,13 +186,13 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				custom_stats = {
 					ammo_pickup_min_mul = nil,
 					ammo_pickup_max_mul = nil,
-					damage_near_mul = 2,
-					damage_far_mul = 1.5,
+					optimal_range_mul = 2,
+					far_damage_mul = 5,
 					armor_piercing_add = 1,
 					can_shoot_through_shield = true,
 					can_shoot_through_wall = true,
 					can_shoot_through_enemy = true,
-					max_penetrations = 8,
+					max_penetrations = 6,
 					rays = 1
 				}
 			}
@@ -212,23 +204,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					value = 5, 
 					total_ammo_mod = -5,
 					damage = 9,
-					spread = -3,
-					moving_spread = -3
+					spread = -5,
+					moving_spread = -5
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.5,
 					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
-					--[[ falloff_override = {
-						optimal_distance = 0,
-						optimal_range = 4000,
-						near_falloff = 0,
-						far_falloff = 11500,
-						near_mul = 1,
-						far_mul = 0
-					}, ]]
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
+					optimal_range_mul = 2,
+					far_damage_mul = 8,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -238,15 +222,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					value = 5, 
 					total_ammo_mod = -5,
 					damage = nil,
-					spread = -3,
-					moving_spread = -3
+					spread = -5,
+					moving_spread = -5
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.8,
 					ammo_pickup_max_mul = 0.4,
 					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
+					optimal_range_mul = 2,
+					far_damage_mul = 8,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -256,15 +240,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					value = 5, 
 					total_ammo_mod = -5,
 					damage = nil,
-					spread = -3,
-					moving_spread = -3
+					spread = -5,
+					moving_spread = -5
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.3022,
 					ammo_pickup_max_mul = 0.3733,
 					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
+					optimal_range_mul = 2,
+					far_damage_mul = 8,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -274,15 +258,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					value = 5, 
 					total_ammo_mod = -5,
 					damage = nil,
-					spread = -3,
-					moving_spread = -3
+					spread = -5,
+					moving_spread = -5
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.4681,
 					ammo_pickup_max_mul = 0.3563,
 					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
+					optimal_range_mul = 2,
+					far_damage_mul = 8,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -292,15 +276,15 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					value = 5, 
 					total_ammo_mod = -5,
 					damage = nil,
-					spread = -3,
-					moving_spread = -3
+					spread = -5,
+					moving_spread = -5
 				},
 				custom_stats = {
 					ammo_pickup_min_mul = 0.5,
 					ammo_pickup_max_mul = 0.5474,
 					ignore_statistic = true,
-					damage_far_mul = 2.5,
-					damage_near_mul = 2,
+					optimal_range_mul = 2,
+					far_damage_mul = 8,
 					rays = 3, 
 					bullet_class = "InstantExplosiveBulletBase"
 				}
@@ -343,7 +327,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						near_mul = 1,
 						far_mul = 0
 					}, ]]
-					damage_far_mul = 0.7,
+					far_falloff_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
 					rays = 12
@@ -376,7 +360,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
+					far_falloff_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
 					rays = 12
@@ -409,7 +393,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
+					far_falloff_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
 					rays = 12
@@ -442,7 +426,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
+					far_falloff_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
 					rays = 12
@@ -475,7 +459,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					armor_piercing_add = 1, 
 					ignore_statistic = true,  
 					muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
-					damage_far_mul = 0.7,
+					far_falloff_mul = 0.7,
 					can_shoot_through_shield = true, 
 					bullet_class = "FlameBulletBase",
 					rays = 12
@@ -673,6 +657,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				wpn_fps_pis_judge_body_standard = {animations = {}},
 				wpn_fps_pis_judge_body_modern = {animations = {}}
 			}
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 7
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 7
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 9
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			
 			--judge
 			self.wpn_fps_pis_judge.override = {
@@ -688,6 +676,10 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 				wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
 				wpn_fps_upg_ns_duck = {parent = "slide"}
 			}
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 7
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 7
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 9
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
 			
 			--gsps
 			self.wpn_fps_shot_m37.override = {

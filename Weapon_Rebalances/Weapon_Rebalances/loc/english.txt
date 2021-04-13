@@ -1,12 +1,14 @@
 {
 	"FMJ" : "FMJ Rounds"
-	"FMJ_desc" : "Rounds that have a chance penetrate enemies up to four enemies."
+	"FMJ_desc" : "Rounds that can penetrate enemies. Adds a 50% chance to penetrate enemies, maximum of four penetrations"
 	"Ballistic Tip" : "Ballistic Tip Rounds"
 	"Ballistic Tip_desc" : "High impact rounds."
+	"FMJ Pistol" : "FMJ Rounds"
+	"FMJ Pistol_desc" : "Rounds that have a longer effective range and can penetrate enemies. Adds a 50% chance to penetrate enemies, maximum of four penetrations"
 	"Hollow Point" : "Hollow Point Rounds"
 	"Hollow Point_desc" : "Rounds with a chance to deal massive damage. Adds 5% critical hit chance."
 	"AP" : "AP Rounds"
-	"AP_desc" : "Rounds that penetrate body armor, enemies, shields and walls up to eight times."
+	"AP_desc" : "Rounds that have a longer effective range and can penetrate body armor, enemies, shields and walls up to six times. This ammo type is harder to find"
 	"SLAP" : "Saboted Light Armor Penetrator Rounds"
 	
 }
