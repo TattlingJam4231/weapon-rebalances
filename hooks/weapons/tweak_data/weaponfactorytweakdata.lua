@@ -731,6 +731,40 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						far_falloff_mul = 0,
 						near_damage_mul = 1,
 						far_damage_mul = 1.2,
+					},
+					overrides = {
+						{
+							depends_on = "wpn_fps_upg_ass_ak_b_zastava",
+							custom_stats = {
+								can_shoot_through_shield = false,
+								can_shoot_through_wall = false,
+								can_shoot_through_enemy = true,
+								max_enemy_penetration_distance = 2000,
+								enemy_pen_energy_loss = 800,
+								optimal_distance_mul = 2000,
+								optimal_range_mul = 0,
+								near_falloff_mul = 0,
+								far_falloff_mul = 0,
+								near_damage_mul = 1,
+								far_damage_mul = 1.5,
+							}
+						},
+						{
+							depends_on = "wpn_fps_upg_ass_m4_b_beowulf",
+							custom_stats = {
+								can_shoot_through_shield = false,
+								can_shoot_through_wall = false,
+								can_shoot_through_enemy = true,
+								max_enemy_penetration_distance = 2000,
+								enemy_pen_energy_loss = 800,
+								optimal_distance_mul = 2000,
+								optimal_range_mul = 0,
+								near_falloff_mul = 0,
+								far_falloff_mul = 0,
+								near_damage_mul = 1,
+								far_damage_mul = 1.5,
+							}
+						}
 					}
 				},
 				t1 = {
@@ -812,6 +846,30 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					stats = {
 						value = 5,
 						damage = 12
+					},
+					overrides = {
+						{
+							depends_on = "wpn_fps_upg_ass_ak_b_zastava",
+							stats = {
+								value = 5,
+								damage = 80
+							},
+							custom_stats = {
+								ammo_pickup_min_mul = 0.5,
+								ammo_pickup_max_mul = 0.667
+							}
+						},
+						{
+							depends_on = "wpn_fps_upg_ass_m4_b_beowulf",
+							stats = {
+								value = 5,
+								damage = 80
+							},
+							custom_stats = {
+								ammo_pickup_min_mul = 0.5,
+								ammo_pickup_max_mul = 0.667
+							}
+						}
 					}
 				},
 				t1 = {
@@ -1466,83 +1524,81 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 			--conversion kits-----------------------------------------------------------------------------
 			
 				--CAR dmr kit
-				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.25
-				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.3333
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats.damage = 66
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.stats.total_ammo_mod = -8
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_min_mul = 0.5
+				self.parts.wpn_fps_upg_ass_m4_b_beowulf.custom_stats.ammo_pickup_max_mul = 0.5
 				
 				--AK dmr kit
-				self.parts.wpn_fps_upg_ass_ak_b_zastava.stats.damage = 64
+				self.parts.wpn_fps_upg_ass_ak_b_zastava.stats.damage = 65
+				self.parts.wpn_fps_upg_ass_ak_b_zastava.stats.total_ammo_mod = -8
 				self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_min_mul = 0.5
 				self.parts.wpn_fps_upg_ass_ak_b_zastava.custom_stats.ammo_pickup_max_mul = 0.5
 				
 				--overrides------------------------------------------------------------------------
 					
-					--amr
-					self.wpn_fps_ass_m16.override = {
-						wpn_fps_upg_ass_m4_b_beowulf = {
-							stats = {
-								spread = 4,
-								total_ammo_mod = -8,
-								damage = 65,
-								concealment = -4,
-								value = 1,
-								recoil = -4
-							},
-							custom_stats = {
-								ammo_pickup_max_mul = 0.4167,
-								ammo_pickup_min_mul = 0.4167
-							}
+					--car-4
+					self.wpn_fps_ass_m4.override.wpn_fps_upg_ass_m4_b_beowulf = {
+						stats = {
+							spread = 4,
+							total_ammo_mod = -12,
+							damage = 107,
+							concealment = -4,
+							value = 1,
+							recoil = -10
+						},
+						custom_stats = {
+							ammo_pickup_min_mul = 0.25,
+							ammo_pickup_max_mul = 0.3333
 						}
 					}
+
 					--ak
-					self.wpn_fps_ass_74.override = {
-						wpn_fps_upg_ass_ak_b_zastava = {
-							stats = {
-								spread = 3,
-								total_ammo_mod = -12,
-								damage = 106,
-								concealment = -4,
-								value = 1,
-								recoil = -9
-							},
-							custom_stats = {
-								ammo_pickup_min_mul = 0.25,
-								ammo_pickup_max_mul = 0.3333
-							}
+					self.wpn_fps_ass_74.override.wpn_fps_upg_ass_ak_b_zastava = {
+						stats = {
+							spread = 3,
+							total_ammo_mod = -12,
+							damage = 106,
+							concealment = -4,
+							value = 1,
+							recoil = -9
+						},
+						custom_stats = {
+							ammo_pickup_min_mul = 0.25,
+							ammo_pickup_max_mul = 0.3333
 						}
 					}
 					
 					--gewehr
-					self.wpn_fps_ass_g3.override = {
-						wpn_fps_ass_g3_b_sniper = {
-							stats = {
-								extra_ammo = -5,
-								total_ammo_mod = -10,
-								damage = 62,
-								value = 2,
-								concealment = -2,
-								recoil = -1,
-								spread = 2
-							},
-							custom_stats = {
-								ammo_pickup_min_mul = 0.5,
-								ammo_pickup_max_mul = 0.5
-							},
-							adds = {}
+					self.wpn_fps_ass_g3.override.wpn_fps_ass_g3_b_sniper = {
+						stats = {
+							extra_ammo = -5,
+							total_ammo_mod = -8,
+							damage = 63,
+							value = 2,
+							concealment = -2,
+							recoil = -1,
+							spread = 2
 						},
-						wpn_fps_ass_g3_b_short = {
-							stats = {
-								spread = -4,
-								total_ammo_mod = 10,
-								damage = -42,
-								value = 2,
-								concealment = 1,
-								recoil = 5
-							},
-							custom_stats = {
-								ammo_pickup_min_mul = 1.6667,
-								ammo_pickup_max_mul = 1.25
-							},
-							adds = {}
-						}
+						custom_stats = {
+							ammo_pickup_min_mul = 0.5,
+							ammo_pickup_max_mul = 0.5
+						},
+						adds = {}
+					}
+					self.wpn_fps_ass_g3.override.wpn_fps_ass_g3_b_short = {
+						stats = {
+							spread = -4,
+							total_ammo_mod = 10,
+							damage = -42,
+							value = 2,
+							concealment = 1,
+							recoil = 5
+						},
+						custom_stats = {
+							ammo_pickup_min_mul = 1.6667,
+							ammo_pickup_max_mul = 1.25
+						},
+						adds = {}
 					}
 end)

@@ -4,13 +4,13 @@ function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
 	local override = self:_get_override_parts(factory_id, blueprint)
 
 	for _, part_id in ipairs(blueprint) do
-		local part = self:_part_data(part_id, factory_id, override)
+		local part = self:get_part_data(part_id, factory_id, blueprint, override)
 
 		if part.depends_on then
 			local part_forbidden = true
 
 			for _, other_part_id in ipairs(blueprint) do
-				local other_part = self:_part_data(other_part_id, factory_id, override)
+				local other_part = self:get_part_data(other_part_id, factory_id, blueprint, override)
 
 				if part.depends_on == other_part.type then
 					part_forbidden = false
