@@ -1,6 +1,6 @@
 {
 	"FMJ" : "FMJ Rounds"
-	"FMJ_desc" : "Rounds that can penetrate enemies. Adds a 50% chance to penetrate enemies, maximum of four penetrations"
+	"FMJ_desc" : "Rounds that can penetrate enemies up to three times."
 	"Ballistic Tip" : "Ballistic Tip Rounds"
 	"Ballistic Tip_desc" : "High impact rounds."
 	"FMJ Pistol" : "FMJ Rounds"
