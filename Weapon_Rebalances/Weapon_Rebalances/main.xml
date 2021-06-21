@@ -28,19 +28,21 @@
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "0.5"
-				max_enemy_penetrations = "4"
+				can_shoot_through_enemy = "true"
+				max_enemy_penetration_distance = "2000"
+				enemy_pen_energy_loss = "800"
+				optimal_distance_mul = "2000"
+				optimal_range_mul = "0"
+				near_falloff_mul = "0"
+				far_falloff_mul = "0"
+				near_damage_mul = "1"
+				far_damage_mul = "1.20"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_ass_sub2000"/>
 				<value_node value="wpn_fps_ass_m14"/>
 				<value_node value="wpn_fps_ass_ching"/>
-				<value_node value="wpn_fps_ass_m16"/>
-				<value_node value="wpn_fps_ass_akm"/>
-				<value_node value="wpn_fps_ass_akm_gold"/>
-				<value_node value="wpn_fps_ass_g3"/>
-				<value_node value="wpn_fps_ass_m4"/>
-				<value_node value="wpn_fps_ass_74"/>
+				<value_node value="wpn_fps_ass_contraband"/>
 				
 				<value_node value="wpn_fps_ass_akm"/>
 				<value_node value="wpn_fps_ass_akm_gold"/>
@@ -49,13 +51,12 @@
 				<value_node value="wpn_fps_ass_fal"/>
 				<value_node value="wpn_fps_ass_flint"/>
 				<value_node value="wpn_fps_ass_g3"/>
+				<value_node value="wpn_fps_ass_groza"/>
 				
-				<value_node value="wpn_fps_ass_contraband"/>
 				<value_node value="wpn_fps_ass_74"/>
 				<value_node value="wpn_fps_ass_corgi"/>
 				<value_node value="wpn_fps_ass_komodo"/>
 				<value_node value="wpn_fps_ass_aug"/>
-				<value_node value="wpn_fps_ass_g3"/>
 				<value_node value="wpn_fps_ass_vhs"/>
 				<value_node value="wpn_fps_ass_ak5"/>
 				<value_node value="wpn_fps_ass_l85a2"/>
@@ -73,6 +74,63 @@
 		</WeaponMod>
 	
 	<!-- Ballistic Tip rounds -->
+		<WeaponMod
+			id="wpn_upg_a_ballistic_tip"
+			name_id="Ballistic Tip"
+			based_on="wpn_fps_upg_a_slug"
+			inherit_weapons="false"
+			inherit_adds="false"
+			inherit_override="false"
+			inherit_parts_override="false"
+			inherit_parts_forbids="false"
+			type="ammo"
+			ver="2">
+			<stats
+				damage = "15"
+				spread = "0"
+				total_ammo_mod = "0"
+			/>
+			<custom_stats
+				damage_far_mul = "1"
+				damage_near_mul = "1"
+				armor_piercing_add = "0"
+				can_shoot_through_shield = "false"
+				can_shoot_through_wall = "false"
+				can_shoot_through_enemy = "false"
+			/>
+			<weapons>
+				<value_node value="wpn_fps_ass_sub2000"/>
+				<value_node value="wpn_fps_ass_m14"/>
+				<value_node value="wpn_fps_ass_ching"/>
+				<value_node value="wpn_fps_ass_contraband"/>
+				
+				<value_node value="wpn_fps_ass_akm"/>
+				<value_node value="wpn_fps_ass_akm_gold"/>
+				<value_node value="wpn_fps_ass_m16"/>
+				<value_node value="wpn_fps_ass_scar"/>
+				<value_node value="wpn_fps_ass_fal"/>
+				<value_node value="wpn_fps_ass_flint"/>
+				<value_node value="wpn_fps_ass_g3"/>
+				<value_node value="wpn_fps_ass_groza"/>
+				
+				<value_node value="wpn_fps_ass_74"/>
+				<value_node value="wpn_fps_ass_corgi"/>
+				<value_node value="wpn_fps_ass_komodo"/>
+				<value_node value="wpn_fps_ass_aug"/>
+				<value_node value="wpn_fps_ass_vhs"/>
+				<value_node value="wpn_fps_ass_ak5"/>
+				<value_node value="wpn_fps_ass_l85a2"/>
+				<value_node value="wpn_fps_ass_m4"/>
+				<value_node value="wpn_fps_ass_galil"/>
+				
+				<value_node value="wpn_fps_ass_amcar"/>
+				<value_node value="wpn_fps_ass_tecci"/>
+				<value_node value="wpn_fps_ass_famas"/>
+				<value_node value="wpn_fps_ass_s552"/>
+				<value_node value="wpn_fps_ass_g36"/>
+				<value_node value="wpn_fps_ass_asval"/>
+			</weapons>
+		</WeaponMod>
 		
 		<!-- Ballistic Tip t4 -->
 		<WeaponMod
@@ -423,6 +481,7 @@
 				<value_node value="wpn_fps_smg_uzi"/>
 				<value_node value="wpn_fps_smg_shepheard"/>
 				<value_node value="wpn_fps_smg_vityaz"/>
+				<value_node value="wpn_fps_smg_pm9"/>
 				
 				<value_node value="wpn_fps_smg_x_tec9"/>
 				<value_node value="wpn_fps_smg_x_m1928"/>
@@ -447,6 +506,7 @@
 				<value_node value="wpn_fps_smg_x_uzi"/>
 				<value_node value="wpn_fps_smg_x_shepheard"/>
 				<value_node value="wpn_fps_smg_x_vityaz"/>
+				<value_node value="wpn_fps_smg_x_pm9"/>
 			</weapons>
 		</WeaponMod>
 	
@@ -550,6 +610,7 @@
 				<value_node value="wpn_fps_smg_uzi"/>
 				<value_node value="wpn_fps_smg_shepheard"/>
 				<value_node value="wpn_fps_smg_vityaz"/>
+				<value_node value="wpn_fps_smg_pm9"/>
 				
 				<value_node value="wpn_fps_smg_x_tec9"/>
 				<value_node value="wpn_fps_smg_x_m1928"/>
@@ -574,6 +635,7 @@
 				<value_node value="wpn_fps_smg_x_uzi"/>
 				<value_node value="wpn_fps_smg_x_shepheard"/>
 				<value_node value="wpn_fps_smg_x_vityaz"/>
+				<value_node value="wpn_fps_smg_x_pm9"/>
 			</weapons>
 		</WeaponMod>
 	
@@ -688,6 +750,7 @@
 		<!-- </WeaponMod> -->
 		
 	<AddFiles directory="assets">
+		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t1"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t2"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t3"/>

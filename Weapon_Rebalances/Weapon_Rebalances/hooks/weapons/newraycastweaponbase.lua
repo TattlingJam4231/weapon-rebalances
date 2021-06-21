@@ -6,9 +6,24 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	self._locked_fire_mode = managers.weapon_factory:has_perk("fire_mode_auto", self._factory_id, self._blueprint) and ids_auto or managers.weapon_factory:has_perk("fire_mode_single", self._factory_id, self._blueprint) and ids_single
 	self._fire_mode = self._locked_fire_mode or self:get_recorded_fire_mode(self:_weapon_tweak_data_id()) or Idstring(self:weapon_tweak_data().FIRE_MODE or "single")
 	self._ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(self._factory_id, self._blueprint) or {}
+
 	self._can_shoot_through_shield = tweak_data.weapon[self._name_id].can_shoot_through_shield
 	self._can_shoot_through_enemy = tweak_data.weapon[self._name_id].can_shoot_through_enemy
 	self._can_shoot_through_wall = tweak_data.weapon[self._name_id].can_shoot_through_wall
+	self._can_shoot_through_armor_plating = tweak_data.weapon[self._name_id].can_shoot_through_armor_plating
+
+	self._max_shield_penetration_distance = tweak_data.weapon[self._name_id].max_shield_penetration_distance
+	self._max_enemy_penetration_distance = tweak_data.weapon[self._name_id].max_enemy_penetration_distance
+	self._max_wall_penetration_distance = tweak_data.weapon[self._name_id].max_wall_penetration_distance
+
+	self._max_shield_penetrations = tweak_data.weapon[self._name_id].max_shield_penetrations
+	self._max_enemy_penetrations = tweak_data.weapon[self._name_id].max_enemy_penetrations
+	self._max_wall_penetrations = tweak_data.weapon[self._name_id].max_wall_penetrations
+
+	self._shield_pen_energy_loss = tweak_data.weapon[self._name_id].shield_pen_energy_loss
+	self._enemy_pen_energy_loss = tweak_data.weapon[self._name_id].enemy_pen_energy_loss
+	self._wall_pen_energy_loss = tweak_data.weapon[self._name_id].wall_pen_energy_loss
+
 	self._armor_piercing_chance = self:weapon_tweak_data().armor_piercing_chance or 0
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
 	self._movement_penalty = tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
@@ -60,6 +75,58 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		if self._ammo_data.can_shoot_through_wall ~= nil then
 			self._can_shoot_through_wall = self._ammo_data.can_shoot_through_wall
 		end
+
+		if self._ammo_data.can_shoot_through_armor_plating ~= nil then
+			self._can_shoot_through_armor_plating = self._ammo_data.can_shoot_through_armor_plating
+		end
+
+
+
+		if self._ammo_data.max_shield_penetration_distance ~= nil then
+			self._max_shield_penetration_distance = self._ammo_data.max_shield_penetration_distance
+		end
+
+		if self._ammo_data.max_enemy_penetration_distance ~= nil then
+			self._max_enemy_penetration_distance = self._ammo_data.max_enemy_penetration_distance
+		end
+
+		if self._ammo_data.max_wall_penetration_distance ~= nil then
+			self._max_wall_penetration_distance = self._ammo_data.max_wall_penetration_distance
+		end
+
+		
+
+		if self._ammo_data.max_shield_penetrations ~= nil then
+			self._max_shield_penetrations = self._ammo_data.max_shield_penetrations
+		end
+
+		if self._ammo_data.max_enemy_penetrations ~= nil then
+			self._max_enemy_penetrations = self._ammo_data.max_enemy_penetrations
+		end
+
+		if self._ammo_data.max_wall_penetrations ~= nil then
+			self._max_wall_penetrations = self._ammo_data.max_wall_penetrations
+		end
+
+		if self._ammo_data.max_penetrations ~= nil then
+			self._max_penetrations = self._ammo_data.max_penetrations
+		end
+
+
+
+		if self._ammo_data.shield_pen_energy_loss ~= nil then
+			self._shield_pen_energy_loss = self._ammo_data.shield_pen_energy_loss
+		end
+
+		if self._ammo_data.enemy_pen_energy_loss ~= nil then
+			self._enemy_pen_energy_loss = self._ammo_data.enemy_pen_energy_loss
+		end
+
+		if self._ammo_data.wall_pen_energy_loss ~= nil then
+			self._wall_pen_energy_loss = self._ammo_data.wall_pen_energy_loss
+		end
+
+
 
 		if self._ammo_data.bullet_class ~= nil then
 			self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class)
