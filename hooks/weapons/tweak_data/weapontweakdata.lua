@@ -11,74 +11,8 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		self.stats.damage[i] = i / 10
 	end
 	
+	--turret
 	self.swat_van_turret_module.BODY_DAMAGE_CLAMP = 40000
-	
-	--Vulcan Minigun Rework
-	self.m134.AMMO_MAX = 1300/1.3125
-	self.m134.CLIP_AMMO_MAX = 1300
-	self.m134.AMMO_PICKUP = {0.5,1.5}
-	self.m134.can_shoot_through_enemy = true
-	self.m134.can_shoot_through_shield = true
-	self.m134.stats.damage = 57
-	self.m134.stats.spread = 15
-	self.m134.stats.spread_moving = 15
-	self.m134.stats.recoil = 1
-	self.m134.stats.concealment = 1
-	self.m134.kick.standing = {
-		-0.05,
-		0.2,
-		-0.2,
-		0.35
-	}
-	self.m134.kick.crouching = self.m134.kick.standing
-	self.m134.kick.steelsight = self.m134.kick.standing
-	
-	--XL 5.56 Microgun Rework
-	self.shuno.use_data.selection_index = SELECTION.SECONDARY
-	self.shuno.AMMO_MAX = 1300/1.3125
-	self.shuno.CLIP_AMMO_MAX = 1300
-	self.shuno.AMMO_PICKUP = {15, 30}
-	self.shuno.stats.damage = 32
-	self.shuno.stats.spread = 8
-	self.shuno.stats.spread_moving = 8
-	self.shuno.stats.recoil = 12
-	self.shuno.stats.concealment = 7
-	
-	--Flamethrower
-	self.flamethrower_mk2.AMMO_PICKUP = {20, 30}
-	self.flamethrower_mk2.dot_data = {
-		type = "fire",
-		custom_data = {
-			damage = 18,
-			dot_length = 3.6,
-			dot_trigger_max_distance = 3000,
-			dot_tick_period = 0.5,
-			scale_tick_period = 0.015,
-			dot_can_crit = true
-		}
-	}
-	
-	--MA-17 Flamethrower
-	self.system.AMMO_PICKUP = {15, 25}
-	self.system.dot_data = {
-		type = "fire",
-		custom_data = {
-			damage = 18,
-			dot_length = 3.6,
-			dot_trigger_max_distance = 3000,
-			dot_tick_period = 0.5,
-			scale_tick_period = 0.01,
-			dot_can_crit = true
-		}
-	}
-	
-	--Commander 101
-	self.ray.AMMO_PICKUP = {0.02  /1.35, 0.52  /1.35}
-	self.ray.stats.damage = 21
-	
-	--HRL-7
-	self.rpg7.AMMO_PICKUP = {0.01  /1.35, 0.51  /1.35}
-	self.rpg7.stats.damage = 62
 	
 	--sentry
 	self.sentry_gun.DAMAGE = 4
@@ -151,7 +85,8 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 				near_falloff = 0,
 				far_falloff = 2200,
 				near_multiplier = 1,
-				far_multiplier = 0.07},
+				far_multiplier = 0.07
+			},
 			t3 = {
 				optimal_distance = 0,
 				optimal_range = 1000,
@@ -176,6 +111,14 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 				near_multiplier = 1,
 				far_multiplier = 0.05
 			}
+		},
+		ar = {
+			optimal_distance = 1,
+			optimal_range = 1,
+			near_falloff = 1,
+			far_falloff = 1,
+			near_multiplier = 1,
+			far_multiplier = 1
 		},
 		lmg = {
 			t3 = {
@@ -454,19 +397,23 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			--cavity
 			self.sub2000.AMMO_PICKUP = pickup.assault.t4
 			self.sub2000.stats.damage = 164
+			self.sub2000.damage_falloff = falloff.ar
 			
 			--m308
 			self.new_m14.AMMO_PICKUP = pickup.assault.t4
 			self.new_m14.stats.damage = 164
+			self.new_m14.damage_falloff = falloff.ar
 			
 			--galant
 			self.ching.AMMO_PICKUP = pickup.assault.t4
 			self.ching.stats.damage = 164
+			self.ching.damage_falloff = falloff.ar
 			
 			--little friend
 			self.contraband.AMMO_PICKUP = pickup.assault.t4
 			self.contraband.CAN_TOGGLE_FIREMODE = true
 			self.contraband.stats.damage = 164
+			self.contraband.damage_falloff = falloff.ar
 			
 			self.contraband_m203.categories = {
 				"grenade_launcher",
@@ -479,6 +426,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.scar.AMMO_PICKUP = pickup.assault.t3
 			self.scar.AMMO_MAX = 140
 			self.scar.stats.damage = 100
+			self.scar.damage_falloff = falloff.ar
 			-- self.scar.stats.suppression = 9
 			--self.scar.stats.concealment = 1
 			
@@ -486,6 +434,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.fal.AMMO_PICKUP = pickup.assault.t3
 			self.fal.AMMO_MAX = 140
 			self.fal.stats.damage = 100
+			self.fal.damage_falloff = falloff.ar
 			-- self.fal.stats.suppression = 9
 			--self.fal.stats.concealment = 1 -10
 			
@@ -493,6 +442,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.akm.AMMO_PICKUP = pickup.assault.t3
 			self.akm.AMMO_MAX = 150
 			self.akm.stats.damage = 99
+			self.akm.damage_falloff = falloff.ar
 			-- self.akm.stats.suppression = 9
 			--self.akm.stats.concealment = 1
 			
@@ -500,6 +450,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.akm_gold.AMMO_PICKUP = pickup.assault.t3
 			self.akm_gold.AMMO_MAX = 150
 			self.akm_gold.stats.damage = 99
+			self.akm_gold.damage_falloff = falloff.ar
 			-- self.akm_gold.stats.suppression = 9
 			--self.akm_gold.stats.concealment = 1
 			
@@ -507,6 +458,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.m16.AMMO_PICKUP = pickup.assault.t3
 			self.m16.AMMO_MAX = 150
 			self.m16.stats.damage = 96
+			self.m16.damage_falloff = falloff.ar
 			-- self.m16.stats.suppression = 9
 			--self.m16.stats.concealment = 2
 			
@@ -514,6 +466,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.flint.AMMO_PICKUP = pickup.assault.t3
 			self.flint.AMMO_MAX = 140
 			self.flint.stats.damage = 101
+			self.flint.damage_falloff = falloff.ar
 			-- self.flint.stats.suppression = 9
 			--self.flint.stats.concealment = 1
 			
@@ -521,8 +474,20 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.g3.AMMO_PICKUP = pickup.assault.t3
 			self.g3.AMMO_MAX = 140
 			self.g3.stats.damage = 101
+			self.g3.damage_falloff = falloff.ar
 			-- self.g3.stats.suppression = 9
 			--self.g3.stats.concealment = 1
+			
+			--ketchnov
+			self.groza.AMMO_PICKUP = pickup.assault.t3
+			self.groza.AMMO_MAX = 80
+			self.groza.stats.damage = 101
+			self.groza.damage_falloff = falloff.ar
+
+			self.groza_underbarrel.categories = {
+				"grenade_launcher",
+				"assault_rifle"
+				}
 		
 		--t2 assault rifles---------------------------------------------------------
 			
@@ -530,6 +495,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.galil.AMMO_PICKUP = pickup.assault.t2
 			self.galil.AMMO_MAX = 210
 			self.galil.stats.damage = 58
+			self.galil.damage_falloff = falloff.ar
 			-- self.galil.stats.suppression = 15
 			--self.galil.stats.concealment = 1
 			
@@ -537,6 +503,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.new_m4.AMMO_PICKUP = pickup.assault.t2
 			self.new_m4.AMMO_MAX = 210
 			self.new_m4.stats.damage = 53
+			self.new_m4.damage_falloff = falloff.ar
 			-- self.new_m4.stats.suppression = 15
 			--self.new_m4.stats.concealment = -1
 			
@@ -544,6 +511,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.l85a2.AMMO_PICKUP = pickup.assault.t2
 			self.l85a2.AMMO_MAX = 210
 			self.l85a2.stats.damage = 59
+			self.l85a2.damage_falloff = falloff.ar
 			-- self.l85a2.stats.suppression = 15
 			--self.l85a2.stats.concealment = 1
 			
@@ -551,6 +519,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.ak5.AMMO_PICKUP = pickup.assault.t2
 			self.ak5.AMMO_MAX = 210
 			-- self.ak5.stats.damage = 56
+			self.ak5.damage_falloff = falloff.ar
 			-- self.ak5.stats.suppression = 15
 			--self.ak5.stats.concealment = 1
 			
@@ -558,6 +527,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.vhs.AMMO_PICKUP = pickup.assault.t2
 			self.vhs.AMMO_MAX = 210
 			self.vhs.stats.damage = 59
+			self.vhs.damage_falloff = falloff.ar
 			-- self.vhs.stats.suppression = 15
 			--self.vhs.stats.concealment = 2
 			
@@ -565,6 +535,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.ak74.AMMO_PICKUP = pickup.assault.t2
 			self.ak74.AMMO_MAX = 210
 			self.ak74.stats.damage = 57
+			self.ak74.damage_falloff = falloff.ar
 			-- self.ak74.stats.suppression = 15
 			--self.ak74.stats.concealment = 2
 			
@@ -572,6 +543,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.aug.AMMO_PICKUP = pickup.assault.t2
 			self.aug.AMMO_MAX = 210
 			-- self.aug.stats.damage = 55
+			self.aug.damage_falloff = falloff.ar
 			-- self.aug.stats.suppression = 15
 			--self.aug.stats.concealment = 3
 			
@@ -579,6 +551,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.komodo.AMMO_PICKUP = pickup.assault.t2
 			self.komodo.AMMO_MAX = 210
 			self.komodo.stats.damage = 59
+			self.komodo.damage_falloff = falloff.ar
 			-- self.komodo.stats.suppression = 15
 			--self.komodo.stats.concealment = 4
 			
@@ -586,6 +559,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.corgi.AMMO_PICKUP = pickup.assault.t2
 			self.corgi.AMMO_MAX = 210
 			self.corgi.stats.damage = 59
+			self.corgi.damage_falloff = falloff.ar
 			-- self.corgi.stats.suppression = 15
 			--self.corgi.stats.concealment = 1
 		
@@ -594,6 +568,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			--amcar
 			self.amcar.AMMO_PICKUP = pickup.assault.t1
 			self.amcar.AMMO_MAX = 300
+			self.amcar.damage_falloff = falloff.ar
 			-- self.amcar.stats.suppression = 15
 			--self.amcar.stats.concealment = 6
 			
@@ -601,6 +576,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.s552.AMMO_PICKUP = pickup.assault.t1
 			self.s552.AMMO_MAX = 300
 			self.s552.stats.damage = 40
+			self.s552.damage_falloff = falloff.ar
 			-- self.s552.stats.suppression = 15
 			--self.s552.stats.concealment = 3
 			
@@ -608,6 +584,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.g36.AMMO_PICKUP = pickup.assault.t1
 			self.g36.AMMO_MAX = 300
 			self.g36.stats.damage = 42
+			self.g36.damage_falloff = falloff.ar
 			-- self.g36.stats.suppression = 15
 			--self.g36.stats.concealment = 4
 			
@@ -615,6 +592,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.famas.AMMO_PICKUP = pickup.assault.t1
 			self.famas.AMMO_MAX = 300
 			self.famas.stats.damage = 39
+			self.famas.damage_falloff = falloff.ar
 			-- self.famas.stats.suppression = 15
 			--self.famas.stats.concealment = 3
 			
@@ -622,6 +600,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.asval.AMMO_PICKUP = pickup.assault.t1
 			self.asval.AMMO_MAX = 300
 			self.asval.stats.damage = 44
+			self.asval.damage_falloff = falloff.ar
 			-- self.asval.stats.suppression = 19
 			--self.asval.stats.concealment = 3
 			
@@ -629,6 +608,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.tecci.AMMO_PICKUP = pickup.assault.t1
 			self.tecci.AMMO_MAX = 300
 			self.tecci.stats.damage = 42
+			self.tecci.damage_falloff = falloff.ar
 			-- self.tecci.stats.suppression = 15
 			--self.tecci.stats.concealment = 4
 	
@@ -642,6 +622,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.m60.AMMO_MAX = 200
 			self.m60.CLIP_AMMO_MAX = 100
 			self.m60.can_shoot_through_wall = true
+			self.m60.max_wall_penetrations = 1
 			self.m60.stats.spread = 12
 			self.m60.stats.recoil = 4
 			self.m60.panic_suppression_chance = 1
@@ -779,6 +760,10 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 		--t3 smgs-------------------------------------------------------------------
 			
+			--patchett
+			self.sterling.AMMO_PICKUP = pickup.smg.t3
+			self.sterling.damage_falloff = falloff.smg.t3
+			
 			--tatonka
 			self.coal.AMMO_PICKUP = pickup.smg.t3
 			self.coal.damage_falloff = falloff.smg.t3
@@ -802,6 +787,10 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			--cr 805b
 			self.hajk.AMMO_PICKUP = pickup.smg.t3
 			self.hajk.damage_falloff = falloff.smg.t3
+			
+			--akimbo patchett
+			self.x_sterling.AMMO_PICKUP = pickup.smg.t3
+			self.x_sterling.damage_falloff = falloff.aki_smg.t3
 			
 			--akimbo tatonka
 			self.x_coal.AMMO_PICKUP = pickup.smg.t3
@@ -865,6 +854,10 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.vityaz.AMMO_PICKUP = pickup.smg.t2
 			self.vityaz.damage_falloff = falloff.smg.t2
 			
+			--miyaka
+			self.pm9.AMMO_PICKUP = pickup.smg.t2
+			self.pm9.damage_falloff = falloff.smg.t2
+			
 			--akimbo kobus
 			self.x_p90.AMMO_PICKUP = pickup.smg.t2
 			self.x_p90.damage_falloff = falloff.aki_smg.t2
@@ -901,6 +894,10 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.x_vityaz.AMMO_PICKUP = pickup.smg.t2
 			self.x_vityaz.damage_falloff = falloff.aki_smg.t2
 			
+			--akimbo miyaka
+			self.x_pm9.AMMO_PICKUP = pickup.smg.t2
+			self.x_pm9.damage_falloff = falloff.smg.t2
+			
 		--t1 smgs-------------------------------------------------------------------
 			
 			--micro uzi
@@ -910,10 +907,6 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			--uzi
 			self.uzi.AMMO_PICKUP = pickup.smg.t1
 			self.uzi.damage_falloff = falloff.smg.t1
-			
-			--patchett
-			self.sterling.AMMO_PICKUP = pickup.smg.t1
-			self.sterling.damage_falloff = falloff.smg.t1
 			
 			--blaster
 			self.tec9.AMMO_PICKUP = pickup.smg.t1
@@ -942,10 +935,6 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			--akimbo uzi
 			self.x_uzi.AMMO_PICKUP = pickup.smg.t1
 			self.x_uzi.damage_falloff = falloff.aki_smg.t1
-			
-			--akimbo patchett
-			self.x_sterling.AMMO_PICKUP = pickup.smg.t1
-			self.x_sterling.damage_falloff = falloff.aki_smg.t1
 			
 			--akimbo blaster
 			self.x_tec9.AMMO_PICKUP = pickup.smg.t1
@@ -1305,26 +1294,100 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.x_beer.damage_falloff = falloff.pistol.t1
 			self.x_beer.AMMO_MAX = self.beer.AMMO_MAX
 			
-	--GLs
+	--GLs-----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		--t2 gls--------------------------------------------------------------------
 			
-			--gl40
+			--GL40
 			self.gre_m79.AMMO_PICKUP = pickup.gl.t2
 			
-			--piglet
+			--Piglet
 			self.m32.AMMO_PICKUP = pickup.gl.t2
 			
-			--china puff
+			--China puff
 			self.china.AMMO_PICKUP = pickup.gl.t2
 			
-			--compact 40
+			--Compact 40
 			self.slap.AMMO_PICKUP = pickup.gl.t2
 			
 		--t1 gls--------------------------------------------------------------------
 			
-			--arbiter
+			--Arbiter
 			self.arbiter.AMMO_PICKUP = pickup.gl.t1
 			self.arbiter.stats.damage = 54
 			
+	--RLs-----------------------------------------------------------------------------------------------------------------------------------------------------
+	
+		--Commander 101
+			self.ray.AMMO_PICKUP = {0.02  /1.35, 0.52  /1.35}
+			self.ray.stats.damage = 21
+		
+		--HRL-7
+			self.rpg7.AMMO_PICKUP = {0.01  /1.35, 0.51  /1.35}
+			self.rpg7.stats.damage = 62
+			
+	--Miniguns------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		--Vulcan Minigun Rework
+			self.m134.AMMO_MAX = 1300/1.3125
+			self.m134.CLIP_AMMO_MAX = 1300
+			self.m134.AMMO_PICKUP = {0.5,1.5}
+			self.m134.can_shoot_through_shield = true
+			self.m134.can_shoot_through_enemy = true
+			self.m134.can_shoot_through_wall = true
+			self.m134.max_penetrations = 3
+			self.m134.stats.damage = 57
+			self.m134.stats.spread = 15
+			self.m134.stats.spread_moving = 15
+			self.m134.stats.recoil = 1
+			self.m134.stats.concealment = 1
+			self.m134.kick.standing = {
+				-0.05,
+				0.2,
+				-0.2,
+				0.35
+			}
+			self.m134.kick.crouching = self.m134.kick.standing
+			self.m134.kick.steelsight = self.m134.kick.standing
+			
+		--XL 5.56 Microgun Rework
+			self.shuno.use_data.selection_index = SELECTION.SECONDARY
+			self.shuno.AMMO_MAX = 1300/1.3125
+			self.shuno.CLIP_AMMO_MAX = 1300
+			self.shuno.AMMO_PICKUP = {15, 30}
+			self.shuno.stats.damage = 32
+			self.shuno.stats.spread = 8
+			self.shuno.stats.spread_moving = 8
+			self.shuno.stats.recoil = 12
+			self.shuno.stats.concealment = 7
+			
+	--Flamethrowers-------------------------------------------------------------------------------------------------------------------------------------------
+	
+		--Flamethrower
+			self.flamethrower_mk2.AMMO_PICKUP = {20, 30}
+			self.flamethrower_mk2.dot_data = {
+				type = "fire",
+				custom_data = {
+					damage = 18,
+					dot_length = 3.6,
+					dot_trigger_max_distance = 3000,
+					dot_tick_period = 0.5,
+					scale_tick_period = 0.015,
+					dot_can_crit = true
+				}
+			}
+		
+		--MA-17 Flamethrower
+			self.system.AMMO_PICKUP = {15, 25}
+			self.system.dot_data = {
+				type = "fire",
+				custom_data = {
+					damage = 18,
+					dot_length = 3.6,
+					dot_trigger_max_distance = 3000,
+					dot_tick_period = 0.5,
+					scale_tick_period = 0.01,
+					dot_can_crit = true
+				}
+			}
 end)

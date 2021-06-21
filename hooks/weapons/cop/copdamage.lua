@@ -347,39 +347,7 @@ function CopDamage:damage_bullet(attack_data)
 	local is_civilian = CopDamage.is_civilian(self._unit:base()._tweak_table)
 
 	if self._has_plate and attack_data.col_ray.body and attack_data.col_ray.body:name() == self._ids_plate_name and not attack_data.armor_piercing then
-		local armor_pierce_roll = math.rand(1)
-		local armor_pierce_value = 0
-
-		if attack_data.attacker_unit == managers.player:player_unit() and not attack_data.weapon_unit:base().thrower_unit then
-			armor_pierce_value = armor_pierce_value + attack_data.weapon_unit:base():armor_piercing_chance()
-			armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("player", "armor_piercing_chance", 0)
-			armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance", 0)
-			armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance_2", 0)
-
-			if attack_data.weapon_unit:base():got_silencer() then
-				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("weapon", "armor_piercing_chance_silencer", 0)
-			end
-
-			if attack_data.weapon_unit:base():is_category("saw") then
-				armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("saw", "armor_piercing_chance", 0)
-			end
-		elseif attack_data.attacker_unit:base() and attack_data.attacker_unit:base().sentry_gun then
-			local owner = attack_data.attacker_unit:base():get_owner()
-
-			if alive(owner) then
-				if owner == managers.player:player_unit() then
-					armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("sentry_gun", "armor_piercing_chance", 0)
-					armor_pierce_value = armor_pierce_value + managers.player:upgrade_value("sentry_gun", "armor_piercing_chance_2", 0)
-				else
-					armor_pierce_value = armor_pierce_value + (owner:base():upgrade_value("sentry_gun", "armor_piercing_chance") or 0)
-					armor_pierce_value = armor_pierce_value + (owner:base():upgrade_value("sentry_gun", "armor_piercing_chance_2") or 0)
-				end
-			end
-		end
-
-		if armor_pierce_roll >= armor_pierce_value then
-			return
-		end
+		return
 	end
 
 	local result = nil
