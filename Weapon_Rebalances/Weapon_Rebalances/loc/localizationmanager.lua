@@ -41,11 +41,11 @@ Hooks:Add("LocalizationManagerPostInit", "WR Localization", function(loc)
 
 		["bm_wp_upg_a_custom_desc"] =					"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 
-		["bm_wp_upg_a_explosive_desc"] =				"Fires three explosive charges. This ammo type is harder to find.",
+		["bm_wp_upg_a_explosive_desc"] =				"Fires one explosive charge that kills or stuns targets. This ammo type is harder to find.",
 
 		["bm_wp_upg_a_piercing_desc"] =					"Fires poison tipped darts. Penetrates body armor.",
 
-		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that penetrates body armor, enemies, shields and walls up to six times.",
+		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that penetrates enemies, shields and walls up to four times. Penetrates body armor.",
 
 		["bm_wp_upg_a_dragons_breath_desc"] = 			"Fires pellets that go up in sparks and flames. Burns through shields and body armor. This ammo type is harder to find."
 	})

@@ -529,14 +529,15 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
-				falloff_mul = "1.5"
+				falloff_mul = "1.25"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "0.5"
-				max_enemy_penetrations = "4"
+				can_shoot_through_enemy = "true"
+				max_enemy_penetration_distance = "2000"
+				enemy_pen_energy_loss = "700"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_sparrow"/>
@@ -658,16 +659,21 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
-				falloff_mul = "1.5"
+				falloff_mul = "1.25"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				ammo_pickup_min_mul = "0.4"
 				ammo_pickup_max_mul = "0.534"
 				armor_piercing_add = "1"
 				can_shoot_through_shield = "true"
+				max_shield_penetration_distance = "2000"
+				shield_pen_energy_loss = "500"
 				can_shoot_through_wall = "true"
+				max_wall_penetration_distance = "2000"
+				wall_pen_energy_loss = "500"
 				can_shoot_through_enemy = "true"
-				max_penetrations = "6"
+				max_enemy_penetration_distance = "2000"
+				enemy_pen_energy_loss = "500"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_lemming"/>
