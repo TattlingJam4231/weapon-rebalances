@@ -285,32 +285,63 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.boot.damage_falloff = falloff.shotgun.t5
 			
 			--akimbo judge
-			self.x_judge.AMMO_PICKUP = pickup.shotgun.t5
+			self.x_judge.AMMO_PICKUP = pickup.shotgun.t4
+			-- self.x_judge.damage_falloff = {
+			-- 	optimal_distance = 0,
+			-- 	optimal_range = 1000,
+			-- 	near_falloff = 0,
+			-- 	far_falloff = 2600,
+			-- 	near_multiplier = 1,
+			-- 	far_multiplier = 0.06
+			-- }
+			self.x_judge.fire_mode_data.fire_rate = 0.166
+			self.x_judge.single.fire_rate = 0.166
+			self.x_judge.rays = 9
+
+			self.x_judge.stats.damage = 110
 			self.x_judge.damage_falloff = {
 				optimal_distance = 0,
 				optimal_range = 1000,
 				near_falloff = 0,
-				far_falloff = 2600,
+				far_falloff = 2400,
 				near_multiplier = 1,
-				far_multiplier = 0.08
+				far_multiplier = 0.06
 			}
-			self.x_judge.fire_mode_data.fire_rate = 0.166
-			self.x_judge.single.fire_rate = 0.166
-			self.x_judge.rays = 9
+			self.x_judge.categories = {
+				"akimbo",
+				"shotgun",
+				"pistol",
+				"revolver"
+			}
 			
 			--judge
-			self.judge.AMMO_PICKUP = pickup.shotgun.t5
+			self.judge.AMMO_PICKUP = pickup.shotgun.t4
+			-- self.judge.damage_falloff = {
+			-- 	optimal_distance = 0,
+			-- 	optimal_range = 1000,
+			-- 	near_falloff = 0,
+			-- 	far_falloff = 2600,
+			-- 	near_multiplier = 1,
+			-- 	far_multiplier = 0.08
+			-- }
+			self.judge.fire_mode_data.fire_rate = 0.166
+			self.judge.single.fire_rate = 0.166
+			self.judge.rays = 9
+
+			self.judge.stats.damage = 110
 			self.judge.damage_falloff = {
 				optimal_distance = 0,
 				optimal_range = 1000,
 				near_falloff = 0,
-				far_falloff = 2600,
+				far_falloff = 2400,
 				near_multiplier = 1,
-				far_multiplier = 0.08
+				far_multiplier = 0.06
 			}
-			self.judge.fire_mode_data.fire_rate = 0.166
-			self.judge.single.fire_rate = 0.166
-			self.judge.rays = 9
+			self.judge.categories = {
+				"shotgun",
+				"pistol",
+				"revolver"
+			}
 			
 			--gsps
 			self.m37.AMMO_PICKUP = pickup.shotgun.t5
@@ -418,7 +449,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			self.contraband_m203.categories = {
 				"grenade_launcher",
 				"assault_rifle"
-				}
+			}
 		
 		--t3 assault rifles---------------------------------------------------------
 		

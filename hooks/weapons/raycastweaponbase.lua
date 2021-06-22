@@ -555,3 +555,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 
 	return result
 end
+
+InstantExplosiveBulletBase.CURVE_POW = 0.2
+InstantExplosiveBulletBase.PLAYER_DMG_MUL = 0.1
+InstantExplosiveBulletBase.RANGE = 200

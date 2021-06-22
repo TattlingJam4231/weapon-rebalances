@@ -132,244 +132,6 @@
 			</weapons>
 		</WeaponMod>
 		
-		<!-- Ballistic Tip t4 -->
-		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t4"
-			name_id="Ballistic Tip"
-			based_on="wpn_fps_upg_a_slug"
-			inherit_weapons="false"
-			inherit_adds="false"
-			inherit_override="false"
-			inherit_parts_override="false"
-			inherit_parts_forbids="false"
-			type="ammo"
-			ver="2">
-			<stats
-				damage = "80"
-				spread = "0"
-				total_ammo_mod = "0"
-			/>
-			<custom_stats
-				damage_far_mul = "1"
-				damage_near_mul = "1"
-				ammo_pickup_min_mul = "0.5"
-				ammo_pickup_max_mul = "0.667"
-				armor_piercing_add = "0"
-				can_shoot_through_shield = "false"
-				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "false"
-			/>
-			<weapons_override>
-				<wpn_fps_ass_m16 depends_on="bm_wp_upg_ass_m4_b_beowulf">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_m16>
-				<wpn_fps_ass_m4 depends_on="bm_wp_upg_ass_m4_b_beowulf">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_m4>
-				<wpn_fps_ass_akm depends_on="bm_wp_upg_ass_ak_b_zastava">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_akm>
-				<wpn_fps_ass_akm_gold depends_on="bm_wp_upg_ass_ak_b_zastava">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_akm_gold>
-				<wpn_fps_ass_74 depends_on="bm_wp_upg_ass_ak_b_zastava">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_74>
-				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_sniper">
-					<custom_stats
-						damage_far_mul = "1"
-						damage_near_mul = "1"
-						ammo_pickup_min_mul = "0.5"
-						ammo_pickup_max_mul = "0.667"
-						armor_piercing_add = "0"
-						can_shoot_through_shield = "false"
-						can_shoot_through_wall = "false"
-						can_shoot_through_enemy = "false"
-					/>
-				</wpn_fps_ass_g3>
-			</weapons_override>
-			<weapons>
-				<value_node value="wpn_fps_ass_contraband"/>
-				<value_node value="wpn_fps_ass_sub2000"/>
-				<value_node value="wpn_fps_ass_m14"/>
-				<value_node value="wpn_fps_ass_ching"/>
-				<value_node value="wpn_fps_ass_m16"/>
-				<value_node value="wpn_fps_ass_akm"/>
-				<value_node value="wpn_fps_ass_akm_gold"/>
-				<value_node value="wpn_fps_ass_g3"/>
-				<value_node value="wpn_fps_ass_m4"/>
-				<value_node value="wpn_fps_ass_74"/>
-			</weapons>
-		</WeaponMod>
-		
-		<!-- Ballistic Tip t3 -->
-		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t3"
-			name_id="Ballistic Tip"
-			based_on="wpn_fps_upg_a_slug"
-			inherit_weapons="false"
-			inherit_adds="false"
-			inherit_override="false"
-			inherit_parts_override="false"
-			inherit_parts_forbids="false"
-			type="ammo"
-			ver="2">
-			<stats
-				damage = "20"
-				spread = "0"
-				total_ammo_mod = "0"
-			/>
-			<custom_stats
-				damage_far_mul = "1"
-				damage_near_mul = "1"
-				armor_piercing_add = "0"
-				can_shoot_through_shield = "false"
-				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "false"
-			/>
-			<forbids>
-				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
-				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
-				<value_node value="wpn_fps_ass_g3_b_sniper"/>
-				<value_node value="wpn_fps_ass_g3_b_short"/>
-			</forbids>
-			<weapons>
-				<value_node value="wpn_fps_ass_akm"/>
-				<value_node value="wpn_fps_ass_akm_gold"/>
-				<value_node value="wpn_fps_ass_m16"/>
-				<value_node value="wpn_fps_ass_scar"/>
-				<value_node value="wpn_fps_ass_fal"/>
-				<value_node value="wpn_fps_ass_flint"/>
-				<value_node value="wpn_fps_ass_g3"/>
-			</weapons>
-		</WeaponMod>
-		
-		<!-- Ballistic Tip t2 -->
-		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t2"
-			name_id="Ballistic Tip"
-			based_on="wpn_fps_upg_a_slug"
-			inherit_weapons="false"
-			inherit_adds="false"
-			inherit_override="false"
-			inherit_parts_override="false"
-			inherit_parts_forbids="false"
-			type="ammo"
-			ver="2">
-			<stats
-				damage = "12"
-				spread = "0"
-				total_ammo_mod = "0"
-			/>
-			<custom_stats
-				damage_far_mul = "1"
-				damage_near_mul = "1"
-				armor_piercing_add = "0"
-				can_shoot_through_shield = "false"
-				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "false"
-			/>
-			<forbids>
-				<value_node value="wpn_fps_upg_ass_m4_b_beowulf"/>
-				<value_node value="wpn_fps_upg_ass_ak_b_zastava"/>
-			</forbids>
-			<weapons_override>
-				<wpn_fps_ass_g3 depends_on="bm_wp_g3_b_short"/>
-			</weapons_override>
-			<weapons>
-				<value_node value="wpn_fps_ass_74"/>
-				<value_node value="wpn_fps_ass_corgi"/>
-				<value_node value="wpn_fps_ass_komodo"/>
-				<value_node value="wpn_fps_ass_aug"/>
-				<value_node value="wpn_fps_ass_g3"/>
-				<value_node value="wpn_fps_ass_vhs"/>
-				<value_node value="wpn_fps_ass_ak5"/>
-				<value_node value="wpn_fps_ass_l85a2"/>
-				<value_node value="wpn_fps_ass_m4"/>
-				<value_node value="wpn_fps_ass_galil"/>
-			</weapons>
-		</WeaponMod>
-		
-		<!-- Ballistic Tip t1 -->
-		<WeaponMod
-			id="wpn_upg_a_ballistic_tip_t1"
-			name_id="Ballistic Tip"
-			based_on="wpn_fps_upg_a_slug"
-			inherit_weapons="false"
-			inherit_adds="false"
-			inherit_override="false"
-			inherit_parts_override="false"
-			inherit_parts_forbids="false"
-			type="ammo"
-			ver="2">
-			<stats
-				damage = "8"
-				spread = "0"
-				total_ammo_mod = "0"
-			/>
-			<custom_stats
-				damage_far_mul = "1"
-				damage_near_mul = "1"
-				armor_piercing_add = "0"
-				can_shoot_through_shield = "false"
-				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "false"
-			/>
-			<weapons>
-				<value_node value="wpn_fps_ass_amcar"/>
-				<value_node value="wpn_fps_ass_tecci"/>
-				<value_node value="wpn_fps_ass_famas"/>
-				<value_node value="wpn_fps_ass_s552"/>
-				<value_node value="wpn_fps_ass_g36"/>
-				<value_node value="wpn_fps_ass_asval"/>
-			</weapons>
-		</WeaponMod>
-		
 	<!-- Hollow Point -->
 		<WeaponMod
 			id="wpn_upg_a_pis_hp"
@@ -529,14 +291,15 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
-				falloff_mul = "1.5"
+				falloff_mul = "1.25"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				armor_piercing_add = "0"
 				can_shoot_through_shield = "false"
 				can_shoot_through_wall = "false"
-				can_shoot_through_enemy = "0.5"
-				max_enemy_penetrations = "4"
+				can_shoot_through_enemy = "true"
+				max_enemy_penetration_distance = "2000"
+				enemy_pen_energy_loss = "700"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_sparrow"/>
@@ -658,16 +421,21 @@
 				total_ammo_mod = "0"
 			/>
 			<custom_stats
-				falloff_mul = "1.5"
+				falloff_mul = "1.25"
 				damage_far_mul = "1"
 				damage_near_mul = "1"
 				ammo_pickup_min_mul = "0.4"
 				ammo_pickup_max_mul = "0.534"
 				armor_piercing_add = "1"
 				can_shoot_through_shield = "true"
+				max_shield_penetration_distance = "2000"
+				shield_pen_energy_loss = "500"
 				can_shoot_through_wall = "true"
+				max_wall_penetration_distance = "2000"
+				wall_pen_energy_loss = "500"
 				can_shoot_through_enemy = "true"
-				max_penetrations = "6"
+				max_enemy_penetration_distance = "2000"
+				enemy_pen_energy_loss = "500"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_lemming"/>
