@@ -4,6 +4,8 @@
     <hooks hook_id="lib/" script_path="hooks/">
         <group                                                          :script_path="skills/">
 		    <post :hook_id="player_actions/skills/playeractionammoefficiency"   :script_path="playeractionammoefficiency.lua"/>
+		    <post :hook_id="player_actions/skills/playeractiontriggerhappy"     :script_path="playeractiontriggerhappy.lua"/>
+		    <post :hook_id="managers/playermanager"                             :script_path="playermanager.lua"/>
 		    <post :hook_id="tweak_data/skilltreetweakdata"                      :script_path="skilltreetweakdata.lua"/>
 		    <post :hook_id="managers/player/snipergrazedamage"                  :script_path="snipergrazedamage.lua"/>
 		    <post :hook_id="tweak_data/upgradestweakdata"                       :script_path="upgradestweakdata.lua"/>
