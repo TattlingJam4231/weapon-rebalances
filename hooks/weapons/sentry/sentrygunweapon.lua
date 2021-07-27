@@ -1,3 +1,11 @@
+function SentryGunWeapon:_set_fire_mode(use_armor_piercing)
+	self._use_armor_piercing = use_armor_piercing
+	self._fire_rate_reduction = self._use_armor_piercing and 4 or 1
+	self._current_damage_mul = self._use_armor_piercing and 4 or 1
+
+	self:flip_fire_sound()
+end
+
 function SentryGunWeapon:fire(blanks, expend_ammo, shoot_player, target_unit)
 	if expend_ammo then
 		if self._ammo_total <= 0 then
@@ -36,4 +44,12 @@ function SentryGunWeapon:fire(blanks, expend_ammo, shoot_player, target_unit)
 	self._unit:event_listener():call("on_fire")
 
 	return ray_res
+end
+
+function SentryGunWeapon:out_of_ammo()
+	if self._ammo_total then
+		return self._ammo_total <= 0
+	else
+		return self._ammo_ratio <= 0
+	end
 end
