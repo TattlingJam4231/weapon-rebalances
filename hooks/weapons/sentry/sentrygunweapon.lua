@@ -1,7 +1,7 @@
 function SentryGunWeapon:_set_fire_mode(use_armor_piercing)
 	self._use_armor_piercing = use_armor_piercing
 	self._fire_rate_reduction = self._use_armor_piercing and 4 or 1
-	self._current_damage_mul = self._use_armor_piercing and 4 or 1
+	self._current_damage_mul = self._use_armor_piercing and 3.5 or 1
 
 	self:flip_fire_sound()
 end
