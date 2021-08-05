@@ -8,8 +8,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 48,
-							spread = nil,
-							moving_spread = nil
+							spread = nil
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -29,8 +28,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 26,
-							spread = nil,
-							moving_spread = nil
+							spread = nil
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -50,8 +48,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 20,
-							spread = nil,
-							moving_spread = nil
+							spread = nil
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -71,8 +68,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 17,
-							spread = nil,
-							moving_spread = nil
+							spread = nil
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -92,8 +88,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 13,
-							spread = nil,
-							moving_spread = nil
+							spread = nil
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -116,8 +111,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 74,
-							spread = 10,
-							moving_spread = 10
+							spread = 10
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -141,8 +135,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 61,
-							spread = 10,
-							moving_spread = 10
+							spread = 10
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -166,8 +159,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 32,
-							spread = 10,
-							moving_spread = 10
+							spread = 10
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -191,8 +183,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 30,
-							spread = 10,
-							moving_spread = 10
+							spread = 10
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -216,8 +207,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = 20,
-							spread = 10,
-							moving_spread = 10
+							spread = 10
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -245,8 +235,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = -5,
 							damage = 155,
-							spread = 0,
-							moving_spread = 0
+							spread = 0
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.5,
@@ -264,8 +253,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = -5,
 							damage = 110,
-							spread = 0,
-							moving_spread = 0
+							spread = 0
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.4,
@@ -283,8 +271,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = -5,
 							damage = 55,
-							spread = 0,
-							moving_spread = 0
+							spread = 0
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.3,
@@ -302,8 +289,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = -5,
 							damage = 42,
-							spread = 0,
-							moving_spread = 0
+							spread = 0
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.5,
@@ -321,8 +307,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = -5,
 							damage = 18,
-							spread = 0,
-							moving_spread = 0
+							spread = 0
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.5,
@@ -345,23 +330,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = 0, 
 							damage = -60,
-							spread = -3,
-							moving_spread = -3
+							spread = -3
 						},
 						custom_stats = {
-							ammo_pickup_min_mul = 0.4,
-							ammo_pickup_max_mul = 0.5,
+							ammo_pickup_min_mul = 0.5,
+							ammo_pickup_max_mul = 0.533,
 							dot_data = {
 								type = "fire",
 								custom_data = {
-									damage = 28,
-									dot_length = 5.1,
-									dot_trigger_max_distance = 2000,
+									damage = 10,
 									dot_tick_period = 0.5,
-									scale_length = 5,
-									diminish_scale_length = 15,
+									damage_ticks = 22,
+									add_ticks = 14,
+									dot_trigger_max_distance = 2000,
 									dot_can_crit = true
-									
 								}
 							},
 							armor_piercing_add = 1, 
@@ -386,8 +368,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = 0, 
 							damage = -30,
-							spread = -3,
-							moving_spread = -3
+							spread = -3
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.4,
@@ -395,14 +376,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "fire",
 								custom_data = {
-									damage = 24,
-									dot_length = 4.1,
-									dot_trigger_max_distance = 2000,
+									damage = 10,
 									dot_tick_period = 0.5,
-									scale_length = 4,
-									diminish_scale_length = 10,
+									damage_ticks = 18,
+									add_ticks = 12,
+									dot_trigger_max_distance = 2000,
 									dot_can_crit = true
-									
 								}
 							},
 							armor_piercing_add = 1, 
@@ -419,23 +398,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = 0, 
 							damage = -20,
-							spread = -3,
-							moving_spread = -3
+							spread = -3
 						},
 						custom_stats = {
-							ammo_pickup_min_mul = 0.4,
-							ammo_pickup_max_mul = 0.5,
+							ammo_pickup_min_mul = 0.667,
+							ammo_pickup_max_mul = 0.333,
 							dot_data = {
 								type = "fire",
 								custom_data = {
-									damage = 18,
-									dot_length = 4.1,
-									dot_trigger_max_distance = 2000,
+									damage = 10,
 									dot_tick_period = 0.5,
-									scale_length = 3,
-									diminish_scale_length = 8,
+									damage_ticks = 14,
+									add_ticks = 10,
+									dot_trigger_max_distance = 2000,
 									dot_can_crit = true
-									
 								}
 							},
 							armor_piercing_add = 1, 
@@ -452,23 +428,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = 0, 
 							damage = -15,
-							spread = -3,
-							moving_spread = -3
+							spread = -3
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.4,
-							ammo_pickup_max_mul = 0.5,
+							ammo_pickup_max_mul = 0.6,
 							dot_data = {
 								type = "fire",
 								custom_data = {
-									damage = 18, 
-									dot_length = 3.1,
-									dot_trigger_max_distance = 2000,
+									damage = 10, 
 									dot_tick_period = 0.5,
-									scale_length = 2.5,
-									diminish_scale_length = 8,
+									damage_ticks = 10,
+									add_ticks = 8,
+									dot_trigger_max_distance = 2000,
 									dot_can_crit = true
-									
 								}
 							},
 							armor_piercing_add = 1, 
@@ -485,23 +458,20 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							value = 5, 
 							total_ammo_mod = 0, 
 							damage = -6,
-							spread = -3,
-							moving_spread = -3
+							spread = -3
 						},
 						custom_stats = {
-							ammo_pickup_min_mul = 0.4,
-							ammo_pickup_max_mul = 0.5,
+							ammo_pickup_min_mul = 0.333,
+							ammo_pickup_max_mul = 0.333,
 							dot_data = {
 								type = "fire",
 								custom_data = {
-									damage = 14,
-									dot_length = 2.1,
-									dot_trigger_max_distance = 2000,
+									damage = 10,
 									dot_tick_period = 0.5,
-									scale_length = 2,
-									diminish_scale_length = 8,
+									damage_ticks = 6,
+									add_ticks = 6,
+									dot_trigger_max_distance = 2000,
 									dot_can_crit = true
-									
 								}
 							},
 							armor_piercing_add = 1, 
@@ -519,9 +489,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					t5 = {
 						stats = {
 							value = 5,
-							damage = -103,
-							spread = -1,
-							moving_spread = -1
+							damage = -90,
+							spread = 1
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -529,11 +498,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "poison",
 								custom_data = {
-									damage = 95,
+									damage = 70,
 									dot_tick_period = 0.5,
-									scale_damage = 240,
-									damage_decay = 5,
-									decay_period = 0.5
+									damage_ticks = 10,
+									dot_trigger_max_distance = 2500,
+									dot_can_stack = true,
+									dot_can_crit = true
 								}
 							},
 							armor_piercing_add = 1, 
@@ -544,9 +514,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					t4 = {
 						stats = {
 							value = 5,
-							damage = -90,
-							spread = -1,
-							moving_spread = -1
+							damage = -77,
+							spread = 1
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -554,11 +523,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "poison",
 								custom_data = {
-									damage = 95,
+									damage = 50,
 									dot_tick_period = 0.5,
-									scale_damage = 65,
-									damage_decay = 5,
-									decay_period = 0.5
+									damage_ticks = 10,
+									dot_trigger_max_distance = 2500,
+									dot_can_stack = true,
+									dot_can_crit = true
 								}
 							},
 							armor_piercing_add = 1, 
@@ -569,9 +539,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					t3 = {
 						stats = {
 							value = 5,
-							damage = -37,
-							spread = -1,
-							moving_spread = -1
+							damage = -34,
+							spread = 1
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = 0.667,
@@ -579,11 +548,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "poison",
 								custom_data = {
-									damage = 90,
+									damage = 40,
 									dot_tick_period = 0.5,
-									scale_damage = 60,
-									damage_decay = 10,
-									decay_period = 0.5
+									damage_ticks = 10,
+									dot_trigger_max_distance = 2500,
+									dot_can_stack = true,
+									dot_can_crit = true
 								}
 							},
 							armor_piercing_add = 1, 
@@ -595,8 +565,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						stats = {
 							value = 5,
 							damage = -28,
-							spread = -1,
-							moving_spread = -1
+							spread = 1
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -604,11 +573,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "poison",
 								custom_data = {
-									damage = 60,
+									damage = 25,
 									dot_tick_period = 0.5,
-									scale_damage = 40,
-									damage_decay = 5,
-									decay_period = 0.5
+									damage_ticks = 10,
+									dot_trigger_max_distance = 2500,
+									dot_can_stack = true,
+									dot_can_crit = true
 								}
 							},
 							armor_piercing_add = 1, 
@@ -619,9 +589,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 					t1 = {
 						stats = {
 							value = 5,
-							damage = -12,
-							spread = -1,
-							moving_spread = -1
+							damage = -11,
+							spread = 1
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
@@ -629,11 +598,12 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							dot_data = {
 								type = "poison",
 								custom_data = {
-									damage = 30,
+									damage = 15,
 									dot_tick_period = 0.5,
-									scale_damage = 30,
-									damage_decay = 10,
-									decay_period = 0.5
+									damage_ticks = 10,
+									dot_trigger_max_distance = 2500,
+									dot_can_stack = true,
+									dot_can_crit = true
 								}
 							},
 							armor_piercing_add = 1, 
