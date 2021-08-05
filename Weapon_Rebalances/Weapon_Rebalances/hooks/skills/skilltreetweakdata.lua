@@ -40,4 +40,24 @@ Hooks:PostHook(SkillTreeTweakData, "init", "WR SkillTreeTweakData init", functio
 			1
 		}
 	}
+	self.skills.fire_control = {
+		{
+			upgrades = {
+				"player_weapon_movement_stability_1"
+			},
+			cost = self.costs.hightier
+		},
+		{
+			upgrades = {
+				"player_hip_fire_accuracy_inc_1"
+			},
+			cost = self.costs.hightierpro
+		},
+		name_id = "menu_fire_control_beta",
+		desc_id = "menu_fire_control_beta_desc",
+		icon_xy = {
+			9,
+			10
+		}
+	}
 end)
