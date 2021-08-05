@@ -30,7 +30,7 @@
 				can_shoot_through_wall = "false"
 				can_shoot_through_enemy = "true"
 				max_enemy_penetration_distance = "2000"
-				enemy_pen_energy_loss = "800"
+				enemy_pen_energy_loss = "1500"
 				optimal_distance_mul = "2000"
 				optimal_range_mul = "0"
 				near_falloff_mul = "0"
@@ -299,7 +299,7 @@
 				can_shoot_through_wall = "false"
 				can_shoot_through_enemy = "true"
 				max_enemy_penetration_distance = "2000"
-				enemy_pen_energy_loss = "700"
+				enemy_pen_energy_loss = "1500"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_pis_sparrow"/>
@@ -519,10 +519,6 @@
 		
 	<AddFiles directory="assets">
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip"/>
-		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t1"/>
-		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t2"/>
-		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t3"/>
-		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_ballistic_tip_t4"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_fmj"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_pis_ap"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_pis_fmj"/>

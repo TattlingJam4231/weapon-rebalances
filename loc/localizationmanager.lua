@@ -39,6 +39,11 @@ Hooks:Add("LocalizationManagerPostInit", "WRd Localization", function(loc)
 														"ACE: ##6 points##\n" ..
 														"The time window is increased to ##4## seconds.",
 
+		["menu_fire_control_beta_desc"] = 				"BASIC: ##2 points##\n" ..
+														"Your accuracy penalty is decreased by ##20%## when shooting while moving.\n\n" ..
+														"ACE: ##4 points##\n" ..
+														"You gain ##12## weapon accuracy while firing from the hip.",
+
 		["bm_wp_upg_a_custom_desc"] =					"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 
 		["bm_wp_upg_a_explosive_desc"] =				"Fires one explosive charge that kills or stuns targets. This ammo type is harder to find.",
