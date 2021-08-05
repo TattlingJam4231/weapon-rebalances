@@ -50,7 +50,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 	--sentry
 	self.sentry_gun.DAMAGE = 4
 	
-	
+
 	--ammo pickup
 	local pickup = {
 		assault = {
@@ -99,51 +99,51 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		shotgun = {
 			double_barrel = {
 				optimal_distance = 400,
-				optimal_range = 1000,
+				optimal_range = 1100,
 				near_falloff = 200,
-				far_falloff = 2200,
+				far_falloff = 2250,
 				near_multiplier = 1.35,
-				far_multiplier = 0.09
+				far_multiplier = 0.1
 			},
 			t5 = {
 				optimal_distance = 0,
-				optimal_range = 1400,
+				optimal_range = 1500,
 				near_falloff = 0,
-				far_falloff = 2200,
+				far_falloff = 2250,
 				near_multiplier = 1,
-				far_multiplier = 0.09
+				far_multiplier = 0.1
 			},
 			t4 = {
 				optimal_distance = 0,
-				optimal_range = 1200,
+				optimal_range = 1500,
 				near_falloff = 0,
-				far_falloff = 2200,
+				far_falloff = 2250,
 				near_multiplier = 1,
-				far_multiplier = 0.07
+				far_multiplier = 0.1
 			},
 			t3 = {
 				optimal_distance = 0,
-				optimal_range = 1000,
+				optimal_range = 1500,
 				near_falloff = 0,
-				far_falloff = 2100,
+				far_falloff = 2000,
 				near_multiplier = 1,
-				far_multiplier = 0.05
+				far_multiplier = 0.2
 			},
 			t2 = {
 				optimal_distance = 0,
-				optimal_range = 1000,
+				optimal_range = 1500,
 				near_falloff = 0,
-				far_falloff = 1900,
+				far_falloff = 2000,
 				near_multiplier = 1,
-				far_multiplier = 0.05
+				far_multiplier = 0.2
 			},
 			t1 = {
 				optimal_distance = 0,
-				optimal_range = 800,
+				optimal_range = 1500,
 				near_falloff = 0,
-				far_falloff = 1900,
+				far_falloff = 2000,
 				near_multiplier = 1,
-				far_multiplier = 0.05
+				far_multiplier = 0.2
 			}
 		},
 		ar = {
