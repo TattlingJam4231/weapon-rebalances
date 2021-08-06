@@ -494,7 +494,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
-							ammo_pickup_max_mul = 0.667,
+							ammo_pickup_max_mul = nil,
 							dot_data = {
 								type = "poison",
 								custom_data = {
@@ -519,7 +519,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
-							ammo_pickup_max_mul = 0.8,
+							ammo_pickup_max_mul = nil,
 							dot_data = {
 								type = "poison",
 								custom_data = {
@@ -543,8 +543,8 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 							spread = 1
 						},
 						custom_stats = {
-							ammo_pickup_min_mul = 0.667,
-							ammo_pickup_max_mul = 0.667,
+							ammo_pickup_min_mul = nil,
+							ammo_pickup_max_mul = nil,
 							dot_data = {
 								type = "poison",
 								custom_data = {
@@ -569,7 +569,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						},
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
-							ammo_pickup_max_mul = 0.667,
+							ammo_pickup_max_mul = nil,
 							dot_data = {
 								type = "poison",
 								custom_data = {
