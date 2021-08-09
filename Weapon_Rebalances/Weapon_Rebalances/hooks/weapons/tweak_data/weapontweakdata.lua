@@ -17,7 +17,8 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		steelsight = 1.2,
 		moving_standing = 3,
 		moving_crouching = 3,
-		moving_steelsight = 1.2
+		moving_steelsight = 1.2,
+		bipod = 1.2
 	}
 
 	local function kick_steelsight(original_kick)

@@ -7,7 +7,7 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 		return
 	end
 
-	if not weapon_unit:base():is_category("snp", "assault_rifle") or weapon_unit:base():fire_mode() ~= "single" then
+	if not weapon_unit:base():is_category("snp", "assault_rifle", "smg") or weapon_unit:base():fire_mode() ~= "single" then
 		return
 	end
 	
