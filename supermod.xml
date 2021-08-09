@@ -12,6 +12,11 @@
         </group>
 
         <group                                                          :script_path="weapons/">
+            <group :hook_id="units/"                                        :script_path="bipod/">
+                <post :hook_id="beings/player/states/playerbipod"               :script_path="playerbipod.lua"/>
+                <post :hook_id="weapons/weaponliongadget1"                      :script_path="weaponliongadget1.lua"/>
+            </group>
+
             <group :hook_id="units/enemies/cop/"                            :script_path="cop/">
                 <post :hook_id="actions/full_body/copactionhurt"                :script_path="copactionhurt.lua"/>
                 <post :hook_id="actions/upper_body/copactionshoot"              :script_path="copactionshoot.lua"/>
@@ -47,7 +52,6 @@
             <post :hook_id="units/weapons/raycastweaponbase"                    :script_path="raycastweaponbase.lua"/>
             <post :hook_id="units/weapons/shotgun/shotgunbase"                  :script_path="shotgunbase.lua"/>
             <post :hook_id="managers/weaponfactorymanager"                      :script_path="weaponfactorymanager.lua"/>
-            <post :hook_id="units/weapons/weaponliongadget1"                    :script_path="weaponliongadget1.lua"/>
         </group>
 
         <post :hook_id="units/cameras/fpcameraplayerbase"                       :script_path="fpcameraplayerbase.lua"/>

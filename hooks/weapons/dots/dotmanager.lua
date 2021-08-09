@@ -88,7 +88,7 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 				
 				--update damage_table
 				if dot_info.damage_table and dot_data.damage_ticks then
-					
+
 					if dot_info.damage_table[1][1] > dot_data.damage_ticks then
 						dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - dot_data.damage_ticks
 						table.insert(dot_info.damage_table, 1, {dot_data.damage_ticks, dot_info.damage_table[1][2] + dot_data.dot_damage})
@@ -109,10 +109,8 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 					local tick_addend = dot_data.add_ticks or 0
 					dot_info.damage_ticks = dot_info.damage_ticks + tick_addend
 
-				end
-					
 				--update dot_length
-				if dot_info.scale_length and dot_data.scale_length then
+				elseif dot_info.scale_length and dot_data.scale_length then
 				
 					local elapsed_time = (TimerManager:game():time() - dot_info.dot_damage_received_time)
 					dot_info.dot_length = dot_info.dot_length - elapsed_time
@@ -203,6 +201,11 @@ function DOTManager:create_dot_data(dot_info)
 			damage_class = "FlameBulletBase",
 			dot_damage = 10,
 			dot_length = 3.1
+		},
+		bleed = {
+			damage_class = "PoisonBulletBase",
+			dot_damage = 40,
+			damage_ticks = 10
 		}
 	}
 	

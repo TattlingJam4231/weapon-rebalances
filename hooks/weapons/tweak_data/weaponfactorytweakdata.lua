@@ -495,8 +495,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
 							ammo_pickup_max_mul = nil,
+							optimal_range_mul = 1.4,
 							dot_data = {
-								type = "poison",
+								type = "bleed",
 								custom_data = {
 									damage = 70,
 									dot_tick_period = 0.5,
@@ -520,8 +521,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
 							ammo_pickup_max_mul = nil,
+							optimal_range_mul = 1.4,
 							dot_data = {
-								type = "poison",
+								type = "bleed",
 								custom_data = {
 									damage = 50,
 									dot_tick_period = 0.5,
@@ -545,8 +547,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
 							ammo_pickup_max_mul = nil,
+							optimal_range_mul = 1.4,
 							dot_data = {
-								type = "poison",
+								type = "bleed",
 								custom_data = {
 									damage = 40,
 									dot_tick_period = 0.5,
@@ -570,8 +573,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
 							ammo_pickup_max_mul = nil,
+							optimal_range_mul = 1.4,
 							dot_data = {
-								type = "poison",
+								type = "bleed",
 								custom_data = {
 									damage = 25,
 									dot_tick_period = 0.5,
@@ -595,8 +599,9 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 						custom_stats = {
 							ammo_pickup_min_mul = nil,
 							ammo_pickup_max_mul = nil,
+							optimal_range_mul = 1.4,
 							dot_data = {
-								type = "poison",
+								type = "bleed",
 								custom_data = {
 									damage = 15,
 									dot_tick_period = 0.5,
