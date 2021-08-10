@@ -60,9 +60,7 @@ function CopActionHurt:init(action_desc, common_data)
 			if self._unit:character_damage() ~= nil and self._unit:character_damage().get_last_time_unit_got_fire_damage ~= nil then
 				local last_fire_recieved = self._unit:character_damage():get_last_time_unit_got_fire_damage()
 
-
-				--modded----------------------------------------------------------------------
-				if last_fire_recieved == nil or t - last_fire_recieved > 6 then
+				if last_fire_recieved == nil or t - last_fire_recieved > 6 --[[ modded ]] then
 					if use_animation_on_fire_damage then
 						redir_res = self._ext_movement:play_redirect("fire_hurt")
 						local dir_str = nil
@@ -86,7 +84,6 @@ function CopActionHurt:init(action_desc, common_data)
 
 					self._unit:character_damage():set_last_time_unit_got_fire_damage(t)
 				end
-				--modded----------------------------------------------------------------------
 
 			end
 		end
