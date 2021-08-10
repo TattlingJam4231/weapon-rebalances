@@ -2414,6 +2414,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 		
 			--Flamethrower
 				self.flamethrower_mk2.AMMO_PICKUP = {20, 30}
+				self.flamethrower_mk2.fire_dot_data = nil
 				self.flamethrower_mk2.dot_data = {
 					type = "fire",
 					custom_data = {
@@ -2428,6 +2429,7 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 			
 			--MA-17 Flamethrower
 				self.system.AMMO_PICKUP = {15, 25}
+				self.system.fire_dot_data = nil
 				self.system.dot_data = {
 					type = "fire",
 					custom_data = {
