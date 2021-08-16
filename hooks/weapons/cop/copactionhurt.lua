@@ -53,6 +53,8 @@ function CopActionHurt:init(action_desc, common_data)
 		end
 
 		if start_dot_dance_antimation then
+			managers.fire:cop_hurt_fire_prediction(self._unit)
+
 			if ignite_character == "dragonsbreath" then
 				self:_dragons_breath_sparks()
 			end
@@ -84,30 +86,60 @@ function CopActionHurt:init(action_desc, common_data)
 
 					self._unit:character_damage():set_last_time_unit_got_fire_damage(t)
 				end
-
 			end
 		end
 	elseif action_type == "taser_tased" then
-		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+		if self._unit:brain() and self._unit:brain()._current_logic_name ~= "intimidated" then
+			local tase_data = tweak_data.tase_data[action_desc.variant] or tweak_data.tase_data.light
 
-		if (char_tweak.can_be_tased == nil or char_tweak.can_be_tased) and self._unit:brain() and self._unit:brain()._current_logic_name ~= "intimidated" then
-			redir_res = self._ext_movement:play_redirect("taser")
-			local variant = self:_pseudorandom(4)
-			local dir_str = nil
+			if tase_data.duration then
+				redir_res = self._ext_movement:play_redirect("explosion_tased")
 
-			if variant == 1 then
-				dir_str = "var1"
-			elseif variant == 2 then
-				dir_str = "var2"
-			elseif variant == 3 then
-				dir_str = "var3"
-			elseif variant == 4 then
-				dir_str = "var4"
+				if not redir_res then
+					debug_pause("[CopActionHurt:init] taser_tased tased redirect failed in", self._machine:segment_state(Idstring("upper_body")))
+
+					return
+				end
+
+				if tweak_table == "shield" then
+					local rnd_max = 4
+					local rnd_anim = self:_pseudorandom(rnd_max)
+					local rnd_anim_str = "shield_var" .. tostring(rnd_anim)
+
+					self._machine:set_parameter(redir_res, rnd_anim_str, 1)
+				else
+					local rnd_max = 5
+					local rnd_anim = self:_pseudorandom(rnd_max)
+					local rnd_anim_str = "var" .. tostring(rnd_anim)
+
+					self._machine:set_parameter(redir_res, rnd_anim_str, 1)
+				end
 			else
-				dir_str = "fwd"
-			end
+				redir_res = self._ext_movement:play_redirect("taser")
 
-			self._machine:set_parameter(redir_res, dir_str, 1)
+				if not redir_res then
+					debug_pause("[CopActionHurt:init] taser_tased taser redirect failed in", self._machine:segment_state(Idstring("upper_body")))
+
+					return
+				end
+
+				local variant = self:_pseudorandom(4)
+				local dir_str = nil
+
+				if variant == 1 then
+					dir_str = "var1"
+				elseif variant == 2 then
+					dir_str = "var2"
+				elseif variant == 3 then
+					dir_str = "var3"
+				elseif variant == 4 then
+					dir_str = "var4"
+				else
+					dir_str = "fwd"
+				end
+
+				self._machine:set_parameter(redir_res, dir_str, 1)
+			end
 		end
 	elseif action_type == "light_hurt" then
 		if not self._ext_anim.upper_body_active or self._ext_anim.upper_body_empty or self._ext_anim.recoil then
@@ -212,7 +244,8 @@ function CopActionHurt:init(action_desc, common_data)
 		end
 	elseif action_type == "death" and action_desc.variant == "fire" then
 		local variant = 1
-		local variant_count = #CopActionHurt.fire_death_anim_variants_length or 5
+		local fire_variant = alive(action_desc.weapon_unit) and (tweak_data.weapon[action_desc.weapon_unit:base():get_name_id()] or tweak_data.weapon.amcar).fire_variant or "fire"
+		local variant_count = fire_variant == "money" and 10 or 5
 
 		if variant_count > 1 then
 			variant = self:_pseudorandom(variant_count)
@@ -221,7 +254,11 @@ function CopActionHurt:init(action_desc, common_data)
 		if not self._ext_movement:died_on_rope() then
 			self:_prepare_ragdoll()
 
-			redir_res = self._ext_movement:play_redirect("death_fire")
+			redir_res = self._ext_movement:play_redirect("death_" .. fire_variant)
+
+			if fire_variant == "money" and alive(self._unit) and self._unit:inventory() then
+				self._unit:inventory():set_visibility_state(false)
+			end
 
 			if not redir_res then
 				debug_pause("[CopActionHurt:init] death_fire redirect failed in", self._machine:segment_state(Idstring("base")))
@@ -229,7 +266,7 @@ function CopActionHurt:init(action_desc, common_data)
 				return
 			end
 
-			for i = 1, variant_count, 1 do
+			for i = 1, variant_count do
 				local state_value = 0
 
 				if i == variant then
@@ -242,7 +279,7 @@ function CopActionHurt:init(action_desc, common_data)
 			self:force_ragdoll()
 		end
 
-		self:_start_enemy_fire_effect_on_death(variant)
+		self:_start_enemy_fire_effect_on_death(variant, action_desc)
 		managers.fire:check_achievemnts(self._unit, t)
 	elseif action_type == "death" and action_desc.variant == "poison" then
 		self:force_ragdoll()
@@ -286,7 +323,7 @@ function CopActionHurt:init(action_desc, common_data)
 		local variant, height, old_variant, old_info = nil
 
 		if (action_type == "hurt" or action_type == "heavy_hurt") and self._ext_anim.hurt then
-			for i = 1, self.hurt_anim_variants_highest_num, 1 do
+			for i = 1, self.hurt_anim_variants_highest_num do
 				if self._machine:get_parameter(self._machine:segment_state(Idstring("base")), "var" .. i) then
 					old_variant = i
 
@@ -465,6 +502,15 @@ function CopActionHurt:init(action_desc, common_data)
 		end
 	elseif action_type == "hurt_sick" or action_type == "poison_hurt" or action_type == "concussion" then
 		self.update = self._upd_sick
+	elseif action_type == "taser_tased" then
+		local tase_data = tweak_data.tase_data[action_desc.variant] or tweak_data.tase_data.light
+
+		if tase_data.duration then
+			self._tased_down_time = t + tase_data.duration
+			self.update = self._upd_tased_down
+		else
+			self.update = self._upd_hurt
+		end
 	elseif action_desc.variant == "tase" then
 		-- Nothing
 	elseif self._ragdolled then
@@ -517,10 +563,12 @@ function CopActionHurt:init(action_desc, common_data)
 	if not self._unit:base().nick_name then
 		if action_desc.variant == "fire" then
 			if tweak_table ~= "tank" and tweak_table ~= "tank_hw" and tweak_table ~= "shield" then
+				local fire_variant = alive(action_desc.weapon_unit) and (tweak_data.weapon[action_desc.weapon_unit:base():get_name_id()] or tweak_data.weapon.amcar).fire_variant or "fire"
+
 				if action_desc.hurt_type == "fire_hurt" and tweak_table ~= "spooc" then
-					self._unit:sound():say("burnhurt")
+					self._unit:sound():say(fire_variant == "money" and "moneythrower_hurt" or "burnhurt", nil, fire_variant == "money")
 				elseif action_desc.hurt_type == "death" then
-					self._unit:sound():say("burndeath")
+					self._unit:sound():say(fire_variant == "money" and "moneythrower_death" or "burndeath", nil, fire_variant == "money")
 				end
 			end
 		elseif action_type == "death" then
