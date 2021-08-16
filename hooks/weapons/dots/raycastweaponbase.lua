@@ -114,9 +114,10 @@ function FlameBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, b
 	if hit_unit:character_damage() and hit_unit:character_damage().damage_fire then
 		local is_alive = not hit_unit:character_damage():dead()
 		result = self:give_fire_damage(col_ray, weapon_unit, user_unit, damage)
-
-		if hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() then
-			result = self:start_dot_damage(col_ray, weapon_unit, user_unit, self:_dot_data_by_weapon(weapon_unit))
+		
+		local dot_data = self:_dot_data_by_weapon(weapon_unit)
+		if hit_unit:character_damage() and hit_unit:character_damage().damage_dot and not hit_unit:character_damage():dead() and dot_data then
+			result = self:start_dot_damage(col_ray, weapon_unit, user_unit, dot_data)
 		end
 
 		if result ~= "friendly_fire" then
