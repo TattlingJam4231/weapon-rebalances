@@ -53,7 +53,7 @@ function CopActionHurt:init(action_desc, common_data)
 		end
 
 		if start_dot_dance_antimation then
-			managers.fire:cop_hurt_fire_prediction(self._unit)
+			-- managers.fire:cop_hurt_fire_prediction(self._unit) --disabled
 
 			if ignite_character == "dragonsbreath" then
 				self:_dragons_breath_sparks()
