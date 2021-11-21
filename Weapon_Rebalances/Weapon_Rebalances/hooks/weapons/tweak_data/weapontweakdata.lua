@@ -364,7 +364,7 @@ function WeaponTweakData:_init_weapon_index_wr()
 			},
 			tier_2 = {
 				"msr",				-- rattlesnake
-				"whinchester1874",	-- repeater
+				"winchester1874",	-- repeater
 				"r700"				-- r700
 			},
 			tier_1 = {
