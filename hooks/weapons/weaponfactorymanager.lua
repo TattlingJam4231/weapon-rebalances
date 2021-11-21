@@ -112,13 +112,11 @@ end
 
 function WeaponFactoryManager:get_part_data(part_id, factory_id, equipped_mods, override)
 	local part = deep_clone(self:_part_data(part_id, factory_id, override))
-	if equipped_mods then
-		if part.overrides then
-			for _, override in ipairs(part.overrides) do
-				if override.depends_on and table.contains(equipped_mods, override.depends_on) then
-					if override.stats then part.stats = override.stats end
-					if override.custom_stats then part.custom_stats = override.custom_stats end
-				end
+	if equipped_mods and part.overrides then
+		for _, override in ipairs(part.overrides) do
+			if override.depends_on and table.contains(equipped_mods, override.depends_on) then
+				if override.stats then part.stats = override.stats end
+				if override.custom_stats then part.custom_stats = override.custom_stats end
 			end
 		end
 	end

@@ -100,7 +100,7 @@ function CopDamage:damage_fire(attack_data)
 
 	if self._head_body_name and attack_data.variant ~= "stun" then
 		head = attack_data.col_ray.body and self._head_body_key and attack_data.col_ray.body:key() == self._head_body_key
-		slot8 = self._unit:body(self._head_body_name)
+		local body = self._unit:body(self._head_body_name)
 	end
 
 	local attacker = attack_data.attacker_unit
@@ -160,16 +160,12 @@ function CopDamage:damage_fire(attack_data)
 		weapon_unit:base():add_damage_result(self._unit, result.type == "death", damage_percent)
 	end
 
+	local flammable = nil
+	local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
+	flammable = char_tweak.flammable == nil and true or char_tweak.flammable
+
 	if not attack_data.is_fire_dot_damage then
 		local fire_dot_data = attack_data.fire_dot_data
-		local flammable = nil
-		local char_tweak = tweak_data.character[self._unit:base()._tweak_table]
-
-		if char_tweak.flammable == nil then
-			flammable = true
-		else
-			flammable = char_tweak.flammable
-		end
 
 		local distance = 1000
 		local hit_loc = attack_data.col_ray.hit_position
@@ -188,25 +184,15 @@ function CopDamage:damage_fire(attack_data)
 			local start_dot_damage_roll = math.random(1, 100)
 
 			if flammable and not attack_data.is_fire_dot_damage and distance < fire_dot_max_distance and start_dot_damage_roll <= fire_dot_trigger_chance then
-				managers.fire:add_doted_enemy(
-					self._unit, TimerManager:game():time(),
-					attack_data.weapon_unit,
-					fire_dot_data.dot_length,
-					fire_dot_data.dot_damage,
-					-- fire_dot_data.dot_tick_period,
-					-- fire_dot_data.scale_length,
-					-- fire_dot_data.scale_damage,
-					-- fire_dot_data.dot_decay,
-					-- fire_dot_data.dot_decay_rate,
-					attack_data.attacker_unit,
-					attack_data.is_molotov
-				)
+				managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), attack_data.weapon_unit, fire_dot_data.dot_length, fire_dot_data.dot_damage, attack_data.attacker_unit, attack_data.is_molotov)
 			end
 		end
 	end
 
-	attack_data.fire_dot_data = {}
-	attack_data.fire_dot_data.start_dot_dance_antimation = true
+	if flammable then 
+		attack_data.fire_dot_data = {}
+		attack_data.fire_dot_data.start_dot_dance_antimation = true
+	end
 
 	self:_send_fire_attack_result(attack_data, attacker, damage_percent, attack_data.is_fire_dot_damage, attack_data.col_ray.ray, attack_data.result.type == "healed")
 	self:_on_damage_received(attack_data)
@@ -230,7 +216,12 @@ function CopDamage:damage_dot(attack_data)
 	
 	if attack_data.attacker_unit == managers.player:player_unit() and attack_data.dot_can_crit then
 		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
-		damage = crit_damage
+		if critical_hit then
+			damage = crit_damage
+			attack_data.critical_hit = true
+		else
+			attack_data.critical_hit = false
+		end
 	end
 	--modded
 	
@@ -244,16 +235,6 @@ function CopDamage:damage_dot(attack_data)
 	if self._immortal then
 		damage = math.min(damage, self._health - 1)
 	end
-	
-	
-	--test
-	-- if attack_data.attacker_unit == managers.player:player_unit() then
-		
-		-- managers.hud:on_dot_confirmed()
-		
-	-- end
-	--test
-
 
 	if self._health <= damage then
 		if self:check_medic_heal() then
