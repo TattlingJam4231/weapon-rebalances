@@ -25,6 +25,7 @@
             
             <group                                                          :script_path="dots/">
                 <post :hook_id="managers/dotmanager"                            :script_path="dotmanager.lua"/>
+                <post :hook_id="units/beings/player/states/playerstandard"      :script_path="playerstandard.lua"/>
                 <post :hook_id="units/weapons/raycastweaponbase"                :script_path="raycastweaponbase.lua"/>
             </group>
             

@@ -1,7 +1,110 @@
+function DOTManager:update_dot_info_wr(dot_info, dot_damage_received_time, dot_data)
+	if dot_info.damage_table and dot_data.damage_ticks then
+		self:update_damage_table_wr(dot_info, dot_data)
+
+	elseif dot_info.damage_ticks then
+		local tick_addend = dot_data.add_ticks or 0
+		dot_info.damage_ticks = dot_info.damage_ticks + tick_addend
+
+	elseif dot_info.scale_length and dot_data.scale_length then
+		self:update_dot_length_wr(dot_info, dot_damage_received_time, dot_data)
+
+	elseif dot_info.reset_dot_length and dot_info.dot_damage_received_time + dot_info.dot_length < dot_damage_received_time + dot_data.dot_length then
+		dot_info.dot_damage_received_time = dot_damage_received_time
+		dot_info.dot_length = dot_data.dot_length
+
+	end
+
+	--update dot_tick_period
+	if dot_info.scale_tick_period and dot_data.scale_tick_period then
+		dot_info.dot_tick_period = math.max(dot_info.dot_tick_period - dot_data.scale_tick_period, dot_info.min_tick_period)
+	end
+	
+	dot_info.hurt_animation = dot_info.hurt_animation or dot_data.hurt_animation
+end
+
+function DOTManager:update_damage_table_wr(dot_info, dot_data)
+	if dot_info.damage_table[1][1] > dot_data.damage_ticks then
+		dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - dot_data.damage_ticks
+		table.insert(dot_info.damage_table, 1, {dot_data.damage_ticks, dot_info.damage_table[1][2] + dot_data.dot_damage})
+	else
+		local ticks = dot_data.damage_ticks
+		local stack = 1
+		while ticks > 0 do
+			dot_info.damage_table[stack] = dot_info.damage_table[stack] or {}
+			dot_info.damage_table[stack][1] = dot_info.damage_table[stack][1] or ticks
+			dot_info.damage_table[stack][2] = dot_info.damage_table[stack][2] and dot_info.damage_table[stack][2] + dot_data.dot_damage or dot_data.dot_damage
+			ticks =	ticks - dot_info.damage_table[stack][1] 
+			stack = stack + 1
+		end
+	end
+end
+
+function DOTManager:update_dot_length_wr(dot_info, dot_damage_received_time, dot_data)
+	local elapsed_time = (TimerManager:game():time() - dot_info.dot_damage_received_time)
+	dot_info.dot_length = dot_info.dot_length - elapsed_time
+	dot_info.dot_damage_received_time = dot_damage_received_time
+	
+	if dot_info.diminish_scale_length then
+		if dot_info.diminish_scale_length and dot_info.diminish_scale_length <= dot_info.dot_length then
+			dot_info.dot_length = dot_info.dot_length + (dot_data.scale_length * (dot_info.diminish_scale_length / (dot_info.dot_length + dot_data.scale_length)))
+		else
+			dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
+		end
+		
+	elseif dot_info.length_cap then
+		dot_info.dot_length = math.min(dot_info.dot_length + dot_data.scale_length, dot_info.length_cap)
+	else
+		dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
+	end
+end
+
+function DOTManager:create_enemy_dot_info_wr(col_ray, enemy_unit, dot_damage_received_time, weapon_unit, dot_data, weapon_id)
+	local dot_info = deep_clone(dot_data)
+	
+	dot_info.col_ray = col_ray
+	dot_info.dot_counter = 0
+	dot_info.enemy_unit = enemy_unit
+	dot_info.dot_damage_received_time = dot_damage_received_time
+	dot_info.weapon_unit = weapon_unit
+	dot_info.weapon_id = weapon_id
+	
+	if dot_info.damage_decay and dot_info.decay_period then
+		dot_info.dot_length = ((dot_info.dot_damage / dot_info.damage_decay) * dot_info.decay_period) + 0.1
+		dot_info.decay_counter = 0
+	end
+	if dot_info.damage_ticks and dot_info.dot_can_stack then
+		dot_info.damage_table = {
+			{
+				dot_info.damage_ticks,
+				dot_info.dot_damage
+			}
+		}
+	end
+	
+	table.insert(self._doted_enemies, dot_info)
+	
+	if dot_data.variant == "fire" then
+		self:_start_enemy_fire_effect(dot_info)
+		self:start_burn_body_sound(dot_info)
+	end
+	
+	self:check_achievemnts(enemy_unit, dot_damage_received_time)
+end
+
 function DOTManager:update(t, dt)
+	
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
 		local tick_period = dot_info.dot_tick_period or 0.5
+
+		local function clear_dot()
+			if dot_info.variant == "fire" then
+				self:_remove_flame_effects_from_doted_unit(dot_info.enemy_unit)
+				self:_stop_burn_body_sound(dot_info.sound_source)
+			end
+			table.remove(self._doted_enemies, index)
+		end
 
 		if dot_info.damage_table then
 
@@ -10,23 +113,18 @@ function DOTManager:update(t, dt)
 				self:_damage_dot(dot_info)
 
 				dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - 1
-				if dot_info.damage_table[1][1] == 0 then table.remove(dot_info.damage_table, 1) end
+				if dot_info.damage_table[1][1] <= 0 then table.remove(dot_info.damage_table, 1) end
 
 				dot_info.dot_counter = 0
 			end
 
 			if not dot_info.damage_table[1] then
-				if dot_info.variant == "fire" then
-					self:_remove_flame_effects_from_doted_unit(dot_info.enemy_unit)
-					self:_stop_burn_body_sound(dot_info.sound_source)
-				end
-				table.remove(self._doted_enemies, index)
+				clear_dot()
 			else
 				dot_info.dot_counter = dot_info.dot_counter + dt
 			end
 			
 		elseif dot_info.damage_ticks then
-		
 			if dot_info.dot_counter >= tick_period then
 				self:_damage_dot(dot_info)
 
@@ -35,29 +133,20 @@ function DOTManager:update(t, dt)
 				dot_info.dot_counter = 0
 			end	
 			
-			if dot_info.damage_ticks == 0 then
-				if dot_info.variant == "fire" then
-					self:_remove_flame_effects_from_doted_unit(dot_info.enemy_unit)
-					self:_stop_burn_body_sound(dot_info.sound_source)
-				end
-				table.remove(self._doted_enemies, index)
+			if dot_info.damage_ticks <= 0 then
+				clear_dot()
 			else
 				dot_info.dot_counter = dot_info.dot_counter + dt
 			end
 
 		else
-		
 			if dot_info.dot_counter >= tick_period then
 				self:_damage_dot(dot_info)
 				dot_info.dot_counter = 0
 			end	
 			
 			if t > dot_info.dot_damage_received_time + dot_info.dot_length then
-				if dot_info.variant == "fire" then
-					self:_remove_flame_effects_from_doted_unit(dot_info.enemy_unit)
-					self:_stop_burn_body_sound(dot_info.sound_source)
-				end
-				table.remove(self._doted_enemies, index)
+				clear_dot()
 			else
 				dot_info.dot_counter = dot_info.dot_counter + dt
 			end
@@ -82,99 +171,15 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 	local contains = false
 
 	if self._doted_enemies then
-		for _, dot_info in ipairs(self._doted_enemies) do
-				
+		for k, dot_info in ipairs(self._doted_enemies) do
 			if dot_info.enemy_unit == enemy_unit and dot_info.variant == dot_data.variant then
-				
-				--update damage_table
-				if dot_info.damage_table and dot_data.damage_ticks then
-
-					if dot_info.damage_table[1][1] > dot_data.damage_ticks then
-						dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - dot_data.damage_ticks
-						table.insert(dot_info.damage_table, 1, {dot_data.damage_ticks, dot_info.damage_table[1][2] + dot_data.dot_damage})
-					else
-						local ticks = dot_data.damage_ticks
-						local stack = 1
-						while ticks > 0 do
-							dot_info.damage_table[stack] = dot_info.damage_table[stack] or {}
-							dot_info.damage_table[stack][1] = dot_info.damage_table[stack][1] or ticks
-							dot_info.damage_table[stack][2] = dot_info.damage_table[stack][2] and dot_info.damage_table[stack][2] + dot_data.dot_damage or dot_data.dot_damage
-							ticks =	ticks - dot_info.damage_table[stack][1] 
-							stack = stack + 1
-						end
-					end
-
-				elseif dot_info.damage_ticks then
-
-					local tick_addend = dot_data.add_ticks or 0
-					dot_info.damage_ticks = dot_info.damage_ticks + tick_addend
-
-				--update dot_length
-				elseif dot_info.scale_length and dot_data.scale_length then
-				
-					local elapsed_time = (TimerManager:game():time() - dot_info.dot_damage_received_time)
-					dot_info.dot_length = dot_info.dot_length - elapsed_time
-					dot_info.dot_damage_received_time = dot_damage_received_time
-					
-					if dot_info.diminish_scale_length then
-						if dot_info.diminish_scale_length and dot_info.diminish_scale_length <= dot_info.dot_length then
-							dot_info.dot_length = dot_info.dot_length + (dot_data.scale_length * (dot_info.diminish_scale_length / (dot_info.dot_length + dot_data.scale_length)))
-						else
-							dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
-						end
-						
-					elseif dot_info.length_cap then
-						dot_info.dot_length = math.min(dot_info.dot_length + dot_data.scale_length, dot_info.length_cap)
-					else
-						dot_info.dot_length = dot_info.dot_length + dot_data.scale_length
-					end
-
-				elseif dot_info.reset_dot_length and dot_info.dot_damage_received_time + dot_info.dot_length < dot_damage_received_time + dot_data.dot_length then
-					dot_info.dot_damage_received_time = dot_damage_received_time
-					dot_info.dot_length = dot_data.dot_length
-				end
-
-				--update dot_tick_period
-				if dot_info.scale_tick_period and dot_data.scale_tick_period then
-					dot_info.dot_tick_period = math.max(dot_info.dot_tick_period - dot_data.scale_tick_period, dot_info.min_tick_period)
-				end
-				
-				dot_info.hurt_animation = dot_info.hurt_animation or dot_data.hurt_animation
+				self:update_dot_info_wr(dot_info, dot_damage_received_time, dot_data)
 				contains = true
 			end
 		end
 
 		if not contains then
-			local dot_info = deep_clone(dot_data)
-			
-			dot_info.col_ray = col_ray
-			dot_info.dot_counter = 0
-			dot_info.enemy_unit = enemy_unit
-			dot_info.dot_damage_received_time = dot_damage_received_time
-			dot_info.weapon_unit = weapon_unit
-			dot_info.weapon_id = weapon_id
-			
-			if dot_info.damage_decay and dot_info.decay_period then
-				dot_info.dot_length = ((dot_info.dot_damage / dot_info.damage_decay) * dot_info.decay_period) + 0.1
-				dot_info.decay_counter = 0
-			end
-			if dot_info.damage_ticks and dot_info.dot_can_stack then
-				dot_info.damage_table = {
-					{
-						dot_info.damage_ticks,
-						dot_info.dot_damage
-					}
-				}
-			end
-			
-			table.insert(self._doted_enemies, dot_info)
-			
-			if dot_data.variant == "fire" then
-				self:_start_enemy_fire_effect(dot_info)
-				self:start_burn_body_sound(dot_info)
-			end
-			
-			self:check_achievemnts(enemy_unit, dot_damage_received_time)
+			self:create_enemy_dot_info_wr(col_ray, enemy_unit, dot_damage_received_time, weapon_unit, dot_data, weapon_id)
 		end
 	end
 end

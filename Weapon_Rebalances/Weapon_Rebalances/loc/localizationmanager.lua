@@ -12,7 +12,7 @@ Hooks:Add("LocalizationManagerPostInit", "WR Localization", function(loc)
 
 		["menu_sniper_graze_damage_desc"] = 			"BASIC: ##4 points##\n" ..
 														"Snipers that hit their target deal ##20%## of the damage dealt in a ##1m## radius around the bullet trajectory.\n\n" ..
-														"When fired in single shot mode, Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.5m## radius around the bullet impact.\n\n" ..
+														"When fired in single shot mode, SMGs and Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.5m## radius around the bullet impact.\n\n" ..
 														"ACE: ##8 points##\n" ..
 														"If a bullet would headshot someone, the graze skill will deal ##100%## of the damage dealt instead of ##20%##.",
 
@@ -48,9 +48,9 @@ Hooks:Add("LocalizationManagerPostInit", "WR Localization", function(loc)
 
 		["bm_wp_upg_a_explosive_desc"] =				"Fires one explosive charge that kills or stuns targets. This ammo type is harder to find.",
 
-		["bm_wp_upg_a_piercing_desc"] =					"Fires poison tipped darts. Penetrates body armor.",
+		["bm_wp_upg_a_piercing_desc"] =					"Fires darts that have a longer effective range. Penetrates body armor and causes enemies to bleed.",
 
-		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that penetrates enemies, shields and walls up to four times. Penetrates body armor.",
+		["bm_wp_upg_a_slug_desc"] =						"Fires a single lead slug that has a longer effective range. Penetrates enemies, shields and walls up to four times. Penetrates body armor.",
 
 		["bm_wp_upg_a_dragons_breath_desc"] = 			"Fires pellets that go up in sparks and flames. Burns through shields and body armor. This ammo type is harder to find."
 	})

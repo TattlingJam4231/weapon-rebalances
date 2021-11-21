@@ -184,20 +184,7 @@ function CopDamage:damage_fire(attack_data)
 			local start_dot_damage_roll = math.random(1, 100)
 
 			if flammable and not attack_data.is_fire_dot_damage and distance < fire_dot_max_distance and start_dot_damage_roll <= fire_dot_trigger_chance then
-				managers.fire:add_doted_enemy(
-					self._unit,
-					TimerManager:game():time(),
-					attack_data.weapon_unit,
-					fire_dot_data.dot_length,
-					fire_dot_data.dot_damage,
-					-- fire_dot_data.dot_tick_period,
-					-- fire_dot_data.scale_length,
-					-- fire_dot_data.scale_damage,
-					-- fire_dot_data.dot_decay,
-					-- fire_dot_data.dot_decay_rate,
-					attack_data.attacker_unit,
-					attack_data.is_molotov
-				)
+				managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), attack_data.weapon_unit, fire_dot_data.dot_length, fire_dot_data.dot_damage, attack_data.attacker_unit, attack_data.is_molotov)
 			end
 		end
 	end
@@ -229,7 +216,12 @@ function CopDamage:damage_dot(attack_data)
 	
 	if attack_data.attacker_unit == managers.player:player_unit() and attack_data.dot_can_crit then
 		local critical_hit, crit_damage = self:roll_critical_hit(attack_data)
-		damage = crit_damage
+		if critical_hit then
+			damage = crit_damage
+			attack_data.critical_hit = true
+		else
+			attack_data.critical_hit = false
+		end
 	end
 	--modded
 	

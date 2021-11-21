@@ -207,6 +207,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 
 	return unique_hits, hit_enemy
 end
+
 local mvec_to = Vector3()
 local mvec_spread_direction = Vector3()
 local mvec1 = Vector3()

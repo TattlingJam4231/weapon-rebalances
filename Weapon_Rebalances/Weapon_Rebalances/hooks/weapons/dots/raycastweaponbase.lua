@@ -29,7 +29,7 @@ end
 
 function DOTBulletBase:start_dot_damage(col_ray, weapon_unit, user_unit, dot_data, weapon_id)
 	dot_data = dot_data or self.DOT_DATA
-	local hurt_animation = not dot_data.hurt_animation_chance or math.rand(1) < dot_data.hurt_animation_chance
+	dot_data.hurt_animation = not dot_data.hurt_animation_chance or math.rand(1) < dot_data.hurt_animation_chance
 	
 	local flammable = nil
 	local char_tweak = tweak_data.character[col_ray.unit:base()._tweak_table]
