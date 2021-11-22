@@ -66,7 +66,7 @@ function CopActionHurt:init(action_desc, common_data)
 					if use_animation_on_fire_damage then
 						redir_res = self._ext_movement:play_redirect("fire_hurt")
 						local dir_str = nil
-						local fwd_dot = action_desc.direction_vec:dot(common_data.fwd)
+						local fwd_dot = action_desc.direction_vec and action_desc.direction_vec:dot(common_data.fwd) or 0 -- modded
 
 						if fwd_dot < 0 then
 							local hit_pos = action_desc.hit_pos

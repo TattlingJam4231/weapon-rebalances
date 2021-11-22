@@ -1,11 +1,26 @@
 function CopDamage:add_crit_chance(attack_data)
 	local add_crit = 0
+	local weapon_unit = self:get_unit_wr(attack_data.weapon_unit)
 
-	if attack_data.weapon_unit and attack_data.weapon_unit:base()._ammo_data and attack_data.weapon_unit:base()._ammo_data.crit_chance then
-		add_crit = add_crit + attack_data.weapon_unit:base()._ammo_data.crit_chance
+	if weapon_unit and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.crit_chance then
+		add_crit = add_crit + weapon_unit:base()._ammo_data.crit_chance
 	end
 
 	return add_crit
+end
+
+function CopDamage:get_unit_wr(_unit)
+	local data_type = type(_unit)
+	local unit = nil
+
+	if data_type == 'number' then
+		local peer = managers.network:session():peer(_unit)
+		unit = peer:unit()
+	else
+		unit = _unit
+	end
+
+	return unit
 end
 
 function CopDamage:damage_fire(attack_data)

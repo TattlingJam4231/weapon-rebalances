@@ -26,8 +26,8 @@ local pickup = {
 		double_barrel = {0.4	/1.35, 1.5	/1.35},
 		tier_5 = {0.4	/1.35, 1.5	/1.35},
 		tier_4 = {1		/1.35, 2	/1.35},
-		tier_3 = {1.5	/1.35, 3	/1.35},
-		tier_2 = {2		/1.35, 3	/1.35},
+		tier_3 = {2		/1.35, 3.5	/1.35},
+		tier_2 = {2		/1.35, 4	/1.35},
 		tier_1 = {4		/1.35, 6	/1.35}
 	},
 	lmg = {
@@ -364,7 +364,7 @@ function WeaponTweakData:_init_weapon_index_wr()
 			},
 			tier_2 = {
 				"msr",				-- rattlesnake
-				"whinchester1874",	-- repeater
+				"winchester1874",	-- repeater
 				"r700"				-- r700
 			},
 			tier_1 = {
