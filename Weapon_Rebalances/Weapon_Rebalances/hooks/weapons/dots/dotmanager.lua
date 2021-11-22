@@ -2,10 +2,6 @@ function DOTManager:update_dot_info_wr(dot_info, dot_damage_received_time, dot_d
 	if dot_info.damage_table and dot_data.damage_ticks then
 		self:update_damage_table_wr(dot_info, dot_data)
 
-	elseif dot_info.damage_ticks then
-		local tick_addend = dot_data.add_ticks or 0
-		dot_info.damage_ticks = dot_info.damage_ticks + tick_addend
-
 	elseif dot_info.scale_length and dot_data.scale_length then
 		self:update_dot_length_wr(dot_info, dot_damage_received_time, dot_data)
 
@@ -18,24 +14,31 @@ function DOTManager:update_dot_info_wr(dot_info, dot_damage_received_time, dot_d
 	--update dot_tick_period
 	if dot_info.scale_tick_period and dot_data.scale_tick_period then
 		dot_info.dot_tick_period = math.max(dot_info.dot_tick_period - dot_data.scale_tick_period, dot_info.min_tick_period)
+	elseif dot_info.dot_tick_period > dot_data.dot_tick_period then
+		dot_info.dot_tick_period = dot_data.dot_tick_period
 	end
 	
 	dot_info.hurt_animation = dot_info.hurt_animation or dot_data.hurt_animation
 end
 
 function DOTManager:update_damage_table_wr(dot_info, dot_data)
-	if dot_info.damage_table[1][1] > dot_data.damage_ticks then
-		dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - dot_data.damage_ticks
-		table.insert(dot_info.damage_table, 1, {dot_data.damage_ticks, dot_info.damage_table[1][2] + dot_data.dot_damage})
+	if dot_info.dot_can_stack == "extend" then
+		table.insert(dot_info.damage_table, {dot_data.add_ticks or dot_data.damage_ticks, dot_data.dot_damage})
+
 	else
-		local ticks = dot_data.damage_ticks
-		local stack = 1
-		while ticks > 0 do
-			dot_info.damage_table[stack] = dot_info.damage_table[stack] or {}
-			dot_info.damage_table[stack][1] = dot_info.damage_table[stack][1] or ticks
-			dot_info.damage_table[stack][2] = dot_info.damage_table[stack][2] and dot_info.damage_table[stack][2] + dot_data.dot_damage or dot_data.dot_damage
-			ticks =	ticks - dot_info.damage_table[stack][1] 
-			stack = stack + 1
+		if dot_info.damage_table[1][1] > dot_data.damage_ticks then
+			dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - dot_data.damage_ticks
+			table.insert(dot_info.damage_table, 1, {dot_data.damage_ticks, dot_info.damage_table[1][2] + dot_data.dot_damage})
+		else
+			local ticks = dot_data.damage_ticks
+			local stack = 1
+			while ticks > 0 do
+				dot_info.damage_table[stack] = dot_info.damage_table[stack] or {}
+				dot_info.damage_table[stack][1] = dot_info.damage_table[stack][1] or ticks
+				dot_info.damage_table[stack][2] = dot_info.damage_table[stack][2] and dot_info.damage_table[stack][2] + dot_data.dot_damage or dot_data.dot_damage
+				ticks =	ticks - dot_info.damage_table[stack][1] 
+				stack = stack + 1
+			end
 		end
 	end
 end
@@ -92,11 +95,50 @@ function DOTManager:create_enemy_dot_info_wr(col_ray, enemy_unit, dot_damage_rec
 	self:check_achievemnts(enemy_unit, dot_damage_received_time)
 end
 
+function DOTManager:play_effects_wr(weapon_unit, col_ray)
+	local bullet_tweak = self.id and (tweak_data.blackmarket.bullets[self.id] or {}) or {}
+	local params = {
+		col_ray = col_ray,
+		no_sound = true,
+		effect = bullet_tweak.effect,
+		sound_switch_name = bullet_tweak.sound_switch_name,
+		immediate = alive(weapon_unit) and weapon_unit:base().weapon_tweak_data and weapon_unit:base():weapon_tweak_data() and weapon_unit:base():weapon_tweak_data().rays ~= nil
+	}
+
+	managers.game_play_central:play_impact_sound_and_effects(params)
+end
+
+function DOTManager:get_unit_wr(_unit)
+	local data_type = type(_unit)
+	local unit = nil
+
+	if data_type == 'number' then
+		local peer = managers.network:session():peer(_unit)
+		unit = peer:unit()
+	else
+		unit = _unit
+	end
+
+	return unit
+end
+
+function DOTManager:get_position_for_dot_effect_wr(unit)
+	local position = Vector3()
+	mvector3.set(position,unit:position())
+	mvector3.set_z(position,math.lerp(position.z, unit:movement():m_head_pos().z, 0.8))
+
+	-- if unit.movement and unit:movement() and unit:movement():m_head_pos() then
+	-- 	mvector3.set_z(position,math.lerp(position.z, unit:movement():m_head_pos().z, 0.8))
+	-- end
+
+	return position
+end
+
 function DOTManager:update(t, dt)
 	
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
-		local tick_period = dot_info.dot_tick_period or 0.5
+		local tick_period = math.floor(dot_info.dot_tick_period * 10 + 0.5) / 10 or 0.5
 
 		local function clear_dot()
 			if dot_info.variant == "fire" then
@@ -110,6 +152,12 @@ function DOTManager:update(t, dt)
 
 			if dot_info.dot_counter >= tick_period then
 				dot_info.dot_damage = dot_info.damage_table[1][2]
+				
+				if dot_info.variant == "bleed" then
+					dot_info.col_ray.position = self:get_position_for_dot_effect_wr(self:get_unit_wr(dot_info.enemy_unit))
+					self:play_effects_wr(dot_info.weapon_unit, dot_info.col_ray)
+				end
+
 				self:_damage_dot(dot_info)
 
 				dot_info.damage_table[1][1] = dot_info.damage_table[1][1] - 1
@@ -118,22 +166,7 @@ function DOTManager:update(t, dt)
 				dot_info.dot_counter = 0
 			end
 
-			if not dot_info.damage_table[1] then
-				clear_dot()
-			else
-				dot_info.dot_counter = dot_info.dot_counter + dt
-			end
-			
-		elseif dot_info.damage_ticks then
-			if dot_info.dot_counter >= tick_period then
-				self:_damage_dot(dot_info)
-
-				dot_info.damage_ticks = dot_info.damage_ticks - 1
-
-				dot_info.dot_counter = 0
-			end	
-			
-			if dot_info.damage_ticks <= 0 then
+			if not dot_info.damage_table[1] or dot_info.enemy_unit:character_damage():dead() then
 				clear_dot()
 			else
 				dot_info.dot_counter = dot_info.dot_counter + dt
@@ -145,7 +178,7 @@ function DOTManager:update(t, dt)
 				dot_info.dot_counter = 0
 			end	
 			
-			if t > dot_info.dot_damage_received_time + dot_info.dot_length then
+			if t > dot_info.dot_damage_received_time + dot_info.dot_length or dot_info.enemy_unit:character_damage():dead() then
 				clear_dot()
 			else
 				dot_info.dot_counter = dot_info.dot_counter + dt
@@ -172,7 +205,7 @@ function DOTManager:_add_doted_enemy(col_ray, enemy_unit, dot_damage_received_ti
 
 	if self._doted_enemies then
 		for k, dot_info in ipairs(self._doted_enemies) do
-			if dot_info.enemy_unit == enemy_unit and dot_info.variant == dot_data.variant then
+			if dot_info.enemy_unit == enemy_unit and dot_info.weapon_id == weapon_id and dot_info.variant == dot_data.variant then
 				self:update_dot_info_wr(dot_info, dot_damage_received_time, dot_data)
 				contains = true
 			end

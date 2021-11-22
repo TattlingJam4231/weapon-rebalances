@@ -244,7 +244,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "WR BlackMarketTweak
 			damage = 15,
 			dot_tick_period = 0.5,
 			damage_ticks = 3,
-			dot_can_stack = true,
+			dot_can_stack = "extend",
 			dot_can_crit = true,
 			hurt_animation_chance = 0.3,
 			max_values = {
@@ -264,7 +264,7 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "WR BlackMarketTweak
 			damage = 15,
 			dot_tick_period = 0.5,
 			damage_ticks = 3,
-			dot_can_stack = true,
+			dot_can_stack = "extend",
 			dot_can_crit = true,
 			hurt_animation_chance = 0.3,
 			max_values = {
@@ -285,6 +285,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "WR BlackMarketTweak
 			dot_tick_period = 0.5,
 			damage_ticks = 3,
 			add_ticks = 1,
+			dot_can_stack = "extend",
+			dot_can_crit = true,
 			dot_trigger_chance = 30,
 			max_values = {
 				damage_ticks = 9,
@@ -304,6 +306,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "WR BlackMarketTweak
 			dot_tick_period = 0.5,
 			damage_ticks = 3,
 			add_ticks = 2,
+			dot_can_stack = "extend",
+			dot_can_crit = true,
 			dot_trigger_chance = 50,
 			max_values = {
 				damage_ticks = 9,
@@ -323,6 +327,8 @@ Hooks:PostHook(BlackMarketTweakData, "_init_melee_weapons", "WR BlackMarketTweak
 			dot_tick_period = 0.5,
 			damage_ticks = 1,
 			add_ticks = 1,
+			dot_can_stack = "extend",
+			dot_can_crit = true,
 			dot_trigger_chance = 50,
 			max_values = {
 				damage = 60,

@@ -343,6 +343,7 @@
 								damage_ticks = 22,
 								add_ticks = 14,
 								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
 								dot_can_crit = true
 							}
 						},
@@ -381,6 +382,7 @@
 								damage_ticks = 18,
 								add_ticks = 12,
 								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
 								dot_can_crit = true
 							}
 						},
@@ -411,6 +413,7 @@
 								damage_ticks = 14,
 								add_ticks = 10,
 								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
 								dot_can_crit = true
 							}
 						},
@@ -441,6 +444,7 @@
 								damage_ticks = 10,
 								add_ticks = 8,
 								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
 								dot_can_crit = true
 							}
 						},
@@ -471,6 +475,7 @@
 								damage_ticks = 6,
 								add_ticks = 6,
 								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
 								dot_can_crit = true
 							}
 						},
