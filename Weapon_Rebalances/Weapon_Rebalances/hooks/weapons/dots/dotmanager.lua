@@ -138,7 +138,7 @@ function DOTManager:update(t, dt)
 	
 	for index = #self._doted_enemies, 1, -1 do
 		local dot_info = self._doted_enemies[index]
-		local tick_period = math.floor(dot_info.dot_tick_period * 10 + 0.5) / 10 or 0.5
+		local tick_period = math.floor(dot_info.dot_tick_period * 10 + 0.5) / 10
 
 		local function clear_dot()
 			if dot_info.variant == "fire" then
@@ -283,7 +283,7 @@ function DOTManager:create_dot_data(dot_info)
 		dot_data.diminish_scale_length = custom_data.diminish_scale_length
 		
 		--Tick Period variables
-		dot_data.dot_tick_period = custom_data.dot_tick_period or dot_data.dot_tick_period
+		dot_data.dot_tick_period = custom_data.dot_tick_period or 0.5
 		dot_data.scale_tick_period = custom_data.scale_tick_period
 		dot_data.min_tick_period = custom_data.min_tick_period or 0.1
 	end
