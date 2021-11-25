@@ -1827,6 +1827,7 @@ function WeaponTweakData:_init_pistols_wr()
 			self.peacemaker.damage_falloff = falloff.pistol.tier_4
 			self.peacemaker.AMMO_MAX = 36
 			self.peacemaker.stats.damage = 230
+			self.peacemaker.stats_modifiers.damage = 1
 			self.peacemaker.stats.recoil = 1
 			self.peacemaker.fire_mode_data.fire_rate = 0.166
 			self.peacemaker.single.fire_rate = 0.166
