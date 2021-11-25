@@ -1,9 +1,11 @@
 function CopDamage:add_crit_chance(attack_data)
 	local add_crit = 0
-	local weapon_unit = self:get_unit_wr(attack_data.weapon_unit)
+	if attack_data.weapon_unit then
+		local weapon_unit = self:get_unit_wr(attack_data.weapon_unit)
 
-	if weapon_unit and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.crit_chance then
-		add_crit = add_crit + weapon_unit:base()._ammo_data.crit_chance
+		if weapon_unit and weapon_unit:base() and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.crit_chance then
+			add_crit = add_crit + weapon_unit:base()._ammo_data.crit_chance
+		end
 	end
 
 	return add_crit
@@ -199,7 +201,7 @@ function CopDamage:damage_fire(attack_data)
 			local start_dot_damage_roll = math.random(1, 100)
 
 			if flammable and not attack_data.is_fire_dot_damage and distance < fire_dot_max_distance and start_dot_damage_roll <= fire_dot_trigger_chance then
-				managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), attack_data.weapon_unit, fire_dot_data.dot_length, fire_dot_data.dot_damage, attack_data.attacker_unit, attack_data.is_molotov)
+				managers.fire:add_doted_enemy(self._unit, TimerManager:game():time(), nil--[[ attack_data.weapon_unit ]], fire_dot_data.dot_length, fire_dot_data.dot_damage, attack_data.attacker_unit, attack_data.is_molotov)
 			end
 		end
 	end
