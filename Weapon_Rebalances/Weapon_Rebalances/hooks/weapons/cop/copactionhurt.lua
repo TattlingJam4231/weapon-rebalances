@@ -17,6 +17,7 @@ function CopActionHurt:init(action_desc, common_data)
 	local action_type = action_desc.hurt_type
 	local ignite_character = action_desc.ignite_character
 	local start_dot_dance_antimation = action_desc.fire_dot_data and action_desc.fire_dot_data.start_dot_dance_antimation
+	action_desc.direction_vec = action_desc.direction_vec or Vector3()
 
 	if action_type == "knock_down" then
 		action_type = "heavy_hurt"
@@ -66,7 +67,7 @@ function CopActionHurt:init(action_desc, common_data)
 					if use_animation_on_fire_damage then
 						redir_res = self._ext_movement:play_redirect("fire_hurt")
 						local dir_str = nil
-						local fwd_dot = action_desc.direction_vec and action_desc.direction_vec:dot(common_data.fwd) or 0 -- modded
+						local fwd_dot = action_desc.direction_vec:dot(common_data.fwd)
 
 						if fwd_dot < 0 then
 							local hit_pos = action_desc.hit_pos
