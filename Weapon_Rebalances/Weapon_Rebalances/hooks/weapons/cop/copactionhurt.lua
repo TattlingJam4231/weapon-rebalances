@@ -17,7 +17,7 @@ function CopActionHurt:init(action_desc, common_data)
 	local action_type = action_desc.hurt_type
 	local ignite_character = action_desc.ignite_character
 	local start_dot_dance_antimation = action_desc.fire_dot_data and action_desc.fire_dot_data.start_dot_dance_antimation
-	action_desc.direction_vec = action_desc.direction_vec or Vector3()
+	action_desc.direction_vec = action_desc.direction_vec or Vector3() --modded
 
 	if action_type == "knock_down" then
 		action_type = "heavy_hurt"

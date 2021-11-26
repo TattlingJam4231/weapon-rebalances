@@ -3353,6 +3353,7 @@ function WeaponFactoryTweakData:_init_smg_attachments()
 					--Magazines
 
 							--Straight Magazine
+							self.parts.wpn_fps_smg_mp5_m_straight.stats.damage = 0
 							self.parts.wpn_fps_smg_mp5_m_straight.stats.extra_ammo = 0
 							self.parts.wpn_fps_smg_mp5_m_straight.stats.spread = 0
 							self.parts.wpn_fps_smg_mp5_m_straight.stats.recoil = 2
