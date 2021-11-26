@@ -1,9 +1,11 @@
 function CopDamage:add_crit_chance(attack_data)
 	local add_crit = 0
-	local weapon_unit = self:get_unit_wr(attack_data.weapon_unit)
+	if attack_data.weapon_unit then
+		local weapon_unit = self:get_unit_wr(attack_data.weapon_unit)
 
-	if weapon_unit and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.crit_chance then
-		add_crit = add_crit + weapon_unit:base()._ammo_data.crit_chance
+		if weapon_unit and weapon_unit:base() and weapon_unit:base()._ammo_data and weapon_unit:base()._ammo_data.crit_chance then
+			add_crit = add_crit + weapon_unit:base()._ammo_data.crit_chance
+		end
 	end
 
 	return add_crit
@@ -270,6 +272,7 @@ function CopDamage:damage_dot(attack_data)
 		end
 	else
 		attack_data.damage = damage
+		attack_data.variant = attack_data.variant == "bleed" and "poison" or attack_data.variant
 		local result_type = attack_data.hurt_animation and self:get_damage_type(damage_percent, attack_data.variant) or "dmg_rcv"
 		if attack_data.variant == "fire" then
 			result_type = "fire_hurt"

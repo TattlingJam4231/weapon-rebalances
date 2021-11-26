@@ -264,6 +264,7 @@ local falloff = {
 		}
 	}
 }
+
 function WeaponTweakData:_init_weapon_index_wr()
 	self.weapon_index = {
 		assault_rifle = {
@@ -1827,6 +1828,7 @@ function WeaponTweakData:_init_pistols_wr()
 			self.peacemaker.damage_falloff = falloff.pistol.tier_4
 			self.peacemaker.AMMO_MAX = 36
 			self.peacemaker.stats.damage = 230
+			self.peacemaker.stats_modifiers.damage = 1
 			self.peacemaker.stats.recoil = 1
 			self.peacemaker.fire_mode_data.fire_rate = 0.166
 			self.peacemaker.single.fire_rate = 0.166
@@ -2197,11 +2199,14 @@ function WeaponTweakData:_init_specials_wr()
 					
 					--Piglet
 					self.m32.AMMO_PICKUP = pickup.gl.tier_2
+					self.m32.AMMO_MAX = 2000
+					self.m32.CLIP_AMMO_MAX = 1000
 					self.m32.timers = {
 						shotgun_reload_enter = 1.85,
 						shotgun_reload_exit_empty = 1.33,
 						shotgun_reload_exit_not_empty = 1.33,
-						shotgun_reload_shell = 1.96,
+						-- shotgun_reload_shell = 1.96,
+						shotgun_reload_shell = 0.01,
 						shotgun_reload_first_shell_offset = 0,
 						unequip = 0.85,
 						equip = 0.85
@@ -2237,7 +2242,7 @@ function WeaponTweakData:_init_specials_wr()
 			--Vulcan Minigun Rework
 				self.m134.AMMO_MAX = 1300/1.3125
 				self.m134.CLIP_AMMO_MAX = 1300
-				self.m134.AMMO_PICKUP = {0.5,1.5}
+				self.m134.AMMO_PICKUP = {-0.5,-1.5}
 				self.m134.can_shoot_through_shield = true
 				self.m134.can_shoot_through_enemy = true
 				self.m134.can_shoot_through_wall = true

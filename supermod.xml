@@ -25,6 +25,7 @@
             
             <group                                                          :script_path="dots/">
                 <post :hook_id="managers/dotmanager"                            :script_path="dotmanager.lua"/>
+                <post :hook_id="units/environment/environmentfire"              :script_path="environmentfire.lua"/>
                 <post :hook_id="units/beings/player/states/playerstandard"      :script_path="playerstandard.lua"/>
                 <post :hook_id="units/weapons/raycastweaponbase"                :script_path="raycastweaponbase.lua"/>
             </group>
@@ -52,6 +53,7 @@
             <post :hook_id="units/weapons/newraycastweaponbase"                 :script_path="newraycastweaponbase.lua"/>
             <post :hook_id="units/weapons/raycastweaponbase"                    :script_path="raycastweaponbase.lua"/>
             <post :hook_id="units/weapons/shotgun/shotgunbase"                  :script_path="shotgunbase.lua"/>
+            <post :hook_id="units/weapons/trip_mine/tripminebase"               :script_path="tripminebase.lua"/>
             <post :hook_id="managers/weaponfactorymanager"                      :script_path="weaponfactorymanager.lua"/>
         </group>
 
