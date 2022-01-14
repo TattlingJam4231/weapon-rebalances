@@ -1031,19 +1031,22 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- M1014 Shotgun
 			self.benelli.rays = 12
 			self.benelli.stats.damage = 57
-			self.benelli.stats.reload = 15
+			self.benelli.stats.reload = 13
+			self.benelli.use_shotgun_reload = "dual"
 
 
 			-- Predator 12G Shotgun
 			self.spas12.rays = 12
 			self.spas12.stats.damage = 57
-			self.spas12.stats.reload = 15
+			self.spas12.stats.reload = 13
+			self.spas12.use_shotgun_reload = "dual"
 
 			
 			-- Street Sweeper Shotgun
 			self.striker.rays = 12
 			self.striker.stats.damage = 57
-			self.striker.stats.reload = 13
+			self.striker.stats.reload = 11
+			self.striker.use_shotgun_reload = "dual"
 
 
 	--T2 Shotguns----------------------------------------------------------------

@@ -244,3 +244,37 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
 end
+
+function NewRaycastWeaponBase:update_reloading(t, dt, time_left)
+	
+	if self._use_shotgun_reload and self._next_shell_reloded_t and self._next_shell_reloded_t < t then
+
+		local speed_multiplier = self:reload_speed_multiplier()
+		self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
+		
+		if self._use_shotgun_reload == "dual" then
+			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + math.min(2, self:get_ammo_total() - self:get_ammo_remaining_in_clip())))
+		else
+			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+		end
+
+		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+		return true
+	end
+end
+
+function NewRaycastWeaponBase:reload_expire_t()
+	
+	if self._use_shotgun_reload then
+
+		local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
+	
+		if self._use_shotgun_reload == "dual" then
+			return math.ceil(math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) / 2) * self:reload_shell_expire_t()
+		end
+
+		return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+	end
+
+	return nil
+end
