@@ -1015,7 +1015,7 @@ function WeaponFactoryTweakData:_init_attachments()
 					
 					
 					-- The Bigger the Better Suppressor
-					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.damage = -4
+					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.damage = -6
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.spread = 2
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.recoil = 1
 					self.parts.wpn_fps_upg_ns_ass_smg_large.stats.concealment = -4
@@ -2591,6 +2591,25 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 end
 
 function WeaponFactoryTweakData:_init_lmg_attachments()
+	--T2 LMGs----------------------------------------------------------
+							
+			--Brenner-21 Light Machine Gun
+			
+					--Barrels
+
+							--Long Barrel
+							self.parts.wpn_fps_lmg_hk21_b_long.stats.damage = 1
+							self.parts.wpn_fps_lmg_hk21_b_long.stats.spread = 2
+							self.parts.wpn_fps_lmg_hk21_b_long.stats.recoil = -2
+							self.parts.wpn_fps_lmg_hk21_b_long.stats.concealment = -2
+
+					--Foregrips
+
+							--Short Foregrip
+							self.parts.wpn_fps_lmg_hk21_fg_short.stats.damage = -2
+							self.parts.wpn_fps_lmg_hk21_fg_short.stats.spread = -2
+							self.parts.wpn_fps_lmg_hk21_fg_short.stats.recoil = 5
+							self.parts.wpn_fps_lmg_hk21_fg_short.stats.concealment = 3
 end
 
 function WeaponFactoryTweakData:_init_sniper_attachments()
