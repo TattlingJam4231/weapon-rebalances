@@ -12,7 +12,7 @@ local default_spread = {
 	moving_standing = 3,
 	moving_crouching = 3,
 	moving_steelsight = 1.2,
-	bipod = 1.2
+	bipod = 3
 }
 
 local pickup = {
@@ -1031,14 +1031,14 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- M1014 Shotgun
 			self.benelli.rays = 12
 			self.benelli.stats.damage = 57
-			self.benelli.stats.reload = 13
+			self.benelli.stats.reload = 11
 			self.benelli.use_shotgun_reload = "dual"
 
 
 			-- Predator 12G Shotgun
 			self.spas12.rays = 12
 			self.spas12.stats.damage = 57
-			self.spas12.stats.reload = 13
+			self.spas12.stats.reload = 11
 			self.spas12.use_shotgun_reload = "dual"
 
 			
@@ -1088,7 +1088,7 @@ function WeaponTweakData:_init_lmgs_wr()
 			self.m60.can_shoot_through_wall = true
 			self.m60.max_wall_penetrations = 1
 			self.m60.stats.damage = 110
-			self.m60.stats.spread = 12
+			self.m60.stats.spread = 16
 			self.m60.stats.recoil = 4
 			self.m60.stats.suppression = 6
 			self.m60.panic_suppression_chance = 1
@@ -1098,16 +1098,16 @@ function WeaponTweakData:_init_lmgs_wr()
 			-- RPK
 			self.rpk.AMMO_MAX = 400
 			self.rpk.stats.damage = 81
-			self.rpk.stats.spread = 1
-			self.rpk.stats.recoil = 10
+			self.rpk.stats.spread = 12
+			self.rpk.stats.recoil = 9
 			self.rpk.stats.suppression = 1
 			self.rpk.panic_suppression_chance = 1
 			
 			-- Brenner
 			self.hk21.AMMO_MAX = 450
-			self.hk21.stats.damage = 83
-			self.hk21.stats.spread = 2
-			self.hk21.stats.recoil = 12
+			self.hk21.stats.damage = 82
+			self.hk21.stats.spread = 13
+			self.hk21.stats.recoil = 11
 			self.hk21.stats.suppression = 1
 			self.hk21.panic_suppression_chance = 1
 		
@@ -1116,16 +1116,16 @@ function WeaponTweakData:_init_lmgs_wr()
 			-- ksp
 			self.m249.AMMO_MAX = 600
 			self.m249.stats.damage = 55
-			self.m249.stats.spread = 3
-			self.m249.stats.recoil = 13
+			self.m249.stats.spread = 14
+			self.m249.stats.recoil = 12
 			self.m249.stats.suppression = 1
 			self.m249.panic_suppression_chance = 1
 			
 			-- ksp 58
 			self.par.AMMO_MAX = 600
 			self.par.stats.damage = 56
-			self.par.stats.spread = 3
-			self.par.stats.recoil = 15
+			self.par.stats.spread = 14
+			self.par.stats.recoil = 14
 			self.par.stats.suppression = 1
 			self.par.panic_suppression_chance = 1
 			
@@ -1133,8 +1133,8 @@ function WeaponTweakData:_init_lmgs_wr()
 			self.mg42.CLIP_AMMO_MAX = 200
 			self.mg42.AMMO_MAX = 600
 			self.mg42.stats.damage = 57
-			self.mg42.stats.spread = 1
-			self.mg42.stats.recoil = 10
+			self.mg42.stats.spread = 12
+			self.mg42.stats.recoil = 9
 			self.mg42.stats.suppression = 1
 			self.mg42.panic_suppression_chance = 1
 end

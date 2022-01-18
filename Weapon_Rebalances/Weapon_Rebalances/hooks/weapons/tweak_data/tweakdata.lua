@@ -51,6 +51,74 @@ if not wr_tweakstats then
 		sound_event = "gl_explode",
 		name_id = "bm_launcher_frag"
 	}
+	
+	-- tweak_data.projectiles.molotov = {
+	-- 	damage = 3,
+	-- 	player_damage = 2,
+	-- 	fire_dot_data = {
+	-- 		dot_trigger_chance = 35,
+	-- 		dot_damage = 1,
+	-- 		dot_length = 3,
+	-- 		dot_trigger_max_distance = 3000,
+	-- 		dot_tick_period = 0.5
+	-- }
+	
+	-- tweak_data.projectiles.launcher_incendiary = {
+	-- 	damage = 10,
+	-- 	launch_speed = 1250,
+	-- 	curve_pow = 0.1,
+	-- 	player_damage = 2,
+	-- 	fire_dot_data = {
+	-- 		dot_trigger_chance = 35,
+	-- 		dot_damage = 25,
+	-- 		dot_length = 6.1,
+	-- 		dot_trigger_max_distance = 3000,
+	-- 		dot_tick_period = 0.5
+	-- }
+	
+	-- tweak_data.projectiles.launcher_incendiary_arbiter = {
+	-- 	damage = 10,
+	-- 	launch_speed = 7000,
+	-- 	curve_pow = 0.1,
+	-- 	player_damage = 2,
+	-- 	fire_dot_data = {
+	-- 		dot_trigger_chance = 35,
+	-- 		dot_damage = 25,
+	-- 		dot_length = 6.1,
+	-- 		dot_trigger_max_distance = 3000,
+	-- 		dot_tick_period = 0.5
+	-- }
+	
+	-- tweak_data.projectiles.fir_com = {
+	-- 	damage = 3,
+	-- 	curve_pow = 0.1,
+	-- 	player_damage = 3,
+	-- 	fire_dot_data = {
+	-- 		dot_trigger_chance = 100,
+	-- 		dot_damage = 25,
+	-- 		dot_length = 2.1,
+	-- 		dot_trigger_max_distance = 3000,
+	-- 		dot_tick_period = 0.5
+	-- 	},
+	-- 	range = 500,
+	-- 	name_id = "bm_grenade_fir_com",
+	-- 	sound_event = "white_explosion",
+	-- 	effect_name = "effects/payday2/particles/explosions/grenade_incendiary_explosion"
+	-- }
+
+	-- tweak_data.projectiles.wpn_prj_four = {
+	-- 	damage = 10,
+	-- 	launch_speed = 1500,
+	-- 	adjust_z = 0,
+	-- 	mass_look_up_modifier = 1,
+	-- 	name_id = "bm_prj_four",
+	-- 	push_at_body_index = 0,
+	-- 	dot_data = {
+	-- 		type = "poison"
+	-- 	},
+	-- 	bullet_class = "ProjectilesPoisonBulletBase",
+	-- 	sounds = {}
+	-- }
 
 	wr_tweakstats = true
 end
