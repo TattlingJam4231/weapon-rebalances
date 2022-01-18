@@ -321,7 +321,9 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"ksg",				-- Raven Shotgun
 				"m1897",			-- Reinfeld 88 Shotgun
 				"r870",				-- Reinfeld 880 Shotgun
-				"serbu"				-- Locomotive 12G Shotgun
+				"serbu",			-- Locomotive 12G Shotgun
+				"rota",				-- Goliath 12G Shotgun
+				"x_rota"			-- Akimbo Goliath 12G Shotguns
 			},
 			tier_3 = {
 				"benelli",			-- M1014 Shotgun
@@ -331,12 +333,10 @@ function WeaponTweakData:_init_weapon_index_wr()
 			tier_2 = {
 				"saiga",			-- Izhma 12G Shotgun
 				"aa12",				-- Steakout 12G Shotgun
-				"rota",				-- Goliath 12G Shotgun
-				"x_rota"			-- Akimbo Goliath 12G Shotguns
-			},
-			tier_1 = {
 				"basset",			-- Grimm 12G Shotgun
 				"x_basset"			-- Brothers Grimm 12G Shotguns
+			},
+			tier_1 = {
 			}
 		},
 		lmg = {
@@ -965,8 +965,10 @@ function WeaponTweakData:_init_shotguns_wr()
 			}
 			self.judge.fire_mode_data.fire_rate = 0.166
 			self.judge.single.fire_rate = 0.166
+			self.judge.AMMO_MAX = 30
 			self.judge.rays = 9
 			self.judge.stats.damage = 112
+			self.judge.stats.reload = 7
 			self.judge.damage_falloff = {
 				optimal_distance = 0,
 				optimal_range = 1000,
@@ -983,47 +985,65 @@ function WeaponTweakData:_init_shotguns_wr()
 						"pistol",
 						"revolver"
 					}
-					self.x_judge.fire_mode_data.fire_rate = 0.166
-					self.x_judge.single.fire_rate = 0.166
-					self.x_judge.rays = 9
-					self.x_judge.stats.damage = 112
-					self.x_judge.damage_falloff = {
-						optimal_distance = 0,
-						optimal_range = 1000,
-						near_falloff = 0,
-						far_falloff = 2400,
-						near_multiplier = 1,
-						far_multiplier = 0.06
-					}
+					self.x_judge.fire_mode_data.fire_rate = self.judge.fire_mode_data.fire_rate
+					self.x_judge.single.fire_rate = self.judge.single.fire_rate
+					self.x_judge.AMMO_MAX = self.judge.AMMO_MAX
+					self.x_judge.rays = self.judge.rays
+					self.x_judge.stats.damage = self.judge.stats.damage
+					self.x_judge.stats.reload = 10
+					self.x_judge.damage_falloff = self.judge.damage_falloff
 
 		
 			-- Mosconi 12G Tactical Shotgun
+			self.m590.AMMO_MAX = 35
 			self.m590.rays = 12
 			self.m590.stats.damage = 112
+			self.m590.stats.reload = 12
 
 
 			-- Raven Shotgun
 			self.ksg.rays = 12
 			self.ksg.stats.damage = 112
-			self.ksg.stats.reload = 14
+			self.ksg.stats.reload = 15
 
 			
 			-- Reinfeld 88 Shotgun
+			self.m1897.AMMO_MAX = 42
 			self.m1897.rays = 12
 			self.m1897.stats.damage = 112
-			self.m1897.stats.reload = 14
+			self.m1897.stats.reload = 15
 
 			
 			-- Reinfeld 880 Shotgun
+			self.r870.AMMO_MAX = 40
+			self.r870.CLIP_AMMO_MAX = 8
 			self.r870.rays = 12
 			self.r870.stats.damage = 112
-			self.r870.stats.reload = 14
+			self.r870.stats.recoil = 11
+			self.r870.stats.reload = 15
 
 			
 			-- Locomotive 12G Shotgun
+			self.serbu.AMMO_MAX = 40
+			self.serbu.CLIP_AMMO_MAX = 5
 			self.serbu.rays = 12
 			self.serbu.stats.damage = 112
-			self.serbu.stats.reload = 14
+			self.serbu.stats.reload = 13
+
+			
+			-- Goliath 12G Shotgun
+			self.rota.has_magazine = nil
+			self.rota.AMMO_MAX = 30
+			self.rota.rays = 12
+			self.rota.stats.damage = 112
+			self.rota.stats.reload = 6
+			
+					-- Akimbo Goliath 12G Shotguns
+					self.x_rota.has_magazine = self.rota.has_magazine
+					self.x_rota.AMMO_MAX = self.rota.AMMO_MAX
+					self.x_rota.rays = self.rota.rays
+					self.x_rota.stats.damage = self.rota.stats.damage
+					self.x_rota.stats.reload = 7
 
 
 	--T3 Shotguns----------------------------------------------------------------
@@ -1059,24 +1079,21 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- Steakout 12G Shotgun
 			self.aa12.rays = 12
 			self.aa12.stats.damage = 45
+		
+			-- Grimm 12G Shotgun
+			self.basset.AMMO_MAX = 56
+			self.basset.stats.damage = 45
+			self.basset.stats.recoil = 12
+			self.basset.stats.reload = 5
 
-			
-			-- Goliath 12G Shotgun
-			self.rota.rays = 12
-			self.rota.stats.damage = 45
-			
-					-- Akimbo Goliath 12G Shotguns
-					self.x_rota.rays = 12
-					self.x_rota.stats.damage = 45
+					-- Brothers Grimm 12G Shotguns
+					self.x_basset.AMMO_MAX = self.basset.AMMO_MAX
+					self.x_basset.stats.damage = self.basset.stats.damage
+					self.x_basset.stats.recoil = self.basset.stats.recoil
+					self.x_basset.stats.reload = 6
 
 
 	--T1 Shotguns----------------------------------------------------------------
-		
-			-- Grimm 12G Shotgun
-			self.basset.stats.damage = 20
-
-					-- Brothers Grimm 12G Shotguns
-					self.x_basset.stats.damage = 20
 end
 
 function WeaponTweakData:_init_lmgs_wr()

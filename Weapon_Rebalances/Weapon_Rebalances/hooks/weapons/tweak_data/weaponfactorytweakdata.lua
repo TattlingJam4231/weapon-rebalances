@@ -1581,6 +1581,13 @@ function WeaponFactoryTweakData:_init_attachments()
 					self.parts.wpn_fps_upg_ak_s_solidstock.stats.recoil = 2
 					self.parts.wpn_fps_upg_ak_s_solidstock.stats.concealment = -4
 
+			--Shotguns
+
+					--Muldon Stock
+					self.parts.wpn_fps_shot_r870_s_folding.stats.spread = -1
+					self.parts.wpn_fps_shot_r870_s_folding.stats.recoil = -1
+					self.parts.wpn_fps_shot_r870_s_folding.stats.concealment = 1
+
 
 			--Tactical Stock
 			self.parts.wpn_fps_upg_m4_s_pts.stats.spread = 0
@@ -1642,6 +1649,15 @@ function WeaponFactoryTweakData:_init_attachments()
 					self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.stats.spread = -2
 					self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.stats.recoil = 0
 					self.parts.wpn_fps_upg_ass_m4_upper_reciever_core.stats.concealment = 0
+
+			--Shotguns
+
+					--Upper Receivers
+
+							--Shell Rack
+							self.parts.wpn_fps_shot_r870_body_rack.stats.extra_ammo = 0
+							self.parts.wpn_fps_shot_r870_body_rack.stats.total_ammo_mod = 3
+							self.parts.wpn_fps_shot_r870_body_rack.stats.concealment = -2
 
 	
 	
@@ -1784,9 +1800,43 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 
 			--Reinfeld 880 Shotgun
 			self.wpn_fps_shot_r870.override = ammo_override.shotgun.t4
+
+					--Stocks
+
+							--Short Enough Stock
+							self.parts.wpn_fps_shot_r870_s_nostock.stats.spread = -1
+							self.parts.wpn_fps_shot_r870_s_nostock.stats.recoil = -3
+							self.parts.wpn_fps_shot_r870_s_nostock.stats.concealment = 3
+
+							--Short Enough Tactical Stock
+							self.parts.wpn_fps_shot_r870_s_nostock_big.stats.spread = -1
+							self.parts.wpn_fps_shot_r870_s_nostock_big.stats.recoil = -1
+							self.parts.wpn_fps_shot_r870_s_nostock_big.stats.concealment = 2
+
+							--Government Issue Tactical Stock
+							self.parts.wpn_fps_shot_r870_s_solid_big.stats.spread = 0
+							self.parts.wpn_fps_shot_r870_s_solid_big.stats.recoil = 2
+							self.parts.wpn_fps_shot_r870_s_solid_big.stats.concealment = -2
 			
 			--Locomotive 12G Shotgun
 			self.wpn_fps_shot_serbu.override = ammo_override.shotgun.t4
+
+					--Stocks
+
+							--Standard Stock
+							self.parts.wpn_fps_shot_r870_s_solid.stats.spread = 0
+							self.parts.wpn_fps_shot_r870_s_solid.stats.recoil = 3
+							self.parts.wpn_fps_shot_r870_s_solid.stats.concealment = -2
+
+							--Police Shorty Stock
+							self.parts.wpn_fps_shot_shorty_s_solid_short.stats.spread = -1
+							self.parts.wpn_fps_shot_shorty_s_solid_short.stats.recoil = 2
+							self.parts.wpn_fps_shot_shorty_s_solid_short.stats.concealment = -3
+
+							--Tactical Shorty Stock
+							self.parts.wpn_fps_shot_shorty_s_nostock_short.stats.spread = -2
+							self.parts.wpn_fps_shot_shorty_s_nostock_short.stats.recoil = -4
+							self.parts.wpn_fps_shot_shorty_s_nostock_short.stats.concealment = 3
 
 
 	--T3 Shotguns-----------------------------------------------------------
@@ -1805,24 +1855,42 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 
 			--Izhma 12G Shotgun
 			self.wpn_fps_shot_saiga.override = ammo_override.shotgun.t2
+					
+					--Stocks
+
+							--Folded Stock
+							self.parts.wpn_fps_sho_s_spas12_folded.stats.spread = -1
+							self.parts.wpn_fps_sho_s_spas12_folded.stats.recoil = -1
+							self.parts.wpn_fps_sho_s_spas12_folded.stats.concealment = 2
+
+							--Solid Stock
+							self.parts.wpn_fps_sho_s_spas12_solid.stats.spread = 1
+							self.parts.wpn_fps_sho_s_spas12_solid.stats.recoil = 1
+							self.parts.wpn_fps_sho_s_spas12_solid.stats.concealment = 0
+
+							--No Stock
+							self.parts.wpn_fps_sho_s_spas12_nostock.stats.spread = 0
+							self.parts.wpn_fps_sho_s_spas12_nostock.stats.recoil = -2
+							self.parts.wpn_fps_sho_s_spas12_nostock.stats.concealment = 4
+
 			
 			--Steakout 12G Shotgun
 			self.wpn_fps_sho_aa12.override = ammo_override.shotgun.t2
 			
 			--Akimbo Goliath 12G Shotguns
-			self.wpn_fps_sho_x_rota.override = ammo_override.shotgun.t2
+			self.wpn_fps_sho_x_rota.override = ammo_override.shotgun.t4
 			
 			--Goliath 12G Shotgun
-			self.wpn_fps_sho_rota.override = ammo_override.shotgun.t2
+			self.wpn_fps_sho_rota.override = ammo_override.shotgun.t4
 
 	
 	--T1 Shotguns-----------------------------------------------------------
 		
 			--Brothers Grimm 12G Shotguns
-			self.wpn_fps_sho_x_basset.override = ammo_override.shotgun.t1
+			self.wpn_fps_sho_x_basset.override = ammo_override.shotgun.t2
 			
 			--Grimm 12G Shotgun
-			self.wpn_fps_sho_basset.override = ammo_override.shotgun.t1
+			self.wpn_fps_sho_basset.override = ammo_override.shotgun.t2
 end
 
 function WeaponFactoryTweakData:_init_assault_rifle_attachments()
