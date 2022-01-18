@@ -1024,7 +1024,7 @@ function WeaponTweakData:_init_shotguns_wr()
 
 			
 			-- Locomotive 12G Shotgun
-			self.serbu.AMMO_MAX = 40
+			self.serbu.AMMO_MAX = 35
 			self.serbu.CLIP_AMMO_MAX = 5
 			self.serbu.rays = 12
 			self.serbu.stats.damage = 112
