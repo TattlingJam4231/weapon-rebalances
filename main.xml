@@ -30,13 +30,14 @@
 				can_shoot_through_wall = "false"
 				can_shoot_through_enemy = "true"
 				max_enemy_penetration_distance = "2000"
+				max_enemy_penetrations = "1"
 				enemy_pen_energy_loss = "1500"
 				optimal_distance_mul = "2000"
 				optimal_range_mul = "0"
 				near_falloff_mul = "0"
 				far_falloff_mul = "0"
 				near_damage_mul = "1"
-				far_damage_mul = "1.20"
+				far_damage_mul = "1.2"
 			/>
 			<weapons>
 				<value_node value="wpn_fps_ass_sub2000"/>
@@ -485,6 +486,34 @@
 				<value_node value="wpn_fps_snp_m95"/>
 			</weapons>
 		</WeaponMod>
+
+	<!-- KSG Underbarrel -->
+		<WeaponMod
+			id = "wpn_fps_sho_ksg_underbarrel"
+			name_id = "bm_wp_ksg_underbarrel"
+			based_on = "wpn_fps_ass_contraband_gl_m203"
+			unit = "units/mods/weapons/wpn_fps_sho_ksg_pts/wpn_fps_sho_ksg_underbarrel"
+			wpn_pts = "wpn_fps_sho_ksg"
+			inherit_weapons = "false"
+			inherit_adds = "false"
+			inherit_override = "false"
+			inherit_parts_override = "false"
+			inherit_parts_forbids = "false"
+			internal_part = "true"
+			type = "special"
+			perks = "alt ammo"
+			ver = "2"
+			>
+			<stats
+				damage = "0"
+				recoil = "0"
+				concealment = "0"
+				total_ammo_mod = "-10"
+			/>
+			<weapons>
+				<value_node value="wpn_fps_sho_ksg"/>
+			</weapons>
+		</WeaponMod>
 		
 	<!-- HE -->
 		<!-- <WeaponMod -->
@@ -524,5 +553,6 @@
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_pis_fmj"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_a_pis_hp"/>
 		<texture path="guis/dlcs/mods/textures/pd2/blackmarket/icons/mods/wpn_upg_snp_slap"/>
+		<unit_obj path="units/mods/weapons/wpn_fps_sho_ksg_pts/wpn_fps_sho_ksg_underbarrel"/>
 	</AddFiles>
 </mod>

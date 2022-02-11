@@ -42,6 +42,7 @@
                 <post :hook_id="blackmarket/meleeweaponstweakdata"              :script_path="meleeweaponstweakdata.lua"/>
                 <post :hook_id="blackmarket/projectilestweakdata"               :script_path="projectilestweakdata.lua"/>
                 <post :hook_id="tweakdata"                                      :script_path="tweakdata.lua"/>
+                <post :hook_id="upgradestweakdata"                              :script_path="upgradestweakdata.lua"/>
                 <post :hook_id="weaponfactorytweakdata"                         :script_path="weaponfactorytweakdata.lua"/>
                 <post :hook_id="weapontweakdata"                                :script_path="weapontweakdata.lua"/>
                 
@@ -55,6 +56,7 @@
             <post :hook_id="units/weapons/shotgun/shotgunbase"                  :script_path="shotgunbase.lua"/>
             <post :hook_id="units/weapons/trip_mine/tripminebase"               :script_path="tripminebase.lua"/>
             <post :hook_id="managers/weaponfactorymanager"                      :script_path="weaponfactorymanager.lua"/>
+            <post :hook_id="units/weapons/weaponunderbarrel"                    :script_path="weaponunderbarrel.lua"/>
         </group>
 
         <post :hook_id="units/cameras/fpcameraplayerbase"                       :script_path="fpcameraplayerbase.lua"/>

@@ -122,3 +122,46 @@ function WeaponFactoryManager:get_part_data(part_id, factory_id, equipped_mods, 
 	end
 	return part
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function WeaponFactoryManager:_get_override_parts(factory_id, blueprint)
+	local factory = tweak_data.weapon.factory
+	local overridden = {}
+	local override_override = {}
+
+	for _, part_id in ipairs(blueprint) do
+		local part = self:_part_data(part_id, factory_id)
+
+		if part and part.override then
+			for override_id, override_data in pairs(part.override) do
+				if override_data.override then
+					override_override[override_id] = override_data
+				end
+			end
+		end
+	end
+
+	for _, part_id in ipairs(blueprint) do
+		local part = self:_part_data(part_id, factory_id, override_override)
+
+		if part and part.override then
+			for override_id, override_data in pairs(part.override) do
+				overridden[override_id] = override_data
+			end
+		end
+	end
+
+	return overridden
+end

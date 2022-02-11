@@ -251,3 +251,246 @@ function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_
 
 	return col_ray
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hooks:PostHook(PlayerStandard, "_update_check_actions", "WR PlayerStandard _update_check_actions", function(self, t, dt, paused)
+	local input = self:_get_input(t, dt, paused)
+	
+	new_action = self:_check_action_switch_ammo_wr(t,input)
+end)
+
+function PlayerStandard:_check_action_switch_ammo_wr(t, input)
+	local new_action = nil
+	local action_forbidden = false
+
+	if _G.IS_VR then
+		if not input.btn_weapon_firemode_press and not self._toggle_underbarrel_wanted then
+			return new_action
+		end
+	elseif not input.btn_deploy_bipod and not self._toggle_underbarrel_wanted then
+		return new_action
+	end
+
+	action_forbidden = self:_is_throwing_projectile() or self:_is_meleeing() or self:is_equipping() or self:_changing_weapon() or self:shooting() or self:_is_reloading() or self:is_switching_stances() or self:_interacting() or self:running() and not self._equipped_unit:base():run_and_shoot_allowed()
+
+	if self._running and not self._equipped_unit:base():run_and_shoot_allowed() and not self._end_running_expire_t then
+		self:_interupt_action_running(t)
+
+		self._toggle_underbarrel_wanted = true
+
+		return
+	end
+
+	if not action_forbidden then
+		self._toggle_underbarrel_wanted = false
+		local weapon = self._equipped_unit:base()
+
+		local switch_ammo = weapon:switch_ammo()
+
+		if switch_ammo ~= nil then
+			local alt_ammo_name_id = weapon:underbarrel_name_id()
+			local alt_ammo_tweak = tweak_data.weapon[underbarrel_name_id]
+			new_action = true
+
+			if weapon.reset_cached_gadget then
+				weapon:reset_cached_gadget()
+			end
+
+			if weapon._update_stats_values then
+				weapon:_update_stats_values(true)
+			end
+
+			local anim_ids = nil
+			local switch_delay = 1
+
+			-- if switch_ammo then
+			-- 	anim_ids = Idstring("underbarrel_enter_" .. weapon.name_id)
+			-- 	switch_delay = underbarrel_tweak.timers.equip_underbarrel
+
+			-- 	self:set_animation_state("underbarrel")
+			-- else
+			-- 	anim_ids = Idstring("underbarrel_exit_" .. weapon.name_id)
+			-- 	switch_delay = underbarrel_tweak.timers.unequip_underbarrel
+
+			-- 	self:set_animation_state("standard")
+			-- end
+
+			if anim_ids then
+				self._ext_camera:play_redirect(anim_ids, 1)
+			end
+
+			self:set_animation_weapon_hold(nil)
+			self:set_stance_switch_delay(switch_delay)
+
+			if alive(self._equipped_unit) then
+				managers.hud:set_ammo_amount(self._equipped_unit:base():selection_index(), self._equipped_unit:base():ammo_info())
+				managers.hud:set_teammate_weapon_firemode(HUDManager.PLAYER_PANEL, self._unit:inventory():equipped_selection(), self._equipped_unit:base():fire_mode())
+			end
+
+			managers.network:session():send_to_peers_synched("sync_underbarrel_switch", self._equipped_unit:base():selection_index(), underbarrel_name_id, underbarrel_state)
+		end
+	end
+
+	return new_action
+end
+
+
+
+
+
+
+
+
+
+
+--[[
+   Save Table to File
+   Load Table from File
+   v 1.0
+   
+   Lua 5.2 compatible
+   
+   Only Saves Tables, Numbers and Strings
+   Insides Table References are saved
+   Does not save Userdata, Metatables, Functions and indices of these
+   ----------------------------------------------------
+   table.save( table , filename )
+   
+   on failure: returns an error msg
+   
+   ----------------------------------------------------
+   table.load( filename or stringtable )
+   
+   Loads a table that has been saved via the table.save function
+   
+   on success: returns a previously saved table
+   on failure: returns as second argument an error msg
+   ----------------------------------------------------
+   
+   Licensed under the same terms as Lua itself.
+]]--
+do
+	-- declare local variables
+	--// exportstring( string )
+	--// returns a "Lua" portable version of the string
+	local function exportstring( s )
+	   return string.format("%q", s)
+	end
+ 
+	--// The Save Function
+	function table.save(  tbl,filename )
+	   local charS,charE = "   ","\n"
+	   local file,err = io.open( filename, "wb" )
+	   if err then return err end
+ 
+	   -- initiate variables for save procedure
+	   local tables,lookup = { tbl },{ [tbl] = 1 }
+	   file:write( "return {"..charE )
+ 
+	   for idx,t in ipairs( tables ) do
+		  file:write( "-- Table: {"..idx.."}"..charE )
+		  file:write( "{"..charE )
+		  local thandled = {}
+ 
+		  for i,v in ipairs( t ) do
+			 thandled[i] = true
+			 local stype = type( v )
+			 -- only handle value
+			 if stype == "table" then
+				if not lookup[v] then
+				   table.insert( tables, v )
+				   lookup[v] = #tables
+				end
+				file:write( charS.."{"..lookup[v].."},"..charE )
+			 elseif stype == "string" then
+				file:write(  charS..exportstring( v )..","..charE )
+			 elseif stype == "number" then
+				file:write(  charS..tostring( v )..","..charE )
+			 end
+		  end
+ 
+		  for i,v in pairs( t ) do
+			 -- escape handled values
+			 if (not thandled[i]) then
+			 
+				local str = ""
+				local stype = type( i )
+				-- handle index
+				if stype == "table" then
+				   if not lookup[i] then
+					  table.insert( tables,i )
+					  lookup[i] = #tables
+				   end
+				   str = charS.."[{"..lookup[i].."}]="
+				elseif stype == "string" then
+				   str = charS.."["..exportstring( i ).."]="
+				elseif stype == "number" then
+				   str = charS.."["..tostring( i ).."]="
+				end
+			 
+				if str ~= "" then
+				   stype = type( v )
+				   -- handle value
+				   if stype == "table" then
+					  if not lookup[v] then
+						 table.insert( tables,v )
+						 lookup[v] = #tables
+					  end
+					  file:write( str.."{"..lookup[v].."},"..charE )
+				   elseif stype == "string" then
+					  file:write( str..exportstring( v )..","..charE )
+				   elseif stype == "number" then
+					  file:write( str..tostring( v )..","..charE )
+				   end
+				end
+			 end
+		  end
+		  file:write( "},"..charE )
+	   end
+	   file:write( "}" )
+	   file:close()
+	end
+ 
+	--// The Load Function
+	function table.load( sfile )
+	   local ftables,err = loadfile( sfile )
+	   if err then return _,err end
+	   local tables = ftables()
+	   for idx = 1,#tables do
+		  local tolinki = {}
+		  for i,v in pairs( tables[idx] ) do
+			 if type( v ) == "table" then
+				tables[idx][i] = tables[v[1]]
+			 end
+			 if type( i ) == "table" and tables[i[1]] then
+				table.insert( tolinki,{ i,tables[i[1]] } )
+			 end
+		  end
+		  -- link indices
+		  for _,v in ipairs( tolinki ) do
+			 tables[idx][v[2]],tables[idx][v[1]] =  tables[idx][v[1]],nil
+		  end
+	   end
+	   return tables[1]
+	end
+ -- close do
+ end
+ 
+ -- ChillCode

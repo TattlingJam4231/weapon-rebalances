@@ -1,0 +1,16 @@
+<unit type="wpn" slot="1">
+	<object file="units/mods/weapons/wpn_fps_sho_ksg_pts/wpn_fps_sho_ksg_underbarrel" />
+	<dependencies>
+		<depends_on bnk="soundbanks/weapon_keltec"/>
+		<depends_on unit="units/payday2/weapons/wpn_fps_shell/wpn_fps_shell"/>
+	</dependencies>
+	<extensions>
+		<extension name="unit_data" class="ScriptUnitData" />
+		<extension name="base" class="WeaponUnderbarrelShotgunRaycast">
+			<var name="name_id" value="ksg_underbarrel" />
+		</extension>
+	</extensions>
+</unit>
+
+<!-- units/payday2/weapons/wpn_upg_dummy/wpn_upg_dummy -->
+<!-- 			<var name="anim" value="flip_up" />		-->

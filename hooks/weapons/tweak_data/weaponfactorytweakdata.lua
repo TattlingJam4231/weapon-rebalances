@@ -631,6 +631,7 @@
 						can_shoot_through_wall = false,
 						can_shoot_through_enemy = true,
 						max_enemy_penetration_distance = 2000,
+						max_enemy_penetrations = 1,
 						enemy_pen_energy_loss = 1500,
 						optimal_distance_mul = 2000,
 						optimal_range_mul = 0,
@@ -646,6 +647,7 @@
 						can_shoot_through_wall = false,
 						can_shoot_through_enemy = true,
 						max_enemy_penetration_distance = 2000,
+						max_enemy_penetrations = 1,
 						enemy_pen_energy_loss = 1500,
 						optimal_distance_mul = 2000,
 						optimal_range_mul = 0,
@@ -662,6 +664,7 @@
 								can_shoot_through_wall = false,
 								can_shoot_through_enemy = true,
 								max_enemy_penetration_distance = 2000,
+								max_enemy_penetrations = 1,
 								enemy_pen_energy_loss = 1500,
 								optimal_distance_mul = 2000,
 								optimal_range_mul = 0,
@@ -678,6 +681,7 @@
 								can_shoot_through_wall = false,
 								can_shoot_through_enemy = true,
 								max_enemy_penetration_distance = 2000,
+								max_enemy_penetrations = 1,
 								enemy_pen_energy_loss = 1500,
 								optimal_distance_mul = 2000,
 								optimal_range_mul = 0,
@@ -694,6 +698,7 @@
 								can_shoot_through_wall = false,
 								can_shoot_through_enemy = true,
 								max_enemy_penetration_distance = 2000,
+								max_enemy_penetrations = 1,
 								enemy_pen_energy_loss = 1500,
 								optimal_distance_mul = 2000,
 								optimal_range_mul = 0,
@@ -711,6 +716,7 @@
 						can_shoot_through_wall = false,
 						can_shoot_through_enemy = true,
 						max_enemy_penetration_distance = 2000,
+						max_enemy_penetrations = 1,
 						enemy_pen_energy_loss = 1500,
 						optimal_distance_mul = 2000,
 						optimal_range_mul = 0,
@@ -727,6 +733,7 @@
 								can_shoot_through_wall = false,
 								can_shoot_through_enemy = true,
 								max_enemy_penetration_distance = 2000,
+								max_enemy_penetrations = 1,
 								enemy_pen_energy_loss = 1500,
 								optimal_distance_mul = 2000,
 								optimal_range_mul = 0,
@@ -743,6 +750,7 @@
 								can_shoot_through_wall = false,
 								can_shoot_through_enemy = true,
 								max_enemy_penetration_distance = 2000,
+								max_enemy_penetrations = 1,
 								enemy_pen_energy_loss = 1500,
 								optimal_distance_mul = 2000,
 								optimal_range_mul = 0,
@@ -760,6 +768,7 @@
 						can_shoot_through_wall = false,
 						can_shoot_through_enemy = true,
 						max_enemy_penetration_distance = 2000,
+						max_enemy_penetrations = 1,
 						enemy_pen_energy_loss = 1500,
 						optimal_distance_mul = 2000,
 						optimal_range_mul = 0,
@@ -931,6 +940,35 @@
 				}
 			}
 		}
+
+function WeaponFactoryTweakData:create_underbarrel_shotgun_ammo_wr(shotgun_ammo_types, underbarrel_shotgun_weapons)
+	local underbarrel_ammo_part, underbarrel_ammo_part_id, underbarrel_part, underbarrel_part_id = nil
+	for id, ammo_data in pairs(shotgun_ammo_types) do
+		underbarrel_ammo_part = deep_clone(self.parts[ammo_data.ammo_id])
+		underbarrel_ammo_part.stats = ammo_data.tier.stats
+		underbarrel_ammo_part.custom_stats = ammo_data.tier.custom_stats
+		underbarrel_ammo_part.name_id = ammo_data.name_id
+		underbarrel_ammo_part.type = "underbarrel_ammo"
+		underbarrel_ammo_part_id = ammo_data.ammo_id .. "_underbarrel"
+		self.parts[underbarrel_ammo_part_id] = underbarrel_ammo_part
+
+		for factory_id, template_id in pairs(underbarrel_shotgun_weapons) do
+			underbarrel_part = deep_clone(self.parts[template_id])
+			underbarrel_part.name_id = underbarrel_ammo_part.name_id
+			underbarrel_part.dlc = underbarrel_ammo_part.dlc
+			underbarrel_part.sub_type = underbarrel_ammo_part.sub_type
+			underbarrel_part.adds = underbarrel_part.adds or {}
+
+			table.insert(underbarrel_part.adds, underbarrel_ammo_part_id)
+
+			underbarrel_part_id = factory_id .. "_" .. id
+			self.parts[underbarrel_part_id] = underbarrel_part
+
+			table.insert(self[factory_id].uses_parts, underbarrel_part_id)
+			table.insert(self[factory_id .. "_npc"].uses_parts, underbarrel_part_id)
+		end
+	end
+end
 			
 function WeaponFactoryTweakData:_init_attachments()
 	--Barrels
@@ -1727,6 +1765,30 @@ function WeaponFactoryTweakData:_init_attachments()
 					adds = {}
 				}
 end
+
+-- Hooks:PostHook(WeaponFactoryTweakData, "_init_ksg", "WR WeaponFactoryTweakData _init_ksg", function(self)
+
+-- 			self.parts.wpn_fps_sho_ksg_underbarrel = {
+-- 				type = "underbarrel",
+-- 				internal_part = true,
+-- 				a_obj = "a_fl",
+-- 				sub_type = "ammo_custom",
+-- 				name_id = "bm_wp_ksg_underbarrel",
+-- 				unit = "units/mods/weapons/wpn_fps_sho_ksg_underbarrel/wpn_fps_sho_ksg_underbarrel",
+-- 				stats = {
+-- 					value = 1
+-- 				},
+-- 				animations = {
+-- 					bipod_reload = "reload_not_empty"
+-- 				},
+-- 				perks = {
+-- 					"underbarrel"
+-- 				}
+-- 			}
+
+-- 			table.insert(self.wpn_fps_sho_ksg.default_blueprint, "wpn_fps_sho_ksg_underbarrel")
+-- 			table.insert(self.wpn_fps_sho_ksg.uses_parts, "wpn_fps_sho_ksg_underbarrel")
+-- end)
 
 function WeaponFactoryTweakData:_init_shotgun_attachments()
 	--T5 Shotguns-----------------------------------------------------------
@@ -3588,6 +3650,24 @@ function WeaponFactoryTweakData:_init_smg_attachments()
 end
 
 function WeaponFactoryTweakData:_init_pistol_attachments()
+	local shotgun_ammo_types = {
+		underbarrel_slug = {
+			name_id = "bm_wp_type54_underbarrel_slug",
+			ammo_id = "wpn_fps_upg_a_slug",
+			tier = deep_clone(slug.t4)
+		},
+		underbarrel_piercing = {
+			name_id = "bm_wp_type54_underbarrel_piercing",
+			ammo_id = "wpn_fps_upg_a_piercing",
+			tier = deep_clone(flechette.t4)
+		}
+	}
+	local underbarrel_shotgun_weapons = {
+		wpn_fps_pis_x_type54 = "wpn_fps_pis_x_type54_underbarrel",
+		wpn_fps_pis_type54 = "wpn_fps_pis_type54_underbarrel"
+	}
+
+	self:create_underbarrel_shotgun_ammo_wr(shotgun_ammo_types, underbarrel_shotgun_weapons)
 end
 
 function WeaponFactoryTweakData:_init_special_attachments()
@@ -3603,5 +3683,7 @@ Hooks:PostHook(WeaponFactoryTweakData, "init", "WR WeaponFactoryTweakData init",
 	self:_init_smg_attachments()
 	self:_init_pistol_attachments()
 	self:_init_special_attachments()
+
+	
 		
 end)
