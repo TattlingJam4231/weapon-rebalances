@@ -61,8 +61,8 @@ local pickup = {
 local falloff = {
 	shotgun = {
 		double_barrel = {
-			optimal_distance = 400,
-			optimal_range = 1100,
+			optimal_distance = 600,
+			optimal_range = 900,
 			near_falloff = 200,
 			far_falloff = 2250,
 			near_multiplier = 1.35,
@@ -995,10 +995,19 @@ function WeaponTweakData:_init_shotguns_wr()
 
 		
 			-- Mosconi 12G Tactical Shotgun
-			self.m590.AMMO_MAX = 35
+			self.m590.AMMO_MAX = 42
 			self.m590.rays = 12
 			self.m590.stats.damage = 112
+			self.m590.stats.recoil = 7
 			self.m590.stats.reload = 12
+			self.m590.kick.standing = {
+				3.6,
+				4,
+				-0.5,
+				0.5
+			}
+			self.m590.kick.crouching = self.m590.kick.standing
+			self.m590.kick.steelsight = self:kick_steelsight_wr(self.m590.kick.standing)
 
 
 			-- Raven Shotgun
@@ -1028,7 +1037,16 @@ function WeaponTweakData:_init_shotguns_wr()
 			self.serbu.CLIP_AMMO_MAX = 5
 			self.serbu.rays = 12
 			self.serbu.stats.damage = 112
+			self.serbu.stats.recoil = 5
 			self.serbu.stats.reload = 13
+			self.serbu.kick.standing = {
+				3.1,
+				3.7,
+				-1.3,
+				1.3
+			}
+			self.serbu.kick.crouching = self.serbu.kick.standing
+			self.serbu.kick.steelsight = self:kick_steelsight_wr(self.serbu.kick.standing)
 
 			
 			-- Goliath 12G Shotgun
