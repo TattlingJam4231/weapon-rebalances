@@ -60,4 +60,25 @@ Hooks:PostHook(SkillTreeTweakData, "init", "WR SkillTreeTweakData init", functio
 			10
 		}
 	}
+	self.skills.bandoliers = {
+		{
+			upgrades = {
+				"extra_ammo_multiplier1"
+			},
+			cost = self.costs.hightier
+		},
+		{
+			upgrades = {
+				"player_pick_up_ammo_multiplier_2",
+				"player_regain_throwable_from_ammo_1"
+			},
+			cost = self.costs.hightierpro
+		},
+		name_id = "menu_bandoliers_beta",
+		desc_id = "menu_bandoliers_beta_desc",
+		icon_xy = {
+			3,
+			0
+		}
+	}
 end)

@@ -4,6 +4,25 @@
 
 		--shotgun ammo
 			local buckshot = {
+				double_barrel = {
+					stats = {
+						value = 5,
+						damage = 48,
+						spread = nil
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						can_shoot_through_enemy = true,
+						max_enemy_penetration_distance = 1400,
+						enemy_pen_energy_loss = 200,
+						max_enemy_penetrations = 1,
+						can_shoot_through_wall = true,
+						max_wall_penetration_distance = 550,
+						wall_pen_energy_loss = 100,
+						rays = 16
+					}
+				},
 				t5 = {
 					stats = {
 						value = 5,
@@ -19,9 +38,8 @@
 						max_enemy_penetrations = 1,
 						can_shoot_through_wall = true,
 						max_wall_penetration_distance = 550,
-						wall_pen_energy_loss = 200,
-						max_wall_penetrations = 1,
-						rays = 9
+						wall_pen_energy_loss = 100,
+						rays = 12
 					}
 				},
 				t4 = {
@@ -39,9 +57,8 @@
 						max_enemy_penetrations = 1,
 						can_shoot_through_wall = true,
 						max_wall_penetration_distance = 550,
-						wall_pen_energy_loss = 200,
-						max_wall_penetrations = 1,
-						rays = 9
+						wall_pen_energy_loss = 100,
+						rays = 12
 					}
 				},
 				t3 = {
@@ -59,8 +76,7 @@
 						max_enemy_penetrations = 1,
 						can_shoot_through_wall = true,
 						max_wall_penetration_distance = 550,
-						wall_pen_energy_loss = 200,
-						max_wall_penetrations = 1,
+						wall_pen_energy_loss = 100,
 						rays = 9
 					}
 				},
@@ -79,8 +95,7 @@
 						max_enemy_penetrations = 1,
 						can_shoot_through_wall = true,
 						max_wall_penetration_distance = 550,
-						wall_pen_energy_loss = 200,
-						max_wall_penetrations = 1,
+						wall_pen_energy_loss = 100,
 						rays = 9
 					}
 				},
@@ -99,8 +114,7 @@
 						max_enemy_penetrations = 1,
 						can_shoot_through_wall = true,
 						max_wall_penetration_distance = 550,
-						wall_pen_energy_loss = 200,
-						max_wall_penetrations = 1,
+						wall_pen_energy_loss = 100,
 						rays = 9
 					}
 				}
@@ -325,6 +339,45 @@
 			}
 			
 			local db = {
+				double_barrel = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0, 
+						damage = -60,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.5,
+						ammo_pickup_max_mul = 0.533,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 10,
+								dot_tick_period = 0.5,
+								damage_ticks = 22,
+								add_ticks = 14,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = "extend",
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						--[[ falloff_override = {
+							optimal_distance = 0,
+							optimal_range = 2000,
+							near_falloff = 0,
+							far_falloff = 2100,
+							near_mul = 1,
+							far_mul = 0
+						}, ]]
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 20
+					}
+				},
 				t5 = {
 					stats = {
 						value = 5, 
@@ -361,7 +414,7 @@
 						far_falloff_mul = 0.7,
 						can_shoot_through_shield = true, 
 						bullet_class = "FlameBulletBase",
-						rays = 12
+						rays = 16
 					}
 				},
 				t4 = {
@@ -392,7 +445,7 @@
 						far_falloff_mul = 0.7,
 						can_shoot_through_shield = true, 
 						bullet_class = "FlameBulletBase",
-						rays = 12
+						rays = 16
 					}
 				},
 				t3 = {
@@ -491,6 +544,32 @@
 			}
 			
 			local flechette = {
+				double_barrel = {
+					stats = {
+						value = 5,
+						damage = -90,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						optimal_range_mul = 1.4,
+						dot_data = {
+							type = "bleed",
+							custom_data = {
+								damage = 70,
+								dot_tick_period = 0.5,
+								damage_ticks = 10,
+								dot_trigger_max_distance = 2500,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						rays = 20,
+						bullet_class = "DOTBulletBase"
+					}
+				},
 				t5 = {
 					stats = {
 						value = 5,
@@ -513,7 +592,7 @@
 							}
 						},
 						armor_piercing_add = 1, 
-						rays = 12,
+						rays = 16,
 						bullet_class = "DOTBulletBase"
 					}
 				},
@@ -539,7 +618,7 @@
 							}
 						},
 						armor_piercing_add = 1, 
-						rays = 12,
+						rays = 16,
 						bullet_class = "DOTBulletBase"
 					}
 				},
@@ -880,6 +959,14 @@
 
 		local ammo_override = {
 			shotgun = {
+				double_barrel = {
+					wpn_fps_upg_a_custom = buckshot.double_barrel,
+					wpn_fps_upg_a_custom_free = buckshot.double_barrel,
+					wpn_fps_upg_a_slug = slug.t5,
+					wpn_fps_upg_a_explosive = he.t5,
+					wpn_fps_upg_a_dragons_breath = db.double_barrel,
+					wpn_fps_upg_a_piercing = flechette.double_barrel
+				},
 				t5 = {
 					wpn_fps_upg_a_custom = buckshot.t5,
 					wpn_fps_upg_a_custom_free = buckshot.t5,
@@ -940,6 +1027,13 @@
 				}
 			}
 		}
+
+function WeaponFactoryTweakData:insert_ammo_overrides(factory_id, ammo_override)
+	self[factory_id].override = self[factory_id].override or {}
+	for ammo_id, ammo_stats in pairs(ammo_override) do
+		self[factory_id].override[ammo_id] = deep_clone(ammo_stats)
+	end
+end
 			
 function WeaponFactoryTweakData:_init_attachments()
 	--Barrels
@@ -1107,6 +1201,7 @@ function WeaponFactoryTweakData:_init_attachments()
 
 					--Shark Teeth Nozzle
 					self.parts.wpn_fps_upg_ns_shot_shark.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_duck.stats.spread_multi = {1, 0.75}
 
 					
 					--King's Crown
@@ -1115,6 +1210,7 @@ function WeaponFactoryTweakData:_init_attachments()
 					
 					--Donalds Horizontal Leveller
 					self.parts.wpn_fps_upg_ns_duck.stats.damage = 0
+					self.parts.wpn_fps_upg_ns_duck.stats.spread_multi = {1.4, 0.25}
 
 
 	--Custom
@@ -1665,7 +1761,7 @@ function WeaponFactoryTweakData:_init_attachments()
 
 							--Shell Rack
 							self.parts.wpn_fps_shot_r870_body_rack.stats.extra_ammo = 0
-							self.parts.wpn_fps_shot_r870_body_rack.stats.total_ammo_mod = 3
+							self.parts.wpn_fps_shot_r870_body_rack.stats.total_ammo_add = 5
 							self.parts.wpn_fps_shot_r870_body_rack.stats.concealment = -2
 
 	
@@ -1741,74 +1837,41 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 	--T5 Shotguns-----------------------------------------------------------
 			
 			--Breaker 12G Shotgun
-			self.wpn_fps_sho_boot.override = ammo_override.shotgun.t5
+			self:insert_ammo_overrides("wpn_fps_sho_boot", ammo_override.shotgun.t5)
 		
 			--Joceline O/U 12G Shotgun
-			self.wpn_fps_shot_b682.override = ammo_override.shotgun.t5
+			self:insert_ammo_overrides("wpn_fps_shot_b682", ammo_override.shotgun.double_barrel)
+			
+					--Stocks
+
+							--Short Enough Stock
+							self.parts.wpn_fps_shot_b682_s_ammopouch.stats.total_ammo_mod = 0
+							self.parts.wpn_fps_shot_b682_s_ammopouch.stats.total_ammo_add = 6
+							self.parts.wpn_fps_shot_b682_s_ammopouch.stats.concealment = -1
 		
 			--Mosconi 12G Shotgun
-			self.wpn_fps_shot_huntsman.override = ammo_override.shotgun.t5
-			
-			--Akimbo Judge Shotguns
-			self.wpn_fps_pis_x_judge.override = {
-				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
-				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
-				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
-				wpn_fps_upg_shot_ns_king = {parent = "slide"},
-				wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
-				wpn_fps_upg_ns_duck = {parent = "slide"},
-				wpn_fps_pis_judge_body_standard = {animations = {}},
-				wpn_fps_pis_judge_body_modern = {animations = {}}
-			}
-			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 7
-			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 7
-			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 9
-			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
-			
-			--The Judge Shotgun
-			self.wpn_fps_pis_judge.override = {
-				wpn_fps_upg_a_custom = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_custom_free = deep_clone(buckshot.t4),
-				wpn_fps_upg_a_slug = deep_clone(slug.t4),
-				wpn_fps_upg_a_explosive = deep_clone(he.t4),
-				wpn_fps_upg_a_dragons_breath = deep_clone(db.t4),
-				wpn_fps_upg_a_piercing = deep_clone(flechette.t4),
-				wpn_fps_upg_ns_shot_shark = {parent = "slide"},
-				wpn_fps_upg_ns_shot_thick = {parent = "slide"},
-				wpn_fps_upg_shot_ns_king = {parent = "slide"},
-				wpn_fps_upg_ns_sho_salvo_large = {parent = "slide"},
-				wpn_fps_upg_ns_duck = {parent = "slide"}
-			}
-			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 7
-			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 7
-			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 9
-			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			self:insert_ammo_overrides("wpn_fps_shot_huntsman", ammo_override.shotgun.double_barrel)
 			
 			--Claire 12G Shotgun
-			self.wpn_fps_sho_coach.override = ammo_override.shotgun.t5
+			self:insert_ammo_overrides("wpn_fps_sho_coach", ammo_override.shotgun.double_barrel)
 			
 			--GSPS 12G Shotgun
-			self.wpn_fps_shot_m37.override = ammo_override.shotgun.t5
+			self:insert_ammo_overrides("wpn_fps_shot_m37", ammo_override.shotgun.t5)
 
 	
 	--T4 Shotguns-----------------------------------------------------------
 			
 			--Mosconi 12G Tactical Shotgun
-			self.wpn_fps_sho_m590.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_sho_m590", ammo_override.shotgun.t4)
 		
 			--Raven Shotgun
-			self.wpn_fps_sho_ksg.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_sho_ksg", ammo_override.shotgun.t4)
 			
 			--Reinfeld 88 Shotgun
-			self.wpn_fps_shot_m1897.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_shot_m1897", ammo_override.shotgun.t4)
 
 			--Reinfeld 880 Shotgun
-			self.wpn_fps_shot_r870.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_shot_r870", ammo_override.shotgun.t4)
 
 					--Stocks
 
@@ -1827,8 +1890,28 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 							self.parts.wpn_fps_shot_r870_s_solid_big.stats.recoil = 2
 							self.parts.wpn_fps_shot_r870_s_solid_big.stats.concealment = -2
 			
+			--The Judge Shotgun
+			self:insert_ammo_overrides("wpn_fps_pis_judge", ammo_override.shotgun.t4)
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 9
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 9
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 12
+			self.wpn_fps_pis_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 12
+			
+			--Akimbo Judge Shotguns
+			self:insert_ammo_overrides("wpn_fps_pis_x_judge", ammo_override.shotgun.t4)
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom.custom_stats.rays = 7
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_custom_free.custom_stats.rays = 7
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_dragons_breath.custom_stats.rays = 9
+			self.wpn_fps_pis_x_judge.override.wpn_fps_upg_a_piercing.custom_stats.rays = 9
+			
+			--Goliath 12G Shotgun
+			self:insert_ammo_overrides("wpn_fps_sho_rota", ammo_override.shotgun.t4)
+			
+			--Akimbo Goliath 12G Shotguns
+			self:insert_ammo_overrides("wpn_fps_sho_x_rota", ammo_override.shotgun.t4)
+			
 			--Locomotive 12G Shotgun
-			self.wpn_fps_shot_serbu.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_shot_serbu", ammo_override.shotgun.t4)
 
 					--Stocks
 
@@ -1851,26 +1934,26 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 	--T3 Shotguns-----------------------------------------------------------
 			
 			--M1014 Shotgun
-			self.wpn_fps_sho_ben.override = ammo_override.shotgun.t3
+			self:insert_ammo_overrides("wpn_fps_sho_ben", ammo_override.shotgun.t3)
+					
+					--Barrels
+
+							--Short Barrel
+							self.parts.wpn_fps_sho_ben_b_short.stats.extra_ammo = -1
+							self.parts.wpn_fps_sho_ben_b_short.stats.damage = 0
+							self.parts.wpn_fps_sho_ben_b_short.stats.spread = -2
+							self.parts.wpn_fps_sho_ben_b_short.stats.recoil = -2
+							self.parts.wpn_fps_sho_ben_b_short.stats.concealment = 6
 		
 			--Predator 12G Shotgun
-			self.wpn_fps_sho_spas12.override = ammo_override.shotgun.t3
-			
-			--Street Sweeper Shotgun
-			self.wpn_fps_sho_striker.override = ammo_override.shotgun.t3
-
-
-	--T2 Shotguns-----------------------------------------------------------
-
-			--Izhma 12G Shotgun
-			self.wpn_fps_shot_saiga.override = ammo_override.shotgun.t2
+			self:insert_ammo_overrides("wpn_fps_sho_spas12", ammo_override.shotgun.t3)
 					
 					--Stocks
 
 							--Folded Stock
 							self.parts.wpn_fps_sho_s_spas12_folded.stats.spread = -1
 							self.parts.wpn_fps_sho_s_spas12_folded.stats.recoil = -1
-							self.parts.wpn_fps_sho_s_spas12_folded.stats.concealment = 2
+							self.parts.wpn_fps_sho_s_spas12_folded.stats.concealment = 4
 
 							--Solid Stock
 							self.parts.wpn_fps_sho_s_spas12_solid.stats.spread = 1
@@ -1880,33 +1963,36 @@ function WeaponFactoryTweakData:_init_shotgun_attachments()
 							--No Stock
 							self.parts.wpn_fps_sho_s_spas12_nostock.stats.spread = 0
 							self.parts.wpn_fps_sho_s_spas12_nostock.stats.recoil = -2
-							self.parts.wpn_fps_sho_s_spas12_nostock.stats.concealment = 4
+							self.parts.wpn_fps_sho_s_spas12_nostock.stats.concealment = 6
+			
+			--Street Sweeper Shotgun
+			self:insert_ammo_overrides("wpn_fps_sho_striker", ammo_override.shotgun.t3)
+
+
+	--T2 Shotguns-----------------------------------------------------------
+
+			--Izhma 12G Shotgun
+			self:insert_ammo_overrides("wpn_fps_shot_saiga", ammo_override.shotgun.t2)
 
 			
 			--Steakout 12G Shotgun
-			self.wpn_fps_sho_aa12.override = ammo_override.shotgun.t2
-			
-			--Akimbo Goliath 12G Shotguns
-			self.wpn_fps_sho_x_rota.override = ammo_override.shotgun.t4
-			
-			--Goliath 12G Shotgun
-			self.wpn_fps_sho_rota.override = ammo_override.shotgun.t4
+			self:insert_ammo_overrides("wpn_fps_sho_aa12", ammo_override.shotgun.t2)
 
 	
 	--T1 Shotguns-----------------------------------------------------------
-		
-			--Brothers Grimm 12G Shotguns
-			self.wpn_fps_sho_x_basset.override = ammo_override.shotgun.t2
 			
 			--Grimm 12G Shotgun
-			self.wpn_fps_sho_basset.override = ammo_override.shotgun.t2
+			self:insert_ammo_overrides("wpn_fps_sho_basset", ammo_override.shotgun.t2)
+		
+			--Brothers Grimm 12G Shotguns
+			self:insert_ammo_overrides("wpn_fps_sho_x_basset", ammo_override.shotgun.t2)
 end
 
 function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 	--T4 ARs----------------------------------------------------------------
 						
 			--Cavity 9mm
-			self.wpn_fps_ass_sub2000.override = ammo_override.ar.t4
+			self:insert_ammo_overrides("wpn_fps_ass_sub2000", ammo_override.ar.t4)
 					
 					--Foregrips
 
@@ -1928,7 +2014,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Galant Rifle
-			self.wpn_fps_ass_ching.override = ammo_override.ar.t4
+			self:insert_ammo_overrides("wpn_fps_ass_ching", ammo_override.ar.t4)
 
 					--Barrels
 
@@ -1954,11 +2040,11 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Little Friend 7.62 Assault Rifle
-			self.wpn_fps_ass_contraband.override = ammo_override.ar.t4
+			self:insert_ammo_overrides("wpn_fps_ass_contraband", ammo_override.ar.t4)
 
 
 			--M308 Rifle
-			self.wpn_fps_ass_m14.override = ammo_override.ar.t4
+			self:insert_ammo_overrides("wpn_fps_ass_m14", ammo_override.ar.t4)
 
 					--Extras
 
@@ -1989,19 +2075,19 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 	--T3 ARs-----------------------------------------------------------
 
 			--AK17 Rifle
-			self.wpn_fps_ass_flint.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_flint", ammo_override.ar.t3)
 
 
 			--AK.762 Rifle
-			self.wpn_fps_ass_akm.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_akm", ammo_override.ar.t3)
 
 
 			--Golden AK.762 Rifle
-			self.wpn_fps_ass_akm_gold.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_akm_gold", ammo_override.ar.t3)
 
 
 			--AMR-16 Rifle
-			self.wpn_fps_ass_m16.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_m16", ammo_override.ar.t3)
 
 					--Foregrips
 
@@ -2022,7 +2108,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Eagle Heavy Rifle
-			self.wpn_fps_ass_scar.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_scar", ammo_override.ar.t3)
 	
 					--Barrels
 							
@@ -2054,7 +2140,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Falcon Rifle
-			self.wpn_fps_ass_fal.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_fal", ammo_override.ar.t3)
 
 					--Barrels
 							
@@ -2117,7 +2203,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Gewehr 3 Rifle
-			self.wpn_fps_ass_g3.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_g3", ammo_override.ar.t3)
 
 					--Barrels
 
@@ -2189,7 +2275,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--KETCHNOV Byk-1 Assault Rifle
-			self.wpn_fps_ass_groza.override = ammo_override.ar.t3
+			self:insert_ammo_overrides("wpn_fps_ass_groza", ammo_override.ar.t3)
 
 					--Barrels
 
@@ -2212,11 +2298,11 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 	--T2 ARs-----------------------------------------------------------
 			
 			--AK Rifle
-			self.wpn_fps_ass_74.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_74", ammo_override.ar.t2)
 
 
 			--AK5 Rifle
-			self.wpn_fps_ass_ak5.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_ak5", ammo_override.ar.t2)
 			
 					--Barrels
 					
@@ -2254,7 +2340,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--CAR-4 Rifle
-			self.wpn_fps_ass_m4.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_m4", ammo_override.ar.t2)
 	
 					--Barrels
 
@@ -2304,7 +2390,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Gecko 7.62 Rifle
-			self.wpn_fps_ass_galil.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_galil", ammo_override.ar.t2)
 
 					--Barrels
 							
@@ -2373,7 +2459,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Lion's Roar Rifle
-			self.wpn_fps_ass_vhs.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_vhs", ammo_override.ar.t2)
 
 					--Barrels
 							
@@ -2397,7 +2483,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Queen's Wrath Rifle
-			self.wpn_fps_ass_l85a2.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_l85a2", ammo_override.ar.t2)
 
 					--Barrels
 							
@@ -2429,11 +2515,11 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Tempest-21 Rifle
-			self.wpn_fps_ass_komodo.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_komodo", ammo_override.ar.t2)
 
 
 			--UAR Rifle
-			self.wpn_fps_ass_aug.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_aug", ammo_override.ar.t2)
 	
 					--Barrels
 							
@@ -2473,7 +2559,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Union 5.56 Rifle
-			self.wpn_fps_ass_corgi.override = ammo_override.ar.t2
+			self:insert_ammo_overrides("wpn_fps_ass_corgi", ammo_override.ar.t2)
 	
 					--Barrels
 
@@ -2495,11 +2581,11 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 	--T1 ARs-----------------------------------------------------------
 
 			--AMCAR Rifle
-			self.wpn_fps_ass_amcar.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_amcar", ammo_override.ar.t1)
 
 
 			--Bootleg Rifle
-			self.wpn_fps_ass_tecci.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_tecci", ammo_override.ar.t1)
 
 					--Barrels
 
@@ -2519,7 +2605,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Clarion Rifle
-			self.wpn_fps_ass_famas.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_famas", ammo_override.ar.t1)
 
 					--Barrels
 					
@@ -2556,7 +2642,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Commando 553 Rifle
-			self.wpn_fps_ass_s552.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_s552", ammo_override.ar.t1)
 			
 					--Barrels
 
@@ -2602,7 +2688,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 	
 	
 			--JP36 Rifle
-			self.wpn_fps_ass_g36.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_g36", ammo_override.ar.t1)
 
 					--Foregrips
 
@@ -2649,7 +2735,7 @@ function WeaponFactoryTweakData:_init_assault_rifle_attachments()
 
 
 			--Valkyria Rifle
-			self.wpn_fps_ass_asval.override = ammo_override.ar.t1
+			self:insert_ammo_overrides("wpn_fps_ass_asval", ammo_override.ar.t1)
 			
 					--Barrels
 

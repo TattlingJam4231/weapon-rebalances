@@ -404,37 +404,43 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
+		local multiplier = 1
 		local multiplier_min = 1
 		local multiplier_max = 1
-		
-		--pick up modifiers from attachments don't negate pick up modifiers from skills and perks
-			if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_min_mul then
-				multiplier_min = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_min = multiplier_min + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-				multiplier_min = multiplier_min * ammo_base._ammo_data.ammo_pickup_min_mul
-			else
-				multiplier_min = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_min = multiplier_min + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-			end
 
-			if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_max_mul then
-				multiplier_max = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_max = multiplier_max + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-				multiplier_max = multiplier_max * ammo_base._ammo_data.ammo_pickup_max_mul
-			else
-				multiplier_max = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_max = multiplier_max + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-			end
-		--
+
+		--Weapon Rebalances
+		multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
+		multiplier = multiplier * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) -- fully loaded aced stacks multiplicatively with walk-in closet
+		multiplier = multiplier * managers.player:crew_ability_upgrade_value("crew_scavenge", 1) -- sharpeyed stacks multiplicatively
+
+		if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_min_mul then
+			multiplier_min = multiplier * ammo_base._ammo_data.ammo_pickup_min_mul -- pick up modifiers from attachments don't negate pick up modifiers from skills and perks, stacks multiplicatively
+		else
+			multiplier_min = multiplier
+		end
+
+		if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_max_mul then
+			multiplier_max = multiplier * ammo_base._ammo_data.ammo_pickup_max_mul
+		else
+			multiplier_max = multiplier
+		end
+		--Weapon Rebalances
+
+
 		local add_amount = add_amount_override
 		local picked_up = true
 
 		if not add_amount then
-			local rng_ammo = math.lerp(ammo_base._ammo_pickup[1] * multiplier_min, ammo_base._ammo_pickup[2] * multiplier_max, math.random())
+			local min_ammo_pickup = ammo_base._ammo_pickup[1]
+			local max_ammo_pickup = ammo_base._ammo_pickup[2]
+			local rng_ammo = 0
+
+			if max_ammo_pickup < 1 and (max_ammo_pickup - min_ammo_pickup) == 0.5 then
+				rng_ammo = math.lerp(min_ammo_pickup * multiplier_min, (max_ammo_pickup - 0.5) * multiplier_max + 0.5 * (multiplier_max == 0 and 0 or 1), math.random())
+			else
+				rng_ammo = math.lerp(min_ammo_pickup * multiplier_min, max_ammo_pickup * multiplier_max, math.random())
+			end
 			picked_up = rng_ammo > 0
 			add_amount = math.max(0, math.round(rng_ammo))
 		end

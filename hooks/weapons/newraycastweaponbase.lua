@@ -214,8 +214,20 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		self._current_stats.suspicion = stats_tweak_data.concealment[stats.suspicion]
 	end
 
-	if parts_stats and parts_stats.spread_multi then
-		self._current_stats.spread_multi = parts_stats.spread_multi
+	local spread_multiplier = tweak_data.weapon[self._name_id].spread_multiplier
+	if parts_stats then
+		if parts_stats.spread_multi then
+			self._current_stats.spread_multi = spread_multiplier and {spread_multiplier[1] * parts_stats.spread_multi[1], spread_multiplier[2] * parts_stats.spread_multi[2]} or parts_stats.spread_multi
+		end
+
+		if parts_stats.magazine_add then
+			-- self._magazine_add = parts_stats.magazine_add
+			self._current_stats.extra_ammo = self._current_stats.extra_ammo + math.floor(parts_stats.magazine_add)
+		end
+
+		if parts_stats.total_ammo_add then
+			self._total_ammo_add = parts_stats.total_ammo_add
+		end
 	end
 
 	self._alert_size = self._current_stats.alert_size or self._alert_size
@@ -227,7 +239,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	self._extra_ammo = self._current_stats.extra_ammo or self._extra_ammo
 	self._total_ammo_mod = self._current_stats.total_ammo_mod or self._total_ammo_mod
 	self._reload = self._current_stats.reload or self._reload
-	self._spread_multiplier = self._current_stats.spread_multi or self._spread_multiplier
+	self._spread_multiplier = self._current_stats.spread_multi or spread_multiplier
 	self._scopes = managers.weapon_factory:get_parts_from_weapon_by_type_or_perk("scope", self._factory_id, self._blueprint)
 	self._can_highlight_with_perk = managers.weapon_factory:has_perk("highlight", self._factory_id, self._blueprint)
 	self._can_highlight_with_skill = managers.player:has_category_upgrade("weapon", "steelsight_highlight_specials")
@@ -243,6 +255,44 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	local user_unit = self._setup and self._setup.user_unit
 	local current_state = alive(user_unit) and user_unit:movement() and user_unit:movement()._current_state
 	self._fire_rate_multiplier = managers.blackmarket:fire_rate_multiplier(self._name_id, self:weapon_tweak_data().categories, self._silencer, nil, current_state, self._blueprint)
+end
+
+function NewRaycastWeaponBase:replenish()
+	local ammo_max_multiplier = managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)
+
+	for _, category in ipairs(self:weapon_tweak_data().categories) do
+		ammo_max_multiplier = ammo_max_multiplier * managers.player:upgrade_value(category, "extra_ammo_multiplier", 1)
+	end
+
+	ammo_max_multiplier = ammo_max_multiplier + ammo_max_multiplier * (self._total_ammo_mod or 0)
+
+	if managers.player:has_category_upgrade("player", "add_armor_stat_skill_ammo_mul") then
+		ammo_max_multiplier = ammo_max_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
+	end
+
+	local total_ammo_add = self._total_ammo_add or 0
+
+	ammo_max_multiplier = managers.modifiers:modify_value("WeaponBase:GetMaxAmmoMultiplier", ammo_max_multiplier)
+	local ammo_max_per_clip = self:calculate_ammo_max_per_clip()
+	local ammo_max = math.round((tweak_data.weapon[self._name_id].AMMO_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier + math.floor(total_ammo_add))
+	ammo_max_per_clip = math.min(ammo_max_per_clip, ammo_max)
+
+	self:set_ammo_max_per_clip(ammo_max_per_clip)
+	self:set_ammo_max(ammo_max)
+	self:set_ammo_total(ammo_max)
+	self:set_ammo_remaining_in_clip(ammo_max_per_clip)
+
+	self._ammo_pickup = tweak_data.weapon[self._name_id].AMMO_PICKUP
+
+	if self._assembly_complete then
+		for _, gadget in ipairs(self:get_all_override_weapon_gadgets()) do
+			if gadget and gadget.replenish then
+				gadget:replenish()
+			end
+		end
+	end
+
+	self:update_damage()
 end
 
 function NewRaycastWeaponBase:update_reloading(t, dt, time_left)
@@ -278,3 +328,224 @@ function NewRaycastWeaponBase:reload_expire_t()
 
 	return nil
 end
+
+function NewRaycastWeaponBase:recoil_wait()
+	local multiplier = self:weapon_tweak_data().recoil_wait_mul or 0.5
+	return self:weapon_tweak_data().fire_mode_data.fire_rate * multiplier
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
+
+
+
+
+	-- local mytable = {self._extra_ammo}
+	-- table.save(mytable,"C:\\Users\\USER\\Desktop\\payday 2 modding\\debug\\debug.txt")
+
+
+
+
+
+
+
+
+
+
+	local added = 0
+	local weapon_tweak_data = self:weapon_tweak_data()
+
+	if self:is_category("shotgun") and tweak_data.weapon[self._name_id].has_magazine then
+		added = managers.player:upgrade_value("shotgun", "magazine_capacity_inc", 0)
+
+		if self:is_category("akimbo") then
+			added = added * 2
+		end
+	elseif self:is_category("pistol") and not self:is_category("revolver") and managers.player:has_category_upgrade("pistol", "magazine_capacity_inc") then
+		added = managers.player:upgrade_value("pistol", "magazine_capacity_inc", 0)
+
+		if self:is_category("akimbo") then
+			added = added * 2
+		end
+	elseif self:is_category("smg", "assault_rifle", "lmg") then
+		added = managers.player:upgrade_value("player", "automatic_mag_increase", 0)
+
+		if self:is_category("akimbo") then
+			added = added * 2
+		end
+	end
+
+	local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + added
+	ammo = ammo + managers.player:upgrade_value(self._name_id, "clip_ammo_increase")
+
+	if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
+		ammo = ammo + managers.player:upgrade_value("weapon", "clip_ammo_increase", 0)
+	end
+
+	for _, category in ipairs(tweak_data.weapon[self._name_id].categories) do
+		if not self:upgrade_blocked(category, "clip_ammo_increase") then
+			ammo = ammo + managers.player:upgrade_value(category, "clip_ammo_increase", 0)
+		end
+	end
+
+	ammo = ammo + (self._extra_ammo or 0)
+
+	return ammo
+end
+
+
+
+
+--[[
+   Save Table to File
+   Load Table from File
+   v 1.0
+   
+   Lua 5.2 compatible
+   
+   Only Saves Tables, Numbers and Strings
+   Insides Table References are saved
+   Does not save Userdata, Metatables, Functions and indices of these
+   ----------------------------------------------------
+   table.save( table , filename )
+   
+   on failure: returns an error msg
+   
+   ----------------------------------------------------
+   table.load( filename or stringtable )
+   
+   Loads a table that has been saved via the table.save function
+   
+   on success: returns a previously saved table
+   on failure: returns as second argument an error msg
+   ----------------------------------------------------
+   
+   Licensed under the same terms as Lua itself.
+]]--
+do
+	-- declare local variables
+	--// exportstring( string )
+	--// returns a "Lua" portable version of the string
+	local function exportstring( s )
+	   return string.format("%q", s)
+	end
+ 
+	--// The Save Function
+	function table.save(  tbl,filename )
+	   local charS,charE = "   ","\n"
+	   local file,err = io.open( filename, "wb" )
+	   if err then return err end
+ 
+	   -- initiate variables for save procedure
+	   local tables,lookup = { tbl },{ [tbl] = 1 }
+	   file:write( "return {"..charE )
+ 
+	   for idx,t in ipairs( tables ) do
+		  file:write( "-- Table: {"..idx.."}"..charE )
+		  file:write( "{"..charE )
+		  local thandled = {}
+ 
+		  for i,v in ipairs( t ) do
+			 thandled[i] = true
+			 local stype = type( v )
+			 -- only handle value
+			 if stype == "table" then
+				if not lookup[v] then
+				   table.insert( tables, v )
+				   lookup[v] = #tables
+				end
+				file:write( charS.."{"..lookup[v].."},"..charE )
+			 elseif stype == "string" then
+				file:write(  charS..exportstring( v )..","..charE )
+			 elseif stype == "number" then
+				file:write(  charS..tostring( v )..","..charE )
+			 end
+		  end
+ 
+		  for i,v in pairs( t ) do
+			 -- escape handled values
+			 if (not thandled[i]) then
+			 
+				local str = ""
+				local stype = type( i )
+				-- handle index
+				if stype == "table" then
+				   if not lookup[i] then
+					  table.insert( tables,i )
+					  lookup[i] = #tables
+				   end
+				   str = charS.."[{"..lookup[i].."}]="
+				elseif stype == "string" then
+				   str = charS.."["..exportstring( i ).."]="
+				elseif stype == "number" then
+				   str = charS.."["..tostring( i ).."]="
+				end
+			 
+				if str ~= "" then
+				   stype = type( v )
+				   -- handle value
+				   if stype == "table" then
+					  if not lookup[v] then
+						 table.insert( tables,v )
+						 lookup[v] = #tables
+					  end
+					  file:write( str.."{"..lookup[v].."},"..charE )
+				   elseif stype == "string" then
+					  file:write( str..exportstring( v )..","..charE )
+				   elseif stype == "number" then
+					  file:write( str..tostring( v )..","..charE )
+				   end
+				end
+			 end
+		  end
+		  file:write( "},"..charE )
+	   end
+	   file:write( "}" )
+	   file:close()
+	end
+ 
+	--// The Load Function
+	function table.load( sfile )
+	   local ftables,err = loadfile( sfile )
+	   if err then return _,err end
+	   local tables = ftables()
+	   for idx = 1,#tables do
+		  local tolinki = {}
+		  for i,v in pairs( tables[idx] ) do
+			 if type( v ) == "table" then
+				tables[idx][i] = tables[v[1]]
+			 end
+			 if type( i ) == "table" and tables[i[1]] then
+				table.insert( tolinki,{ i,tables[i[1]] } )
+			 end
+		  end
+		  -- link indices
+		  for _,v in ipairs( tolinki ) do
+			 tables[idx][v[2]],tables[idx][v[1]] =  tables[idx][v[1]],nil
+		  end
+	   end
+	   return tables[1]
+	end
+ -- close do
+ end
+ 
+ -- ChillCode

@@ -12,7 +12,7 @@ Hooks:Add("LocalizationManagerPostInit", "WRd Localization", function(loc)
 
 		["menu_sniper_graze_damage_desc"] = 			"BASIC: ##4 points##\n" ..
 														"Snipers that hit their target deal ##20%## of the damage dealt in a ##1m## radius around the bullet trajectory.\n\n" ..
-														"When fired in single shot mode, SMGs and Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.5m## radius around the bullet impact.\n\n" ..
+														"When fired in single shot fire mode, SMGs and Assault Rifles that hit their target deal ##20%## of the damage dealt in a ##2.5m## radius around the bullet impact.\n\n" ..
 														"ACE: ##8 points##\n" ..
 														"If a bullet would headshot someone, the graze skill will deal ##100%## of the damage dealt instead of ##20%##.",
 
@@ -43,6 +43,14 @@ Hooks:Add("LocalizationManagerPostInit", "WRd Localization", function(loc)
 														"Your accuracy penalty is decreased by ##20%## when shooting while moving.\n\n" ..
 														"ACE: ##4 points##\n" ..
 														"You gain ##12## weapon accuracy while firing from the hip.",
+
+		["menu_bandoliers_beta_desc"] = 				"BASIC: ##4 points##\n" ..
+														"Your total ammo capacity is increased by ##25%##.\n\n" ..
+														"ACE: ##8 points##\n" ..
+														"Increases the amount of ammo you gain from ammo boxes by ##50%##." ..
+														"You also gain a ##5%## base chance to get a throwable from an ammo box." ..
+														"The base chance is increased by ##1%## for each ammo box you pick up that does not contain a throwable." ..
+														"When a throwable has been found, the chance is reset to its base value.",
 
 		["bm_wp_upg_a_custom_desc"] =					"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 
