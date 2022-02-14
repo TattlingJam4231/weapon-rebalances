@@ -209,12 +209,18 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 			if part_data and part_data.stats then
 				if stat.name == "magazine" then
 					local ammo = part_data.stats.extra_ammo
+
+					local addend = part_data.stats.magazine_add or 0 --Weapon Rebalances
+
 					ammo = ammo and ammo + (tweak_data.weapon[weapon_name].stats.extra_ammo or 0)
-					mod[stat.name] = ammo and tweak_data.weapon.stats.extra_ammo[ammo] or 0
+					mod[stat.name] = ammo and tweak_data.weapon.stats.extra_ammo[ammo] + addend or 0
 				elseif stat.name == "totalammo" then
 					local chosen_index = part_data.stats.total_ammo_mod or 0
+
+					local addend = part_data.stats.total_ammo_add or 0 --Weapon Rebalances
+
 					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats.total_ammo_mod)
-					mod[stat.name] = base_stats[stat.name].value * tweak_stats.total_ammo_mod[chosen_index]
+					mod[stat.name] = base_stats[stat.name].value * tweak_stats.total_ammo_mod[chosen_index] + addend
 				elseif stat.name == "reload" then
 					local chosen_index = part_data.stats.reload or 0
 					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats[stat.name])
@@ -313,8 +319,7 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 	return mod_stats
 end
 
-
-function WeaponDescription.get_weapon_ammo_info(weapon_id, extra_ammo, total_ammo_mod, total_ammo_add)
+function WeaponDescription.get_weapon_ammo_info(weapon_id, extra_ammo, total_ammo_mod, total_ammo_add) -- added total_ammo_add
 	local weapon_tweak_data = tweak_data.weapon[weapon_id]
 	local ammo_max_multiplier = managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)
 	local primary_category = weapon_tweak_data.categories[1]
@@ -366,7 +371,7 @@ function WeaponDescription.get_weapon_ammo_info(weapon_id, extra_ammo, total_amm
 
 	local ammo_max_per_clip = get_ammo_max_per_clip(weapon_id)
 	local ammo_max = tweak_data.weapon[weapon_id].AMMO_MAX
-	local ammo_from_mods = ammo_max * (total_ammo_mod and tweak_data.weapon.stats.total_ammo_mod[total_ammo_mod] or 0) + total_ammo_add
+	local ammo_from_mods = ammo_max * (total_ammo_mod and tweak_data.weapon.stats.total_ammo_mod[total_ammo_mod] or 0) + total_ammo_add -- added total_ammo_add
 	ammo_max = (ammo_max + ammo_from_mods + managers.player:upgrade_value(weapon_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier
 	ammo_max_per_clip = math.min(ammo_max_per_clip, ammo_max)
 	local ammo_data = {
@@ -408,7 +413,7 @@ function WeaponDescription._get_stats(name, category, slot, blueprint)
 	local base_stats = WeaponDescription._get_base_stats(name)
 	local mods_stats = WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
 	local skill_stats = WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
-	local clip_ammo, max_ammo, ammo_data = WeaponDescription.get_weapon_ammo_info(name, tweak_data.weapon[name].stats.extra_ammo, base_stats.totalammo.index + mods_stats.totalammo.index, mods_stats.totalammo.value)
+	local clip_ammo, max_ammo, ammo_data = WeaponDescription.get_weapon_ammo_info(name, tweak_data.weapon[name].stats.extra_ammo, base_stats.totalammo.index + mods_stats.totalammo.index, mods_stats.totalammo.value) -- added mods_stats.totalammo.value
 	base_stats.totalammo.value = ammo_data.base
 	mods_stats.totalammo.value = ammo_data.mod
 	skill_stats.totalammo.value = ammo_data.skill
