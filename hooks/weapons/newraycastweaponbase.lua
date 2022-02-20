@@ -1,29 +1,15 @@
-function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
+local math_clamp = math.clamp
+function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data)
 	self:_default_damage_falloff()
 	self:_check_sound_switch()
 
 	self._silencer = managers.weapon_factory:has_perk("silencer", self._factory_id, self._blueprint)
 	self._locked_fire_mode = managers.weapon_factory:has_perk("fire_mode_auto", self._factory_id, self._blueprint) and ids_auto or managers.weapon_factory:has_perk("fire_mode_single", self._factory_id, self._blueprint) and ids_single
 	self._fire_mode = self._locked_fire_mode or self:get_recorded_fire_mode(self:_weapon_tweak_data_id()) or Idstring(self:weapon_tweak_data().FIRE_MODE or "single")
-	self._ammo_data = managers.weapon_factory:get_ammo_data_from_weapon(self._factory_id, self._blueprint) or {}
-
+	self._ammo_data = ammo_data or managers.weapon_factory:get_ammo_data_from_weapon(self._factory_id, self._blueprint) or {}
 	self._can_shoot_through_shield = tweak_data.weapon[self._name_id].can_shoot_through_shield
 	self._can_shoot_through_enemy = tweak_data.weapon[self._name_id].can_shoot_through_enemy
 	self._can_shoot_through_wall = tweak_data.weapon[self._name_id].can_shoot_through_wall
-	self._can_shoot_through_armor_plating = tweak_data.weapon[self._name_id].can_shoot_through_armor_plating
-
-	self._max_shield_penetration_distance = tweak_data.weapon[self._name_id].max_shield_penetration_distance
-	self._max_enemy_penetration_distance = tweak_data.weapon[self._name_id].max_enemy_penetration_distance
-	self._max_wall_penetration_distance = tweak_data.weapon[self._name_id].max_wall_penetration_distance
-
-	self._max_shield_penetrations = tweak_data.weapon[self._name_id].max_shield_penetrations
-	self._max_enemy_penetrations = tweak_data.weapon[self._name_id].max_enemy_penetrations
-	self._max_wall_penetrations = tweak_data.weapon[self._name_id].max_wall_penetrations
-
-	self._shield_pen_energy_loss = tweak_data.weapon[self._name_id].shield_pen_energy_loss
-	self._enemy_pen_energy_loss = tweak_data.weapon[self._name_id].enemy_pen_energy_loss
-	self._wall_pen_energy_loss = tweak_data.weapon[self._name_id].wall_pen_energy_loss
-
 	self._armor_piercing_chance = self:weapon_tweak_data().armor_piercing_chance or 0
 	local primary_category = self:weapon_tweak_data().categories and self:weapon_tweak_data().categories[1]
 	self._movement_penalty = tweak_data.upgrades.weapon_movement_penalty[primary_category] or 1
@@ -50,8 +36,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		optimal_range = self._optimal_range,
 		near_falloff = self._near_falloff,
 		far_falloff = self._far_falloff,
-		near_multiplier = self._near_mul,
-		far_multiplier = self._far_mul
+		near_multiplier = self._near_mul, --[[ bug fix, was self._near_multiplier, should have been self._near_mul ]]
+		far_multiplier = self._far_mul --[[ bug fix, was self._far_multiplier, should have been self._far_mul ]]
 	}
 
 	managers.blackmarket:modify_damage_falloff(damage_falloff, custom_stats)
@@ -60,8 +46,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	self._optimal_range = damage_falloff.optimal_range
 	self._near_falloff = damage_falloff.near_falloff
 	self._far_falloff = damage_falloff.far_falloff
-	self._near_mul = damage_falloff.near_multiplier
-	self._far_mul = damage_falloff.far_multiplier
+	self._near_mul --[[ bug fix, was self._near_multiplier, should have been self._near_mul ]] = damage_falloff.near_multiplier
+	self._far_mul --[[ bug fix, was self._far_multiplier, should have been self._far_mul ]] = damage_falloff.far_multiplier
 
 	if self._ammo_data then
 		if self._ammo_data.can_shoot_through_shield ~= nil then
@@ -75,58 +61,6 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		if self._ammo_data.can_shoot_through_wall ~= nil then
 			self._can_shoot_through_wall = self._ammo_data.can_shoot_through_wall
 		end
-
-		if self._ammo_data.can_shoot_through_armor_plating ~= nil then
-			self._can_shoot_through_armor_plating = self._ammo_data.can_shoot_through_armor_plating
-		end
-
-
-
-		if self._ammo_data.max_shield_penetration_distance ~= nil then
-			self._max_shield_penetration_distance = self._ammo_data.max_shield_penetration_distance
-		end
-
-		if self._ammo_data.max_enemy_penetration_distance ~= nil then
-			self._max_enemy_penetration_distance = self._ammo_data.max_enemy_penetration_distance
-		end
-
-		if self._ammo_data.max_wall_penetration_distance ~= nil then
-			self._max_wall_penetration_distance = self._ammo_data.max_wall_penetration_distance
-		end
-
-		
-
-		if self._ammo_data.max_shield_penetrations ~= nil then
-			self._max_shield_penetrations = self._ammo_data.max_shield_penetrations
-		end
-
-		if self._ammo_data.max_enemy_penetrations ~= nil then
-			self._max_enemy_penetrations = self._ammo_data.max_enemy_penetrations
-		end
-
-		if self._ammo_data.max_wall_penetrations ~= nil then
-			self._max_wall_penetrations = self._ammo_data.max_wall_penetrations
-		end
-
-		if self._ammo_data.max_penetrations ~= nil then
-			self._max_penetrations = self._ammo_data.max_penetrations
-		end
-
-
-
-		if self._ammo_data.shield_pen_energy_loss ~= nil then
-			self._shield_pen_energy_loss = self._ammo_data.shield_pen_energy_loss
-		end
-
-		if self._ammo_data.enemy_pen_energy_loss ~= nil then
-			self._enemy_pen_energy_loss = self._ammo_data.enemy_pen_energy_loss
-		end
-
-		if self._ammo_data.wall_pen_energy_loss ~= nil then
-			self._wall_pen_energy_loss = self._ammo_data.wall_pen_energy_loss
-		end
-
-
 
 		if self._ammo_data.bullet_class ~= nil then
 			self._bullet_class = CoreSerialize.string_to_classtable(self._ammo_data.bullet_class)
@@ -189,7 +123,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 			stats[stat] = stats[stat] + bonus_stats[stat]
 		end
 
-		stats[stat] = math.clamp(stats[stat], 1, #stats_tweak_data[stat])
+		stats[stat] = math_clamp(stats[stat], 1, #stats_tweak_data[stat])
 	end
 
 	self._current_stats_indices = stats
@@ -203,7 +137,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		end
 	end
 
-	self._current_stats.alert_size = stats_tweak_data.alert_size[math.clamp(stats.alert_size, 1, #stats_tweak_data.alert_size)]
+	self._current_stats.alert_size = stats_tweak_data.alert_size[math_clamp(stats.alert_size, 1, #stats_tweak_data.alert_size)]
 
 	if modifier_stats and modifier_stats.alert_size then
 		self._current_stats.alert_size = self._current_stats.alert_size * modifier_stats.alert_size
@@ -214,19 +148,8 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 		self._current_stats.suspicion = stats_tweak_data.concealment[stats.suspicion]
 	end
 
-	local spread_multiplier = tweak_data.weapon[self._name_id].spread_multiplier
-	if parts_stats then
-		if parts_stats.spread_multi then
-			self._current_stats.spread_multi = spread_multiplier and {spread_multiplier[1] * parts_stats.spread_multi[1], spread_multiplier[2] * parts_stats.spread_multi[2]} or parts_stats.spread_multi
-		end
-
-		if parts_stats.magazine_add then
-			self._current_stats.extra_ammo = self._current_stats.extra_ammo + math.floor(parts_stats.magazine_add)
-		end
-
-		if parts_stats.total_ammo_add then
-			self._total_ammo_add = parts_stats.total_ammo_add
-		end
+	if parts_stats and parts_stats.spread_multi then
+		self._current_stats.spread_multi = parts_stats.spread_multi
 	end
 
 	self._alert_size = self._current_stats.alert_size or self._alert_size
@@ -238,7 +161,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish)
 	self._extra_ammo = self._current_stats.extra_ammo or self._extra_ammo
 	self._total_ammo_mod = self._current_stats.total_ammo_mod or self._total_ammo_mod
 	self._reload = self._current_stats.reload or self._reload
-	self._spread_multiplier = self._current_stats.spread_multi or spread_multiplier
+	self._spread_multiplier = self._current_stats.spread_multi or self._spread_multiplier
 	self._scopes = managers.weapon_factory:get_parts_from_weapon_by_type_or_perk("scope", self._factory_id, self._blueprint)
 	self._can_highlight_with_perk = managers.weapon_factory:has_perk("highlight", self._factory_id, self._blueprint)
 	self._can_highlight_with_skill = managers.player:has_category_upgrade("weapon", "steelsight_highlight_specials")
@@ -269,11 +192,11 @@ function NewRaycastWeaponBase:replenish()
 		ammo_max_multiplier = ammo_max_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
 	end
 
-	local total_ammo_add = self._total_ammo_add or 0
+	local total_ammo_add = self._total_ammo_add or 0 --Weapon Rebalances
 
 	ammo_max_multiplier = managers.modifiers:modify_value("WeaponBase:GetMaxAmmoMultiplier", ammo_max_multiplier)
 	local ammo_max_per_clip = self:calculate_ammo_max_per_clip()
-	local ammo_max = math.round((tweak_data.weapon[self._name_id].AMMO_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier + math.floor(total_ammo_add))
+	local ammo_max = math.round((tweak_data.weapon[self._name_id].AMMO_MAX + managers.player:upgrade_value(self._name_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier + math.floor(total_ammo_add)) --added total_ammo_add
 	ammo_max_per_clip = math.min(ammo_max_per_clip, ammo_max)
 
 	self:set_ammo_max_per_clip(ammo_max_per_clip)
@@ -295,102 +218,197 @@ function NewRaycastWeaponBase:replenish()
 end
 
 function NewRaycastWeaponBase:update_reloading(t, dt, time_left)
-	
 	if self._use_shotgun_reload and self._next_shell_reloded_t and self._next_shell_reloded_t < t then
-
 		local speed_multiplier = self:reload_speed_multiplier()
-		self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t() / speed_multiplier
-		
+		local shotgun_reload_tweak = self:_get_shotgun_reload_tweak_data(not self._started_reload_empty)
+		local ammo_to_reload = 1
+		local next_queue_data = nil
+
+		if shotgun_reload_tweak and shotgun_reload_tweak.reload_queue then
+			self._shotgun_queue_index = self._shotgun_queue_index % #shotgun_reload_tweak.reload_queue + 1
+
+			if self._shotgun_queue_index == #shotgun_reload_tweak.reload_queue then
+				self._next_shell_reloded_t = self._next_shell_reloded_t + (shotgun_reload_tweak.reload_queue_wrap or 0)
+			end
+
+			local queue_data = shotgun_reload_tweak.reload_queue[self._shotgun_queue_index]
+			ammo_to_reload = queue_data and queue_data.reload_num or 1
+			next_queue_data = shotgun_reload_tweak.reload_queue[self._shotgun_queue_index + 1]
+			self._next_shell_reloded_t = self._next_shell_reloded_t + (next_queue_data and next_queue_data.expire_t or 0.5666666666666667) / speed_multiplier
+		else
+			self._next_shell_reloded_t = self._next_shell_reloded_t + self:reload_shell_expire_t(not self._started_reload_empty) / speed_multiplier
+			ammo_to_reload = shotgun_reload_tweak and shotgun_reload_tweak.reload_num or 1
+		end
+
+
+		--Weapon Reblances
 		if self._use_shotgun_reload == "dual" then
 			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + math.min(2, self:get_ammo_total() - self:get_ammo_remaining_in_clip())))
 		else
-			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + 1))
+		--Weapon Reblances
+
+
+			self:set_ammo_remaining_in_clip(math.min(self:get_ammo_max_per_clip(), self:get_ammo_remaining_in_clip() + math.min(ammo_to_reload, self:get_ammo_total() - self:get_ammo_remaining_in_clip())))
+		end
+		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
+
+		if not next_queue_data or not next_queue_data.skip_update_ammo then
+			self:update_ammo_objects()
 		end
 
-		managers.job:set_memory("kill_count_no_reload_" .. tostring(self._name_id), nil, true)
 		return true
 	end
 end
 
-function NewRaycastWeaponBase:reload_expire_t()
-	
+function NewRaycastWeaponBase:reload_expire_t(is_not_empty)
 	if self._use_shotgun_reload then
-
+		local ammo_total = self:get_ammo_total()
+		local ammo_max_per_clip = self:get_ammo_max_per_clip()
 		local ammo_remaining_in_clip = self:get_ammo_remaining_in_clip()
-	
-		if self._use_shotgun_reload == "dual" then
-			return math.ceil(math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) / 2) * self:reload_shell_expire_t()
+		local ammo_to_reload = math.min(ammo_total - ammo_remaining_in_clip, ammo_max_per_clip - ammo_remaining_in_clip)
+		local shotgun_reload_tweak = self:_get_shotgun_reload_tweak_data(is_not_empty)
+
+		if shotgun_reload_tweak and shotgun_reload_tweak.reload_queue then
+			local reload_expire_t = 0
+			local queue_index = 0
+			local queue_data = nil
+			local queue_num = #shotgun_reload_tweak.reload_queue
+
+			while ammo_to_reload > 0 do
+				if queue_index == queue_num then
+					reload_expire_t = reload_expire_t + (shotgun_reload_tweak.reload_queue_wrap or 0)
+				end
+
+				queue_index = queue_index % queue_num + 1
+				queue_data = shotgun_reload_tweak.reload_queue[queue_index]
+				reload_expire_t = reload_expire_t + queue_data.expire_t or 0.5666666666666667
+				ammo_to_reload = ammo_to_reload - (queue_data.reload_num or 1)
+			end
+
+			return reload_expire_t
 		end
 
-		return math.min(self:get_ammo_total() - ammo_remaining_in_clip, self:get_ammo_max_per_clip() - ammo_remaining_in_clip) * self:reload_shell_expire_t()
+		local reload_shell_expire_t = self:reload_shell_expire_t(is_not_empty)
+		local reload_num = shotgun_reload_tweak and shotgun_reload_tweak.reload_num or 1
+
+
+		--Weapon Rebalances
+		if self._use_shotgun_reload == "dual" then
+			return math.ceil(math.min(ammo_total - ammo_remaining_in_clip, ammo_max_per_clip - ammo_remaining_in_clip) / 2) * reload_shell_expire_t
+		end
+		--Weapon Rebalances
+
+
+		return math.ceil(ammo_to_reload / reload_num) * reload_shell_expire_t
 	end
 
 	return nil
 end
 
-function NewRaycastWeaponBase:recoil_wait()
+function NewRaycastWeaponBase:recoil_wait() --rewritten
 	local multiplier = self:weapon_tweak_data().recoil_wait_mul or 0.5
 	return self:weapon_tweak_data().fire_mode_data.fire_rate * multiplier
 
 end
 
+Hooks:PostHook(NewRaycastWeaponBase, "_update_stats_values", "WR NewRaycastWeaponBase _update_stats_values", function(self, disallow_replenish)
 
+	self:_get_penetration_stats_wr()
+	self:_update_penetration_stats_wr()
 
+	local parts_stats = managers.weapon_factory:get_stats(self._factory_id, self._blueprint)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function NewRaycastWeaponBase:calculate_ammo_max_per_clip()
-	local added = 0
-	local weapon_tweak_data = self:weapon_tweak_data()
-
-	if self:is_category("shotgun") and tweak_data.weapon[self._name_id].has_magazine then
-		added = managers.player:upgrade_value("shotgun", "magazine_capacity_inc", 0)
-
-		if self:is_category("akimbo") then
-			added = added * 2
+	local spread_multiplier = tweak_data.weapon[self._name_id].spread_multiplier
+	if parts_stats then
+		if parts_stats.spread_multi then
+			self._current_stats.spread_multi = spread_multiplier and {spread_multiplier[1] * parts_stats.spread_multi[1], spread_multiplier[2] * parts_stats.spread_multi[2]} or parts_stats.spread_multi
 		end
-	elseif self:is_category("pistol") and not self:is_category("revolver") and managers.player:has_category_upgrade("pistol", "magazine_capacity_inc") then
-		added = managers.player:upgrade_value("pistol", "magazine_capacity_inc", 0)
 
-		if self:is_category("akimbo") then
-			added = added * 2
+		if parts_stats.magazine_add then
+			self.extra_ammo = self.extra_ammo + math.floor(parts_stats.magazine_add)
 		end
-	elseif self:is_category("smg", "assault_rifle", "lmg") then
-		added = managers.player:upgrade_value("player", "automatic_mag_increase", 0)
 
-		if self:is_category("akimbo") then
-			added = added * 2
+		if parts_stats.total_ammo_add then
+			self._total_ammo_add = parts_stats.total_ammo_add
 		end
 	end
 
-	local ammo = tweak_data.weapon[self._name_id].CLIP_AMMO_MAX + added
-	ammo = ammo + managers.player:upgrade_value(self._name_id, "clip_ammo_increase")
-
-	if not self:upgrade_blocked("weapon", "clip_ammo_increase") then
-		ammo = ammo + managers.player:upgrade_value("weapon", "clip_ammo_increase", 0)
+	if not disallow_replenish then
+		self:replenish()
 	end
+	self._spread_multiplier = self._current_stats.spread_multi or spread_multiplier
+	
+end)
 
-	for _, category in ipairs(tweak_data.weapon[self._name_id].categories) do
-		if not self:upgrade_blocked(category, "clip_ammo_increase") then
-			ammo = ammo + managers.player:upgrade_value(category, "clip_ammo_increase", 0)
+function NewRaycastWeaponBase:_get_penetration_stats_wr()
+
+	self._can_shoot_through_armor_plating = tweak_data.weapon[self._name_id].can_shoot_through_armor_plating
+
+	self._max_shield_penetration_distance = tweak_data.weapon[self._name_id].max_shield_penetration_distance
+	self._max_enemy_penetration_distance = tweak_data.weapon[self._name_id].max_enemy_penetration_distance
+	self._max_wall_penetration_distance = tweak_data.weapon[self._name_id].max_wall_penetration_distance
+
+	self._max_shield_penetrations = tweak_data.weapon[self._name_id].max_shield_penetrations
+	self._max_enemy_penetrations = tweak_data.weapon[self._name_id].max_enemy_penetrations
+	self._max_wall_penetrations = tweak_data.weapon[self._name_id].max_wall_penetrations
+
+	self._shield_pen_energy_loss = tweak_data.weapon[self._name_id].shield_pen_energy_loss
+	self._enemy_pen_energy_loss = tweak_data.weapon[self._name_id].enemy_pen_energy_loss
+	self._wall_pen_energy_loss = tweak_data.weapon[self._name_id].wall_pen_energy_loss
+
+end
+
+function NewRaycastWeaponBase:_update_penetration_stats_wr()
+	if self._ammo_data then
+
+		if self._ammo_data.can_shoot_through_armor_plating ~= nil then
+			self._can_shoot_through_armor_plating = self._ammo_data.can_shoot_through_armor_plating
+		end
+
+
+
+		if self._ammo_data.max_shield_penetration_distance ~= nil then
+			self._max_shield_penetration_distance = self._ammo_data.max_shield_penetration_distance
+		end
+
+		if self._ammo_data.max_enemy_penetration_distance ~= nil then
+			self._max_enemy_penetration_distance = self._ammo_data.max_enemy_penetration_distance
+		end
+
+		if self._ammo_data.max_wall_penetration_distance ~= nil then
+			self._max_wall_penetration_distance = self._ammo_data.max_wall_penetration_distance
+		end
+
+		
+
+		if self._ammo_data.max_shield_penetrations ~= nil then
+			self._max_shield_penetrations = self._ammo_data.max_shield_penetrations
+		end
+
+		if self._ammo_data.max_enemy_penetrations ~= nil then
+			self._max_enemy_penetrations = self._ammo_data.max_enemy_penetrations
+		end
+
+		if self._ammo_data.max_wall_penetrations ~= nil then
+			self._max_wall_penetrations = self._ammo_data.max_wall_penetrations
+		end
+
+		if self._ammo_data.max_penetrations ~= nil then
+			self._max_penetrations = self._ammo_data.max_penetrations
+		end
+
+
+
+		if self._ammo_data.shield_pen_energy_loss ~= nil then
+			self._shield_pen_energy_loss = self._ammo_data.shield_pen_energy_loss
+		end
+
+		if self._ammo_data.enemy_pen_energy_loss ~= nil then
+			self._enemy_pen_energy_loss = self._ammo_data.enemy_pen_energy_loss
+		end
+
+		if self._ammo_data.wall_pen_energy_loss ~= nil then
+			self._wall_pen_energy_loss = self._ammo_data.wall_pen_energy_loss
 		end
 	end
-
-	ammo = ammo + (self._extra_ammo or 0)
-
-	return ammo
 end

@@ -1,4 +1,4 @@
-function BlackMarketManager:modify_damage_falloff(damage_falloff, custom_stats)
+function BlackMarketManager:modify_damage_falloff(damage_falloff, custom_stats) -- bug fix, all instances of ".near_mul" and ".far_mul" have been changed to ".near_multiplier" and ".far_multiplier" respectively
 	if damage_falloff and custom_stats then
 		for part_id, stats in pairs(custom_stats) do
 			if stats.falloff_override then

@@ -4,43 +4,55 @@ function WeaponFactoryManager:_get_forbidden_parts(factory_id, blueprint)
 	local override = self:_get_override_parts(factory_id, blueprint)
 
 	for _, part_id in ipairs(blueprint) do
-		local part = self:get_part_data(part_id, factory_id, blueprint, override)
+		if self:is_part_valid(part_id) then
+			local part = self:get_part_data_wr(part_id, factory_id, blueprint, override)
 
-		if part.depends_on then
-			local part_forbidden = true
+			if part.depends_on then
+				local part_forbidden = true
 
-			for _, other_part_id in ipairs(blueprint) do
-				local other_part = self:get_part_data(other_part_id, factory_id, blueprint, override)
+				for _, other_part_id in ipairs(blueprint) do
+					local other_part = self:get_part_data_wr(other_part_id, factory_id, blueprint, override) -- replaced _part_data function with own
 
-				if part.depends_on == other_part.type then
-					part_forbidden = false
+					if part.depends_on == other_part.type then
+						part_forbidden = false
 
-					break
+						break
+					end
+
+
+					-- Weapon Rebalances
+					if part.depends_on == other_part.name_id then
+						part_forbidden = false
+
+						break
+					end
+					-- Weapon Rebalances
+
+
 				end
-				if part.depends_on == other_part.name_id then
-					part_forbidden = false
 
-					break
+				if part_forbidden then
+					forbidden[part_id] = part.depends_on
 				end
 			end
 
-			if part_forbidden then
-				forbidden[part_id] = part.depends_on
+			if part.forbids then
+				for _, forbidden_id in ipairs(part.forbids) do
+					forbidden[forbidden_id] = part_id
+				end
 			end
-		end
 
-		if part.forbids then
-			for _, forbidden_id in ipairs(part.forbids) do
-				forbidden[forbidden_id] = part_id
+			if part.adds then
+				local add_forbidden = self:_get_forbidden_parts(factory_id, part.adds)
+
+				for forbidden_id, part_id in pairs(add_forbidden) do
+					forbidden[forbidden_id] = part_id
+				end
 			end
-		end
+		else
+			Application:error("[WeaponFactoryManager:_get_forbidden_parts] Part do not exist!", part_id, "factory_id", factory_id)
 
-		if part.adds then
-			local add_forbidden = self:_get_forbidden_parts(factory_id, part.adds)
-
-			for forbidden_id, part_id in pairs(add_forbidden) do
-				forbidden[forbidden_id] = part_id
-			end
+			forbidden[part_id] = part_id
 		end
 	end
 
@@ -54,7 +66,7 @@ function WeaponFactoryManager:get_stats(factory_id, blueprint)
 	local stats = {}
 	for _, part_id in ipairs(blueprint) do
 		if not forbidden[part_id] and factory.parts[part_id].stats then
-			local part = self:get_part_data(part_id, factory_id, blueprint)
+			local part = self:get_part_data_wr(part_id, factory_id, blueprint) -- replaced _part_data function with own
 
 			for stat_type, value in pairs(part.stats) do
 				if type(value) == "number" then
@@ -78,7 +90,7 @@ end
 function WeaponFactoryManager:get_part_data_by_part_id_from_weapon(part_id, factory_id, blueprint, equipped_mods)
 	local override = self:_get_override_parts(factory_id, blueprint)
 
-	return self:get_part_data(part_id, factory_id, equipped_mods, override)
+	return self:get_part_data_wr(part_id, factory_id, equipped_mods, override) -- replaced _part_data function with own
 end
 
 function WeaponFactoryManager:get_custom_stats_from_weapon(factory_id, blueprint)
@@ -86,7 +98,7 @@ function WeaponFactoryManager:get_custom_stats_from_weapon(factory_id, blueprint
 	local t = {}
 
 	for _, id in ipairs(self:get_assembled_blueprint(factory_id, blueprint)) do
-		local part = self:get_part_data(id, factory_id, blueprint)
+		local part = self:get_part_data_wr(id, factory_id, blueprint) -- replaced _part_data function with own
 
 		if part.custom_stats then
 			t[id] = part.custom_stats
@@ -102,7 +114,7 @@ function WeaponFactoryManager:get_ammo_data_from_weapon(factory_id, blueprint)
 
 	for _, id in ipairs(self:get_assembled_blueprint(factory_id, blueprint)) do
 		if factory.parts[id].type == "ammo" then
-			local part = self:get_part_data(id, factory_id, blueprint)
+			local part = self:get_part_data_wr(id, factory_id, blueprint) -- replaced _part_data function with own
 			t = part.custom_stats
 		end
 	end
@@ -110,7 +122,7 @@ function WeaponFactoryManager:get_ammo_data_from_weapon(factory_id, blueprint)
 	return t
 end
 
-function WeaponFactoryManager:get_part_data(part_id, factory_id, equipped_mods, override)
+function WeaponFactoryManager:get_part_data_wr(part_id, factory_id, equipped_mods, override)
 	local part = deep_clone(self:_part_data(part_id, factory_id, override))
 	if equipped_mods and part.overrides then
 		for _, override in ipairs(part.overrides) do

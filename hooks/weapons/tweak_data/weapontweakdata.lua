@@ -19,7 +19,8 @@ local spread_multiplier = {
 	shotgun = {
 		double_barrel = {1.8, 0.6},
 		tier_5 = {1.2, 0.8},
-		tier_4 = {1.2, 0.8},
+		pump_action = {1.2, 0.8},
+		tier_4 = {1, 1},
 		tier_3 = {1, 1},
 		tier_2 = {1, 1},
 		tier_1 = {1, 1}
@@ -36,6 +37,7 @@ local recoil_wait_mul = {
 	shotgun = {
 		double_barrel = 0.5,
 		tier_5 = 0.5,
+		pump_action = 0.5,
 		tier_4 = 0.5,
 		tier_3 = 2,
 		tier_2 = 2,
@@ -78,11 +80,12 @@ local pickup = {
 	},
 	shotgun = {
 		double_barrel = {0.4	/1.35, 1.5	/1.35},
-		tier_5 = {0.4	/1.35, 1.5	/1.35},
-		tier_4 = {1		/1.35, 2.5	/1.35},
-		tier_3 = {2		/1.35, 5	/1.35},
-		tier_2 = {3		/1.35, 6	/1.35},
-		tier_1 = {5		/1.35, 10	/1.35}
+		tier_5 = 		{0.4	/1.35, 1.5	/1.35},
+		pump_action = 	{1		/1.35, 2.5	/1.35},
+		tier_4 = 		{1		/1.35, 2.5	/1.35},
+		tier_3 = 		{2		/1.35, 5	/1.35},
+		tier_2 = 		{3		/1.35, 6	/1.35},
+		tier_1 = 		{5		/1.35, 10	/1.35}
 	},
 	lmg = {
 		tier_3 = {5		/1.35, 10	/1.35},
@@ -129,6 +132,14 @@ local falloff = {
 			far_falloff = 2250,
 			near_multiplier = 1,
 			far_multiplier = 0.1
+		},
+		pump_action = {
+			optimal_distance = 0,
+			optimal_range = 1600,
+			near_falloff = 0,
+			far_falloff = 2250,
+			near_multiplier = 1,
+			far_multiplier = 0.2
 		},
 		tier_4 = {
 			optimal_distance = 0,
@@ -336,7 +347,8 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"scar",				-- Eagle Heavy Rifle
 				"fal",				-- Falcon Rifle
 				"g3",				-- Gewehr 3 Rifle
-				"groza"				-- KETCHNOV Byk-1 Assault Rifle
+				"groza",			-- KETCHNOV Byk-1 Assault Rifle
+				"shak12"			-- KS12 Urban Rifle
 			},
 			tier_2 = {
 				"ak74",				-- AK Rifle
@@ -368,16 +380,19 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"boot",				-- Breaker 12G Shotgun
 				"m37"				-- GSPS 12G Shotgun
 			},
-			tier_4 = {
-				"judge",			-- The Judge Shotgun
-				"x_judge",			-- Akimbo Judge Shotguns
+			pump_action = {
 				"m590",				-- Mosconi 12G Tactical Shotgun
 				"ksg",				-- Raven Shotgun
 				"m1897",			-- Reinfeld 88 Shotgun
 				"r870",				-- Reinfeld 880 Shotgun
 				"serbu",			-- Locomotive 12G Shotgun
+			},
+			tier_4 = {
+				"judge",			-- The Judge Shotgun
+				"x_judge",			-- Akimbo Judge Shotguns
 				"rota",				-- Goliath 12G Shotgun
-				"x_rota"			-- Akimbo Goliath 12G Shotguns
+				"x_rota",			-- Akimbo Goliath 12G Shotguns
+				"ultima"			-- Argos III Shotgun
 			},
 			tier_3 = {
 				"benelli",			-- M1014 Shotgun
@@ -629,6 +644,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			self.contraband.stats.damage = 164
 			self.contraband.stats.spread = 22
 			self.contraband.stats.recoil = 6
+			-- self.contraband.fire_mode_data.fire_rate = 0.2
 			self.contraband.kick.standing = {
 				1.25,
 				1.25,
@@ -785,6 +801,10 @@ function WeaponTweakData:_init_assault_rifles_wr()
 				"assault_rifle"
 				}
 			self.groza_underbarrel.spread = default_spread
+
+			-- KS12 Urban Rifle
+			self.groza.AMMO_MAX = 150
+			self.groza.stats.damage = 102
 	
 	--T2 Assault Rifles---------------------------------------------------------
 			
@@ -936,11 +956,12 @@ function WeaponTweakData:_init_assault_rifles_wr()
 		
 			-- AMCAR Rifle
 			self.amcar.AMMO_MAX = 300
-			self.amcar.stats.damage = 43
+			self.amcar.stats.damage = 47
 			self.amcar.stats.spread = 14
 			self.amcar.stats.recoil = 15
 			-- self.amcar.stats.suppression = 15
 			self.amcar.stats.concealment = 21
+			self.amcar.fire_mode_data.fire_rate = 60/600
 			self.amcar.kick.standing = {
 				0.6,
 				0.8,
@@ -952,7 +973,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Bootleg Rifle
 			self.tecci.AMMO_MAX = 300
-			self.tecci.stats.damage = 43
+			self.tecci.stats.damage = 47
 			self.tecci.stats.spread = 13
 			self.tecci.stats.recoil = 13
 			self.tecci.stats.reload = 13
@@ -969,7 +990,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Clarion Rifle
 			self.famas.AMMO_MAX = 300
-			self.famas.stats.damage = 43
+			self.famas.stats.damage = 47
 			self.famas.stats.spread = 14
 			self.famas.stats.recoil = 13
 			-- self.famas.stats.suppression = 15
@@ -985,7 +1006,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Commando 553 Rifle
 			self.s552.AMMO_MAX = 300
-			self.s552.stats.damage = 43
+			self.s552.stats.damage = 47
 			self.s552.stats.spread = 15
 			self.s552.stats.recoil = 12
 			-- self.s552.stats.suppression = 15
@@ -1001,7 +1022,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- JP36 Rifle
 			self.g36.AMMO_MAX = 300
-			self.g36.stats.damage = 43
+			self.g36.stats.damage = 47
 			self.g36.stats.spread = 19
 			self.g36.stats.recoil = 10
 			-- self.g36.stats.suppression = 15
@@ -1017,7 +1038,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Valkyria Rifle
 			self.asval.AMMO_MAX = 300
-			self.asval.stats.damage = 44
+			self.asval.stats.damage = 51
 			self.asval.stats.spread = 17
 			self.asval.stats.recoil = 13
 			self.asval.stats.reload = 8
@@ -1038,7 +1059,7 @@ function WeaponTweakData:_init_shotguns_wr()
 
 			-- Joceline O/U 12G Shotgun
 			self.b682.AMMO_MAX = 32
-			self.b682.rays = 20
+			self.b682.rays = 16
 			self.b682.stats.damage = 157
 			self.b682.stats.spread = 16
 			self.b682.stats.recoil = 14
@@ -1048,7 +1069,7 @@ function WeaponTweakData:_init_shotguns_wr()
 
 			-- Mosconi 12G Shotgun
 			self.huntsman.AMMO_MAX = 34
-			self.huntsman.rays = 20
+			self.huntsman.rays = 16
 			self.huntsman.stats.damage = 157
 			self.huntsman.stats.spread = 16
 			self.huntsman.stats.recoil = 10
@@ -1058,7 +1079,7 @@ function WeaponTweakData:_init_shotguns_wr()
 
 			-- Claire 12G Shotgun
 			self.coach.AMMO_MAX = 24
-			self.coach.rays = 20
+			self.coach.rays = 16
 			self.coach.stats.damage = 157
 			self.coach.stats.spread = 17
 			self.coach.stats.recoil = 8
@@ -1071,14 +1092,14 @@ function WeaponTweakData:_init_shotguns_wr()
 			self.boot.fire_mode_data.fire_rate = 0.7
 			self.boot.single.fire_rate = 0.7
 			self.boot.AMMO_MAX = 28
-			self.boot.rays = 16
+			self.boot.rays = 12
 			self.boot.stats.damage = 157
 			self.boot.stats.concealment = 22
 
 			
 			-- GSPS 12G Shotgun
 			self.m37.AMMO_MAX = 21
-			self.m37.rays = 16
+			self.m37.rays = 12
 			self.m37.stats.damage = 157
 			self.m37.stats.reload = 13
 			self.m37.stats.concealment = 17
@@ -1095,7 +1116,7 @@ function WeaponTweakData:_init_shotguns_wr()
 			self.judge.fire_mode_data.fire_rate = 0.166
 			self.judge.single.fire_rate = 0.166
 			self.judge.AMMO_MAX = 30
-			self.judge.rays = 12
+			self.judge.rays = 9
 			self.judge.stats.damage = 112
 			self.judge.stats.reload = 7
 			self.judge.damage_falloff = {
@@ -1125,7 +1146,7 @@ function WeaponTweakData:_init_shotguns_wr()
 		
 			-- Mosconi 12G Tactical Shotgun
 			self.m590.AMMO_MAX = 42
-			self.m590.rays = 16
+			self.m590.rays = 12
 			self.m590.stats.damage = 112
 			self.m590.stats.recoil = 7
 			self.m590.stats.reload = 12
@@ -1140,14 +1161,14 @@ function WeaponTweakData:_init_shotguns_wr()
 
 
 			-- Raven Shotgun
-			self.ksg.rays = 16
+			self.ksg.rays = 12
 			self.ksg.stats.damage = 112
 			self.ksg.stats.reload = 15
 
 			
 			-- Reinfeld 88 Shotgun
 			self.m1897.AMMO_MAX = 42
-			self.m1897.rays = 16
+			self.m1897.rays = 12
 			self.m1897.stats.damage = 112
 			self.m1897.stats.reload = 15
 
@@ -1155,7 +1176,7 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- Reinfeld 880 Shotgun
 			self.r870.AMMO_MAX = 40
 			self.r870.CLIP_AMMO_MAX = 8
-			self.r870.rays = 16
+			self.r870.rays = 12
 			self.r870.stats.damage = 112
 			self.r870.stats.recoil = 11
 			self.r870.stats.reload = 15
@@ -1164,7 +1185,7 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- Locomotive 12G Shotgun
 			self.serbu.AMMO_MAX = 35
 			self.serbu.CLIP_AMMO_MAX = 5
-			self.serbu.rays = 16
+			self.serbu.rays = 12
 			self.serbu.stats.damage = 112
 			self.serbu.stats.recoil = 5
 			self.serbu.stats.reload = 13
@@ -1181,7 +1202,7 @@ function WeaponTweakData:_init_shotguns_wr()
 			-- Goliath 12G Shotgun
 			self.rota.has_magazine = nil
 			self.rota.AMMO_MAX = 30
-			self.rota.rays = 16
+			self.rota.rays = 12
 			self.rota.stats.damage = 112
 			self.rota.stats.reload = 6
 			
@@ -1191,6 +1212,10 @@ function WeaponTweakData:_init_shotguns_wr()
 					self.x_rota.rays = self.rota.rays
 					self.x_rota.stats.damage = self.rota.stats.damage
 					self.x_rota.stats.reload = 7
+
+			
+			-- Argos III Shotgun
+			self.ultima.stats.damage = 112
 
 
 	--T3 Shotguns----------------------------------------------------------------

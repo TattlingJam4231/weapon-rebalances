@@ -26,6 +26,8 @@ function NewFlamethrowerBase:_fire_raycast(user_unit, from_pos, direction, dmg_m
 		damage_range = math.min(damage_range, col_ray.distance)
 	end
 
+
+	-- Weapon Rebalances
 	local cone_spread = math.rad(spread_x) * damage_range * 2
 
 	mvector3.set(mvec_to, direction)
@@ -54,6 +56,8 @@ function NewFlamethrowerBase:_fire_raycast(user_unit, from_pos, direction, dmg_m
 			end
 		end
 	end
+	-- Weapon Rebalances
+
 
 	if dodge_enemies and self._suppression then
 		for enemy_data, dis_error in pairs(dodge_enemies) do
