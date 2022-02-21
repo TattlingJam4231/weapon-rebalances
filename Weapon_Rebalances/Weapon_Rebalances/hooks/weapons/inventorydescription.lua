@@ -20,7 +20,7 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 				if stat.name == "magazine" then
 					local ammo = mods_stats[stat.name].index
 					ammo = ammo and ammo + (tweak_data.weapon[name].stats.extra_ammo or 0)
-					mods_stats[stat.name].value = mods_stats[stat.name].value + (ammo and tweak_data.weapon.stats.extra_ammo[ammo] or 0)
+					mods_stats[stat.name].value = mods_stats[stat.name].value + (ammo and tweak_stats.extra_ammo[ammo] or 0)
 				elseif stat.name == "totalammo" then
 					local ammo = bonus_stats.total_ammo_mod
 					mods_stats[stat.name].index = mods_stats[stat.name].index + (ammo or 0)
@@ -33,7 +33,7 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 		local part_data = nil
 
 		for _, mod in ipairs(equipped_mods) do
-			part_data = managers.weapon_factory:get_part_data_by_part_id_from_weapon(mod, factory_id, default_blueprint, equipped_mods)
+			part_data = managers.weapon_factory:get_part_data_by_part_id_from_weapon(mod, factory_id, default_blueprint, equipped_mods) -- added equipped_mods
 
 			if part_data then
 				for _, stat in pairs(WeaponDescription._stats_shown) do
@@ -41,7 +41,7 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 						if stat.name == "magazine" then
 							local ammo = part_data.stats.extra_ammo
 							ammo = ammo and ammo + (tweak_data.weapon[name].stats.extra_ammo or 0)
-							mods_stats[stat.name].value = mods_stats[stat.name].value + (ammo and tweak_data.weapon.stats.extra_ammo[ammo] or 0)
+							mods_stats[stat.name].value = mods_stats[stat.name].value + (ammo and tweak_stats.extra_ammo[ammo] or 0)
 						elseif stat.name == "totalammo" then
 							local ammo = part_data.stats.total_ammo_mod
 							mods_stats[stat.name].index = mods_stats[stat.name].index + (ammo or 0)
@@ -56,6 +56,21 @@ function WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonu
 						end
 					end
 				end
+
+
+				-- Weapon Rebalances
+				if part_data.stats then
+					if part_data.stats.magazine_add then
+						mods_stats.magazine.value = mods_stats.magazine.value + math.floor(part_data.stats.magazine_add)
+					end
+
+					if part_data.stats.total_ammo_add then
+						mods_stats.totalammo.value = mods_stats.totalammo.value + math.floor(part_data.stats.total_ammo_add)
+					end
+				end
+				-- Weapon Rebalances
+
+
 			end
 		end
 
@@ -186,7 +201,7 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 					stats = tweak_data.economy.bonuses[tweak_data.blackmarket.weapon_skins[mod.name].bonus].stats
 				}
 			else
-				part_data = managers.weapon_factory:get_part_data_by_part_id_from_weapon(mod.name, factory_id, default_blueprint, equipped_mods)
+				part_data = managers.weapon_factory:get_part_data_by_part_id_from_weapon(mod.name, factory_id, default_blueprint, equipped_mods) -- added equipped_mods
 			end
 		end
 
@@ -194,12 +209,18 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 			if part_data and part_data.stats then
 				if stat.name == "magazine" then
 					local ammo = part_data.stats.extra_ammo
+
+					local addend = part_data.stats.magazine_add or 0 --Weapon Rebalances
+
 					ammo = ammo and ammo + (tweak_data.weapon[weapon_name].stats.extra_ammo or 0)
-					mod[stat.name] = ammo and tweak_data.weapon.stats.extra_ammo[ammo] or 0
+					mod[stat.name] = ammo and tweak_data.weapon.stats.extra_ammo[ammo] + addend or 0
 				elseif stat.name == "totalammo" then
 					local chosen_index = part_data.stats.total_ammo_mod or 0
+
+					local addend = part_data.stats.total_ammo_add or 0 --Weapon Rebalances
+
 					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats.total_ammo_mod)
-					mod[stat.name] = base_stats[stat.name].value * tweak_stats.total_ammo_mod[chosen_index]
+					mod[stat.name] = base_stats[stat.name].value * tweak_stats.total_ammo_mod[chosen_index] + addend
 				elseif stat.name == "reload" then
 					local chosen_index = part_data.stats.reload or 0
 					chosen_index = math.clamp(base_stats[stat.name].index + chosen_index, 1, #tweak_stats[stat.name])
@@ -296,4 +317,112 @@ function WeaponDescription._get_weapon_mod_stats(mod_name, weapon_name, base_sta
 	end
 
 	return mod_stats
+end
+
+function WeaponDescription.get_weapon_ammo_info(weapon_id, extra_ammo, total_ammo_mod, total_ammo_add) -- added total_ammo_add
+	local weapon_tweak_data = tweak_data.weapon[weapon_id]
+	local ammo_max_multiplier = managers.player:upgrade_value("player", "extra_ammo_multiplier", 1)
+	local primary_category = weapon_tweak_data.categories[1]
+	local category_skill_in_effect = false
+	local category_multiplier = 1
+
+	for _, category in ipairs(weapon_tweak_data.categories) do
+		if managers.player:has_category_upgrade(category, "extra_ammo_multiplier") then
+			category_multiplier = category_multiplier + managers.player:upgrade_value(category, "extra_ammo_multiplier", 1) - 1
+			category_skill_in_effect = true
+		end
+	end
+
+	ammo_max_multiplier = ammo_max_multiplier * category_multiplier
+
+	if managers.player:has_category_upgrade("player", "add_armor_stat_skill_ammo_mul") then
+		ammo_max_multiplier = ammo_max_multiplier * managers.player:body_armor_value("skill_ammo_mul", nil, 1)
+	end
+
+	local function get_ammo_max_per_clip(weapon_id)
+		local function upgrade_blocked(category, upgrade)
+			if not weapon_tweak_data.upgrade_blocks then
+				return false
+			end
+
+			if not weapon_tweak_data.upgrade_blocks[category] then
+				return false
+			end
+
+			return table.contains(weapon_tweak_data.upgrade_blocks[category], upgrade)
+		end
+
+		local clip_base = weapon_tweak_data.CLIP_AMMO_MAX
+		local clip_mod = extra_ammo and tweak_data.weapon.stats.extra_ammo[extra_ammo] or 0
+		local clip_skill = managers.player:upgrade_value(weapon_id, "clip_ammo_increase")
+
+		if not upgrade_blocked("weapon", "clip_ammo_increase") then
+			clip_skill = clip_skill + managers.player:upgrade_value("weapon", "clip_ammo_increase", 0)
+		end
+
+		for _, category in ipairs(weapon_tweak_data.categories) do
+			if not upgrade_blocked(category, "clip_ammo_increase") then
+				clip_skill = clip_skill + managers.player:upgrade_value(category, "clip_ammo_increase", 0)
+			end
+		end
+
+		return clip_base + clip_mod + clip_skill
+	end
+
+	local ammo_max_per_clip = get_ammo_max_per_clip(weapon_id)
+	local ammo_max = tweak_data.weapon[weapon_id].AMMO_MAX
+	local ammo_from_mods = ammo_max * (total_ammo_mod and tweak_data.weapon.stats.total_ammo_mod[total_ammo_mod] or 0) + total_ammo_add -- added total_ammo_add
+	ammo_max = (ammo_max + ammo_from_mods + managers.player:upgrade_value(weapon_id, "clip_amount_increase") * ammo_max_per_clip) * ammo_max_multiplier
+	ammo_max_per_clip = math.min(ammo_max_per_clip, ammo_max)
+	local ammo_data = {
+		base = tweak_data.weapon[weapon_id].AMMO_MAX,
+		mod = ammo_from_mods + managers.player:upgrade_value(weapon_id, "clip_amount_increase") * ammo_max_per_clip
+	}
+	ammo_data.skill = (ammo_data.base + ammo_data.mod) * ammo_max_multiplier - ammo_data.base - ammo_data.mod
+	ammo_data.skill_in_effect = managers.player:has_category_upgrade("player", "extra_ammo_multiplier") or category_skill_in_effect or managers.player:has_category_upgrade("player", "add_armor_stat_skill_ammo_mul")
+
+	return ammo_max_per_clip, ammo_max, ammo_data
+end
+
+function WeaponDescription._get_stats(name, category, slot, blueprint)
+	local equipped_mods = nil
+	local silencer = false
+	local single_mod = false
+	local auto_mod = false
+	local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)
+	local blueprint = blueprint or slot and managers.blackmarket:get_weapon_blueprint(category, slot) or managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+	local cosmetics = managers.blackmarket:get_weapon_cosmetics(category, slot)
+	local bonus_stats = {}
+
+	if cosmetics and cosmetics.id and cosmetics.bonus and not managers.job:is_current_job_competitive() and not managers.weapon_factory:has_perk("bonus", factory_id, blueprint) then
+		bonus_stats = tweak_data:get_raw_value("economy", "bonuses", tweak_data.blackmarket.weapon_skins[cosmetics.id].bonus, "stats") or {}
+	end
+
+	if blueprint then
+		equipped_mods = deep_clone(blueprint)
+		local factory_id = managers.weapon_factory:get_factory_id_by_weapon_id(name)
+		local default_blueprint = managers.weapon_factory:get_default_blueprint_by_factory_id(factory_id)
+
+		if equipped_mods then
+			silencer = managers.weapon_factory:has_perk("silencer", factory_id, equipped_mods)
+			single_mod = managers.weapon_factory:has_perk("fire_mode_single", factory_id, equipped_mods)
+			auto_mod = managers.weapon_factory:has_perk("fire_mode_auto", factory_id, equipped_mods)
+		end
+	end
+
+	local base_stats = WeaponDescription._get_base_stats(name)
+	local mods_stats = WeaponDescription._get_mods_stats(name, base_stats, equipped_mods, bonus_stats)
+	local skill_stats = WeaponDescription._get_skill_stats(name, category, slot, base_stats, mods_stats, silencer, single_mod, auto_mod, blueprint)
+	local clip_ammo, max_ammo, ammo_data = WeaponDescription.get_weapon_ammo_info(name, tweak_data.weapon[name].stats.extra_ammo, base_stats.totalammo.index + mods_stats.totalammo.index, mods_stats.totalammo.value) -- added mods_stats.totalammo.value
+	base_stats.totalammo.value = ammo_data.base
+	mods_stats.totalammo.value = ammo_data.mod
+	skill_stats.totalammo.value = ammo_data.skill
+	skill_stats.totalammo.skill_in_effect = ammo_data.skill_in_effect
+	local my_clip = base_stats.magazine.value + mods_stats.magazine.value + skill_stats.magazine.value
+
+	if max_ammo < my_clip then
+		mods_stats.magazine.value = mods_stats.magazine.value + max_ammo - my_clip
+	end
+
+	return base_stats, mods_stats, skill_stats
 end

@@ -9,12 +9,15 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 	local shield_mask = managers.slot:get_mask("enemy_shield_check")
 	local ai_vision_ids = Idstring("ai_vision")
 	local bulletproof_ids = Idstring("bulletproof")
-	local weapon_unit = self._unit
-	local armor_piercing = weapon_unit:base()._use_armor_piercing or nil
-	local pierce_armor = armor_piercing
 	
 	local units_hit = {}
 	local unique_hits = {}
+
+
+	-- Weapon Rebalances
+	local weapon_unit = self._unit
+	local armor_piercing = weapon_unit:base()._use_armor_piercing or nil
+	local pierce_armor = armor_piercing
 	
 	local penetrations = 0
 	local enemy_penetrations = 0
@@ -41,6 +44,8 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 		end
 
 		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
+	-- Weapon Rebalances
+
 
 	elseif self._can_shoot_through_wall then
 		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
@@ -51,7 +56,11 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 	for i, hit in ipairs(ray_hits) do
 		if not units_hit[hit.unit:key()] then
 			units_hit[hit.unit:key()] = true
+
+
+			-- Weapon Rebalances
 			hit.distance = hit.distance + energy_loss
+
 			if hit.body:name() == Idstring("body_plate") then
 				if not armor_piercing then
 					local armor_pierce_roll = math.rand(1)
@@ -90,12 +99,17 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 				end
 				hit.armor_piercing = pierce_armor
 			end
+			-- Weapon Rebalances
+
+
 			unique_hits[#unique_hits + 1] = hit
 			hit.hit_position = hit.position
 			hit_enemy = hit_enemy or hit.unit:in_slot(enemy_mask)
 			local weak_body = hit.body:has_ray_type(ai_vision_ids)
 			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
 			
+
+			-- Weapon Rebalances
 			if self._can_shoot_through_armor_plating then
 				--nothing
 			elseif hit_enemy then
@@ -202,6 +216,9 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 					energy_loss = energy_loss + self._shield_pen_energy_loss
 				end
 			end
+			-- Weapon Rebalances
+
+
 		end
 	end
 
@@ -404,37 +421,49 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			return false, 0
 		end
 
+		local multiplier = 1
 		local multiplier_min = 1
 		local multiplier_max = 1
-		
-		--pick up modifiers from attachments don't negate pick up modifiers from skills and perks
-			if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_min_mul then
-				multiplier_min = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_min = multiplier_min + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-				multiplier_min = multiplier_min * ammo_base._ammo_data.ammo_pickup_min_mul
-			else
-				multiplier_min = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_min = multiplier_min + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_min = multiplier_min + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-			end
 
-			if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_max_mul then
-				multiplier_max = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_max = multiplier_max + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-				multiplier_max = multiplier_max * ammo_base._ammo_data.ammo_pickup_max_mul
-			else
-				multiplier_max = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
-				multiplier_max = multiplier_max + managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) - 1
-				multiplier_max = multiplier_max + managers.player:crew_ability_upgrade_value("crew_scavenge", 0)
-			end
-		--
+
+		-- Weapon Rebalances
+		multiplier = managers.player:upgrade_value("player", "pick_up_ammo_multiplier", 1)
+		multiplier = multiplier * managers.player:upgrade_value("player", "pick_up_ammo_multiplier_2", 1) -- fully loaded aced stacks multiplicatively with walk-in closet
+		multiplier = multiplier * managers.player:crew_ability_upgrade_value("crew_scavenge", 1) -- sharpeyed stacks multiplicatively
+
+		if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_min_mul then
+			multiplier_min = multiplier * ammo_base._ammo_data.ammo_pickup_min_mul -- pick up modifiers from attachments don't negate pick up modifiers from skills and perks, stacks multiplicatively
+		else
+			multiplier_min = multiplier
+		end
+
+		if ammo_base._ammo_data and ammo_base._ammo_data.ammo_pickup_max_mul then
+			multiplier_max = multiplier * ammo_base._ammo_data.ammo_pickup_max_mul
+		else
+			multiplier_max = multiplier
+		end
+		-- Weapon Rebalances
+
+
 		local add_amount = add_amount_override
 		local picked_up = true
 
 		if not add_amount then
-			local rng_ammo = math.lerp(ammo_base._ammo_pickup[1] * multiplier_min, ammo_base._ammo_pickup[2] * multiplier_max, math.random())
+
+
+			-- Weapon Rebalances
+			local min_ammo_pickup = ammo_base._ammo_pickup[1]
+			local max_ammo_pickup = ammo_base._ammo_pickup[2]
+			local rng_ammo = 0
+
+			if max_ammo_pickup < 1 and (max_ammo_pickup - min_ammo_pickup) == 0.5 then -- exception for very low pickup values
+				rng_ammo = math.lerp(min_ammo_pickup * multiplier_min, (max_ammo_pickup - 0.5) * multiplier_max + 0.5 * (multiplier_max == 0 and 0 or 1), math.random())
+			else
+			-- Weapon Rebalances
+
+
+				rng_ammo = math.lerp(min_ammo_pickup * multiplier_min, max_ammo_pickup * multiplier_max, math.random())
+			end
 			picked_up = rng_ammo > 0
 			add_amount = math.max(0, math.round(rng_ammo))
 		end
@@ -532,7 +561,7 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	if alive(weapon_unit) and hit_unit:character_damage() and hit_unit:character_damage().damage_bullet then
 		local is_alive = not hit_unit:character_damage():dead()
 		local knock_down = weapon_unit:base()._knock_down and weapon_unit:base()._knock_down > 0 and math.random() < weapon_unit:base()._knock_down
-		result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, col_ray.armor_piercing, false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
+		result = self:give_impact_damage(col_ray, weapon_unit, user_unit, damage, col_ray.armor_piercing --[[ changed from weapon_unit:base()._use_armor_piercing ]], false, knock_down, weapon_unit:base()._stagger, weapon_unit:base()._variant)
 
 		if result ~= "friendly_fire" then
 			local is_dead = hit_unit:character_damage():dead()
@@ -557,6 +586,6 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	return result
 end
 
-InstantExplosiveBulletBase.CURVE_POW = 0.2
+InstantExplosiveBulletBase.CURVE_POW = 0.2 -- Changed from 0.5
 InstantExplosiveBulletBase.PLAYER_DMG_MUL = 0.1
 InstantExplosiveBulletBase.RANGE = 200

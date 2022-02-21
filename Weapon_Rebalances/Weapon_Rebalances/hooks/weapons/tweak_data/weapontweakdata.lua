@@ -15,6 +15,62 @@ local default_spread = {
 	bipod = 3
 }
 
+local spread_multiplier = {
+	shotgun = {
+		double_barrel = {1.8, 0.6},
+		tier_5 = {1.2, 0.8},
+		pump_action = {1.2, 0.8},
+		tier_4 = {1, 1},
+		tier_3 = {1, 1},
+		tier_2 = {1, 1},
+		tier_1 = {1, 1}
+	}
+}
+
+local recoil_wait_mul = {
+	assault_rifle = {
+		tier_4 = 2,
+		tier_3 = 2,
+		tier_2 = 2,
+		tier_1 = 2
+	},
+	shotgun = {
+		double_barrel = 0.5,
+		tier_5 = 0.5,
+		pump_action = 0.5,
+		tier_4 = 0.5,
+		tier_3 = 2,
+		tier_2 = 2,
+		tier_1 = 2
+	},
+	lmg = {
+		tier_3 = 1,
+		tier_2 = 1,
+		tier_1 = 1
+	},
+	snp = {
+		tier_4 = 0.5,
+		tier_3 = 0.5,
+		tier_2 = 0.5,
+		tier_1 = 0.5
+	},
+	smg = {
+		tier_3 = 2,
+		tier_2 = 2,
+		tier_1 = 2
+	},
+	pistol = {
+		tier_4 = 2,
+		tier_3 = 2,
+		tier_2 = 2,
+		tier_1 = 2
+	},
+	gl = {
+		tier_2 = 0.5,
+		tier_1 = 0.5
+	}
+}
+
 local pickup = {
 	assault_rifle = {
 		tier_4 = {2		/1.35, 3	/1.35},
@@ -24,11 +80,12 @@ local pickup = {
 	},
 	shotgun = {
 		double_barrel = {0.4	/1.35, 1.5	/1.35},
-		tier_5 = {0.4	/1.35, 1.5	/1.35},
-		tier_4 = {1		/1.35, 2	/1.35},
-		tier_3 = {2		/1.35, 3.5	/1.35},
-		tier_2 = {2		/1.35, 4	/1.35},
-		tier_1 = {4		/1.35, 6	/1.35}
+		tier_5 = 		{0.4	/1.35, 1.5	/1.35},
+		pump_action = 	{1		/1.35, 2.5	/1.35},
+		tier_4 = 		{1		/1.35, 2.5	/1.35},
+		tier_3 = 		{2		/1.35, 5	/1.35},
+		tier_2 = 		{3		/1.35, 6	/1.35},
+		tier_1 = 		{5		/1.35, 10	/1.35}
 	},
 	lmg = {
 		tier_3 = {5		/1.35, 10	/1.35},
@@ -36,7 +93,7 @@ local pickup = {
 		tier_1 = {15	/1.35, 35	/1.35}
 	},
 	snp = {
-		tier_4 = {0.1	/1.35, 0.55	/1.35},
+		tier_4 = {0.04, 0.54},
 		tier_3 = {0.1	/1.35, 1	/1.35},
 		tier_2 = {1		/1.35, 1	/1.35},
 		tier_1 = {1		/1.35, 1.75	/1.35}
@@ -75,6 +132,14 @@ local falloff = {
 			far_falloff = 2250,
 			near_multiplier = 1,
 			far_multiplier = 0.1
+		},
+		pump_action = {
+			optimal_distance = 0,
+			optimal_range = 1600,
+			near_falloff = 0,
+			far_falloff = 2250,
+			near_multiplier = 1,
+			far_multiplier = 0.2
 		},
 		tier_4 = {
 			optimal_distance = 0,
@@ -282,7 +347,8 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"scar",				-- Eagle Heavy Rifle
 				"fal",				-- Falcon Rifle
 				"g3",				-- Gewehr 3 Rifle
-				"groza"				-- KETCHNOV Byk-1 Assault Rifle
+				"groza",			-- KETCHNOV Byk-1 Assault Rifle
+				"shak12"			-- KS12 Urban Rifle
 			},
 			tier_2 = {
 				"ak74",				-- AK Rifle
@@ -314,16 +380,19 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"boot",				-- Breaker 12G Shotgun
 				"m37"				-- GSPS 12G Shotgun
 			},
-			tier_4 = {
-				"judge",			-- The Judge Shotgun
-				"x_judge",			-- Akimbo Judge Shotguns
+			pump_action = {
 				"m590",				-- Mosconi 12G Tactical Shotgun
 				"ksg",				-- Raven Shotgun
 				"m1897",			-- Reinfeld 88 Shotgun
 				"r870",				-- Reinfeld 880 Shotgun
 				"serbu",			-- Locomotive 12G Shotgun
+			},
+			tier_4 = {
+				"judge",			-- The Judge Shotgun
+				"x_judge",			-- Akimbo Judge Shotguns
 				"rota",				-- Goliath 12G Shotgun
-				"x_rota"			-- Akimbo Goliath 12G Shotguns
+				"x_rota",			-- Akimbo Goliath 12G Shotguns
+				"ultima"			-- Argos III Shotgun
 			},
 			tier_3 = {
 				"benelli",			-- M1014 Shotgun
@@ -341,39 +410,39 @@ function WeaponTweakData:_init_weapon_index_wr()
 		},
 		lmg = {
 			tier_3 = {
-				"m60"				-- M60
+				"m60"				-- M60 Light Machine Gun
 			},
 			tier_2 = {
-				"rpk",				-- RPK
-				"hk21"				-- Brenner
+				"rpk",				-- RPK Light Machine Gun
+				"hk21"				-- Brenner-21 Light Machine Gun
 			},
 			tier_1 = {
-				"m249",				-- ksp
-				"par",				-- ksp 58
-				"mg42"				-- buzzsaw
+				"m249",				-- KSP Light Machine Gun
+				"par",				-- KSP 58 Light Machine Gun
+				"mg42"				-- Buzzsaw 42 Light Machine Gun
 			}
 		},
 		snp = {
 			tier_4 = {
-				"m95"				-- thanatos
+				"m95"				-- Thanatos .50 cal Sniper Rifle
 			},
 			tier_3 = {
-				"mosin",			-- nagant
-				"desert",			-- desertfox
-				"r93",				-- r93
-				"model70"			-- platypus
+				"mosin",			-- Nagant Sniper Rifle
+				"desertfox",		-- Desertfox Sniper Rifle
+				"r93",				-- R93 Sniper Rifle
+				"model70"			-- Platypus 70 Sniper Rifle
 			},
 			tier_2 = {
-				"msr",				-- rattlesnake
-				"winchester1874",	-- repeater
-				"r700"				-- r700
+				"msr",				-- Rattlesnake Sniper Rifle
+				"winchester1874",	-- Repeater 1874 Sniper Rifle
+				"r700"				-- R700 Sniper Rifle
 			},
 			tier_1 = {
-				"wa2000",			-- lebensauger
-				"tti",				-- contractor
-				"siltstone",		-- grom
-				"sbl",				-- bernetti rangehitter
-				"qbu88"				-- kang arms x1
+				"wa2000",			-- Lebensauger .308 Sniper Rifle
+				"tti",				-- Contractor .308 Sniper Rifle
+				"siltstone",		-- Grom Sniper Rifle
+				"sbl",				-- Bernetti Rangehitter Sniper Rifle
+				"qbu88"				-- Kang Arms X1 Sniper Rifle
 			}
 		},
 		smg = {
@@ -434,12 +503,68 @@ function WeaponTweakData:_init_weapon_index_wr()
 		},
 		pistol = {
 			tier_4 = {
+				"peacemaker",		-- Peacemaker .45 Revolver
+				"mateba",			-- Matever .357 Revolver
+				"x_2006m",			-- Akimbo Matever .357 Revolvers
+				"chinchilla",		-- Castigo .44 Revolver
+				"x_chinchilla",		-- Akimbo Castigo .44 Revolvers
+				"new_raging_bull",	-- Bronco .44 Revolver
+				"x_rage",			-- Akimbo Bronco .44 Revolvers
+				"deagle",			-- Deagle Pistol
+				"x_deagle"			-- Akimbo Deagle Pistols
 			},
 			tier_3 = {
+				"pl14",				-- White Streak Pistol
+				"x_pl14",			-- Akimbo White Streak Pistols
+				"breech",			-- Parabellum Pistol
+				"x_breech",			-- Akimbo Parabellum Pistols
+				"sparrow",			-- Baby Deagle
+				"x_sparrow",		-- Akimbo Baby Deagle Pistols
+				"lemming",			-- 5/7 AP Pistol
+				"model3",			-- Frenchman Model 87 Revolver
+				"x_model3",			-- Akimbo Frenchman Model 87 Revolvers
+				"m1911",			-- Crosskill Chunky Compact Pistol
+				"x_m1911"			-- Akimbo Crosskill Chunky Compact Pistols
 			},
 			tier_2 = {
+				"g22c",				-- Chimano Custom Pistol
+				"x_g22c",			-- Akimbo Chimano Custom Pistols
+				"colt_1911",		-- Crosskill Pistol
+				"x_1911",			-- Akimbo Crosskill Pistols
+				"c96",				-- Broomstick Pistol
+				"x_c96",			-- Akimbo Broomstick Pistols
+				"usp",				-- Interceptor 45 Pistol
+				"x_usp",			-- Akimbo Interceptor 45 Pistols
+				"p226",				-- Signature .40 Pistol
+				"x_p226",			-- Akimbo Signature .40 Pistols
+				"hs2000",			-- LEO Pistol
+				"x_hs2000",			-- Akimbo LEO Pistols
+				"packrat",			-- Contractor Pistol
+				"x_packrat",		-- Akimbo Contractor Pistols
+				"stech",			-- Igor Automatik Pistol
+				"x_stech",			-- Akimbo Igor Automatik Pistols
+				"holt",				-- Holt 9 mm Pistol
+				"x_holt"			-- Akimbo Holt 9 mm Pistols
 			},
 			tier_1 = {
+				"glock_17",			-- Chimano 88 Pistol
+				"x_g17",			-- Akimbo Chimano 88 Pistols
+				"g26",				-- Chimano Compact Pistol
+				"jowi",				-- Akimbo Chimano Compact Pistols
+				"b92fs",			-- Bernetti 9 Pistol
+				"x_b92fs",			-- Akimbo Bernetti 9 Pistols
+				"glock_18c",		-- STRYK 18c Pistol
+				"x_g18c",			-- Akimbo STRYK 18c Pistols
+				"ppk",				-- Gruber Kurz Pistol
+				"x_ppk",			-- Akimbo Gruber Kurz Pistols
+				"legacy",			-- M13 9mm Pistol
+				"x_legacy",			-- Akimbo M13 9mm Pistols
+				"shrew",			-- Crosskill Guard Pistol
+				"x_shrew",			-- Akimbo Crosskill Guard Pistols
+				"czech",			-- Czech 92 Pistol
+				"x_czech",			-- Akimbo Czech 92 Pistols
+				"beer",				-- Bernetti Auto Pistol
+				"x_beer"			-- Akimbo Bernetti Auto Pistols
 			}
 		}
 	}
@@ -453,6 +578,8 @@ function WeaponTweakData:_init_default_stats_wr()
 					self[weapon].AMMO_PICKUP = pickup[category][tier]
 					self[weapon].damage_falloff = falloff[category][tier] or falloff[category]
 					self[weapon].spread = default_spread
+					self[weapon].spread_multiplier = spread_multiplier[category] and spread_multiplier[category][tier]
+					self[weapon].recoil_wait_mul = recoil_wait_mul[category][tier] or recoil_wait_mul[category]
 				end
 			end
 		end
@@ -517,6 +644,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			self.contraband.stats.damage = 164
 			self.contraband.stats.spread = 22
 			self.contraband.stats.recoil = 6
+			-- self.contraband.fire_mode_data.fire_rate = 0.2
 			self.contraband.kick.standing = {
 				1.25,
 				1.25,
@@ -673,6 +801,10 @@ function WeaponTweakData:_init_assault_rifles_wr()
 				"assault_rifle"
 				}
 			self.groza_underbarrel.spread = default_spread
+
+			-- KS12 Urban Rifle
+			self.groza.AMMO_MAX = 150
+			self.groza.stats.damage = 102
 	
 	--T2 Assault Rifles---------------------------------------------------------
 			
@@ -824,11 +956,12 @@ function WeaponTweakData:_init_assault_rifles_wr()
 		
 			-- AMCAR Rifle
 			self.amcar.AMMO_MAX = 300
-			self.amcar.stats.damage = 43
+			self.amcar.stats.damage = 47
 			self.amcar.stats.spread = 14
 			self.amcar.stats.recoil = 15
 			-- self.amcar.stats.suppression = 15
 			self.amcar.stats.concealment = 21
+			self.amcar.fire_mode_data.fire_rate = 60/600
 			self.amcar.kick.standing = {
 				0.6,
 				0.8,
@@ -840,7 +973,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Bootleg Rifle
 			self.tecci.AMMO_MAX = 300
-			self.tecci.stats.damage = 43
+			self.tecci.stats.damage = 47
 			self.tecci.stats.spread = 13
 			self.tecci.stats.recoil = 13
 			self.tecci.stats.reload = 13
@@ -857,7 +990,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Clarion Rifle
 			self.famas.AMMO_MAX = 300
-			self.famas.stats.damage = 43
+			self.famas.stats.damage = 47
 			self.famas.stats.spread = 14
 			self.famas.stats.recoil = 13
 			-- self.famas.stats.suppression = 15
@@ -873,7 +1006,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Commando 553 Rifle
 			self.s552.AMMO_MAX = 300
-			self.s552.stats.damage = 43
+			self.s552.stats.damage = 47
 			self.s552.stats.spread = 15
 			self.s552.stats.recoil = 12
 			-- self.s552.stats.suppression = 15
@@ -889,7 +1022,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- JP36 Rifle
 			self.g36.AMMO_MAX = 300
-			self.g36.stats.damage = 43
+			self.g36.stats.damage = 47
 			self.g36.stats.spread = 19
 			self.g36.stats.recoil = 10
 			-- self.g36.stats.suppression = 15
@@ -905,7 +1038,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			
 			-- Valkyria Rifle
 			self.asval.AMMO_MAX = 300
-			self.asval.stats.damage = 44
+			self.asval.stats.damage = 51
 			self.asval.stats.spread = 17
 			self.asval.stats.recoil = 13
 			self.asval.stats.reload = 8
@@ -923,36 +1056,53 @@ end
 
 function WeaponTweakData:_init_shotguns_wr()
 	--Double Barrel Shotguns----------------------------------------------------
-			
+
 			-- Joceline O/U 12G Shotgun
-			self.b682.rays = 12
+			self.b682.AMMO_MAX = 32
+			self.b682.rays = 16
 			self.b682.stats.damage = 157
+			self.b682.stats.spread = 16
+			self.b682.stats.recoil = 14
 			self.b682.stats.reload = 14
+			self.b682.stats.concealment = 7
 
 
 			-- Mosconi 12G Shotgun
-			self.huntsman.rays = 12
+			self.huntsman.AMMO_MAX = 34
+			self.huntsman.rays = 16
 			self.huntsman.stats.damage = 157
-			self.huntsman.stats.reload = 14
+			self.huntsman.stats.spread = 16
+			self.huntsman.stats.recoil = 10
+			self.huntsman.stats.reload = 15
+			self.huntsman.stats.concealment = 7
 
 
 			-- Claire 12G Shotgun
-			self.coach.rays = 12
+			self.coach.AMMO_MAX = 24
+			self.coach.rays = 16
 			self.coach.stats.damage = 157
+			self.coach.stats.spread = 17
+			self.coach.stats.recoil = 8
 			self.coach.stats.reload = 13
 
 
 	--T5 Shotguns---------------------------------------------------------------
 						
 			-- Breaker 12G Shotgun
+			self.boot.fire_mode_data.fire_rate = 0.7
+			self.boot.single.fire_rate = 0.7
+			self.boot.AMMO_MAX = 28
 			self.boot.rays = 12
 			self.boot.stats.damage = 157
+			self.boot.stats.concealment = 22
 
 			
 			-- GSPS 12G Shotgun
+			self.m37.AMMO_MAX = 21
 			self.m37.rays = 12
 			self.m37.stats.damage = 157
-			self.m37.stats.reload = 15
+			self.m37.stats.reload = 13
+			self.m37.stats.concealment = 17
 
 
 	--T4 Shotguns----------------------------------------------------------------
@@ -1063,20 +1213,30 @@ function WeaponTweakData:_init_shotguns_wr()
 					self.x_rota.stats.damage = self.rota.stats.damage
 					self.x_rota.stats.reload = 7
 
+			
+			-- Argos III Shotgun
+			self.ultima.stats.damage = 112
+
 
 	--T3 Shotguns----------------------------------------------------------------
 		
 			-- M1014 Shotgun
 			self.benelli.rays = 12
 			self.benelli.stats.damage = 57
+			self.benelli.stats.spread = 8
+			self.benelli.stats.recoil = 11
 			self.benelli.stats.reload = 11
+			self.benelli.stats.concealment = 14
 			self.benelli.use_shotgun_reload = "dual"
 
 
 			-- Predator 12G Shotgun
 			self.spas12.rays = 12
 			self.spas12.stats.damage = 57
+			self.spas12.stats.spread = 9
+			self.spas12.stats.recoil = 14
 			self.spas12.stats.reload = 11
+			self.spas12.stats.concealment = 16
 			self.spas12.use_shotgun_reload = "dual"
 
 			
@@ -1090,11 +1250,16 @@ function WeaponTweakData:_init_shotguns_wr()
 	--T2 Shotguns----------------------------------------------------------------
 
 			-- Izhma 12G Shotgun
+			self.saiga.fire_mode_data.fire_rate = 0.15
+			self.saiga.auto.fire_rate = 0.15
 			self.saiga.rays = 12
 			self.saiga.stats.damage = 45
+			self.saiga.stats.reload = 8
 
 			
 			-- Steakout 12G Shotgun
+			self.aa12.fire_mode_data.fire_rate = 0.1667
+			self.aa12.auto.fire_rate = 0.1667
 			self.aa12.rays = 12
 			self.aa12.stats.damage = 45
 		
@@ -1862,8 +2027,6 @@ function WeaponTweakData:_init_pistols_wr()
 	--t4 pistols----------------------------------------------------------------
 					
 			--peacemaker
-			self.peacemaker.AMMO_PICKUP = pickup.pistol.tier_4
-			self.peacemaker.damage_falloff = falloff.pistol.tier_4
 			self.peacemaker.AMMO_MAX = 36
 			self.peacemaker.stats.damage = 230
 			self.peacemaker.stats_modifiers.damage = 1
@@ -1874,16 +2037,12 @@ function WeaponTweakData:_init_pistols_wr()
 
 			
 			--matever
-			self.mateba.AMMO_PICKUP = pickup.pistol.tier_4
-			self.mateba.damage_falloff = falloff.pistol.tier_4
 			self.mateba.AMMO_MAX = 48
 			self.mateba.fire_mode_data.fire_rate = 0.166
 			self.mateba.single.fire_rate = 0.166
 			self.mateba.armor_piercing_chance = 1
 			
 					--akimbo matever
-					self.x_2006m.AMMO_PICKUP = pickup.pistol.tier_4
-					self.x_2006m.damage_falloff = falloff.pistol.tier_4
 					self.x_2006m.AMMO_MAX = 48
 					self.x_2006m.fire_mode_data.fire_rate = 0.166
 					self.x_2006m.single.fire_rate = 0.166
@@ -1891,16 +2050,12 @@ function WeaponTweakData:_init_pistols_wr()
 
 			
 			--castigo
-			self.chinchilla.AMMO_PICKUP = pickup.pistol.tier_4
-			self.chinchilla.damage_falloff = falloff.pistol.tier_4
 			self.chinchilla.AMMO_MAX = 48
 			self.chinchilla.fire_mode_data.fire_rate = 0.166
 			self.chinchilla.single.fire_rate = 0.166
 			self.chinchilla.armor_piercing_chance = 1
 			
 					--akimbo castigo
-					self.x_chinchilla.AMMO_PICKUP = pickup.pistol.tier_4
-					self.x_chinchilla.damage_falloff = falloff.pistol.tier_4
 					self.x_chinchilla.AMMO_MAX = 48
 					self.x_chinchilla.fire_mode_data.fire_rate = 0.166
 					self.x_chinchilla.single.fire_rate = 0.166
@@ -1908,16 +2063,12 @@ function WeaponTweakData:_init_pistols_wr()
 
 			
 			--bronco
-			self.new_raging_bull.AMMO_PICKUP = pickup.pistol.tier_4
-			self.new_raging_bull.damage_falloff = falloff.pistol.tier_4
 			self.new_raging_bull.AMMO_MAX = 48
 			self.new_raging_bull.fire_mode_data.fire_rate = 0.166
 			self.new_raging_bull.single.fire_rate = 0.166
 			self.new_raging_bull.armor_piercing_chance = 1
 			
 					--akimbo bronco
-					self.x_rage.AMMO_PICKUP = pickup.pistol.tier_4
-					self.x_rage.damage_falloff = falloff.pistol.tier_4
 					self.x_rage.AMMO_MAX = 48
 					self.x_rage.fire_mode_data.fire_rate = 0.166
 					self.x_rage.single.fire_rate = 0.166
@@ -1925,8 +2076,6 @@ function WeaponTweakData:_init_pistols_wr()
 
 			
 			--deagle
-			self.deagle.AMMO_PICKUP = pickup.pistol.tier_4
-			self.deagle.damage_falloff = falloff.pistol.tier_4
 			self.deagle.AMMO_MAX = 30
 			self.deagle.fire_mode_data.fire_rate = 0.2
 			self.deagle.single.fire_rate = 0.2
@@ -1936,8 +2085,6 @@ function WeaponTweakData:_init_pistols_wr()
 			self.deagle.armor_piercing_chance = 1
 			
 					--akimbo deagle
-					self.x_deagle.AMMO_PICKUP = pickup.pistol.tier_4
-					self.x_deagle.damage_falloff = falloff.pistol.tier_4
 					self.x_deagle.AMMO_MAX = 30
 					self.x_deagle.fire_mode_data.fire_rate = 0.2
 					self.x_deagle.single.fire_rate = 0.2
@@ -1950,25 +2097,17 @@ function WeaponTweakData:_init_pistols_wr()
 	--t3 pistols----------------------------------------------------------------
 			
 			--white streak
-			self.pl14.AMMO_PICKUP = pickup.pistol.tier_3
-			self.pl14.damage_falloff = falloff.pistol.tier_3
 			
 					--akimbo white streak
-					self.x_pl14.AMMO_PICKUP = pickup.pistol.tier_3
-					self.x_pl14.damage_falloff = falloff.pistol.tier_3
 					self.x_pl14.AMMO_MAX = 60
 
 			
 			--parabellum
-			self.breech.AMMO_PICKUP = pickup.pistol.tier_3
-			self.breech.damage_falloff = falloff.pistol.tier_3
 			self.breech.stats.damage = 121
 			self.breech.fire_mode_data.fire_rate = 0.25
 			self.breech.single.fire_rate = 0.25
 			
 					--akimbo parabellum
-					self.x_breech.AMMO_PICKUP = pickup.pistol.tier_3
-					self.x_breech.damage_falloff = falloff.pistol.tier_3
 					self.x_breech.AMMO_MAX = 56
 					self.x_breech.stats.damage = 121
 					self.x_breech.fire_mode_data.fire_rate = 0.25
@@ -1976,43 +2115,29 @@ function WeaponTweakData:_init_pistols_wr()
 
 			
 			--baby deagle
-			self.sparrow.AMMO_PICKUP = pickup.pistol.tier_3
-			self.sparrow.damage_falloff = falloff.pistol.tier_3
 			
 					--akimbo baby deagle
-					self.x_sparrow.AMMO_PICKUP = pickup.pistol.tier_3
-					self.x_sparrow.damage_falloff = falloff.pistol.tier_3
 					self.x_sparrow.AMMO_MAX = 60
 
 			
 			--5/7
-			self.lemming.AMMO_PICKUP = pickup.pistol.tier_3
-			self.lemming.damage_falloff = falloff.pistol.tier_3
 			self.lemming.can_shoot_through_enemy = nil
 			self.lemming.can_shoot_through_shield = nil
 			self.lemming.can_shoot_through_wall = nil
 
 			
 			--frenchman model 87
-			self.model3.AMMO_PICKUP = pickup.pistol.tier_3
-			self.model3.damage_falloff = falloff.pistol.tier_3
 			self.model3.stats.damage = 135
 			
 					--akimbo frenchman model 87
-					self.x_model3.AMMO_PICKUP = pickup.pistol.tier_3
-					self.x_model3.damage_falloff = falloff.pistol.tier_3
 					self.x_model3.AMMO_MAX = self.model3.AMMO_MAX
 					self.x_model3.stats.damage = 135
 
 			
 			--crosskill chunky
-			self.m1911.AMMO_PICKUP = pickup.pistol.tier_3
-			self.m1911.damage_falloff = falloff.pistol.tier_3
 			-- self.m1911.stats.damage = 120
 			
 					--akimbo crosskill chunky
-					self.x_m1911.AMMO_PICKUP = pickup.pistol.tier_3
-					self.x_m1911.damage_falloff = falloff.pistol.tier_3
 					self.x_m1911.AMMO_MAX = self.x_m1911.AMMO_MAX
 					-- self.x_m1911.stats.damage = 120
 
@@ -2020,208 +2145,136 @@ function WeaponTweakData:_init_pistols_wr()
 	--t2 pistols----------------------------------------------------------------
 			
 			--chimano custom
-			self.g22c.AMMO_PICKUP = pickup.pistol.tier_2
-			self.g22c.damage_falloff = falloff.pistol.tier_2
 			self.g22c.AMMO_MAX = 80
 			
 					--akimbo chimano custom
-					self.x_g22c.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_g22c.damage_falloff = falloff.pistol.tier_2
 					self.x_g22c.AMMO_MAX = self.g22c.AMMO_MAX
 
 			
 			--crosskill
-			self.colt_1911.AMMO_PICKUP = pickup.pistol.tier_2
-			self.colt_1911.damage_falloff = falloff.pistol.tier_2
 			self.colt_1911.AMMO_MAX = 80
 			
 					--akimbo crosskill
-					self.x_1911.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_1911.damage_falloff = falloff.pistol.tier_2
 					self.x_1911.AMMO_MAX = self.colt_1911.AMMO_MAX
 
 			
 			--broomstick
-			self.c96.AMMO_PICKUP = pickup.pistol.tier_2
-			self.c96.damage_falloff = falloff.pistol.tier_2
 			self.c96.AMMO_MAX = 80
 			
 					--akimbo broomstick
-					self.x_c96.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_c96.damage_falloff = falloff.pistol.tier_2
 					self.x_c96.AMMO_MAX = self.c96.AMMO_MAX
 
 			
 			--interceptor
-			self.usp.AMMO_PICKUP = pickup.pistol.tier_2
-			self.usp.damage_falloff = falloff.pistol.tier_2
 			self.usp.AMMO_MAX = 78
 			
 					--akimbo interceptor
-					self.x_usp.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_usp.damage_falloff = falloff.pistol.tier_2
 					self.x_usp.AMMO_MAX = self.usp.AMMO_MAX
 
 			
 			--signature .40
-			self.p226.AMMO_PICKUP = pickup.pistol.tier_2
-			self.p226.damage_falloff = falloff.pistol.tier_2
 			self.p226.AMMO_MAX = 72
 			
 					--akimbo signature .40
-					self.x_p226.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_p226.damage_falloff = falloff.pistol.tier_2
 					self.x_p226.AMMO_MAX = self.p226.AMMO_MAX
 
 			
 			--leo
-			self.hs2000.AMMO_PICKUP = pickup.pistol.tier_2
-			self.hs2000.damage_falloff = falloff.pistol.tier_2
 			self.hs2000.AMMO_MAX = 76
 			
 					--akimbo leo
-					self.x_hs2000.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_hs2000.damage_falloff = falloff.pistol.tier_2
 					self.x_hs2000.AMMO_MAX = self.hs2000.AMMO_MAX
 
 			
 			--contractor
-			self.packrat.AMMO_PICKUP = pickup.pistol.tier_2
-			self.packrat.damage_falloff = falloff.pistol.tier_2
 			self.packrat.AMMO_MAX = 75
 			
 					--akimbo contractor
-					self.x_packrat.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_packrat.damage_falloff = falloff.pistol.tier_2
-					self.x_hs2000.AMMO_MAX = self.packrat.AMMO_MAX
+					self.x_packrat.AMMO_MAX = self.packrat.AMMO_MAX
 
 			
 			--igor automatik pistol
-			self.stech.AMMO_PICKUP = pickup.pistol.tier_2
-			self.stech.damage_falloff = falloff.pistol.tier_2
 			self.stech.AMMO_MAX = 80
 			
 					--akimbo igor automatik pistol
-					self.x_stech.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_stech.damage_falloff = falloff.pistol.tier_2
 					self.x_stech.AMMO_MAX = self.stech.AMMO_MAX
 
 			
 			--holt 9mm
-			self.holt.AMMO_PICKUP = pickup.pistol.tier_2
-			self.holt.damage_falloff = falloff.pistol.tier_2
 			self.holt.AMMO_MAX = 75
 			
 					--holt 9mm
-					self.x_holt.AMMO_PICKUP = pickup.pistol.tier_2
-					self.x_holt.damage_falloff = falloff.pistol.tier_2
 					self.x_holt.AMMO_MAX = self.holt.AMMO_MAX
 
 		
 	--t1 pistols----------------------------------------------------------------
 			
 			--chimano 88
-			self.glock_17.AMMO_PICKUP = pickup.pistol.tier_1
-			self.glock_17.damage_falloff = falloff.pistol.tier_1
 			self.glock_17.AMMO_MAX = 119
 			
 					--akimbo chimano 88
-					self.x_g17.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_g17.damage_falloff = falloff.pistol.tier_1
 					self.x_g17.AMMO_MAX = self.glock_17.AMMO_MAX
 
 			
 			--chimano compact
-			self.g26.AMMO_PICKUP = pickup.pistol.tier_1
-			self.g26.damage_falloff = falloff.pistol.tier_1
 			self.g26.AMMO_MAX = 120
 			
 					--akimbo chimano compact
-					self.jowi.AMMO_PICKUP = pickup.pistol.tier_1
-					self.jowi.damage_falloff = falloff.pistol.tier_1
 					self.jowi.AMMO_MAX = self.g26.AMMO_MAX
 					self.jowi.fire_mode_data.fire_rate = self.g26.fire_mode_data.fire_rate
 					self.jowi.single.fire_rate = self.g26.single.fire_rate
 
 			
 			--bernetti
-			self.b92fs.AMMO_PICKUP = pickup.pistol.tier_1
-			self.b92fs.damage_falloff = falloff.pistol.tier_1
 			self.b92fs.AMMO_MAX = 112
 			
 					--akimbo bernetti
-					self.x_b92fs.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_b92fs.damage_falloff = falloff.pistol.tier_1
 					self.x_b92fs.AMMO_MAX = self.b92fs.AMMO_MAX
 					self.x_b92fs.fire_mode_data.fire_rate = self.b92fs.fire_mode_data.fire_rate
 					self.x_b92fs.single.fire_rate = self.b92fs.single.fire_rate
 
 			
 			--stryk
-			self.glock_18c.AMMO_PICKUP = pickup.pistol.tier_1
-			self.glock_18c.damage_falloff = falloff.pistol.tier_1
 			self.glock_18c.AMMO_MAX = 120
 			
 					--akimbo stryk
-					self.x_g18c.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_g18c.damage_falloff = falloff.pistol.tier_1
 					self.x_g18c.AMMO_MAX = self.glock_18c.AMMO_MAX
 
 			
 			--gruber kurz
-			self.ppk.AMMO_PICKUP = pickup.pistol.tier_1
-			self.ppk.damage_falloff = falloff.pistol.tier_1
 			self.ppk.AMMO_MAX = 112
 			
 					--akimbo gruber kurz
-					self.x_ppk.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_ppk.damage_falloff = falloff.pistol.tier_1
 					self.x_ppk.AMMO_MAX = self.ppk.AMMO_MAX
 
 			
 			--m13
-			self.legacy.AMMO_PICKUP = pickup.pistol.tier_1
-			self.legacy.damage_falloff = falloff.pistol.tier_1
 			self.legacy.AMMO_MAX = 117
 			
 					--akimbo m13
-					self.x_legacy.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_legacy.damage_falloff = falloff.pistol.tier_1
 					self.x_legacy.AMMO_MAX = self.legacy.AMMO_MAX
 
 			
 			--crosskill guard
-			self.shrew.AMMO_PICKUP = pickup.pistol.tier_1
-			self.shrew.damage_falloff = falloff.pistol.tier_1
 			self.shrew.AMMO_MAX = 119
 			
 					--akimbo crosskill guard
-					self.x_shrew.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_shrew.damage_falloff = falloff.pistol.tier_1
 					self.x_shrew.AMMO_MAX = self.shrew.AMMO_MAX
 					self.x_shrew.fire_mode_data.fire_rate = self.shrew.fire_mode_data.fire_rate
 					self.x_shrew.single.fire_rate = self.shrew.single.fire_rate
 
 			
 			--czech 92 pistol
-			self.czech.AMMO_PICKUP = pickup.pistol.tier_1
-			self.czech.damage_falloff = falloff.pistol.tier_1
 			self.czech.AMMO_MAX = 120
 			
 					--akimbo czech 92 pistol
-					self.x_czech.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_czech.damage_falloff = falloff.pistol.tier_1
 					self.x_czech.AMMO_MAX = self.czech.AMMO_MAX
 
 			
 			--bernetti auto pistol
-			self.beer.AMMO_PICKUP = pickup.pistol.tier_1
-			self.beer.damage_falloff = falloff.pistol.tier_1
 			self.beer.AMMO_MAX = 120
 			
 					--akimbo bernetti auto pistols
-					self.x_beer.AMMO_PICKUP = pickup.pistol.tier_1
-					self.x_beer.damage_falloff = falloff.pistol.tier_1
 					self.x_beer.AMMO_MAX = self.beer.AMMO_MAX
 end
 
@@ -2268,11 +2321,11 @@ function WeaponTweakData:_init_specials_wr()
 	--RLs-----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 			--Commander 101
-				self.ray.AMMO_PICKUP = {0.02  /1.35, 0.52  /1.35}
+				self.ray.AMMO_PICKUP = {0.02, 0.52}
 				self.ray.stats.damage = 21
 			
 			--HRL-7
-				self.rpg7.AMMO_PICKUP = {0.01  /1.35, 0.51  /1.35}
+				self.rpg7.AMMO_PICKUP = {0.01, 0.51}
 				self.rpg7.stats.damage = 62
 			
 	--Miniguns------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2280,7 +2333,7 @@ function WeaponTweakData:_init_specials_wr()
 			--Vulcan Minigun Rework
 				self.m134.AMMO_MAX = 1300/1.3125
 				self.m134.CLIP_AMMO_MAX = 1300
-				self.m134.AMMO_PICKUP = {-0.5,-1.5}
+				self.m134.AMMO_PICKUP = {0.5, 1.5}
 				self.m134.can_shoot_through_shield = true
 				self.m134.can_shoot_through_enemy = true
 				self.m134.can_shoot_through_wall = true
