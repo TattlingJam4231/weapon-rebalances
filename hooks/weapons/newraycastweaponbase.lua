@@ -321,7 +321,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "_update_stats_values", "WR NewRaycastWeapo
 	local spread_multiplier = tweak_data.weapon[self._name_id].spread_multiplier
 	if parts_stats then
 		if parts_stats.spread_multi then
-			self._current_stats.spread_multi = spread_multiplier and {spread_multiplier[1] * parts_stats.spread_multi[1], spread_multiplier[2] * parts_stats.spread_multi[2]} or parts_stats.spread_multi
+			self._spread_multiplier = spread_multiplier and {spread_multiplier[1] * parts_stats.spread_multi[1], spread_multiplier[2] * parts_stats.spread_multi[2]} or parts_stats.spread_multi
 		end
 
 		if parts_stats.magazine_add then
@@ -336,7 +336,7 @@ Hooks:PostHook(NewRaycastWeaponBase, "_update_stats_values", "WR NewRaycastWeapo
 	if not disallow_replenish then
 		self:replenish()
 	end
-	self._spread_multiplier = self._current_stats.spread_multi or spread_multiplier
+	self._spread_multiplier = spread_multiplier or	self._spread_multiplier
 	
 end)
 
