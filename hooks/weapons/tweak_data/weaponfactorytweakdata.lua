@@ -861,6 +861,290 @@
 					}
 				}
 			}
+			local dragons_breath_alt = {
+				double_barrel = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.5,
+						ammo_pickup_max_mul = 0.533,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 50,
+								dot_tick_period = 0.5,
+								damage_ticks = 10,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						--[[ falloff_override = {
+							optimal_distance = 0,
+							optimal_range = 2000,
+							near_falloff = 0,
+							far_falloff = 2100,
+							near_mul = 1,
+							far_mul = 0
+						}, ]]
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 16
+					}
+				},
+				t5 = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.5,
+						ammo_pickup_max_mul = 0.533,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 50,
+								dot_tick_period = 0.5,
+								damage_ticks = 10,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						--[[ falloff_override = {
+							optimal_distance = 0,
+							optimal_range = 2000,
+							near_falloff = 0,
+							far_falloff = 2100,
+							near_mul = 1,
+							far_mul = 0
+						}, ]]
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 12
+					}
+				},
+				pump_action = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.4,
+						ammo_pickup_max_mul = 0.5,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 35,
+								dot_tick_period = 0.5,
+								damage_ticks = 8,
+								dot_trigger_max_distance = 2700,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 12
+					}
+				},
+				t4 = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.4,
+						ammo_pickup_max_mul = 0.5,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 35,
+								dot_tick_period = 0.5,
+								damage_ticks = 8,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 12
+					}
+				},
+				t3 = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.667,
+						ammo_pickup_max_mul = 0.333,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 20,
+								dot_tick_period = 0.5,
+								damage_ticks = 6,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 12
+					}
+				},
+				t2 = {
+					stats = {
+						value = 5, 
+						total_ammo_mod = 0,
+						spread = -3
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = 0.667,
+						ammo_pickup_max_mul = 0.333,
+						dot_data = {
+							type = "fire",
+							custom_data = {
+								damage = 15,
+								dot_tick_period = 0.5,
+								damage_ticks = 6,
+								dot_trigger_max_distance = 2000,
+								dot_can_stack = true,
+								dot_can_crit = true
+							}
+						},
+						armor_piercing_add = 1, 
+						ignore_statistic = true,  
+						muzzleflash = "effects/payday2/particles/weapons/shotgun/sho_muzzleflash_dragons_breath", 
+						far_falloff_mul = 0.7,
+						can_shoot_through_shield = true, 
+						bullet_class = "FlameBulletBase",
+						rays = 12
+					}
+				}
+			}
+			local flechette_alt = {
+				double_barrel = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 16
+					}
+				},
+				t5 = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 12
+					}
+				},
+				pump_action = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 12
+					}
+				},
+				t4 = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 12
+					}
+				},
+				t3 = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 12
+					}
+				},
+				t2 = {
+					stats = {
+						value = 5,
+						spread = 1
+					},
+					custom_stats = {
+						ammo_pickup_min_mul = nil,
+						ammo_pickup_max_mul = nil,
+						add_head_shot_mul = 0.5,
+						optimal_range_mul = 1.33,
+						far_damage_mul = 2.5,
+						armor_piercing_add = 1, 
+						rays = 12
+					}
+				}
+			}
 
 		--ar ammo
 			local fmj = {
@@ -1125,7 +1409,9 @@
 					wpn_fps_upg_a_slug = slug.double_barrel,
 					wpn_fps_upg_a_explosive = he.double_barrel,
 					wpn_fps_upg_a_dragons_breath = db.double_barrel,
-					wpn_fps_upg_a_piercing = flechette.double_barrel
+					wpn_fps_upg_a_piercing = flechette.double_barrel,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.double_barrel,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.double_barrel
 				},
 				t5 = {
 					wpn_fps_upg_a_custom = buckshot.t5,
@@ -1133,7 +1419,9 @@
 					wpn_fps_upg_a_slug = slug.t5,
 					wpn_fps_upg_a_explosive = he.t5,
 					wpn_fps_upg_a_dragons_breath = db.t5,
-					wpn_fps_upg_a_piercing = flechette.t5
+					wpn_fps_upg_a_piercing = flechette.t5,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.t5,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.t5
 				},
 				pump_action = {
 					wpn_fps_upg_a_custom = buckshot.pump_action,
@@ -1141,7 +1429,9 @@
 					wpn_fps_upg_a_slug = slug.pump_action,
 					wpn_fps_upg_a_explosive = he.pump_action,
 					wpn_fps_upg_a_dragons_breath = db.pump_action,
-					wpn_fps_upg_a_piercing = flechette.pump_action
+					wpn_fps_upg_a_piercing = flechette.pump_action,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.pump_action,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.pump_action
 				},
 				t4 = {
 					wpn_fps_upg_a_custom = buckshot.t4,
@@ -1149,7 +1439,9 @@
 					wpn_fps_upg_a_slug = slug.t4,
 					wpn_fps_upg_a_explosive = he.t4,
 					wpn_fps_upg_a_dragons_breath = db.t4,
-					wpn_fps_upg_a_piercing = flechette.t4
+					wpn_fps_upg_a_piercing = flechette.t4,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.t4,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.t4
 				},
 				t3 = {
 					wpn_fps_upg_a_custom = buckshot.t3,
@@ -1157,7 +1449,9 @@
 					wpn_fps_upg_a_slug = slug.t3,
 					wpn_fps_upg_a_explosive = he.t3,
 					wpn_fps_upg_a_dragons_breath = db.t3,
-					wpn_fps_upg_a_piercing = flechette.t3
+					wpn_fps_upg_a_piercing = flechette.t3,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.t3,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.t3
 				},
 				t2 = {
 					wpn_fps_upg_a_custom = buckshot.t2,
@@ -1165,7 +1459,9 @@
 					wpn_fps_upg_a_slug = slug.t2,
 					wpn_fps_upg_a_explosive = he.t2,
 					wpn_fps_upg_a_dragons_breath = db.t2,
-					wpn_fps_upg_a_piercing = flechette.t2
+					wpn_fps_upg_a_piercing = flechette.t2,
+					wpn_fps_upg_a_dragons_breath_alt = dragons_breath_alt.t2,
+					wpn_fps_upg_a_piercing_alt = flechette_alt.t2
 				},
 				t1 = {
 					wpn_fps_upg_a_custom = buckshot.t1,

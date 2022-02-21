@@ -431,6 +431,14 @@ function CopDamage:damage_bullet(attack_data)
 	if attack_data.weapon_unit:base().get_add_head_shot_mul then
 		local add_head_shot_mul = attack_data.weapon_unit:base():get_add_head_shot_mul()
 
+
+		-- Weapon Rebalances
+		if attack_data.weapon_unit:base()._ammo_data and attack_data.weapon_unit:base()._ammo_data.add_head_shot_mul then
+			add_head_shot_mul = add_head_shot_mul or attack_data.weapon_unit:base()._ammo_data.add_head_shot_mul
+		end
+		-- Weapon Rebalances
+
+
 		if not head and add_head_shot_mul and self._char_tweak and self._char_tweak.access ~= "tank" then
 			local tweak_headshot_mul = math.max(0, self._char_tweak.headshot_dmg_mul - 1)
 			local mul = tweak_headshot_mul * add_head_shot_mul + 1
