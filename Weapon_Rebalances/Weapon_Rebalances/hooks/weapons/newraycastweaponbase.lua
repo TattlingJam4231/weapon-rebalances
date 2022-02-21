@@ -311,8 +311,6 @@ function NewRaycastWeaponBase:recoil_wait() --rewritten
 
 end
 
-
-
 Hooks:PostHook(NewRaycastWeaponBase, "_update_stats_values", "WR NewRaycastWeaponBase _update_stats_values", function(self, disallow_replenish)
 
 	self:_get_penetration_stats_wr()
