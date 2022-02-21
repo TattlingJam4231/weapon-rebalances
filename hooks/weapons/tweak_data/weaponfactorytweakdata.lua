@@ -351,7 +351,7 @@
 					stats = {
 						value = 5, 
 						total_ammo_mod = -5,
-						damage = 117,
+						damage = 110,
 						spread = 0
 					},
 					custom_stats = {
