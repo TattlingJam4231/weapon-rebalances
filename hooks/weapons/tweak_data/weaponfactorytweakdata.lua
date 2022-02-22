@@ -1062,7 +1062,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.6,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
@@ -1077,7 +1077,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.6,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
@@ -1092,7 +1092,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.6,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
@@ -1107,7 +1107,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.6,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
@@ -1122,7 +1122,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.6,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
@@ -1137,7 +1137,7 @@
 					custom_stats = {
 						ammo_pickup_min_mul = nil,
 						ammo_pickup_max_mul = nil,
-						add_head_shot_mul = 0.5,
+						add_head_shot_mul = 0.60,
 						optimal_range_mul = 1.33,
 						far_damage_mul = 2.5,
 						armor_piercing_add = 1, 
