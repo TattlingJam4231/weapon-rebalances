@@ -2294,7 +2294,7 @@ function WeaponTweakData:_init_specials_wr()
 						shotgun_reload_enter = 1.85,
 						shotgun_reload_exit_empty = 1.33,
 						shotgun_reload_exit_not_empty = 1.33,
-						-- shotgun_reload_shell = 1.96,
+						shotgun_reload_shell = 1.96,
 						shotgun_reload_shell = 0.01,
 						shotgun_reload_first_shell_offset = 0,
 						unequip = 0.85,
