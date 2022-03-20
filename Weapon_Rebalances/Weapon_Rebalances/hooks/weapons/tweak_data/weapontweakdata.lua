@@ -2290,8 +2290,6 @@ function WeaponTweakData:_init_specials_wr()
 					
 					--Piglet
 					self.m32.AMMO_PICKUP = pickup.gl.tier_2
-					self.m32.AMMO_MAX = 2000
-					self.m32.CLIP_AMMO_MAX = 1000
 					self.m32.timers = {
 						shotgun_reload_enter = 1.85,
 						shotgun_reload_exit_empty = 1.33,
