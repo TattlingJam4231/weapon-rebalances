@@ -453,6 +453,13 @@ function CopDamage:damage_bullet(attack_data)
 	damage = damage_percent * self._HEALTH_INIT_PRECENT
 	damage, damage_percent = self:_apply_min_health_limit(damage, damage_percent)
 
+
+	--Weapon Rebalances
+	attack_data.true_damage = math.clamp(damage,0,self._HEALTH_INIT)
+	--Weapon Rebalances
+
+
+
 	if self._immortal then
 		damage = math.min(damage, self._health - 1)
 	end

@@ -2,6 +2,11 @@
 <mod>
 
     <hooks hook_id="lib/" script_path="hooks/">
+        <group                                                          :script_path="player/">
+            <post :hook_id="units/cameras/fpcameraplayerbase"                       :script_path="fpcameraplayerbase.lua"/>
+            <post :hook_id="units/beings/player/states/playerstandard"              :script_path="playerstandard.lua"/>
+        </group>
+
         <group                                                          :script_path="skills/">
 		    <post :hook_id="player_actions/skills/playeractionammoefficiency"   :script_path="playeractionammoefficiency.lua"/>
 		    <post :hook_id="player_actions/skills/playeractiontriggerhappy"     :script_path="playeractiontriggerhappy.lua"/>
@@ -47,6 +52,7 @@
                 
             </group>
 
+		    <post :hook_id="managers/menu/blackmarketgui"                       :script_path="blackmarketgui.lua"/>
 		    <post :hook_id="managers/blackmarketmanager"                        :script_path="blackmarketmanager.lua"/>
 		    <post :hook_id="utils/inventorydescription"                         :script_path="inventorydescription.lua"/>
 		    <post :hook_id="units/weapons/newflamethrowerbase"                  :script_path="newflamethrowerbase.lua"/>
@@ -56,8 +62,6 @@
             <post :hook_id="units/weapons/trip_mine/tripminebase"               :script_path="tripminebase.lua"/>
             <post :hook_id="managers/weaponfactorymanager"                      :script_path="weaponfactorymanager.lua"/>
         </group>
-
-        <post :hook_id="units/cameras/fpcameraplayerbase"                       :script_path="fpcameraplayerbase.lua"/>
 
     </hooks>
     

@@ -40,7 +40,7 @@ function SniperGrazeDamage:on_weapon_fired(weapon_unit, result)
 			local attack_data = result.attack_data
 			local headshot_kill = attack_data.headshot --and result.type == "death" or result.type == "healed"
 			local damage_mul = headshot_kill and upgrade_value.damage_factor_headshot or upgrade_value.damage_factor
-			local damage = attack_data.damage * damage_mul
+			local damage = attack_data.true_damage * damage_mul
 
 			if best_damage < damage then
 				best_damage = damage

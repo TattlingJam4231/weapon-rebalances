@@ -14,7 +14,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 	local unique_hits = {}
 
 
-	-- Weapon Rebalances
+	-- <Weapon Rebalances
 	local weapon_unit = self._unit
 	local armor_piercing = weapon_unit:base()._use_armor_piercing or nil
 	local pierce_armor = armor_piercing
@@ -44,7 +44,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 		end
 
 		ray_hits = World:raycast_wall("ray", from, to, "slot_mask", self._bullet_slotmask, "ignore_unit", self._setup.ignore_units, "thickness", 40, "thickness_mask", wall_mask)
-	-- Weapon Rebalances
+	-- Weapon Rebalances>
 
 
 	elseif self._can_shoot_through_wall then
@@ -58,7 +58,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 			units_hit[hit.unit:key()] = true
 
 
-			-- Weapon Rebalances
+			-- <Weapon Rebalances
 			hit.distance = hit.distance + energy_loss
 
 			if hit.body:name() == Idstring("body_plate") then
@@ -99,7 +99,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 				end
 				hit.armor_piercing = pierce_armor
 			end
-			-- Weapon Rebalances
+			-- Weapon Rebalances>
 
 
 			unique_hits[#unique_hits + 1] = hit
@@ -109,7 +109,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 			weak_body = weak_body or hit.body:has_ray_type(bulletproof_ids)
 			
 
-			-- Weapon Rebalances
+			-- <Weapon Rebalances
 			if self._can_shoot_through_armor_plating then
 				--nothing
 			elseif hit_enemy then
@@ -216,7 +216,7 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 					energy_loss = energy_loss + self._shield_pen_energy_loss
 				end
 			end
-			-- Weapon Rebalances
+			-- Weapon Rebalances>
 
 
 		end

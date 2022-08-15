@@ -27,47 +27,132 @@ local spread_multiplier = {
 	}
 }
 
-local recoil_wait_mul = {
+local recoil_wait = {
 	assault_rifle = {
-		tier_4 = 2,
-		tier_3 = 2,
-		tier_2 = 2,
-		tier_1 = 2
+		tier_4 = {
+			flat = 1,
+			curve = 1
+		},
+		tier_3 = {
+			flat = 0.5,
+			curve = 1.5
+		},
+		tier_2 = {
+			flat = 0.5,
+			curve = 1.5
+		},
+		tier_1 = {
+			flat = 0.5,
+			curve = 1.5
+		}
 	},
 	shotgun = {
-		double_barrel = 0.5,
-		tier_5 = 0.5,
-		pump_action = 0.5,
-		tier_4 = 0.5,
-		tier_3 = 2,
-		tier_2 = 2,
-		tier_1 = 2
+		double_barrel = {
+			flat = 0,
+			curve = 0.5
+		},
+		tier_5 = {
+			flat = 0,
+			curve = 0.5
+		},
+		pump_action = {
+			flat = 0,
+			curve = 0.5
+		},
+		tier_4 = {
+			flat = 0,
+			curve = 0.5
+		},
+		tier_3 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_2 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 2
+		}
 	},
 	lmg = {
-		tier_3 = 1,
-		tier_2 = 1,
-		tier_1 = 1
+		tier_3 = {
+			flat = 0,
+			curve = 1
+		},
+		tier_2 = {
+			flat = 0,
+			curve = 1
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 1
+		}
 	},
 	snp = {
-		tier_4 = 0.5,
-		tier_3 = 0.5,
-		tier_2 = 0.5,
-		tier_1 = 0.5
+		tier_5 = {
+			flat = 0.05,
+			curve = 0.35
+		},
+		tier_4 = {
+			flat = 0.1,
+			curve = 0.4
+		},
+		tier_3 = {
+			flat = 0.05,
+			curve = 0.4
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 0.5
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 0.5
+		}
 	},
 	smg = {
-		tier_3 = 2,
-		tier_2 = 2,
-		tier_1 = 2
+		tier_3 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_2 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 2
+		}
 	},
 	pistol = {
-		tier_4 = 2,
-		tier_3 = 2,
-		tier_2 = 2,
-		tier_1 = 2
+		tier_4 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_3 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_2 = {
+			flat = 0,
+			curve = 2
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 2
+		}
 	},
 	gl = {
-		tier_2 = 0.5,
-		tier_1 = 0.5
+		tier_2 = {
+			flat = 0,
+			curve = 0.5
+		},
+		tier_1 = {
+			flat = 0,
+			curve = 0.5
+		}
 	}
 }
 
@@ -329,6 +414,17 @@ local falloff = {
 		}
 	}
 }
+function WeaponTweakData:set_kick_zero(wpn_id)
+	if wpn_id then
+		self[wpn_id] = self[wpn_id] or {}
+		self[wpn_id].kick = {}
+		self[wpn_id].kick = {
+			standing = {0,0,0,0},
+			crouching = {0,0,0,0},
+			steelsight = {0,0,0,0}
+		}
+	end
+end
 
 function WeaponTweakData:_init_weapon_index_wr()
 	self.weapon_index = {
@@ -423,25 +519,28 @@ function WeaponTweakData:_init_weapon_index_wr()
 			}
 		},
 		snp = {
-			tier_4 = {
+			tier_5 = {
 				"m95"				-- Thanatos .50 cal Sniper Rifle
 			},
-			tier_3 = {
+			tier_4 = {
 				"mosin",			-- Nagant Sniper Rifle
 				"desertfox",		-- Desertfox Sniper Rifle
 				"r93",				-- R93 Sniper Rifle
 				"model70"			-- Platypus 70 Sniper Rifle
 			},
-			tier_2 = {
+			tier_3 = {
 				"msr",				-- Rattlesnake Sniper Rifle
 				"winchester1874",	-- Repeater 1874 Sniper Rifle
-				"r700"				-- R700 Sniper Rifle
+				"r700",				-- R700 Sniper Rifle
+				"scout"				-- Pronghorn Sniper Rifle
+			},
+			tier_2 = {
+				"sbl"				-- Bernetti Rangehitter Sniper Rifle
 			},
 			tier_1 = {
 				"wa2000",			-- Lebensauger .308 Sniper Rifle
 				"tti",				-- Contractor .308 Sniper Rifle
 				"siltstone",		-- Grom Sniper Rifle
-				"sbl",				-- Bernetti Rangehitter Sniper Rifle
 				"qbu88"				-- Kang Arms X1 Sniper Rifle
 			}
 		},
@@ -579,7 +678,7 @@ function WeaponTweakData:_init_default_stats_wr()
 					self[weapon].damage_falloff = falloff[category][tier] or falloff[category]
 					self[weapon].spread = default_spread
 					self[weapon].spread_multiplier = spread_multiplier[category] and spread_multiplier[category][tier]
-					self[weapon].recoil_wait_mul = recoil_wait_mul[category][tier] or recoil_wait_mul[category]
+					self[weapon].recoil_wait = recoil_wait[category][tier] or recoil_wait[category]
 				end
 			end
 		end
@@ -765,6 +864,56 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			}
 			self.fal.kick.crouching = self.fal.kick.standing
 			self.fal.kick.steelsight = self:kick_steelsight_wr(self.fal.kick.standing)
+			self.fal.kick_table = {
+				state_mul = {
+					standing = 1,
+					crouching = 1,
+					steelsight = 0.75
+				},
+				start_variance = 10,
+				end_variance = 20,
+				v_variance = {
+					starting = {0,0},
+					ending = {-0.55,-0.45}
+				},
+				h_variance = {
+					starting = {-0.05,0.05},
+					ending = {-0.25,0.25}
+				},
+				loop_last = 4,
+				kicks = {
+					{0.75,0.15},
+					{0.75,0.2},
+					{0.75,0.22},
+					{0.75,0.23},
+					{0.75,0.15},
+					{0.75,0.05},
+					{0.75,-0.05},
+					{0.75,-0.2},
+					{0.75,-0.3},
+					{0.75,0},
+					{0.75,0.1},
+					{0.75,-0.2},
+					{0.75,-0.28},
+					{0.75,-0.1},
+					{0.75,0},
+					{0.75,0},
+					{0.75,0},
+					{0.75,0.2},
+					{0.75,0.4},
+					{0.75,0.5},
+					{0.75,-0.5},
+					{0.75,-0.3},
+					{0.75,0.1},
+					{0.75,0.2},
+					{0.75,-0.7},
+					{0.75,0.3},
+					{0.75,0.5},
+					{0.75,0.2},
+					{0.75,-0.15},
+					{0.75,-0.35}
+				}
+			}
 			
 			-- Gewehr 3 Rifle
 			self.g3.AMMO_MAX = 140
@@ -1316,10 +1465,134 @@ function WeaponTweakData:_init_lmgs_wr()
 			-- ksp
 			self.m249.AMMO_MAX = 600
 			self.m249.stats.damage = 55
-			self.m249.stats.spread = 14
-			self.m249.stats.recoil = 12
+			self.m249.stats.spread = 14--22
+			self.m249.stats.recoil = 12--20
 			self.m249.stats.suppression = 1
 			self.m249.panic_suppression_chance = 1
+			-- self:set_kick_zero("m249")
+			self.m249.kick_table = {
+				state_mul = {
+					standing = 1,
+					crouching = 1,
+					steelsight = 0.75
+				},
+				scale_factor = 1,
+				v_scale_factor = 1,
+				h_scale_factor = 1,
+				start_variance = 1,
+				end_variance = 40,
+				v_variance = {
+					starting = {-0.2,0.3},
+					ending = {-0.12,-0.08}
+				},
+				h_variance = {
+					starting = {-1,1},
+					ending = {-0.2,0.2}
+				},
+				loop_last = 25,
+				kicks = {
+					{0.33,0.05},
+					{0.41,0.11},
+					{0.32,0.43},
+					{0.21,0.33},
+					{0.36,0.11},
+					{0.27,0.33},
+					{0.32,0.05},
+					{0.27,0.11},
+					{0.21,0.05},
+					{0.43,0.11},
+					{0.21,0.05},
+					{0.32,0.11},
+					{0.32,0.11},
+					{0.48,0.11},
+					{0.64,0.11},
+					{0.32,0.05},
+					{0.37,0.11},
+					{0.59,0.11},
+					{0.43,0.11},
+					{0.37,0.16},
+					{0.54,0.11},
+					{0.21,-0},
+					{0.32,0.16},
+					{0.05,0.16},
+					{0.05,0.38},
+					{0,-0},
+					{0.59,-0.16},
+					{0.43,-0.49},
+					{0.11,-0.11},
+					{0.11,0.05},
+					{0.21,0.54},
+					{0.05,0.22},
+					{0,0.05},
+					{0.16,-0},
+					{0.48,-0},
+					{0.32,-0.05},
+					{0.32,-0.05},
+					{0.43,-0.05},
+					{0.37,-0.05},
+					{0.05,-0.05},
+					{0.11,-0.05},
+					{0.32,-0.16},
+					{0.37,-0.22},
+					{0.21,-0.11},
+					{0.27,0.22},
+					{0.21,0.49},
+					{0.11,0.27},
+					{0.21,0.16},
+					{0.64,0.11},
+					{0.59,-0},
+					{0.21,-0},
+					{0.27,-0.16},
+					{0.43,-0.27},
+					{0.16,-0.05},
+					{0.27,-0.22},
+					{0.48,-0.16},
+					{0.43,-0.22},
+					{0.37,-0},
+					{0.48,0.11},
+					{0.43,0.16},
+					{0.48,0.33},
+					{0.11,0.22},
+					{0.16,0.22},
+					{0.11,0.22},
+					{0.27,0.27},
+					{0.32,0.33},
+					{0.37,0.33},
+					{0.27,0.16},
+					{0.59,0.11},
+					{0.75,0.05},
+					{0.16,-0},
+					{0.16,-0.27},
+					{0.21,-0.27},
+					{0.05,-0.11},
+					{0.32,0.22},
+					{0.43,0.45},
+					{0.16,-0.33},
+					{0.21,0.33},
+					{0.37,0.23},
+					{0.37,-0.28},
+					{0.32,-0.13},
+					{0.16,0.21},
+					{0.27,0.17},
+					{0.32,-0.16},
+					{0.16,0.05},
+					{0.21,0.05},
+					{0.27,0.12},
+					{0.16,0.13},
+					{0.16,0.25},
+					{0.32,-0.25},
+					{0.11,-0.11},
+					{0.27,-0.16},
+					{0.21,0.22},
+					{0,-0},
+					{0.16,0.16},
+					{0.11,-0.05},
+					{0.16,0.11},
+					{0.16,-0.11},
+					{0.11,0.11},
+					{0.16,0.22}
+				}
+			}
 			
 			-- ksp 58
 			self.par.AMMO_MAX = 600
@@ -1340,13 +1613,13 @@ function WeaponTweakData:_init_lmgs_wr()
 end
 
 function WeaponTweakData:_init_snipers_wr()
-	--t4 snipers----------------------------------------------------------------
+	--t5 snipers----------------------------------------------------------------
 					
 			-- thanatos
 			self.m95.stats_modifiers = {damage = 1}
 			self.m95.stats.damage = 3500
 
-	--t3 snipers----------------------------------------------------------------
+	--t4 snipers----------------------------------------------------------------
 		
 			-- nagant
 			self.mosin.spread = default_spread
@@ -1360,7 +1633,7 @@ function WeaponTweakData:_init_snipers_wr()
 			-- platypus
 			self.model70.spread = default_spread
 	
-	--t2 snipers----------------------------------------------------------------
+	--t3 snipers----------------------------------------------------------------
 		
 			-- rattlesnake
 			self.msr.fire_mode_data.fire_rate = 0.75
@@ -1375,34 +1648,40 @@ function WeaponTweakData:_init_snipers_wr()
 			self.r700.fire_mode_data.fire_rate = 0.632
 			self.r700.single.fire_rate = 0.632
 	
-	--t1 snipers----------------------------------------------------------------
-		
-			-- lebensauger
-			self.wa2000.fire_mode_data.fire_rate = 0.364
-			self.wa2000.single.fire_rate = 0.364
-			self.wa2000.stats.damage = 198
-			self.wa2000.stats.recoil = 14
-			self.wa2000.stats.reload = 15
-			
-			-- contractor
-			self.tti.stats.damage = 198
-			self.tti.stats.recoil = 5
-			
-			-- grom
-			self.siltstone.fire_mode_data.fire_rate = 0.333
-			self.siltstone.single.fire_rate = 0.333
-			self.siltstone.stats.damage = 198
-			self.siltstone.stats.spread = 17
-			self.siltstone.stats.reload = 13
+	--t2 snipers----------------------------------------------------------------
 			
 			-- bernetti rangehitter
 			self.sbl.AMMO_MAX = 40
 			self.sbl.stats_modifiers = {damage = 1}
 			self.sbl.stats.damage = 198
 			self.sbl.stats.reload = 13
+	
+	--t1 snipers----------------------------------------------------------------
+		
+			-- lebensauger
+			-- self.wa2000.fire_mode_data.fire_rate = 0.364
+			-- self.wa2000.single.fire_rate = 0.364
+			-- self.wa2000.stats.damage = 198
+			self.wa2000.stats.recoil = 14
+			self.wa2000.stats.reload = 15
+			
+			-- contractor
+			-- self.tti.stats.damage = 198
+			self.tti.stats.recoil = 5
+			
+			-- grom
+			self.siltstone.fire_mode_data.fire_rate = 0.364 --0.333
+			self.siltstone.single.fire_rate = 0.364 --0.333
+			self.siltstone.recoil_wait = {
+				flat = 0.3,
+				curve = 0.5
+			}
+			-- self.siltstone.stats.damage = 198
+			self.siltstone.stats.spread = 17
+			self.siltstone.stats.reload = 13
 			
 			-- kang arms x1
-			self.qbu88.stats.damage = 198
+			-- self.qbu88.stats.damage = 198
 			self.qbu88.stats.recoil = 10
 			self.qbu88.stats.reload = 8
 end
@@ -2290,8 +2569,6 @@ function WeaponTweakData:_init_specials_wr()
 					
 					--Piglet
 					self.m32.AMMO_PICKUP = pickup.gl.tier_2
-					self.m32.AMMO_MAX = 2000
-					self.m32.CLIP_AMMO_MAX = 1000
 					self.m32.timers = {
 						shotgun_reload_enter = 1.85,
 						shotgun_reload_exit_empty = 1.33,

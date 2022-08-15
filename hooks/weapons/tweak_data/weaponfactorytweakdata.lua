@@ -1745,13 +1745,13 @@ function WeaponFactoryTweakData:_init_attachments()
 			self.parts.wpn_fps_upg_o_45rds_v2.stats.spread = 1
 			self.parts.wpn_fps_upg_o_45rds_v2.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_45rds_v2.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_45rds_v2.stats.gadget_zoom = 1
+			self.parts.wpn_fps_upg_o_45rds_v2.stats.gadget_magnification = 2
 
 			--Riktpunkt Magnifier Gadget
 			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats.spread = 1
 			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats.gadget_zoom = 9
+			self.parts.wpn_fps_upg_o_xpsg33_magnifier.stats.gadget_magnification_mul = 2
 
 
 			--Assualt Light
@@ -1783,21 +1783,21 @@ function WeaponFactoryTweakData:_init_attachments()
 			self.parts.wpn_fps_upg_o_45rds.stats.spread = 1
 			self.parts.wpn_fps_upg_o_45rds.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_45rds.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_45rds.stats.gadget_zoom = 1
+			self.parts.wpn_fps_upg_o_45rds.stats.gadget_magnification = 1.25
 
 
 			--45 Degree Ironights
 			self.parts.wpn_fps_upg_o_45steel.stats.spread = 0
 			self.parts.wpn_fps_upg_o_45steel.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_45steel.stats.concealment = 1
-			self.parts.wpn_fps_upg_o_45steel.stats.gadget_zoom = 1
+			self.parts.wpn_fps_upg_o_45steel.stats.gadget_magnification = 1
 
 
 			--Signature Magnifier Gadget
 			self.parts.wpn_fps_upg_o_sig.stats.spread = 1
 			self.parts.wpn_fps_upg_o_sig.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_sig.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_sig.stats.gadget_zoom = 9
+			self.parts.wpn_fps_upg_o_sig.stats.gadget_magnification_mul = 2
 
 			--Pistols
 
@@ -1984,139 +1984,159 @@ function WeaponFactoryTweakData:_init_attachments()
 				self.parts.wpn_fps_snp_qbu88_m_extended.stats.extra_ammo = 3
 
 
-	--Sights	
+	--Sights
+	
+			--[[ Zoom Levels:
+					0 = ?			1x
+					1 = ?			1.05x
+					2 = 1.25x		1.15x
+					3 = 1.5x		1.3x
+					4 = 2x			1.5x
+					5 = 2.5x		1.7x
+					6 = 3.25x		2x
+					7 = 4.5x		2.25x
+					8 = 6.25x		2.75x
+					9 = 10x			3.5x
+			  ]]
 
 			--Holographic Sight
 			self.parts.wpn_fps_upg_o_eotech.stats.spread = 0
 			self.parts.wpn_fps_upg_o_eotech.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_eotech.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_eotech.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_eotech.stats.magnification = 2
 			
 
 			--The Professional's Choice Sight
 			self.parts.wpn_fps_upg_o_t1micro.stats.spread = 0
 			self.parts.wpn_fps_upg_o_t1micro.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_t1micro.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_t1micro.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_t1micro.stats.magnification = 2.5
 			
 
 			--Surgeon Sight
 			self.parts.wpn_fps_upg_o_docter.stats.spread = 0
 			self.parts.wpn_fps_upg_o_docter.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_docter.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_docter.stats.zoom = 2
+			self.parts.wpn_fps_upg_o_docter.stats.magnification = 1.15
 			
 
 			--Acough Optic Scope
 			self.parts.wpn_fps_upg_o_acog.stats.spread = 1
 			self.parts.wpn_fps_upg_o_acog.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_acog.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_acog.stats.zoom = 6
+			self.parts.wpn_fps_upg_o_acog.stats.magnification = 3
 			
 
 			--Military Red Dot Sight
 			self.parts.wpn_fps_upg_o_aimpoint.stats.spread = 1
 			self.parts.wpn_fps_upg_o_aimpoint.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_aimpoint.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_aimpoint.stats.zoom = 4
+			self.parts.wpn_fps_upg_o_aimpoint.stats.magnification = 3
 			
 
 			--Milspec Scope
 			self.parts.wpn_fps_upg_o_specter.stats.spread = 1
 			self.parts.wpn_fps_upg_o_specter.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_specter.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_specter.stats.zoom = 4
+			self.parts.wpn_fps_upg_o_specter.stats.magnification = 2.75
 			
 
 			--See More Sight
 			self.parts.wpn_fps_upg_o_cmore.stats.spread = 0
 			self.parts.wpn_fps_upg_o_cmore.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_cmore.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_cmore.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_cmore.stats.magnification = 1.3
 			
 
 			--Combat Sight
 			self.parts.wpn_fps_upg_o_cs.stats.spread = 1
 			self.parts.wpn_fps_upg_o_cs.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_cs.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_cs.stats.zoom = 4
+			self.parts.wpn_fps_upg_o_cs.stats.magnification = 2.75
 			
 
 			--Compact Holosight
 			self.parts.wpn_fps_upg_o_eotech_xps.stats.spread = 0
 			self.parts.wpn_fps_upg_o_eotech_xps.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_eotech_xps.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_eotech_xps.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_eotech_xps.stats.magnification = 1.5
 			
 
 			--Speculator Sight
 			self.parts.wpn_fps_upg_o_reflex.stats.spread = 0
 			self.parts.wpn_fps_upg_o_reflex.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_reflex.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_reflex.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_reflex.stats.magnification = 1.3
 			
 
 			--Trigonom Sight
 			self.parts.wpn_fps_upg_o_rx01.stats.spread = 0
 			self.parts.wpn_fps_upg_o_rx01.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_rx01.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_rx01.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_rx01.stats.magnification = 1.5
 			
 
 			--Solar Sight
 			self.parts.wpn_fps_upg_o_rx30.stats.spread = 0
 			self.parts.wpn_fps_upg_o_rx30.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_rx30.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_rx30.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_rx30.stats.magnification = 1.3
 			
 
 			--Theia Magnified Scope
 			self.parts.wpn_fps_upg_o_leupold.stats.spread = 1
 			self.parts.wpn_fps_upg_o_leupold.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_leupold.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_leupold.stats.zoom = 10
+			self.parts.wpn_fps_upg_o_leupold.stats.magnification = 6
 			
 
 			--Box Buddy Sight
 			self.parts.wpn_fps_upg_o_box.stats.spread = 1
 			self.parts.wpn_fps_upg_o_box.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_box.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_box.stats.zoom = 10
+			self.parts.wpn_fps_upg_o_box.stats.magnification = 6
 			
 
 			--Reconnaissance Sight
 			self.parts.wpn_fps_upg_o_spot.stats.spread = 1
 			self.parts.wpn_fps_upg_o_spot.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_spot.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_spot.stats.zoom = 4
+			self.parts.wpn_fps_upg_o_spot.stats.magnification = 3
 			
 
 			--Compact Tactical Box Sight
 			self.parts.wpn_fps_upg_o_tf90.stats.spread = 1
 			self.parts.wpn_fps_upg_o_tf90.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_tf90.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_tf90.stats.zoom = 5
+			self.parts.wpn_fps_upg_o_tf90.stats.magnification = 3.25
 			
 
 			--Compact Profile Sight
 			self.parts.wpn_fps_upg_o_fc1.stats.spread = 0
 			self.parts.wpn_fps_upg_o_fc1.stats.recoil = 0
 			self.parts.wpn_fps_upg_o_fc1.stats.concealment = 0
-			self.parts.wpn_fps_upg_o_fc1.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_fc1.stats.magnification = 1.3
 			
 
 			--Maelstrom Sight
 			self.parts.wpn_fps_upg_o_uh.stats.spread = 0
 			self.parts.wpn_fps_upg_o_uh.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_uh.stats.concealment = -1
-			self.parts.wpn_fps_upg_o_uh.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_uh.stats.magnification = 1.7
 			
 
 			--Advanced Combat Sight
 			self.parts.wpn_fps_upg_o_bmg.stats.spread = 1
 			self.parts.wpn_fps_upg_o_bmg.stats.recoil = 1
 			self.parts.wpn_fps_upg_o_bmg.stats.concealment = -3
-			self.parts.wpn_fps_upg_o_bmg.stats.zoom = 3
+			self.parts.wpn_fps_upg_o_bmg.stats.magnification = 4
+			
+
+			--Z5 Owl Glass Universal Scope
+			self.parts.wpn_fps_upg_o_poe.stats.spread = 1
+			self.parts.wpn_fps_upg_o_poe.stats.recoil = 1
+			self.parts.wpn_fps_upg_o_poe.stats.concealment = -3
+			self.parts.wpn_fps_upg_o_poe.stats.magnification = 2.75
 
 	--Stocks
 
