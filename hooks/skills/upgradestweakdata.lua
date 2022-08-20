@@ -48,5 +48,11 @@ Hooks:PostHook(UpgradesTweakData, "init", "WR UpgradesTweakData init", function(
 			category = "player"
 		}
 	}
+	self.revive_health_multiplier = {
+		0.15
+	}
+	self.values.player.revived_health_regain = {
+		0.2
+	}
 end)
 

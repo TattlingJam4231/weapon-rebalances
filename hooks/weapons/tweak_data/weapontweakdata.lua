@@ -1,419 +1,3 @@
-local SELECTION = {
-	SECONDARY = 1,
-	PRIMARY = 2,
-	UNDERBARREL_SECONDARY = 3,
-	UNDERBARREL_PRIMARY = 4
-}
-
-local default_spread = {
-	standing = 3,
-	crouching = 2,
-	steelsight = 1.2,
-	moving_standing = 3,
-	moving_crouching = 3,
-	moving_steelsight = 1.2,
-	bipod = 3
-}
-
-local spread_multiplier = {
-	shotgun = {
-		double_barrel = {1.8, 0.6},
-		tier_5 = {1.2, 0.8},
-		pump_action = {1.2, 0.8},
-		tier_4 = {1, 1},
-		tier_3 = {1, 1},
-		tier_2 = {1, 1},
-		tier_1 = {1, 1}
-	}
-}
-
-local recoil_wait = {
-	assault_rifle = {
-		tier_4 = {
-			flat = 1,
-			curve = 1
-		},
-		tier_3 = {
-			flat = 0.5,
-			curve = 1.5
-		},
-		tier_2 = {
-			flat = 0.5,
-			curve = 1.5
-		},
-		tier_1 = {
-			flat = 0.5,
-			curve = 1.5
-		}
-	},
-	shotgun = {
-		double_barrel = {
-			flat = 0,
-			curve = 0.5
-		},
-		tier_5 = {
-			flat = 0,
-			curve = 0.5
-		},
-		pump_action = {
-			flat = 0,
-			curve = 0.5
-		},
-		tier_4 = {
-			flat = 0,
-			curve = 0.5
-		},
-		tier_3 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_2 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 2
-		}
-	},
-	lmg = {
-		tier_3 = {
-			flat = 0,
-			curve = 1
-		},
-		tier_2 = {
-			flat = 0,
-			curve = 1
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 1
-		}
-	},
-	snp = {
-		tier_5 = {
-			flat = 0.05,
-			curve = 0.35
-		},
-		tier_4 = {
-			flat = 0.1,
-			curve = 0.4
-		},
-		tier_3 = {
-			flat = 0.05,
-			curve = 0.4
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 0.5
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 0.5
-		}
-	},
-	smg = {
-		tier_3 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_2 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 2
-		}
-	},
-	pistol = {
-		tier_4 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_3 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_2 = {
-			flat = 0,
-			curve = 2
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 2
-		}
-	},
-	gl = {
-		tier_2 = {
-			flat = 0,
-			curve = 0.5
-		},
-		tier_1 = {
-			flat = 0,
-			curve = 0.5
-		}
-	}
-}
-
-local pickup = {
-	assault_rifle = {
-		tier_4 = {2		/1.35, 3	/1.35},
-		tier_3 = {4		/1.35, 6	/1.35},
-		tier_2 = {7		/1.35, 12	/1.35},
-		tier_1 = {12	/1.35, 24	/1.35}
-	},
-	shotgun = {
-		double_barrel = {0.4	/1.35, 1.5	/1.35},
-		tier_5 = 		{0.4	/1.35, 1.5	/1.35},
-		pump_action = 	{1		/1.35, 2.5	/1.35},
-		tier_4 = 		{1		/1.35, 2.5	/1.35},
-		tier_3 = 		{2		/1.35, 5	/1.35},
-		tier_2 = 		{3		/1.35, 6	/1.35},
-		tier_1 = 		{5		/1.35, 10	/1.35}
-	},
-	lmg = {
-		tier_3 = {5		/1.35, 10	/1.35},
-		tier_2 = {10	/1.35, 25	/1.35},
-		tier_1 = {15	/1.35, 35	/1.35}
-	},
-	snp = {
-		tier_4 = {0.04, 0.54},
-		tier_3 = {0.1	/1.35, 1	/1.35},
-		tier_2 = {1		/1.35, 1	/1.35},
-		tier_1 = {1		/1.35, 1.75	/1.35}
-	},
-	smg = {
-		tier_3 = {3		/1.35, 7	/1.35},
-		tier_2 = {6		/1.35, 11	/1.35},
-		tier_1 = {8		/1.35, 16	/1.35}
-	},
-	pistol = {
-		tier_4 = {1.5	/1.35, 3	/1.35},
-		tier_3 = {2.5	/1.35, 5	/1.35},
-		tier_2 = {4		/1.35, 9	/1.35},
-		tier_1 = {8		/1.35, 13	/1.35}
-	},
-	gl = {
-		tier_2 = {0		/1.35, 0.8	/1.35},
-		tier_1 = {0		/1.35, 0.9	/1.35}
-	}
-}
-
-local falloff = {
-	shotgun = {
-		double_barrel = {
-			optimal_distance = 600,
-			optimal_range = 900,
-			near_falloff = 200,
-			far_falloff = 2250,
-			near_multiplier = 1.35,
-			far_multiplier = 0.1
-		},
-		tier_5 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 2250,
-			near_multiplier = 1,
-			far_multiplier = 0.1
-		},
-		pump_action = {
-			optimal_distance = 0,
-			optimal_range = 1600,
-			near_falloff = 0,
-			far_falloff = 2250,
-			near_multiplier = 1,
-			far_multiplier = 0.2
-		},
-		tier_4 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 2250,
-			near_multiplier = 1,
-			far_multiplier = 0.1
-		},
-		tier_3 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 2000,
-			near_multiplier = 1,
-			far_multiplier = 0.2
-		},
-		tier_2 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 2000,
-			near_multiplier = 1,
-			far_multiplier = 0.2
-		},
-		tier_1 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 2000,
-			near_multiplier = 1,
-			far_multiplier = 0.2
-		}
-	},
-	assault_rifle = {
-		optimal_distance = 1,
-		optimal_range = 1,
-		near_falloff = 1,
-		far_falloff = 1,
-		near_multiplier = 1,
-		far_multiplier = 1
-	},
-	lmg = {
-		tier_3 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 3000,
-			near_multiplier = 1,
-			far_multiplier = 0.8
-		},
-		tier_2 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 3000,
-			near_multiplier = 1,
-			far_multiplier = 0.7
-		},
-		tier_1 = {
-			optimal_distance = 0,
-			optimal_range = 1500,
-			near_falloff = 0,
-			far_falloff = 3000,
-			near_multiplier = 1,
-			far_multiplier = 0.6
-		}
-	},
-	snp = {
-		tier_4 = {
-			optimal_distance = 3000,
-			optimal_range = 3000,
-			near_falloff = 3000,
-			far_falloff = 3000,
-			near_multiplier = 1,
-			far_multiplier = 1
-		},
-		tier_3 = {
-			optimal_distance = 0,
-			optimal_range = 2000,
-			near_falloff = 0,
-			far_falloff = 500,
-			near_multiplier = 1,
-			far_multiplier = 1.8
-		},
-		tier_2 = {
-			optimal_distance = 0,
-			optimal_range = 2000,
-			near_falloff = 0,
-			far_falloff = 500,
-			near_multiplier = 1,
-			far_multiplier = 1.5
-		},
-		tier_1 = {
-			optimal_distance = 0,
-			optimal_range = 2000,
-			near_falloff = 0,
-			far_falloff = 500,
-			near_multiplier = 1,
-			far_multiplier = 1.35
-		}
-	},
-	smg = {
-		tier_3 = {
-			optimal_distance = 0,
-			optimal_range = 1600,
-			near_falloff = 0,
-			far_falloff = 2000,
-			near_multiplier = 1,
-			far_multiplier = 0.6
-		},
-		tier_2 = {
-			optimal_distance = 0,
-			optimal_range = 1400,
-			near_falloff = 0,
-			far_falloff = 2200,
-			near_multiplier = 1,
-			far_multiplier = 0.5
-		},
-		tier_1 = {
-			optimal_distance = 0,
-			optimal_range = 1200,
-			near_falloff = 0,
-			far_falloff = 2400,
-			near_multiplier = 1,
-			far_multiplier = 0.4
-		}
-	},
-	aki_smg = {
-		tier_3 = {
-			optimal_distance = 300,
-			optimal_range = 1300,
-			near_falloff = 0,
-			far_falloff = 2000,
-			near_multiplier = 1.3,
-			far_multiplier = 0.6
-		},
-		tier_2 = {
-			optimal_distance = 400,
-			optimal_range = 1000,
-			near_falloff = 0,
-			far_falloff = 2200,
-			near_multiplier = 1.3,
-			far_multiplier = 0.5
-		},
-		tier_1 = {
-			optimal_distance = 500,
-			optimal_range = 700,
-			near_falloff = 0,
-			far_falloff = 2400,
-			near_multiplier = 1.2,
-			far_multiplier = 0.4
-		}
-	},
-	pistol = {
-		tier_4 = {
-			optimal_distance = 0,
-			optimal_range = 1600,
-			near_falloff = 0,
-			far_falloff = 1200,
-			near_multiplier = 1,
-			far_multiplier = 0.8
-		},
-		tier_3 = {
-			optimal_distance = 0,
-			optimal_range = 1600,
-			near_falloff = 0,
-			far_falloff = 1200,
-			near_multiplier = 1,
-			far_multiplier = 0.7
-		},
-		tier_2 = {
-			optimal_distance = 0,
-			optimal_range = 1400,
-			near_falloff = 0,
-			far_falloff = 1200,
-			near_multiplier = 1,
-			far_multiplier = 0.7
-		},
-		tier_1 = {
-			optimal_distance = 0,
-			optimal_range = 1200,
-			near_falloff = 0,
-			far_falloff = 1200,
-			near_multiplier = 1,
-			far_multiplier = 0.7
-		}
-	}
-}
 function WeaponTweakData:set_kick_zero(wpn_id)
 	if wpn_id then
 		self[wpn_id] = self[wpn_id] or {}
@@ -597,7 +181,8 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"shepheard",		-- Signature Submachine Gun
 				"x_shepheard",		-- Akimbo Signature Submachine Guns
 				"uzi",				-- Uzi Submachine Gun
-				"x_uzi"				-- Akimbo Uzi Submachine Guns
+				"x_uzi",			-- Akimbo Uzi Submachine Guns
+				"fmg9"				-- Wasp-DS SMG
 			}
 		},
 		pistol = {
@@ -665,6 +250,437 @@ function WeaponTweakData:_init_weapon_index_wr()
 				"beer",				-- Bernetti Auto Pistol
 				"x_beer"			-- Akimbo Bernetti Auto Pistols
 			}
+		},
+		gl = {
+			tier_2 = {
+				"gre_m79",			-- GL40
+				"m32",				-- Piglet
+				"china",			-- China puff
+				"slap",				-- Compact 40
+
+				"contraband_m203",	-- Little Friend Underbarrel
+				"groza_underbarrel"	-- KETCHNOV Byk-1 Underbarrel
+			},
+			tier_1 = {
+				"arbiter"			-- Arbiter
+			}
+		}
+	}
+end
+
+function WeaponTweakData:_init_spread_wr()
+	self.default_spread = {
+		standing = 3,
+		crouching = 2,
+		steelsight = 1.2,
+		moving_standing = 3,
+		moving_crouching = 3,
+		moving_steelsight = 1.2,
+		bipod = 3
+	}
+	self.spread_multiplier = {
+		shotgun = {
+			double_barrel = {1.8, 0.6},
+			tier_5 = {1.2, 0.8},
+			pump_action = {1.2, 0.8},
+			tier_4 = {1, 1},
+			tier_3 = {1, 1},
+			tier_2 = {1, 1},
+			tier_1 = {1, 1}
+		}
+	}
+end
+
+function WeaponTweakData:_init_falloff_wr()
+	self.falloff = {
+		shotgun = {
+			double_barrel = {
+				optimal_distance = 600,
+				optimal_range = 900,
+				near_falloff = 200,
+				far_falloff = 2250,
+				near_multiplier = 1.35,
+				far_multiplier = 0.1
+			},
+			tier_5 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 2250,
+				near_multiplier = 1,
+				far_multiplier = 0.1
+			},
+			pump_action = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 2250,
+				near_multiplier = 1,
+				far_multiplier = 0.2
+			},
+			tier_4 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 2250,
+				near_multiplier = 1,
+				far_multiplier = 0.1
+			},
+			tier_3 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1,
+				far_multiplier = 0.2
+			},
+			tier_2 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1,
+				far_multiplier = 0.2
+			},
+			tier_1 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1,
+				far_multiplier = 0.2
+			}
+		},
+		assault_rifle = {
+			optimal_distance = 1,
+			optimal_range = 1,
+			near_falloff = 1,
+			far_falloff = 1,
+			near_multiplier = 1,
+			far_multiplier = 1
+		},
+		lmg = {
+			tier_3 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.8
+			},
+			tier_2 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			tier_1 = {
+				optimal_distance = 0,
+				optimal_range = 1500,
+				near_falloff = 0,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 0.6
+			}
+		},
+		snp = {
+			tier_4 = {
+				optimal_distance = 3000,
+				optimal_range = 3000,
+				near_falloff = 3000,
+				far_falloff = 3000,
+				near_multiplier = 1,
+				far_multiplier = 1
+			},
+			tier_3 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.8
+			},
+			tier_2 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.5
+			},
+			tier_1 = {
+				optimal_distance = 0,
+				optimal_range = 2000,
+				near_falloff = 0,
+				far_falloff = 500,
+				near_multiplier = 1,
+				far_multiplier = 1.35
+			}
+		},
+		smg = {
+			tier_3 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1,
+				far_multiplier = 0.6
+			},
+			tier_2 = {
+				optimal_distance = 0,
+				optimal_range = 1400,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1,
+				far_multiplier = 0.5
+			},
+			tier_1 = {
+				optimal_distance = 0,
+				optimal_range = 1200,
+				near_falloff = 0,
+				far_falloff = 2400,
+				near_multiplier = 1,
+				far_multiplier = 0.4
+			}
+		},
+		aki_smg = {
+			tier_3 = {
+				optimal_distance = 300,
+				optimal_range = 1300,
+				near_falloff = 0,
+				far_falloff = 2000,
+				near_multiplier = 1.3,
+				far_multiplier = 0.6
+			},
+			tier_2 = {
+				optimal_distance = 400,
+				optimal_range = 1000,
+				near_falloff = 0,
+				far_falloff = 2200,
+				near_multiplier = 1.3,
+				far_multiplier = 0.5
+			},
+			tier_1 = {
+				optimal_distance = 500,
+				optimal_range = 700,
+				near_falloff = 0,
+				far_falloff = 2400,
+				near_multiplier = 1.2,
+				far_multiplier = 0.4
+			}
+		},
+		pistol = {
+			tier_4 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.8
+			},
+			tier_3 = {
+				optimal_distance = 0,
+				optimal_range = 1600,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			tier_2 = {
+				optimal_distance = 0,
+				optimal_range = 1400,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			},
+			tier_1 = {
+				optimal_distance = 0,
+				optimal_range = 1200,
+				near_falloff = 0,
+				far_falloff = 1200,
+				near_multiplier = 1,
+				far_multiplier = 0.7
+			}
+		}
+	}
+end
+
+function WeaponTweakData:_init_recoil_wait_wr()
+	self.recoil_wait = {
+		assault_rifle = {
+			tier_4 = {
+				flat = 1,
+				curve = 1
+			},
+			tier_3 = {
+				flat = 0.5,
+				curve = 1.5
+			},
+			tier_2 = {
+				flat = 0.5,
+				curve = 1.5
+			},
+			tier_1 = {
+				flat = 0.5,
+				curve = 1.5
+			}
+		},
+		shotgun = {
+			double_barrel = {
+				flat = 0,
+				curve = 0.5
+			},
+			tier_5 = {
+				flat = 0,
+				curve = 0.5
+			},
+			pump_action = {
+				flat = 0,
+				curve = 0.5
+			},
+			tier_4 = {
+				flat = 0,
+				curve = 0.5
+			},
+			tier_3 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_2 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 2
+			}
+		},
+		lmg = {
+			tier_3 = {
+				flat = 0,
+				curve = 1
+			},
+			tier_2 = {
+				flat = 0,
+				curve = 1
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 1
+			}
+		},
+		snp = {
+			tier_5 = {
+				flat = 0.05,
+				curve = 0.35
+			},
+			tier_4 = {
+				flat = 0.1,
+				curve = 0.4
+			},
+			tier_3 = {
+				flat = 0.05,
+				curve = 0.4
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 0.5
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 0.5
+			}
+		},
+		smg = {
+			tier_3 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_2 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 2
+			}
+		},
+		pistol = {
+			tier_4 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_3 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_2 = {
+				flat = 0,
+				curve = 2
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 2
+			}
+		},
+		gl = {
+			tier_2 = {
+				flat = 0,
+				curve = 0.5
+			},
+			tier_1 = {
+				flat = 0,
+				curve = 0.5
+			}
+		}
+	}
+end
+
+function WeaponTweakData:_init_ammo_pickup_wr()
+	self.ammo_pickup = {
+		assault_rifle = {
+			tier_4 = {2		/1.35, 3	/1.35},
+			tier_3 = {4		/1.35, 6	/1.35},
+			tier_2 = {7		/1.35, 12	/1.35},
+			tier_1 = {12	/1.35, 24	/1.35}
+		},
+		shotgun = {
+			double_barrel = {0.4	/1.35, 1.5	/1.35},
+			tier_5 = 		{0.4	/1.35, 1.5	/1.35},
+			pump_action = 	{1		/1.35, 2.5	/1.35},
+			tier_4 = 		{1		/1.35, 2.5	/1.35},
+			tier_3 = 		{2		/1.35, 5	/1.35},
+			tier_2 = 		{3		/1.35, 6	/1.35},
+			tier_1 = 		{5		/1.35, 10	/1.35}
+		},
+		lmg = {
+			tier_3 = {5		/1.35, 10	/1.35},
+			tier_2 = {10	/1.35, 25	/1.35},
+			tier_1 = {15	/1.35, 35	/1.35}
+		},
+		snp = {
+			tier_4 = {0.04, 0.54},
+			tier_3 = {0.1	/1.35, 1	/1.35},
+			tier_2 = {1		/1.35, 1	/1.35},
+			tier_1 = {1		/1.35, 1.75	/1.35}
+		},
+		smg = {
+			tier_3 = {3		/1.35, 7	/1.35},
+			tier_2 = {6		/1.35, 11	/1.35},
+			tier_1 = {8		/1.35, 16	/1.35}
+		},
+		pistol = {
+			tier_4 = {1.5	/1.35, 3	/1.35},
+			tier_3 = {2.5	/1.35, 5	/1.35},
+			tier_2 = {4		/1.35, 9	/1.35},
+			tier_1 = {8		/1.35, 13	/1.35}
+		},
+		gl = {
+			tier_2 = {0.045, 0.545},
+			tier_1 = {0.08, 0.58}
 		}
 	}
 end
@@ -674,11 +690,11 @@ function WeaponTweakData:_init_default_stats_wr()
 		for tier, weapons in pairs(tiers) do
 			for _, weapon in ipairs(weapons) do 
 				if self[weapon] then
-					self[weapon].AMMO_PICKUP = pickup[category][tier]
-					self[weapon].damage_falloff = falloff[category][tier] or falloff[category]
-					self[weapon].spread = default_spread
-					self[weapon].spread_multiplier = spread_multiplier[category] and spread_multiplier[category][tier]
-					self[weapon].recoil_wait = recoil_wait[category][tier] or recoil_wait[category]
+					self[weapon].AMMO_PICKUP = self.ammo_pickup[category] and self.ammo_pickup[category][tier]
+					self[weapon].damage_falloff = self.falloff[category] and self.falloff[category][tier] or self.falloff[category]
+					self[weapon].spread = self.default_spread
+					self[weapon].spread_multiplier = self.spread_multiplier[category] and self.spread_multiplier[category][tier]
+					self[weapon].recoil_wait = self.recoil_wait[category] and self.recoil_wait[category][tier] or self.recoil_wait[category]
 				end
 			end
 		end
@@ -757,7 +773,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 				"grenade_launcher",
 				"assault_rifle"
 			}
-			self.contraband_m203.spread = default_spread
+			-- self.contraband_m203.spread = default_spread
 			
 			-- M308 Rifle
 			self.new_m14.stats.damage = 164
@@ -932,7 +948,7 @@ function WeaponTweakData:_init_assault_rifles_wr()
 			self.g3.kick.steelsight = self:kick_steelsight_wr(self.g3.kick.standing)
 			
 			-- KETCHNOV Byk-1 Assault Rifle
-			self.groza.AMMO_MAX = 80
+			self.groza.AMMO_MAX = 100
 			self.groza.stats.damage = 102
 			self.groza.stats.spread = 20
 			self.groza.stats.recoil = 9
@@ -949,11 +965,11 @@ function WeaponTweakData:_init_assault_rifles_wr()
 				"grenade_launcher",
 				"assault_rifle"
 				}
-			self.groza_underbarrel.spread = default_spread
+			-- self.groza_underbarrel.spread = default_spread
 
 			-- KS12 Urban Rifle
-			self.groza.AMMO_MAX = 150
-			self.groza.stats.damage = 102
+			self.shak12.AMMO_MAX = 150
+			self.shak12.stats.damage = 102
 	
 	--T2 Assault Rifles---------------------------------------------------------
 			
@@ -1622,16 +1638,16 @@ function WeaponTweakData:_init_snipers_wr()
 	--t4 snipers----------------------------------------------------------------
 		
 			-- nagant
-			self.mosin.spread = default_spread
+			-- self.mosin
 			
 			-- desertfox
-			self.desertfox.spread = default_spread
+			-- self.desertfox
 			
 			-- r93
-			self.r93.spread = default_spread
+			-- self.r93
 			
 			-- platypus
-			self.model70.spread = default_spread
+			-- self.model70
 	
 	--t3 snipers----------------------------------------------------------------
 		
@@ -2300,6 +2316,10 @@ function WeaponTweakData:_init_smgs_wr()
 					self.x_uzi.kick.standing = self:kick_akimbo_wr(self.uzi.kick.standing)
 					self.x_uzi.kick.crouching = self.x_uzi.kick.standing
 					self.x_uzi.kick.steelsight = self:kick_steelsight_wr(self.x_uzi.kick.standing)
+
+
+			
+			-- Wasp-DS SMG fmg9
 end
 
 function WeaponTweakData:_init_pistols_wr()
@@ -2563,12 +2583,12 @@ function WeaponTweakData:_init_specials_wr()
 			--t2 gls--------------------------------------------------------------------
 					
 					--GL40
-					self.gre_m79.AMMO_PICKUP = pickup.gl.tier_2
+					-- self.gre_m79.AMMO_PICKUP = pickup.gl.tier_2
 					self.gre_m79.AMMO_MAX = 9
 					self.gre_m79.stats.reload = 12
 					
 					--Piglet
-					self.m32.AMMO_PICKUP = pickup.gl.tier_2
+					-- self.m32.AMMO_PICKUP = pickup.gl.tier_2
 					self.m32.timers = {
 						shotgun_reload_enter = 1.85,
 						shotgun_reload_exit_empty = 1.33,
@@ -2584,25 +2604,27 @@ function WeaponTweakData:_init_specials_wr()
 					self.m32.stats.reload = 13
 					
 					--China puff
-					self.china.AMMO_PICKUP = pickup.gl.tier_2
+					-- self.china.AMMO_PICKUP = pickup.gl.tier_2
 					
 					--Compact 40
-					self.slap.AMMO_PICKUP = pickup.gl.tier_2
+					-- self.slap.AMMO_PICKUP = pickup.gl.tier_2
+					self.slap.AMMO_MAX = 5
+					self.slap.stats.concealment = 26
 				
 			--t1 gls--------------------------------------------------------------------
 					
 					--Arbiter
-					self.arbiter.AMMO_PICKUP = pickup.gl.tier_1
+					-- self.arbiter.AMMO_PICKUP = pickup.gl.tier_1
 					self.arbiter.stats.damage = 54
 			
 	--RLs-----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 			--Commander 101
-				self.ray.AMMO_PICKUP = {0.02, 0.52}
+				self.ray.AMMO_PICKUP = {0.02 / 1.35, 0.5 + 0.02 / 1.35}
 				self.ray.stats.damage = 21
 			
 			--HRL-7
-				self.rpg7.AMMO_PICKUP = {0.01, 0.51}
+				self.rpg7.AMMO_PICKUP = {0.01 / 1.35, 0.5 + 0.01 / 1.35}
 				self.rpg7.stats.damage = 62
 			
 	--Miniguns------------------------------------------------------------------------------------------------------------------------------------------------
@@ -2630,7 +2652,7 @@ function WeaponTweakData:_init_specials_wr()
 				self.m134.kick.steelsight = self.m134.kick.standing
 				
 			--XL 5.56 Microgun Rework
-				self.shuno.use_data.selection_index = SELECTION.SECONDARY
+				self.shuno.use_data.selection_index = 1 -- secondary
 				self.shuno.AMMO_MAX = 1300/1.3125
 				self.shuno.CLIP_AMMO_MAX = 1300
 				self.shuno.AMMO_PICKUP = {15, 30}
@@ -2687,6 +2709,12 @@ Hooks:PostHook(WeaponTweakData, "init", "WR WeaponTweakData init", function(self
 	self.sentry_gun.DAMAGE = 4
 
 	self:_init_weapon_index_wr()
+
+	self:_init_spread_wr()
+	self:_init_falloff_wr()
+	self:_init_recoil_wait_wr()
+	self:_init_ammo_pickup_wr()
+
 	self:_init_default_stats_wr()
 	
 	self:_init_shotguns_wr()

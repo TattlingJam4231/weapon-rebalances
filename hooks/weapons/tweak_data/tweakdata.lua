@@ -51,6 +51,32 @@ if not wr_tweakstats then
 		sound_event = "gl_explode",
 		name_id = "bm_launcher_frag"
 	}
+
+	-- tweak_data.projectiles.launcher_m203 = {
+	-- 	damage = 130,
+	-- 	launch_speed = 1250,
+	-- 	curve_pow = 0.1,
+	-- 	player_damage = 8,
+	-- 	range = 350,
+	-- 	init_timer = 2.5,
+	-- 	mass_look_up_modifier = 1,
+	-- 	sound_event = "gl_explode",
+	-- 	name_id = "bm_launcher_frag",
+	-- 	projectile_trail = true
+	-- }
+
+	-- tweak_data.projectiles.underbarrel_m203_groza = {
+	-- 	damage = 130,
+	-- 	launch_speed = 1250,
+	-- 	curve_pow = 0.1,
+	-- 	player_damage = 8,
+	-- 	range = 350,
+	-- 	init_timer = 2.5,
+	-- 	mass_look_up_modifier = 1,
+	-- 	sound_event = "gl_explode",
+	-- 	name_id = "bm_launcher_frag",
+	-- 	projectile_trail = true
+	-- }
 	
 	-- tweak_data.projectiles.molotov = {
 	-- 	damage = 3,

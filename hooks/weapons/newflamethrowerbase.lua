@@ -1,7 +1,3 @@
-local mvec_to = Vector3()
-local mvec_direction = Vector3()
-local mvec_spread_direction = Vector3()
-
 function NewFlamethrowerBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
 	if self._rays == 1 then
 		local result = NewFlamethrowerBase.super._fire_raycast(self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
@@ -16,6 +12,7 @@ function NewFlamethrowerBase:_fire_raycast(user_unit, from_pos, direction, dmg_m
 	local damage_range = self._flame_max_range
 	local spread_x, spread_y = self:_get_spread(user_unit)
 
+	local mvec_to = Vector3()
 	mvector3.set(mvec_to, direction)
 	mvector3.multiply(mvec_to, damage_range)
 	mvector3.add(mvec_to, from_pos)

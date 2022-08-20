@@ -1,13 +1,9 @@
-local math_clamp = math.clamp
-local ids_single = Idstring("single")
-local ids_auto = Idstring("auto")
-local ids_burst = Idstring("burst")
-local FIRE_MODE_IDS = {
-	single = ids_single,
-	auto = ids_auto,
-	burst = ids_burst
-}
 function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data)
+
+	local ids_single = Idstring("single")
+	local ids_auto = Idstring("auto")
+	local ids_burst = Idstring("burst")
+
 	self:_default_damage_falloff()
 	self:_check_sound_switch()
 
@@ -163,7 +159,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 			stats[stat] = stats[stat] + bonus_stats[stat]
 		end
 
-		stats[stat] = math_clamp(stats[stat], 1, #stats_tweak_data[stat])
+		stats[stat] = math.clamp(stats[stat], 1, #stats_tweak_data[stat])
 	end
 
 	self._current_stats_indices = stats
@@ -177,7 +173,7 @@ function NewRaycastWeaponBase:_update_stats_values(disallow_replenish, ammo_data
 		end
 	end
 
-	self._current_stats.alert_size = stats_tweak_data.alert_size[math_clamp(stats.alert_size, 1, #stats_tweak_data.alert_size)]
+	self._current_stats.alert_size = stats_tweak_data.alert_size[math.clamp(stats.alert_size, 1, #stats_tweak_data.alert_size)]
 
 	if modifier_stats and modifier_stats.alert_size then
 		self._current_stats.alert_size = self._current_stats.alert_size * modifier_stats.alert_size
@@ -372,14 +368,6 @@ function NewRaycastWeaponBase:recoil_wait() --rewritten
 
 end
 
--- Hooks:PreHook(NewRaycastWeaponBase, "zoom", "WR NewRaycastWeaponBase zoom", function(self)
--- 	if self._magnification then
--- 		local magnification = self._magnification
-
--- 		return magnification
--- 	end
--- end)
-
 function NewRaycastWeaponBase:zoom()
 
 
@@ -535,7 +523,7 @@ end
 
 
 
-function NewRaycastWeaponBase:stance_mod() -- this bug fix is stupid
+function NewRaycastWeaponBase:stance_mod() -- this bug fix is stupid, where the heck else is this function being used
 end
 
 function NewRaycastWeaponBase:stance_mod_wr() -- this bug fix is stupid

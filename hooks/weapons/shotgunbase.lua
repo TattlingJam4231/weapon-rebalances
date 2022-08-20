@@ -1,8 +1,3 @@
-local mvec_temp = Vector3()
-local mvec_to = Vector3()
-local mvec_direction = Vector3()
-local mvec_spread_direction = Vector3()
-
 -- basically entirely rewritten
 function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul, shoot_through_data)
 	local result = nil
@@ -246,6 +241,9 @@ function ShotgunBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoo
 	local right = direction:cross(Vector3(0, 0, 1)):normalized()
 	local up = direction:cross(right):normalized()
 
+	local mvec_to = Vector3()
+	local mvec_direction = Vector3()
+	local mvec_spread_direction = Vector3()
 	mvector3.set(mvec_direction, direction)
 	
 	for i = 1, self._rays do 

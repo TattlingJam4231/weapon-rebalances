@@ -27,17 +27,16 @@ function PlayerStandard:lerp_melee_dot_data_wr(dot_data, lerp_value)
 	return dot_data
 end
 
-local melee_vars = {
-	"player_melee",
-	"player_melee_var2"
-}
-
 function PlayerStandard:_do_melee_damage(t, bayonet_melee, melee_hit_ray, melee_entry, hand_id)
 	melee_entry = melee_entry or managers.blackmarket:equipped_melee_weapon()
 	local instant_hit = tweak_data.blackmarket.melee_weapons[melee_entry].instant
 	local melee_damage_delay = tweak_data.blackmarket.melee_weapons[melee_entry].melee_damage_delay or 0
 	local charge_lerp_value = instant_hit and 0 or self:_get_melee_charge_lerp_value(t, melee_damage_delay)
 
+	local melee_vars = {
+		"player_melee",
+		"player_melee_var2"
+	}
 	self._ext_camera:play_shaker(melee_vars[math.random(#melee_vars)], math.max(0.3, charge_lerp_value))
 
 	local sphere_cast_radius = 20

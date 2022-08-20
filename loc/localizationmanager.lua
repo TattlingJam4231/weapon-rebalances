@@ -52,6 +52,16 @@ Hooks:Add("LocalizationManagerPostInit", "WRd Localization", function(loc)
 														"The base chance is increased by ##1%## for each ammo box you pick up that does not contain a throwable." ..
 														"When a throwable has been found, the chance is reset to its base value.",
 
+		["menu_up_you_go_beta_desc"] = 					"BASIC: ##2 points##\n" ..
+														"You take ##30%## less damage for ##10## seconds after being revived.\n\n" .. 
+														"ACE: ##4 points##\n" ..
+														"You receive an additional ##20%## of your max health when revived.",
+
+		["menu_combat_medic_beta_desc"] = 				"BASIC: ##1 points##\n" ..
+														"You gain a ##30%## damage reduction for ##5## seconds both after and during reviving another player.\n\n" .. 
+														"ACE: ##3 points##\n" ..
+														"Reviving a crew  member gives them an additional ##15%## of their max health.",
+
 		["bm_wp_upg_a_custom_desc"] =					"Fewer pellets but larger impact. Pellets can penetrate one enemy and can penetrate walls at close range.",
 
 		["bm_wp_upg_a_explosive_desc"] =				"Fires one explosive charge that kills or stuns targets. This ammo type is harder to find.",

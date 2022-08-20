@@ -4,6 +4,7 @@
     <hooks hook_id="lib/" script_path="hooks/">
         <group                                                          :script_path="player/">
             <post :hook_id="units/cameras/fpcameraplayerbase"                       :script_path="fpcameraplayerbase.lua"/>
+            <post :hook_id="units/beings/player/playerdamage"                       :script_path="playerdamage.lua"/>
             <post :hook_id="units/beings/player/states/playerstandard"              :script_path="playerstandard.lua"/>
         </group>
 

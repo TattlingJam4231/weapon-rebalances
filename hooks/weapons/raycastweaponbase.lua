@@ -1,6 +1,3 @@
-local MIN_KNOCK_BACK = 200
-local KNOCK_BACK_CHANCE = 0.8
-
 function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 	local ray_hits = nil
 	local hit_enemy = false
@@ -225,10 +222,6 @@ function RaycastWeaponBase:_collect_hits(from, to, user_unit)
 	return unique_hits, hit_enemy
 end
 
-local mvec_to = Vector3()
-local mvec_spread_direction = Vector3()
-local mvec1 = Vector3()
-
 function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
 	if self:gadget_overrides_weapon_functions() then
 		return self:gadget_function_override("_fire_raycast", self, user_unit, from_pos, direction, dmg_mul, shoot_player, spread_mul, autohit_mul, suppr_mul)
@@ -242,6 +235,8 @@ function RaycastWeaponBase:_fire_raycast(user_unit, from_pos, direction, dmg_mul
 	local ax = math.sin(theta) * math.random() * spread_x * (spread_mul or 1)
 	local ay = math.cos(theta) * math.random() * spread_y * (spread_mul or 1)
 
+	local mvec_to = Vector3()
+	local mvec_spread_direction = Vector3()
 	mvector3.set(mvec_spread_direction, direction)
 	mvector3.add(mvec_spread_direction, right * math.rad(ax))
 	mvector3.add(mvec_spread_direction, up * math.rad(ay))
@@ -456,7 +451,7 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 			local max_ammo_pickup = ammo_base._ammo_pickup[2]
 			local rng_ammo = 0
 
-			if max_ammo_pickup < 1 and (max_ammo_pickup - min_ammo_pickup) == 0.5 then -- exception for very low pickup values
+			if max_ammo_pickup < 1 and (min_ammo_pickup + 0.5) == max_ammo_pickup then -- exception for very low pickup values
 				rng_ammo = math.lerp(min_ammo_pickup * multiplier_min, (max_ammo_pickup - 0.5) * multiplier_max + 0.5 * (multiplier_max == 0 and 0 or 1), math.random())
 			else
 			-- Weapon Rebalances
@@ -475,29 +470,44 @@ function RaycastWeaponBase:add_ammo(ratio, add_amount_override)
 		return picked_up, add_amount
 	end
 
-	local picked_up, add_amount = nil
-	picked_up, add_amount = _add_ammo(self, ratio, add_amount_override)
 
-	if self.AKIMBO then
-		local akimbo_rounding = self:get_ammo_total() % 2 + #self._fire_callbacks
 
-		if akimbo_rounding > 0 then
-			_add_ammo(self, nil, akimbo_rounding)
-		end
-	end
-
+	-- Weapon Rebalances
+	local gadget_ammo = nil
 	for _, gadget in ipairs(self:get_all_override_weapon_gadgets()) do
 		if gadget and gadget.ammo_base then
-			local p, a = _add_ammo(gadget:ammo_base(), ratio, add_amount_override)
-			picked_up = p or picked_up
-			add_amount = add_amount + a
+			gadget_ammo = gadget:ammo_base()
 		end
 	end
+
+	local main_ammo_ratio = self:get_ammo_total() / self:get_ammo_max()
+	local gadget_ammo_ratio = gadget_ammo and gadget_ammo:get_ammo_total() / gadget_ammo:get_ammo_max() or 1
+
+	local picked_up, add_amount = nil
+
+	if math.random() > main_ammo_ratio or gadget_ammo_ratio >= 1 then -- underbarrels no longer roll for ammo pickup simultaneously with main gun
+		picked_up, add_amount = _add_ammo(self, ratio, add_amount_override)
+
+		if self.AKIMBO then
+			local akimbo_rounding = self:get_ammo_total() % 2 + #self._fire_callbacks
+
+			if akimbo_rounding > 0 then
+				_add_ammo(self, nil, akimbo_rounding)
+			end
+		end
+	else
+		picked_up, add_amount = _add_ammo(gadget_ammo, ratio, add_amount_override)
+	end
+	-- Weapon Rebalances
 
 	return picked_up, add_amount
 end
 
 function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage, blank, no_sound)
+
+	local MIN_KNOCK_BACK = 200
+	local KNOCK_BACK_CHANCE = 0.8
+
 	local hit_unit = col_ray.unit
 	local shield_knock = false
 	local is_shield = hit_unit:in_slot(8) and alive(hit_unit:parent())
@@ -586,6 +596,10 @@ function InstantBulletBase:on_collision(col_ray, weapon_unit, user_unit, damage,
 	return result
 end
 
-InstantExplosiveBulletBase.CURVE_POW = 0.2 -- Changed from 0.5
-InstantExplosiveBulletBase.PLAYER_DMG_MUL = 0.1
-InstantExplosiveBulletBase.RANGE = 200
+if not he_stats then
+	InstantExplosiveBulletBase.CURVE_POW = 0.2 -- Changed from 0.5
+	-- InstantExplosiveBulletBase.PLAYER_DMG_MUL = 0.1
+	-- InstantExplosiveBulletBase.RANGE = 200
+
+	he_stats = true
+end

@@ -52,6 +52,7 @@
 				<value_node value="wpn_fps_ass_flint"/>
 				<value_node value="wpn_fps_ass_g3"/>
 				<value_node value="wpn_fps_ass_groza"/>
+				<value_node value="wpn_fps_ass_shak12"/>
 				
 				<value_node value="wpn_fps_ass_74"/>
 				<value_node value="wpn_fps_ass_corgi"/>
@@ -112,6 +113,7 @@
 				<value_node value="wpn_fps_ass_flint"/>
 				<value_node value="wpn_fps_ass_g3"/>
 				<value_node value="wpn_fps_ass_groza"/>
+				<value_node value="wpn_fps_ass_shak12"/>
 				
 				<value_node value="wpn_fps_ass_74"/>
 				<value_node value="wpn_fps_ass_corgi"/>
@@ -244,6 +246,7 @@
 				<value_node value="wpn_fps_smg_shepheard"/>
 				<value_node value="wpn_fps_smg_vityaz"/>
 				<value_node value="wpn_fps_smg_pm9"/>
+				<value_node value="wpn_fps_smg_fmg9"/>
 				
 				<value_node value="wpn_fps_smg_x_tec9"/>
 				<value_node value="wpn_fps_smg_x_m1928"/>
@@ -374,6 +377,7 @@
 				<value_node value="wpn_fps_smg_shepheard"/>
 				<value_node value="wpn_fps_smg_vityaz"/>
 				<value_node value="wpn_fps_smg_pm9"/>
+				<value_node value="wpn_fps_smg_fmg9"/>
 				
 				<value_node value="wpn_fps_smg_x_tec9"/>
 				<value_node value="wpn_fps_smg_x_m1928"/>

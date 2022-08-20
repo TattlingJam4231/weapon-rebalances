@@ -1,16 +1,13 @@
-
-local mrot1 = Rotation()
-local mrot2 = Rotation()
-local mrot3 = Rotation()
-local mrot4 = Rotation()
-local mvec1 = Vector3()
-local mvec2 = Vector3()
-local mvec3 = Vector3()
-local mvec4 = Vector3()
-
 local kick_indices_timer = 0.5
 
 function FPCameraPlayerBase:_update_movement(t, dt)
+	local mrot1 = Rotation()
+	local mrot2 = Rotation()
+	local mrot3 = Rotation()
+	local mvec1 = Vector3()
+	local mvec2 = Vector3()
+	local mvec3 = Vector3()
+
 	local data = self._camera_properties
 	local new_head_pos = mvec2
 	local new_shoulder_pos = mvec1
